@@ -1,27 +1,37 @@
 services:
-  postgres:
-    image: postgres:16
+  # 1. Database
+  db:
+    image: postgres:15-alpine
+    restart: always
     environment:
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: postgres
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
       POSTGRES_DB: westgate_db
     ports:
       - "5432:5432"
+    volumes:
+      - db_data:/var/lib/postgresql/data
 
+  # 2. Backend
   backend:
-    build:
-      context: ./backend
+    build: ./backend
+    ports:
+      - "5001:5000"
     environment:
-      - DATABASE_URL=postgresql://postgres:postgres@postgres:5432/westgate_db
+      - DATABASE_URL=postgres://user:password@db:5432/westgate_db
+      - PORT=5000
     depends_on:
-      - postgres
+      - db
 
+  # 3. Frontend
   frontend:
-    build:
-      context: ./frontend
-    environment:
-      - NEXT_PUBLIC_API_URL=http://localhost:3000/api
+    build: ./frontend
     ports:
       - "3000:3000"
+    environment:
+      - VITE_API_URL=http://localhost:5000
     depends_on:
       - backend
+
+volumes:
+  db_data:

@@ -1,8 +1,6 @@
 node_modules
-.docker
+.next
 .git
-.gitignore
-.env
-.env.local
+build
+dist
 *.log
-*.md

@@ -1,6 +1,8 @@
-FROM node:20-alpine
+FROM node:22-alpine
 WORKDIR /app
+# The dot below means "Copy from the build context (the backend folder)"
 COPY package*.json ./
-RUN npm ci
+RUN npm install
 COPY . .
-CMD ["npm", "run", "start"]
+EXPOSE 5000
+CMD ["npm", "start"]
