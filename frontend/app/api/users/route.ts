@@ -1,15 +1,18 @@
+// frontend/app/api/users/route.ts
 import { NextResponse } from "next/server";
-import pool from "@backend/lib/db";
 
 export async function GET() {
-  const result = await pool.query("SELECT * FROM users;");
-  return NextResponse.json(result.rows);
-}
+  try {
+    // Call the backend API endpoint
+    const res = await fetch("http://localhost:4000/users"); // <-- your backend server
+    if (!res.ok) {
+      throw new Error("Failed to fetch users from backend");
+    }
 
-export async function POST() {
-  const result = await pool.query(
-    "INSERT INTO users (email, name) VALUES ($1, $2) RETURNING *;",
-    ["test@example.com", "First User"]
-  );
-  return NextResponse.json(result.rows[0]);
+    const users = await res.json();
+    return NextResponse.json(users);
+  } catch (error) {
+    console.error(error);
+    return NextResponse.json({ error: "Unable to fetch users" }, { status: 500 });
+  }
 }
