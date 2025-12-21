@@ -1,42 +1,79 @@
-# Westgate-Sindjelic
+Westgate-Sindjelic
+Overview
+A full-stack web application designed for a semi-pro soccer club. Built with Next.js (App Router), Node.js, PostgreSQL, and Docker.
 
-## Overview
+Future Project Structure (Roadmap)
+This is the planned structure for the club website. Use this as your guide while building:
 
-Full-stack web app using Next.js (Pages Router) + TypeScript for frontend, PostgreSQL for database, and Docker for local DB. Backend logic is handled via API routes and separate DB helpers.
-
-## Structure
-
-```
 westgate-sindjelic/
-├─ frontend/          # Next.js pages & components
-│  ├─ pages/          # Pages Router
-│  │   ├─ index.tsx
-│  │   └─ api/        # API routes (server-side)
-│  ├─ components/     # Reusable UI components
-│  ├─ styles/         # CSS
-│  ├─ _app.tsx        # Global wrapper
-│  └─ _document.tsx   # HTML structure
-├─ backend/           # DB helpers and scripts
-│  ├─ lib/db.ts       # PostgreSQL connection
-│  └─ scripts/        # Optional seed/migration scripts
-├─ docker-compose.yml # Docker PostgreSQL
-├─ .env.local         # Env variables (DATABASE_URL)
-├─ package.json
-├─ tsconfig.json
-└─ next-env.d.ts
-```
+├─ frontend/
+│  ├─ src/app/
+│  │  ├─ (auth)/               # Grouped routes for Auth
+│  │  │  ├─ login/page.tsx      # Log-in page
+│  │  │  └─ signup/page.tsx     # Sign-up page
+│  │  ├─ teams/
+│  │  │  ├─ [id]/page.tsx       # Dynamic page for specific teams
+│  │  │  └─ page.tsx            # Overview of all club teams
+│  │  ├─ players/
+│  │  │  └─ page.tsx            # Player roster/profiles
+│  │  ├─ schedule/
+│  │  │  └─ page.tsx            # Upcoming matches & results
+│  │  ├─ layout.tsx             # Global Nav & Footer
+│  │  └─ page.tsx               # Homepage (Landing Page)
+│  ├─ components/               # Reusable UI (Buttons, Cards, Nav)
+│  └─ lib/                      # Frontend utilities (API fetching)
+├─ backend/
+│  ├─ routes/                   # API Endpoints
+│  │  ├─ auth.js                # Auth logic (JWT/Sessions)
+│  │  ├─ players.js             # Player data endpoints
+│  │  └─ matches.js             # Match/Score endpoints
+│  ├─ models/                   # Database schemas
+│  ├─ index.js                  # Server entry point
+│  └─ package.json
+├─ docker-compose.yml           # Database & App orchestration
+└─ README.md
 
-## How It Works
 
-* Pages render UI and call API routes.
-* API routes run server-side and query the database using backend helpers.
-* Data flows: `Browser → Frontend Page → API Route → Database → API Route → Frontend → Browser`
+How It Works
+Authentication: Users can sign up and log in to access member-only areas (like internal team stats).
 
-## Quick Start
+Dynamic Routing: The teams/[id] structure allows you to have one template that works for every team in the club (Seniors, U21s, etc.).
 
-1. Install dependencies: `npm install`
-2. Start Docker DB: `docker-compose up -d`
-   - Automatically creates database `westgate_db` with user `postgres`
-3. (Optional) Seed the database: `ts-node backend/scripts/seed.ts`
-4. Run app: `npm run dev`
-5. Visit: [http://localhost:3000](http://localhost:3000)
+Data Flow: Next.js Frontend ↔ Node.js Backend ↔ PostgreSQL Database.
+
+Quick Start
+1. Prerequisite: macOS Port Fix
+
+Before starting, ensure AirPlay Receiver is turned OFF in your macOS System Settings (General > AirPlay & Handoff). This frees up Port 5000 for your Backend API.
+
+2. Launch the Environment
+
+Everything is automated via Docker. Run the following in the root folder:
+
+docker compose up --build
+
+
+3. Links
+
+Frontend: http://localhost:3000 (Your soccer site)
+
+Backend API: http://localhost:5000 (Data source)
+
+Database Details
+Type: PostgreSQL
+
+Database Name: westgate_db
+
+User: user | Password: password
+
+Access: Accessible locally on port 5432 if using a DB manager like TablePlus or pgAdmin.
+
+
+
+
+
+
+Made By:
+- Lav Bujak (bujaklav@gmail.com)
+- 
+- 
