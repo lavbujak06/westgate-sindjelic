@@ -5,7 +5,7 @@ A full-stack web application designed for a semi-pro soccer club. Built with Nex
 Future Project Structure (Roadmap)
 This is the planned structure for the club website. Use this as your guide while building:
 
-westgate-sindjelic/
+westgate-sindjelic/    (the aim of what the repo should look like in the end)
 ├─ frontend/
 │  ├─ src/app/
 │  │  ├─ (auth)/               # Grouped routes for Auth
