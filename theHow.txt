@@ -1,0 +1,83 @@
+1. The Connection Flow (The Data Pipeline)
+The project follows a standard Three-Tier Architecture: Database (Data) ↔ Backend (Logic) ↔ Frontend (UI).
+
+Database to Backend (The "Deep" Connection)
+
+The Bridge: Your Backend uses a PostgreSQL Driver (like pg or an ORM like Prisma/Sequelize) to talk to the DB.
+
+The Address: In your docker-compose.yml, the backend finds the database using the internal Docker hostname: postgres://user:password@db:5432/westgate_db.
+
+Authentication: The backend "logs in" to the DB using the credentials you defined. Once connected, the backend can run SQL queries to save player stats, match results, or user credentials.
+
+Backend to Frontend (The "API" Connection)
+
+The Bridge: This connection happens over HTTP using REST API endpoints.
+
+The Communication: The Frontend sends a "Request" (e.g., GET /api/players) and the Backend sends back a "Response" (usually in JSON format).
+
+Port Mapping: Your frontend sends these requests to http://localhost:5000.
+
+Frontend to User (The "UI" Connection)
+
+The Bridge: Next.js renders the React components into HTML/JavaScript that the browser can understand.
+
+State Management: When a user clicks "Sign Up," the frontend captures that data, packages it into a JSON object, and ships it off to the Backend.
+
+2. What is Docker and "Why" are we using it?
+Think of Docker as a shipping container. In the old days, a developer might say, "It works on my machine!" but then it fails on the server because the server has a different version of Node or Postgres. Docker fixes this by "freezing" the environment.
+
+What is a "Container"?
+
+A container is a lightweight, standalone package that includes everything needed to run a piece of software: the code, the runtime (Node.js), system tools, and libraries.
+
+What is "Docker Compose"?
+
+If a Container is a single musician, Docker Compose is the Conductor. It reads your docker-compose.yml file and says:
+
+"Start a Postgres database and call it db."
+
+"Build the backend code and connect it to db."
+
+"Build the frontend code and map it to the user's browser."
+
+3. Inside Your Docker Containers
+Here is exactly what lives inside the three "bubbles" created when you run docker compose up:
+
+Container A: The Database (db-1)
+
+OS: A tiny version of Linux called Alpine (designed to be very small).
+
+Software: PostgreSQL 15.
+
+Storage (The Volume): We use db_data. This is important because containers are "volatile"—if you delete a container, its data dies. The Volume is a folder on your Mac that Docker "mounts" into the container so your soccer club's data is safe even if you restart your computer.
+
+Container B: The Backend (backend-1)
+
+OS: Alpine Linux.
+
+Runtime: Node.js 22.
+
+The Code: Everything inside your /backend folder.
+
+Process: It runs node index.js and sits there listening on port 5000.
+
+Container C: The Frontend (frontend-1)
+
+OS: Alpine Linux.
+
+Runtime: Node.js 22.
+
+The Code: Everything inside your /frontend folder.
+
+The Build: It runs npm run build to optimize your soccer site and then next start to serve it.
+
+4. Key Concepts for Your Soccer Site Development
+Hot Reloading: Since you are running in Docker, if you change a file on your Mac, you usually want the container to see that change instantly. This is usually handled by "Bind Mounts" (mapping your local folder to the container folder).
+
+Environment Variables: Things like DATABASE_URL are kept out of the code for security. Docker injects these into the containers at runtime.
+
+Networking: Inside the Docker network, the backend can talk to the DB using the name db. But from your Mac browser, you have to use localhost.
+
+The "Why" Summary
+
+You are building it this way so that when your soccer club grows and you want to put this website on a real server (like AWS or DigitalOcean), you don't have to change anything. You just install Docker on that server, run docker compose up, and the "shipping container" will work exactly the same way it does on your MacBook.
