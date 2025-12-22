@@ -14,47 +14,38 @@ router.get('/', async (_req: Request, res: Response) => {
     const $ = cheerio.load(html);
     const games: any[] = [];
 
-    // Look for every row in the table
+    // Targeting the rows specifically
     $('table tr').each((_, row) => {
-      const cols = $(row).find('td, th');
+      // Inside your $('table tr').each loop:
+      const cols = $(row).find('td');
 
-      // We lower the requirement to 5 columns so we don't miss anything
-      if (cols.length >= 5) {
+      if (cols.length >= 8) {
         const round = $(cols[0]).text().trim();
         const date = $(cols[1]).text().trim();
         const time = $(cols[2]).text().trim();
         const venue = $(cols[3]).text().trim();
         
-        // Use .find('a') to get team names because GameDay links teams.
-        // This helps us avoid 'View' buttons which are also links.
-        const teamLinks = $(row).find('a').filter((i, el) => {
-           return $(el).text().trim().toLowerCase() !== 'view';
-        });
+        // Col 4: First number (Home Score)
+        // Col 5: Team Name (Opposition)
+        // Col 6: Second number (Away Score)
+        const wscore = $(cols[4]).text().trim(); 
+        const opponent = $(cols[6]).text().trim();
+        const ascore = $(cols[7]).text().trim();
 
-        const homeTeam = $(teamLinks[0]).text().trim();
-        const awayTeam = $(teamLinks[1]).text().trim();
-
-        // Scores are often in columns 5 and 7
-        const wscore = $(cols[5]).text().trim() || '0';
-        const ascore = $(cols[7]).text().trim() || '0';
-
-        // Validation: Must have a date and at least one team name
-        if (date && (homeTeam || awayTeam) && round.toLowerCase() !== 'rnd') {
-          games.push({
-            round,
-            date,
-            time,
-            venue,
-            wscore,
-            ascore,
-            // Logic: if Westgate is the Home team, the opponent is the Away team
-            opponent: homeTeam.includes('Westgate') ? awayTeam : homeTeam
-          });
+        if (date && round.toLowerCase() !== 'rnd') {
+          games.push({ round, date, time, venue, wscore, opponent, ascore });
         }
       }
     });
 
     console.log(`Successfully scraped ${games.length} games.`);
+    console.log(`Successfully scraped ${games[0].round} round.`);
+    console.log(`Successfully scraped ${games[1].date} date.`);
+    console.log(`Successfully scraped ${games[2].time} time.`);
+    console.log(`Successfully scraped ${games[3].venue} venue.`);
+    console.log(`Successfully scraped ${games[4].wscore} wscore.`);
+    console.log(`Successfully scraped ${games[5].opponent} opponent.`);
+    console.log(`Successfully scraped ${games[6].ascore} ascore.`);
     res.json(games);
   } catch (err) {
     console.error("Scraping Error:", err);

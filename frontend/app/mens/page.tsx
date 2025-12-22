@@ -29,34 +29,34 @@ export default function MensPage() {
 
   return (
     <div className="mens-page-wrapper">
-      <h1>Men&apos;s Ladder</h1>
+      <h1 className="page-title">Men&apos;s Ladder</h1>
       <div className="table-responsive">
-        <table width="100%" cellPadding={12} style={{ borderCollapse: 'collapse' }}>
+        <table>
           <thead>
-            <tr style={{ backgroundColor: '#0d2b72', color: 'white' }}>
+            <tr>
               <th>POS</th><th>TEAM</th><th>P</th><th>W</th><th>D</th>
               <th>L</th><th>F</th><th>A</th><th>GD</th><th>PTS</th>
             </tr>
           </thead>
           <tbody>
             {ladder.map((t, i) => (
-              <tr key={i} style={{ textAlign: 'center', borderBottom: '1px solid #eee' }}>
-                <td style={{ fontWeight: 'bold' }}>{t.pos}</td>
-                <td style={{ textAlign: 'left' }}>{t.team}</td>
+              <tr key={i}>
+                <td className="bold">{t.pos}</td>
+                <td className="text-left">{t.team}</td>
                 <td>{t.p}</td><td>{t.w}</td><td>{t.d}</td><td>{t.l}</td>
                 <td>{t.f}</td><td>{t.a}</td><td>{t.gd}</td>
-                <td style={{ fontWeight: 'bold' }}>{t.pts}</td>
+                <td className="bold">{t.pts}</td>
               </tr>
             ))}
           </tbody>
         </table>
       </div>
 
-      <h2 style={{ marginTop: '3rem' }}>Games & Fixtures</h2>
+      <h2 className="page-title" style={{ marginTop: '3rem' }}>Games & Fixtures</h2>
       <div className="table-responsive">
-        <table width="100%" cellPadding={12} style={{ borderCollapse: 'collapse' }}>
+        <table>
           <thead>
-            <tr style={{ backgroundColor: '#f2f2f2' }}>
+            <tr>
               <th>RND</th>
               <th>DATE & TIME</th>
               <th>VENUE</th>
@@ -67,13 +67,13 @@ export default function MensPage() {
           </thead>
           <tbody>
             {games.map((g, i) => (
-              <tr key={i} style={{ textAlign: 'center', borderBottom: '1px solid #eee' }}>
+              <tr key={i}>
                 <td>{g.round}</td>
-                <td>{g.date}<br/><small style={{ color: '#666' }}>{g.time}</small></td>
-                <td style={{ fontSize: '0.9rem' }}>{g.venue}</td>
-                <td style={{ fontWeight: 'bold', fontSize: '1.1rem' }}>{g.wscore}</td>
-                <td style={{ color: '#0d2b72', fontWeight: '500' }}>{g.opponent}</td>
-                <td style={{ fontWeight: 'bold', fontSize: '1.1rem' }}>{g.ascore}</td>
+                <td>{g.date}<br/><small>{g.time}</small></td>
+                <td className="venue-cell">{g.venue}</td>
+                <td className="score-cell">{g.wscore}</td>
+                <td className="opponent-cell">{g.opponent}</td>
+                <td className="score-cell">{g.ascore}</td>
               </tr>
             ))}
           </tbody>
