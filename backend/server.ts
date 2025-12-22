@@ -1,18 +1,18 @@
-import express from "express";
-import usersRouter from "./routes/users";
-import cors from "cors";
+import express from 'express';
+import cors from 'cors';
+
+import mensLadder from './routes/mensLadder';
+import mensGames from './routes/mensGames';
 
 const app = express();
-const PORT = 4000;
 
-// Middleware
-app.use(cors()); // allow requests from your frontend
+app.use(cors());
 app.use(express.json());
 
-// Routes
-app.use("/users", usersRouter);
+app.use('/api/mens/ladder', mensLadder);
+app.use('/api/mens/games', mensGames);
 
-// Start server
+const PORT = 5001;
 app.listen(PORT, () => {
-  console.log(`Backend server running on http://localhost:${PORT}`);
+  console.log(`Backend running on http://localhost:${PORT}`);
 });
