@@ -1,5 +1,6 @@
-// frontend/app/layout.tsx
+import { Header } from '@/components/Header';
 import './globals.css';
+import { Footer } from '@/components/Footer';
 
 export const metadata = {
   title: 'Westgate Sindjelic',
@@ -13,7 +14,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body className="app-container">
+        <Header />
+        <main className="app-content">{children}</main>
+        <Footer />
+      </body>
     </html>
   );
 }
