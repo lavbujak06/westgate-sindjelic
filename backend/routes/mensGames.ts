@@ -39,13 +39,6 @@ router.get('/', async (_req: Request, res: Response) => {
     });
 
     console.log(`Successfully scraped ${games.length} games.`);
-    console.log(`Successfully scraped ${games[0].round} round.`);
-    console.log(`Successfully scraped ${games[1].date} date.`);
-    console.log(`Successfully scraped ${games[2].time} time.`);
-    console.log(`Successfully scraped ${games[3].venue} venue.`);
-    console.log(`Successfully scraped ${games[4].wscore} wscore.`);
-    console.log(`Successfully scraped ${games[5].opponent} opponent.`);
-    console.log(`Successfully scraped ${games[6].ascore} ascore.`);
     res.json(games);
   } catch (err) {
     console.error("Scraping Error:", err);

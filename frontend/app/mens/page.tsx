@@ -2,13 +2,26 @@
 import { useEffect, useState } from 'react';
 
 type Ladder = {
-  pos: string; team: string; p: string; w: string; d: string; 
-  l: string; f: string; a: string; gd: string; pts: string;
+  pos: string; 
+  team: string; 
+  p: string; 
+  w: string; 
+  d: string; 
+  l: string; 
+  f: string; 
+  a: string; 
+  gd: string; 
+  pts: string;
 };
 
 type Game = {
-  round: string; date: string; time: string; venue: string; 
-  wscore: string; opponent: string; ascore: string;
+  round: string; 
+  date: string; 
+  time: string; 
+  venue: string; 
+  wscore: string; 
+  opponent: string; 
+  ascore: string;
 };
 
 export default function MensPage() {

@@ -1,0 +1,145 @@
+22/12/2025
+
+Changes:
+
+/////////////////////////////////////(Backend)/////////////////////////////////////////////////////////////////////////
+    - server.ts file:
+        Is the entry point middleware pipeline, this file is like an Orchestrator. 
+        It initializes the server environment and defines how the application handles incoming traffic.
+
+        it creates the app which is the heart of this project
+        CORS (Cross-Origin Resource Sharing): This is critical middleware. 
+        By default, browsers block a frontend (Port 3000) from talking to a backend (Port 5001) for security. 
+        app.use(cors()) updates the HTTP headers to allow your Next.js app to fetch this data.
+
+        Routing (Modular Design): Instead of putting all code in one file, i've used Modular Routing. 
+        app.use('/api/mens/games', mensGames) tells Express: 
+        "If any request starts with this URL path, hand the controls over to the mensGames router."
+
+        The Listener: app.listen(PORT, ...) puts the CPU into a loop, "listening" for TCP packets on port 5001.
+
+
+
+
+ 
+    - mensGames.ts & mensLadder.ts:
+        These files are both "The scraper routers"
+
+        These files are Service Modules. They handle the specific logic for fetching and transforming data. 
+        They both follow a specific algorithmic pattern: Fetch → Parse → Extract → Serialize.
+
+        What it contains:
+
+        A. The networking layer (node-fetch):
+            Since the data i need for the ladder and the games is hosted on an external website (GameDay), my server acts as Proxy.
+            It uses fetch to make asynchronous HTTP GET request to the GameDay URL that is in the file.
+            Because of an external network call, i used async/await to prevent blocking the rest of the server while waiting for a response.
+
+        B. The parsing layer (cheerio):
+            GameDay website sends back raw HTML (a giant string of tags).
+            To extract data, i need a Document Object Model (DOM):
+                - cheerio.load(html) takes the messy string and turns it into a searchable tree structure
+                - the $ variable allows me to use jQuery-style selectors to traverse the DOM
+
+        C. The extracting logic (The loop):
+            The logic uses a Positional Extraction Algorithm:
+                1. Selection: $('table tr').each(...) iterates through every table row in the HTML.
+                2. Filtering: 
+                    const cols = $(row).find('td') finds the data cells. 
+                    The check if (cols.length >= 8) acts as a schema validator—it ensures we are looking at a real data row and not a header or a decorative spacer.
+                3. Indexing:
+                    Because the HTML table doesn't have "keys," we rely on the Index (the column's physical position).
+                        In mensGames.ts, i discovered that index [5] was a spacer, 
+                        so i mapped the Opposition Team to index [6] and the Away Score to index [7]
+                4. Sanitization: 
+                    .text().trim() is used to remove "noise" like \n (newlines) or &nbsp; (non-breaking spaces) that would mess up your frontend display.
+
+
+
+Summary of the Technical Flow
+    Next.js (Frontend) sends a request to http://localhost:5001/api/mens/games.
+
+    server.ts receives it and routes it to mensGames.ts.
+
+    mensGames.ts goes out to the internet, grabs the GameDay HTML.
+
+    Cheerio "reads" the table, picking out scores and teams based on their column numbers.
+
+    Express sends that cleaned list back to the frontend as a neat JSON package.
+
+
+Journal Reflection Prompt for You:
+
+"One of the biggest challenges in this build was HTML Table Structural Inconsistency. 
+Since I didn't own the data source, I had to reverse-engineer the table indices (cols[6], cols[7]) to ensure the 
+'Opposition' and 'Scores' didn't overlap, highlighting the importance of data sanitization in web scraping."                    
+
+
+
+
+
+
+
+
+
+
+
+/////////////////////////////////////(Frontend)/////////////////////////////////////////////////////////////////////////
+    - mens/page.tsx:
+        The client side page (UI):
+            This file is a Next.js Client Component. It acts as the bridge between the raw backend data (JSON) and the end-user's visual experience.
+
+            1. Type safety with Typescript interfaces (kind of like classes but for the fetched data):
+                At the top of the file i defined the type Ladder and type Game:
+                    Purpose: 
+                        This is Static Analysis. By defining these types, i ensure that the rest of the code 
+                        "knows" exactly what properties exist on the data objects (e.g., that a game has a wscore but not a score_home).
+            2. State Managment (useState):
+                The useState hooks initialize two memory "buckets": ladder and games.
+                    Initial State: 
+                        They start as empty arrays [].
+
+                    Reactivity: 
+                        In React, when i update these states using setLadder or setGames, 
+                        the framework detects the change and automatically triggers a re-render of the UI to show the new data.
+            3. The Lifecycle Hook (useEffect):
+                The useEffect hook handles Side Effects—actions that happen outside the visual rendering of the component
+
+                    Component Mounting: The empty dependency array [] at the end means this code runs exactly once when the page first loads.
+                    Asynchronous Fetching: It uses the browser's fetch API to send asynchronous requests to the backend.
+                    Promise Chaining: You use .then(res => res.json()) to parse the incoming stream of bytes into a usable JavaScript object (json)
+                    Validation: The check Array.isArray(data) && setLadder(data) is a defensive programming technique to ensure the app doesn't crash if the backend returns an error message instead of an array.
+
+        Declarative UI and data mapping (how the page is being presented):
+            The most powerful part of this file is how it handles the tables using the Map-Reduce pattern
+
+            A. The .map() Function:
+                Instead of writing 20 <tr> tags by hand, i used the .map() function to iterate over the data arrays.
+                    CS concept: i'm transforming an array of "Data Objects" into an array of "JSX Elements."
+                    The key Prop: You pass key={i} to each row. This allows React’s Virtual DOM to keep track of which items change, making the UI updates highly efficient.
+
+            B. Conditional formatting:
+                
+                - className="score-cell": 
+                    Applied to scores to ensure they follow the bold, centered styling defined in your globals.css.
+                - className="opponent-cell": 
+                    Used to give the opposition team name a distinct color and weight.
+                - Structural Precision: 
+                    By placing {g.opponent} in the 5th <td> and {g.ascore} in the 6th, you ensure that even if the backend indices change, the frontend view remains locked to the table headers.
+
+Summary of data flow:
+    Request: User hits the /mens page.
+
+    Effect: useEffect triggers a call to your Node.js/Express backend.
+
+    Processing: The backend scrapes the live GameDay site and formats the mess into clean JSON.
+
+    State Update: The frontend receives JSON, and useState updates the component's memory.
+
+    Render: React "maps" through the new state, generating the table rows instantly.
+
+Journal Reflection Prompt:
+
+"By utilizing TypeScript, I created a contract between my Scraper and my UI. 
+This ensured that when I had to shift indices in the backend to fix the 'Away Team' bug, 
+the frontend remained stable because it was programmed to look for specific keys (g.opponent, g.ascore) rather than relying on raw array positions."
