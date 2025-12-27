@@ -1,9 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
+import AccountMenu from "./AccountMenu";
 
 export const Header = () => {
   return (
     <header className="site-header">
+      {/* Logo */}
       <div className="logo-container">
         <Link href="/">
           <Image
@@ -16,11 +18,36 @@ export const Header = () => {
         </Link>
       </div>
 
+      {/* Navigation */}
       <nav className="header-nav">
-        <Link href="/mens">Men</Link>
-        <Link href="/women">Women</Link>
-        <Link href="/juniors">Juniors</Link>
+        {/* MEN */}
+        <div className="dropdown">
+          <button className="nav-button">Men ▼</button>
+          <div className="dropdown-content">
+            <Link href="/men/seniors">Seniors</Link>
+            <Link href="/men/reserves">Reserves</Link>
+          </div>
+        </div>
+
+        {/* WOMEN */}
+        <div className="dropdown">
+          <button className="nav-button">Women ▼</button>
+          <div className="dropdown-content">
+            <Link href="/women/seniors">Seniors</Link>
+            <Link href="/women/reserves">Reserves</Link>
+          </div>
+        </div>
+
+        {/* JUNIORS */}
+        <Link className="nav-link" href="/juniors">
+          Juniors
+        </Link>
       </nav>
+
+      {/* Account */}
+      <AccountMenu />
     </header>
   );
 };
+
+export default Header;
