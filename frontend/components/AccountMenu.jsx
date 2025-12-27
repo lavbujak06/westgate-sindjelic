@@ -1,4 +1,4 @@
-
+import Link from "next/link";
 
 const AccountMenu = () => {
   return (
@@ -15,10 +15,14 @@ const AccountMenu = () => {
         <legend>Quick Start</legend>
         <ul>
           <li>
-            <button>Log In</button>
+            <Link href="/signin">
+              <button>Log In</button>
+            </Link>
           </li>
           <li>
-            <button>Sign Up</button>
+            <Link href="/signup">
+              <button>Sign Up</button>
+            </Link>
           </li>
         </ul>
       </nav>
