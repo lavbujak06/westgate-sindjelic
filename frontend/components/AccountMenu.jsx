@@ -15,7 +15,7 @@ const AccountMenu = () => {
         <legend>Quick Start</legend>
         <ul>
           <li>
-            <Link href="/signin">
+            <Link href="/login">
               <button>Log In</button>
             </Link>
           </li>
