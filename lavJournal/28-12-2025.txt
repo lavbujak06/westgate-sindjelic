@@ -1,0 +1,152 @@
+28/12/2025
+Changes & Updates
+
+
+///////////////////////////////////// (Backend) //////////////////////////////////////////////////////////////////////////
+    Folder: backend/src
+    
+    Created a src folder to organize backend code properly.
+    
+        - server.ts
+            Entry point for the backend.
+            Initializes Express server and sets up CORS to allow the frontend to fetch data.
+            Registers modular routes like news.
+            Listens on port 5001.
+
+        - routes/news.ts
+            Defines API endpoints for the news resource.
+            Handles CRUD operations for news items.
+            Uses middleware requireAdmin.ts to protect certain routes.
+            Example flow: POST /news → requireAdmin verifies user → inserts into database → returns JSON response.
+
+        - middleware/requireAdmin.ts
+            Protects routes for admin-only access.
+            Checks JWT or Supabase session to ensure the user has admin privileges.
+            If unauthorized, returns 401.
+
+        - supabase.ts
+            Backend Supabase client.
+            Uses service role key for server-side privileged operations (e.g., creating/updating news without frontend restrictions).
+            Example:
+            import { createClient } from '@supabase/supabase-js';
+            export const supabase = createClient(process.env.SUPABASE_URL!, process.env.SUPABASE_SERVICE_ROLE_KEY!);
+
+
+
+///////////////////////////////////// (Frontend) //////////////////////////////////////////////////////////////////////////
+    Folder: frontend/src/app/admin
+
+    Created admin folder to hold admin-related pages.
+        
+        - dashboard/page.tsx
+            Admin landing page.
+            Checks if the user is authenticated and an admin using Supabase client.
+            Displays summary widgets or links to admin tools (like news management).\
+
+        - news/page.tsx
+            Admin list of all news.
+            Displays a table or cards of news items.
+            Allows editing, deleting, and toggling publish status.
+            Fetches news using Supabase client.
+            Implements useState and useEffect to manage and display data reactively.
+
+        - news/new/page.tsx
+            Admin “create news” page.
+            Contains a styled form with controlled inputs.
+            On submit, inserts new news item into Supabase database.
+            Uses the custom Button component for submission.
+
+        - news/edit/[id]/page.tsx
+            Admin “edit news” page.
+            Pre-fills form fields with data for the selected news ID.
+            Allows updating title/content/publish status.
+            Updates database via Supabase client.
+        
+        - components
+            Reusable UI components such as:
+            NewsCard.tsx → displays news items in card format.
+            Button.tsx → styled green button used in admin forms.
+            Form.tsx → styled form wrapper for creating/editing news.
+            Components are reusable between admin and frontend pages.
+        
+        - lib/supabaseClient.ts
+            Frontend Supabase client.
+            Uses NEXT_PUBLIC_SUPABASE_URL and NEXT_PUBLIC_SUPABASE_ANON_KEY.
+            Example:
+                import { createClient } from '@supabase/supabase-js';
+                export const supabaseClient = createClient(
+                process.env.NEXT_PUBLIC_SUPABASE_URL!,
+                process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!);
+        
+        - .env.local
+            Stores environment variables for frontend.
+            Keys prefixed with NEXT_PUBLIC_ to allow access in client-side code.
+            Example:
+            NEXT_PUBLIC_SUPABASE_URL=https://your-supabase-url
+            NEXT_PUBLIC_SUPABASE_ANON_KEY=your-anon-key
+
+
+
+
+///////////////////////////////////// Supabase Overview //////////////////////////////////////////////////////////////////////////
+
+            Supabase is a Backend-as-a-Service (BaaS) built on PostgreSQL.
+            It provides the database, authentication, storage, and real-time subscriptions out of the box.
+
+
+        Key Features Used in This Project:
+            
+            - Database (PostgreSQL)
+                Stores news table with columns like:
+                    id (uuid)
+                    title (text)
+                    content (text)
+                    published (boolean)
+                    created_at / updated_at (timestamps)
+                    Admin can insert, update, and toggle publish status.
+            
+            - Authentication
+                Supabase Auth manages user accounts.
+                Session object returned by Supabase client is used to determine admin access.
+                Frontend checks session before allowing sensitive operations.
+            
+            - Client vs Server Usage
+                Frontend (supabaseClient)
+                    Uses anon key.
+                    Only allowed operations exposed to users (public news fetching, login, signup).
+
+                Backend (supabase)
+                    Uses service role key.
+                    Full access for admin operations (create, update, delete news).
+            
+            - Realtime & API
+                Every operation is done via the Supabase REST or JavaScript client.
+                Fetch → Manipulate → Insert/Update/Delete → Reflect in frontend using React state.
+
+
+
+///////////////////////////////////// Reflection  //////////////////////////////////////////////////////////////////////////////
+
+
+Technical Flow Example (News Management):
+        1. Admin navigates to /admin/news/new.
+        2. Fills out form and clicks the green Create button.
+        3. Frontend supabaseClient sends request to backend or directly to Supabase using service role key.
+        4. backend/src/routes/news.ts verifies admin (middleware requireAdmin.ts).
+        5. News item inserted into Supabase.
+        6. Page fetches updated list and updates UI using useState and useEffect.
+
+
+User Frontend Flow:
+        1. User visits /news.
+        2. useEffect triggers fetch of only published news items from Supabase.
+        3. News items displayed using NewsCard.tsx styled professionally.
+        4. User cannot edit, delete, or toggle publish status.
+
+
+Journal Reflection Prompt:
+        - All CRUD operations are properly separated between admin (protected) and user (read-only).
+        - Supabase allows seamless authentication and database access across frontend and backend.
+        - React state management ensures UI reflects database changes immediately.
+        - Custom components (Button, Form, NewsCard) promote code reuse and consistency.
+        - Backend modular routing ensures the API is maintainable and scalable.
