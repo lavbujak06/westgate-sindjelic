@@ -15,12 +15,12 @@ const AccountMenu = () => {
         <legend>Quick Start</legend>
         <ul>
           <li>
-            <Link href="/login">
+            <Link href="/pages/login">
               <button>Log In</button>
             </Link>
           </li>
           <li>
-            <Link href="/signup">
+            <Link href="/pages/signup">
               <button>Sign Up</button>
             </Link>
           </li>

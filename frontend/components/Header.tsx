@@ -24,8 +24,8 @@ export const Header = () => {
         <div className="dropdown">
           <button className="nav-button">Men ▼</button>
           <div className="dropdown-content">
-            <Link href="/men/seniors">Seniors</Link>
-            <Link href="/men/reserves">Reserves</Link>
+            <Link href="/pages/men/seniors">Seniors</Link>
+            <Link href="/pages/men/reserves">Reserves</Link>
           </div>
         </div>
 
@@ -33,13 +33,13 @@ export const Header = () => {
         <div className="dropdown">
           <button className="nav-button">Women ▼</button>
           <div className="dropdown-content">
-            <Link href="/women/seniors">Seniors</Link>
-            <Link href="/women/reserves">Reserves</Link>
+            <Link href="/pages/women/seniors">Seniors</Link>
+            <Link href="/pages/women/reserves">Reserves</Link>
           </div>
         </div>
 
         {/* JUNIORS */}
-        <Link className="nav-link" href="/juniors">
+        <Link className="nav-link" href="/pages/juniors">
           Juniors
         </Link>
       </nav>

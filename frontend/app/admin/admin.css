@@ -1,0 +1,13 @@
+/* admin.css */
+body {
+  font-family: 'Inter', sans-serif;
+}
+
+aside {
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.05);
+}
+
+main {
+  background-color: #f0f4ff; /* light blue-ish content area */
+  border-radius: 0.5rem;
+}
