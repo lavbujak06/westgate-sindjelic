@@ -1,9 +1,6 @@
 {
-  "/page": "app/page.js",
-  "/pages/news/page": "app/pages/news/page.js",
   "/pages/login/page": "app/pages/login/page.js",
-  "/pages/men/seniors/page": "app/pages/men/seniors/page.js",
   "/admin/dashboard/page": "app/admin/dashboard/page.js",
-  "/admin/news/new/page": "app/admin/news/new/page.js",
-  "/admin/news/page": "app/admin/news/page.js"
+  "/admin/news/page": "app/admin/news/page.js",
+  "/admin/accounts/page": "app/admin/accounts/page.js"
 }

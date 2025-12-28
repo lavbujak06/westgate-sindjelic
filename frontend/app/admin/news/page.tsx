@@ -4,8 +4,9 @@ import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { supabaseClient } from '@/lib/supabaseClient';
 import CreateButton from '@/components/CreateButton';
-import NewsCard from './components/NewsCard';
-import { News } from './types';
+// import NewsCard from './components/NewsCard';
+import NewsCard from '../components/NewsCard';
+import { News } from '../types';
 
 export default function AdminNewsPage() {
   const [news, setNews] = useState<News[]>([]);

@@ -1,1271 +1,1098 @@
-[00:00:01.519] Server  WARN    ⚠ The "middleware" file convention is deprecated. Please use "proxy" instead. Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
-[00:00:01.598] Server  LOG     ✓ Ready in 1334ms
-[00:00:02.855] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:00:10.006] Server  WARN    ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
-[00:00:10.412] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:00:11.989] Browser ERROR   You provided a `checked` prop to a form field without an `onChange` handler. This will render a read-only field. If the field should be mutable use `defaultChecked`. Otherwise, set either `onChange` or `readOnly`.
-[00:02:06.291] Server  ERROR   ⨯ TypeError: react__WEBPACK_IMPORTED_MODULE_1___default(...).createContext is not a function
-[00:02:06.421] Server  ERROR   ⨯ TypeError: createContext only works in Client Components. Add the "use client" directive at the top of the file to use it. Read more: https://nextjs.org/docs/messages/context-in-server-component
-[00:02:07.155] Server  ERROR   ⨯ TypeError: react__WEBPACK_IMPORTED_MODULE_1___default(...).createContext is not a function
-[00:02:07.284] Server  ERROR   ⨯ TypeError: createContext only works in Client Components. Add the "use client" directive at the top of the file to use it. Read more: https://nextjs.org/docs/messages/context-in-server-component
-[00:02:07.453] Server  ERROR   ⨯ TypeError: react__WEBPACK_IMPORTED_MODULE_1___default(...).createContext is not a function
-[00:02:07.618] Server  ERROR   ⨯ TypeError: react__WEBPACK_IMPORTED_MODULE_1___default(...).createContext is not a function
-[00:02:07.778] Server  ERROR   ⨯ TypeError: createContext only works in Client Components. Add the "use client" directive at the top of the file to use it. Read more: https://nextjs.org/docs/messages/context-in-server-component
-[00:02:07.920] Server  ERROR   ⨯ TypeError: createContext only works in Client Components. Add the "use client" directive at the top of the file to use it. Read more: https://nextjs.org/docs/messages/context-in-server-component
-[00:02:08.387] Browser ERROR   uncaughtError: TypeError: createContext only works in Client Components. Add the "use client" directive at the top of the file to use it. Read more: https://nextjs.org/docs/messages/context-in-server-component
-[00:03:45.474] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:05:10.105] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:05:10.545] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:05:11.016] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
-
-- A server/client branch `if (typeof window !== 'undefined')`.
-- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
-- Date formatting in a user's locale which doesn't match the server.
-- External changing data without sending a snapshot of it along with the HTML.
-- Invalid HTML tag nesting.
-
-It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
-
-%s%s https://react.dev/link/hydration-mismatch 
-
-  ...
-    <RenderFromTemplateContext>
-      <ScrollAndFocusHandler segmentPath={[...]}>
-        <InnerScrollAndFocusHandler segmentPath={[...]} focusAndScrollRef={{apply:false, ...}}>
-          <ErrorBoundary errorComponent={undefined} errorStyles={undefined} errorScripts={undefined}>
-            <LoadingBoundary name="news/" loading={null}>
-              <HTTPAccessFallbackBoundary notFound={undefined} forbidden={undefined} unauthorized={undefined}>
-                <RedirectBoundary>
-                  <RedirectErrorBoundary router={{...}}>
-                    <InnerLayoutRouter url="/pages/news" tree={[...]} params={{}} cacheNode={{rsc:<Fragment>, ...}} ...>
-                      <SegmentViewNode type="page" pagePath="pages/news...">
-                        <SegmentTrieNode>
-                        <ClientPageRoot Component={function NewsPage} serverProvidedParams={{...}}>
-                          <NewsPage params={Promise} searchParams={Promise}>
-                            <styled.div>
-                              <div
-+                               className="sc-hvigdm elXsXp"
--                               className="sc-dTvVRJ cDkDmY"
-                              >
-                                <h1>
-                                <p>
-                                <styled.div>
-                                  <div
-+                                   className="sc-fhHczv eoyJcf"
--                                   className="sc-jwTyAe fHLEjS"
-                                  >
-                      ...
-                    ...
-          ...
-
-[00:05:17.195] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:05:17.600] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:05:18.523] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:05:18.638] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
-
-- A server/client branch `if (typeof window !== 'undefined')`.
-- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
-- Date formatting in a user's locale which doesn't match the server.
-- External changing data without sending a snapshot of it along with the HTML.
-- Invalid HTML tag nesting.
-
-It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
-
-%s%s https://react.dev/link/hydration-mismatch 
-
-  ...
-    <HTTPAccessFallbackBoundary notFound={undefined} forbidden={undefined} unauthorized={undefined}>
-      <RedirectBoundary>
-        <RedirectErrorBoundary router={{...}}>
-          <InnerLayoutRouter url="/admin/news" tree={[...]} params={{}} cacheNode={{rsc:<Fragment>, ...}} ...>
-            <SegmentViewNode type="page" pagePath="admin/news...">
-              <SegmentTrieNode>
-              <ClientPageRoot Component={function AdminNewsPage} serverProvidedParams={{...}}>
-                <AdminNewsPage params={Promise} searchParams={Promise}>
-                  <div className="space-y-6">
-                    <LinkComponent href="/admin/new...">
-                      <a ref={function} onClick={function onClick} onMouseEnter={function onMouseEnter} ...>
-                        <CreateButton>
-                          <styled.div>
-                            <div
-+                             className="sc-bRKDuR eRYtPt"
--                             className="sc-ggWZvA kQSQpj"
-                            >
-                    ...
-            ...
-          ...
-
-[00:05:19.011] Browser ERROR   Failed to fetch news: {"code":"","details":"TypeError: Failed to fetch\n    at eval (webpack-internal:///(app-pages-browser)/../node_modules/@supabase/supabase-js/dist/index.mjs:158:22)\n    at eval (webpack-internal:///(app-pages-browser)/../node_modules/@supabase/supabase-js/dist/index.mjs:172:10)\n    at async fetchNews (webpack-internal:///(app-pages-browser)/./app/pages/news/page.tsx:21:33)","hint":"","message":"TypeError: Failed to fetch"}
-[00:05:19.548] Server  WARN    ⚠ ./app/admin/dashboard/page.tsx
-Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
-
-Import trace for requested module:
-./app/admin/dashboard/page.tsx
-
-./app/admin/dashboard/page.tsx
-Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
-
-Import trace for requested module:
-./app/admin/dashboard/page.tsx
-
-./app/admin/dashboard/page.tsx
-Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
-
-Import trace for requested module:
-./app/admin/dashboard/page.tsx
-
-./app/admin/dashboard/page.tsx
-Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
-
-Import trace for requested module:
-./app/admin/dashboard/page.tsx
-[00:05:19.688] Browser WARN    ./app/admin/dashboard/page.tsx
-Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
-
-Import trace for requested module:
-./app/admin/dashboard/page.tsx
-[00:05:19.688] Browser WARN    ./app/admin/dashboard/page.tsx
-Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
-
-Import trace for requested module:
-./app/admin/dashboard/page.tsx
-[00:05:19.842] Browser ERROR   {"code":"","details":"TypeError: Failed to fetch\n    at eval (webpack-internal:///(app-pages-browser)/../node_modules/@supabase/supabase-js/dist/index.mjs:158:22)\n    at eval (webpack-internal:///(app-pages-browser)/../node_modules/@supabase/supabase-js/dist/index.mjs:172:10)\n    at async fetchNews (webpack-internal:///(app-pages-browser)/./app/admin/news/page.tsx:24:33)","hint":"","message":"TypeError: Failed to fetch"}
-[00:05:19.842] Browser ERROR   unhandledRejection: TypeError: Cannot read properties of undefined (reading 'auth')
-[00:05:19.842] Browser ERROR   unhandledRejection: TypeError: Cannot read properties of undefined (reading 'auth')
-[00:05:20.010] Browser WARN    ./app/admin/dashboard/page.tsx
-Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
-
-Import trace for requested module:
-./app/admin/dashboard/page.tsx
-[00:05:20.010] Browser WARN    ./app/admin/dashboard/page.tsx
-Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
-
-Import trace for requested module:
-./app/admin/dashboard/page.tsx
-[00:05:22.188] Server  LOG     ○ Compiling /admin/dashboard ...
-[00:05:22.509] Browser ERROR   {"code":"","details":"TypeError: Failed to fetch\n    at eval (webpack-internal:///(app-pages-browser)/../node_modules/@supabase/supabase-js/dist/index.mjs:158:22)\n    at eval (webpack-internal:///(app-pages-browser)/../node_modules/@supabase/supabase-js/dist/index.mjs:172:10)\n    at async fetchNews (webpack-internal:///(app-pages-browser)/./app/admin/news/page.tsx:24:33)","hint":"","message":"TypeError: Failed to fetch"}
-[00:05:22.509] Browser ERROR   {"code":"","details":"TypeError: Failed to fetch\n    at eval (webpack-internal:///(app-pages-browser)/../node_modules/@supabase/supabase-js/dist/index.mjs:158:22)\n    at eval (webpack-internal:///(app-pages-browser)/../node_modules/@supabase/supabase-js/dist/index.mjs:172:10)\n    at async fetchNews (webpack-internal:///(app-pages-browser)/./app/admin/news/page.tsx:24:33)","hint":"","message":"TypeError: Failed to fetch"}
-[00:08:43.553] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:08:43.588] Browser WARN    ./app/admin/dashboard/page.tsx
-Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
-[00:08:43.588] Browser WARN    ./app/admin/dashboard/page.tsx
-Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
-[00:08:43.982] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:08:44.045] Browser WARN    ./app/admin/dashboard/page.tsx
-Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
-[00:08:44.045] Browser WARN    ./app/admin/dashboard/page.tsx
-Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
-[00:08:44.837] Server  WARN    ⚠ ./app/admin/dashboard/page.tsx
-Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
-
-Import trace for requested module:
-./app/admin/dashboard/page.tsx
-
-./app/admin/dashboard/page.tsx
-Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
-
-Import trace for requested module:
-./app/admin/dashboard/page.tsx
-
-./app/admin/dashboard/page.tsx
-Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
-
-Import trace for requested module:
-./app/admin/dashboard/page.tsx
-
-./app/admin/dashboard/page.tsx
-Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
-
-Import trace for requested module:
-./app/admin/dashboard/page.tsx
-[00:08:45.042] Browser WARN    ./app/admin/dashboard/page.tsx
-Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
-[00:08:45.042] Browser WARN    ./app/admin/dashboard/page.tsx
-Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
-[00:08:45.328] Server  WARN    ⚠ ./app/admin/dashboard/page.tsx
-Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
-
-Import trace for requested module:
-./app/admin/dashboard/page.tsx
-
-./app/admin/dashboard/page.tsx
-Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
-
-Import trace for requested module:
-./app/admin/dashboard/page.tsx
-
-./app/pages/login/page.tsx
-Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
-
-Import trace for requested module:
-./app/pages/login/page.tsx
-
-./app/pages/login/page.tsx
-Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
-
-Import trace for requested module:
-./app/pages/login/page.tsx
-
-./app/pages/login/page.tsx
-Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
-
-Import trace for requested module:
-./app/pages/login/page.tsx
-
-./app/pages/login/page.tsx
-Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
-
-Import trace for requested module:
-./app/pages/login/page.tsx
-[00:08:45.431] Browser WARN    ./app/admin/dashboard/page.tsx
-Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
-
-Import trace for requested module:
-./app/admin/dashboard/page.tsx
-[00:08:45.431] Browser WARN    ./app/admin/dashboard/page.tsx
-Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
-
-Import trace for requested module:
-./app/admin/dashboard/page.tsx
-[00:08:45.431] Browser WARN    ./app/pages/login/page.tsx
-Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
-
-Import trace for requested module:
-./app/pages/login/page.tsx
-[00:08:45.431] Browser WARN    ./app/pages/login/page.tsx
-Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
-
-Import trace for requested module:
-./app/pages/login/page.tsx
-[00:08:46.009] Browser WARN    ./app/admin/dashboard/page.tsx
-Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
-
-Import trace for requested module:
-./app/admin/dashboard/page.tsx
-[00:08:46.009] Browser WARN    ./app/admin/dashboard/page.tsx
-Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
-
-Import trace for requested module:
-./app/admin/dashboard/page.tsx
-[00:08:46.009] Browser WARN    ./app/pages/login/page.tsx
-Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
-
-Import trace for requested module:
-./app/pages/login/page.tsx
-[00:08:46.009] Browser WARN    ./app/pages/login/page.tsx
-Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
-
-Import trace for requested module:
-./app/pages/login/page.tsx
-[00:08:54.884] Browser ERROR   unhandledRejection: TypeError: Cannot read properties of undefined (reading 'auth')
-[00:09:59.092] Server  WARN    ⚠ ./app/admin/dashboard/page.tsx
-Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
-
-Import trace for requested module:
-./app/admin/dashboard/page.tsx
-
-./app/admin/dashboard/page.tsx
-Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
-
-Import trace for requested module:
-./app/admin/dashboard/page.tsx
-[00:10:00.010] Browser WARN    ./app/admin/dashboard/page.tsx
-Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
-
-Import trace for requested module:
-./app/admin/dashboard/page.tsx
-[00:10:00.011] Browser WARN    ./app/admin/dashboard/page.tsx
-Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
-
-Import trace for requested module:
-./app/admin/dashboard/page.tsx
-[00:10:00.011] Browser WARN    ./app/admin/dashboard/page.tsx
-Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
-
-Import trace for requested module:
-./app/admin/dashboard/page.tsx
-[00:10:00.011] Browser WARN    ./app/admin/dashboard/page.tsx
-Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
-
-Import trace for requested module:
-./app/admin/dashboard/page.tsx
-[00:10:01.729] Server  WARN    ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
-[00:10:01.729] Browser WARN    ./app/admin/dashboard/page.tsx
-Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
-
-Import trace for requested module:
-./app/admin/dashboard/page.tsx
-[00:10:01.730] Browser WARN    ./app/admin/dashboard/page.tsx
-Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
-
-Import trace for requested module:
-./app/admin/dashboard/page.tsx
-[00:10:02.044] Server  WARN    ⚠ ./app/admin/dashboard/page.tsx
-Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
-
-Import trace for requested module:
-./app/admin/dashboard/page.tsx
-
-./app/admin/dashboard/page.tsx
-Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
-
-Import trace for requested module:
-./app/admin/dashboard/page.tsx
-[00:10:02.326] Server  ERROR   ⨯ ReferenceError: impo is not defined
-[00:10:02.709] Browser WARN    ./app/admin/dashboard/page.tsx
-Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
-
-Import trace for requested module:
-./app/admin/dashboard/page.tsx
-[00:10:02.709] Browser WARN    ./app/admin/dashboard/page.tsx
-Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
-
-Import trace for requested module:
-./app/admin/dashboard/page.tsx
-[00:10:02.709] Browser WARN    ./app/admin/dashboard/page.tsx
-Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
-
-Import trace for requested module:
-./app/admin/dashboard/page.tsx
-[00:10:02.709] Browser WARN    ./app/admin/dashboard/page.tsx
-Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
-
-Import trace for requested module:
-./app/admin/dashboard/page.tsx
-[00:10:02.709] Browser WARN    ./app/admin/dashboard/page.tsx
-Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
-
-Import trace for requested module:
-./app/admin/dashboard/page.tsx
-[00:10:02.709] Browser WARN    ./app/admin/dashboard/page.tsx
-Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
-
-Import trace for requested module:
-./app/admin/dashboard/page.tsx
-[00:10:02.797] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:10:03.012] Browser ERROR   unhandledRejection: ReferenceError: impo is not defined
-[00:10:03.012] Browser WARN    ./app/admin/dashboard/page.tsx
-Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
-[00:10:03.012] Browser WARN    ./app/admin/dashboard/page.tsx
-Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
-[00:10:03.012] Browser ERROR   uncaughtError: ReferenceError: impo is not defined
-[00:10:03.251] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:10:04.011] Browser WARN    ./app/admin/dashboard/page.tsx
-Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
-[00:10:04.011] Browser WARN    ./app/admin/dashboard/page.tsx
-Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
-[00:10:04.014] Browser WARN    ./app/admin/dashboard/page.tsx
-Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
-[00:10:04.014] Browser WARN    ./app/admin/dashboard/page.tsx
-Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
-[00:10:05.672] Server  ERROR   ⨯ ./app/pages/login/page.tsx
-Error:   × Expected 'from', got 'import'
-   ╭─[/Users/lavbujak/Desktop/Sindjelic/westgate-sindjelic/frontend/app/pages/login/page.tsx:6:1]
- 3 │ import { useState } from 'react';
- 4 │ // import { supabase } from '@/lib/supabaseClient';
- 5 │ import
- 6 │ import { useRouter } from 'next/navigation';
-   · ──────
- 7 │ import Cookies from 'js-cookie'; // ✅ import js-cookie
- 8 │ 
- 9 │ export default function LoginPage() {
-   ╰────
+[00:00:01.495] Server  WARN    ⚠ The "middleware" file convention is deprecated. Please use "proxy" instead. Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
+[00:00:01.576] Server  LOG     ✓ Ready in 1317ms
+[00:00:01.589] Server  WARN    ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:00:07.867] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:20.872] Browser LOG     Login data: {"session":{"access_token":"eyJhbGciOiJFUzI1NiIsImtpZCI6IjdlNmIzNTQyLWM0MDEtNDc5OS04NzA2LTFkYTAwZGRjZjExZiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJodHRwczovL29jaWhtdWlqcWF3YXBtc3J1eml1LnN1cGFiYXNlLmNvL2F1dGgvdjEiLCJzdWIiOiJlYzExZDliMS0xMzQ0LTQ3MmItOTJmNS01OTI4Y2RmZmQyOWEiLCJhdWQiOiJhdXRoZW50aWNhdGVkIiwiZXhwIjoxNzY2OTMwNTk1LCJpYXQiOjE3NjY5MjY5OTUsImVtYWlsIjoiYnVqYWtsYXZAZ21haWwuY29tIiwicGhvbmUiOiIiLCJhcHBfbWV0YWRhdGEiOnsicHJvdmlkZXIiOiJlbWFpbCIsInByb3ZpZGVycyI6WyJlbWFpbCJdfSwidXNlcl9tZXRhZGF0YSI6eyJlbWFpbF92ZXJpZmllZCI6dHJ1ZX0sInJvbGUiOiJhdXRoZW50aWNhdGVkIiwiYWFsIjoiYWFsMSIsImFtciI6W3sibWV0aG9kIjoicGFzc3dvcmQiLCJ0aW1lc3RhbXAiOjE3NjY5MjY5OTV9XSwic2Vzc2lvbl9pZCI6IjBiNzE2OTJlLWYyMjctNDI5Ny1iM2Q1LTc0ZDVmZmRmYzU3MiIsImlzX2Fub255bW91cyI6ZmFsc2V9.h8OnBOBM0R2O-LjGMOnIdCSHKbBCf3vC3XIQ_cWW6_uNfGEuOY7wdn0EHWDWTONEN_ksM_a_X1Lolq6kwgxKuw","expires_at":1766930595,"expires_in":3600,"refresh_token":"t3py6wqreruf","token_type":"bearer","user":{"app_metadata":{"provider":"email","providers":["email"]},"aud":"authenticated","confirmed_at":"2025-12-28T04:03:40.086596Z","created_at":"2025-12-28T04:03:40.062411Z","email":"bujaklav@gmail.com","email_confirmed_at":"2025-12-28T04:03:40.086596Z","id":"ec11d9b1-1344-472b-92f5-5928cdffd29a","identities":[{"created_at":"2025-12-28T04:03:40.078039Z","email":"bujaklav@gmail.com","id":"ec11d9b1-1344-472b-92f5-5928cdffd29a","identity_data":"[Object]","identity_id":"6399d96e-144d-4baa-b1b3-88537159001d","last_sign_in_at":"2025-12-28T04:03:40.077985Z","provider":"email","updated_at":"2025-12-28T04:03:40.078039Z","user_id":"ec11d9b1-1344-472b-92f5-5928cdffd29a"}],"is_anonymous":false,"last_sign_in_at":"2025-12-28T13:03:15.026152549Z","phone":"","role":"authenticated","updated_at":"2025-12-28T13:03:15.082032Z","user_metadata":{"email_verified":true}},"weak_password":null},"user":{"app_metadata":{"provider":"email","providers":["email"]},"aud":"authenticated","confirmed_at":"2025-12-28T04:03:40.086596Z","created_at":"2025-12-28T04:03:40.062411Z","email":"bujaklav@gmail.com","email_confirmed_at":"2025-12-28T04:03:40.086596Z","id":"ec11d9b1-1344-472b-92f5-5928cdffd29a","identities":[{"created_at":"2025-12-28T04:03:40.078039Z","email":"bujaklav@gmail.com","id":"ec11d9b1-1344-472b-92f5-5928cdffd29a","identity_data":{"email":"bujaklav@gmail.com","email_verified":false,"phone_verified":false,"sub":"ec11d9b1-1344-472b-92f5-5928cdffd29a"},"identity_id":"6399d96e-144d-4baa-b1b3-88537159001d","last_sign_in_at":"2025-12-28T04:03:40.077985Z","provider":"email","updated_at":"2025-12-28T04:03:40.078039Z","user_id":"ec11d9b1-1344-472b-92f5-5928cdffd29a"}],"is_anonymous":false,"last_sign_in_at":"2025-12-28T13:03:15.026152549Z","phone":"","role":"authenticated","updated_at":"2025-12-28T13:03:15.082032Z","user_metadata":{"email_verified":true}}}
+[00:00:20.872] Browser LOG     Login error: null
+[00:00:21.921] Browser LOG     Login data: {"session":{"access_token":"eyJhbGciOiJFUzI1NiIsImtpZCI6IjdlNmIzNTQyLWM0MDEtNDc5OS04NzA2LTFkYTAwZGRjZjExZiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJodHRwczovL29jaWhtdWlqcWF3YXBtc3J1eml1LnN1cGFiYXNlLmNvL2F1dGgvdjEiLCJzdWIiOiJlYzExZDliMS0xMzQ0LTQ3MmItOTJmNS01OTI4Y2RmZmQyOWEiLCJhdWQiOiJhdXRoZW50aWNhdGVkIiwiZXhwIjoxNzY2OTMwNTk2LCJpYXQiOjE3NjY5MjY5OTYsImVtYWlsIjoiYnVqYWtsYXZAZ21haWwuY29tIiwicGhvbmUiOiIiLCJhcHBfbWV0YWRhdGEiOnsicHJvdmlkZXIiOiJlbWFpbCIsInByb3ZpZGVycyI6WyJlbWFpbCJdfSwidXNlcl9tZXRhZGF0YSI6eyJlbWFpbF92ZXJpZmllZCI6dHJ1ZX0sInJvbGUiOiJhdXRoZW50aWNhdGVkIiwiYWFsIjoiYWFsMSIsImFtciI6W3sibWV0aG9kIjoicGFzc3dvcmQiLCJ0aW1lc3RhbXAiOjE3NjY5MjY5OTZ9XSwic2Vzc2lvbl9pZCI6ImJiYzRlNWQyLTQ2NGQtNDMzZi05MjgzLTA1N2Y1ZDk3ZDk3MyIsImlzX2Fub255bW91cyI6ZmFsc2V9.Eb3k6_VKful9ghTW7NulhY6PH4eMAw3O1WJ1xTYrtSj8QAdtZKTHmRf6LULz7f26tina3X2W_-HWZufRiCL7jA","expires_at":1766930596,"expires_in":3600,"refresh_token":"24wpgtwpvu57","token_type":"bearer","user":{"app_metadata":{"provider":"email","providers":["email"]},"aud":"authenticated","confirmed_at":"2025-12-28T04:03:40.086596Z","created_at":"2025-12-28T04:03:40.062411Z","email":"bujaklav@gmail.com","email_confirmed_at":"2025-12-28T04:03:40.086596Z","id":"ec11d9b1-1344-472b-92f5-5928cdffd29a","identities":[{"created_at":"2025-12-28T04:03:40.078039Z","email":"bujaklav@gmail.com","id":"ec11d9b1-1344-472b-92f5-5928cdffd29a","identity_data":"[Object]","identity_id":"6399d96e-144d-4baa-b1b3-88537159001d","last_sign_in_at":"2025-12-28T04:03:40.077985Z","provider":"email","updated_at":"2025-12-28T04:03:40.078039Z","user_id":"ec11d9b1-1344-472b-92f5-5928cdffd29a"}],"is_anonymous":false,"last_sign_in_at":"2025-12-28T13:03:16.153124442Z","phone":"","role":"authenticated","updated_at":"2025-12-28T13:03:16.155212Z","user_metadata":{"email_verified":true}},"weak_password":null},"user":{"app_metadata":{"provider":"email","providers":["email"]},"aud":"authenticated","confirmed_at":"2025-12-28T04:03:40.086596Z","created_at":"2025-12-28T04:03:40.062411Z","email":"bujaklav@gmail.com","email_confirmed_at":"2025-12-28T04:03:40.086596Z","id":"ec11d9b1-1344-472b-92f5-5928cdffd29a","identities":[{"created_at":"2025-12-28T04:03:40.078039Z","email":"bujaklav@gmail.com","id":"ec11d9b1-1344-472b-92f5-5928cdffd29a","identity_data":{"email":"bujaklav@gmail.com","email_verified":false,"phone_verified":false,"sub":"ec11d9b1-1344-472b-92f5-5928cdffd29a"},"identity_id":"6399d96e-144d-4baa-b1b3-88537159001d","last_sign_in_at":"2025-12-28T04:03:40.077985Z","provider":"email","updated_at":"2025-12-28T04:03:40.078039Z","user_id":"ec11d9b1-1344-472b-92f5-5928cdffd29a"}],"is_anonymous":false,"last_sign_in_at":"2025-12-28T13:03:16.153124442Z","phone":"","role":"authenticated","updated_at":"2025-12-28T13:03:16.155212Z","user_metadata":{"email_verified":true}}}
+[00:00:21.921] Browser LOG     Login error: null
+[00:04:41.000] Server  ERROR   ⨯ ./app/admin/accounts/page.tsx
+Error:   × Expected '}', got '<eof>'
+    ╭─[/Users/lavbujak/Desktop/Sindjelic/westgate-sindjelic/frontend/app/admin/accounts/page.tsx:12:1]
+  9 │ 
+ 10 │ export default function AdminAccountsPage() {
+ 11 │   const [accounts, setAccounts] = useState<AdminAccount[]>([]);
+ 12 │   const [loading, setLoading] = useState(false);
+    ·                                                 ▲
+ 13 │ 
+ 14 │   
+    ╰────
 
 Caused by:
     Syntax Error
 
 Import trace for requested module:
-./app/pages/login/page.tsx
-[00:10:06.010] Browser ERROR   ./app/pages/login/page.tsx
-Error:   × Expected 'from', got 'import'
-   ╭─[/Users/lavbujak/Desktop/Sindjelic/westgate-sindjelic/frontend/app/pages/login/page.tsx:6:1]
- 3 │ import { useState } from 'react';
- 4 │ // import { supabase } from '@/lib/supabaseClient';
- 5 │ import
- 6 │ import { useRouter } from 'next/navigation';
-   · ──────
- 7 │ import Cookies from 'js-cookie'; // ✅ import js-cookie
- 8 │ 
- 9 │ export default function LoginPage() {
-   ╰────
+./app/admin/accounts/page.tsx
+[00:04:41.549] Browser ERROR   ./app/admin/accounts/page.tsx
+Error:   × Expected '}', got '<eof>'
+    ╭─[/Users/lavbujak/Desktop/Sindjelic/westgate-sindjelic/frontend/app/admin/accounts/page.tsx:12:1]
+  9 │ 
+ 10 │ export default function AdminAccountsPage() {
+ 11 │   const [accounts, setAccounts] = useState<AdminAccount[]>([]);
+ 12 │   const [loading, setLoading] = useState(false);
+    ·                                                 ▲
+ 13 │ 
+ 14 │   
+    ╰────
 
 Caused by:
     Syntax Error
 
 Import trace for requested module:
-./app/pages/login/page.tsx
-[00:10:06.010] Browser ERROR   ./app/pages/login/page.tsx
-Error:   × Expected 'from', got 'import'
-   ╭─[/Users/lavbujak/Desktop/Sindjelic/westgate-sindjelic/frontend/app/pages/login/page.tsx:6:1]
- 3 │ import { useState } from 'react';
- 4 │ // import { supabase } from '@/lib/supabaseClient';
- 5 │ import
- 6 │ import { useRouter } from 'next/navigation';
-   · ──────
- 7 │ import Cookies from 'js-cookie'; // ✅ import js-cookie
- 8 │ 
- 9 │ export default function LoginPage() {
-   ╰────
+./app/admin/accounts/page.tsx
+[00:04:41.549] Browser ERROR   ./app/admin/accounts/page.tsx
+Error:   × Expected '}', got '<eof>'
+    ╭─[/Users/lavbujak/Desktop/Sindjelic/westgate-sindjelic/frontend/app/admin/accounts/page.tsx:12:1]
+  9 │ 
+ 10 │ export default function AdminAccountsPage() {
+ 11 │   const [accounts, setAccounts] = useState<AdminAccount[]>([]);
+ 12 │   const [loading, setLoading] = useState(false);
+    ·                                                 ▲
+ 13 │ 
+ 14 │   
+    ╰────
 
 Caused by:
     Syntax Error
 
 Import trace for requested module:
-./app/pages/login/page.tsx
-[00:10:06.010] Browser ERROR   ./app/pages/login/page.tsx
-Error:   × Expected 'from', got 'import'
-   ╭─[/Users/lavbujak/Desktop/Sindjelic/westgate-sindjelic/frontend/app/pages/login/page.tsx:6:1]
- 3 │ import { useState } from 'react';
- 4 │ // import { supabase } from '@/lib/supabaseClient';
- 5 │ import
- 6 │ import { useRouter } from 'next/navigation';
-   · ──────
- 7 │ import Cookies from 'js-cookie'; // ✅ import js-cookie
- 8 │ 
- 9 │ export default function LoginPage() {
-   ╰────
+./app/admin/accounts/page.tsx
+[00:04:48.616] Server  ERROR   ⨯ ./app/admin/accounts/page.tsx
+Error:   × Expected '}', got '<eof>'
+    ╭─[/Users/lavbujak/Desktop/Sindjelic/westgate-sindjelic/frontend/app/admin/accounts/page.tsx:14:1]
+ 11 │   const [accounts, setAccounts] = useState<AdminAccount[]>([]);
+ 12 │   const [loading, setLoading] = useState(false);
+ 13 │ 
+ 14 │   const fetchAccounts = async () => {
+    ╰────
 
 Caused by:
     Syntax Error
 
 Import trace for requested module:
-./app/pages/login/page.tsx
-[00:10:06.010] Browser ERROR   ./app/pages/login/page.tsx
-Error:   × Expected 'from', got 'import'
-   ╭─[/Users/lavbujak/Desktop/Sindjelic/westgate-sindjelic/frontend/app/pages/login/page.tsx:6:1]
- 3 │ import { useState } from 'react';
- 4 │ // import { supabase } from '@/lib/supabaseClient';
- 5 │ import
- 6 │ import { useRouter } from 'next/navigation';
-   · ──────
- 7 │ import Cookies from 'js-cookie'; // ✅ import js-cookie
- 8 │ 
- 9 │ export default function LoginPage() {
-   ╰────
+./app/admin/accounts/page.tsx
+[00:04:49.545] Browser ERROR   ./app/admin/accounts/page.tsx
+Error:   × Expected '}', got '<eof>'
+    ╭─[/Users/lavbujak/Desktop/Sindjelic/westgate-sindjelic/frontend/app/admin/accounts/page.tsx:14:1]
+ 11 │   const [accounts, setAccounts] = useState<AdminAccount[]>([]);
+ 12 │   const [loading, setLoading] = useState(false);
+ 13 │ 
+ 14 │   const fetchAccounts = async () => {
+    ╰────
 
 Caused by:
     Syntax Error
 
 Import trace for requested module:
-./app/pages/login/page.tsx
-[00:10:11.034] Server  WARN    ⚠ Fast Refresh had to perform a full reload due to a runtime error.
-[00:10:11.034] Browser WARN    ./app/admin/dashboard/page.tsx
-Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
-
-Import trace for requested module:
-./app/admin/dashboard/page.tsx
-[00:10:11.034] Browser WARN    ./app/admin/dashboard/page.tsx
-Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
-
-Import trace for requested module:
-./app/admin/dashboard/page.tsx
-[00:10:11.511] Server  ERROR   ⨯ ./app/pages/login/page.tsx
-Error:   × Expected 'from', got 'import'
-   ╭─[/Users/lavbujak/Desktop/Sindjelic/westgate-sindjelic/frontend/app/pages/login/page.tsx:6:1]
- 3 │ import { useState } from 'react';
- 4 │ // import { supabase } from '@/lib/supabaseClient';
- 5 │ import { su}
- 6 │ import { useRouter } from 'next/navigation';
-   · ──────
- 7 │ import Cookies from 'js-cookie'; // ✅ import js-cookie
- 8 │ 
- 9 │ export default function LoginPage() {
-   ╰────
+./app/admin/accounts/page.tsx
+[00:04:50.134] Server  ERROR   ⨯ ./app/admin/accounts/page.tsx
+Error:   × Expected '}', got '<eof>'
+    ╭─[/Users/lavbujak/Desktop/Sindjelic/westgate-sindjelic/frontend/app/admin/accounts/page.tsx:19:1]
+ 16 │     const { data, error } = await supabaseClient
+ 17 │       .from("admin_accounts")
+ 18 │       .select("*")
+ 19 │       .order("created_at", { ascending: false });
+    ╰────
 
 Caused by:
     Syntax Error
 
 Import trace for requested module:
-./app/pages/login/page.tsx
-[00:10:12.055] Browser WARN    ./app/admin/dashboard/page.tsx
-Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
-
-Import trace for requested module:
-./app/admin/dashboard/page.tsx
-[00:10:12.055] Browser WARN    ./app/admin/dashboard/page.tsx
-Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
-
-Import trace for requested module:
-./app/admin/dashboard/page.tsx
-[00:10:12.055] Browser ERROR   ./app/pages/login/page.tsx
-Error:   × Expected 'from', got 'import'
-   ╭─[/Users/lavbujak/Desktop/Sindjelic/westgate-sindjelic/frontend/app/pages/login/page.tsx:6:1]
- 3 │ import { useState } from 'react';
- 4 │ // import { supabase } from '@/lib/supabaseClient';
- 5 │ import { su}
- 6 │ import { useRouter } from 'next/navigation';
-   · ──────
- 7 │ import Cookies from 'js-cookie'; // ✅ import js-cookie
- 8 │ 
- 9 │ export default function LoginPage() {
-   ╰────
+./app/admin/accounts/page.tsx
+[00:04:50.545] Browser ERROR   ./app/admin/accounts/page.tsx
+Error:   × Expected '}', got '<eof>'
+    ╭─[/Users/lavbujak/Desktop/Sindjelic/westgate-sindjelic/frontend/app/admin/accounts/page.tsx:19:1]
+ 16 │     const { data, error } = await supabaseClient
+ 17 │       .from("admin_accounts")
+ 18 │       .select("*")
+ 19 │       .order("created_at", { ascending: false });
+    ╰────
 
 Caused by:
     Syntax Error
 
 Import trace for requested module:
-./app/pages/login/page.tsx
-[00:10:12.055] Browser WARN    ./app/admin/dashboard/page.tsx
-Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
-
-Import trace for requested module:
-./app/admin/dashboard/page.tsx
-[00:10:12.055] Browser WARN    ./app/admin/dashboard/page.tsx
-Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
-
-Import trace for requested module:
-./app/admin/dashboard/page.tsx
-[00:10:12.055] Browser WARN    ./app/admin/dashboard/page.tsx
-Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
-
-Import trace for requested module:
-./app/admin/dashboard/page.tsx
-[00:10:12.055] Browser WARN    ./app/admin/dashboard/page.tsx
-Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
-
-Import trace for requested module:
-./app/admin/dashboard/page.tsx
-[00:10:12.055] Browser ERROR   ./app/pages/login/page.tsx
-Error:   × Expected 'from', got 'import'
-   ╭─[/Users/lavbujak/Desktop/Sindjelic/westgate-sindjelic/frontend/app/pages/login/page.tsx:6:1]
- 3 │ import { useState } from 'react';
- 4 │ // import { supabase } from '@/lib/supabaseClient';
- 5 │ import { su}
- 6 │ import { useRouter } from 'next/navigation';
-   · ──────
- 7 │ import Cookies from 'js-cookie'; // ✅ import js-cookie
- 8 │ 
- 9 │ export default function LoginPage() {
-   ╰────
+./app/admin/accounts/page.tsx
+[00:04:51.403] Server  ERROR   ⨯ ./app/admin/accounts/page.tsx
+Error:   × Expected '}', got '<eof>'
+    ╭─[/Users/lavbujak/Desktop/Sindjelic/westgate-sindjelic/frontend/app/admin/accounts/page.tsx:18:1]
+ 15 │     setLoading(true);
+ 16 │     const { data, error } = await supabaseClient
+ 17 │       .from("admin_accounts")
+ 18 │       .select("*")
+    ·                   ▲
+ 19 │       
+    ╰────
 
 Caused by:
     Syntax Error
 
 Import trace for requested module:
-./app/pages/login/page.tsx
-[00:10:12.055] Browser ERROR   ./app/pages/login/page.tsx
-Error:   × Expected 'from', got 'import'
-   ╭─[/Users/lavbujak/Desktop/Sindjelic/westgate-sindjelic/frontend/app/pages/login/page.tsx:6:1]
- 3 │ import { useState } from 'react';
- 4 │ // import { supabase } from '@/lib/supabaseClient';
- 5 │ import { su}
- 6 │ import { useRouter } from 'next/navigation';
-   · ──────
- 7 │ import Cookies from 'js-cookie'; // ✅ import js-cookie
- 8 │ 
- 9 │ export default function LoginPage() {
-   ╰────
+./app/admin/accounts/page.tsx
+[00:04:51.546] Browser ERROR   ./app/admin/accounts/page.tsx
+Error:   × Expected '}', got '<eof>'
+    ╭─[/Users/lavbujak/Desktop/Sindjelic/westgate-sindjelic/frontend/app/admin/accounts/page.tsx:18:1]
+ 15 │     setLoading(true);
+ 16 │     const { data, error } = await supabaseClient
+ 17 │       .from("admin_accounts")
+ 18 │       .select("*")
+    ·                   ▲
+ 19 │       
+    ╰────
 
 Caused by:
     Syntax Error
 
 Import trace for requested module:
-./app/pages/login/page.tsx
-[00:10:12.055] Browser WARN    ./app/admin/dashboard/page.tsx
-Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
-
-Import trace for requested module:
-./app/admin/dashboard/page.tsx
-[00:10:12.055] Browser WARN    ./app/admin/dashboard/page.tsx
-Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
-
-Import trace for requested module:
-./app/admin/dashboard/page.tsx
-[00:10:12.055] Browser WARN    ./app/admin/dashboard/page.tsx
-Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
-
-Import trace for requested module:
-./app/admin/dashboard/page.tsx
-[00:10:12.055] Browser WARN    ./app/admin/dashboard/page.tsx
-Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
-
-Import trace for requested module:
-./app/admin/dashboard/page.tsx
-[00:10:12.055] Browser ERROR   ./app/pages/login/page.tsx
-Error:   × Expected 'from', got 'import'
-   ╭─[/Users/lavbujak/Desktop/Sindjelic/westgate-sindjelic/frontend/app/pages/login/page.tsx:6:1]
- 3 │ import { useState } from 'react';
- 4 │ // import { supabase } from '@/lib/supabaseClient';
- 5 │ import { su}
- 6 │ import { useRouter } from 'next/navigation';
-   · ──────
- 7 │ import Cookies from 'js-cookie'; // ✅ import js-cookie
- 8 │ 
- 9 │ export default function LoginPage() {
-   ╰────
+./app/admin/accounts/page.tsx
+[00:04:53.261] Server  ERROR   ⨯ ./app/admin/accounts/page.tsx
+Error:   × Expected '}', got '<eof>'
+    ╭─[/Users/lavbujak/Desktop/Sindjelic/westgate-sindjelic/frontend/app/admin/accounts/page.tsx:18:1]
+ 15 │     setLoading(true);
+ 16 │     const { data, error } = await supabaseClient
+ 17 │       .from("admin_accounts")
+ 18 │       .select("*")
+    ╰────
 
 Caused by:
     Syntax Error
 
 Import trace for requested module:
-./app/pages/login/page.tsx
-[00:10:12.254] Server  ERROR   ⨯ ./app/pages/login/page.tsx
-Error:   × Expected 'from', got 'import'
-   ╭─[/Users/lavbujak/Desktop/Sindjelic/westgate-sindjelic/frontend/app/pages/login/page.tsx:6:1]
- 3 │ import { useState } from 'react';
- 4 │ // import { supabase } from '@/lib/supabaseClient';
- 5 │ import { supa}
- 6 │ import { useRouter } from 'next/navigation';
-   · ──────
- 7 │ import Cookies from 'js-cookie'; // ✅ import js-cookie
- 8 │ 
- 9 │ export default function LoginPage() {
-   ╰────
+./app/admin/accounts/page.tsx
+[00:04:53.546] Browser ERROR   ./app/admin/accounts/page.tsx
+Error:   × Expected '}', got '<eof>'
+    ╭─[/Users/lavbujak/Desktop/Sindjelic/westgate-sindjelic/frontend/app/admin/accounts/page.tsx:18:1]
+ 15 │     setLoading(true);
+ 16 │     const { data, error } = await supabaseClient
+ 17 │       .from("admin_accounts")
+ 18 │       .select("*")
+    ╰────
 
 Caused by:
     Syntax Error
 
 Import trace for requested module:
-./app/pages/login/page.tsx
-[00:10:12.478] Browser ERROR   uncaughtError: ModuleBuildError: Module build failed (from ./node_modules/next/dist/build/webpack/loaders/next-swc-loader.js):
-Error:   × Expected 'from', got 'import'
-   ╭─[/Users/lavbujak/Desktop/Sindjelic/westgate-sindjelic/frontend/app/pages/login/page.tsx:6:1]
- 3 │ import { useState } from 'react';
- 4 │ // import { supabase } from '@/lib/supabaseClient';
- 5 │ import { su}
- 6 │ import { useRouter } from 'next/navigation';
-   · ──────
- 7 │ import Cookies from 'js-cookie'; // ✅ import js-cookie
- 8 │ 
- 9 │ export default function LoginPage() {
-   ╰────
-
-
-Caused by:
-    Syntax Error
-[00:10:12.482] Browser WARN    ./app/admin/dashboard/page.tsx
-Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
-
-Import trace for requested module:
-./app/admin/dashboard/page.tsx
-[00:10:12.483] Browser WARN    ./app/admin/dashboard/page.tsx
-Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
-
-Import trace for requested module:
-./app/admin/dashboard/page.tsx
-[00:10:12.483] Browser ERROR   ./app/pages/login/page.tsx
-Error:   × Expected 'from', got 'import'
-   ╭─[/Users/lavbujak/Desktop/Sindjelic/westgate-sindjelic/frontend/app/pages/login/page.tsx:6:1]
- 3 │ import { useState } from 'react';
- 4 │ // import { supabase } from '@/lib/supabaseClient';
- 5 │ import { supa}
- 6 │ import { useRouter } from 'next/navigation';
-   · ──────
- 7 │ import Cookies from 'js-cookie'; // ✅ import js-cookie
- 8 │ 
- 9 │ export default function LoginPage() {
-   ╰────
+./app/admin/accounts/page.tsx
+[00:04:56.382] Server  ERROR   ⨯ ./app/admin/accounts/page.tsx
+Error:   × Expected '}', got '<eof>'
+    ╭─[/Users/lavbujak/Desktop/Sindjelic/westgate-sindjelic/frontend/app/admin/accounts/page.tsx:18:1]
+ 15 │     setLoading(true);
+ 16 │     const { data, error } = await supabaseClient
+ 17 │       .from("admin")
+ 18 │       .select("*")
+    ╰────
 
 Caused by:
     Syntax Error
 
 Import trace for requested module:
-./app/pages/login/page.tsx
-[00:10:12.810] Browser ERROR   uncaughtError: ModuleBuildError: Module build failed (from ./node_modules/next/dist/build/webpack/loaders/next-swc-loader.js):
-Error:   × Expected 'from', got 'import'
-   ╭─[/Users/lavbujak/Desktop/Sindjelic/westgate-sindjelic/frontend/app/pages/login/page.tsx:6:1]
- 3 │ import { useState } from 'react';
- 4 │ // import { supabase } from '@/lib/supabaseClient';
- 5 │ import { supa}
- 6 │ import { useRouter } from 'next/navigation';
-   · ──────
- 7 │ import Cookies from 'js-cookie'; // ✅ import js-cookie
- 8 │ 
- 9 │ export default function LoginPage() {
-   ╰────
-
+./app/admin/accounts/page.tsx
+[00:04:56.546] Browser ERROR   ./app/admin/accounts/page.tsx
+Error:   × Expected '}', got '<eof>'
+    ╭─[/Users/lavbujak/Desktop/Sindjelic/westgate-sindjelic/frontend/app/admin/accounts/page.tsx:18:1]
+ 15 │     setLoading(true);
+ 16 │     const { data, error } = await supabaseClient
+ 17 │       .from("admin")
+ 18 │       .select("*")
+    ╰────
 
 Caused by:
     Syntax Error
-[00:10:13.029] Browser ERROR   ./app/pages/login/page.tsx
-Error:   × Expected 'from', got 'import'
-   ╭─[/Users/lavbujak/Desktop/Sindjelic/westgate-sindjelic/frontend/app/pages/login/page.tsx:6:1]
- 3 │ import { useState } from 'react';
- 4 │ // import { supabase } from '@/lib/supabaseClient';
- 5 │ import { supa}
- 6 │ import { useRouter } from 'next/navigation';
-   · ──────
- 7 │ import Cookies from 'js-cookie'; // ✅ import js-cookie
- 8 │ 
- 9 │ export default function LoginPage() {
-   ╰────
 
-Caused by:
-    Syntax Error
-[00:10:13.030] Browser ERROR   ./app/pages/login/page.tsx
-Error:   × Expected 'from', got 'import'
-   ╭─[/Users/lavbujak/Desktop/Sindjelic/westgate-sindjelic/frontend/app/pages/login/page.tsx:6:1]
- 3 │ import { useState } from 'react';
- 4 │ // import { supabase } from '@/lib/supabaseClient';
- 5 │ import { supa}
- 6 │ import { useRouter } from 'next/navigation';
-   · ──────
- 7 │ import Cookies from 'js-cookie'; // ✅ import js-cookie
- 8 │ 
- 9 │ export default function LoginPage() {
-   ╰────
-
-Caused by:
-    Syntax Error
-[00:10:13.030] Browser ERROR   ./app/pages/login/page.tsx
-Error:   × Expected 'from', got 'import'
-   ╭─[/Users/lavbujak/Desktop/Sindjelic/westgate-sindjelic/frontend/app/pages/login/page.tsx:6:1]
- 3 │ import { useState } from 'react';
- 4 │ // import { supabase } from '@/lib/supabaseClient';
- 5 │ import { supa}
- 6 │ import { useRouter } from 'next/navigation';
-   · ──────
- 7 │ import Cookies from 'js-cookie'; // ✅ import js-cookie
- 8 │ 
- 9 │ export default function LoginPage() {
-   ╰────
-
-Caused by:
-    Syntax Error
-[00:10:13.473] Server  WARN    ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
-[00:10:13.473] Browser WARN    ./app/admin/dashboard/page.tsx
-Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
-
-Import trace for requested module:
-./app/admin/dashboard/page.tsx
-[00:10:13.473] Browser WARN    ./app/admin/dashboard/page.tsx
-Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
-
-Import trace for requested module:
-./app/admin/dashboard/page.tsx
-[00:10:13.485] Server  WARN    ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
-[00:10:13.485] Browser WARN    ./app/admin/dashboard/page.tsx
-Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
-
-Import trace for requested module:
-./app/admin/dashboard/page.tsx
-[00:10:13.485] Browser WARN    ./app/admin/dashboard/page.tsx
-Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
-
-Import trace for requested module:
-./app/admin/dashboard/page.tsx
-[00:10:13.897] Server  WARN    ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
-[00:10:13.898] Browser WARN    ./app/admin/dashboard/page.tsx
-Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
-
-Import trace for requested module:
-./app/admin/dashboard/page.tsx
-[00:10:13.898] Browser WARN    ./app/admin/dashboard/page.tsx
-Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
-
-Import trace for requested module:
-./app/admin/dashboard/page.tsx
-[00:10:13.948] Server  WARN    ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
-[00:10:13.948] Browser WARN    ./app/admin/dashboard/page.tsx
-Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
-
-Import trace for requested module:
-./app/admin/dashboard/page.tsx
-[00:10:13.948] Browser WARN    ./app/admin/dashboard/page.tsx
-Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
-
-Import trace for requested module:
-./app/admin/dashboard/page.tsx
-[00:10:14.086] Server  WARN    ⚠ ./app/admin/dashboard/page.tsx
-Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
-
-Import trace for requested module:
-./app/admin/dashboard/page.tsx
-
-./app/admin/dashboard/page.tsx
-Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
-
-Import trace for requested module:
-./app/admin/dashboard/page.tsx
-[00:10:14.446] Server  WARN    ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
-[00:10:14.447] Server  WARN    ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
-[00:10:14.940] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:10:14.953] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:10:16.017] Browser WARN    ./app/admin/dashboard/page.tsx
-Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
-[00:10:16.017] Browser WARN    ./app/admin/dashboard/page.tsx
-Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
-[00:10:16.017] Browser WARN    ./app/admin/dashboard/page.tsx
-Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
-[00:10:16.017] Browser WARN    ./app/admin/dashboard/page.tsx
-Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
-[00:10:16.017] Browser WARN    ./app/admin/dashboard/page.tsx
-Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
-[00:10:16.017] Browser WARN    ./app/admin/dashboard/page.tsx
-Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
-[00:10:22.473] Server  WARN    ⚠ ./app/admin/dashboard/page.tsx
-Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
-
-Import trace for requested module:
-./app/admin/dashboard/page.tsx
-
-./app/admin/dashboard/page.tsx
-Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
-
-Import trace for requested module:
-./app/admin/dashboard/page.tsx
-
-./app/pages/login/page.tsx
-Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
-
-Import trace for requested module:
-./app/pages/login/page.tsx
-
-./app/pages/login/page.tsx
-Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
-
-Import trace for requested module:
-./app/pages/login/page.tsx
-
-./app/pages/login/page.tsx
-Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
-
-Import trace for requested module:
-./app/pages/login/page.tsx
-
-./app/pages/login/page.tsx
-Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
-
-Import trace for requested module:
-./app/pages/login/page.tsx
-[00:10:23.011] Browser WARN    ./app/admin/dashboard/page.tsx
-Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
-
-Import trace for requested module:
-./app/admin/dashboard/page.tsx
-[00:10:23.011] Browser WARN    ./app/admin/dashboard/page.tsx
-Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
-
-Import trace for requested module:
-./app/admin/dashboard/page.tsx
-[00:10:23.011] Browser WARN    ./app/pages/login/page.tsx
-Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
-
-Import trace for requested module:
-./app/pages/login/page.tsx
-[00:10:23.011] Browser WARN    ./app/pages/login/page.tsx
-Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
-
-Import trace for requested module:
-./app/pages/login/page.tsx
-[00:10:23.011] Browser WARN    ./app/admin/dashboard/page.tsx
-Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
-
-Import trace for requested module:
-./app/admin/dashboard/page.tsx
-[00:10:23.011] Browser WARN    ./app/admin/dashboard/page.tsx
-Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
-
-Import trace for requested module:
-./app/admin/dashboard/page.tsx
-[00:10:23.011] Browser WARN    ./app/pages/login/page.tsx
-Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
-
-Import trace for requested module:
-./app/pages/login/page.tsx
-[00:10:23.011] Browser WARN    ./app/pages/login/page.tsx
-Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
-
-Import trace for requested module:
-./app/pages/login/page.tsx
-[00:10:23.011] Browser WARN    ./app/admin/dashboard/page.tsx
-Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
-
-Import trace for requested module:
-./app/admin/dashboard/page.tsx
-[00:10:23.011] Browser WARN    ./app/admin/dashboard/page.tsx
-Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
-
-Import trace for requested module:
-./app/admin/dashboard/page.tsx
-[00:10:23.011] Browser WARN    ./app/pages/login/page.tsx
-Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
-
-Import trace for requested module:
-./app/pages/login/page.tsx
-[00:10:23.011] Browser WARN    ./app/pages/login/page.tsx
-Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
-
-Import trace for requested module:
-./app/pages/login/page.tsx
-[00:10:23.011] Browser WARN    ./app/admin/dashboard/page.tsx
-Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
-
-Import trace for requested module:
-./app/admin/dashboard/page.tsx
-[00:10:23.011] Browser WARN    ./app/admin/dashboard/page.tsx
-Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
-
-Import trace for requested module:
-./app/admin/dashboard/page.tsx
-[00:10:23.011] Browser WARN    ./app/pages/login/page.tsx
-Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
-
-Import trace for requested module:
-./app/pages/login/page.tsx
-[00:10:23.011] Browser WARN    ./app/pages/login/page.tsx
-Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
-
-Import trace for requested module:
-./app/pages/login/page.tsx
-[00:10:24.271] Server  WARN    ⚠ ./app/admin/dashboard/page.tsx
-Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
-
-Import trace for requested module:
-./app/admin/dashboard/page.tsx
-
-./app/admin/dashboard/page.tsx
-Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
-
-Import trace for requested module:
-./app/admin/dashboard/page.tsx
-[00:10:25.011] Browser WARN    ./app/admin/dashboard/page.tsx
-Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
-
-Import trace for requested module:
-./app/admin/dashboard/page.tsx
-[00:10:25.011] Browser WARN    ./app/admin/dashboard/page.tsx
-Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
-
-Import trace for requested module:
-./app/admin/dashboard/page.tsx
-[00:10:25.011] Browser WARN    ./app/admin/dashboard/page.tsx
-Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
-
-Import trace for requested module:
-./app/admin/dashboard/page.tsx
-[00:10:25.011] Browser WARN    ./app/admin/dashboard/page.tsx
-Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
-
-Import trace for requested module:
-./app/admin/dashboard/page.tsx
-[00:10:27.959] Server  WARN    ⚠ ./app/admin/dashboard/page.tsx
-Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
-
-Import trace for requested module:
-./app/admin/dashboard/page.tsx
-
-./app/admin/dashboard/page.tsx
-Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
-
-Import trace for requested module:
-./app/admin/dashboard/page.tsx
-[00:10:29.010] Browser WARN    ./app/admin/dashboard/page.tsx
-Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
-
-Import trace for requested module:
-./app/admin/dashboard/page.tsx
-[00:10:29.010] Browser WARN    ./app/admin/dashboard/page.tsx
-Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
-
-Import trace for requested module:
-./app/admin/dashboard/page.tsx
-[00:10:29.010] Browser WARN    ./app/admin/dashboard/page.tsx
-Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
-
-Import trace for requested module:
-./app/admin/dashboard/page.tsx
-[00:10:29.010] Browser WARN    ./app/admin/dashboard/page.tsx
-Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
-
-Import trace for requested module:
-./app/admin/dashboard/page.tsx
-[00:10:32.512] Server  WARN    ⚠ ./app/admin/dashboard/page.tsx
-Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
-
-Import trace for requested module:
-./app/admin/dashboard/page.tsx
-
-./app/admin/dashboard/page.tsx
-Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
-
-Import trace for requested module:
-./app/admin/dashboard/page.tsx
-[00:10:33.010] Browser WARN    ./app/admin/dashboard/page.tsx
-Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
-
-Import trace for requested module:
-./app/admin/dashboard/page.tsx
-[00:10:33.010] Browser WARN    ./app/admin/dashboard/page.tsx
-Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
-
-Import trace for requested module:
-./app/admin/dashboard/page.tsx
-[00:10:33.010] Browser WARN    ./app/admin/dashboard/page.tsx
-Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
-
-Import trace for requested module:
-./app/admin/dashboard/page.tsx
-[00:10:33.010] Browser WARN    ./app/admin/dashboard/page.tsx
-Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
-
-Import trace for requested module:
-./app/admin/dashboard/page.tsx
-[00:10:33.010] Browser WARN    ./app/admin/dashboard/page.tsx
-Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
-
-Import trace for requested module:
-./app/admin/dashboard/page.tsx
-[00:10:33.010] Browser WARN    ./app/admin/dashboard/page.tsx
-Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
-
-Import trace for requested module:
-./app/admin/dashboard/page.tsx
-[00:10:33.010] Browser WARN    ./app/admin/dashboard/page.tsx
-Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
-
-Import trace for requested module:
-./app/admin/dashboard/page.tsx
-[00:10:33.010] Browser WARN    ./app/admin/dashboard/page.tsx
-Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
-
-Import trace for requested module:
-./app/admin/dashboard/page.tsx
-[00:10:46.299] Browser LOG     Login data: {"session":{"access_token":"eyJhbGciOiJFUzI1NiIsImtpZCI6IjdlNmIzNTQyLWM0MDEtNDc5OS04NzA2LTFkYTAwZGRjZjExZiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJodHRwczovL29jaWhtdWlqcWF3YXBtc3J1eml1LnN1cGFiYXNlLmNvL2F1dGgvdjEiLCJzdWIiOiJlYzExZDliMS0xMzQ0LTQ3MmItOTJmNS01OTI4Y2RmZmQyOWEiLCJhdWQiOiJhdXRoZW50aWNhdGVkIiwiZXhwIjoxNzY2OTIyODU1LCJpYXQiOjE3NjY5MTkyNTUsImVtYWlsIjoiYnVqYWtsYXZAZ21haWwuY29tIiwicGhvbmUiOiIiLCJhcHBfbWV0YWRhdGEiOnsicHJvdmlkZXIiOiJlbWFpbCIsInByb3ZpZGVycyI6WyJlbWFpbCJdfSwidXNlcl9tZXRhZGF0YSI6eyJlbWFpbF92ZXJpZmllZCI6dHJ1ZX0sInJvbGUiOiJhdXRoZW50aWNhdGVkIiwiYWFsIjoiYWFsMSIsImFtciI6W3sibWV0aG9kIjoicGFzc3dvcmQiLCJ0aW1lc3RhbXAiOjE3NjY5MTkyNTV9XSwic2Vzc2lvbl9pZCI6ImVjMzlmN2U4LTg5ZDQtNDhmMi05YmNiLTZlMWE0NGI1ZDlmOSIsImlzX2Fub255bW91cyI6ZmFsc2V9.A6GT0S4BQPt3d5_Wg-qMMbRFDWQmTVkH06CUtWOE8sPsN2GQZcv3aV2DmfzcySlLWNQ-r4VDCQJC9DF3ye2xVg","expires_at":1766922855,"expires_in":3600,"refresh_token":"4kptbffnj3ji","token_type":"bearer","user":{"app_metadata":{"provider":"email","providers":["email"]},"aud":"authenticated","confirmed_at":"2025-12-28T04:03:40.086596Z","created_at":"2025-12-28T04:03:40.062411Z","email":"bujaklav@gmail.com","email_confirmed_at":"2025-12-28T04:03:40.086596Z","id":"ec11d9b1-1344-472b-92f5-5928cdffd29a","identities":[{"created_at":"2025-12-28T04:03:40.078039Z","email":"bujaklav@gmail.com","id":"ec11d9b1-1344-472b-92f5-5928cdffd29a","identity_data":"[Object]","identity_id":"6399d96e-144d-4baa-b1b3-88537159001d","last_sign_in_at":"2025-12-28T04:03:40.077985Z","provider":"email","updated_at":"2025-12-28T04:03:40.078039Z","user_id":"ec11d9b1-1344-472b-92f5-5928cdffd29a"}],"is_anonymous":false,"last_sign_in_at":"2025-12-28T10:54:15.727994518Z","phone":"","role":"authenticated","updated_at":"2025-12-28T10:54:15.775484Z","user_metadata":{"email_verified":true}},"weak_password":null},"user":{"app_metadata":{"provider":"email","providers":["email"]},"aud":"authenticated","confirmed_at":"2025-12-28T04:03:40.086596Z","created_at":"2025-12-28T04:03:40.062411Z","email":"bujaklav@gmail.com","email_confirmed_at":"2025-12-28T04:03:40.086596Z","id":"ec11d9b1-1344-472b-92f5-5928cdffd29a","identities":[{"created_at":"2025-12-28T04:03:40.078039Z","email":"bujaklav@gmail.com","id":"ec11d9b1-1344-472b-92f5-5928cdffd29a","identity_data":{"email":"bujaklav@gmail.com","email_verified":false,"phone_verified":false,"sub":"ec11d9b1-1344-472b-92f5-5928cdffd29a"},"identity_id":"6399d96e-144d-4baa-b1b3-88537159001d","last_sign_in_at":"2025-12-28T04:03:40.077985Z","provider":"email","updated_at":"2025-12-28T04:03:40.078039Z","user_id":"ec11d9b1-1344-472b-92f5-5928cdffd29a"}],"is_anonymous":false,"last_sign_in_at":"2025-12-28T10:54:15.727994518Z","phone":"","role":"authenticated","updated_at":"2025-12-28T10:54:15.775484Z","user_metadata":{"email_verified":true}}}
-[00:10:46.299] Browser LOG     Login error: null
-[00:10:46.967] Server  WARN    ⚠ ./app/admin/dashboard/page.tsx
-Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
-
-Import trace for requested module:
-./app/admin/dashboard/page.tsx
-
-./app/admin/dashboard/page.tsx
-Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
-
-Import trace for requested module:
-./app/admin/dashboard/page.tsx
-[00:10:47.289] Server  WARN    ⚠ ./app/admin/dashboard/page.tsx
-Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
-
-Import trace for requested module:
-./app/admin/dashboard/page.tsx
-
-./app/admin/dashboard/page.tsx
-Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
-
-Import trace for requested module:
-./app/admin/dashboard/page.tsx
-
-./app/admin/dashboard/page.tsx
-Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
-
-Import trace for requested module:
-./app/admin/dashboard/page.tsx
-
-./app/admin/dashboard/page.tsx
-Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
-
-Import trace for requested module:
-./app/admin/dashboard/page.tsx
-[00:10:47.391] Browser WARN    ./app/admin/dashboard/page.tsx
-Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
-
-Import trace for requested module:
-./app/admin/dashboard/page.tsx
-[00:10:47.391] Browser WARN    ./app/admin/dashboard/page.tsx
-Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
-
-Import trace for requested module:
-./app/admin/dashboard/page.tsx
-[00:10:47.534] Browser ERROR   unhandledRejection: TypeError: Cannot read properties of undefined (reading 'auth')
-[00:10:47.534] Browser ERROR   unhandledRejection: TypeError: Cannot read properties of undefined (reading 'auth')
-[00:10:48.010] Browser WARN    ./app/admin/dashboard/page.tsx
-Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
-
-Import trace for requested module:
-./app/admin/dashboard/page.tsx
-[00:10:48.010] Browser WARN    ./app/admin/dashboard/page.tsx
-Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
-
 Import trace for requested module:
-./app/admin/dashboard/page.tsx
-[00:12:51.733] Server  ERROR   ⨯ ./app/admin/dashboard/page.tsx
-Error:   × Expected 'from', got 'import'
-   ╭─[/Users/lavbujak/Desktop/Sindjelic/westgate-sindjelic/frontend/app/admin/dashboard/page.tsx:6:1]
- 3 │ import { useEffect, useState } from 'react';
- 4 │ // import { supabase } from '@/lib/supabaseClient';
- 5 │ import
- 6 │ import { useRouter } from 'next/navigation';
-   · ──────
- 7 │ 
- 8 │ export default function AdminDashboard() {
- 9 │   const [loading, setLoading] = useState(true);
-   ╰────
+./app/admin/accounts/page.tsx
+[00:04:57.970] Server  ERROR   ⨯ ./app/admin/accounts/page.tsx
+Error:   × Expected '}', got '<eof>'
+    ╭─[/Users/lavbujak/Desktop/Sindjelic/westgate-sindjelic/frontend/app/admin/accounts/page.tsx:18:1]
+ 15 │     setLoading(true);
+ 16 │     const { data, error } = await supabaseClient
+ 17 │       .from("admins")
+ 18 │       .select("*")
+    ╰────
 
 Caused by:
     Syntax Error
 
 Import trace for requested module:
-./app/admin/dashboard/page.tsx
-[00:12:52.011] Browser ERROR   ./app/admin/dashboard/page.tsx
-Error:   × Expected 'from', got 'import'
-   ╭─[/Users/lavbujak/Desktop/Sindjelic/westgate-sindjelic/frontend/app/admin/dashboard/page.tsx:6:1]
- 3 │ import { useEffect, useState } from 'react';
- 4 │ // import { supabase } from '@/lib/supabaseClient';
- 5 │ import
- 6 │ import { useRouter } from 'next/navigation';
-   · ──────
- 7 │ 
- 8 │ export default function AdminDashboard() {
- 9 │   const [loading, setLoading] = useState(true);
-   ╰────
+./app/admin/accounts/page.tsx
+[00:04:58.548] Browser ERROR   ./app/admin/accounts/page.tsx
+Error:   × Expected '}', got '<eof>'
+    ╭─[/Users/lavbujak/Desktop/Sindjelic/westgate-sindjelic/frontend/app/admin/accounts/page.tsx:18:1]
+ 15 │     setLoading(true);
+ 16 │     const { data, error } = await supabaseClient
+ 17 │       .from("admins")
+ 18 │       .select("*")
+    ╰────
 
 Caused by:
     Syntax Error
 
 Import trace for requested module:
-./app/admin/dashboard/page.tsx
-[00:12:52.012] Browser ERROR   ./app/admin/dashboard/page.tsx
-Error:   × Expected 'from', got 'import'
-   ╭─[/Users/lavbujak/Desktop/Sindjelic/westgate-sindjelic/frontend/app/admin/dashboard/page.tsx:6:1]
- 3 │ import { useEffect, useState } from 'react';
- 4 │ // import { supabase } from '@/lib/supabaseClient';
- 5 │ import
- 6 │ import { useRouter } from 'next/navigation';
-   · ──────
- 7 │ 
- 8 │ export default function AdminDashboard() {
- 9 │   const [loading, setLoading] = useState(true);
-   ╰────
+./app/admin/accounts/page.tsx
+[00:05:01.283] Server  ERROR   ⨯ ./app/admin/accounts/page.tsx
+Error:   × Expected '}', got '<eof>'
+    ╭─[/Users/lavbujak/Desktop/Sindjelic/westgate-sindjelic/frontend/app/admin/accounts/page.tsx:18:1]
+ 15 │     setLoading(true);
+ 16 │     const { data, error } = await supabaseClient
+ 17 │       .from("admins")
+ 18 │       .select("*");
+    ╰────
 
 Caused by:
     Syntax Error
 
 Import trace for requested module:
-./app/admin/dashboard/page.tsx
-[00:13:15.486] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:13:16.022] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:13:25.763] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:13:31.695] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:13:33.201] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:13:58.422] Browser LOG     Inserted news: [{"content":"Lav Test2","created_at":"2025-12-28T10:57:26.448766+00:00","id":"2c8c65ed-8921-41f6-8b56-3b72856c7286","published":true,"title":"Test2","updated_at":"2025-12-28T10:57:26.448766+00:00"}]
-[00:13:59.024] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:13:59.436] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:14:00.012] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+./app/admin/accounts/page.tsx
+[00:05:01.545] Browser ERROR   ./app/admin/accounts/page.tsx
+Error:   × Expected '}', got '<eof>'
+    ╭─[/Users/lavbujak/Desktop/Sindjelic/westgate-sindjelic/frontend/app/admin/accounts/page.tsx:18:1]
+ 15 │     setLoading(true);
+ 16 │     const { data, error } = await supabaseClient
+ 17 │       .from("admins")
+ 18 │       .select("*");
+    ╰────
 
-- A server/client branch `if (typeof window !== 'undefined')`.
-- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
-- Date formatting in a user's locale which doesn't match the server.
-- External changing data without sending a snapshot of it along with the HTML.
-- Invalid HTML tag nesting.
+Caused by:
+    Syntax Error
 
-It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+Import trace for requested module:
+./app/admin/accounts/page.tsx
+[00:05:02.856] Server  ERROR   ⨯ ./app/admin/accounts/page.tsx
+Error:   × Expected '}', got '<eof>'
+    ╭─[/Users/lavbujak/Desktop/Sindjelic/westgate-sindjelic/frontend/app/admin/accounts/page.tsx:18:1]
+ 15 │     setLoading(true);
+ 16 │     const { data, error } = await supabaseClient
+ 17 │       .from("admins")
+ 18 │       .select("*")
+    ·                   ▲
+ 19 │       
+    ╰────
 
-%s%s https://react.dev/link/hydration-mismatch 
+Caused by:
+    Syntax Error
 
-  ...
-    <RenderFromTemplateContext>
-      <ScrollAndFocusHandler segmentPath={[...]}>
-        <InnerScrollAndFocusHandler segmentPath={[...]} focusAndScrollRef={{apply:false, ...}}>
-          <ErrorBoundary errorComponent={undefined} errorStyles={undefined} errorScripts={undefined}>
-            <LoadingBoundary name="news/" loading={null}>
-              <HTTPAccessFallbackBoundary notFound={undefined} forbidden={undefined} unauthorized={undefined}>
-                <RedirectBoundary>
-                  <RedirectErrorBoundary router={{...}}>
-                    <InnerLayoutRouter url="/pages/news" tree={[...]} params={{}} cacheNode={{rsc:<Fragment>, ...}} ...>
-                      <SegmentViewNode type="page" pagePath="pages/news...">
-                        <SegmentTrieNode>
-                        <ClientPageRoot Component={function NewsPage} serverProvidedParams={{...}}>
-                          <NewsPage params={Promise} searchParams={Promise}>
-                            <styled.div>
-                              <div
-+                               className="sc-hvigdm elXsXp"
--                               className="sc-dTvVRJ cDkDmY"
-                              >
-                                <h1>
-                                <p>
-                                <styled.div>
-                                  <div
-+                                   className="sc-fhHczv eoyJcf"
--                                   className="sc-jwTyAe fHLEjS"
-                                  >
-                      ...
-                    ...
-          ...
+Import trace for requested module:
+./app/admin/accounts/page.tsx
+[00:05:03.546] Browser ERROR   ./app/admin/accounts/page.tsx
+Error:   × Expected '}', got '<eof>'
+    ╭─[/Users/lavbujak/Desktop/Sindjelic/westgate-sindjelic/frontend/app/admin/accounts/page.tsx:18:1]
+ 15 │     setLoading(true);
+ 16 │     const { data, error } = await supabaseClient
+ 17 │       .from("admins")
+ 18 │       .select("*")
+    ·                   ▲
+ 19 │       
+    ╰────
 
-[00:14:09.655] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:14:09.768] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+Caused by:
+    Syntax Error
 
-- A server/client branch `if (typeof window !== 'undefined')`.
-- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
-- Date formatting in a user's locale which doesn't match the server.
-- External changing data without sending a snapshot of it along with the HTML.
-- Invalid HTML tag nesting.
+Import trace for requested module:
+./app/admin/accounts/page.tsx
+[00:05:04.182] Server  ERROR   ⨯ ./app/admin/accounts/page.tsx
+Error:   × Expected '}', got '<eof>'
+    ╭─[/Users/lavbujak/Desktop/Sindjelic/westgate-sindjelic/frontend/app/admin/accounts/page.tsx:18:1]
+ 15 │     setLoading(true);
+ 16 │     const { data, error } = await supabaseClient
+ 17 │       .from("admins")
+ 18 │       .select("*")
+    ·                   ▲
+ 19 │ 
+ 20 │       
+    ╰────
 
-It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+Caused by:
+    Syntax Error
 
-%s%s https://react.dev/link/hydration-mismatch 
+Import trace for requested module:
+./app/admin/accounts/page.tsx
+[00:05:04.546] Browser ERROR   ./app/admin/accounts/page.tsx
+Error:   × Expected '}', got '<eof>'
+    ╭─[/Users/lavbujak/Desktop/Sindjelic/westgate-sindjelic/frontend/app/admin/accounts/page.tsx:18:1]
+ 15 │     setLoading(true);
+ 16 │     const { data, error } = await supabaseClient
+ 17 │       .from("admins")
+ 18 │       .select("*")
+    ·                   ▲
+ 19 │ 
+ 20 │       
+    ╰────
 
-  ...
-    <RenderFromTemplateContext>
-      <ScrollAndFocusHandler segmentPath={[...]}>
-        <InnerScrollAndFocusHandler segmentPath={[...]} focusAndScrollRef={{apply:false, ...}}>
-          <ErrorBoundary errorComponent={undefined} errorStyles={undefined} errorScripts={undefined}>
-            <LoadingBoundary name="news/" loading={null}>
-              <HTTPAccessFallbackBoundary notFound={undefined} forbidden={undefined} unauthorized={undefined}>
-                <RedirectBoundary>
-                  <RedirectErrorBoundary router={{...}}>
-                    <InnerLayoutRouter url="/pages/news" tree={[...]} params={{}} cacheNode={{rsc:<Fragment>, ...}} ...>
-                      <SegmentViewNode type="page" pagePath="pages/news...">
-                        <SegmentTrieNode>
-                        <ClientPageRoot Component={function NewsPage} serverProvidedParams={{...}}>
-                          <NewsPage params={Promise} searchParams={Promise}>
-                            <styled.div>
-                              <div
-+                               className="sc-hvigdm elXsXp"
--                               className="sc-dTvVRJ cDkDmY"
-                              >
-                                <h1>
-                                <p>
-                                <styled.div>
-                                  <div
-+                                   className="sc-fhHczv eoyJcf"
--                                   className="sc-jwTyAe fHLEjS"
-                                  >
-                      ...
-                    ...
-          ...
+Caused by:
+    Syntax Error
 
-[00:15:01.502] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:15:01.618] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+Import trace for requested module:
+./app/admin/accounts/page.tsx
+[00:05:09.546] Browser WARN    It looks like there are several instances of 'styled-components' initialized in this application. This may cause dynamic styles to not render properly, errors during the rehydration process, a missing theme prop, and makes your application bigger without good reason.
 
-- A server/client branch `if (typeof window !== 'undefined')`.
-- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
-- Date formatting in a user's locale which doesn't match the server.
-- External changing data without sending a snapshot of it along with the HTML.
-- Invalid HTML tag nesting.
+See https://s-c.sh/2BAXzed for more info.
+[00:05:28.047] Server  ERROR   ⨯ ./app/admin/accounts/page.tsx
+Error:   × Expected '}', got '<eof>'
+    ╭─[/Users/lavbujak/Desktop/Sindjelic/westgate-sindjelic/frontend/app/admin/accounts/page.tsx:38:1]
+ 35 │     const { error } = await supabaseClient.from('admins').delete().eq('id', id);
+ 36 │     if (error) return console.error(error);
+ 37 │     setAccounts(accounts.filter((a) => a.id !== id));
+ 38 │   };
+    ·     ▲
+ 39 │ 
+ 40 │   
+    ╰────
 
-It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+Caused by:
+    Syntax Error
 
-%s%s https://react.dev/link/hydration-mismatch 
+Import trace for requested module:
+./app/admin/accounts/page.tsx
+[00:05:28.546] Browser ERROR   ./app/admin/accounts/page.tsx
+Error:   × Expected '}', got '<eof>'
+    ╭─[/Users/lavbujak/Desktop/Sindjelic/westgate-sindjelic/frontend/app/admin/accounts/page.tsx:38:1]
+ 35 │     const { error } = await supabaseClient.from('admins').delete().eq('id', id);
+ 36 │     if (error) return console.error(error);
+ 37 │     setAccounts(accounts.filter((a) => a.id !== id));
+ 38 │   };
+    ·     ▲
+ 39 │ 
+ 40 │   
+    ╰────
 
-  ...
-    <RenderFromTemplateContext>
-      <ScrollAndFocusHandler segmentPath={[...]}>
-        <InnerScrollAndFocusHandler segmentPath={[...]} focusAndScrollRef={{apply:false, ...}}>
-          <ErrorBoundary errorComponent={undefined} errorStyles={undefined} errorScripts={undefined}>
-            <LoadingBoundary name="news/" loading={null}>
-              <HTTPAccessFallbackBoundary notFound={undefined} forbidden={undefined} unauthorized={undefined}>
-                <RedirectBoundary>
-                  <RedirectErrorBoundary router={{...}}>
-                    <InnerLayoutRouter url="/pages/news" tree={[...]} params={{}} cacheNode={{rsc:<Fragment>, ...}} ...>
-                      <SegmentViewNode type="page" pagePath="pages/news...">
-                        <SegmentTrieNode>
-                        <ClientPageRoot Component={function NewsPage} serverProvidedParams={{...}}>
-                          <NewsPage params={Promise} searchParams={Promise}>
-                            <styled.div>
-                              <div
-+                               className="sc-hvigdm elXsXp"
--                               className="sc-dTvVRJ cDkDmY"
-                              >
-                                <h1>
-                                <p>
-                                <styled.div>
-                                  <div
-+                                   className="sc-fhHczv eoyJcf"
--                                   className="sc-jwTyAe fHLEjS"
-                                  >
-                      ...
-                    ...
-          ...
+Caused by:
+    Syntax Error
 
+Import trace for requested module:
+./app/admin/accounts/page.tsx
+[00:05:31.314] Server  ERROR   ⨯ ./app/admin/accounts/page.tsx
+Error:   × Expected '}', got '<eof>'
+    ╭─[/Users/lavbujak/Desktop/Sindjelic/westgate-sindjelic/frontend/app/admin/accounts/page.tsx:38:1]
+ 35 │     const { error } = await supabaseClient.from('admins').delete().eq('id', id);
+ 36 │     if (error) return console.error(error);
+ 37 │     setAccounts(accounts.filter((a) => a.id !== id));
+ 38 │   };
+    ·     ▲
+ 39 │ 
+ 40 │   
+    ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./app/admin/accounts/page.tsx
+[00:05:31.546] Browser ERROR   ./app/admin/accounts/page.tsx
+Error:   × Expected '}', got '<eof>'
+    ╭─[/Users/lavbujak/Desktop/Sindjelic/westgate-sindjelic/frontend/app/admin/accounts/page.tsx:38:1]
+ 35 │     const { error } = await supabaseClient.from('admins').delete().eq('id', id);
+ 36 │     if (error) return console.error(error);
+ 37 │     setAccounts(accounts.filter((a) => a.id !== id));
+ 38 │   };
+    ·     ▲
+ 39 │ 
+ 40 │   
+    ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./app/admin/accounts/page.tsx
+[00:05:39.680] Server  ERROR   ⨯ ./app/admin/accounts/page.tsx
+Error:   × Expression expected
+    ╭─[/Users/lavbujak/Desktop/Sindjelic/westgate-sindjelic/frontend/app/admin/accounts/page.tsx:40:1]
+ 37 │     setAccounts(accounts.filter((a) => a.id !== id));
+ 38 │   };
+ 39 │ 
+ 40 │   return (
+    ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./app/admin/accounts/page.tsx
+[00:05:40.546] Browser ERROR   ./app/admin/accounts/page.tsx
+Error:   × Expression expected
+    ╭─[/Users/lavbujak/Desktop/Sindjelic/westgate-sindjelic/frontend/app/admin/accounts/page.tsx:40:1]
+ 37 │     setAccounts(accounts.filter((a) => a.id !== id));
+ 38 │   };
+ 39 │ 
+ 40 │   return (
+    ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./app/admin/accounts/page.tsx
+[00:05:43.195] Server  ERROR   ⨯ ./app/admin/accounts/page.tsx
+Error:   × Expected '</', got '<eof>'
+    ╭─[/Users/lavbujak/Desktop/Sindjelic/westgate-sindjelic/frontend/app/admin/accounts/page.tsx:44:1]
+ 41 │     <div className="space-y-6">
+ 42 │       <Link href="/admin/accounts/new">
+ 43 │         <CreateButton>Create Admin Account</CreateButton>
+ 44 │       </Link>
+    ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./app/admin/accounts/page.tsx
+[00:05:43.546] Browser ERROR   ./app/admin/accounts/page.tsx
+Error:   × Expected '</', got '<eof>'
+    ╭─[/Users/lavbujak/Desktop/Sindjelic/westgate-sindjelic/frontend/app/admin/accounts/page.tsx:44:1]
+ 41 │     <div className="space-y-6">
+ 42 │       <Link href="/admin/accounts/new">
+ 43 │         <CreateButton>Create Admin Account</CreateButton>
+ 44 │       </Link>
+    ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./app/admin/accounts/page.tsx
+[00:05:48.591] Server  ERROR   ⨯ ./app/admin/accounts/page.tsx
+Error:   × Expected '</', got '<eof>'
+    ╭─[/Users/lavbujak/Desktop/Sindjelic/westgate-sindjelic/frontend/app/admin/accounts/page.tsx:46:1]
+ 43 │         <CreateButton>Create Admin Account</CreateButton>
+ 44 │       </Link>
+ 45 │ 
+ 46 │       {loading ? (
+    ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./app/admin/accounts/page.tsx
+[00:05:49.546] Browser ERROR   ./app/admin/accounts/page.tsx
+Error:   × Expected '</', got '<eof>'
+    ╭─[/Users/lavbujak/Desktop/Sindjelic/westgate-sindjelic/frontend/app/admin/accounts/page.tsx:46:1]
+ 43 │         <CreateButton>Create Admin Account</CreateButton>
+ 44 │       </Link>
+ 45 │ 
+ 46 │       {loading ? (
+    ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./app/admin/accounts/page.tsx
+[00:05:49.987] Server  ERROR   ⨯ ./app/admin/accounts/page.tsx
+Error:   × Expected '</', got '<eof>'
+    ╭─[/Users/lavbujak/Desktop/Sindjelic/westgate-sindjelic/frontend/app/admin/accounts/page.tsx:48:1]
+ 45 │ 
+ 46 │       {loading ? (
+ 47 │         <p>Loading accounts...</p>
+ 48 │       ) : (
+    ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./app/admin/accounts/page.tsx
+[00:05:50.545] Browser ERROR   ./app/admin/accounts/page.tsx
+Error:   × Expected '</', got '<eof>'
+    ╭─[/Users/lavbujak/Desktop/Sindjelic/westgate-sindjelic/frontend/app/admin/accounts/page.tsx:48:1]
+ 45 │ 
+ 46 │       {loading ? (
+ 47 │         <p>Loading accounts...</p>
+ 48 │       ) : (
+    ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./app/admin/accounts/page.tsx
+[00:05:51.577] Server  ERROR   ⨯ ./app/admin/accounts/page.tsx
+Error:   × Expected '</', got '<eof>'
+    ╭─[/Users/lavbujak/Desktop/Sindjelic/westgate-sindjelic/frontend/app/admin/accounts/page.tsx:50:1]
+ 47 │         <p>Loading accounts...</p>
+ 48 │       ) : (
+ 49 │         <AccountList>
+ 50 │           {accounts.map((account) => (
+    ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./app/admin/accounts/page.tsx
+[00:05:52.546] Browser ERROR   ./app/admin/accounts/page.tsx
+Error:   × Expected '</', got '<eof>'
+    ╭─[/Users/lavbujak/Desktop/Sindjelic/westgate-sindjelic/frontend/app/admin/accounts/page.tsx:50:1]
+ 47 │         <p>Loading accounts...</p>
+ 48 │       ) : (
+ 49 │         <AccountList>
+ 50 │           {accounts.map((account) => (
+    ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./app/admin/accounts/page.tsx
+[00:05:53.629] Server  ERROR   ⨯ ./app/admin/accounts/page.tsx
+Error:   × Expected '</', got '<eof>'
+    ╭─[/Users/lavbujak/Desktop/Sindjelic/westgate-sindjelic/frontend/app/admin/accounts/page.tsx:54:1]
+ 51 │             <AccountCard key={account.id}>
+ 52 │               <h3>{account.email}</h3>
+ 53 │               <button className="delete" onClick={() => handleDelete(account.id)}>
+ 54 │                 Delete
+    ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./app/admin/accounts/page.tsx
+[00:05:54.546] Browser ERROR   ./app/admin/accounts/page.tsx
+Error:   × Expected '</', got '<eof>'
+    ╭─[/Users/lavbujak/Desktop/Sindjelic/westgate-sindjelic/frontend/app/admin/accounts/page.tsx:54:1]
+ 51 │             <AccountCard key={account.id}>
+ 52 │               <h3>{account.email}</h3>
+ 53 │               <button className="delete" onClick={() => handleDelete(account.id)}>
+ 54 │                 Delete
+    ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./app/admin/accounts/page.tsx
+[00:05:56.416] Server  ERROR   ⨯ ./app/admin/accounts/page.tsx
+Error:   × Expected '</', got '<eof>'
+    ╭─[/Users/lavbujak/Desktop/Sindjelic/westgate-sindjelic/frontend/app/admin/accounts/page.tsx:56:1]
+ 53 │               <button className="delete" onClick={() => handleDelete(account.id)}>
+ 54 │                 Delete
+ 55 │               </button>
+ 56 │             </AccountCard>
+    ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./app/admin/accounts/page.tsx
+[00:05:56.546] Browser ERROR   ./app/admin/accounts/page.tsx
+Error:   × Expected '</', got '<eof>'
+    ╭─[/Users/lavbujak/Desktop/Sindjelic/westgate-sindjelic/frontend/app/admin/accounts/page.tsx:56:1]
+ 53 │               <button className="delete" onClick={() => handleDelete(account.id)}>
+ 54 │                 Delete
+ 55 │               </button>
+ 56 │             </AccountCard>
+    ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./app/admin/accounts/page.tsx
+[00:05:57.329] Server  ERROR   ⨯ ./app/admin/accounts/page.tsx
+Error:   × Expected '</', got '<eof>'
+    ╭─[/Users/lavbujak/Desktop/Sindjelic/westgate-sindjelic/frontend/app/admin/accounts/page.tsx:58:1]
+ 55 │               </button>
+ 56 │             </AccountCard>
+ 57 │           ))}
+ 58 │         </AccountList>
+    ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./app/admin/accounts/page.tsx
+[00:05:57.546] Browser ERROR   ./app/admin/accounts/page.tsx
+Error:   × Expected '</', got '<eof>'
+    ╭─[/Users/lavbujak/Desktop/Sindjelic/westgate-sindjelic/frontend/app/admin/accounts/page.tsx:58:1]
+ 55 │               </button>
+ 56 │             </AccountCard>
+ 57 │           ))}
+ 58 │         </AccountList>
+    ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./app/admin/accounts/page.tsx
+[00:06:28.113] Server  ERROR   ⨯ ./app/admin/accounts/page.tsx
+Error:   × Unterminated template
+    ╭─[/Users/lavbujak/Desktop/Sindjelic/westgate-sindjelic/frontend/app/admin/accounts/page.tsx:70:1]
+ 67 │       gap: 1rem;
+ 68 │     `;
+ 69 │     
+ 70 │ ╭─▶ const AccountCard = styled.div`
+ 71 │ │     background: #f9f9f9;
+ 72 │ │     padding: 1rem;
+ 73 │ │     border-radius: 8px;
+ 74 │ │     display: flex;
+ 75 │ │     justify-content: space-between;
+ 76 │ │     align-items: center;
+ 77 │ │   
+ 78 │ │     h3 {
+ 79 │ │       font-weight: 600;
+ 80 │ │     }
+ 81 │ │   
+ 82 │ ╰─▶   .delete {
+    ╰────
+  × Expected a semicolon
+    ╭─[/Users/lavbujak/Desktop/Sindjelic/westgate-sindjelic/frontend/app/admin/accounts/page.tsx:70:1]
+ 67 │       gap: 1rem;
+ 68 │     `;
+ 69 │     
+ 70 │ ╭─▶ const AccountCard = styled.div`
+ 71 │ │     background: #f9f9f9;
+ 72 │ │     padding: 1rem;
+ 73 │ │     border-radius: 8px;
+ 74 │ │     display: flex;
+ 75 │ │     justify-content: space-between;
+ 76 │ │     align-items: center;
+ 77 │ │   
+ 78 │ │     h3 {
+ 79 │ │       font-weight: 600;
+ 80 │ │     }
+ 81 │ │   
+ 82 │ ╰─▶   .delete {
+    ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./app/admin/accounts/page.tsx
+[00:06:28.546] Browser ERROR   ./app/admin/accounts/page.tsx
+Error:   × Unterminated template
+    ╭─[/Users/lavbujak/Desktop/Sindjelic/westgate-sindjelic/frontend/app/admin/accounts/page.tsx:70:1]
+ 67 │       gap: 1rem;
+ 68 │     `;
+ 69 │     
+ 70 │ ╭─▶ const AccountCard = styled.div`
+ 71 │ │     background: #f9f9f9;
+ 72 │ │     padding: 1rem;
+ 73 │ │     border-radius: 8px;
+ 74 │ │     display: flex;
+ 75 │ │     justify-content: space-between;
+ 76 │ │     align-items: center;
+ 77 │ │   
+ 78 │ │     h3 {
+ 79 │ │       font-weight: 600;
+ 80 │ │     }
+ 81 │ │   
+ 82 │ ╰─▶   .delete {
+    ╰────
+  × Expected a semicolon
+    ╭─[/Users/lavbujak/Desktop/Sindjelic/westgate-sindjelic/frontend/app/admin/accounts/page.tsx:70:1]
+ 67 │       gap: 1rem;
+ 68 │     `;
+ 69 │     
+ 70 │ ╭─▶ const AccountCard = styled.div`
+ 71 │ │     background: #f9f9f9;
+ 72 │ │     padding: 1rem;
+ 73 │ │     border-radius: 8px;
+ 74 │ │     display: flex;
+ 75 │ │     justify-content: space-between;
+ 76 │ │     align-items: center;
+ 77 │ │   
+ 78 │ │     h3 {
+ 79 │ │       font-weight: 600;
+ 80 │ │     }
+ 81 │ │   
+ 82 │ ╰─▶   .delete {
+    ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./app/admin/accounts/page.tsx
+[00:06:36.558] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:06:51.266] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:06:53.196] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:07:24.516] Server  ERROR   ⨯ ./app/admin/accounts/page.tsx
+Error:   × Expected '</', got '{'
+    ╭─[/Users/lavbujak/Desktop/Sindjelic/westgate-sindjelic/frontend/app/admin/accounts/page.tsx:44:1]
+ 41 │     <div className="space-y-6">
+ 42 │       <
+ 43 │ 
+ 44 │       {loading ? (
+    ·       ─
+ 45 │         <p>Loading accounts...</p>
+ 46 │       ) : (
+ 47 │         <AccountList>
+    ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./app/admin/accounts/page.tsx
+[00:07:25.548] Browser ERROR   ./app/admin/accounts/page.tsx
+Error:   × Expected '</', got '{'
+    ╭─[/Users/lavbujak/Desktop/Sindjelic/westgate-sindjelic/frontend/app/admin/accounts/page.tsx:44:1]
+ 41 │     <div className="space-y-6">
+ 42 │       <
+ 43 │ 
+ 44 │       {loading ? (
+    ·       ─
+ 45 │         <p>Loading accounts...</p>
+ 46 │       ) : (
+ 47 │         <AccountList>
+    ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./app/admin/accounts/page.tsx
+[00:07:25.769] Server  ERROR   ⨯ ./app/admin/accounts/page.tsx
+Error:   × Expected '</', got 'loading'
+    ╭─[/Users/lavbujak/Desktop/Sindjelic/westgate-sindjelic/frontend/app/admin/accounts/page.tsx:44:1]
+ 41 │     <div className="space-y-6">
+ 42 │       <h
+ 43 │ 
+ 44 │       {loading ? (
+    ·        ───────
+ 45 │         <p>Loading accounts...</p>
+ 46 │       ) : (
+ 47 │         <AccountList>
+    ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./app/admin/accounts/page.tsx
+[00:07:26.546] Browser ERROR   ./app/admin/accounts/page.tsx
+Error:   × Expected '</', got 'loading'
+    ╭─[/Users/lavbujak/Desktop/Sindjelic/westgate-sindjelic/frontend/app/admin/accounts/page.tsx:44:1]
+ 41 │     <div className="space-y-6">
+ 42 │       <h
+ 43 │ 
+ 44 │       {loading ? (
+    ·        ───────
+ 45 │         <p>Loading accounts...</p>
+ 46 │       ) : (
+ 47 │         <AccountList>
+    ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./app/admin/accounts/page.tsx
+[00:07:27.192] Server  ERROR   ⨯ ./app/admin/accounts/page.tsx
+Error:   × Expected '</', got 'loading'
+    ╭─[/Users/lavbujak/Desktop/Sindjelic/westgate-sindjelic/frontend/app/admin/accounts/page.tsx:44:1]
+ 41 │     <div className="space-y-6">
+ 42 │       <h1
+ 43 │ 
+ 44 │       {loading ? (
+    ·        ───────
+ 45 │         <p>Loading accounts...</p>
+ 46 │       ) : (
+ 47 │         <AccountList>
+    ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./app/admin/accounts/page.tsx
+[00:07:27.552] Browser ERROR   ./app/admin/accounts/page.tsx
+Error:   × Expected '</', got 'loading'
+    ╭─[/Users/lavbujak/Desktop/Sindjelic/westgate-sindjelic/frontend/app/admin/accounts/page.tsx:44:1]
+ 41 │     <div className="space-y-6">
+ 42 │       <h1
+ 43 │ 
+ 44 │       {loading ? (
+    ·        ───────
+ 45 │         <p>Loading accounts...</p>
+ 46 │       ) : (
+ 47 │         <AccountList>
+    ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./app/admin/accounts/page.tsx
+[00:07:30.117] Browser WARN    It looks like there are several instances of 'styled-components' initialized in this application. This may cause dynamic styles to not render properly, errors during the rehydration process, a missing theme prop, and makes your application bigger without good reason.
+
+See https://s-c.sh/2BAXzed for more info.
+[00:07:33.255] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:07:45.701] Server  ERROR   ⨯ ./app/admin/accounts/page.tsx
+Error:   × Expression expected
+    ╭─[/Users/lavbujak/Desktop/Sindjelic/westgate-sindjelic/frontend/app/admin/accounts/page.tsx:60:1]
+ 57 │       )}
+ 58 │     </div>
+ 59 │     <
+ 60 │   );
+    ·   ─
+ 61 │ }
+ 62 │ 
+ 63 │ const AccountList = styled.div`
+    ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./app/admin/accounts/page.tsx
+[00:07:46.546] Browser ERROR   ./app/admin/accounts/page.tsx
+Error:   × Expression expected
+    ╭─[/Users/lavbujak/Desktop/Sindjelic/westgate-sindjelic/frontend/app/admin/accounts/page.tsx:60:1]
+ 57 │       )}
+ 58 │     </div>
+ 59 │     <
+ 60 │   );
+    ·   ─
+ 61 │ }
+ 62 │ 
+ 63 │ const AccountList = styled.div`
+    ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./app/admin/accounts/page.tsx
+[00:07:51.644] Server  ERROR   ⨯ ./app/admin/accounts/page.tsx
+Error:   × Expected ',', got 'className'
+    ╭─[/Users/lavbujak/Desktop/Sindjelic/westgate-sindjelic/frontend/app/admin/accounts/page.tsx:59:1]
+ 56 │         </AccountList>
+ 57 │       )}
+ 58 │     </div>
+ 59 │     <div className="space-y-6">
+    ·          ─────────
+ 60 │   );
+ 61 │ }
+    ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./app/admin/accounts/page.tsx
+[00:07:52.548] Browser ERROR   ./app/admin/accounts/page.tsx
+Error:   × Expected ',', got 'className'
+    ╭─[/Users/lavbujak/Desktop/Sindjelic/westgate-sindjelic/frontend/app/admin/accounts/page.tsx:59:1]
+ 56 │         </AccountList>
+ 57 │       )}
+ 58 │     </div>
+ 59 │     <div className="space-y-6">
+    ·          ─────────
+ 60 │   );
+ 61 │ }
+    ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./app/admin/accounts/page.tsx
+[00:07:52.548] Browser ERROR   ./app/admin/accounts/page.tsx
+Error:   × Expected ',', got 'className'
+    ╭─[/Users/lavbujak/Desktop/Sindjelic/westgate-sindjelic/frontend/app/admin/accounts/page.tsx:59:1]
+ 56 │         </AccountList>
+ 57 │       )}
+ 58 │     </div>
+ 59 │     <div className="space-y-6">
+    ·          ─────────
+ 60 │   );
+ 61 │ }
+    ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./app/admin/accounts/page.tsx
+[00:07:54.812] Server  ERROR   ⨯ ./app/admin/accounts/page.tsx
+Error:   × Expected ',', got 'className'
+    ╭─[/Users/lavbujak/Desktop/Sindjelic/westgate-sindjelic/frontend/app/admin/accounts/page.tsx:59:1]
+ 56 │         </AccountList>
+ 57 │       )}
+ 58 │     </div>
+ 59 │     <div className="space-y-6">
+    ·          ─────────
+ 60 │       <Link href="/admin/accounts/new">
+ 61 │         <CreateButton>Create Admin Account</CreateButton>
+ 62 │       </Link>
+    ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./app/admin/accounts/page.tsx
+[00:07:55.546] Browser ERROR   ./app/admin/accounts/page.tsx
+Error:   × Expected ',', got 'className'
+    ╭─[/Users/lavbujak/Desktop/Sindjelic/westgate-sindjelic/frontend/app/admin/accounts/page.tsx:59:1]
+ 56 │         </AccountList>
+ 57 │       )}
+ 58 │     </div>
+ 59 │     <div className="space-y-6">
+    ·          ─────────
+ 60 │       <Link href="/admin/accounts/new">
+ 61 │         <CreateButton>Create Admin Account</CreateButton>
+ 62 │       </Link>
+    ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./app/admin/accounts/page.tsx
+[00:08:02.119] Server  ERROR   ⨯ ./app/admin/accounts/page.tsx
+Error:   × Expected ',', got 'className'
+    ╭─[/Users/lavbujak/Desktop/Sindjelic/westgate-sindjelic/frontend/app/admin/accounts/page.tsx:59:1]
+ 56 │         </AccountList>
+ 57 │       )}
+ 58 │     </div>
+ 59 │     <div className="space-y-6">
+    ·          ─────────
+ 60 │       <Link href="/admin/accounts/new">
+ 61 │         <CreateButton>Create Admin Account</CreateButton>
+ 62 │       </Link>
+    ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./app/admin/accounts/page.tsx
+[00:08:02.547] Browser ERROR   ./app/admin/accounts/page.tsx
+Error:   × Expected ',', got 'className'
+    ╭─[/Users/lavbujak/Desktop/Sindjelic/westgate-sindjelic/frontend/app/admin/accounts/page.tsx:59:1]
+ 56 │         </AccountList>
+ 57 │       )}
+ 58 │     </div>
+ 59 │     <div className="space-y-6">
+    ·          ─────────
+ 60 │       <Link href="/admin/accounts/new">
+ 61 │         <CreateButton>Create Admin Account</CreateButton>
+ 62 │       </Link>
+    ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./app/admin/accounts/page.tsx
+[00:08:09.330] Server  ERROR   ⨯ ./app/admin/accounts/page.tsx
+Error:   × Expected ',', got 'className'
+    ╭─[/Users/lavbujak/Desktop/Sindjelic/westgate-sindjelic/frontend/app/admin/accounts/page.tsx:59:1]
+ 56 │         </AccountList>
+ 57 │       )}
+ 58 │     </div>
+ 59 │     <div className="space-y-6">
+    ·          ─────────
+ 60 │       <Link href="/admin/accounts/new">
+ 61 │         <CreateButton>Create Admin Account</CreateButton>
+ 62 │       </Link>
+    ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./app/admin/accounts/page.tsx
+[00:08:09.546] Browser ERROR   ./app/admin/accounts/page.tsx
+Error:   × Expected ',', got 'className'
+    ╭─[/Users/lavbujak/Desktop/Sindjelic/westgate-sindjelic/frontend/app/admin/accounts/page.tsx:59:1]
+ 56 │         </AccountList>
+ 57 │       )}
+ 58 │     </div>
+ 59 │     <div className="space-y-6">
+    ·          ─────────
+ 60 │       <Link href="/admin/accounts/new">
+ 61 │         <CreateButton>Create Admin Account</CreateButton>
+ 62 │       </Link>
+    ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./app/admin/accounts/page.tsx
+[00:08:12.728] Server  ERROR   ⨯ ./app/admin/accounts/page.tsx
+Error:   × Expected ',', got 'className'
+    ╭─[/Users/lavbujak/Desktop/Sindjelic/westgate-sindjelic/frontend/app/admin/accounts/page.tsx:60:1]
+ 57 │       )}
+ 58 │     </div>
+ 59 │     
+ 60 │     <div className="space-y-6">
+    ·          ─────────
+ 61 │       <Link href="/admin/accounts/new">
+ 62 │         <CreateButton>Create Admin Account</CreateButton>
+ 63 │       </Link>
+    ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./app/admin/accounts/page.tsx
+[00:08:13.546] Browser ERROR   ./app/admin/accounts/page.tsx
+Error:   × Expected ',', got 'className'
+    ╭─[/Users/lavbujak/Desktop/Sindjelic/westgate-sindjelic/frontend/app/admin/accounts/page.tsx:60:1]
+ 57 │       )}
+ 58 │     </div>
+ 59 │     
+ 60 │     <div className="space-y-6">
+    ·          ─────────
+ 61 │       <Link href="/admin/accounts/new">
+ 62 │         <CreateButton>Create Admin Account</CreateButton>
+ 63 │       </Link>
+    ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./app/admin/accounts/page.tsx
+[00:08:14.399] Server  ERROR   ⨯ ./app/admin/accounts/page.tsx
+Error:   × Expression expected
+    ╭─[/Users/lavbujak/Desktop/Sindjelic/westgate-sindjelic/frontend/app/admin/accounts/page.tsx:65:1]
+ 62 │         <CreateButton>Create Admin Account</CreateButton>
+ 63 │       </Link>
+ 64 │     </div>
+ 65 │   );
+    ·   ─
+ 66 │ }
+ 67 │ 
+ 68 │ const AccountList = styled.div`
+    ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./app/admin/accounts/page.tsx
+[00:08:14.545] Browser ERROR   ./app/admin/accounts/page.tsx
+Error:   × Expression expected
+    ╭─[/Users/lavbujak/Desktop/Sindjelic/westgate-sindjelic/frontend/app/admin/accounts/page.tsx:65:1]
+ 62 │         <CreateButton>Create Admin Account</CreateButton>
+ 63 │       </Link>
+ 64 │     </div>
+ 65 │   );
+    ·   ─
+ 66 │ }
+ 67 │ 
+ 68 │ const AccountList = styled.div`
+    ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./app/admin/accounts/page.tsx
+[00:28:39.714] Browser WARN    It looks like there are several instances of 'styled-components' initialized in this application. This may cause dynamic styles to not render properly, errors during the rehydration process, a missing theme prop, and makes your application bigger without good reason.
+
+See https://s-c.sh/2BAXzed for more info.
+[00:28:41.910] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:29:16.795] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:31:15.128] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
