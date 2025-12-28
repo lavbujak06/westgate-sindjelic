@@ -1,51 +1,76 @@
 'use client';
 
+import React from 'react';
+import styled from 'styled-components';
 import Link from 'next/link';
-import PublishSwitch from './PublishSwitch';
-import ConfirmModal from './ConfirmModal';
-import { useState } from 'react';
+import Switch from '@/app/admin/news/components/Switch';
+import { News } from '../types';
 
-export default function NewsCard({ news }: { news: any }) {
-  const [showDelete, setShowDelete] = useState(false);
-
-    const deleteNews = async (id: string) => {
-        try {
-            const response = await fetch(`/api/news/${id}`, {
-                method: 'DELETE',
-            });
-            if (response.ok) {
-                setShowDelete(false);
-                // Optionally refresh the news list or redirect
-                window.location.reload();
-            }
-        } catch (error) {
-            console.error('Failed to delete news:', error);
-        }
-    };
-  return (
-    <div className="border p-4 rounded flex justify-between items-center">
-      <div>
-        <h3 className="font-semibold">{news.title}</h3>
-        <p className="text-sm text-gray-500">{news.summary}</p>
-      </div>
-
-      <div className="flex items-center gap-3">
-        <PublishSwitch newsId={news.id} published={news.published} />
-
-        <Link href={`/admin/news/edit/${news.id}`}>
-          <button>Edit</button>
-        </Link>
-
-        <button onClick={() => setShowDelete(true)}>Delete</button>
-
-        {showDelete && (
-          <ConfirmModal
-            message="Are you sure you want to delete this news?"
-            onCancel={() => setShowDelete(false)}
-            onConfirm={() => deleteNews(news.id)}
-          />
-        )}
-      </div>
-    </div>
-  );
+interface NewsCardProps {
+  news: News;
+  onDelete?: () => void;
+  onTogglePublish?: () => void;
 }
+
+const NewsCard: React.FC<NewsCardProps> = ({ news, onDelete, onTogglePublish }) => {
+  return (
+    <CardWrapper>
+      <h3>{news.title}</h3>
+      <p>{news.content}</p>
+      <div className="actions">
+        <Link href={`/admin/news/edit/${news.id}`}>
+          <button className="edit">Edit</button>
+        </Link>
+        <button className="delete" onClick={onDelete}>
+          Delete
+        </button>
+        <div className="publish">
+          <Switch checked={news.published} onToggle={onTogglePublish} />
+        </div>
+      </div>
+    </CardWrapper>
+  );
+};
+
+const CardWrapper = styled.div`
+  background: #f9f9f9;
+  padding: 1rem;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+
+  h3 {
+    font-weight: 600;
+  }
+
+  .actions {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+
+    button {
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      border: none;
+      cursor: pointer;
+      font-weight: 500;
+    }
+
+    .edit {
+      background: #007dab;
+      color: #fff;
+    }
+
+    .delete {
+      background: #ff4d4d;
+      color: #fff;
+    }
+
+    .publish {
+      margin-left: auto;
+    }
+  }
+`;
+
+export default NewsCard;

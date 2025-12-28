@@ -1,7 +1,8 @@
 'use client';
 
 import { useState } from 'react';
-import { supabase } from '@/lib/supabaseClient';
+// import { supabase } from '@/lib/supabaseClient';
+import { supabaseClient } from '@/lib/supabaseClient';
 import { useRouter } from 'next/navigation';
 import Cookies from 'js-cookie'; // ✅ import js-cookie
 
@@ -16,7 +17,7 @@ export default function LoginPage() {
     setError('');
 
     // 1️⃣ Sign in with Supabase
-    const { data, error: loginError } = await supabase.auth.signInWithPassword({
+    const { data, error: loginError } = await supabaseClient.auth.signInWithPassword({
       email,
       password,
     });
@@ -37,7 +38,7 @@ export default function LoginPage() {
     const userId = data.user.id;
 
     // 2️⃣ Check admins table
-    const { data: adminData, error: adminError } = await supabase
+    const { data: adminData, error: adminError } = await supabaseClient
       .from('admins')
       .select('*')
       .eq('id', userId)

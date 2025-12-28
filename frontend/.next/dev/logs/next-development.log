@@ -1,66 +1,188 @@
-[00:00:01.366] Server  WARN    ⚠ The "middleware" file convention is deprecated. Please use "proxy" instead. Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
-[00:00:01.444] Server  LOG     ✓ Ready in 1199ms
-[00:00:04.885] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:00:06.374] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:00:10.905] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:00:27.101] Browser LOG     Login data: {"session":{"access_token":"eyJhbGciOiJFUzI1NiIsImtpZCI6IjdlNmIzNTQyLWM0MDEtNDc5OS04NzA2LTFkYTAwZGRjZjExZiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJodHRwczovL29jaWhtdWlqcWF3YXBtc3J1eml1LnN1cGFiYXNlLmNvL2F1dGgvdjEiLCJzdWIiOiJlYzExZDliMS0xMzQ0LTQ3MmItOTJmNS01OTI4Y2RmZmQyOWEiLCJhdWQiOiJhdXRoZW50aWNhdGVkIiwiZXhwIjoxNzY2OTIwMTE1LCJpYXQiOjE3NjY5MTY1MTUsImVtYWlsIjoiYnVqYWtsYXZAZ21haWwuY29tIiwicGhvbmUiOiIiLCJhcHBfbWV0YWRhdGEiOnsicHJvdmlkZXIiOiJlbWFpbCIsInByb3ZpZGVycyI6WyJlbWFpbCJdfSwidXNlcl9tZXRhZGF0YSI6eyJlbWFpbF92ZXJpZmllZCI6dHJ1ZX0sInJvbGUiOiJhdXRoZW50aWNhdGVkIiwiYWFsIjoiYWFsMSIsImFtciI6W3sibWV0aG9kIjoicGFzc3dvcmQiLCJ0aW1lc3RhbXAiOjE3NjY5MTY1MTV9XSwic2Vzc2lvbl9pZCI6IjRhZGYzZGQyLTI0MjYtNGVjYy04ZDM2LTI0MWMyZmYxYTY1OCIsImlzX2Fub255bW91cyI6ZmFsc2V9.ojH_27-Z6x3JPTY4KqQkGoGMKoRp8hQ0pmshaF1APj0-mKuwdfBNryXN4FC8kPlNyv24GJCS3opZyhiucpkrjg","expires_at":1766920115,"expires_in":3600,"refresh_token":"6rvhz5fsolfc","token_type":"bearer","user":{"app_metadata":{"provider":"email","providers":["email"]},"aud":"authenticated","confirmed_at":"2025-12-28T04:03:40.086596Z","created_at":"2025-12-28T04:03:40.062411Z","email":"bujaklav@gmail.com","email_confirmed_at":"2025-12-28T04:03:40.086596Z","id":"ec11d9b1-1344-472b-92f5-5928cdffd29a","identities":[{"created_at":"2025-12-28T04:03:40.078039Z","email":"bujaklav@gmail.com","id":"ec11d9b1-1344-472b-92f5-5928cdffd29a","identity_data":"[Object]","identity_id":"6399d96e-144d-4baa-b1b3-88537159001d","last_sign_in_at":"2025-12-28T04:03:40.077985Z","provider":"email","updated_at":"2025-12-28T04:03:40.078039Z","user_id":"ec11d9b1-1344-472b-92f5-5928cdffd29a"}],"is_anonymous":false,"last_sign_in_at":"2025-12-28T10:08:35.616919244Z","phone":"","role":"authenticated","updated_at":"2025-12-28T10:08:35.646432Z","user_metadata":{"email_verified":true}},"weak_password":null},"user":{"app_metadata":{"provider":"email","providers":["email"]},"aud":"authenticated","confirmed_at":"2025-12-28T04:03:40.086596Z","created_at":"2025-12-28T04:03:40.062411Z","email":"bujaklav@gmail.com","email_confirmed_at":"2025-12-28T04:03:40.086596Z","id":"ec11d9b1-1344-472b-92f5-5928cdffd29a","identities":[{"created_at":"2025-12-28T04:03:40.078039Z","email":"bujaklav@gmail.com","id":"ec11d9b1-1344-472b-92f5-5928cdffd29a","identity_data":{"email":"bujaklav@gmail.com","email_verified":false,"phone_verified":false,"sub":"ec11d9b1-1344-472b-92f5-5928cdffd29a"},"identity_id":"6399d96e-144d-4baa-b1b3-88537159001d","last_sign_in_at":"2025-12-28T04:03:40.077985Z","provider":"email","updated_at":"2025-12-28T04:03:40.078039Z","user_id":"ec11d9b1-1344-472b-92f5-5928cdffd29a"}],"is_anonymous":false,"last_sign_in_at":"2025-12-28T10:08:35.616919244Z","phone":"","role":"authenticated","updated_at":"2025-12-28T10:08:35.646432Z","user_metadata":{"email_verified":true}}}
-[00:00:27.102] Browser LOG     Login error: null
-[00:03:02.337] Server  WARN    ⚠ ./app/admin/news/new/page.tsx
-Attempted import error: 'supabaseClient' is not exported from '@/lib/supabaseClient' (imported as 'supabaseClient').
+[00:00:01.519] Server  WARN    ⚠ The "middleware" file convention is deprecated. Please use "proxy" instead. Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
+[00:00:01.598] Server  LOG     ✓ Ready in 1334ms
+[00:00:02.855] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:10.006] Server  WARN    ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[00:00:10.412] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:11.989] Browser ERROR   You provided a `checked` prop to a form field without an `onChange` handler. This will render a read-only field. If the field should be mutable use `defaultChecked`. Otherwise, set either `onChange` or `readOnly`.
+[00:02:06.291] Server  ERROR   ⨯ TypeError: react__WEBPACK_IMPORTED_MODULE_1___default(...).createContext is not a function
+[00:02:06.421] Server  ERROR   ⨯ TypeError: createContext only works in Client Components. Add the "use client" directive at the top of the file to use it. Read more: https://nextjs.org/docs/messages/context-in-server-component
+[00:02:07.155] Server  ERROR   ⨯ TypeError: react__WEBPACK_IMPORTED_MODULE_1___default(...).createContext is not a function
+[00:02:07.284] Server  ERROR   ⨯ TypeError: createContext only works in Client Components. Add the "use client" directive at the top of the file to use it. Read more: https://nextjs.org/docs/messages/context-in-server-component
+[00:02:07.453] Server  ERROR   ⨯ TypeError: react__WEBPACK_IMPORTED_MODULE_1___default(...).createContext is not a function
+[00:02:07.618] Server  ERROR   ⨯ TypeError: react__WEBPACK_IMPORTED_MODULE_1___default(...).createContext is not a function
+[00:02:07.778] Server  ERROR   ⨯ TypeError: createContext only works in Client Components. Add the "use client" directive at the top of the file to use it. Read more: https://nextjs.org/docs/messages/context-in-server-component
+[00:02:07.920] Server  ERROR   ⨯ TypeError: createContext only works in Client Components. Add the "use client" directive at the top of the file to use it. Read more: https://nextjs.org/docs/messages/context-in-server-component
+[00:02:08.387] Browser ERROR   uncaughtError: TypeError: createContext only works in Client Components. Add the "use client" directive at the top of the file to use it. Read more: https://nextjs.org/docs/messages/context-in-server-component
+[00:03:45.474] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:05:10.105] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:05:10.545] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:05:11.016] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+%s%s https://react.dev/link/hydration-mismatch 
+
+  ...
+    <RenderFromTemplateContext>
+      <ScrollAndFocusHandler segmentPath={[...]}>
+        <InnerScrollAndFocusHandler segmentPath={[...]} focusAndScrollRef={{apply:false, ...}}>
+          <ErrorBoundary errorComponent={undefined} errorStyles={undefined} errorScripts={undefined}>
+            <LoadingBoundary name="news/" loading={null}>
+              <HTTPAccessFallbackBoundary notFound={undefined} forbidden={undefined} unauthorized={undefined}>
+                <RedirectBoundary>
+                  <RedirectErrorBoundary router={{...}}>
+                    <InnerLayoutRouter url="/pages/news" tree={[...]} params={{}} cacheNode={{rsc:<Fragment>, ...}} ...>
+                      <SegmentViewNode type="page" pagePath="pages/news...">
+                        <SegmentTrieNode>
+                        <ClientPageRoot Component={function NewsPage} serverProvidedParams={{...}}>
+                          <NewsPage params={Promise} searchParams={Promise}>
+                            <styled.div>
+                              <div
++                               className="sc-hvigdm elXsXp"
+-                               className="sc-dTvVRJ cDkDmY"
+                              >
+                                <h1>
+                                <p>
+                                <styled.div>
+                                  <div
++                                   className="sc-fhHczv eoyJcf"
+-                                   className="sc-jwTyAe fHLEjS"
+                                  >
+                      ...
+                    ...
+          ...
+
+[00:05:17.195] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:05:17.600] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:05:18.523] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:05:18.638] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+%s%s https://react.dev/link/hydration-mismatch 
+
+  ...
+    <HTTPAccessFallbackBoundary notFound={undefined} forbidden={undefined} unauthorized={undefined}>
+      <RedirectBoundary>
+        <RedirectErrorBoundary router={{...}}>
+          <InnerLayoutRouter url="/admin/news" tree={[...]} params={{}} cacheNode={{rsc:<Fragment>, ...}} ...>
+            <SegmentViewNode type="page" pagePath="admin/news...">
+              <SegmentTrieNode>
+              <ClientPageRoot Component={function AdminNewsPage} serverProvidedParams={{...}}>
+                <AdminNewsPage params={Promise} searchParams={Promise}>
+                  <div className="space-y-6">
+                    <LinkComponent href="/admin/new...">
+                      <a ref={function} onClick={function onClick} onMouseEnter={function onMouseEnter} ...>
+                        <CreateButton>
+                          <styled.div>
+                            <div
++                             className="sc-bRKDuR eRYtPt"
+-                             className="sc-ggWZvA kQSQpj"
+                            >
+                    ...
+            ...
+          ...
+
+[00:05:19.011] Browser ERROR   Failed to fetch news: {"code":"","details":"TypeError: Failed to fetch\n    at eval (webpack-internal:///(app-pages-browser)/../node_modules/@supabase/supabase-js/dist/index.mjs:158:22)\n    at eval (webpack-internal:///(app-pages-browser)/../node_modules/@supabase/supabase-js/dist/index.mjs:172:10)\n    at async fetchNews (webpack-internal:///(app-pages-browser)/./app/pages/news/page.tsx:21:33)","hint":"","message":"TypeError: Failed to fetch"}
+[00:05:19.548] Server  WARN    ⚠ ./app/admin/dashboard/page.tsx
+Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
 
 Import trace for requested module:
-./app/admin/news/new/page.tsx
+./app/admin/dashboard/page.tsx
 
-./app/admin/news/new/page.tsx
-Attempted import error: 'supabaseClient' is not exported from '@/lib/supabaseClient' (imported as 'supabaseClient').
-
-Import trace for requested module:
-./app/admin/news/new/page.tsx
-[00:03:02.444] Server  WARN    ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
-[00:03:02.446] Browser WARN    ./app/admin/news/new/page.tsx
-Attempted import error: 'supabaseClient' is not exported from '@/lib/supabaseClient' (imported as 'supabaseClient').
+./app/admin/dashboard/page.tsx
+Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
 
 Import trace for requested module:
-./app/admin/news/new/page.tsx
-[00:03:05.090] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:03:05.206] Browser WARN    ./app/admin/news/new/page.tsx
-Attempted import error: 'supabaseClient' is not exported from '@/lib/supabaseClient' (imported as 'supabaseClient').
-[00:03:20.641] Browser ERROR   unhandledRejection: TypeError: Cannot read properties of undefined (reading 'from')
-[00:03:23.173] Browser ERROR   unhandledRejection: TypeError: Cannot read properties of undefined (reading 'from')
-[00:04:11.061] Server  ERROR   ⨯ ./lib/supabaseClient.ts
-Module parse failed: Identifier 'createClient' has already been declared (4:9)
-| export const supabase = createClient(process.env.NEXT_PUBLIC_SUPABASE_URL, process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY);
-| // frontend/src/lib/supabaseClient.ts
-> import { createClient } from '@supabase/supabase-js';
-| export const supabaseClient = createClient(process.env.NEXT_PUBLIC_SUPABASE_URL, process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY);
-| 
+./app/admin/dashboard/page.tsx
+
+./app/admin/dashboard/page.tsx
+Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
 
 Import trace for requested module:
-./lib/supabaseClient.ts
-./app/pages/login/page.tsx
-[00:04:11.993] Browser ERROR   ./lib/supabaseClient.ts
-Module parse failed: Identifier 'createClient' has already been declared (4:9)
-| export const supabase = createClient(process.env.NEXT_PUBLIC_SUPABASE_URL, process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY);
-| // frontend/src/lib/supabaseClient.ts
-> import { createClient } from '@supabase/supabase-js';
-| export const supabaseClient = createClient(process.env.NEXT_PUBLIC_SUPABASE_URL, process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY);
-| 
+./app/admin/dashboard/page.tsx
+
+./app/admin/dashboard/page.tsx
+Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
 
 Import trace for requested module:
-./lib/supabaseClient.ts
-./app/admin/news/new/page.tsx
-[00:04:11.993] Browser ERROR   ./lib/supabaseClient.ts
-Module parse failed: Identifier 'createClient' has already been declared (4:9)
-| export const supabase = createClient(process.env.NEXT_PUBLIC_SUPABASE_URL, process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY);
-| // frontend/src/lib/supabaseClient.ts
-> import { createClient } from '@supabase/supabase-js';
-| export const supabaseClient = createClient(process.env.NEXT_PUBLIC_SUPABASE_URL, process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY);
-| 
+./app/admin/dashboard/page.tsx
+[00:05:19.688] Browser WARN    ./app/admin/dashboard/page.tsx
+Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
 
 Import trace for requested module:
-./lib/supabaseClient.ts
-./app/admin/news/page.tsx
-[00:04:17.614] Server  WARN    ⚠ ./app/admin/dashboard/page.tsx
+./app/admin/dashboard/page.tsx
+[00:05:19.688] Browser WARN    ./app/admin/dashboard/page.tsx
+Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
+
+Import trace for requested module:
+./app/admin/dashboard/page.tsx
+[00:05:19.842] Browser ERROR   {"code":"","details":"TypeError: Failed to fetch\n    at eval (webpack-internal:///(app-pages-browser)/../node_modules/@supabase/supabase-js/dist/index.mjs:158:22)\n    at eval (webpack-internal:///(app-pages-browser)/../node_modules/@supabase/supabase-js/dist/index.mjs:172:10)\n    at async fetchNews (webpack-internal:///(app-pages-browser)/./app/admin/news/page.tsx:24:33)","hint":"","message":"TypeError: Failed to fetch"}
+[00:05:19.842] Browser ERROR   unhandledRejection: TypeError: Cannot read properties of undefined (reading 'auth')
+[00:05:19.842] Browser ERROR   unhandledRejection: TypeError: Cannot read properties of undefined (reading 'auth')
+[00:05:20.010] Browser WARN    ./app/admin/dashboard/page.tsx
+Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
+
+Import trace for requested module:
+./app/admin/dashboard/page.tsx
+[00:05:20.010] Browser WARN    ./app/admin/dashboard/page.tsx
+Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
+
+Import trace for requested module:
+./app/admin/dashboard/page.tsx
+[00:05:22.188] Server  LOG     ○ Compiling /admin/dashboard ...
+[00:05:22.509] Browser ERROR   {"code":"","details":"TypeError: Failed to fetch\n    at eval (webpack-internal:///(app-pages-browser)/../node_modules/@supabase/supabase-js/dist/index.mjs:158:22)\n    at eval (webpack-internal:///(app-pages-browser)/../node_modules/@supabase/supabase-js/dist/index.mjs:172:10)\n    at async fetchNews (webpack-internal:///(app-pages-browser)/./app/admin/news/page.tsx:24:33)","hint":"","message":"TypeError: Failed to fetch"}
+[00:05:22.509] Browser ERROR   {"code":"","details":"TypeError: Failed to fetch\n    at eval (webpack-internal:///(app-pages-browser)/../node_modules/@supabase/supabase-js/dist/index.mjs:158:22)\n    at eval (webpack-internal:///(app-pages-browser)/../node_modules/@supabase/supabase-js/dist/index.mjs:172:10)\n    at async fetchNews (webpack-internal:///(app-pages-browser)/./app/admin/news/page.tsx:24:33)","hint":"","message":"TypeError: Failed to fetch"}
+[00:08:43.553] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:08:43.588] Browser WARN    ./app/admin/dashboard/page.tsx
+Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
+[00:08:43.588] Browser WARN    ./app/admin/dashboard/page.tsx
+Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
+[00:08:43.982] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:08:44.045] Browser WARN    ./app/admin/dashboard/page.tsx
+Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
+[00:08:44.045] Browser WARN    ./app/admin/dashboard/page.tsx
+Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
+[00:08:44.837] Server  WARN    ⚠ ./app/admin/dashboard/page.tsx
+Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
+
+Import trace for requested module:
+./app/admin/dashboard/page.tsx
+
+./app/admin/dashboard/page.tsx
+Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
+
+Import trace for requested module:
+./app/admin/dashboard/page.tsx
+
+./app/admin/dashboard/page.tsx
+Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
+
+Import trace for requested module:
+./app/admin/dashboard/page.tsx
+
+./app/admin/dashboard/page.tsx
+Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
+
+Import trace for requested module:
+./app/admin/dashboard/page.tsx
+[00:08:45.042] Browser WARN    ./app/admin/dashboard/page.tsx
+Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
+[00:08:45.042] Browser WARN    ./app/admin/dashboard/page.tsx
+Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
+[00:08:45.328] Server  WARN    ⚠ ./app/admin/dashboard/page.tsx
 Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
 
 Import trace for requested module:
@@ -95,65 +217,48 @@ Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (
 
 Import trace for requested module:
 ./app/pages/login/page.tsx
-
-./app/admin/news/page.tsx
-Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
-
-Import trace for requested module:
-./app/admin/news/page.tsx
-[00:04:17.993] Browser ERROR   ./lib/supabaseClient.ts
-Module parse failed: Identifier 'createClient' has already been declared (4:9)
-| export const supabase = createClient(process.env.NEXT_PUBLIC_SUPABASE_URL, process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY);
-| // frontend/src/lib/supabaseClient.ts
-> import { createClient } from '@supabase/supabase-js';
-| export const supabaseClient = createClient(process.env.NEXT_PUBLIC_SUPABASE_URL, process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY);
-| 
-
-Import trace for requested module:
-./lib/supabaseClient.ts
-./app/pages/login/page.tsx
-[00:04:17.993] Browser WARN    ./app/admin/dashboard/page.tsx
+[00:08:45.431] Browser WARN    ./app/admin/dashboard/page.tsx
 Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
 
 Import trace for requested module:
 ./app/admin/dashboard/page.tsx
-[00:04:17.993] Browser WARN    ./app/admin/dashboard/page.tsx
+[00:08:45.431] Browser WARN    ./app/admin/dashboard/page.tsx
 Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
 
 Import trace for requested module:
 ./app/admin/dashboard/page.tsx
-[00:04:17.993] Browser WARN    ./app/pages/login/page.tsx
+[00:08:45.431] Browser WARN    ./app/pages/login/page.tsx
 Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
 
 Import trace for requested module:
 ./app/pages/login/page.tsx
-[00:04:17.993] Browser WARN    ./app/pages/login/page.tsx
+[00:08:45.431] Browser WARN    ./app/pages/login/page.tsx
 Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
 
 Import trace for requested module:
 ./app/pages/login/page.tsx
-[00:04:17.993] Browser WARN    GoTrueClient@sb-ocihmuijqawapmsruziu-auth-token:1 (2.89.0) 2025-12-28T10:12:26.201Z Multiple GoTrueClient instances detected in the same browser context. It is not an error, but this should be avoided as it may produce undefined behavior when used concurrently under the same storage key.
-[00:04:17.993] Browser WARN    ./app/admin/dashboard/page.tsx
+[00:08:46.009] Browser WARN    ./app/admin/dashboard/page.tsx
 Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
 
 Import trace for requested module:
 ./app/admin/dashboard/page.tsx
-[00:04:17.993] Browser WARN    ./app/admin/dashboard/page.tsx
+[00:08:46.009] Browser WARN    ./app/admin/dashboard/page.tsx
 Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
 
 Import trace for requested module:
 ./app/admin/dashboard/page.tsx
-[00:04:17.993] Browser WARN    ./app/pages/login/page.tsx
+[00:08:46.009] Browser WARN    ./app/pages/login/page.tsx
 Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
 
 Import trace for requested module:
 ./app/pages/login/page.tsx
-[00:04:17.993] Browser WARN    ./app/pages/login/page.tsx
+[00:08:46.009] Browser WARN    ./app/pages/login/page.tsx
 Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
 
 Import trace for requested module:
 ./app/pages/login/page.tsx
-[00:04:19.171] Server  WARN    ⚠ ./app/admin/dashboard/page.tsx
+[00:08:54.884] Browser ERROR   unhandledRejection: TypeError: Cannot read properties of undefined (reading 'auth')
+[00:09:59.092] Server  WARN    ⚠ ./app/admin/dashboard/page.tsx
 Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
 
 Import trace for requested module:
@@ -164,58 +269,38 @@ Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (
 
 Import trace for requested module:
 ./app/admin/dashboard/page.tsx
-
-./app/pages/login/page.tsx
-Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
-
-Import trace for requested module:
-./app/pages/login/page.tsx
-
-./app/pages/login/page.tsx
-Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
-
-Import trace for requested module:
-./app/pages/login/page.tsx
-
-./app/pages/login/page.tsx
-Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
-
-Import trace for requested module:
-./app/pages/login/page.tsx
-
-./app/pages/login/page.tsx
-Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
-
-Import trace for requested module:
-./app/pages/login/page.tsx
-
-./app/admin/news/page.tsx
-Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
-
-Import trace for requested module:
-./app/admin/news/page.tsx
-[00:04:19.998] Browser WARN    ./app/admin/dashboard/page.tsx
+[00:10:00.010] Browser WARN    ./app/admin/dashboard/page.tsx
 Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
 
 Import trace for requested module:
 ./app/admin/dashboard/page.tsx
-[00:04:19.998] Browser WARN    ./app/admin/dashboard/page.tsx
+[00:10:00.011] Browser WARN    ./app/admin/dashboard/page.tsx
 Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
 
 Import trace for requested module:
 ./app/admin/dashboard/page.tsx
-[00:04:19.998] Browser WARN    ./app/pages/login/page.tsx
+[00:10:00.011] Browser WARN    ./app/admin/dashboard/page.tsx
 Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
 
 Import trace for requested module:
-./app/pages/login/page.tsx
-[00:04:19.998] Browser WARN    ./app/pages/login/page.tsx
+./app/admin/dashboard/page.tsx
+[00:10:00.011] Browser WARN    ./app/admin/dashboard/page.tsx
 Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
 
 Import trace for requested module:
-./app/pages/login/page.tsx
-[00:04:19.998] Browser WARN    GoTrueClient@sb-ocihmuijqawapmsruziu-auth-token:2 (2.89.0) 2025-12-28T10:12:28.067Z Multiple GoTrueClient instances detected in the same browser context. It is not an error, but this should be avoided as it may produce undefined behavior when used concurrently under the same storage key.
-[00:04:37.925] Server  WARN    ⚠ ./app/admin/dashboard/page.tsx
+./app/admin/dashboard/page.tsx
+[00:10:01.729] Server  WARN    ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[00:10:01.729] Browser WARN    ./app/admin/dashboard/page.tsx
+Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
+
+Import trace for requested module:
+./app/admin/dashboard/page.tsx
+[00:10:01.730] Browser WARN    ./app/admin/dashboard/page.tsx
+Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
+
+Import trace for requested module:
+./app/admin/dashboard/page.tsx
+[00:10:02.044] Server  WARN    ⚠ ./app/admin/dashboard/page.tsx
 Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
 
 Import trace for requested module:
@@ -226,82 +311,462 @@ Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (
 
 Import trace for requested module:
 ./app/admin/dashboard/page.tsx
-
-./app/admin/news/page.tsx
-Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
-
-Import trace for requested module:
-./app/admin/news/page.tsx
-
-./app/admin/news/page.tsx
-Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
-
-Import trace for requested module:
-./app/admin/news/page.tsx
-
-./app/pages/login/page.tsx
-Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
-
-Import trace for requested module:
-./app/pages/login/page.tsx
-
-./app/pages/login/page.tsx
-Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
-
-Import trace for requested module:
-./app/pages/login/page.tsx
-
-./app/admin/news/page.tsx
-Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
-
-Import trace for requested module:
-./app/admin/news/page.tsx
-
-./app/admin/news/page.tsx
-Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
-
-Import trace for requested module:
-./app/admin/news/page.tsx
-
-./app/pages/login/page.tsx
-Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
-
-Import trace for requested module:
-./app/pages/login/page.tsx
-
-./app/pages/login/page.tsx
-Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
-
-Import trace for requested module:
-./app/pages/login/page.tsx
-[00:04:38.992] Browser WARN    ./app/admin/dashboard/page.tsx
+[00:10:02.326] Server  ERROR   ⨯ ReferenceError: impo is not defined
+[00:10:02.709] Browser WARN    ./app/admin/dashboard/page.tsx
 Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
 
 Import trace for requested module:
 ./app/admin/dashboard/page.tsx
-[00:04:38.992] Browser WARN    ./app/admin/dashboard/page.tsx
+[00:10:02.709] Browser WARN    ./app/admin/dashboard/page.tsx
 Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
 
 Import trace for requested module:
 ./app/admin/dashboard/page.tsx
-[00:04:38.992] Browser WARN    ./app/admin/news/page.tsx
+[00:10:02.709] Browser WARN    ./app/admin/dashboard/page.tsx
 Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
 
 Import trace for requested module:
-./app/admin/news/page.tsx
-[00:04:38.992] Browser WARN    ./app/admin/news/page.tsx
+./app/admin/dashboard/page.tsx
+[00:10:02.709] Browser WARN    ./app/admin/dashboard/page.tsx
 Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
 
 Import trace for requested module:
-./app/admin/news/page.tsx
-[00:04:38.992] Browser WARN    ./app/pages/login/page.tsx
+./app/admin/dashboard/page.tsx
+[00:10:02.709] Browser WARN    ./app/admin/dashboard/page.tsx
 Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
+
+Import trace for requested module:
+./app/admin/dashboard/page.tsx
+[00:10:02.709] Browser WARN    ./app/admin/dashboard/page.tsx
+Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
+
+Import trace for requested module:
+./app/admin/dashboard/page.tsx
+[00:10:02.797] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:10:03.012] Browser ERROR   unhandledRejection: ReferenceError: impo is not defined
+[00:10:03.012] Browser WARN    ./app/admin/dashboard/page.tsx
+Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
+[00:10:03.012] Browser WARN    ./app/admin/dashboard/page.tsx
+Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
+[00:10:03.012] Browser ERROR   uncaughtError: ReferenceError: impo is not defined
+[00:10:03.251] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:10:04.011] Browser WARN    ./app/admin/dashboard/page.tsx
+Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
+[00:10:04.011] Browser WARN    ./app/admin/dashboard/page.tsx
+Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
+[00:10:04.014] Browser WARN    ./app/admin/dashboard/page.tsx
+Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
+[00:10:04.014] Browser WARN    ./app/admin/dashboard/page.tsx
+Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
+[00:10:05.672] Server  ERROR   ⨯ ./app/pages/login/page.tsx
+Error:   × Expected 'from', got 'import'
+   ╭─[/Users/lavbujak/Desktop/Sindjelic/westgate-sindjelic/frontend/app/pages/login/page.tsx:6:1]
+ 3 │ import { useState } from 'react';
+ 4 │ // import { supabase } from '@/lib/supabaseClient';
+ 5 │ import
+ 6 │ import { useRouter } from 'next/navigation';
+   · ──────
+ 7 │ import Cookies from 'js-cookie'; // ✅ import js-cookie
+ 8 │ 
+ 9 │ export default function LoginPage() {
+   ╰────
+
+Caused by:
+    Syntax Error
 
 Import trace for requested module:
 ./app/pages/login/page.tsx
-[00:04:38.992] Browser WARN    There were more warnings in other files.
-You can find a complete log in the terminal.
-[00:04:40.252] Server  WARN    ⚠ ./app/admin/dashboard/page.tsx
+[00:10:06.010] Browser ERROR   ./app/pages/login/page.tsx
+Error:   × Expected 'from', got 'import'
+   ╭─[/Users/lavbujak/Desktop/Sindjelic/westgate-sindjelic/frontend/app/pages/login/page.tsx:6:1]
+ 3 │ import { useState } from 'react';
+ 4 │ // import { supabase } from '@/lib/supabaseClient';
+ 5 │ import
+ 6 │ import { useRouter } from 'next/navigation';
+   · ──────
+ 7 │ import Cookies from 'js-cookie'; // ✅ import js-cookie
+ 8 │ 
+ 9 │ export default function LoginPage() {
+   ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./app/pages/login/page.tsx
+[00:10:06.010] Browser ERROR   ./app/pages/login/page.tsx
+Error:   × Expected 'from', got 'import'
+   ╭─[/Users/lavbujak/Desktop/Sindjelic/westgate-sindjelic/frontend/app/pages/login/page.tsx:6:1]
+ 3 │ import { useState } from 'react';
+ 4 │ // import { supabase } from '@/lib/supabaseClient';
+ 5 │ import
+ 6 │ import { useRouter } from 'next/navigation';
+   · ──────
+ 7 │ import Cookies from 'js-cookie'; // ✅ import js-cookie
+ 8 │ 
+ 9 │ export default function LoginPage() {
+   ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./app/pages/login/page.tsx
+[00:10:06.010] Browser ERROR   ./app/pages/login/page.tsx
+Error:   × Expected 'from', got 'import'
+   ╭─[/Users/lavbujak/Desktop/Sindjelic/westgate-sindjelic/frontend/app/pages/login/page.tsx:6:1]
+ 3 │ import { useState } from 'react';
+ 4 │ // import { supabase } from '@/lib/supabaseClient';
+ 5 │ import
+ 6 │ import { useRouter } from 'next/navigation';
+   · ──────
+ 7 │ import Cookies from 'js-cookie'; // ✅ import js-cookie
+ 8 │ 
+ 9 │ export default function LoginPage() {
+   ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./app/pages/login/page.tsx
+[00:10:06.010] Browser ERROR   ./app/pages/login/page.tsx
+Error:   × Expected 'from', got 'import'
+   ╭─[/Users/lavbujak/Desktop/Sindjelic/westgate-sindjelic/frontend/app/pages/login/page.tsx:6:1]
+ 3 │ import { useState } from 'react';
+ 4 │ // import { supabase } from '@/lib/supabaseClient';
+ 5 │ import
+ 6 │ import { useRouter } from 'next/navigation';
+   · ──────
+ 7 │ import Cookies from 'js-cookie'; // ✅ import js-cookie
+ 8 │ 
+ 9 │ export default function LoginPage() {
+   ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./app/pages/login/page.tsx
+[00:10:11.034] Server  WARN    ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:10:11.034] Browser WARN    ./app/admin/dashboard/page.tsx
+Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
+
+Import trace for requested module:
+./app/admin/dashboard/page.tsx
+[00:10:11.034] Browser WARN    ./app/admin/dashboard/page.tsx
+Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
+
+Import trace for requested module:
+./app/admin/dashboard/page.tsx
+[00:10:11.511] Server  ERROR   ⨯ ./app/pages/login/page.tsx
+Error:   × Expected 'from', got 'import'
+   ╭─[/Users/lavbujak/Desktop/Sindjelic/westgate-sindjelic/frontend/app/pages/login/page.tsx:6:1]
+ 3 │ import { useState } from 'react';
+ 4 │ // import { supabase } from '@/lib/supabaseClient';
+ 5 │ import { su}
+ 6 │ import { useRouter } from 'next/navigation';
+   · ──────
+ 7 │ import Cookies from 'js-cookie'; // ✅ import js-cookie
+ 8 │ 
+ 9 │ export default function LoginPage() {
+   ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./app/pages/login/page.tsx
+[00:10:12.055] Browser WARN    ./app/admin/dashboard/page.tsx
+Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
+
+Import trace for requested module:
+./app/admin/dashboard/page.tsx
+[00:10:12.055] Browser WARN    ./app/admin/dashboard/page.tsx
+Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
+
+Import trace for requested module:
+./app/admin/dashboard/page.tsx
+[00:10:12.055] Browser ERROR   ./app/pages/login/page.tsx
+Error:   × Expected 'from', got 'import'
+   ╭─[/Users/lavbujak/Desktop/Sindjelic/westgate-sindjelic/frontend/app/pages/login/page.tsx:6:1]
+ 3 │ import { useState } from 'react';
+ 4 │ // import { supabase } from '@/lib/supabaseClient';
+ 5 │ import { su}
+ 6 │ import { useRouter } from 'next/navigation';
+   · ──────
+ 7 │ import Cookies from 'js-cookie'; // ✅ import js-cookie
+ 8 │ 
+ 9 │ export default function LoginPage() {
+   ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./app/pages/login/page.tsx
+[00:10:12.055] Browser WARN    ./app/admin/dashboard/page.tsx
+Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
+
+Import trace for requested module:
+./app/admin/dashboard/page.tsx
+[00:10:12.055] Browser WARN    ./app/admin/dashboard/page.tsx
+Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
+
+Import trace for requested module:
+./app/admin/dashboard/page.tsx
+[00:10:12.055] Browser WARN    ./app/admin/dashboard/page.tsx
+Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
+
+Import trace for requested module:
+./app/admin/dashboard/page.tsx
+[00:10:12.055] Browser WARN    ./app/admin/dashboard/page.tsx
+Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
+
+Import trace for requested module:
+./app/admin/dashboard/page.tsx
+[00:10:12.055] Browser ERROR   ./app/pages/login/page.tsx
+Error:   × Expected 'from', got 'import'
+   ╭─[/Users/lavbujak/Desktop/Sindjelic/westgate-sindjelic/frontend/app/pages/login/page.tsx:6:1]
+ 3 │ import { useState } from 'react';
+ 4 │ // import { supabase } from '@/lib/supabaseClient';
+ 5 │ import { su}
+ 6 │ import { useRouter } from 'next/navigation';
+   · ──────
+ 7 │ import Cookies from 'js-cookie'; // ✅ import js-cookie
+ 8 │ 
+ 9 │ export default function LoginPage() {
+   ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./app/pages/login/page.tsx
+[00:10:12.055] Browser ERROR   ./app/pages/login/page.tsx
+Error:   × Expected 'from', got 'import'
+   ╭─[/Users/lavbujak/Desktop/Sindjelic/westgate-sindjelic/frontend/app/pages/login/page.tsx:6:1]
+ 3 │ import { useState } from 'react';
+ 4 │ // import { supabase } from '@/lib/supabaseClient';
+ 5 │ import { su}
+ 6 │ import { useRouter } from 'next/navigation';
+   · ──────
+ 7 │ import Cookies from 'js-cookie'; // ✅ import js-cookie
+ 8 │ 
+ 9 │ export default function LoginPage() {
+   ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./app/pages/login/page.tsx
+[00:10:12.055] Browser WARN    ./app/admin/dashboard/page.tsx
+Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
+
+Import trace for requested module:
+./app/admin/dashboard/page.tsx
+[00:10:12.055] Browser WARN    ./app/admin/dashboard/page.tsx
+Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
+
+Import trace for requested module:
+./app/admin/dashboard/page.tsx
+[00:10:12.055] Browser WARN    ./app/admin/dashboard/page.tsx
+Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
+
+Import trace for requested module:
+./app/admin/dashboard/page.tsx
+[00:10:12.055] Browser WARN    ./app/admin/dashboard/page.tsx
+Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
+
+Import trace for requested module:
+./app/admin/dashboard/page.tsx
+[00:10:12.055] Browser ERROR   ./app/pages/login/page.tsx
+Error:   × Expected 'from', got 'import'
+   ╭─[/Users/lavbujak/Desktop/Sindjelic/westgate-sindjelic/frontend/app/pages/login/page.tsx:6:1]
+ 3 │ import { useState } from 'react';
+ 4 │ // import { supabase } from '@/lib/supabaseClient';
+ 5 │ import { su}
+ 6 │ import { useRouter } from 'next/navigation';
+   · ──────
+ 7 │ import Cookies from 'js-cookie'; // ✅ import js-cookie
+ 8 │ 
+ 9 │ export default function LoginPage() {
+   ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./app/pages/login/page.tsx
+[00:10:12.254] Server  ERROR   ⨯ ./app/pages/login/page.tsx
+Error:   × Expected 'from', got 'import'
+   ╭─[/Users/lavbujak/Desktop/Sindjelic/westgate-sindjelic/frontend/app/pages/login/page.tsx:6:1]
+ 3 │ import { useState } from 'react';
+ 4 │ // import { supabase } from '@/lib/supabaseClient';
+ 5 │ import { supa}
+ 6 │ import { useRouter } from 'next/navigation';
+   · ──────
+ 7 │ import Cookies from 'js-cookie'; // ✅ import js-cookie
+ 8 │ 
+ 9 │ export default function LoginPage() {
+   ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./app/pages/login/page.tsx
+[00:10:12.478] Browser ERROR   uncaughtError: ModuleBuildError: Module build failed (from ./node_modules/next/dist/build/webpack/loaders/next-swc-loader.js):
+Error:   × Expected 'from', got 'import'
+   ╭─[/Users/lavbujak/Desktop/Sindjelic/westgate-sindjelic/frontend/app/pages/login/page.tsx:6:1]
+ 3 │ import { useState } from 'react';
+ 4 │ // import { supabase } from '@/lib/supabaseClient';
+ 5 │ import { su}
+ 6 │ import { useRouter } from 'next/navigation';
+   · ──────
+ 7 │ import Cookies from 'js-cookie'; // ✅ import js-cookie
+ 8 │ 
+ 9 │ export default function LoginPage() {
+   ╰────
+
+
+Caused by:
+    Syntax Error
+[00:10:12.482] Browser WARN    ./app/admin/dashboard/page.tsx
+Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
+
+Import trace for requested module:
+./app/admin/dashboard/page.tsx
+[00:10:12.483] Browser WARN    ./app/admin/dashboard/page.tsx
+Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
+
+Import trace for requested module:
+./app/admin/dashboard/page.tsx
+[00:10:12.483] Browser ERROR   ./app/pages/login/page.tsx
+Error:   × Expected 'from', got 'import'
+   ╭─[/Users/lavbujak/Desktop/Sindjelic/westgate-sindjelic/frontend/app/pages/login/page.tsx:6:1]
+ 3 │ import { useState } from 'react';
+ 4 │ // import { supabase } from '@/lib/supabaseClient';
+ 5 │ import { supa}
+ 6 │ import { useRouter } from 'next/navigation';
+   · ──────
+ 7 │ import Cookies from 'js-cookie'; // ✅ import js-cookie
+ 8 │ 
+ 9 │ export default function LoginPage() {
+   ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./app/pages/login/page.tsx
+[00:10:12.810] Browser ERROR   uncaughtError: ModuleBuildError: Module build failed (from ./node_modules/next/dist/build/webpack/loaders/next-swc-loader.js):
+Error:   × Expected 'from', got 'import'
+   ╭─[/Users/lavbujak/Desktop/Sindjelic/westgate-sindjelic/frontend/app/pages/login/page.tsx:6:1]
+ 3 │ import { useState } from 'react';
+ 4 │ // import { supabase } from '@/lib/supabaseClient';
+ 5 │ import { supa}
+ 6 │ import { useRouter } from 'next/navigation';
+   · ──────
+ 7 │ import Cookies from 'js-cookie'; // ✅ import js-cookie
+ 8 │ 
+ 9 │ export default function LoginPage() {
+   ╰────
+
+
+Caused by:
+    Syntax Error
+[00:10:13.029] Browser ERROR   ./app/pages/login/page.tsx
+Error:   × Expected 'from', got 'import'
+   ╭─[/Users/lavbujak/Desktop/Sindjelic/westgate-sindjelic/frontend/app/pages/login/page.tsx:6:1]
+ 3 │ import { useState } from 'react';
+ 4 │ // import { supabase } from '@/lib/supabaseClient';
+ 5 │ import { supa}
+ 6 │ import { useRouter } from 'next/navigation';
+   · ──────
+ 7 │ import Cookies from 'js-cookie'; // ✅ import js-cookie
+ 8 │ 
+ 9 │ export default function LoginPage() {
+   ╰────
+
+Caused by:
+    Syntax Error
+[00:10:13.030] Browser ERROR   ./app/pages/login/page.tsx
+Error:   × Expected 'from', got 'import'
+   ╭─[/Users/lavbujak/Desktop/Sindjelic/westgate-sindjelic/frontend/app/pages/login/page.tsx:6:1]
+ 3 │ import { useState } from 'react';
+ 4 │ // import { supabase } from '@/lib/supabaseClient';
+ 5 │ import { supa}
+ 6 │ import { useRouter } from 'next/navigation';
+   · ──────
+ 7 │ import Cookies from 'js-cookie'; // ✅ import js-cookie
+ 8 │ 
+ 9 │ export default function LoginPage() {
+   ╰────
+
+Caused by:
+    Syntax Error
+[00:10:13.030] Browser ERROR   ./app/pages/login/page.tsx
+Error:   × Expected 'from', got 'import'
+   ╭─[/Users/lavbujak/Desktop/Sindjelic/westgate-sindjelic/frontend/app/pages/login/page.tsx:6:1]
+ 3 │ import { useState } from 'react';
+ 4 │ // import { supabase } from '@/lib/supabaseClient';
+ 5 │ import { supa}
+ 6 │ import { useRouter } from 'next/navigation';
+   · ──────
+ 7 │ import Cookies from 'js-cookie'; // ✅ import js-cookie
+ 8 │ 
+ 9 │ export default function LoginPage() {
+   ╰────
+
+Caused by:
+    Syntax Error
+[00:10:13.473] Server  WARN    ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[00:10:13.473] Browser WARN    ./app/admin/dashboard/page.tsx
+Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
+
+Import trace for requested module:
+./app/admin/dashboard/page.tsx
+[00:10:13.473] Browser WARN    ./app/admin/dashboard/page.tsx
+Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
+
+Import trace for requested module:
+./app/admin/dashboard/page.tsx
+[00:10:13.485] Server  WARN    ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[00:10:13.485] Browser WARN    ./app/admin/dashboard/page.tsx
+Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
+
+Import trace for requested module:
+./app/admin/dashboard/page.tsx
+[00:10:13.485] Browser WARN    ./app/admin/dashboard/page.tsx
+Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
+
+Import trace for requested module:
+./app/admin/dashboard/page.tsx
+[00:10:13.897] Server  WARN    ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[00:10:13.898] Browser WARN    ./app/admin/dashboard/page.tsx
+Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
+
+Import trace for requested module:
+./app/admin/dashboard/page.tsx
+[00:10:13.898] Browser WARN    ./app/admin/dashboard/page.tsx
+Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
+
+Import trace for requested module:
+./app/admin/dashboard/page.tsx
+[00:10:13.948] Server  WARN    ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[00:10:13.948] Browser WARN    ./app/admin/dashboard/page.tsx
+Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
+
+Import trace for requested module:
+./app/admin/dashboard/page.tsx
+[00:10:13.948] Browser WARN    ./app/admin/dashboard/page.tsx
+Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
+
+Import trace for requested module:
+./app/admin/dashboard/page.tsx
+[00:10:14.086] Server  WARN    ⚠ ./app/admin/dashboard/page.tsx
 Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
 
 Import trace for requested module:
@@ -312,375 +777,23 @@ Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (
 
 Import trace for requested module:
 ./app/admin/dashboard/page.tsx
-
-./app/admin/news/page.tsx
+[00:10:14.446] Server  WARN    ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[00:10:14.447] Server  WARN    ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[00:10:14.940] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:10:14.953] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:10:16.017] Browser WARN    ./app/admin/dashboard/page.tsx
 Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
-
-Import trace for requested module:
-./app/admin/news/page.tsx
-
-./app/admin/news/page.tsx
+[00:10:16.017] Browser WARN    ./app/admin/dashboard/page.tsx
 Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
-
-Import trace for requested module:
-./app/admin/news/page.tsx
-
-./app/pages/login/page.tsx
+[00:10:16.017] Browser WARN    ./app/admin/dashboard/page.tsx
 Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
-
-Import trace for requested module:
-./app/pages/login/page.tsx
-
-./app/pages/login/page.tsx
+[00:10:16.017] Browser WARN    ./app/admin/dashboard/page.tsx
 Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
-
-Import trace for requested module:
-./app/pages/login/page.tsx
-
-./app/admin/news/page.tsx
+[00:10:16.017] Browser WARN    ./app/admin/dashboard/page.tsx
 Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
-
-Import trace for requested module:
-./app/admin/news/page.tsx
-
-./app/admin/news/page.tsx
+[00:10:16.017] Browser WARN    ./app/admin/dashboard/page.tsx
 Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
-
-Import trace for requested module:
-./app/admin/news/page.tsx
-
-./app/pages/login/page.tsx
-Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
-
-Import trace for requested module:
-./app/pages/login/page.tsx
-
-./app/pages/login/page.tsx
-Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
-
-Import trace for requested module:
-./app/pages/login/page.tsx
-[00:04:40.992] Browser WARN    ./app/admin/dashboard/page.tsx
-Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
-
-Import trace for requested module:
-./app/admin/dashboard/page.tsx
-[00:04:40.992] Browser WARN    ./app/admin/dashboard/page.tsx
-Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
-
-Import trace for requested module:
-./app/admin/dashboard/page.tsx
-[00:04:40.992] Browser WARN    ./app/admin/news/page.tsx
-Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
-
-Import trace for requested module:
-./app/admin/news/page.tsx
-[00:04:40.992] Browser WARN    ./app/admin/news/page.tsx
-Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
-
-Import trace for requested module:
-./app/admin/news/page.tsx
-[00:04:40.992] Browser WARN    ./app/pages/login/page.tsx
-Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
-
-Import trace for requested module:
-./app/pages/login/page.tsx
-[00:04:40.992] Browser WARN    There were more warnings in other files.
-You can find a complete log in the terminal.
-[00:05:48.565] Server  WARN    ⚠ ./app/admin/dashboard/page.tsx
-Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
-
-Import trace for requested module:
-./app/admin/dashboard/page.tsx
-
-./app/admin/dashboard/page.tsx
-Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
-
-Import trace for requested module:
-./app/admin/dashboard/page.tsx
-
-./app/pages/login/page.tsx
-Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
-
-Import trace for requested module:
-./app/pages/login/page.tsx
-
-./app/pages/login/page.tsx
-Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
-
-Import trace for requested module:
-./app/pages/login/page.tsx
-
-./app/pages/login/page.tsx
-Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
-
-Import trace for requested module:
-./app/pages/login/page.tsx
-
-./app/pages/login/page.tsx
-Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
-
-Import trace for requested module:
-./app/pages/login/page.tsx
-[00:05:48.991] Browser WARN    ./app/admin/dashboard/page.tsx
-Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
-
-Import trace for requested module:
-./app/admin/dashboard/page.tsx
-[00:05:48.992] Browser WARN    ./app/admin/dashboard/page.tsx
-Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
-
-Import trace for requested module:
-./app/admin/dashboard/page.tsx
-[00:05:48.992] Browser WARN    ./app/pages/login/page.tsx
-Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
-
-Import trace for requested module:
-./app/pages/login/page.tsx
-[00:05:48.992] Browser WARN    ./app/pages/login/page.tsx
-Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
-
-Import trace for requested module:
-./app/pages/login/page.tsx
-[00:05:54.355] Server  WARN    ⚠ ./app/admin/dashboard/page.tsx
-Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
-
-Import trace for requested module:
-./app/admin/dashboard/page.tsx
-
-./app/admin/dashboard/page.tsx
-Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
-
-Import trace for requested module:
-./app/admin/dashboard/page.tsx
-
-./app/pages/login/page.tsx
-Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
-
-Import trace for requested module:
-./app/pages/login/page.tsx
-
-./app/pages/login/page.tsx
-Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
-
-Import trace for requested module:
-./app/pages/login/page.tsx
-
-./app/pages/login/page.tsx
-Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
-
-Import trace for requested module:
-./app/pages/login/page.tsx
-
-./app/pages/login/page.tsx
-Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
-
-Import trace for requested module:
-./app/pages/login/page.tsx
-[00:05:54.991] Browser WARN    ./app/admin/dashboard/page.tsx
-Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
-
-Import trace for requested module:
-./app/admin/dashboard/page.tsx
-[00:05:54.991] Browser WARN    ./app/admin/dashboard/page.tsx
-Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
-
-Import trace for requested module:
-./app/admin/dashboard/page.tsx
-[00:05:54.991] Browser WARN    ./app/pages/login/page.tsx
-Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
-
-Import trace for requested module:
-./app/pages/login/page.tsx
-[00:05:54.991] Browser WARN    ./app/pages/login/page.tsx
-Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
-
-Import trace for requested module:
-./app/pages/login/page.tsx
-[00:06:01.298] Browser LOG     Inserted news: null
-[00:06:53.146] Server  WARN    ⚠ ./app/admin/dashboard/page.tsx
-Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
-
-Import trace for requested module:
-./app/admin/dashboard/page.tsx
-
-./app/admin/dashboard/page.tsx
-Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
-
-Import trace for requested module:
-./app/admin/dashboard/page.tsx
-
-./app/pages/login/page.tsx
-Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
-
-Import trace for requested module:
-./app/pages/login/page.tsx
-
-./app/pages/login/page.tsx
-Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
-
-Import trace for requested module:
-./app/pages/login/page.tsx
-
-./app/pages/login/page.tsx
-Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
-
-Import trace for requested module:
-./app/pages/login/page.tsx
-
-./app/pages/login/page.tsx
-Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
-
-Import trace for requested module:
-./app/pages/login/page.tsx
-[00:06:53.415] Browser WARN    ./app/admin/dashboard/page.tsx
-Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
-
-Import trace for requested module:
-./app/admin/dashboard/page.tsx
-[00:06:53.415] Browser WARN    ./app/admin/dashboard/page.tsx
-Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
-
-Import trace for requested module:
-./app/admin/dashboard/page.tsx
-[00:06:53.415] Browser WARN    ./app/pages/login/page.tsx
-Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
-
-Import trace for requested module:
-./app/pages/login/page.tsx
-[00:06:53.415] Browser WARN    ./app/pages/login/page.tsx
-Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
-
-Import trace for requested module:
-./app/pages/login/page.tsx
-[00:06:53.472] Server  WARN    ⚠ ./app/admin/dashboard/page.tsx
-Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
-
-Import trace for requested module:
-./app/admin/dashboard/page.tsx
-
-./app/admin/dashboard/page.tsx
-Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
-
-Import trace for requested module:
-./app/admin/dashboard/page.tsx
-
-./app/pages/login/page.tsx
-Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
-
-Import trace for requested module:
-./app/pages/login/page.tsx
-
-./app/pages/login/page.tsx
-Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
-
-Import trace for requested module:
-./app/pages/login/page.tsx
-
-./app/pages/login/page.tsx
-Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
-
-Import trace for requested module:
-./app/pages/login/page.tsx
-
-./app/pages/login/page.tsx
-Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
-
-Import trace for requested module:
-./app/pages/login/page.tsx
-[00:06:53.578] Browser WARN    ./app/admin/dashboard/page.tsx
-Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
-
-Import trace for requested module:
-./app/admin/dashboard/page.tsx
-[00:06:53.578] Browser WARN    ./app/admin/dashboard/page.tsx
-Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
-
-Import trace for requested module:
-./app/admin/dashboard/page.tsx
-[00:06:53.578] Browser WARN    ./app/pages/login/page.tsx
-Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
-
-Import trace for requested module:
-./app/pages/login/page.tsx
-[00:06:53.578] Browser WARN    ./app/pages/login/page.tsx
-Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
-
-Import trace for requested module:
-./app/pages/login/page.tsx
-[00:06:54.503] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:06:54.620] Browser WARN    ./app/admin/dashboard/page.tsx
-Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
-[00:06:54.620] Browser WARN    ./app/admin/dashboard/page.tsx
-Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
-[00:06:54.620] Browser WARN    ./app/pages/login/page.tsx
-Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
-[00:06:54.620] Browser WARN    ./app/pages/login/page.tsx
-Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
-[00:06:56.150] Server  LOG     ○ Compiling /_not-found ...
-[00:06:57.073] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:06:57.179] Browser WARN    ./app/admin/dashboard/page.tsx
-Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
-[00:06:57.180] Browser WARN    ./app/admin/dashboard/page.tsx
-Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
-[00:06:57.180] Browser WARN    ./app/pages/login/page.tsx
-Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
-[00:06:57.180] Browser WARN    ./app/pages/login/page.tsx
-Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
-[00:06:59.441] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:06:59.550] Browser WARN    ./app/admin/dashboard/page.tsx
-Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
-[00:06:59.551] Browser WARN    ./app/admin/dashboard/page.tsx
-Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
-[00:06:59.551] Browser WARN    ./app/pages/login/page.tsx
-Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
-[00:06:59.551] Browser WARN    ./app/pages/login/page.tsx
-Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
-[00:08:28.467] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:08:28.578] Browser WARN    ./app/admin/dashboard/page.tsx
-Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
-[00:08:28.578] Browser WARN    ./app/admin/dashboard/page.tsx
-Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
-[00:08:28.578] Browser WARN    ./app/pages/login/page.tsx
-Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
-[00:08:28.578] Browser WARN    ./app/pages/login/page.tsx
-Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
-[00:08:30.602] Server  WARN    ⚠ ./app/admin/dashboard/page.tsx
-Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
-
-Import trace for requested module:
-./app/admin/dashboard/page.tsx
-
-./app/admin/dashboard/page.tsx
-Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
-
-Import trace for requested module:
-./app/admin/dashboard/page.tsx
-
-./app/pages/login/page.tsx
-Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
-
-Import trace for requested module:
-./app/pages/login/page.tsx
-
-./app/pages/login/page.tsx
-Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
-
-Import trace for requested module:
-./app/pages/login/page.tsx
-
-./app/pages/login/page.tsx
-Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
-
-Import trace for requested module:
-./app/pages/login/page.tsx
-
-./app/pages/login/page.tsx
-Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
-
-Import trace for requested module:
-./app/pages/login/page.tsx
-[00:08:31.077] Server  WARN    ⚠ ./app/admin/dashboard/page.tsx
+[00:10:22.473] Server  WARN    ⚠ ./app/admin/dashboard/page.tsx
 Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
 
 Import trace for requested module:
@@ -715,50 +828,444 @@ Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (
 
 Import trace for requested module:
 ./app/pages/login/page.tsx
-[00:08:31.180] Browser WARN    ./app/admin/dashboard/page.tsx
+[00:10:23.011] Browser WARN    ./app/admin/dashboard/page.tsx
 Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
 
 Import trace for requested module:
 ./app/admin/dashboard/page.tsx
-[00:08:31.180] Browser WARN    ./app/admin/dashboard/page.tsx
+[00:10:23.011] Browser WARN    ./app/admin/dashboard/page.tsx
 Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
 
 Import trace for requested module:
 ./app/admin/dashboard/page.tsx
-[00:08:31.180] Browser WARN    ./app/pages/login/page.tsx
+[00:10:23.011] Browser WARN    ./app/pages/login/page.tsx
 Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
 
 Import trace for requested module:
 ./app/pages/login/page.tsx
-[00:08:31.180] Browser WARN    ./app/pages/login/page.tsx
+[00:10:23.011] Browser WARN    ./app/pages/login/page.tsx
 Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
 
 Import trace for requested module:
 ./app/pages/login/page.tsx
-[00:08:32.178] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:08:32.293] Browser WARN    ./app/admin/dashboard/page.tsx
+[00:10:23.011] Browser WARN    ./app/admin/dashboard/page.tsx
 Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
-[00:08:32.293] Browser WARN    ./app/admin/dashboard/page.tsx
+
+Import trace for requested module:
+./app/admin/dashboard/page.tsx
+[00:10:23.011] Browser WARN    ./app/admin/dashboard/page.tsx
 Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
-[00:08:32.293] Browser WARN    ./app/pages/login/page.tsx
+
+Import trace for requested module:
+./app/admin/dashboard/page.tsx
+[00:10:23.011] Browser WARN    ./app/pages/login/page.tsx
 Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
-[00:08:32.293] Browser WARN    ./app/pages/login/page.tsx
+
+Import trace for requested module:
+./app/pages/login/page.tsx
+[00:10:23.011] Browser WARN    ./app/pages/login/page.tsx
 Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
-[00:09:16.531] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:09:16.647] Browser WARN    ./app/admin/dashboard/page.tsx
+
+Import trace for requested module:
+./app/pages/login/page.tsx
+[00:10:23.011] Browser WARN    ./app/admin/dashboard/page.tsx
 Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
-[00:09:16.647] Browser WARN    ./app/admin/dashboard/page.tsx
+
+Import trace for requested module:
+./app/admin/dashboard/page.tsx
+[00:10:23.011] Browser WARN    ./app/admin/dashboard/page.tsx
 Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
-[00:09:16.647] Browser WARN    ./app/pages/login/page.tsx
+
+Import trace for requested module:
+./app/admin/dashboard/page.tsx
+[00:10:23.011] Browser WARN    ./app/pages/login/page.tsx
 Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
-[00:09:16.647] Browser WARN    ./app/pages/login/page.tsx
+
+Import trace for requested module:
+./app/pages/login/page.tsx
+[00:10:23.011] Browser WARN    ./app/pages/login/page.tsx
 Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
-[00:09:29.837] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:09:29.951] Browser WARN    ./app/admin/dashboard/page.tsx
+
+Import trace for requested module:
+./app/pages/login/page.tsx
+[00:10:23.011] Browser WARN    ./app/admin/dashboard/page.tsx
 Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
-[00:09:29.951] Browser WARN    ./app/admin/dashboard/page.tsx
+
+Import trace for requested module:
+./app/admin/dashboard/page.tsx
+[00:10:23.011] Browser WARN    ./app/admin/dashboard/page.tsx
 Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
-[00:09:29.951] Browser WARN    ./app/pages/login/page.tsx
+
+Import trace for requested module:
+./app/admin/dashboard/page.tsx
+[00:10:23.011] Browser WARN    ./app/pages/login/page.tsx
 Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
-[00:09:29.951] Browser WARN    ./app/pages/login/page.tsx
+
+Import trace for requested module:
+./app/pages/login/page.tsx
+[00:10:23.011] Browser WARN    ./app/pages/login/page.tsx
 Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
+
+Import trace for requested module:
+./app/pages/login/page.tsx
+[00:10:24.271] Server  WARN    ⚠ ./app/admin/dashboard/page.tsx
+Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
+
+Import trace for requested module:
+./app/admin/dashboard/page.tsx
+
+./app/admin/dashboard/page.tsx
+Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
+
+Import trace for requested module:
+./app/admin/dashboard/page.tsx
+[00:10:25.011] Browser WARN    ./app/admin/dashboard/page.tsx
+Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
+
+Import trace for requested module:
+./app/admin/dashboard/page.tsx
+[00:10:25.011] Browser WARN    ./app/admin/dashboard/page.tsx
+Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
+
+Import trace for requested module:
+./app/admin/dashboard/page.tsx
+[00:10:25.011] Browser WARN    ./app/admin/dashboard/page.tsx
+Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
+
+Import trace for requested module:
+./app/admin/dashboard/page.tsx
+[00:10:25.011] Browser WARN    ./app/admin/dashboard/page.tsx
+Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
+
+Import trace for requested module:
+./app/admin/dashboard/page.tsx
+[00:10:27.959] Server  WARN    ⚠ ./app/admin/dashboard/page.tsx
+Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
+
+Import trace for requested module:
+./app/admin/dashboard/page.tsx
+
+./app/admin/dashboard/page.tsx
+Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
+
+Import trace for requested module:
+./app/admin/dashboard/page.tsx
+[00:10:29.010] Browser WARN    ./app/admin/dashboard/page.tsx
+Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
+
+Import trace for requested module:
+./app/admin/dashboard/page.tsx
+[00:10:29.010] Browser WARN    ./app/admin/dashboard/page.tsx
+Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
+
+Import trace for requested module:
+./app/admin/dashboard/page.tsx
+[00:10:29.010] Browser WARN    ./app/admin/dashboard/page.tsx
+Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
+
+Import trace for requested module:
+./app/admin/dashboard/page.tsx
+[00:10:29.010] Browser WARN    ./app/admin/dashboard/page.tsx
+Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
+
+Import trace for requested module:
+./app/admin/dashboard/page.tsx
+[00:10:32.512] Server  WARN    ⚠ ./app/admin/dashboard/page.tsx
+Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
+
+Import trace for requested module:
+./app/admin/dashboard/page.tsx
+
+./app/admin/dashboard/page.tsx
+Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
+
+Import trace for requested module:
+./app/admin/dashboard/page.tsx
+[00:10:33.010] Browser WARN    ./app/admin/dashboard/page.tsx
+Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
+
+Import trace for requested module:
+./app/admin/dashboard/page.tsx
+[00:10:33.010] Browser WARN    ./app/admin/dashboard/page.tsx
+Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
+
+Import trace for requested module:
+./app/admin/dashboard/page.tsx
+[00:10:33.010] Browser WARN    ./app/admin/dashboard/page.tsx
+Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
+
+Import trace for requested module:
+./app/admin/dashboard/page.tsx
+[00:10:33.010] Browser WARN    ./app/admin/dashboard/page.tsx
+Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
+
+Import trace for requested module:
+./app/admin/dashboard/page.tsx
+[00:10:33.010] Browser WARN    ./app/admin/dashboard/page.tsx
+Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
+
+Import trace for requested module:
+./app/admin/dashboard/page.tsx
+[00:10:33.010] Browser WARN    ./app/admin/dashboard/page.tsx
+Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
+
+Import trace for requested module:
+./app/admin/dashboard/page.tsx
+[00:10:33.010] Browser WARN    ./app/admin/dashboard/page.tsx
+Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
+
+Import trace for requested module:
+./app/admin/dashboard/page.tsx
+[00:10:33.010] Browser WARN    ./app/admin/dashboard/page.tsx
+Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
+
+Import trace for requested module:
+./app/admin/dashboard/page.tsx
+[00:10:46.299] Browser LOG     Login data: {"session":{"access_token":"eyJhbGciOiJFUzI1NiIsImtpZCI6IjdlNmIzNTQyLWM0MDEtNDc5OS04NzA2LTFkYTAwZGRjZjExZiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJodHRwczovL29jaWhtdWlqcWF3YXBtc3J1eml1LnN1cGFiYXNlLmNvL2F1dGgvdjEiLCJzdWIiOiJlYzExZDliMS0xMzQ0LTQ3MmItOTJmNS01OTI4Y2RmZmQyOWEiLCJhdWQiOiJhdXRoZW50aWNhdGVkIiwiZXhwIjoxNzY2OTIyODU1LCJpYXQiOjE3NjY5MTkyNTUsImVtYWlsIjoiYnVqYWtsYXZAZ21haWwuY29tIiwicGhvbmUiOiIiLCJhcHBfbWV0YWRhdGEiOnsicHJvdmlkZXIiOiJlbWFpbCIsInByb3ZpZGVycyI6WyJlbWFpbCJdfSwidXNlcl9tZXRhZGF0YSI6eyJlbWFpbF92ZXJpZmllZCI6dHJ1ZX0sInJvbGUiOiJhdXRoZW50aWNhdGVkIiwiYWFsIjoiYWFsMSIsImFtciI6W3sibWV0aG9kIjoicGFzc3dvcmQiLCJ0aW1lc3RhbXAiOjE3NjY5MTkyNTV9XSwic2Vzc2lvbl9pZCI6ImVjMzlmN2U4LTg5ZDQtNDhmMi05YmNiLTZlMWE0NGI1ZDlmOSIsImlzX2Fub255bW91cyI6ZmFsc2V9.A6GT0S4BQPt3d5_Wg-qMMbRFDWQmTVkH06CUtWOE8sPsN2GQZcv3aV2DmfzcySlLWNQ-r4VDCQJC9DF3ye2xVg","expires_at":1766922855,"expires_in":3600,"refresh_token":"4kptbffnj3ji","token_type":"bearer","user":{"app_metadata":{"provider":"email","providers":["email"]},"aud":"authenticated","confirmed_at":"2025-12-28T04:03:40.086596Z","created_at":"2025-12-28T04:03:40.062411Z","email":"bujaklav@gmail.com","email_confirmed_at":"2025-12-28T04:03:40.086596Z","id":"ec11d9b1-1344-472b-92f5-5928cdffd29a","identities":[{"created_at":"2025-12-28T04:03:40.078039Z","email":"bujaklav@gmail.com","id":"ec11d9b1-1344-472b-92f5-5928cdffd29a","identity_data":"[Object]","identity_id":"6399d96e-144d-4baa-b1b3-88537159001d","last_sign_in_at":"2025-12-28T04:03:40.077985Z","provider":"email","updated_at":"2025-12-28T04:03:40.078039Z","user_id":"ec11d9b1-1344-472b-92f5-5928cdffd29a"}],"is_anonymous":false,"last_sign_in_at":"2025-12-28T10:54:15.727994518Z","phone":"","role":"authenticated","updated_at":"2025-12-28T10:54:15.775484Z","user_metadata":{"email_verified":true}},"weak_password":null},"user":{"app_metadata":{"provider":"email","providers":["email"]},"aud":"authenticated","confirmed_at":"2025-12-28T04:03:40.086596Z","created_at":"2025-12-28T04:03:40.062411Z","email":"bujaklav@gmail.com","email_confirmed_at":"2025-12-28T04:03:40.086596Z","id":"ec11d9b1-1344-472b-92f5-5928cdffd29a","identities":[{"created_at":"2025-12-28T04:03:40.078039Z","email":"bujaklav@gmail.com","id":"ec11d9b1-1344-472b-92f5-5928cdffd29a","identity_data":{"email":"bujaklav@gmail.com","email_verified":false,"phone_verified":false,"sub":"ec11d9b1-1344-472b-92f5-5928cdffd29a"},"identity_id":"6399d96e-144d-4baa-b1b3-88537159001d","last_sign_in_at":"2025-12-28T04:03:40.077985Z","provider":"email","updated_at":"2025-12-28T04:03:40.078039Z","user_id":"ec11d9b1-1344-472b-92f5-5928cdffd29a"}],"is_anonymous":false,"last_sign_in_at":"2025-12-28T10:54:15.727994518Z","phone":"","role":"authenticated","updated_at":"2025-12-28T10:54:15.775484Z","user_metadata":{"email_verified":true}}}
+[00:10:46.299] Browser LOG     Login error: null
+[00:10:46.967] Server  WARN    ⚠ ./app/admin/dashboard/page.tsx
+Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
+
+Import trace for requested module:
+./app/admin/dashboard/page.tsx
+
+./app/admin/dashboard/page.tsx
+Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
+
+Import trace for requested module:
+./app/admin/dashboard/page.tsx
+[00:10:47.289] Server  WARN    ⚠ ./app/admin/dashboard/page.tsx
+Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
+
+Import trace for requested module:
+./app/admin/dashboard/page.tsx
+
+./app/admin/dashboard/page.tsx
+Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
+
+Import trace for requested module:
+./app/admin/dashboard/page.tsx
+
+./app/admin/dashboard/page.tsx
+Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
+
+Import trace for requested module:
+./app/admin/dashboard/page.tsx
+
+./app/admin/dashboard/page.tsx
+Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
+
+Import trace for requested module:
+./app/admin/dashboard/page.tsx
+[00:10:47.391] Browser WARN    ./app/admin/dashboard/page.tsx
+Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
+
+Import trace for requested module:
+./app/admin/dashboard/page.tsx
+[00:10:47.391] Browser WARN    ./app/admin/dashboard/page.tsx
+Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
+
+Import trace for requested module:
+./app/admin/dashboard/page.tsx
+[00:10:47.534] Browser ERROR   unhandledRejection: TypeError: Cannot read properties of undefined (reading 'auth')
+[00:10:47.534] Browser ERROR   unhandledRejection: TypeError: Cannot read properties of undefined (reading 'auth')
+[00:10:48.010] Browser WARN    ./app/admin/dashboard/page.tsx
+Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
+
+Import trace for requested module:
+./app/admin/dashboard/page.tsx
+[00:10:48.010] Browser WARN    ./app/admin/dashboard/page.tsx
+Attempted import error: 'supabase' is not exported from '@/lib/supabaseClient' (imported as 'supabase').
+
+Import trace for requested module:
+./app/admin/dashboard/page.tsx
+[00:12:51.733] Server  ERROR   ⨯ ./app/admin/dashboard/page.tsx
+Error:   × Expected 'from', got 'import'
+   ╭─[/Users/lavbujak/Desktop/Sindjelic/westgate-sindjelic/frontend/app/admin/dashboard/page.tsx:6:1]
+ 3 │ import { useEffect, useState } from 'react';
+ 4 │ // import { supabase } from '@/lib/supabaseClient';
+ 5 │ import
+ 6 │ import { useRouter } from 'next/navigation';
+   · ──────
+ 7 │ 
+ 8 │ export default function AdminDashboard() {
+ 9 │   const [loading, setLoading] = useState(true);
+   ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./app/admin/dashboard/page.tsx
+[00:12:52.011] Browser ERROR   ./app/admin/dashboard/page.tsx
+Error:   × Expected 'from', got 'import'
+   ╭─[/Users/lavbujak/Desktop/Sindjelic/westgate-sindjelic/frontend/app/admin/dashboard/page.tsx:6:1]
+ 3 │ import { useEffect, useState } from 'react';
+ 4 │ // import { supabase } from '@/lib/supabaseClient';
+ 5 │ import
+ 6 │ import { useRouter } from 'next/navigation';
+   · ──────
+ 7 │ 
+ 8 │ export default function AdminDashboard() {
+ 9 │   const [loading, setLoading] = useState(true);
+   ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./app/admin/dashboard/page.tsx
+[00:12:52.012] Browser ERROR   ./app/admin/dashboard/page.tsx
+Error:   × Expected 'from', got 'import'
+   ╭─[/Users/lavbujak/Desktop/Sindjelic/westgate-sindjelic/frontend/app/admin/dashboard/page.tsx:6:1]
+ 3 │ import { useEffect, useState } from 'react';
+ 4 │ // import { supabase } from '@/lib/supabaseClient';
+ 5 │ import
+ 6 │ import { useRouter } from 'next/navigation';
+   · ──────
+ 7 │ 
+ 8 │ export default function AdminDashboard() {
+ 9 │   const [loading, setLoading] = useState(true);
+   ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./app/admin/dashboard/page.tsx
+[00:13:15.486] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:13:16.022] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:13:25.763] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:13:31.695] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:13:33.201] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:13:58.422] Browser LOG     Inserted news: [{"content":"Lav Test2","created_at":"2025-12-28T10:57:26.448766+00:00","id":"2c8c65ed-8921-41f6-8b56-3b72856c7286","published":true,"title":"Test2","updated_at":"2025-12-28T10:57:26.448766+00:00"}]
+[00:13:59.024] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:13:59.436] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:14:00.012] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+%s%s https://react.dev/link/hydration-mismatch 
+
+  ...
+    <RenderFromTemplateContext>
+      <ScrollAndFocusHandler segmentPath={[...]}>
+        <InnerScrollAndFocusHandler segmentPath={[...]} focusAndScrollRef={{apply:false, ...}}>
+          <ErrorBoundary errorComponent={undefined} errorStyles={undefined} errorScripts={undefined}>
+            <LoadingBoundary name="news/" loading={null}>
+              <HTTPAccessFallbackBoundary notFound={undefined} forbidden={undefined} unauthorized={undefined}>
+                <RedirectBoundary>
+                  <RedirectErrorBoundary router={{...}}>
+                    <InnerLayoutRouter url="/pages/news" tree={[...]} params={{}} cacheNode={{rsc:<Fragment>, ...}} ...>
+                      <SegmentViewNode type="page" pagePath="pages/news...">
+                        <SegmentTrieNode>
+                        <ClientPageRoot Component={function NewsPage} serverProvidedParams={{...}}>
+                          <NewsPage params={Promise} searchParams={Promise}>
+                            <styled.div>
+                              <div
++                               className="sc-hvigdm elXsXp"
+-                               className="sc-dTvVRJ cDkDmY"
+                              >
+                                <h1>
+                                <p>
+                                <styled.div>
+                                  <div
++                                   className="sc-fhHczv eoyJcf"
+-                                   className="sc-jwTyAe fHLEjS"
+                                  >
+                      ...
+                    ...
+          ...
+
+[00:14:09.655] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:14:09.768] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+%s%s https://react.dev/link/hydration-mismatch 
+
+  ...
+    <RenderFromTemplateContext>
+      <ScrollAndFocusHandler segmentPath={[...]}>
+        <InnerScrollAndFocusHandler segmentPath={[...]} focusAndScrollRef={{apply:false, ...}}>
+          <ErrorBoundary errorComponent={undefined} errorStyles={undefined} errorScripts={undefined}>
+            <LoadingBoundary name="news/" loading={null}>
+              <HTTPAccessFallbackBoundary notFound={undefined} forbidden={undefined} unauthorized={undefined}>
+                <RedirectBoundary>
+                  <RedirectErrorBoundary router={{...}}>
+                    <InnerLayoutRouter url="/pages/news" tree={[...]} params={{}} cacheNode={{rsc:<Fragment>, ...}} ...>
+                      <SegmentViewNode type="page" pagePath="pages/news...">
+                        <SegmentTrieNode>
+                        <ClientPageRoot Component={function NewsPage} serverProvidedParams={{...}}>
+                          <NewsPage params={Promise} searchParams={Promise}>
+                            <styled.div>
+                              <div
++                               className="sc-hvigdm elXsXp"
+-                               className="sc-dTvVRJ cDkDmY"
+                              >
+                                <h1>
+                                <p>
+                                <styled.div>
+                                  <div
++                                   className="sc-fhHczv eoyJcf"
+-                                   className="sc-jwTyAe fHLEjS"
+                                  >
+                      ...
+                    ...
+          ...
+
+[00:15:01.502] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:15:01.618] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+%s%s https://react.dev/link/hydration-mismatch 
+
+  ...
+    <RenderFromTemplateContext>
+      <ScrollAndFocusHandler segmentPath={[...]}>
+        <InnerScrollAndFocusHandler segmentPath={[...]} focusAndScrollRef={{apply:false, ...}}>
+          <ErrorBoundary errorComponent={undefined} errorStyles={undefined} errorScripts={undefined}>
+            <LoadingBoundary name="news/" loading={null}>
+              <HTTPAccessFallbackBoundary notFound={undefined} forbidden={undefined} unauthorized={undefined}>
+                <RedirectBoundary>
+                  <RedirectErrorBoundary router={{...}}>
+                    <InnerLayoutRouter url="/pages/news" tree={[...]} params={{}} cacheNode={{rsc:<Fragment>, ...}} ...>
+                      <SegmentViewNode type="page" pagePath="pages/news...">
+                        <SegmentTrieNode>
+                        <ClientPageRoot Component={function NewsPage} serverProvidedParams={{...}}>
+                          <NewsPage params={Promise} searchParams={Promise}>
+                            <styled.div>
+                              <div
++                               className="sc-hvigdm elXsXp"
+-                               className="sc-dTvVRJ cDkDmY"
+                              >
+                                <h1>
+                                <p>
+                                <styled.div>
+                                  <div
++                                   className="sc-fhHczv eoyJcf"
+-                                   className="sc-jwTyAe fHLEjS"
+                                  >
+                      ...
+                    ...
+          ...
+

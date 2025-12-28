@@ -1,7 +1,8 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { supabase } from '@/lib/supabaseClient';
+// import { supabase } from '@/lib/supabaseClient';
+import { supabaseClient } from '@/lib/supabaseClient';
 import { useRouter } from 'next/navigation';
 
 export default function AdminDashboard() {
@@ -10,7 +11,7 @@ export default function AdminDashboard() {
 
   useEffect(() => {
     const checkAdmin = async () => {
-      const { data: { session } } = await supabase.auth.getSession();
+      const { data: { session } } = await supabaseClient.auth.getSession();
       const userId = session?.user?.id;
 
       if (!userId) {
@@ -20,7 +21,7 @@ export default function AdminDashboard() {
       }
 
       // Optionally check admins table
-      const { data: adminData, error } = await supabase
+      const { data: adminData, error } = await supabaseClient
         .from('admins')
         .select('*')
         .eq('id', userId)

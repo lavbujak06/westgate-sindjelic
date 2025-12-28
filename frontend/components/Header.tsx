@@ -20,6 +20,11 @@ export const Header = () => {
 
       {/* Navigation */}
       <nav className="header-nav">
+        {/* News */}
+        <Link className="nav-link" href="/pages/news">
+          News
+        </Link>
+
         {/* MEN */}
         <div className="dropdown">
           <button className="nav-button">Men ▼</button>
