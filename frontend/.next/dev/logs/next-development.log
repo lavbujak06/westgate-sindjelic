@@ -400,3 +400,278 @@ Caused by:
 
 Import trace for requested module:
 ./app/admin/layout.tsx
+[00:37:59.138] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:38:02.392] Browser ERROR   Failed to fetch profile: {"code":"PGRST116","details":"The result contains 0 rows","hint":null,"message":"Cannot coerce the result to a single JSON object"}
+[00:38:19.628] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:50:32.987] Server  WARN    ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[00:50:33.909] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:54:27.335] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:55:57.723] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:58:32.758] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:58:52.583] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:58:55.157] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:58:58.613] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:00:22.203] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:00:47.126] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:01:05.699] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:01:18.686] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:01:55.415] Server  ERROR   ⨯ ./components/AccountMenu.tsx
+Error:   × Expected '</', got '}'
+    ╭─[/Users/lavbujak/Desktop/Sindjelic/westgate-sindjelic/frontend/components/AccountMenu.tsx:75:1]
+ 72 │                     await supabaseClient.auth.signOut();
+ 73 │                     window.location.reload(); // reset state
+ 74 │                     routeModule.
+ 75 │                   }}
+    ·                   ─
+ 76 │                 >
+ 77 │                   Sign Out
+ 78 │                 </button>
+    ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./components/AccountMenu.tsx
+[01:01:55.465] Browser ERROR   ./components/AccountMenu.tsx
+Error:   × Expected '</', got '}'
+    ╭─[/Users/lavbujak/Desktop/Sindjelic/westgate-sindjelic/frontend/components/AccountMenu.tsx:75:1]
+ 72 │                     await supabaseClient.auth.signOut();
+ 73 │                     window.location.reload(); // reset state
+ 74 │                     routeModule.
+ 75 │                   }}
+    ·                   ─
+ 76 │                 >
+ 77 │                   Sign Out
+ 78 │                 </button>
+    ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./components/AccountMenu.tsx
+./components/Header.tsx
+./app/page.tsx
+[01:01:57.465] Browser ERROR   ./components/AccountMenu.tsx
+Error:   × Expected '</', got '}'
+    ╭─[/Users/lavbujak/Desktop/Sindjelic/westgate-sindjelic/frontend/components/AccountMenu.tsx:75:1]
+ 72 │                     await supabaseClient.auth.signOut();
+ 73 │                     window.location.reload(); // reset state
+ 74 │                     routeModule.
+ 75 │                   }}
+    ·                   ─
+ 76 │                 >
+ 77 │                   Sign Out
+ 78 │                 </button>
+    ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./components/AccountMenu.tsx
+[01:03:53.593] Server  WARN    ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[01:03:53.593] Browser ERROR   uncaughtError: ReferenceError: useRouter is not defined
+[01:03:53.858] Server  ERROR   ⨯ ReferenceError: useRouter is not defined
+[01:03:54.289] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:03:54.472] Browser ERROR   uncaughtError: ReferenceError: useRouter is not defined
+[01:04:05.465] Browser ERROR   ./components/AccountMenu.tsx
+Error:   × Expected 'from', got 'const'
+    ╭─[/Users/lavbujak/Desktop/Sindjelic/westgate-sindjelic/frontend/components/AccountMenu.tsx:10:1]
+  7 │ import router from 'next/dist/shared/lib/router/router';
+  8 │ import 
+  9 │ 
+ 10 │ const AccountMenu = () => {
+    · ─────
+ 11 │   const router = useRouter();
+ 12 │   const { user, profile } = useUser();
+    ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./components/AccountMenu.tsx
+./components/Header.tsx
+./app/page.tsx
+[01:04:05.536] Server  ERROR   ⨯ ./components/AccountMenu.tsx
+Error:   × Expected 'from', got 'const'
+    ╭─[/Users/lavbujak/Desktop/Sindjelic/westgate-sindjelic/frontend/components/AccountMenu.tsx:10:1]
+  7 │ import router from 'next/dist/shared/lib/router/router';
+  8 │ import 
+  9 │ 
+ 10 │ const AccountMenu = () => {
+    · ─────
+ 11 │   const router = useRouter();
+ 12 │   const { user, profile } = useUser();
+    ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./components/AccountMenu.tsx
+[01:04:17.314] Server  ERROR   ⨯ ./components/AccountMenu.tsx
+Error:   × Expected 'from', got 'const'
+    ╭─[/Users/lavbujak/Desktop/Sindjelic/westgate-sindjelic/frontend/components/AccountMenu.tsx:10:1]
+  7 │ import router from 'next/dist/shared/lib/router/router';
+  8 │ import { useR}
+  9 │ 
+ 10 │ const AccountMenu = () => {
+    · ─────
+ 11 │   const router = useRouter();
+ 12 │   const { user, profile } = useUser();
+    ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./components/AccountMenu.tsx
+[01:04:17.465] Browser ERROR   ./components/AccountMenu.tsx
+Error:   × Expected 'from', got 'const'
+    ╭─[/Users/lavbujak/Desktop/Sindjelic/westgate-sindjelic/frontend/components/AccountMenu.tsx:10:1]
+  7 │ import router from 'next/dist/shared/lib/router/router';
+  8 │ import 
+  9 │ 
+ 10 │ const AccountMenu = () => {
+    · ─────
+ 11 │   const router = useRouter();
+ 12 │   const { user, profile } = useUser();
+    ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./components/AccountMenu.tsx
+[01:04:17.465] Browser ERROR   ./components/AccountMenu.tsx
+Error:   × Expected 'from', got 'const'
+    ╭─[/Users/lavbujak/Desktop/Sindjelic/westgate-sindjelic/frontend/components/AccountMenu.tsx:10:1]
+  7 │ import router from 'next/dist/shared/lib/router/router';
+  8 │ import { useR}
+  9 │ 
+ 10 │ const AccountMenu = () => {
+    · ─────
+ 11 │   const router = useRouter();
+ 12 │   const { user, profile } = useUser();
+    ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./components/AccountMenu.tsx
+[01:04:17.465] Browser ERROR   ./components/AccountMenu.tsx
+Error:   × Expected 'from', got 'const'
+    ╭─[/Users/lavbujak/Desktop/Sindjelic/westgate-sindjelic/frontend/components/AccountMenu.tsx:10:1]
+  7 │ import router from 'next/dist/shared/lib/router/router';
+  8 │ import { useR}
+  9 │ 
+ 10 │ const AccountMenu = () => {
+    · ─────
+ 11 │   const router = useRouter();
+ 12 │   const { user, profile } = useUser();
+    ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./components/AccountMenu.tsx
+./components/Header.tsx
+./app/page.tsx
+[01:04:26.482] Browser ERROR   ./components/AccountMenu.tsx
+Error:   × Expected 'from', got 'const'
+    ╭─[/Users/lavbujak/Desktop/Sindjelic/westgate-sindjelic/frontend/components/AccountMenu.tsx:10:1]
+  7 │ import router from 'next/dist/shared/lib/router/router';
+  8 │ import { useR}
+  9 │ 
+ 10 │ const AccountMenu = () => {
+    · ─────
+ 11 │   const router = useRouter();
+ 12 │   const { user, profile } = useUser();
+    ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./components/AccountMenu.tsx
+[01:04:26.964] Server  WARN    ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[01:04:27.273] Server  ERROR   ⨯ Error: NextRouter was not mounted. https://nextjs.org/docs/messages/next-router-not-mounted
+[01:04:27.630] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:04:28.466] Browser ERROR   uncaughtError: Error: NextRouter was not mounted. https://nextjs.org/docs/messages/next-router-not-mounted
+[01:04:45.032] Server  WARN    ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[01:04:45.266] Server  ERROR   ⨯ Error: NextRouter was not mounted. https://nextjs.org/docs/messages/next-router-not-mounted
+[01:04:45.623] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:04:46.471] Browser ERROR   uncaughtError: Error: NextRouter was not mounted. https://nextjs.org/docs/messages/next-router-not-mounted
+[01:05:51.305] Server  WARN    ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[01:05:52.007] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:06:27.586] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:06:28.734] Browser ERROR   Failed to fetch profile: {"code":"PGRST116","details":"The result contains 0 rows","hint":null,"message":"Cannot coerce the result to a single JSON object"}
+[01:07:58.463] Server  WARN    ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[01:07:59.257] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:08:01.470] Browser WARN    No profile found, using default: Cannot coerce the result to a single JSON object
+[01:08:03.383] Server  WARN    ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[01:08:03.982] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:08:06.159] Browser WARN    No profile found, using default: Cannot coerce the result to a single JSON object
+[01:08:49.313] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:08:54.729] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:10:32.927] Server  ERROR   ⨯ ./app/login/page.tsx
+Error:   × Expected ',', got 'Please'
+    ╭─[/Users/lavbujak/Desktop/Sindjelic/westgate-sindjelic/frontend/app/login/page.tsx:67:1]
+ 64 │       });
+ 65 │ 
+ 66 │       if (resendError) {
+ 67 │         alert(''Please);
+    ·                 ──────
+ 68 │       } else {
+ 69 │         alert('Confirmation email sent! Please check your inbox.');
+ 70 │       }
+    ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./app/login/page.tsx
+[01:11:00.438] Browser ERROR   ./app/login/page.tsx
+Error:   × Expected ',', got 'Please'
+    ╭─[/Users/lavbujak/Desktop/Sindjelic/westgate-sindjelic/frontend/app/login/page.tsx:67:1]
+ 64 │       });
+ 65 │ 
+ 66 │       if (resendError) {
+ 67 │         alert(''Please);
+    ·                 ──────
+ 68 │       } else {
+ 69 │         alert('Confirmation email sent! Please check your inbox.');
+ 70 │       }
+    ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./app/login/page.tsx
+[01:11:00.438] Browser ERROR   ./app/login/page.tsx
+Error:   × Expected ',', got 'Please'
+    ╭─[/Users/lavbujak/Desktop/Sindjelic/westgate-sindjelic/frontend/app/login/page.tsx:67:1]
+ 64 │       });
+ 65 │ 
+ 66 │       if (resendError) {
+ 67 │         alert(''Please);
+    ·                 ──────
+ 68 │       } else {
+ 69 │         alert('Confirmation email sent! Please check your inbox.');
+ 70 │       }
+    ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./app/login/page.tsx
+[01:11:00.470] Server  WARN    ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[01:11:01.389] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold

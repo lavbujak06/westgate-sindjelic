@@ -32,7 +32,19 @@ export const UserProvider = ({ children }: { children: ReactNode }) => {
         .eq('id', user.id)
         .single();
 
-      if (profileError) throw profileError;
+      if (profileError) {
+        // Admins or users without a profile fallback
+        console.warn('No profile found, using default:', profileError.message);
+        setProfile({
+          id: user.id,
+          name: 'Admin',
+          surname: '',
+          email: user.email,
+          logo: null,
+          created_at: user.created_at,
+        });
+        return;
+      }
 
       setProfile(profileData);
     } catch (err) {

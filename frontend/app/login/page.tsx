@@ -22,11 +22,7 @@ export default function LoginPage() {
     });
 
     if (loginError) {
-      if (loginError.message.includes('Email not confirmed')) {
-        setError('Email not confirmed. Please check your inbox.');
-      } else {
-        setError(loginError.message);
-      }
+      setError(loginError.message);
       return;
     }
 
@@ -54,11 +50,26 @@ export default function LoginPage() {
     }
 
     if (adminData) {
-      // Admins go to dashboard
       router.push('/admin/dashboard');
     } else {
-      // Normal users go to homepage
       router.push('/');
+    }
+  };
+
+  const handleResendConfirmation = async () => {
+    try {
+      const { error: resendError } = await supabaseClient.auth.resend({
+        type: 'signup',
+        email,
+      });
+
+      if (resendError) {
+        alert('Please enter a valid email in the email section in order to resend confirmation email.');
+      } else {
+        alert('Confirmation email sent! Please check your inbox.');
+      }
+    } catch (err: any) {
+      alert('Unexpected error: ' + err.message);
     }
   };
 
@@ -94,6 +105,27 @@ export default function LoginPage() {
 
           {error && <p className="error">{error}</p>}
         </form>
+
+        {/* Always-visible resend confirmation section */}
+        <div style={{ marginTop: '1rem', textAlign: 'center' }}>
+          <p style={{ marginBottom: '0.5rem', color: '#555' }}>
+            Haven't authorized your email yet?
+          </p>
+          <button
+            type="button"
+            style={{
+              padding: '0.5rem 1rem',
+              backgroundColor: '#1e40af',
+              color: '#fff',
+              border: 'none',
+              borderRadius: '6px',
+              cursor: 'pointer',
+            }}
+            onClick={handleResendConfirmation}
+          >
+            Send confirmation email
+          </button>
+        </div>
       </div>
     </div>
   );

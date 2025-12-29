@@ -4,9 +4,16 @@ import Link from 'next/link';
 import { useUser } from '@/context/UserContext';
 import { supabaseClient } from '@/lib/supabaseClient';
 import '@/app/globals.css';
+import { useRouter } from 'next/navigation';
 
 const AccountMenu = () => {
+  const router = useRouter();
   const { user, profile } = useUser();
+
+  const handleSignOut = async () => {
+    await supabaseClient.auth.signOut();
+    router.push('/'); // redirect to homepage
+  };
 
   const logo = profile?.logo
     ? profile.logo
@@ -22,9 +29,7 @@ const AccountMenu = () => {
           {profile?.logo ? (
             <img src={profile.logo} alt="User avatar" />
           ) : profile?.name ? (
-            <div className="user-avatar-initial">
-              {profile.name[0].toUpperCase()}
-            </div>
+            <div className="user-avatar-initial">{profile.name[0].toUpperCase()}</div>
           ) : (
             <svg viewBox="0 0 24 24" fill="white" width={18} height={18}>
               <path d="M12 2c2.757 0 5 2.243 5 5.001..." />
@@ -67,14 +72,7 @@ const AccountMenu = () => {
                 </Link>
               </li>
               <li>
-                <button
-                  onClick={async () => {
-                    await supabaseClient.auth.signOut();
-                    window.location.reload(); // reset state
-                  }}
-                >
-                  Sign Out
-                </button>
+                <button onClick={handleSignOut}>Sign Out</button>
               </li>
             </>
           )}

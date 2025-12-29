@@ -24,7 +24,7 @@ export async function POST(req: NextRequest) {
     // 2️⃣ Create profile row
     const { error: profileError } = await supabaseServer
       .from('profiles')
-      .insert({ id: userId, created_at: new Date().toISOString() });
+      .insert({ id: userId, email, created_at: new Date().toISOString() });
 
     if (profileError) {
       return NextResponse.json({ error: profileError.message }, { status: 400 });
