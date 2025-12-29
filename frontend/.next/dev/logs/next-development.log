@@ -1,12 +1,404 @@
-[00:00:01.542] Server  WARN    ⚠ The "middleware" file convention is deprecated. Please use "proxy" instead. Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
-[00:00:01.615] Server  LOG     ✓ Ready in 1365ms
-[00:00:04.144] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:01:00.793] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:03:55.604] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:05:30.580] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:05:48.200] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:05:50.811] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:05:58.924] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:06:05.431] Server  WARN    ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
-[00:06:05.808] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:06:08.633] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:01.482] Server  WARN    ⚠ The "middleware" file convention is deprecated. Please use "proxy" instead. Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
+[00:00:01.560] Server  LOG     ✓ Ready in 1305ms
+[00:00:02.634] Server  ERROR   ⨯ Error: useUser must be used within UserProvider
+[00:00:03.387] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:04.702] Browser ERROR   uncaughtError: Error: useUser must be used within UserProvider
+[00:00:11.999] Browser ERROR   ./components/AccountMenu.tsx:6:1
+Module not found: Can't resolve '../globals.css'
+  4 | import { useUser } from '@/context/UserContext';
+  5 | import { supabaseClient } from '@/lib/supabaseClient';
+> 6 | import '../globals.css';
+    | ^
+  7 |
+  8 | const AccountMenu = () => {
+  9 |   const { user, profile } = useUser();
+
+https://nextjs.org/docs/messages/module-not-found
+[00:00:12.128] Server  ERROR   ⨯ ./components/AccountMenu.tsx:6:1
+Module not found: Can't resolve '../globals.css'
+  4 | import { useUser } from '@/context/UserContext';
+  5 | import { supabaseClient } from '@/lib/supabaseClient';
+> 6 | import '../globals.css';
+    | ^
+  7 |
+  8 | const AccountMenu = () => {
+  9 |   const { user, profile } = useUser();
+
+https://nextjs.org/docs/messages/module-not-found
+[00:00:12.311] Browser ERROR   ./components/AccountMenu.tsx:6:1
+Module not found: Can't resolve '../globals.css'
+  4 | import { useUser } from '@/context/UserContext';
+  5 | import { supabaseClient } from '@/lib/supabaseClient';
+> 6 | import '../globals.css';
+    | ^
+  7 |
+  8 | const AccountMenu = () => {
+  9 |   const { user, profile } = useUser();
+
+https://nextjs.org/docs/messages/module-not-found
+[00:00:12.311] Browser ERROR   ./components/AccountMenu.tsx:6:1
+Module not found: Can't resolve '../globals.css'
+  4 | import { useUser } from '@/context/UserContext';
+  5 | import { supabaseClient } from '@/lib/supabaseClient';
+> 6 | import '../globals.css';
+    | ^
+  7 |
+  8 | const AccountMenu = () => {
+  9 |   const { user, profile } = useUser();
+
+https://nextjs.org/docs/messages/module-not-found
+[00:00:12.345] Server  ERROR   ⨯ ./components/AccountMenu.tsx:6:1
+Module not found: Can't resolve '../globals.css'
+  4 | import { useUser } from '@/context/UserContext';
+  5 | import { supabaseClient } from '@/lib/supabaseClient';
+> 6 | import '../globals.css';
+    | ^
+  7 |
+  8 | const AccountMenu = () => {
+  9 |   const { user, profile } = useUser();
+
+https://nextjs.org/docs/messages/module-not-found
+[00:00:12.424] Browser ERROR   ./components/AccountMenu.tsx:6:1
+Module not found: Can't resolve '../globals.css'
+  4 | import { useUser } from '@/context/UserContext';
+  5 | import { supabaseClient } from '@/lib/supabaseClient';
+> 6 | import '../globals.css';
+    | ^
+  7 |
+  8 | const AccountMenu = () => {
+  9 |   const { user, profile } = useUser();
+
+https://nextjs.org/docs/messages/module-not-found
+[00:00:12.911] Browser ERROR   ./components/AccountMenu.tsx:6:1
+Module not found: Can't resolve '../globals.css'
+  4 | import { useUser } from '@/context/UserContext';
+  5 | import { supabaseClient } from '@/lib/supabaseClient';
+> 6 | import '../globals.css';
+    | ^
+  7 |
+  8 | const AccountMenu = () => {
+  9 |   const { user, profile } = useUser();
+
+https://nextjs.org/docs/messages/module-not-found
+[00:00:13.075] Browser ERROR   ./components/AccountMenu.tsx:6:1
+Module not found: Can't resolve '../globals.css'
+  4 | import { useUser } from '@/context/UserContext';
+  5 | import { supabaseClient } from '@/lib/supabaseClient';
+> 6 | import '../globals.css';
+    | ^
+  7 |
+  8 | const AccountMenu = () => {
+  9 |   const { user, profile } = useUser();
+
+https://nextjs.org/docs/messages/module-not-found
+[00:00:13.355] Server  ERROR   ⨯ ./components/AccountMenu.tsx:6:1
+Module not found: Can't resolve '../globals.css'
+  4 | import { useUser } from '@/context/UserContext';
+  5 | import { supabaseClient } from '@/lib/supabaseClient';
+> 6 | import '../globals.css';
+    | ^
+  7 |
+  8 | const AccountMenu = () => {
+  9 |   const { user, profile } = useUser();
+
+https://nextjs.org/docs/messages/module-not-found
+[00:00:13.475] Browser ERROR   ./components/AccountMenu.tsx:6:1
+Module not found: Can't resolve '../globals.css'
+  4 | import { useUser } from '@/context/UserContext';
+  5 | import { supabaseClient } from '@/lib/supabaseClient';
+> 6 | import '../globals.css';
+    | ^
+  7 |
+  8 | const AccountMenu = () => {
+  9 |   const { user, profile } = useUser();
+
+https://nextjs.org/docs/messages/module-not-found
+[00:00:13.475] Browser ERROR   ./components/AccountMenu.tsx:6:1
+Module not found: Can't resolve '../globals.css'
+  4 | import { useUser } from '@/context/UserContext';
+  5 | import { supabaseClient } from '@/lib/supabaseClient';
+> 6 | import '../globals.css';
+    | ^
+  7 |
+  8 | const AccountMenu = () => {
+  9 |   const { user, profile } = useUser();
+
+https://nextjs.org/docs/messages/module-not-found
+[00:00:13.475] Browser ERROR   ./components/AccountMenu.tsx:6:1
+Module not found: Can't resolve '../globals.css'
+  4 | import { useUser } from '@/context/UserContext';
+  5 | import { supabaseClient } from '@/lib/supabaseClient';
+> 6 | import '../globals.css';
+    | ^
+  7 |
+  8 | const AccountMenu = () => {
+  9 |   const { user, profile } = useUser();
+
+https://nextjs.org/docs/messages/module-not-found
+[00:00:13.475] Browser ERROR   ./components/AccountMenu.tsx:6:1
+Module not found: Can't resolve '../globals.css'
+  4 | import { useUser } from '@/context/UserContext';
+  5 | import { supabaseClient } from '@/lib/supabaseClient';
+> 6 | import '../globals.css';
+    | ^
+  7 |
+  8 | const AccountMenu = () => {
+  9 |   const { user, profile } = useUser();
+
+https://nextjs.org/docs/messages/module-not-found
+[00:00:13.928] Browser ERROR   uncaughtError: Error: Module not found: Can't resolve '../globals.css'
+  4 | import { useUser } from '@/context/UserContext';
+  5 | import { supabaseClient } from '@/lib/supabaseClient';
+> 6 | import '../globals.css';
+    | ^
+  7 |
+  8 | const AccountMenu = () => {
+  9 |   const { user, profile } = useUser();
+
+https://nextjs.org/docs/messages/module-not-found
+
+[00:00:14.028] Browser ERROR   ./components/AccountMenu.tsx:6:1
+Module not found: Can't resolve '../globals.css'
+  4 | import { useUser } from '@/context/UserContext';
+  5 | import { supabaseClient } from '@/lib/supabaseClient';
+> 6 | import '../globals.css';
+    | ^
+  7 |
+  8 | const AccountMenu = () => {
+  9 |   const { user, profile } = useUser();
+
+https://nextjs.org/docs/messages/module-not-found
+[00:00:14.484] Server  LOG     ○ Compiling /_error ...
+[00:00:26.880] Server  ERROR   ⨯ ./components/AccountMenu.tsx:6:1
+Module not found: Can't resolve '/globals.css'
+  4 | import { useUser } from '@/context/UserContext';
+  5 | import { supabaseClient } from '@/lib/supabaseClient';
+> 6 | import '/globals.css';
+    | ^
+  7 |
+  8 | const AccountMenu = () => {
+  9 |   const { user, profile } = useUser();
+
+https://nextjs.org/docs/messages/module-not-found
+[00:00:27.695] Browser ERROR   ./components/AccountMenu.tsx:6:1
+Module not found: Can't resolve '../globals.css'
+  4 | import { useUser } from '@/context/UserContext';
+  5 | import { supabaseClient } from '@/lib/supabaseClient';
+> 6 | import '../globals.css';
+    | ^
+  7 |
+  8 | const AccountMenu = () => {
+  9 |   const { user, profile } = useUser();
+
+https://nextjs.org/docs/messages/module-not-found
+[00:00:27.695] Browser ERROR   ./components/AccountMenu.tsx:6:1
+Module not found: Can't resolve '/globals.css'
+  4 | import { useUser } from '@/context/UserContext';
+  5 | import { supabaseClient } from '@/lib/supabaseClient';
+> 6 | import '/globals.css';
+    | ^
+  7 |
+  8 | const AccountMenu = () => {
+  9 |   const { user, profile } = useUser();
+
+https://nextjs.org/docs/messages/module-not-found
+[00:00:30.143] Server  ERROR   ⨯ ./components/AccountMenu.tsx:6:1
+Module not found: Empty dependency (no request)
+  4 | import { useUser } from '@/context/UserContext';
+  5 | import { supabaseClient } from '@/lib/supabaseClient';
+> 6 | import '';
+    | ^
+  7 |
+  8 | const AccountMenu = () => {
+  9 |   const { user, profile } = useUser();
+
+https://nextjs.org/docs/messages/module-not-found
+[00:00:30.693] Browser ERROR   ./components/AccountMenu.tsx:6:1
+Module not found: Can't resolve '/globals.css'
+  4 | import { useUser } from '@/context/UserContext';
+  5 | import { supabaseClient } from '@/lib/supabaseClient';
+> 6 | import '/globals.css';
+    | ^
+  7 |
+  8 | const AccountMenu = () => {
+  9 |   const { user, profile } = useUser();
+
+https://nextjs.org/docs/messages/module-not-found
+[00:00:30.693] Browser ERROR   ./components/AccountMenu.tsx:6:1
+Module not found: Empty dependency (no request)
+  4 | import { useUser } from '@/context/UserContext';
+  5 | import { supabaseClient } from '@/lib/supabaseClient';
+> 6 | import '';
+    | ^
+  7 |
+  8 | const AccountMenu = () => {
+  9 |   const { user, profile } = useUser();
+
+https://nextjs.org/docs/messages/module-not-found
+[00:00:33.206] Server  ERROR   ⨯ ./components/AccountMenu.tsx:6:1
+Module not found: Can't resolve '@'
+  4 | import { useUser } from '@/context/UserContext';
+  5 | import { supabaseClient } from '@/lib/supabaseClient';
+> 6 | import '@';
+    | ^
+  7 |
+  8 | const AccountMenu = () => {
+  9 |   const { user, profile } = useUser();
+
+https://nextjs.org/docs/messages/module-not-found
+[00:00:33.693] Browser ERROR   ./components/AccountMenu.tsx:6:1
+Module not found: Empty dependency (no request)
+  4 | import { useUser } from '@/context/UserContext';
+  5 | import { supabaseClient } from '@/lib/supabaseClient';
+> 6 | import '';
+    | ^
+  7 |
+  8 | const AccountMenu = () => {
+  9 |   const { user, profile } = useUser();
+
+https://nextjs.org/docs/messages/module-not-found
+[00:00:33.693] Browser ERROR   ./components/AccountMenu.tsx:6:1
+Module not found: Can't resolve '@'
+  4 | import { useUser } from '@/context/UserContext';
+  5 | import { supabaseClient } from '@/lib/supabaseClient';
+> 6 | import '@';
+    | ^
+  7 |
+  8 | const AccountMenu = () => {
+  9 |   const { user, profile } = useUser();
+
+https://nextjs.org/docs/messages/module-not-found
+[00:00:33.693] Browser ERROR   ./components/AccountMenu.tsx:6:1
+Module not found: Can't resolve '@'
+  4 | import { useUser } from '@/context/UserContext';
+  5 | import { supabaseClient } from '@/lib/supabaseClient';
+> 6 | import '@';
+    | ^
+  7 |
+  8 | const AccountMenu = () => {
+  9 |   const { user, profile } = useUser();
+
+https://nextjs.org/docs/messages/module-not-found
+[00:00:34.887] Server  ERROR   ⨯ ./components/AccountMenu.tsx:6:1
+Module not found: Can't resolve '@/'
+  4 | import { useUser } from '@/context/UserContext';
+  5 | import { supabaseClient } from '@/lib/supabaseClient';
+> 6 | import '@/';
+    | ^
+  7 |
+  8 | const AccountMenu = () => {
+  9 |   const { user, profile } = useUser();
+
+https://nextjs.org/docs/messages/module-not-found
+[00:00:35.692] Browser ERROR   ./components/AccountMenu.tsx:6:1
+Module not found: Can't resolve '@'
+  4 | import { useUser } from '@/context/UserContext';
+  5 | import { supabaseClient } from '@/lib/supabaseClient';
+> 6 | import '@';
+    | ^
+  7 |
+  8 | const AccountMenu = () => {
+  9 |   const { user, profile } = useUser();
+
+https://nextjs.org/docs/messages/module-not-found
+[00:00:35.692] Browser ERROR   ./components/AccountMenu.tsx:6:1
+Module not found: Can't resolve '@/'
+  4 | import { useUser } from '@/context/UserContext';
+  5 | import { supabaseClient } from '@/lib/supabaseClient';
+> 6 | import '@/';
+    | ^
+  7 |
+  8 | const AccountMenu = () => {
+  9 |   const { user, profile } = useUser();
+
+https://nextjs.org/docs/messages/module-not-found
+[00:00:36.696] Browser ERROR   ./components/AccountMenu.tsx:6:1
+Module not found: Can't resolve '@/'
+  4 | import { useUser } from '@/context/UserContext';
+  5 | import { supabaseClient } from '@/lib/supabaseClient';
+> 6 | import '@/';
+    | ^
+  7 |
+  8 | const AccountMenu = () => {
+  9 |   const { user, profile } = useUser();
+
+https://nextjs.org/docs/messages/module-not-found
+[00:00:36.725] Server  ERROR   ⨯ ./components/AccountMenu.tsx:6:1
+Module not found: Can't resolve '@/app'
+  4 | import { useUser } from '@/context/UserContext';
+  5 | import { supabaseClient } from '@/lib/supabaseClient';
+> 6 | import '@/app';
+    | ^
+  7 |
+  8 | const AccountMenu = () => {
+  9 |   const { user, profile } = useUser();
+
+https://nextjs.org/docs/messages/module-not-found
+[00:00:37.692] Browser ERROR   ./components/AccountMenu.tsx:6:1
+Module not found: Can't resolve '@/app'
+  4 | import { useUser } from '@/context/UserContext';
+  5 | import { supabaseClient } from '@/lib/supabaseClient';
+> 6 | import '@/app';
+    | ^
+  7 |
+  8 | const AccountMenu = () => {
+  9 |   const { user, profile } = useUser();
+
+https://nextjs.org/docs/messages/module-not-found
+[00:00:38.704] Server  ERROR   ⨯ ./components/AccountMenu.tsx:6:1
+Module not found: Can't resolve '@/app/globals.css '
+  4 | import { useUser } from '@/context/UserContext';
+  5 | import { supabaseClient } from '@/lib/supabaseClient';
+> 6 | import '@/app/globals.css ';
+    | ^
+  7 |
+  8 | const AccountMenu = () => {
+  9 |   const { user, profile } = useUser();
+
+https://nextjs.org/docs/messages/module-not-found
+[00:00:39.560] Browser ERROR   ./components/AccountMenu.tsx:6:1
+Module not found: Can't resolve '@/app'
+  4 | import { useUser } from '@/context/UserContext';
+  5 | import { supabaseClient } from '@/lib/supabaseClient';
+> 6 | import '@/app';
+    | ^
+  7 |
+  8 | const AccountMenu = () => {
+  9 |   const { user, profile } = useUser();
+
+https://nextjs.org/docs/messages/module-not-found
+[00:00:39.560] Browser ERROR   ./components/AccountMenu.tsx:6:1
+Module not found: Can't resolve '@/app/globals.css '
+  4 | import { useUser } from '@/context/UserContext';
+  5 | import { supabaseClient } from '@/lib/supabaseClient';
+> 6 | import '@/app/globals.css ';
+    | ^
+  7 |
+  8 | const AccountMenu = () => {
+  9 |   const { user, profile } = useUser();
+
+https://nextjs.org/docs/messages/module-not-found
+[00:00:39.830] Browser ERROR   ./components/AccountMenu.tsx:6:1
+Module not found: Can't resolve '@/app/globals.css '
+  4 | import { useUser } from '@/context/UserContext';
+  5 | import { supabaseClient } from '@/lib/supabaseClient';
+> 6 | import '@/app/globals.css ';
+    | ^
+  7 |
+  8 | const AccountMenu = () => {
+  9 |   const { user, profile } = useUser();
+
+https://nextjs.org/docs/messages/module-not-found
+[00:00:40.195] Server  WARN    ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:00:40.413] Server  ERROR   ⨯ Error: useUser must be used within UserProvider
+[00:00:41.232] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:41.296] Server  ERROR   ⨯ Error: useUser must be used within UserProvider
+[00:00:42.024] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:42.283] Browser ERROR   uncaughtError: Error: useUser must be used within UserProvider
+[00:01:45.584] Server  ERROR   ⨯ Error: useUser must be used within UserProvider
+[00:01:46.329] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:01:46.694] Browser ERROR   uncaughtError: Error: useUser must be used within UserProvider
+[00:01:50.532] Server  ERROR   ⨯ Error: useUser must be used within UserProvider
+[00:01:51.267] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:01:51.696] Browser ERROR   uncaughtError: Error: useUser must be used within UserProvider
+[00:03:34.759] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold

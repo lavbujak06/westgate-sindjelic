@@ -1,4 +1,7 @@
+import StyledComponentsRegistry from '@/lib/styled-composenet-registery';
 import './globals.css';
+import { Toaster } from 'react-hot-toast';
+import { UserProvider } from '@/context/UserContext'; // make sure path is correct
 
 export const metadata = {
   title: 'Westgate Sindjelic',
@@ -13,7 +16,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        {children}
+        <StyledComponentsRegistry>
+          <UserProvider>
+            {children}
+            <Toaster position="top-right" />
+          </UserProvider>
+        </StyledComponentsRegistry>
       </body>
     </html>
   );

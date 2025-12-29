@@ -301,3 +301,113 @@ table tr:nth-child(even) {
     padding: 6px;
   }
 }
+
+
+
+/* ---------------- login/signup styles ---------------- */
+
+/* Page wrapper common for login/signup */
+.page-wrapper {
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background-color: #f9fafb;
+}
+
+/* Form wrapper */
+.form-wrapper .form {
+  background-color: #ffffff;
+  padding: 2.5rem 2rem;
+  width: 100%;
+  max-width: 360px;
+  border-radius: 1rem;
+  box-shadow:
+    0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+/* Form title */
+.form-wrapper .form-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 1.75rem;
+}
+
+/* Input containers */
+.form-wrapper .input-container {
+  margin-bottom: 1.25rem;
+}
+
+.form-wrapper .input-container input {
+  width: 100%;
+  padding: 0.85rem 1rem;
+  font-size: 0.875rem;
+  border-radius: 0.75rem;
+  border: 1px solid #e5e7eb;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.form-wrapper .input-container input:focus {
+  border-color: #4f46e5;
+}
+
+/* Submit button */
+.form-wrapper .submit {
+  width: 100%;
+  padding: 0.85rem;
+  margin-top: 0.5rem;
+  background-color: #4f46e5;
+  color: white;
+  border-radius: 0.75rem;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+/* Error message */
+.form-wrapper .error {
+  color: #dc2626;
+  font-size: 0.875rem;
+  margin-top: 0.75rem;
+  text-align: center;
+}
+
+/* Signup/Login links */
+.form-wrapper .signup-link,
+.form-wrapper .login-link {
+  margin-top: 1.25rem;
+  font-size: 0.875rem;
+  text-align: center;
+  color: #6b7280;
+}
+
+.form-wrapper .signup-link a,
+.form-wrapper .login-link a {
+  text-decoration: underline;
+}
+
+
+
+
+/* ---------------- account menu style---------------- */
+.account-settings {
+  padding: 1rem;
+}
+.input-group {
+  margin-bottom: 1rem;
+}
+.input-group label {
+  display: block;
+  margin-bottom: 0.25rem;
+}
+.input-group input {
+  width: 100%;
+  padding: 0.5rem;
+}
+.message {
+  margin-top: 1rem;
+  color: green;
+}
