@@ -17,18 +17,37 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
           justifyContent: 'start',
         }}
       >
+        {/* Admin Panel heading */}
         <h2 style={{ marginBottom: '2rem', color: '#1e40af' }}>Admin Panel</h2>
+
+        {/* Admin links */}
         <nav style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-          <Link href="/admin/dashboard" style={{ color: '#1e40af' }}>
+          <Link
+            href="/admin/dashboard"
+            style={{ color: '#1e40af', textDecoration: 'none' }}
+          >
             Dashboard
           </Link>
-          <Link href="/admin/news" style={{ color: '#1e40af' }}>
+          <Link
+            href="/admin/news"
+            style={{ color: '#1e40af', textDecoration: 'none' }}
+          >
             News
           </Link>
-          <Link href="/admin/accounts" style={{ color: '#1e40af' }}>
+          <Link
+            href="/admin/accounts"
+            style={{ color: '#1e40af', textDecoration: 'none' }}
+          >
             Admin Accounts
           </Link>
         </nav>
+
+        {/* Spacer pushes User Website link to bottom */}
+        <div style={{ marginTop: 'auto', paddingTop: '1rem', borderTop: '1px solid #cbd5e1' }}>
+          <Link href="/" style={{ textDecoration: 'none', color: '#000', display: 'block', paddingTop: '0.5rem' }}>
+            🔙 User Website
+          </Link>
+        </div>
       </aside>
 
       {/* Main content area */}

@@ -34,7 +34,7 @@ const AccountMenu = () => {
       </div>
 
       <nav className="popup-window">
-        <legend>Account</legend>
+        <legend>Account:</legend>
         {profile ? (
           <div className="account-info">
             <p>{profile.name ? `${profile.name} ${profile.surname || ''}` : user?.email}</p>

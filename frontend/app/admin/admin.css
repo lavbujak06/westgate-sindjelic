@@ -11,3 +11,13 @@ main {
   background-color: #f0f4ff; /* light blue-ish content area */
   border-radius: 0.5rem;
 }
+
+
+.admin-link {
+  color: #1e40af;
+  text-decoration: none; /* removes underline */
+}
+
+.admin-link:hover {
+  color: #2563eb; /* optional hover color */
+}

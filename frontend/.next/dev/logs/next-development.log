@@ -1,410 +1,402 @@
-[00:00:01.482] Server  WARN    ⚠ The "middleware" file convention is deprecated. Please use "proxy" instead. Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
-[00:00:01.560] Server  LOG     ✓ Ready in 1305ms
-[00:00:02.634] Server  ERROR   ⨯ Error: useUser must be used within UserProvider
-[00:00:03.387] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:00:04.702] Browser ERROR   uncaughtError: Error: useUser must be used within UserProvider
-[00:00:11.999] Browser ERROR   ./components/AccountMenu.tsx:6:1
-Module not found: Can't resolve '../globals.css'
-  4 | import { useUser } from '@/context/UserContext';
-  5 | import { supabaseClient } from '@/lib/supabaseClient';
-> 6 | import '../globals.css';
-    | ^
-  7 |
-  8 | const AccountMenu = () => {
-  9 |   const { user, profile } = useUser();
+[00:00:01.492] Server  WARN    ⚠ The "middleware" file convention is deprecated. Please use "proxy" instead. Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
+[00:00:01.573] Server  LOG     ✓ Ready in 1341ms
+[00:00:03.497] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:47.254] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:01:33.637] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:17:13.282] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:19:42.467] Browser ERROR   Received `%s` for a non-boolean attribute `%s`.
 
-https://nextjs.org/docs/messages/module-not-found
-[00:00:12.128] Server  ERROR   ⨯ ./components/AccountMenu.tsx:6:1
-Module not found: Can't resolve '../globals.css'
-  4 | import { useUser } from '@/context/UserContext';
-  5 | import { supabaseClient } from '@/lib/supabaseClient';
-> 6 | import '../globals.css';
-    | ^
-  7 |
-  8 | const AccountMenu = () => {
-  9 |   const { user, profile } = useUser();
+If you want to write it to the DOM, pass a string instead: %s="%s" or %s={value.toString()}. true href href true href
+[00:19:46.466] Browser ERROR   An empty string ("") was passed to the %s attribute. To fix this, either do not render the element at all or pass null to %s instead of an empty string. href href
+[00:19:56.989] Server  ERROR   ⨯ Error: Refs cannot be used in Server Components, nor passed to Client Components.
+[00:19:57.471] Browser ERROR   uncaughtError: Error: Refs cannot be used in Server Components, nor passed to Client Components.
+[00:20:48.839] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:20:52.466] Browser ERROR   Failed to fetch profile: {"code":"PGRST116","details":"The result contains 0 rows","hint":null,"message":"Cannot coerce the result to a single JSON object"}
+[00:22:45.637] Server  ERROR   ⨯ ReferenceError: te is not defined
+[00:22:46.467] Browser ERROR   uncaughtError: ReferenceError: te is not defined
+[00:22:49.551] Server  ERROR   ⨯ ReferenceError: textD is not defined
+[00:22:50.105] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:22:50.469] Browser ERROR   uncaughtError: ReferenceError: textD is not defined
+[00:22:54.229] Server  ERROR   ⨯ ReferenceError: textDecoration is not defined
+[00:22:54.617] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:22:55.494] Browser ERROR   uncaughtError: ReferenceError: textDecoration is not defined
+[00:22:55.721] Server  ERROR   ⨯ ./app/admin/layout.tsx
+Error:   × Expected '</', got '}'
+    ╭─[/Users/lavbujak/Desktop/Sindjelic/westgate-sindjelic/frontend/app/admin/layout.tsx:22:1]
+ 19 │       >
+ 20 │         <h2 style={{ marginBottom: '2rem', color: '#1e40af' }}>Admin Panel</h2>
+ 21 │         <Link href="/">
+ 22 │           <h2 style={{ marginBottom: '2rem', color: '#000000ff', textDecoration =  }}>User Website</h2>
+    ·                                                                                    ─
+ 23 │         </Link>
+ 24 │         <nav style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+ 25 │           <Link href="/admin/dashboard" style={{ color: '#1e40af' }}>
+    ╰────
 
-https://nextjs.org/docs/messages/module-not-found
-[00:00:12.311] Browser ERROR   ./components/AccountMenu.tsx:6:1
-Module not found: Can't resolve '../globals.css'
-  4 | import { useUser } from '@/context/UserContext';
-  5 | import { supabaseClient } from '@/lib/supabaseClient';
-> 6 | import '../globals.css';
-    | ^
-  7 |
-  8 | const AccountMenu = () => {
-  9 |   const { user, profile } = useUser();
+Caused by:
+    Syntax Error
 
-https://nextjs.org/docs/messages/module-not-found
-[00:00:12.311] Browser ERROR   ./components/AccountMenu.tsx:6:1
-Module not found: Can't resolve '../globals.css'
-  4 | import { useUser } from '@/context/UserContext';
-  5 | import { supabaseClient } from '@/lib/supabaseClient';
-> 6 | import '../globals.css';
-    | ^
-  7 |
-  8 | const AccountMenu = () => {
-  9 |   const { user, profile } = useUser();
+Import trace for requested module:
+./app/admin/layout.tsx
+[00:22:56.466] Browser ERROR   ./app/admin/layout.tsx
+Error:   × Expected '</', got '}'
+    ╭─[/Users/lavbujak/Desktop/Sindjelic/westgate-sindjelic/frontend/app/admin/layout.tsx:22:1]
+ 19 │       >
+ 20 │         <h2 style={{ marginBottom: '2rem', color: '#1e40af' }}>Admin Panel</h2>
+ 21 │         <Link href="/">
+ 22 │           <h2 style={{ marginBottom: '2rem', color: '#000000ff', textDecoration =  }}>User Website</h2>
+    ·                                                                                    ─
+ 23 │         </Link>
+ 24 │         <nav style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+ 25 │           <Link href="/admin/dashboard" style={{ color: '#1e40af' }}>
+    ╰────
 
-https://nextjs.org/docs/messages/module-not-found
-[00:00:12.345] Server  ERROR   ⨯ ./components/AccountMenu.tsx:6:1
-Module not found: Can't resolve '../globals.css'
-  4 | import { useUser } from '@/context/UserContext';
-  5 | import { supabaseClient } from '@/lib/supabaseClient';
-> 6 | import '../globals.css';
-    | ^
-  7 |
-  8 | const AccountMenu = () => {
-  9 |   const { user, profile } = useUser();
+Caused by:
+    Syntax Error
 
-https://nextjs.org/docs/messages/module-not-found
-[00:00:12.424] Browser ERROR   ./components/AccountMenu.tsx:6:1
-Module not found: Can't resolve '../globals.css'
-  4 | import { useUser } from '@/context/UserContext';
-  5 | import { supabaseClient } from '@/lib/supabaseClient';
-> 6 | import '../globals.css';
-    | ^
-  7 |
-  8 | const AccountMenu = () => {
-  9 |   const { user, profile } = useUser();
+Import trace for requested module:
+./app/admin/layout.tsx
+[00:22:56.843] Server  WARN    ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:22:57.179] Server  WARN    ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:22:57.882] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:22:59.466] Browser ERROR   Failed to fetch profile: {"code":"PGRST116","details":"The result contains 0 rows","hint":null,"message":"Cannot coerce the result to a single JSON object"}
+[00:23:03.318] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:23:04.548] Browser ERROR   Failed to fetch profile: {"code":"PGRST116","details":"The result contains 0 rows","hint":null,"message":"Cannot coerce the result to a single JSON object"}
+[00:23:17.840] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:23:18.987] Browser ERROR   Failed to fetch profile: {"code":"PGRST116","details":"The result contains 0 rows","hint":null,"message":"Cannot coerce the result to a single JSON object"}
+[00:24:51.152] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:24:52.693] Browser ERROR   Failed to fetch profile: {"code":"PGRST116","details":"The result contains 0 rows","hint":null,"message":"Cannot coerce the result to a single JSON object"}
+[00:25:41.590] Server  ERROR   ⨯ ./app/admin/layout.tsx
+Error:   × Expression expected
+    ╭─[/Users/lavbujak/Desktop/Sindjelic/westgate-sindjelic/frontend/app/admin/layout.tsx:23:1]
+ 20 │         <h2 style={{ marginBottom: '2rem', color: '#1e40af' }}>Admin Panel</h2>
+ 21 │         <Link href="/">
+ 22 │           <h2 style={{ marginBottom: '2rem', color: '#000000ff', textDecoration: 'none' }}>
+ 23 │             <-User Website
+    ·              ─
+ 24 │           </h2>
+ 25 │         </Link>
+ 26 │         <nav style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+    ╰────
+  × Expected ',', got 'Website'
+    ╭─[/Users/lavbujak/Desktop/Sindjelic/westgate-sindjelic/frontend/app/admin/layout.tsx:23:1]
+ 20 │         <h2 style={{ marginBottom: '2rem', color: '#1e40af' }}>Admin Panel</h2>
+ 21 │         <Link href="/">
+ 22 │           <h2 style={{ marginBottom: '2rem', color: '#000000ff', textDecoration: 'none' }}>
+ 23 │             <-User Website
+    ·                    ───────
+ 24 │           </h2>
+ 25 │         </Link>
+ 26 │         <nav style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+    ╰────
 
-https://nextjs.org/docs/messages/module-not-found
-[00:00:12.911] Browser ERROR   ./components/AccountMenu.tsx:6:1
-Module not found: Can't resolve '../globals.css'
-  4 | import { useUser } from '@/context/UserContext';
-  5 | import { supabaseClient } from '@/lib/supabaseClient';
-> 6 | import '../globals.css';
-    | ^
-  7 |
-  8 | const AccountMenu = () => {
-  9 |   const { user, profile } = useUser();
+Caused by:
+    Syntax Error
 
-https://nextjs.org/docs/messages/module-not-found
-[00:00:13.075] Browser ERROR   ./components/AccountMenu.tsx:6:1
-Module not found: Can't resolve '../globals.css'
-  4 | import { useUser } from '@/context/UserContext';
-  5 | import { supabaseClient } from '@/lib/supabaseClient';
-> 6 | import '../globals.css';
-    | ^
-  7 |
-  8 | const AccountMenu = () => {
-  9 |   const { user, profile } = useUser();
+Import trace for requested module:
+./app/admin/layout.tsx
+[00:25:42.465] Browser ERROR   ./app/admin/layout.tsx
+Error:   × Expression expected
+    ╭─[/Users/lavbujak/Desktop/Sindjelic/westgate-sindjelic/frontend/app/admin/layout.tsx:23:1]
+ 20 │         <h2 style={{ marginBottom: '2rem', color: '#1e40af' }}>Admin Panel</h2>
+ 21 │         <Link href="/">
+ 22 │           <h2 style={{ marginBottom: '2rem', color: '#000000ff', textDecoration: 'none' }}>
+ 23 │             <-User Website
+    ·              ─
+ 24 │           </h2>
+ 25 │         </Link>
+ 26 │         <nav style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+    ╰────
+  × Expected ',', got 'Website'
+    ╭─[/Users/lavbujak/Desktop/Sindjelic/westgate-sindjelic/frontend/app/admin/layout.tsx:23:1]
+ 20 │         <h2 style={{ marginBottom: '2rem', color: '#1e40af' }}>Admin Panel</h2>
+ 21 │         <Link href="/">
+ 22 │           <h2 style={{ marginBottom: '2rem', color: '#000000ff', textDecoration: 'none' }}>
+ 23 │             <-User Website
+    ·                    ───────
+ 24 │           </h2>
+ 25 │         </Link>
+ 26 │         <nav style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+    ╰────
 
-https://nextjs.org/docs/messages/module-not-found
-[00:00:13.355] Server  ERROR   ⨯ ./components/AccountMenu.tsx:6:1
-Module not found: Can't resolve '../globals.css'
-  4 | import { useUser } from '@/context/UserContext';
-  5 | import { supabaseClient } from '@/lib/supabaseClient';
-> 6 | import '../globals.css';
-    | ^
-  7 |
-  8 | const AccountMenu = () => {
-  9 |   const { user, profile } = useUser();
+Caused by:
+    Syntax Error
 
-https://nextjs.org/docs/messages/module-not-found
-[00:00:13.475] Browser ERROR   ./components/AccountMenu.tsx:6:1
-Module not found: Can't resolve '../globals.css'
-  4 | import { useUser } from '@/context/UserContext';
-  5 | import { supabaseClient } from '@/lib/supabaseClient';
-> 6 | import '../globals.css';
-    | ^
-  7 |
-  8 | const AccountMenu = () => {
-  9 |   const { user, profile } = useUser();
+Import trace for requested module:
+./app/admin/layout.tsx
+[00:25:42.987] Server  ERROR   ⨯ ./app/admin/layout.tsx
+Error:   × Expression expected
+    ╭─[/Users/lavbujak/Desktop/Sindjelic/westgate-sindjelic/frontend/app/admin/layout.tsx:23:1]
+ 20 │         <h2 style={{ marginBottom: '2rem', color: '#1e40af' }}>Admin Panel</h2>
+ 21 │         <Link href="/">
+ 22 │           <h2 style={{ marginBottom: '2rem', color: '#000000ff', textDecoration: 'none' }}>
+ 23 │             <- User Website
+    ·              ─
+ 24 │           </h2>
+ 25 │         </Link>
+ 26 │         <nav style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+    ╰────
+  × Expected ',', got 'Website'
+    ╭─[/Users/lavbujak/Desktop/Sindjelic/westgate-sindjelic/frontend/app/admin/layout.tsx:23:1]
+ 20 │         <h2 style={{ marginBottom: '2rem', color: '#1e40af' }}>Admin Panel</h2>
+ 21 │         <Link href="/">
+ 22 │           <h2 style={{ marginBottom: '2rem', color: '#000000ff', textDecoration: 'none' }}>
+ 23 │             <- User Website
+    ·                     ───────
+ 24 │           </h2>
+ 25 │         </Link>
+ 26 │         <nav style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+    ╰────
 
-https://nextjs.org/docs/messages/module-not-found
-[00:00:13.475] Browser ERROR   ./components/AccountMenu.tsx:6:1
-Module not found: Can't resolve '../globals.css'
-  4 | import { useUser } from '@/context/UserContext';
-  5 | import { supabaseClient } from '@/lib/supabaseClient';
-> 6 | import '../globals.css';
-    | ^
-  7 |
-  8 | const AccountMenu = () => {
-  9 |   const { user, profile } = useUser();
+Caused by:
+    Syntax Error
 
-https://nextjs.org/docs/messages/module-not-found
-[00:00:13.475] Browser ERROR   ./components/AccountMenu.tsx:6:1
-Module not found: Can't resolve '../globals.css'
-  4 | import { useUser } from '@/context/UserContext';
-  5 | import { supabaseClient } from '@/lib/supabaseClient';
-> 6 | import '../globals.css';
-    | ^
-  7 |
-  8 | const AccountMenu = () => {
-  9 |   const { user, profile } = useUser();
+Import trace for requested module:
+./app/admin/layout.tsx
+[00:25:43.464] Browser ERROR   ./app/admin/layout.tsx
+Error:   × Expression expected
+    ╭─[/Users/lavbujak/Desktop/Sindjelic/westgate-sindjelic/frontend/app/admin/layout.tsx:23:1]
+ 20 │         <h2 style={{ marginBottom: '2rem', color: '#1e40af' }}>Admin Panel</h2>
+ 21 │         <Link href="/">
+ 22 │           <h2 style={{ marginBottom: '2rem', color: '#000000ff', textDecoration: 'none' }}>
+ 23 │             <- User Website
+    ·              ─
+ 24 │           </h2>
+ 25 │         </Link>
+ 26 │         <nav style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+    ╰────
+  × Expected ',', got 'Website'
+    ╭─[/Users/lavbujak/Desktop/Sindjelic/westgate-sindjelic/frontend/app/admin/layout.tsx:23:1]
+ 20 │         <h2 style={{ marginBottom: '2rem', color: '#1e40af' }}>Admin Panel</h2>
+ 21 │         <Link href="/">
+ 22 │           <h2 style={{ marginBottom: '2rem', color: '#000000ff', textDecoration: 'none' }}>
+ 23 │             <- User Website
+    ·                     ───────
+ 24 │           </h2>
+ 25 │         </Link>
+ 26 │         <nav style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+    ╰────
 
-https://nextjs.org/docs/messages/module-not-found
-[00:00:13.475] Browser ERROR   ./components/AccountMenu.tsx:6:1
-Module not found: Can't resolve '../globals.css'
-  4 | import { useUser } from '@/context/UserContext';
-  5 | import { supabaseClient } from '@/lib/supabaseClient';
-> 6 | import '../globals.css';
-    | ^
-  7 |
-  8 | const AccountMenu = () => {
-  9 |   const { user, profile } = useUser();
+Caused by:
+    Syntax Error
 
-https://nextjs.org/docs/messages/module-not-found
-[00:00:13.928] Browser ERROR   uncaughtError: Error: Module not found: Can't resolve '../globals.css'
-  4 | import { useUser } from '@/context/UserContext';
-  5 | import { supabaseClient } from '@/lib/supabaseClient';
-> 6 | import '../globals.css';
-    | ^
-  7 |
-  8 | const AccountMenu = () => {
-  9 |   const { user, profile } = useUser();
+Import trace for requested module:
+./app/admin/layout.tsx
+[00:25:51.508] Server  ERROR   ⨯ ./app/admin/layout.tsx
+Error:   × Expression expected
+    ╭─[/Users/lavbujak/Desktop/Sindjelic/westgate-sindjelic/frontend/app/admin/layout.tsx:23:1]
+ 20 │         <h2 style={{ marginBottom: '2rem', color: '#1e40af' }}>Admin Panel</h2>
+ 21 │         <Link href="/">
+ 22 │           <h2 style={{ marginBottom: '2rem', color: '#000000ff', textDecoration: 'none' }}>
+ 23 │             <-'' User Website
+    ·              ─
+ 24 │           </h2>
+ 25 │         </Link>
+ 26 │         <nav style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+    ╰────
+  × Expected ',', got 'User'
+    ╭─[/Users/lavbujak/Desktop/Sindjelic/westgate-sindjelic/frontend/app/admin/layout.tsx:23:1]
+ 20 │         <h2 style={{ marginBottom: '2rem', color: '#1e40af' }}>Admin Panel</h2>
+ 21 │         <Link href="/">
+ 22 │           <h2 style={{ marginBottom: '2rem', color: '#000000ff', textDecoration: 'none' }}>
+ 23 │             <-'' User Website
+    ·                  ────
+ 24 │           </h2>
+ 25 │         </Link>
+ 26 │         <nav style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+    ╰────
 
-https://nextjs.org/docs/messages/module-not-found
+Caused by:
+    Syntax Error
 
-[00:00:14.028] Browser ERROR   ./components/AccountMenu.tsx:6:1
-Module not found: Can't resolve '../globals.css'
-  4 | import { useUser } from '@/context/UserContext';
-  5 | import { supabaseClient } from '@/lib/supabaseClient';
-> 6 | import '../globals.css';
-    | ^
-  7 |
-  8 | const AccountMenu = () => {
-  9 |   const { user, profile } = useUser();
+Import trace for requested module:
+./app/admin/layout.tsx
+[00:25:52.466] Browser ERROR   ./app/admin/layout.tsx
+Error:   × Expression expected
+    ╭─[/Users/lavbujak/Desktop/Sindjelic/westgate-sindjelic/frontend/app/admin/layout.tsx:23:1]
+ 20 │         <h2 style={{ marginBottom: '2rem', color: '#1e40af' }}>Admin Panel</h2>
+ 21 │         <Link href="/">
+ 22 │           <h2 style={{ marginBottom: '2rem', color: '#000000ff', textDecoration: 'none' }}>
+ 23 │             <-'' User Website
+    ·              ─
+ 24 │           </h2>
+ 25 │         </Link>
+ 26 │         <nav style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+    ╰────
+  × Expected ',', got 'User'
+    ╭─[/Users/lavbujak/Desktop/Sindjelic/westgate-sindjelic/frontend/app/admin/layout.tsx:23:1]
+ 20 │         <h2 style={{ marginBottom: '2rem', color: '#1e40af' }}>Admin Panel</h2>
+ 21 │         <Link href="/">
+ 22 │           <h2 style={{ marginBottom: '2rem', color: '#000000ff', textDecoration: 'none' }}>
+ 23 │             <-'' User Website
+    ·                  ────
+ 24 │           </h2>
+ 25 │         </Link>
+ 26 │         <nav style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+    ╰────
 
-https://nextjs.org/docs/messages/module-not-found
-[00:00:14.484] Server  LOG     ○ Compiling /_error ...
-[00:00:26.880] Server  ERROR   ⨯ ./components/AccountMenu.tsx:6:1
-Module not found: Can't resolve '/globals.css'
-  4 | import { useUser } from '@/context/UserContext';
-  5 | import { supabaseClient } from '@/lib/supabaseClient';
-> 6 | import '/globals.css';
-    | ^
-  7 |
-  8 | const AccountMenu = () => {
-  9 |   const { user, profile } = useUser();
+Caused by:
+    Syntax Error
 
-https://nextjs.org/docs/messages/module-not-found
-[00:00:27.695] Browser ERROR   ./components/AccountMenu.tsx:6:1
-Module not found: Can't resolve '../globals.css'
-  4 | import { useUser } from '@/context/UserContext';
-  5 | import { supabaseClient } from '@/lib/supabaseClient';
-> 6 | import '../globals.css';
-    | ^
-  7 |
-  8 | const AccountMenu = () => {
-  9 |   const { user, profile } = useUser();
+Import trace for requested module:
+./app/admin/layout.tsx
+[00:25:53.318] Server  ERROR   ⨯ ./app/admin/layout.tsx
+Error:   × Expression expected
+    ╭─[/Users/lavbujak/Desktop/Sindjelic/westgate-sindjelic/frontend/app/admin/layout.tsx:23:1]
+ 20 │         <h2 style={{ marginBottom: '2rem', color: '#1e40af' }}>Admin Panel</h2>
+ 21 │         <Link href="/">
+ 22 │           <h2 style={{ marginBottom: '2rem', color: '#000000ff', textDecoration: 'none' }}>
+ 23 │             <-' User Website
+    ·              ─
+ 24 │           </h2>
+ 25 │         </Link>
+ 26 │         <nav style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+    ╰────
+  × Unterminated string constant
+    ╭─[/Users/lavbujak/Desktop/Sindjelic/westgate-sindjelic/frontend/app/admin/layout.tsx:23:1]
+ 20 │         <h2 style={{ marginBottom: '2rem', color: '#1e40af' }}>Admin Panel</h2>
+ 21 │         <Link href="/">
+ 22 │           <h2 style={{ marginBottom: '2rem', color: '#000000ff', textDecoration: 'none' }}>
+ 23 │             <-' User Website
+    ·               ──────────────
+ 24 │           </h2>
+ 25 │         </Link>
+ 26 │         <nav style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+    ╰────
+  × Unterminated regexp literal
+    ╭─[/Users/lavbujak/Desktop/Sindjelic/westgate-sindjelic/frontend/app/admin/layout.tsx:24:1]
+ 21 │         <Link href="/">
+ 22 │           <h2 style={{ marginBottom: '2rem', color: '#000000ff', textDecoration: 'none' }}>
+ 23 │             <-' User Website
+ 24 │           </h2>
+    ·            ────
+ 25 │         </Link>
+ 26 │         <nav style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+ 27 │           <Link
+    ╰────
 
-https://nextjs.org/docs/messages/module-not-found
-[00:00:27.695] Browser ERROR   ./components/AccountMenu.tsx:6:1
-Module not found: Can't resolve '/globals.css'
-  4 | import { useUser } from '@/context/UserContext';
-  5 | import { supabaseClient } from '@/lib/supabaseClient';
-> 6 | import '/globals.css';
-    | ^
-  7 |
-  8 | const AccountMenu = () => {
-  9 |   const { user, profile } = useUser();
+Caused by:
+    Syntax Error
 
-https://nextjs.org/docs/messages/module-not-found
-[00:00:30.143] Server  ERROR   ⨯ ./components/AccountMenu.tsx:6:1
-Module not found: Empty dependency (no request)
-  4 | import { useUser } from '@/context/UserContext';
-  5 | import { supabaseClient } from '@/lib/supabaseClient';
-> 6 | import '';
-    | ^
-  7 |
-  8 | const AccountMenu = () => {
-  9 |   const { user, profile } = useUser();
+Import trace for requested module:
+./app/admin/layout.tsx
+[00:25:53.465] Browser ERROR   ./app/admin/layout.tsx
+Error:   × Expression expected
+    ╭─[/Users/lavbujak/Desktop/Sindjelic/westgate-sindjelic/frontend/app/admin/layout.tsx:23:1]
+ 20 │         <h2 style={{ marginBottom: '2rem', color: '#1e40af' }}>Admin Panel</h2>
+ 21 │         <Link href="/">
+ 22 │           <h2 style={{ marginBottom: '2rem', color: '#000000ff', textDecoration: 'none' }}>
+ 23 │             <-' User Website
+    ·              ─
+ 24 │           </h2>
+ 25 │         </Link>
+ 26 │         <nav style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+    ╰────
+  × Unterminated string constant
+    ╭─[/Users/lavbujak/Desktop/Sindjelic/westgate-sindjelic/frontend/app/admin/layout.tsx:23:1]
+ 20 │         <h2 style={{ marginBottom: '2rem', color: '#1e40af' }}>Admin Panel</h2>
+ 21 │         <Link href="/">
+ 22 │           <h2 style={{ marginBottom: '2rem', color: '#000000ff', textDecoration: 'none' }}>
+ 23 │             <-' User Website
+    ·               ──────────────
+ 24 │           </h2>
+ 25 │         </Link>
+ 26 │         <nav style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+    ╰────
+  × Unterminated regexp literal
+    ╭─[/Users/lavbujak/Desktop/Sindjelic/westgate-sindjelic/frontend/app/admin/layout.tsx:24:1]
+ 21 │         <Link href="/">
+ 22 │           <h2 style={{ marginBottom: '2rem', color: '#000000ff', textDecoration: 'none' }}>
+ 23 │             <-' User Website
+ 24 │           </h2>
+    ·            ────
+ 25 │         </Link>
+ 26 │         <nav style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+ 27 │           <Link
+    ╰────
 
-https://nextjs.org/docs/messages/module-not-found
-[00:00:30.693] Browser ERROR   ./components/AccountMenu.tsx:6:1
-Module not found: Can't resolve '/globals.css'
-  4 | import { useUser } from '@/context/UserContext';
-  5 | import { supabaseClient } from '@/lib/supabaseClient';
-> 6 | import '/globals.css';
-    | ^
-  7 |
-  8 | const AccountMenu = () => {
-  9 |   const { user, profile } = useUser();
+Caused by:
+    Syntax Error
 
-https://nextjs.org/docs/messages/module-not-found
-[00:00:30.693] Browser ERROR   ./components/AccountMenu.tsx:6:1
-Module not found: Empty dependency (no request)
-  4 | import { useUser } from '@/context/UserContext';
-  5 | import { supabaseClient } from '@/lib/supabaseClient';
-> 6 | import '';
-    | ^
-  7 |
-  8 | const AccountMenu = () => {
-  9 |   const { user, profile } = useUser();
+Import trace for requested module:
+./app/admin/layout.tsx
+[00:25:54.633] Server  ERROR   ⨯ ./app/admin/layout.tsx
+Error:   × Expression expected
+    ╭─[/Users/lavbujak/Desktop/Sindjelic/westgate-sindjelic/frontend/app/admin/layout.tsx:23:1]
+ 20 │         <h2 style={{ marginBottom: '2rem', color: '#1e40af' }}>Admin Panel</h2>
+ 21 │         <Link href="/">
+ 22 │           <h2 style={{ marginBottom: '2rem', color: '#000000ff', textDecoration: 'none' }}>
+ 23 │             '<-' User Website
+    ·               ─
+ 24 │           </h2>
+ 25 │         </Link>
+ 26 │         <nav style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+    ╰────
+  × Unterminated string constant
+    ╭─[/Users/lavbujak/Desktop/Sindjelic/westgate-sindjelic/frontend/app/admin/layout.tsx:23:1]
+ 20 │         <h2 style={{ marginBottom: '2rem', color: '#1e40af' }}>Admin Panel</h2>
+ 21 │         <Link href="/">
+ 22 │           <h2 style={{ marginBottom: '2rem', color: '#000000ff', textDecoration: 'none' }}>
+ 23 │             '<-' User Website
+    ·                ──────────────
+ 24 │           </h2>
+ 25 │         </Link>
+ 26 │         <nav style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+    ╰────
+  × Unterminated regexp literal
+    ╭─[/Users/lavbujak/Desktop/Sindjelic/westgate-sindjelic/frontend/app/admin/layout.tsx:24:1]
+ 21 │         <Link href="/">
+ 22 │           <h2 style={{ marginBottom: '2rem', color: '#000000ff', textDecoration: 'none' }}>
+ 23 │             '<-' User Website
+ 24 │           </h2>
+    ·            ────
+ 25 │         </Link>
+ 26 │         <nav style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+ 27 │           <Link
+    ╰────
 
-https://nextjs.org/docs/messages/module-not-found
-[00:00:33.206] Server  ERROR   ⨯ ./components/AccountMenu.tsx:6:1
-Module not found: Can't resolve '@'
-  4 | import { useUser } from '@/context/UserContext';
-  5 | import { supabaseClient } from '@/lib/supabaseClient';
-> 6 | import '@';
-    | ^
-  7 |
-  8 | const AccountMenu = () => {
-  9 |   const { user, profile } = useUser();
+Caused by:
+    Syntax Error
 
-https://nextjs.org/docs/messages/module-not-found
-[00:00:33.693] Browser ERROR   ./components/AccountMenu.tsx:6:1
-Module not found: Empty dependency (no request)
-  4 | import { useUser } from '@/context/UserContext';
-  5 | import { supabaseClient } from '@/lib/supabaseClient';
-> 6 | import '';
-    | ^
-  7 |
-  8 | const AccountMenu = () => {
-  9 |   const { user, profile } = useUser();
+Import trace for requested module:
+./app/admin/layout.tsx
+[00:25:55.466] Browser ERROR   ./app/admin/layout.tsx
+Error:   × Expression expected
+    ╭─[/Users/lavbujak/Desktop/Sindjelic/westgate-sindjelic/frontend/app/admin/layout.tsx:23:1]
+ 20 │         <h2 style={{ marginBottom: '2rem', color: '#1e40af' }}>Admin Panel</h2>
+ 21 │         <Link href="/">
+ 22 │           <h2 style={{ marginBottom: '2rem', color: '#000000ff', textDecoration: 'none' }}>
+ 23 │             '<-' User Website
+    ·               ─
+ 24 │           </h2>
+ 25 │         </Link>
+ 26 │         <nav style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+    ╰────
+  × Unterminated string constant
+    ╭─[/Users/lavbujak/Desktop/Sindjelic/westgate-sindjelic/frontend/app/admin/layout.tsx:23:1]
+ 20 │         <h2 style={{ marginBottom: '2rem', color: '#1e40af' }}>Admin Panel</h2>
+ 21 │         <Link href="/">
+ 22 │           <h2 style={{ marginBottom: '2rem', color: '#000000ff', textDecoration: 'none' }}>
+ 23 │             '<-' User Website
+    ·                ──────────────
+ 24 │           </h2>
+ 25 │         </Link>
+ 26 │         <nav style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+    ╰────
+  × Unterminated regexp literal
+    ╭─[/Users/lavbujak/Desktop/Sindjelic/westgate-sindjelic/frontend/app/admin/layout.tsx:24:1]
+ 21 │         <Link href="/">
+ 22 │           <h2 style={{ marginBottom: '2rem', color: '#000000ff', textDecoration: 'none' }}>
+ 23 │             '<-' User Website
+ 24 │           </h2>
+    ·            ────
+ 25 │         </Link>
+ 26 │         <nav style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+ 27 │           <Link
+    ╰────
 
-https://nextjs.org/docs/messages/module-not-found
-[00:00:33.693] Browser ERROR   ./components/AccountMenu.tsx:6:1
-Module not found: Can't resolve '@'
-  4 | import { useUser } from '@/context/UserContext';
-  5 | import { supabaseClient } from '@/lib/supabaseClient';
-> 6 | import '@';
-    | ^
-  7 |
-  8 | const AccountMenu = () => {
-  9 |   const { user, profile } = useUser();
+Caused by:
+    Syntax Error
 
-https://nextjs.org/docs/messages/module-not-found
-[00:00:33.693] Browser ERROR   ./components/AccountMenu.tsx:6:1
-Module not found: Can't resolve '@'
-  4 | import { useUser } from '@/context/UserContext';
-  5 | import { supabaseClient } from '@/lib/supabaseClient';
-> 6 | import '@';
-    | ^
-  7 |
-  8 | const AccountMenu = () => {
-  9 |   const { user, profile } = useUser();
-
-https://nextjs.org/docs/messages/module-not-found
-[00:00:34.887] Server  ERROR   ⨯ ./components/AccountMenu.tsx:6:1
-Module not found: Can't resolve '@/'
-  4 | import { useUser } from '@/context/UserContext';
-  5 | import { supabaseClient } from '@/lib/supabaseClient';
-> 6 | import '@/';
-    | ^
-  7 |
-  8 | const AccountMenu = () => {
-  9 |   const { user, profile } = useUser();
-
-https://nextjs.org/docs/messages/module-not-found
-[00:00:35.692] Browser ERROR   ./components/AccountMenu.tsx:6:1
-Module not found: Can't resolve '@'
-  4 | import { useUser } from '@/context/UserContext';
-  5 | import { supabaseClient } from '@/lib/supabaseClient';
-> 6 | import '@';
-    | ^
-  7 |
-  8 | const AccountMenu = () => {
-  9 |   const { user, profile } = useUser();
-
-https://nextjs.org/docs/messages/module-not-found
-[00:00:35.692] Browser ERROR   ./components/AccountMenu.tsx:6:1
-Module not found: Can't resolve '@/'
-  4 | import { useUser } from '@/context/UserContext';
-  5 | import { supabaseClient } from '@/lib/supabaseClient';
-> 6 | import '@/';
-    | ^
-  7 |
-  8 | const AccountMenu = () => {
-  9 |   const { user, profile } = useUser();
-
-https://nextjs.org/docs/messages/module-not-found
-[00:00:36.696] Browser ERROR   ./components/AccountMenu.tsx:6:1
-Module not found: Can't resolve '@/'
-  4 | import { useUser } from '@/context/UserContext';
-  5 | import { supabaseClient } from '@/lib/supabaseClient';
-> 6 | import '@/';
-    | ^
-  7 |
-  8 | const AccountMenu = () => {
-  9 |   const { user, profile } = useUser();
-
-https://nextjs.org/docs/messages/module-not-found
-[00:00:36.725] Server  ERROR   ⨯ ./components/AccountMenu.tsx:6:1
-Module not found: Can't resolve '@/app'
-  4 | import { useUser } from '@/context/UserContext';
-  5 | import { supabaseClient } from '@/lib/supabaseClient';
-> 6 | import '@/app';
-    | ^
-  7 |
-  8 | const AccountMenu = () => {
-  9 |   const { user, profile } = useUser();
-
-https://nextjs.org/docs/messages/module-not-found
-[00:00:37.692] Browser ERROR   ./components/AccountMenu.tsx:6:1
-Module not found: Can't resolve '@/app'
-  4 | import { useUser } from '@/context/UserContext';
-  5 | import { supabaseClient } from '@/lib/supabaseClient';
-> 6 | import '@/app';
-    | ^
-  7 |
-  8 | const AccountMenu = () => {
-  9 |   const { user, profile } = useUser();
-
-https://nextjs.org/docs/messages/module-not-found
-[00:00:38.704] Server  ERROR   ⨯ ./components/AccountMenu.tsx:6:1
-Module not found: Can't resolve '@/app/globals.css '
-  4 | import { useUser } from '@/context/UserContext';
-  5 | import { supabaseClient } from '@/lib/supabaseClient';
-> 6 | import '@/app/globals.css ';
-    | ^
-  7 |
-  8 | const AccountMenu = () => {
-  9 |   const { user, profile } = useUser();
-
-https://nextjs.org/docs/messages/module-not-found
-[00:00:39.560] Browser ERROR   ./components/AccountMenu.tsx:6:1
-Module not found: Can't resolve '@/app'
-  4 | import { useUser } from '@/context/UserContext';
-  5 | import { supabaseClient } from '@/lib/supabaseClient';
-> 6 | import '@/app';
-    | ^
-  7 |
-  8 | const AccountMenu = () => {
-  9 |   const { user, profile } = useUser();
-
-https://nextjs.org/docs/messages/module-not-found
-[00:00:39.560] Browser ERROR   ./components/AccountMenu.tsx:6:1
-Module not found: Can't resolve '@/app/globals.css '
-  4 | import { useUser } from '@/context/UserContext';
-  5 | import { supabaseClient } from '@/lib/supabaseClient';
-> 6 | import '@/app/globals.css ';
-    | ^
-  7 |
-  8 | const AccountMenu = () => {
-  9 |   const { user, profile } = useUser();
-
-https://nextjs.org/docs/messages/module-not-found
-[00:00:39.830] Browser ERROR   ./components/AccountMenu.tsx:6:1
-Module not found: Can't resolve '@/app/globals.css '
-  4 | import { useUser } from '@/context/UserContext';
-  5 | import { supabaseClient } from '@/lib/supabaseClient';
-> 6 | import '@/app/globals.css ';
-    | ^
-  7 |
-  8 | const AccountMenu = () => {
-  9 |   const { user, profile } = useUser();
-
-https://nextjs.org/docs/messages/module-not-found
-[00:00:40.195] Server  WARN    ⚠ Fast Refresh had to perform a full reload due to a runtime error.
-[00:00:40.413] Server  ERROR   ⨯ Error: useUser must be used within UserProvider
-[00:00:41.232] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:00:41.296] Server  ERROR   ⨯ Error: useUser must be used within UserProvider
-[00:00:42.024] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:00:42.283] Browser ERROR   uncaughtError: Error: useUser must be used within UserProvider
-[00:01:45.584] Server  ERROR   ⨯ Error: useUser must be used within UserProvider
-[00:01:46.329] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:01:46.694] Browser ERROR   uncaughtError: Error: useUser must be used within UserProvider
-[00:01:50.532] Server  ERROR   ⨯ Error: useUser must be used within UserProvider
-[00:01:51.267] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:01:51.696] Browser ERROR   uncaughtError: Error: useUser must be used within UserProvider
-[00:03:34.759] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:15:32.728] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:19:22.691] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:20:25.064] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:21:10.216] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:33:22.004] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:33:48.072] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+Import trace for requested module:
+./app/admin/layout.tsx

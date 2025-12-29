@@ -11,3 +11,12 @@ export interface AdminAccount {
   id: string;
   email: string;
 }
+
+export interface UserAccount {
+  id: string;
+  name: string | null;
+  surname: string | null;
+  email: string;
+  logo: string | null;
+  created_at: string;
+}
