@@ -26,27 +26,42 @@ export const UserProvider = ({ children }: { children: ReactNode }) => {
 
       setUser(user);
 
+      // Try to fetch profile from 'profiles' table
       const { data: profileData, error: profileError } = await supabaseClient
         .from('profiles')
         .select('*')
         .eq('id', user.id)
         .single();
 
-      if (profileError) {
-        // Admins or users without a profile fallback
-        console.warn('No profile found, using default:', profileError.message);
+      // Check if user is an admin
+      const { data: adminData } = await supabaseClient
+        .from('admins')
+        .select('*')
+        .eq('id', user.id)
+        .single();
+
+      const isAdmin = !!adminData;
+
+      if (profileError || !profileData) {
+        // Fallback profile
         setProfile({
           id: user.id,
-          name: 'Admin',
+          name: isAdmin ? 'Admin' : 'User',
           surname: '',
           email: user.email,
           logo: null,
           created_at: user.created_at,
+          is_admin: isAdmin,
         });
         return;
       }
 
-      setProfile(profileData);
+      // Existing profile
+      setProfile({
+        ...profileData,
+        is_admin: isAdmin,
+      });
+
     } catch (err) {
       console.error('Failed to fetch profile:', err);
     }

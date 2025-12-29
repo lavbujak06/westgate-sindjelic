@@ -64,13 +64,17 @@ const AccountMenu = () => {
               </li>
             </>
           )}
+
           {user && (
             <>
-              <li>
-                <Link href="/account">
-                  <button>Account Settings</button>
-                </Link>
-              </li>
+              {/* Hide Account Settings if admin */}
+              {!profile?.is_admin && (
+                <li>
+                  <Link href="/account">
+                    <button>Account Settings</button>
+                  </Link>
+                </li>
+              )}
               <li>
                 <button onClick={handleSignOut}>Sign Out</button>
               </li>
