@@ -27,7 +27,8 @@ export default function AccountSettings() {
     if (e.target.files?.[0]) setLogoFile(e.target.files[0]);
   };
 
-  const handleSave = async () => {
+  const handleSave = async (e: React.FormEvent) => {
+    e.preventDefault();
     if (!user) return toast.error('User not logged in');
 
     setUploading(true);
@@ -37,34 +38,33 @@ export default function AccountSettings() {
 
       if (logoFile) {
         const fileExt = logoFile.name.split('.').pop();
-        const fileName = `logo.${fileExt}`;
-        const filePath = `${user.id}/${fileName}`;
+        const filePath = `${user.id}/logo.${fileExt}`;
 
         const { error: uploadError } = await supabaseClient.storage
           .from('logos')
           .upload(filePath, logoFile, { upsert: true });
+
         if (uploadError) throw uploadError;
 
-        const { data: publicUrlData } = supabaseClient.storage
+        const { data } = supabaseClient.storage
           .from('logos')
           .getPublicUrl(filePath);
 
-        logoUrl = publicUrlData.publicUrl;
+        logoUrl = data.publicUrl;
       }
 
-      const { error: updateError } = await supabaseClient
+      const { error } = await supabaseClient
         .from('profiles')
         .update({ name, surname, logo: logoUrl })
         .eq('id', user.id);
 
-      if (updateError) throw updateError;
+      if (error) throw error;
 
-      await fetchUserProfile(); // refresh AccountMenu
+      await fetchUserProfile();
       toast.success('Profile updated successfully!');
-      router.push('/'); // redirect to homepage
+      router.push('/');
     } catch (err: any) {
-      console.error('Update failed:', err);
-      toast.error('Update failed: ' + (err.message || 'Unknown error'));
+      toast.error(err.message || 'Update failed');
     } finally {
       setUploading(false);
       setLogoFile(null);
@@ -74,28 +74,64 @@ export default function AccountSettings() {
   if (!profile) return <Loader />;
 
   return (
-    <div className="account-settings">
-      <h2>Account Settings</h2>
+    <div className="page-wrapper">
+      <div className="form-wrapper">
+        <form className="form" onSubmit={handleSave}>
+          <p className="form-title">Account Settings</p>
 
-      <label>First Name</label>
-      <input type="text" value={name} onChange={(e) => setName(e.target.value)} />
+          {/* IMAGE UPLOAD */}
+          <div className="input-container">
+            {!profile.logo && !logoFile ? (
+              <label className="custum-file-upload">
+                <div className="icon">
+                  <svg viewBox="0 0 24 24">
+                    <path d="M10 1L3 8v12a3 3 0 003 3h1M10 1h8a3 3 0 013 3v5M10 1v7H3m13 7.5A2.5 2.5 0 1116.5 13 2.5 2.5 0 0119 15.5V17h1a2 2 0 010 4H13a2 2 0 010-4h1v-1.5A2.5 2.5 0 0116.5 13" />
+                  </svg>
+                </div>
+                <div className="text">
+                  <span>Click to upload image</span>
+                </div>
+                <input type="file" accept="image/*" onChange={handleFileChange} />
+              </label>
+            ) : (
+              <div className="avatar-preview">
+                <img
+                  src={logoFile ? URL.createObjectURL(logoFile) : profile.logo}
+                  alt="Profile logo"
+                />
+                <label className="change-photo">
+                  Change photo
+                  <input type="file" accept="image/*" onChange={handleFileChange} />
+                </label>
+              </div>
+            )}
+          </div>
 
-      <label>Last Name</label>
-      <input type="text" value={surname} onChange={(e) => setSurname(e.target.value)} />
+          {/* NAME */}
+          <div className="input-container">
+            <input
+              type="text"
+              placeholder="First name"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+            />
+          </div>
 
-      <label>Profile Logo</label>
-      <input type="file" accept="image/*" onChange={handleFileChange} />
-      {profile.logo && !logoFile && (
-        <img
-          src={profile.logo}
-          alt="Current logo"
-          style={{ width: 60, height: 60, borderRadius: '50%', marginTop: 5 }}
-        />
-      )}
+          {/* SURNAME */}
+          <div className="input-container">
+            <input
+              type="text"
+              placeholder="Last name"
+              value={surname}
+              onChange={(e) => setSurname(e.target.value)}
+            />
+          </div>
 
-      <button onClick={handleSave} disabled={uploading}>
-        {uploading ? <Loader /> : 'Save Changes'}
-      </button>
+          <button type="submit" className="submit" disabled={uploading}>
+            {uploading ? <Loader /> : 'Save changes'}
+          </button>
+        </form>
+      </div>
     </div>
   );
 }

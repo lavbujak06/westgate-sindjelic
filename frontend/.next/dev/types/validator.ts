@@ -204,6 +204,15 @@ type RouteHandlerConfig<Route extends AppRouteHandlerRoutes = AppRouteHandlerRou
 
 
 
+// Validate ../../../app/account/layout.tsx
+{
+  type __IsExpected<Specific extends LayoutConfig<"/account">> = Specific
+  const handler = {} as typeof import("../../../app/account/layout.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
 // Validate ../../../app/admin/layout.tsx
 {
   type __IsExpected<Specific extends LayoutConfig<"/admin">> = Specific
