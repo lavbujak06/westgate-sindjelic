@@ -1,10 +1,10 @@
 'use client';
 
 import { useState } from 'react';
-// import { supabase } from '@/lib/supabaseClient';
+import styled from 'styled-components';
 import { supabaseClient } from '@/lib/supabaseClient';
 import { useRouter } from 'next/navigation';
-import Cookies from 'js-cookie'; // ✅ import js-cookie
+import Cookies from 'js-cookie';
 
 export default function LoginPage() {
   const [email, setEmail] = useState('');
@@ -12,18 +12,15 @@ export default function LoginPage() {
   const [error, setError] = useState('');
   const router = useRouter();
 
-  const handleLogin = async (e: React.FormEvent) => {
+  const handleLogin = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setError('');
 
-    // 1️⃣ Sign in with Supabase
-    const { data, error: loginError } = await supabaseClient.auth.signInWithPassword({
-      email,
-      password,
-    });
-
-    console.log('Login data:', data);
-    console.log('Login error:', loginError);
+    const { data, error: loginError } =
+      await supabaseClient.auth.signInWithPassword({
+        email,
+        password,
+      });
 
     if (loginError) {
       setError(loginError.message);
@@ -37,10 +34,10 @@ export default function LoginPage() {
 
     const userId = data.user.id;
 
-    // 2️⃣ Check admins table
+    // Check admins table
     const { data: adminData, error: adminError } = await supabaseClient
       .from('admins')
-      .select('*')
+      .select('id')
       .eq('id', userId)
       .single();
 
@@ -49,49 +46,133 @@ export default function LoginPage() {
       return;
     }
 
-    // ✅ Set cookie for frontend middleware
+    // Set cookie for middleware
     if (data.session?.access_token) {
       Cookies.set('sb-access-token', data.session.access_token, {
-        path: '/',         // cookie accessible on all routes
-        sameSite: 'lax',   // recommended
-        expires: 1,        // expires in 1 day
+        path: '/',
+        sameSite: 'lax',
+        expires: 1,
       });
     }
 
-    if (adminData) {
-      // ✅ Redirect to admin dashboard inside segment group
-      router.push('/admin/dashboard');
-    } else {
-      // Not admin → public home
-      router.push('/login');
-    }
+    router.push('/admin/dashboard');
   };
 
   return (
-    <div>
-      <h1>Admin Login</h1>
-      <form onSubmit={handleLogin}>
-        <label htmlFor="email">Email</label>
-        <input
-          type="email"
-          id="email"
-          name="email"
-          placeholder="Email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-        />
-        <label htmlFor="password">Password</label>
-        <input
-          type="password"
-          id="password"
-          name="password"
-          placeholder="Password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-        />
-        <button type="submit">Login</button>
-      </form>
-      {error && <p style={{ color: 'red' }}>{error}</p>}
-    </div>
+    <PageWrapper>
+      <FormWrapper>
+        <form className="form" onSubmit={handleLogin}>
+          <p className="form-title">Sign in to your account</p>
+
+          <div className="input-container">
+            <input
+              type="email"
+              placeholder="Email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+            />
+          </div>
+
+          <div className="input-container">
+            <input
+              type="password"
+              placeholder="Password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              required
+            />
+          </div>
+
+          <button type="submit" className="submit">
+            Sign in
+          </button>
+
+          {error && <p className="error">{error}</p>}
+
+          <p className="signup-link">
+            No account? <a href="/pages/signup">Sign up</a>
+          </p>
+        </form>
+      </FormWrapper>
+    </PageWrapper>
   );
 }
+
+/* ---------------- styles ---------------- */
+
+const PageWrapper = styled.div`
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background-color: #f9fafb;
+`;
+
+const FormWrapper = styled.div`
+  .form {
+    background-color: #ffffff;
+    padding: 2.5rem 2rem; /* ⬅️ more breathing room */
+    width: 100%;
+    max-width: 360px;
+    border-radius: 1rem; /* ⬅️ rounder form */
+    box-shadow:
+      0 10px 15px -3px rgba(0, 0, 0, 0.1),
+      0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  }
+
+  .form-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 1.75rem;
+  }
+
+  .input-container {
+    margin-bottom: 1.25rem;
+  }
+
+  .input-container input {
+    width: 100%;
+    padding: 0.85rem 1rem; /* ⬅️ keeps text away from edges */
+    font-size: 0.875rem;
+    border-radius: 0.75rem; /* ⬅️ rounder inputs */
+    border: 1px solid #e5e7eb;
+    outline: none;
+    box-sizing: border-box;
+  }
+
+  .input-container input:focus {
+    border-color: #4f46e5;
+  }
+
+  .submit {
+    width: 100%;
+    padding: 0.85rem;
+    margin-top: 0.5rem;
+    background-color: #4f46e5;
+    color: white;
+    border-radius: 0.75rem; /* ⬅️ matches inputs */
+    font-weight: 500;
+    cursor: pointer;
+  }
+
+  .error {
+    color: #dc2626;
+    font-size: 0.875rem;
+    margin-top: 0.75rem;
+    text-align: center;
+  }
+
+  .signup-link {
+    margin-top: 1.25rem;
+    font-size: 0.875rem;
+    text-align: center;
+    color: #6b7280;
+  }
+
+  .signup-link a {
+    text-decoration: underline;
+  }
+`;
