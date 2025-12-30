@@ -3,6 +3,8 @@
 import { createContext, useContext, useEffect, useState, ReactNode } from 'react';
 import { supabaseClient } from '@/lib/supabaseClient';
 
+const ADMIN_SESSION_DURATION = 45 * 60 * 1000; // 45 minutes
+
 interface UserContextType {
   user: any;
   profile: any;
@@ -18,6 +20,7 @@ export const UserProvider = ({ children }: { children: ReactNode }) => {
   const fetchUserProfile = async () => {
     try {
       const { data: { user } } = await supabaseClient.auth.getUser();
+
       if (!user) {
         setUser(null);
         setProfile(null);
@@ -26,24 +29,38 @@ export const UserProvider = ({ children }: { children: ReactNode }) => {
 
       setUser(user);
 
-      // Try to fetch profile from 'profiles' table
       const { data: profileData, error: profileError } = await supabaseClient
         .from('profiles')
         .select('*')
         .eq('id', user.id)
         .single();
 
-      // Check if user is an admin
       const { data: adminData } = await supabaseClient
         .from('admins')
-        .select('*')
+        .select('id')
         .eq('id', user.id)
         .single();
 
       const isAdmin = !!adminData;
 
+      // 🔐 Admin session validation (READ ONLY)
+      if (isAdmin) {
+        const adminLoginAt = sessionStorage.getItem('admin_login_at');
+
+        // Only logout if the session EXISTS and is expired
+        if (
+          adminLoginAt &&
+          Date.now() - Number(adminLoginAt) > ADMIN_SESSION_DURATION
+        ) {
+          await supabaseClient.auth.signOut();
+          sessionStorage.removeItem('admin_login_at');
+          setUser(null);
+          setProfile(null);
+          return;
+        }
+      }
+
       if (profileError || !profileData) {
-        // Fallback profile
         setProfile({
           id: user.id,
           name: isAdmin ? 'Admin' : 'User',
@@ -56,7 +73,6 @@ export const UserProvider = ({ children }: { children: ReactNode }) => {
         return;
       }
 
-      // Existing profile
       setProfile({
         ...profileData,
         is_admin: isAdmin,
@@ -66,6 +82,36 @@ export const UserProvider = ({ children }: { children: ReactNode }) => {
       console.error('Failed to fetch profile:', err);
     }
   };
+
+  // 🔐 Auth listener — this is where admin sessions START and END
+  useEffect(() => {
+    const { data: authListener } = supabaseClient.auth.onAuthStateChange(
+      async (event, session) => {
+        if (event === 'SIGNED_IN' && session?.user) {
+          const { data: adminData } = await supabaseClient
+            .from('admins')
+            .select('id')
+            .eq('id', session.user.id)
+            .single();
+
+          if (adminData) {
+            sessionStorage.setItem(
+              'admin_login_at',
+              Date.now().toString()
+            );
+          }
+        }
+
+        if (event === 'SIGNED_OUT') {
+          sessionStorage.removeItem('admin_login_at');
+        }
+      }
+    );
+
+    return () => {
+      authListener.subscription.unsubscribe();
+    };
+  }, []);
 
   useEffect(() => {
     fetchUserProfile();

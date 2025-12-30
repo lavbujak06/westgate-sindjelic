@@ -67,7 +67,11 @@ const AccountMenu = () => {
 
           {user && (
             <>
-              {/* Hide Account Settings if admin */}
+              {<li>
+                  <Link href="/admin/dashboard">
+                    <button>Admin Dashboard</button>
+                  </Link>
+                </li>}
               {!profile?.is_admin && (
                 <li>
                   <Link href="/account">
