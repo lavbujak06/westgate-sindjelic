@@ -1,14 +1,13 @@
 'use client';
 
 import { createContext, useContext, useEffect, useState, ReactNode } from 'react';
-import { supabaseClient } from '@/lib/supabaseClient';
-
-const ADMIN_SESSION_DURATION = 45 * 60 * 1000; // 45 minutes
 
 interface UserContextType {
   user: any;
   profile: any;
   fetchUserProfile: () => Promise<void>;
+  setUser: (user: any) => void;
+  setProfile: (profile: any) => void;
 }
 
 const UserContext = createContext<UserContextType | undefined>(undefined);
@@ -19,106 +18,36 @@ export const UserProvider = ({ children }: { children: ReactNode }) => {
 
   const fetchUserProfile = async () => {
     try {
-      const { data: { user } } = await supabaseClient.auth.getUser();
+      // No token manual extraction needed! 
+      // credentials: 'include' tells the browser to send the cookies automatically.
+      const res = await fetch('http://localhost:5001/api/auth/me', {
+        method: 'GET',
+        credentials: 'include',
+      });
 
-      if (!user) {
+      if (!res.ok) {
         setUser(null);
         setProfile(null);
         return;
       }
 
-      setUser(user);
-
-      const { data: profileData, error: profileError } = await supabaseClient
-        .from('profiles')
-        .select('*')
-        .eq('id', user.id)
-        .single();
-
-      const { data: adminData } = await supabaseClient
-        .from('admins')
-        .select('id')
-        .eq('id', user.id)
-        .single();
-
-      const isAdmin = !!adminData;
-
-      // 🔐 Admin session validation (READ ONLY)
-      if (isAdmin) {
-        const adminLoginAt = sessionStorage.getItem('admin_login_at');
-
-        // Only logout if the session EXISTS and is expired
-        if (
-          adminLoginAt &&
-          Date.now() - Number(adminLoginAt) > ADMIN_SESSION_DURATION
-        ) {
-          await supabaseClient.auth.signOut();
-          sessionStorage.removeItem('admin_login_at');
-          setUser(null);
-          setProfile(null);
-          return;
-        }
-      }
-
-      if (profileError || !profileData) {
-        setProfile({
-          id: user.id,
-          name: isAdmin ? 'Admin' : 'User',
-          surname: '',
-          email: user.email,
-          logo: null,
-          created_at: user.created_at,
-          is_admin: isAdmin,
-        });
-        return;
-      }
-
-      setProfile({
-        ...profileData,
-        is_admin: isAdmin,
-      });
+      const data = await res.json();
+      setUser(data.user);
+      setProfile(data.profile);
 
     } catch (err) {
-      console.error('Failed to fetch profile:', err);
+      console.error('Session check failed:', err);
+      setUser(null);
+      setProfile(null);
     }
   };
-
-  // 🔐 Auth listener — this is where admin sessions START and END
-  useEffect(() => {
-    const { data: authListener } = supabaseClient.auth.onAuthStateChange(
-      async (event, session) => {
-        if (event === 'SIGNED_IN' && session?.user) {
-          const { data: adminData } = await supabaseClient
-            .from('admins')
-            .select('id')
-            .eq('id', session.user.id)
-            .single();
-
-          if (adminData) {
-            sessionStorage.setItem(
-              'admin_login_at',
-              Date.now().toString()
-            );
-          }
-        }
-
-        if (event === 'SIGNED_OUT') {
-          sessionStorage.removeItem('admin_login_at');
-        }
-      }
-    );
-
-    return () => {
-      authListener.subscription.unsubscribe();
-    };
-  }, []);
 
   useEffect(() => {
     fetchUserProfile();
   }, []);
 
   return (
-    <UserContext.Provider value={{ user, profile, fetchUserProfile }}>
+    <UserContext.Provider value={{ user, profile, fetchUserProfile, setUser, setProfile }}>
       {children}
     </UserContext.Provider>
   );

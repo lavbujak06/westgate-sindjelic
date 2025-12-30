@@ -2,17 +2,28 @@
 
 import Link from 'next/link';
 import { useUser } from '@/context/UserContext';
-import { supabaseClient } from '@/lib/supabaseClient';
 import '@/app/globals.css';
 import { useRouter } from 'next/navigation';
 
 const AccountMenu = () => {
   const router = useRouter();
-  const { user, profile } = useUser();
+  const { user, profile, setUser, setProfile } = useUser();
 
   const handleSignOut = async () => {
-    await supabaseClient.auth.signOut();
-    router.push('/'); // redirect to homepage
+    try {
+      await fetch('http://localhost:5001/api/auth/logout', {
+        method: 'POST',
+        credentials: 'include',
+      });
+
+      // Clear frontend state
+      setUser(null);
+      setProfile(null);
+
+      router.push('/login');
+    } catch (err) {
+      console.error('Sign out failed:', err);
+    }
   };
 
   const logo = profile?.logo
@@ -32,7 +43,7 @@ const AccountMenu = () => {
             <div className="user-avatar-initial">{profile.name[0].toUpperCase()}</div>
           ) : (
             <svg viewBox="0 0 24 24" fill="white" width={18} height={18}>
-              <path d="M12 2c2.757 0 5 2.243 5 5.001..." />
+              <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
             </svg>
           )}
         </div>
@@ -40,6 +51,7 @@ const AccountMenu = () => {
 
       <nav className="popup-window">
         <legend>Account:</legend>
+
         {profile ? (
           <div className="account-info">
             <p>{profile.name ? `${profile.name} ${profile.surname || ''}` : user?.email}</p>
@@ -67,11 +79,14 @@ const AccountMenu = () => {
 
           {user && (
             <>
-              {<li>
+              {profile?.is_admin && (
+                <li>
                   <Link href="/admin/dashboard">
                     <button>Admin Dashboard</button>
                   </Link>
-                </li>}
+                </li>
+              )}
+
               {!profile?.is_admin && (
                 <li>
                   <Link href="/account">
@@ -79,6 +94,7 @@ const AccountMenu = () => {
                   </Link>
                 </li>
               )}
+
               <li>
                 <button onClick={handleSignOut}>Sign Out</button>
               </li>

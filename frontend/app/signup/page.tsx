@@ -88,7 +88,7 @@ export default function SignupPage() {
           {error && <p className="error">{error}</p>}
 
           <p className="login-link">
-            Already have an account? <a href="/pages/login">Sign in</a>
+            Already have an account? <a href="/login">Sign in</a>
           </p>
         </form>
       </FormWrapper>

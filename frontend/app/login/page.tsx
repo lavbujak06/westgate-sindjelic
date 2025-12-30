@@ -1,9 +1,8 @@
 'use client';
 
 import { useState } from 'react';
-import { supabaseClient } from '@/lib/supabaseClient';
 import { useRouter } from 'next/navigation';
-import Cookies from 'js-cookie';
+import { useUser } from '@/context/UserContext';
 import '../globals.css';
 import Loader from '@/components/Loader';
 
@@ -11,73 +10,71 @@ export default function LoginPage() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
-  const router = useRouter();
-  // const [uploading, setUploading] = useState(false);
   const [loginLoading, setLoginLoading] = useState(false);
   const [resendLoading, setResendLoading] = useState(false);
+  const router = useRouter();
+  const { fetchUserProfile } = useUser();
 
-
+  // ----------------------------
+  // Handle Admin / Backend Login
+  // ----------------------------
   const handleLogin = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setError('');
     setLoginLoading(true);
 
-    const { data, error: loginError } = await supabaseClient.auth.signInWithPassword({
-      email,
-      password,
-    });
-
-    if (loginError) {
-      setError(loginError.message);
-      setLoginLoading(false);
-      return;
-    }
-
-    if (!data.user) {
-      setError('No user found');
-      setLoginLoading(false);
-      return;
-    }
-
-    const userId = data.user.id;
-
-    // Check if admin
-    const { data: adminData } = await supabaseClient
-      .from('admins')
-      .select('id')
-      .eq('id', userId)
-      .single();
-
-    // Set cookie for middleware
-    if (data.session?.access_token) {
-      Cookies.set('sb-access-token', data.session.access_token, {
-        path: '/',
-        sameSite: 'lax',
-        expires: 1,
+    try {
+      const res = await fetch('http://localhost:5001/api/auth/login', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email, password }),
+        credentials: 'include', // 🔑 ensures HTTP-only cookie is sent
       });
-    }
 
-    setLoginLoading(false);
-    router.push(adminData ? '/admin/dashboard' : '/');
+      if (!res.ok) {
+        const errData = await res.json();
+        setError(errData.error || 'Login failed');
+        setLoginLoading(false);
+        return;
+      }
+
+      const data = await res.json();
+
+      // 🔹 Refresh frontend state from backend
+      await fetchUserProfile();
+
+      // Redirect based on admin
+      router.push(data.is_admin ? '/admin/dashboard' : '/');
+
+    } catch (err: any) {
+      console.error(err);
+      setError('Unexpected error occurred');
+    } finally {
+      setLoginLoading(false);
+    }
   };
 
+  // ----------------------------
+  // Resend confirmation email
+  // ----------------------------
   const handleResendConfirmation = async () => {
     setResendLoading(true);
     try {
-      const { error: resendError } = await supabaseClient.auth.resend({
-        type: 'signup',
-        email,
-      });
+      const { error } = await fetch('https://YOUR_SUPABASE_URL/auth/v1/admin/resend', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email }),
+      }).then(r => r.json());
 
-      if (resendError) {
-        alert('Please enter a valid email in the email section in order to resend confirmation email.');
+      if (error) {
+        alert('Please enter a valid email to resend confirmation.');
       } else {
         alert('Confirmation email sent! Please check your inbox.');
       }
     } catch (err: any) {
       alert('Unexpected error: ' + err.message);
-    }
-    finally {      setResendLoading(false);
+    } finally {
+      setResendLoading(false);
     }
   };
 
@@ -114,7 +111,7 @@ export default function LoginPage() {
           {error && <p className="error">{error}</p>}
         </form>
 
-        {/* Always-visible resend confirmation section */}
+        {/* Resend confirmation */}
         <div style={{ marginTop: '1rem', textAlign: 'center' }}>
           <p style={{ marginBottom: '0.5rem', color: '#555' }}>
             Haven't authorized your email yet?

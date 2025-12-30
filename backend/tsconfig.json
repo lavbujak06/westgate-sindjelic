@@ -10,8 +10,9 @@
     "baseUrl": ".",
     "paths": {
       "@backend/*": ["*"]
-    }
+    },
+    "typeRoots": ["./node_modules/@types", "./src/types"]
   },
-  "include": ["**/*.ts"],
+  "include": ["**/*.ts", "src/**/*", "src/types/express.d.ts"],
   "exclude": ["node_modules", "dist"]
 }
