@@ -1,6 +1,7 @@
 'use client';
 
 import { createContext, useContext, useEffect, useState, ReactNode } from 'react';
+import { supabaseClient } from '@/lib/supabaseClient'; // 👈 Added import
 
 interface UserContextType {
   user: any;
@@ -18,8 +19,10 @@ export const UserProvider = ({ children }: { children: ReactNode }) => {
 
   const fetchUserProfile = async () => {
     try {
-      // No token manual extraction needed! 
-      // credentials: 'include' tells the browser to send the cookies automatically.
+      // 1. First, check if Supabase Client has a local user
+      const { data: { user: supabaseUser } } = await supabaseClient.auth.getUser();
+
+      // 2. Then, fetch full profile data from your Backend
       const res = await fetch('http://localhost:5001/api/auth/me', {
         method: 'GET',
         credentials: 'include',
@@ -32,7 +35,8 @@ export const UserProvider = ({ children }: { children: ReactNode }) => {
       }
 
       const data = await res.json();
-      setUser(data.user);
+      // Combine Supabase data with your custom backend data
+      setUser(data.user || supabaseUser);
       setProfile(data.profile);
 
     } catch (err) {

@@ -2,7 +2,7 @@ import { Router } from 'express';
 import { supabase } from '../supabase';
 
 const router = Router();
-const SESSION_DURATION = 2 * 60 * 60 * 1000; // 2 hours
+const SESSION_DURATION = 45 * 60 * 1000; // 45 minutes session duration
 
 // ----------------------------
 // LOGIN (Full Cookie Setup)

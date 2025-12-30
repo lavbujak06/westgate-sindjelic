@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { useUser } from '@/context/UserContext';
+import { supabaseClient } from '@/lib/supabaseClient'; // 👈 Added import
 import '../globals.css';
 import Loader from '@/components/Loader';
 
@@ -15,20 +16,31 @@ export default function LoginPage() {
   const router = useRouter();
   const { fetchUserProfile } = useUser();
 
-  // ----------------------------
-  // Handle Admin / Backend Login
-  // ----------------------------
   const handleLogin = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setError('');
     setLoginLoading(true);
 
     try {
+      // 🔹 Step 1: Log in with Supabase Client 
+      // This fixes the "No session found" error in AdminGuard
+      const { data: authData, error: authError } = await supabaseClient.auth.signInWithPassword({
+        email,
+        password,
+      });
+
+      if (authError) {
+        setError(authError.message);
+        setLoginLoading(false);
+        return;
+      }
+
+      // 🔹 Step 2: Log in with Backend (Port 5001)
       const res = await fetch('http://localhost:5001/api/auth/login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email, password }),
-        credentials: 'include', // 🔑 ensures HTTP-only cookie is sent
+        credentials: 'include', 
       });
 
       if (!res.ok) {
@@ -39,12 +51,14 @@ export default function LoginPage() {
       }
 
       const data = await res.json();
-
-      // 🔹 Refresh frontend state from backend
       await fetchUserProfile();
 
-      // Redirect based on admin
-      router.push(data.is_admin ? '/admin/dashboard' : '/');
+      // Use window.location.href for admins to ensure the fresh session is detected
+      if (data.is_admin) {
+        window.location.href = '/admin/dashboard';
+      } else {
+        router.push('/');
+      }
 
     } catch (err: any) {
       console.error(err);
@@ -54,13 +68,11 @@ export default function LoginPage() {
     }
   };
 
-  // ----------------------------
-  // Resend confirmation email
-  // ----------------------------
   const handleResendConfirmation = async () => {
     setResendLoading(true);
     try {
-      const { error } = await fetch('https://YOUR_SUPABASE_URL/auth/v1/admin/resend', {
+      // Replace with your actual URL or process.env variable
+      const { error } = await fetch(`${process.env.NEXT_PUBLIC_SUPABASE_URL}/auth/v1/admin/resend`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email }),
@@ -83,7 +95,6 @@ export default function LoginPage() {
       <div className="form-wrapper">
         <form className="form" onSubmit={handleLogin}>
           <p className="form-title">Sign in to your account</p>
-
           <div className="input-container">
             <input
               type="email"
@@ -91,9 +102,9 @@ export default function LoginPage() {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               required
+              name="email"
             />
           </div>
-
           <div className="input-container">
             <input
               type="password"
@@ -101,23 +112,21 @@ export default function LoginPage() {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               required
+              name="password"
             />
           </div>
-
           <button type="submit" className="submit">
             {loginLoading ? <Loader /> : 'Sign In'}
           </button>
-
           {error && <p className="error">{error}</p>}
         </form>
-
-        {/* Resend confirmation */}
         <div style={{ marginTop: '1rem', textAlign: 'center' }}>
           <p style={{ marginBottom: '0.5rem', color: '#555' }}>
             Haven't authorized your email yet?
           </p>
           <button
             type="button"
+            className="resend-btn"
             style={{
               padding: '0.5rem 1rem',
               backgroundColor: '#1e40af',
