@@ -4,16 +4,20 @@ import { useState } from 'react';
 import styled from 'styled-components';
 import { supabaseClient } from '@/lib/supabaseClient';
 import { useRouter } from 'next/navigation';
+import { sign } from 'crypto';
+import Loader from '@/components/Loader';
 
 export default function SignupPage() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   const router = useRouter();
+  const [signupLoading, setSignupLoading] = useState(false);
 
   const handleSignup = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setError('');
+    setSignupLoading(true);
 
     // 1️⃣ Sign up user
     const { data, error: signupError } =
@@ -24,11 +28,13 @@ export default function SignupPage() {
 
     if (signupError) {
       setError(signupError.message);
+      setSignupLoading(false);
       return;
     }
 
     if (!data.user) {
       setError('Signup failed');
+      setSignupLoading(false);
       return;
     }
 
@@ -41,9 +47,10 @@ export default function SignupPage() {
 
     if (profileError) {
       setError('Failed to create profile');
+      setSignupLoading(false);
       return;
     }
-
+    setSignupLoading(false);
     // 3️⃣ Redirect to login
     router.push('/login');
   };
@@ -75,7 +82,7 @@ export default function SignupPage() {
           </div>
 
           <button type="submit" className="submit">
-            Sign up
+            {signupLoading ? <Loader /> : 'Sign Up'}
           </button>
 
           {error && <p className="error">{error}</p>}

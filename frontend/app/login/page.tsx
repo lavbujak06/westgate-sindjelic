@@ -5,16 +5,22 @@ import { supabaseClient } from '@/lib/supabaseClient';
 import { useRouter } from 'next/navigation';
 import Cookies from 'js-cookie';
 import '../globals.css';
+import Loader from '@/components/Loader';
 
 export default function LoginPage() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   const router = useRouter();
+  // const [uploading, setUploading] = useState(false);
+  const [loginLoading, setLoginLoading] = useState(false);
+  const [resendLoading, setResendLoading] = useState(false);
+
 
   const handleLogin = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setError('');
+    setLoginLoading(true);
 
     const { data, error: loginError } = await supabaseClient.auth.signInWithPassword({
       email,
@@ -23,11 +29,13 @@ export default function LoginPage() {
 
     if (loginError) {
       setError(loginError.message);
+      setLoginLoading(false);
       return;
     }
 
     if (!data.user) {
       setError('No user found');
+      setLoginLoading(false);
       return;
     }
 
@@ -49,14 +57,12 @@ export default function LoginPage() {
       });
     }
 
-    if (adminData) {
-      router.push('/admin/dashboard');
-    } else {
-      router.push('/');
-    }
+    setLoginLoading(false);
+    router.push(adminData ? '/admin/dashboard' : '/');
   };
 
   const handleResendConfirmation = async () => {
+    setResendLoading(true);
     try {
       const { error: resendError } = await supabaseClient.auth.resend({
         type: 'signup',
@@ -70,6 +76,8 @@ export default function LoginPage() {
       }
     } catch (err: any) {
       alert('Unexpected error: ' + err.message);
+    }
+    finally {      setResendLoading(false);
     }
   };
 
@@ -100,7 +108,7 @@ export default function LoginPage() {
           </div>
 
           <button type="submit" className="submit">
-            Sign in
+            {loginLoading ? <Loader /> : 'Sign In'}
           </button>
 
           {error && <p className="error">{error}</p>}
@@ -123,7 +131,7 @@ export default function LoginPage() {
             }}
             onClick={handleResendConfirmation}
           >
-            Send confirmation email
+            {resendLoading ? <Loader /> : 'Resend Confirmation Email'}
           </button>
         </div>
       </div>
