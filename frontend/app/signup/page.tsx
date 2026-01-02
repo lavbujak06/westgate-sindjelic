@@ -1,10 +1,10 @@
 'use client';
-
 import { useState } from 'react';
-import styled from 'styled-components';
 import { useRouter } from 'next/navigation';
-import Loader from '@/components/Loader';
 import { supabaseClient } from '@/lib/supabaseClient';
+import Link from 'next/link';
+import Loader from '@/components/Loader';
+import Navbar from '@/components/Navbar'; // Added Navbar
 
 export default function SignupPage() {
   const [email, setEmail] = useState('');
@@ -15,9 +15,9 @@ export default function SignupPage() {
 
   const handleSignup = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    setError('');
     setSignupLoading(true);
 
-    // Use the standard client - No secret keys needed!
     const { data, error } = await supabaseClient.auth.signUp({
       email,
       password,
@@ -25,128 +25,73 @@ export default function SignupPage() {
 
     if (error) {
       setError(error.message);
+      setSignupLoading(false);
     } else {
-      alert("Check your email for the confirmation link!");
+      alert("Success! Check your email for the confirmation link.");
       router.push('/login');
     }
-    setSignupLoading(false);
   };
 
   return (
-    <PageWrapper>
-      <FormWrapper>
-        <form className="form" onSubmit={handleSignup}>
-          <p className="form-title">Create your account</p>
-
-          <div className="input-container">
-            <input
-              type="email"
-              placeholder="Email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              required
-            />
+    <main>
+      <Navbar /> {/* Navigation included */}
+      <div className="relative min-h-screen w-full flex items-center justify-center custom-img p-4 overflow-hidden">
+        <div className="absolute inset-0 bg-[#0f172a]/80 backdrop-blur-xl z-10" />
+        
+        <div className="relative z-20 w-full max-w-[400px] bg-white rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.3)] border border-white/10 overflow-hidden mt-16">
+          <div className="bg-[#1e293b] p-8 text-center border-b border-gray-100">
+            <h2 className="text-2xl font-black uppercase tracking-widest text-white">Create Account</h2>
+            <div className="h-1 w-12 bg-red-600 mx-auto mt-2" />
+            <p className="text-gray-400 text-[10px] mt-3 uppercase font-bold tracking-tighter">Join the Sindjelic Family</p>
           </div>
 
-          <div className="input-container">
-            <input
-              type="password"
-              placeholder="Password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              required
-            />
-          </div>
-
-          <button type="submit" className="submit">
-            {signupLoading ? <Loader /> : 'Sign Up'}
-          </button>
-
-          {error && <p className="error">{error}</p>}
-
-          <p className="login-link">
-            Already have an account? <a href="/login">Sign in</a>
-          </p>
-        </form>
-      </FormWrapper>
-    </PageWrapper>
+          <form className="p-8 space-y-5" onSubmit={handleSignup}>
+            <div className="space-y-1">
+              <label className="text-[10px] font-bold text-gray-400 uppercase ml-1">Email Address</label>
+              <input 
+                type="email" 
+                value={email} 
+                onChange={(e) => setEmail(e.target.value)} 
+                placeholder="name@example.com"
+                className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl text-gray-900 focus:ring-2 focus:ring-red-600 outline-none transition placeholder:text-gray-300" 
+                required 
+              />
+            </div>
+            
+            <div className="space-y-1">
+              <label className="text-[10px] font-bold text-gray-400 uppercase ml-1">Password</label>
+              <input 
+                type="password" 
+                value={password} 
+                onChange={(e) => setPassword(e.target.value)} 
+                placeholder="••••••••"
+                className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl text-gray-900 focus:ring-2 focus:ring-red-600 outline-none transition placeholder:text-gray-300" 
+                required 
+              />
+            </div>
+            
+            <button 
+              type="submit" 
+              className="w-full flex justify-center items-center h-[52px] bg-red-700 text-white font-bold uppercase tracking-widest rounded-xl hover:bg-red-800 transition-all shadow-lg active:scale-95 disabled:opacity-70"
+              disabled={signupLoading}
+            >
+              {signupLoading ? <Loader /> : 'Sign Up'}
+            </button>
+            
+            {error && (
+              <div className="bg-red-50 p-3 rounded-lg border border-red-100">
+                <p className="text-red-600 text-center text-xs font-bold">{error}</p>
+              </div>
+            )}
+            
+            <div className="pt-4 border-t border-gray-50 text-center">
+              <p className="text-xs text-gray-500">
+                Already a member? <Link href="/login" className="text-red-700 font-bold hover:underline ml-1">Sign In</Link>
+              </p>
+            </div>
+          </form>
+        </div>
+      </div>
+    </main>
   );
 }
-
-/* ---------------- styles ---------------- */
-
-const PageWrapper = styled.div`
-  min-height: 60vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  background-color: #f9fafb;
-`;
-
-const FormWrapper = styled.div`
-  .form {
-    background-color: #ffffff;
-    padding: 2.5rem 2rem; /* ⬅️ more breathing room */
-    width: 100%;
-    max-width: 360px;
-    border-radius: 1rem; /* ⬅️ rounder form */
-    box-shadow:
-      0 10px 15px -3px rgba(0, 0, 0, 0.1),
-      0 4px 6px -2px rgba(0, 0, 0, 0.05);
-  }
-
-  .form-title {
-    font-size: 1.25rem;
-    font-weight: 600;
-    text-align: center;
-    margin-bottom: 1.75rem;
-  }
-
-  .input-container {
-    margin-bottom: 1.25rem;
-  }
-
-  .input-container input {
-    width: 100%;
-    padding: 0.85rem 1rem; /* ⬅️ keeps text away from edges */
-    font-size: 0.875rem;
-    border-radius: 0.75rem; /* ⬅️ rounder inputs */
-    border: 1px solid #e5e7eb;
-    outline: none;
-    box-sizing: border-box;
-  }
-
-  .input-container input:focus {
-    border-color: #4f46e5;
-  }
-
-  .submit {
-    width: 100%;
-    padding: 0.85rem;
-    margin-top: 0.5rem;
-    background-color: #4f46e5;
-    color: white;
-    border-radius: 0.75rem; /* ⬅️ matches inputs */
-    font-weight: 500;
-    cursor: pointer;
-  }
-
-  .error {
-    color: #dc2626;
-    font-size: 0.875rem;
-    margin-top: 0.75rem;
-    text-align: center;
-  }
-
-  .signup-link {
-    margin-top: 1.25rem;
-    font-size: 0.875rem;
-    text-align: center;
-    color: #6b7280;
-  }
-
-  .signup-link a {
-    text-decoration: underline;
-  }
-`;

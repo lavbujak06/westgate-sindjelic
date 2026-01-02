@@ -1,152 +1,1039 @@
-[00:00:00.584] Server  ERROR   (node:99108) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/lavbujak/Desktop/Sindjelic/westgate-sindjelic/frontend/next.config.js is not specified and it doesn't parse as CommonJS.
+[00:00:00.475] Server  ERROR   (node:26830) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/lavbujak/Desktop/Sindjelic/westgate-sindjelic/frontend/next.config.js is not specified and it doesn't parse as CommonJS.
 Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
 To eliminate this warning, add "type": "module" to /Users/lavbujak/Desktop/Sindjelic/westgate-sindjelic/frontend/package.json.
 (Use `node --trace-warnings ...` to show where the warning was created)
-[00:00:01.066] Server  WARN    ⚠ The "middleware" file convention is deprecated. Please use "proxy" instead. Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
-[00:00:01.148] Server  LOG     ✓ Ready in 856ms
-[00:00:16.334] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:00:16.446] Browser WARN    Image with src "/westgateLogo.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
-[00:03:36.001] Server  LOG     ✓ Compiled in 536ms
-[00:05:26.242] Server  LOG     ✓ Compiled in 155ms
-[00:05:28.056] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:05:28.196] Browser WARN    Image with src "/westgateLogo.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
-[00:07:25.149] Server  LOG     ✓ Compiled in 113ms
-[00:07:33.913] Server  LOG     ✓ Compiled in 57ms
-[00:07:51.914] Server  LOG     ✓ Compiled in 41ms
-[00:07:58.931] Server  LOG     ✓ Compiled in 17ms
-[00:08:01.538] Server  LOG     ✓ Compiled in 17ms
-[00:09:47.369] Server  LOG     ✓ Compiled in 36ms
-[00:10:16.378] Server  LOG     ✓ Compiled in 52ms
-[00:10:20.648] Server  LOG     ✓ Compiled in 24ms
-[00:10:22.080] Server  LOG     ✓ Compiled in 22ms
-[00:10:29.721] Server  LOG     ✓ Compiled in 29ms
-[00:10:34.178] Server  LOG     ✓ Compiled in 21ms
-[00:10:39.368] Server  LOG     ✓ Compiled in 35ms
-[00:10:41.717] Server  LOG     ✓ Compiled in 32ms
-[00:10:43.112] Server  LOG     ✓ Compiled in 27ms
-[00:11:19.260] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
-[00:12:40.193] Server  LOG     ✓ Compiled in 60ms
-[00:12:41.752] Server  LOG     ✓ Compiled in 12ms
-[00:12:44.501] Server  LOG     ✓ Compiled in 46ms
-[00:12:50.607] Server  LOG     ✓ Compiled in 47ms
-[00:12:57.436] Server  LOG     ✓ Compiled in 18ms
-[00:13:50.203] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:13:50.329] Browser LOG     AdminGuard: 🔍 Found user: bujaklav@gmail.com
-[00:13:52.238] Browser LOG     AdminGuard: ✅ Admin confirmed!
-[00:13:56.227] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
-[00:14:09.719] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:14:09.833] Browser LOG     AdminGuard: 🔍 Found user: bujaklav@gmail.com
-[00:14:10.865] Browser LOG     AdminGuard: ✅ Admin confirmed!
-[00:14:20.712] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
-[00:14:30.300] Browser WARN    Image with src "/westgateLogo.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
-[00:14:57.288] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:14:57.420] Browser WARN    Image with src "/westgateLogo.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
-[00:15:39.362] Server  LOG     ✓ Compiled in 148ms
-[00:15:57.607] Server  LOG     ✓ Compiled in 120ms
-[00:16:04.685] Server  LOG     ✓ Compiled in 96ms
-[00:16:22.697] Server  LOG     ✓ Compiled in 23ms
-[00:16:24.130] Server  LOG     ✓ Compiled in 25ms
-[00:16:35.926] Server  LOG     ✓ Compiled in 22ms
-[00:17:57.770] Browser ERROR   ./frontend/components/Hero.tsx:20:9
-Parsing ecmascript source code failed
-  18 |         <button className='mt-10 px-10 py-4 bg-transparent border-2 border-white text-white font-bold uppercase hover:bg-white hover:text-black transition-all duration-300'>
-  19 |           <
-> 20 |         </button>
-     |         ^
-  21 |       </div>
-  22 |     </div>
-  23 |   );
+[00:00:00.734] Server  WARN    ⚠ The "middleware" file convention is deprecated. Please use "proxy" instead. Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
+[00:00:00.804] Server  LOG     ✓ Ready in 565ms
+[00:00:02.862] Server  ERROR   ⨯ ./frontend/components/Loader.tsx:2:1
+Module not found: Can't resolve 'styled-components'
+  1 | import React from 'react';
+> 2 | import styled from 'styled-components';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 |
+  4 | const Loader = () => {
+  5 |   return (
 
-Expression expected
+
+
+Import traces:
+  Client Component Browser:
+    ./frontend/components/Loader.tsx [Client Component Browser]
+    ./frontend/app/signup/page.tsx [Client Component Browser]
+    ./frontend/app/signup/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./frontend/components/Loader.tsx [Client Component SSR]
+    ./frontend/app/signup/page.tsx [Client Component SSR]
+    ./frontend/app/signup/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+
+./frontend/lib/styled-composenet-registery.tsx:4:1
+Module not found: Can't resolve 'styled-components'
+  2 |
+  3 | import { useState } from 'react';
+> 4 | import { StyleSheetManager } from 'styled-components';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 | import { useServerInsertedHTML } from 'next/navigation';
+  6 | import { ServerStyleSheet } from 'styled-components';
+  7 |
+
+
 
 Import trace:
   Server Component:
-    ./frontend/components/Hero.tsx
-    ./frontend/app/page.tsx
-[00:17:57.770] Browser ERROR   ./frontend/components/Hero.tsx:20:10
-Parsing ecmascript source code failed
-  18 |         <button className='mt-10 px-10 py-4 bg-transparent border-2 border-white text-white font-bold uppercase hover:bg-white hover:text-black transition-all duration-300'>
-  19 |           <
-> 20 |         </button>
-     |          ^^^^^^^^
-  21 |       </div>
-  22 |     </div>
-  23 |   );
+    ./frontend/lib/styled-composenet-registery.tsx
+    ./frontend/app/layout.tsx
 
-Unterminated regexp literal
+https://nextjs.org/docs/messages/module-not-found
 
-Import trace:
-  Server Component:
-    ./frontend/components/Hero.tsx
-    ./frontend/app/page.tsx
-[00:18:00.771] Browser ERROR   ./frontend/components/Hero.tsx:20:9
-Parsing ecmascript source code failed
-  18 |         <button className='mt-10 px-10 py-4 bg-transparent border-2 border-white text-white font-bold uppercase hover:bg-white hover:text-black transition-all duration-300'>
-  19 |           <Link
-> 20 |         </button>
-     |         ^
-  21 |       </div>
-  22 |     </div>
-  23 |   );
 
-Expression expected
+
+./frontend/lib/styled-composenet-registery.tsx:6:1
+Module not found: Can't resolve 'styled-components'
+  4 | import { StyleSheetManager } from 'styled-components';
+  5 | import { useServerInsertedHTML } from 'next/navigation';
+> 6 | import { ServerStyleSheet } from 'styled-components';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 |
+  8 | export default function StyledComponentsRegistry({
+  9 |   children,
+
+
 
 Import trace:
   Server Component:
-    ./frontend/components/Hero.tsx
-    ./frontend/app/page.tsx
-[00:18:00.771] Browser ERROR   ./frontend/components/Hero.tsx:20:10
-Parsing ecmascript source code failed
-  18 |         <button className='mt-10 px-10 py-4 bg-transparent border-2 border-white text-white font-bold uppercase hover:bg-white hover:text-black transition-all duration-300'>
-  19 |           <Link
-> 20 |         </button>
-     |          ^^^^^^^^
-  21 |       </div>
-  22 |     </div>
-  23 |   );
+    ./frontend/lib/styled-composenet-registery.tsx
+    ./frontend/app/layout.tsx
 
-Unterminated regexp literal
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:00:03.218] Browser ERROR   uncaughtError: Error: ./frontend/components/Loader.tsx:2:1
+Module not found: Can't resolve 'styled-components'
+  1 | import React from 'react';
+> 2 | import styled from 'styled-components';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 |
+  4 | const Loader = () => {
+  5 |   return (
+
+
+
+Import traces:
+  Client Component Browser:
+    ./frontend/components/Loader.tsx [Client Component Browser]
+    ./frontend/app/signup/page.tsx [Client Component Browser]
+    ./frontend/app/signup/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./frontend/components/Loader.tsx [Client Component SSR]
+    ./frontend/app/signup/page.tsx [Client Component SSR]
+    ./frontend/app/signup/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:00:03.374] Browser ERROR   ./frontend/components/Loader.tsx:2:1
+Module not found: Can't resolve 'styled-components'
+  1 | import React from 'react';
+> 2 | import styled from 'styled-components';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 |
+  4 | const Loader = () => {
+  5 |   return (
+
+Import traces:
+  Client Component Browser:
+    ./frontend/components/Loader.tsx [Client Component Browser]
+    ./frontend/app/signup/page.tsx [Client Component Browser]
+    ./frontend/app/signup/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./frontend/components/Loader.tsx [Client Component SSR]
+    ./frontend/app/signup/page.tsx [Client Component SSR]
+    ./frontend/app/signup/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:00:03.374] Browser ERROR   ./frontend/lib/styled-composenet-registery.tsx:6:1
+Module not found: Can't resolve 'styled-components'
+  4 | import { StyleSheetManager } from 'styled-components';
+  5 | import { useServerInsertedHTML } from 'next/navigation';
+> 6 | import { ServerStyleSheet } from 'styled-components';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 |
+  8 | export default function StyledComponentsRegistry({
+  9 |   children,
 
 Import trace:
   Server Component:
-    ./frontend/components/Hero.tsx
-    ./frontend/app/page.tsx
-[00:18:02.445] Server  LOG     ✓ Compiled in 47ms
-[00:18:16.408] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:18:18.536] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:18:18.677] Browser WARN    Image with src "/westgateLogo.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
-[00:21:01.120] Server  LOG     ✓ Compiled in 99ms
-[00:21:05.084] Server  LOG     ✓ Compiled in 17ms
-[00:21:06.987] Server  LOG     ✓ Compiled in 17ms
-[00:21:38.184] Server  LOG     ✓ Compiled in 33ms
-[00:21:41.095] Server  LOG     ✓ Compiled in 21ms
-[00:21:42.677] Server  LOG     ✓ Compiled in 15ms
-[00:22:01.135] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:22:02.597] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:22:05.303] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:22:17.181] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:22:18.152] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:22:21.954] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:22:26.617] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:22:26.750] Browser WARN    Image with src "/westgateLogo.png" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
-Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
-[00:22:26.750] Browser WARN    Image with src "/westgateLogo.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
-[00:22:28.491] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
-[00:22:33.482] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:23:05.955] Server  ERROR   ⨯ Error: The default export is not a React Component in "/pages/aboutUs/page"
-[00:23:06.115] Server  ERROR   ⨯ Error: The default export is not a React Component in "/pages/aboutUs/page"
-[00:23:06.981] Server  ERROR   ⨯ Error: The default export is not a React Component in "/pages/aboutUs/page"
-[00:23:07.127] Server  ERROR   ⨯ Error: The default export is not a React Component in "/pages/aboutUs/page"
-[00:23:07.294] Server  ERROR   ⨯ Error: The default export is not a React Component in "/pages/aboutUs/page"
-[00:23:07.449] Server  ERROR   ⨯ Error: The default export is not a React Component in "/pages/aboutUs/page"
-[00:23:07.604] Server  ERROR   ⨯ Error: The default export is not a React Component in "/pages/aboutUs/page"
-[00:23:07.809] Server  ERROR   ⨯ Error: The default export is not a React Component in "/pages/aboutUs/page"
-[00:23:08.031] Server  ERROR   ⨯ Error: The default export is not a React Component in "/pages/aboutUs/page"
-[00:23:08.335] Server  ERROR   ⨯ Error: The default export is not a React Component in "/pages/aboutUs/page"
-[00:23:08.671] Server  ERROR   ⨯ Error: The default export is not a React Component in "/pages/aboutUs/page"
-[00:23:08.860] Server  ERROR   ⨯ Error: The default export is not a React Component in "/pages/aboutUs/page"
-[00:23:08.883] Server  LOG     ✓ Compiled in 0ms
-[00:23:09.006] Browser ERROR   uncaughtError: Error: The default export is not a React Component in "/pages/aboutUs/page"
-[00:24:09.676] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:24:09.874] Browser WARN    Image with src "/westgateLogo.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
-[00:24:11.065] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+    ./frontend/lib/styled-composenet-registery.tsx
+    ./frontend/app/layout.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+[00:00:03.960] Browser ERROR   ./frontend/components/Loader.tsx:2:1
+Module not found: Can't resolve 'styled-components'
+  1 | import React from 'react';
+> 2 | import styled from 'styled-components';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 |
+  4 | const Loader = () => {
+  5 |   return (
+
+Import traces:
+  Client Component Browser:
+    ./frontend/components/Loader.tsx [Client Component Browser]
+    ./frontend/app/signup/page.tsx [Client Component Browser]
+    ./frontend/app/signup/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./frontend/components/Loader.tsx [Client Component SSR]
+    ./frontend/app/signup/page.tsx [Client Component SSR]
+    ./frontend/app/signup/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:00:03.960] Browser ERROR   ./frontend/lib/styled-composenet-registery.tsx:6:1
+Module not found: Can't resolve 'styled-components'
+  4 | import { StyleSheetManager } from 'styled-components';
+  5 | import { useServerInsertedHTML } from 'next/navigation';
+> 6 | import { ServerStyleSheet } from 'styled-components';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 |
+  8 | export default function StyledComponentsRegistry({
+  9 |   children,
+
+Import trace:
+  Server Component:
+    ./frontend/lib/styled-composenet-registery.tsx
+    ./frontend/app/layout.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+[00:00:40.682] Browser ERROR   ./frontend/components/Loader.tsx:2:1
+Module not found: Can't resolve 'styled-components'
+  1 | import React from 'react';
+> 2 | import styled from 'styled-components';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 |
+  4 | const Loader = () => {
+  5 |   return (
+
+Import traces:
+  Client Component Browser:
+    ./frontend/components/Loader.tsx [Client Component Browser]
+    ./frontend/app/signup/page.tsx [Client Component Browser]
+    ./frontend/app/signup/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./frontend/components/Loader.tsx [Client Component SSR]
+    ./frontend/app/signup/page.tsx [Client Component SSR]
+    ./frontend/app/signup/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:00:40.682] Browser ERROR   ./frontend/lib/styled-composenet-registery.tsx:6:1
+Module not found: Can't resolve 'styled-components'
+  4 | import { StyleSheetManager } from 'styled-components';
+  5 | import { useServerInsertedHTML } from 'next/navigation';
+> 6 | import { ServerStyleSheet } from 'styled-components';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 |
+  8 | export default function StyledComponentsRegistry({
+  9 |   children,
+
+Import trace:
+  Server Component:
+    ./frontend/lib/styled-composenet-registery.tsx
+    ./frontend/app/layout.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+[00:03:38.927] Server  ERROR   ⨯ ./frontend/lib/styled-composenet-registery.tsx:4:1
+Module not found: Can't resolve 'styled-components'
+  2 |
+  3 | import { useState } from 'react';
+> 4 | import { StyleSheetManager } from 'styled-components';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 | import { useServerInsertedHTML } from 'next/navigation';
+  6 | import { ServerStyleSheet } from 'styled-components';
+  7 |
+
+
+
+Import trace:
+  Server Component:
+    ./frontend/lib/styled-composenet-registery.tsx
+    ./frontend/app/layout.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:03:38.927] Server  ERROR   ⨯ ./frontend/lib/styled-composenet-registery.tsx:4:1
+Module not found: Can't resolve 'styled-components'
+  2 |
+  3 | import { useState } from 'react';
+> 4 | import { StyleSheetManager } from 'styled-components';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 | import { useServerInsertedHTML } from 'next/navigation';
+  6 | import { ServerStyleSheet } from 'styled-components';
+  7 |
+
+
+
+Import trace:
+  Server Component:
+    ./frontend/lib/styled-composenet-registery.tsx
+    ./frontend/app/layout.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:03:38.928] Server  ERROR   ⨯ ./frontend/lib/styled-composenet-registery.tsx:4:1
+Module not found: Can't resolve 'styled-components'
+  2 |
+  3 | import { useState } from 'react';
+> 4 | import { StyleSheetManager } from 'styled-components';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 | import { useServerInsertedHTML } from 'next/navigation';
+  6 | import { ServerStyleSheet } from 'styled-components';
+  7 |
+
+
+
+Import trace:
+  Server Component:
+    ./frontend/lib/styled-composenet-registery.tsx
+    ./frontend/app/layout.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:03:38.929] Server  ERROR   ⨯ ./frontend/lib/styled-composenet-registery.tsx:6:1
+Module not found: Can't resolve 'styled-components'
+  4 | import { StyleSheetManager } from 'styled-components';
+  5 | import { useServerInsertedHTML } from 'next/navigation';
+> 6 | import { ServerStyleSheet } from 'styled-components';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 |
+  8 | export default function StyledComponentsRegistry({
+  9 |   children,
+
+
+
+Import trace:
+  Server Component:
+    ./frontend/lib/styled-composenet-registery.tsx
+    ./frontend/app/layout.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:03:38.929] Server  ERROR   ⨯ ./frontend/lib/styled-composenet-registery.tsx:6:1
+Module not found: Can't resolve 'styled-components'
+  4 | import { StyleSheetManager } from 'styled-components';
+  5 | import { useServerInsertedHTML } from 'next/navigation';
+> 6 | import { ServerStyleSheet } from 'styled-components';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 |
+  8 | export default function StyledComponentsRegistry({
+  9 |   children,
+
+
+
+Import trace:
+  Server Component:
+    ./frontend/lib/styled-composenet-registery.tsx
+    ./frontend/app/layout.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:03:38.929] Server  ERROR   ⨯ ./frontend/lib/styled-composenet-registery.tsx:6:1
+Module not found: Can't resolve 'styled-components'
+  4 | import { StyleSheetManager } from 'styled-components';
+  5 | import { useServerInsertedHTML } from 'next/navigation';
+> 6 | import { ServerStyleSheet } from 'styled-components';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 |
+  8 | export default function StyledComponentsRegistry({
+  9 |   children,
+
+
+
+Import trace:
+  Server Component:
+    ./frontend/lib/styled-composenet-registery.tsx
+    ./frontend/app/layout.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:03:38.930] Server  ERROR   ⨯ ./frontend/lib/styled-composenet-registery.tsx:6:1
+Module not found: Can't resolve 'styled-components'
+  4 | import { StyleSheetManager } from 'styled-components';
+  5 | import { useServerInsertedHTML } from 'next/navigation';
+> 6 | import { ServerStyleSheet } from 'styled-components';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 |
+  8 | export default function StyledComponentsRegistry({
+  9 |   children,
+
+
+
+Import trace:
+  Server Component:
+    ./frontend/lib/styled-composenet-registery.tsx
+    ./frontend/app/layout.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:03:39.682] Browser ERROR   ./frontend/lib/styled-composenet-registery.tsx:6:1
+Module not found: Can't resolve 'styled-components'
+  4 | import { StyleSheetManager } from 'styled-components';
+  5 | import { useServerInsertedHTML } from 'next/navigation';
+> 6 | import { ServerStyleSheet } from 'styled-components';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 |
+  8 | export default function StyledComponentsRegistry({
+  9 |   children,
+
+Import trace:
+  Server Component:
+    ./frontend/lib/styled-composenet-registery.tsx
+    ./frontend/app/layout.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+[00:03:47.681] Browser ERROR   ./frontend/lib/styled-composenet-registery.tsx:6:1
+Module not found: Can't resolve 'styled-components'
+  4 | import { StyleSheetManager } from 'styled-components';
+  5 | import { useServerInsertedHTML } from 'next/navigation';
+> 6 | import { ServerStyleSheet } from 'styled-components';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 |
+  8 | export default function StyledComponentsRegistry({
+  9 |   children,
+
+Import trace:
+  Server Component:
+    ./frontend/lib/styled-composenet-registery.tsx
+    ./frontend/app/layout.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+[00:03:56.682] Browser ERROR   ./frontend/lib/styled-composenet-registery.tsx:6:1
+Module not found: Can't resolve 'styled-components'
+  4 | import { StyleSheetManager } from 'styled-components';
+  5 | import { useServerInsertedHTML } from 'next/navigation';
+> 6 | import { ServerStyleSheet } from 'styled-components';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 |
+  8 | export default function StyledComponentsRegistry({
+  9 |   children,
+
+Import trace:
+  Server Component:
+    ./frontend/lib/styled-composenet-registery.tsx
+    ./frontend/app/layout.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+[00:04:06.683] Browser ERROR   ./frontend/lib/styled-composenet-registery.tsx:6:1
+Module not found: Can't resolve 'styled-components'
+  4 | import { StyleSheetManager } from 'styled-components';
+  5 | import { useServerInsertedHTML } from 'next/navigation';
+> 6 | import { ServerStyleSheet } from 'styled-components';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 |
+  8 | export default function StyledComponentsRegistry({
+  9 |   children,
+
+Import trace:
+  Server Component:
+    ./frontend/lib/styled-composenet-registery.tsx
+    ./frontend/app/layout.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+[00:04:21.377] Browser ERROR   ./frontend/lib/styled-composenet-registery.tsx:6:1
+Module not found: Can't resolve 'styled-components'
+  4 | import { StyleSheetManager } from 'styled-components';
+  5 | import { useServerInsertedHTML } from 'next/navigation';
+> 6 | import { ServerStyleSheet } from 'styled-components';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 |
+  8 | export default function StyledComponentsRegistry({
+  9 |   children,
+
+Import trace:
+  Server Component:
+    ./frontend/lib/styled-composenet-registery.tsx
+    ./frontend/app/layout.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+[00:04:31.140] Server  ERROR   ⨯ ./frontend/app/layout.tsx:2:1
+Module not found: Can't resolve '@/lib/styled-composenet-registery'
+  1 | import './globals.css';
+> 2 | import StyledComponentsRegistry from '@/lib/styled-composenet-registery';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 | import { Toaster } from 'react-hot-toast';
+  4 | import { UserProvider } from '@/context/UserContext';
+  5 | import { Inter } from 'next/font/google';
+
+Import map: aliased to relative './lib/styled-composenet-registery' inside of [project]/frontend
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:04:31.141] Server  ERROR   ⨯ ./frontend/app/layout.tsx:2:1
+Module not found: Can't resolve '@/lib/styled-composenet-registery'
+  1 | import './globals.css';
+> 2 | import StyledComponentsRegistry from '@/lib/styled-composenet-registery';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 | import { Toaster } from 'react-hot-toast';
+  4 | import { UserProvider } from '@/context/UserContext';
+  5 | import { Inter } from 'next/font/google';
+
+Import map: aliased to relative './lib/styled-composenet-registery' inside of [project]/frontend
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:04:31.685] Browser ERROR   ./frontend/app/layout.tsx:2:1
+Module not found: Can't resolve '@/lib/styled-composenet-registery'
+  1 | import './globals.css';
+> 2 | import StyledComponentsRegistry from '@/lib/styled-composenet-registery';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 | import { Toaster } from 'react-hot-toast';
+  4 | import { UserProvider } from '@/context/UserContext';
+  5 | import { Inter } from 'next/font/google';
+
+Import map: aliased to relative './lib/styled-composenet-registery' inside of [project]/frontend
+
+https://nextjs.org/docs/messages/module-not-found
+[00:04:33.363] Server  ERROR   ⨯ ./frontend/app/layout.tsx:2:1
+Module not found: Can't resolve '@/lib/styled-composenet-registery'
+  1 | import './globals.css';
+> 2 | import StyledComponentsRegistry from '@/lib/styled-composenet-registery';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 | import { Toaster } from 'react-hot-toast';
+  4 | import { UserProvider } from '@/context/UserContext';
+  5 | import { Inter } from 'next/font/google';
+
+Import map: aliased to relative './lib/styled-composenet-registery' inside of [project]/frontend
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:04:33.541] Browser ERROR   uncaughtError: Error: ./frontend/app/layout.tsx:2:1
+Module not found: Can't resolve '@/lib/styled-composenet-registery'
+  1 | import './globals.css';
+> 2 | import StyledComponentsRegistry from '@/lib/styled-composenet-registery';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 | import { Toaster } from 'react-hot-toast';
+  4 | import { UserProvider } from '@/context/UserContext';
+  5 | import { Inter } from 'next/font/google';
+
+Import map: aliased to relative './lib/styled-composenet-registery' inside of [project]/frontend
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:04:33.696] Browser ERROR   ./frontend/app/layout.tsx:2:1
+Module not found: Can't resolve '@/lib/styled-composenet-registery'
+  1 | import './globals.css';
+> 2 | import StyledComponentsRegistry from '@/lib/styled-composenet-registery';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 | import { Toaster } from 'react-hot-toast';
+  4 | import { UserProvider } from '@/context/UserContext';
+  5 | import { Inter } from 'next/font/google';
+
+Import map: aliased to relative './lib/styled-composenet-registery' inside of [project]/frontend
+
+https://nextjs.org/docs/messages/module-not-found
+[00:04:33.696] Browser ERROR   ./frontend/app/layout.tsx:2:1
+Module not found: Can't resolve '@/lib/styled-composenet-registery'
+  1 | import './globals.css';
+> 2 | import StyledComponentsRegistry from '@/lib/styled-composenet-registery';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 | import { Toaster } from 'react-hot-toast';
+  4 | import { UserProvider } from '@/context/UserContext';
+  5 | import { Inter } from 'next/font/google';
+
+Import map: aliased to relative './lib/styled-composenet-registery' inside of [project]/frontend
+
+https://nextjs.org/docs/messages/module-not-found
+[00:04:37.775] Server  ERROR   ⨯ ./frontend/app/layout.tsx:2:1
+Module not found: Can't resolve '@/lib/styled-composenet-registery'
+  1 | import './globals.css';
+> 2 | import StyledComponentsRegistry from '@/lib/styled-composenet-registery';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 | import { Toaster } from 'react-hot-toast';
+  4 | import { UserProvider } from '@/context/UserContext';
+  5 | import { Inter } from 'next/font/google';
+
+Import map: aliased to relative './lib/styled-composenet-registery' inside of [project]/frontend
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:04:37.821] Browser ERROR   ./frontend/app/layout.tsx:2:1
+Module not found: Can't resolve '@/lib/styled-composenet-registery'
+  1 | import './globals.css';
+> 2 | import StyledComponentsRegistry from '@/lib/styled-composenet-registery';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 | import { Toaster } from 'react-hot-toast';
+  4 | import { UserProvider } from '@/context/UserContext';
+  5 | import { Inter } from 'next/font/google';
+
+Import map: aliased to relative './lib/styled-composenet-registery' inside of [project]/frontend
+
+https://nextjs.org/docs/messages/module-not-found
+[00:04:37.833] Server  ERROR   ⨯ ./frontend/app/layout.tsx:2:1
+Module not found: Can't resolve '@/lib/styled-composenet-registery'
+  1 | import './globals.css';
+> 2 | import StyledComponentsRegistry from '@/lib/styled-composenet-registery';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 | import { Toaster } from 'react-hot-toast';
+  4 | import { UserProvider } from '@/context/UserContext';
+  5 | import { Inter } from 'next/font/google';
+
+Import map: aliased to relative './lib/styled-composenet-registery' inside of [project]/frontend
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:04:37.916] Browser ERROR   uncaughtError: Error: ./frontend/app/layout.tsx:2:1
+Module not found: Can't resolve '@/lib/styled-composenet-registery'
+  1 | import './globals.css';
+> 2 | import StyledComponentsRegistry from '@/lib/styled-composenet-registery';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 | import { Toaster } from 'react-hot-toast';
+  4 | import { UserProvider } from '@/context/UserContext';
+  5 | import { Inter } from 'next/font/google';
+
+Import map: aliased to relative './lib/styled-composenet-registery' inside of [project]/frontend
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:04:38.052] Browser ERROR   ./frontend/app/layout.tsx:2:1
+Module not found: Can't resolve '@/lib/styled-composenet-registery'
+  1 | import './globals.css';
+> 2 | import StyledComponentsRegistry from '@/lib/styled-composenet-registery';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 | import { Toaster } from 'react-hot-toast';
+  4 | import { UserProvider } from '@/context/UserContext';
+  5 | import { Inter } from 'next/font/google';
+
+Import map: aliased to relative './lib/styled-composenet-registery' inside of [project]/frontend
+
+https://nextjs.org/docs/messages/module-not-found
+[00:04:38.052] Browser ERROR   ./frontend/app/layout.tsx:2:1
+Module not found: Can't resolve '@/lib/styled-composenet-registery'
+  1 | import './globals.css';
+> 2 | import StyledComponentsRegistry from '@/lib/styled-composenet-registery';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 | import { Toaster } from 'react-hot-toast';
+  4 | import { UserProvider } from '@/context/UserContext';
+  5 | import { Inter } from 'next/font/google';
+
+Import map: aliased to relative './lib/styled-composenet-registery' inside of [project]/frontend
+
+https://nextjs.org/docs/messages/module-not-found
+[00:04:38.052] Browser ERROR   ./frontend/app/layout.tsx:2:1
+Module not found: Can't resolve '@/lib/styled-composenet-registery'
+  1 | import './globals.css';
+> 2 | import StyledComponentsRegistry from '@/lib/styled-composenet-registery';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 | import { Toaster } from 'react-hot-toast';
+  4 | import { UserProvider } from '@/context/UserContext';
+  5 | import { Inter } from 'next/font/google';
+
+Import map: aliased to relative './lib/styled-composenet-registery' inside of [project]/frontend
+
+https://nextjs.org/docs/messages/module-not-found
+[00:04:43.478] Server  ERROR   ⨯ ./frontend/app/layout.tsx:2:1
+Module not found: Can't resolve '@/lib/styled-composenet-registery'
+  1 | import './globals.css';
+> 2 | import StyledComponentsRegistry from '@/lib/styled-composenet-registery';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 | import { Toaster } from 'react-hot-toast';
+  4 | import { UserProvider } from '@/context/UserContext';
+  5 | import { Inter } from 'next/font/google';
+
+Import map: aliased to relative './lib/styled-composenet-registery' inside of [project]/frontend
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:04:44.306] Server  ERROR   ⨯ ./frontend/app/layout.tsx:2:1
+Module not found: Can't resolve '@/lib/styled-composenet-registery'
+  1 | import './globals.css';
+> 2 | import StyledComponentsRegistry from '@/lib/styled-composenet-registery';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 | import { Toaster } from 'react-hot-toast';
+  4 | import { UserProvider } from '@/context/UserContext';
+  5 | import { Inter } from 'next/font/google';
+
+Import map: aliased to relative './lib/styled-composenet-registery' inside of [project]/frontend
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:04:44.413] Browser ERROR   uncaughtError: Error: ./frontend/app/layout.tsx:2:1
+Module not found: Can't resolve '@/lib/styled-composenet-registery'
+  1 | import './globals.css';
+> 2 | import StyledComponentsRegistry from '@/lib/styled-composenet-registery';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 | import { Toaster } from 'react-hot-toast';
+  4 | import { UserProvider } from '@/context/UserContext';
+  5 | import { Inter } from 'next/font/google';
+
+Import map: aliased to relative './lib/styled-composenet-registery' inside of [project]/frontend
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:04:44.578] Browser ERROR   ./frontend/app/layout.tsx:2:1
+Module not found: Can't resolve '@/lib/styled-composenet-registery'
+  1 | import './globals.css';
+> 2 | import StyledComponentsRegistry from '@/lib/styled-composenet-registery';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 | import { Toaster } from 'react-hot-toast';
+  4 | import { UserProvider } from '@/context/UserContext';
+  5 | import { Inter } from 'next/font/google';
+
+Import map: aliased to relative './lib/styled-composenet-registery' inside of [project]/frontend
+
+https://nextjs.org/docs/messages/module-not-found
+[00:04:44.578] Browser ERROR   ./frontend/app/layout.tsx:2:1
+Module not found: Can't resolve '@/lib/styled-composenet-registery'
+  1 | import './globals.css';
+> 2 | import StyledComponentsRegistry from '@/lib/styled-composenet-registery';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 | import { Toaster } from 'react-hot-toast';
+  4 | import { UserProvider } from '@/context/UserContext';
+  5 | import { Inter } from 'next/font/google';
+
+Import map: aliased to relative './lib/styled-composenet-registery' inside of [project]/frontend
+
+https://nextjs.org/docs/messages/module-not-found
+[00:04:44.578] Browser ERROR   ./frontend/app/layout.tsx:2:1
+Module not found: Can't resolve '@/lib/styled-composenet-registery'
+  1 | import './globals.css';
+> 2 | import StyledComponentsRegistry from '@/lib/styled-composenet-registery';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 | import { Toaster } from 'react-hot-toast';
+  4 | import { UserProvider } from '@/context/UserContext';
+  5 | import { Inter } from 'next/font/google';
+
+Import map: aliased to relative './lib/styled-composenet-registery' inside of [project]/frontend
+
+https://nextjs.org/docs/messages/module-not-found
+[00:05:49.373] Server  LOG     ✓ Compiled in 297ms
+[00:05:50.274] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:05:50.438] Browser WARN    Image with src "/westgateLogo.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:05:57.737] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+[00:07:02.868] Server  LOG     ✓ Compiled in 107ms
+[00:08:45.932] Server  LOG     ✓ Compiled in 145ms
+[00:16:23.219] Server  LOG     ✓ Compiled in 115ms
+[00:16:33.361] Server  LOG     ✓ Compiled in 73ms
+[00:16:44.888] Server  LOG     ✓ Compiled in 89ms
+[00:16:59.156] Server  LOG     ✓ Compiled in 56ms
+[00:19:20.857] Server  LOG     ✓ Compiled in 101ms
+[00:19:28.367] Server  LOG     ✓ Compiled in 80ms
+[00:19:56.869] Server  LOG     ✓ Compiled in 106ms
+[00:20:13.828] Server  LOG     ✓ Compiled in 95ms
+[00:20:20.751] Server  LOG     ✓ Compiled in 74ms
+[00:20:29.366] Server  LOG     ✓ Compiled in 80ms
+[00:22:09.205] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:22:09.684] Browser LOG     AdminGuard: 🔍 Found user: bujaklav@gmail.com
+[00:22:11.682] Browser LOG     AdminGuard: ✅ Admin confirmed!
+[00:22:11.682] Browser ERROR   uncaughtError: Error: useUser must be used within UserProvider
+[00:23:53.418] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:23:53.549] Browser LOG     AdminGuard: 🔍 Found user: bujaklav@gmail.com
+[00:23:54.407] Browser LOG     AdminGuard: ✅ Admin confirmed!
+[00:23:54.407] Browser ERROR   uncaughtError: Error: useUser must be used within UserProvider
+[00:24:00.123] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:24:00.271] Browser LOG     AdminGuard: 🔍 Found user: bujaklav@gmail.com
+[00:24:00.984] Browser LOG     AdminGuard: ✅ Admin confirmed!
+[00:24:00.984] Browser ERROR   uncaughtError: Error: useUser must be used within UserProvider
+[00:25:03.056] Server  WARN    ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:25:03.324] Server  WARN    ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:25:03.333] Server  LOG     ✓ Compiled in 0ms
+[00:25:03.430] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:25:03.682] Browser WARN    Image with src "/westgateLogo.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:25:12.810] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+[00:25:44.230] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:25:44.231] Browser WARN    Image with src "/westgateLogo.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:25:53.631] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:25:53.744] Browser LOG     AdminGuard: 🔍 Found user: bujaklav@gmail.com
+[00:25:55.004] Browser LOG     AdminGuard: ✅ Admin confirmed!
+[00:25:59.631] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+[00:26:35.916] Browser WARN    Image with src "/westgateLogo.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:26:48.357] Browser LOG     AdminGuard: 🔍 Found user: bujaklav@gmail.com
+[00:26:48.357] Browser LOG     AdminGuard: 🔍 Found user: bujaklav@gmail.com
+[00:26:48.970] Browser LOG     AdminGuard: ✅ Admin confirmed!
+[00:26:49.449] Browser LOG     AdminGuard: ✅ Admin confirmed!
+[00:27:23.969] Browser LOG     AdminGuard: 🔍 Found user: bujaklav@gmail.com
+[00:27:23.969] Browser LOG     AdminGuard: 🔍 Found user: bujaklav@gmail.com
+[00:27:24.500] Browser LOG     AdminGuard: ✅ Admin confirmed!
+[00:27:25.016] Browser LOG     AdminGuard: ✅ Admin confirmed!
+[00:32:19.445] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:32:19.445] Browser LOG     AdminGuard: 🔍 Found user: bujaklav@gmail.com
+[00:32:21.056] Browser LOG     AdminGuard: ✅ Admin confirmed!
+[00:32:23.298] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+[00:33:30.730] Browser WARN    Image with src "/westgateLogo.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:35:58.591] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:35:58.700] Browser LOG     AdminGuard: 🔍 Found user: bujaklav@gmail.com
+[00:36:00.165] Browser LOG     AdminGuard: ✅ Admin confirmed!
+[00:36:36.175] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+[00:37:35.212] Browser WARN    Image with src "/westgateLogo.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:47:46.295] Server  LOG     ✓ Compiled in 367ms
+[00:47:50.569] Server  ERROR   ⨯ ./frontend/app/account/layout.tsx:1:1
+Module not found: Can't resolve '@/components/Header'
+> 1 | import { Header } from '@/components/Header';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 | import { Footer } from '@/components/Footer';
+  3 | import StyledComponentsRegistry from '@/lib/styled-composenet-registery';
+  4 | import { Toaster } from 'react-hot-toast';
+
+Import map: aliased to relative './components/Header' inside of [project]/frontend
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+
+./frontend/app/account/layout.tsx:3:1
+Module not found: Can't resolve '@/lib/styled-composenet-registery'
+  1 | import { Header } from '@/components/Header';
+  2 | import { Footer } from '@/components/Footer';
+> 3 | import StyledComponentsRegistry from '@/lib/styled-composenet-registery';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 | import { Toaster } from 'react-hot-toast';
+  5 |
+  6 | export default function SiteLayout({
+
+Import map: aliased to relative './lib/styled-composenet-registery' inside of [project]/frontend
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:47:50.688] Server  ERROR   ⨯ ./frontend/app/account/layout.tsx:1:1
+Module not found: Can't resolve '@/components/Header'
+> 1 | import { Header } from '@/components/Header';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 | import { Footer } from '@/components/Footer';
+  3 | import StyledComponentsRegistry from '@/lib/styled-composenet-registery';
+  4 | import { Toaster } from 'react-hot-toast';
+
+Import map: aliased to relative './components/Header' inside of [project]/frontend
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+
+./frontend/app/account/layout.tsx:3:1
+Module not found: Can't resolve '@/lib/styled-composenet-registery'
+  1 | import { Header } from '@/components/Header';
+  2 | import { Footer } from '@/components/Footer';
+> 3 | import StyledComponentsRegistry from '@/lib/styled-composenet-registery';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 | import { Toaster } from 'react-hot-toast';
+  5 |
+  6 | export default function SiteLayout({
+
+Import map: aliased to relative './lib/styled-composenet-registery' inside of [project]/frontend
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:47:50.873] Browser ERROR   uncaughtError: Error: ./frontend/app/account/layout.tsx:1:1
+Module not found: Can't resolve '@/components/Header'
+> 1 | import { Header } from '@/components/Header';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 | import { Footer } from '@/components/Footer';
+  3 | import StyledComponentsRegistry from '@/lib/styled-composenet-registery';
+  4 | import { Toaster } from 'react-hot-toast';
+
+Import map: aliased to relative './components/Header' inside of [project]/frontend
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:47:51.021] Browser ERROR   ./frontend/app/account/layout.tsx:1:1
+Module not found: Can't resolve '@/components/Header'
+> 1 | import { Header } from '@/components/Header';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 | import { Footer } from '@/components/Footer';
+  3 | import StyledComponentsRegistry from '@/lib/styled-composenet-registery';
+  4 | import { Toaster } from 'react-hot-toast';
+
+Import map: aliased to relative './components/Header' inside of [project]/frontend
+
+https://nextjs.org/docs/messages/module-not-found
+[00:47:51.021] Browser ERROR   ./frontend/app/account/layout.tsx:3:1
+Module not found: Can't resolve '@/lib/styled-composenet-registery'
+  1 | import { Header } from '@/components/Header';
+  2 | import { Footer } from '@/components/Footer';
+> 3 | import StyledComponentsRegistry from '@/lib/styled-composenet-registery';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 | import { Toaster } from 'react-hot-toast';
+  5 |
+  6 | export default function SiteLayout({
+
+Import map: aliased to relative './lib/styled-composenet-registery' inside of [project]/frontend
+
+https://nextjs.org/docs/messages/module-not-found
+[00:47:51.021] Browser ERROR   ./frontend/app/account/layout.tsx:1:1
+Module not found: Can't resolve '@/components/Header'
+> 1 | import { Header } from '@/components/Header';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 | import { Footer } from '@/components/Footer';
+  3 | import StyledComponentsRegistry from '@/lib/styled-composenet-registery';
+  4 | import { Toaster } from 'react-hot-toast';
+
+Import map: aliased to relative './components/Header' inside of [project]/frontend
+
+https://nextjs.org/docs/messages/module-not-found
+[00:47:51.021] Browser ERROR   ./frontend/app/account/layout.tsx:3:1
+Module not found: Can't resolve '@/lib/styled-composenet-registery'
+  1 | import { Header } from '@/components/Header';
+  2 | import { Footer } from '@/components/Footer';
+> 3 | import StyledComponentsRegistry from '@/lib/styled-composenet-registery';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 | import { Toaster } from 'react-hot-toast';
+  5 |
+  6 | export default function SiteLayout({
+
+Import map: aliased to relative './lib/styled-composenet-registery' inside of [project]/frontend
+
+https://nextjs.org/docs/messages/module-not-found
+[00:48:04.863] Browser ERROR   uncaughtError: Error: ./frontend/app/account/layout.tsx:1:1
+Module not found: Can't resolve '@/components/Header'
+> 1 | import { Header } from '@/components/Header';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 | import { Footer } from '@/components/Footer';
+  3 | import StyledComponentsRegistry from '@/lib/styled-composenet-registery';
+  4 | import { Toaster } from 'react-hot-toast';
+
+Import map: aliased to relative './components/Header' inside of [project]/frontend
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:48:05.005] Browser ERROR   ./frontend/app/account/layout.tsx:1:1
+Module not found: Can't resolve '@/components/Header'
+> 1 | import { Header } from '@/components/Header';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 | import { Footer } from '@/components/Footer';
+  3 | import StyledComponentsRegistry from '@/lib/styled-composenet-registery';
+  4 | import { Toaster } from 'react-hot-toast';
+
+Import map: aliased to relative './components/Header' inside of [project]/frontend
+
+https://nextjs.org/docs/messages/module-not-found
+[00:48:05.005] Browser ERROR   ./frontend/app/account/layout.tsx:3:1
+Module not found: Can't resolve '@/lib/styled-composenet-registery'
+  1 | import { Header } from '@/components/Header';
+  2 | import { Footer } from '@/components/Footer';
+> 3 | import StyledComponentsRegistry from '@/lib/styled-composenet-registery';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 | import { Toaster } from 'react-hot-toast';
+  5 |
+  6 | export default function SiteLayout({
+
+Import map: aliased to relative './lib/styled-composenet-registery' inside of [project]/frontend
+
+https://nextjs.org/docs/messages/module-not-found
+[00:48:05.005] Browser ERROR   ./frontend/app/account/layout.tsx:1:1
+Module not found: Can't resolve '@/components/Header'
+> 1 | import { Header } from '@/components/Header';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 | import { Footer } from '@/components/Footer';
+  3 | import StyledComponentsRegistry from '@/lib/styled-composenet-registery';
+  4 | import { Toaster } from 'react-hot-toast';
+
+Import map: aliased to relative './components/Header' inside of [project]/frontend
+
+https://nextjs.org/docs/messages/module-not-found
+[00:48:05.005] Browser ERROR   ./frontend/app/account/layout.tsx:3:1
+Module not found: Can't resolve '@/lib/styled-composenet-registery'
+  1 | import { Header } from '@/components/Header';
+  2 | import { Footer } from '@/components/Footer';
+> 3 | import StyledComponentsRegistry from '@/lib/styled-composenet-registery';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 | import { Toaster } from 'react-hot-toast';
+  5 |
+  6 | export default function SiteLayout({
+
+Import map: aliased to relative './lib/styled-composenet-registery' inside of [project]/frontend
+
+https://nextjs.org/docs/messages/module-not-found
+[00:48:14.104] Server  LOG     ✓ Compiled in 261ms
+[00:48:14.609] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:48:14.835] Browser WARN    Image with src "/westgateLogo.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:48:18.528] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+[00:51:24.400] Server  LOG     ✓ Compiled in 129ms
+[00:52:05.752] Server  LOG     ✓ Compiled in 106ms
+[00:54:08.742] Server  LOG     ✓ Compiled in 45ms
+[00:55:28.191] Server  LOG     ✓ Compiled in 92ms
+[00:57:03.587] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:57:03.715] Browser LOG     AdminGuard: 🔍 Found user: bujaklav@gmail.com
+[00:57:05.255] Browser LOG     AdminGuard: ✅ Admin confirmed!
+[00:57:06.864] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+[00:57:16.359] Browser WARN    Image with src "/westgateLogo.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:58:46.801] Server  LOG     ✓ Compiled in 63ms
+[00:58:58.202] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:58:58.326] Browser LOG     AdminGuard: 🔍 Found user: bujaklav@gmail.com
+[00:58:59.533] Browser LOG     AdminGuard: ✅ Admin confirmed!
+[00:59:01.072] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+[00:59:19.598] Server  LOG     ✓ Compiled in 300ms
+[01:00:07.283] Server  LOG     ✓ Compiled in 213ms
+[01:00:09.653] Browser WARN    Image with src "/westgateLogo.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[01:01:23.906] Server  LOG     ✓ Compiled in 129ms
+[01:01:23.996] Browser LOG     --- Account Menu Debug ---
+[01:01:23.996] Browser LOG     User Email: bujaklav@gmail.com
+[01:01:23.996] Browser LOG     Profile Data: null
+[01:01:23.996] Browser LOG     isAdmin Resolved to: false
+[01:01:23.996] Browser LOG     --- Account Menu Debug ---
+[01:01:23.996] Browser LOG     User Email: bujaklav@gmail.com
+[01:01:23.996] Browser LOG     Profile Data: null
+[01:01:23.996] Browser LOG     isAdmin Resolved to: false
+[01:01:24.609] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:01:24.762] Browser WARN    Image with src "/westgateLogo.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[01:01:27.119] Browser LOG     --- Account Menu Debug ---
+[01:01:27.119] Browser LOG     User Email: bujaklav@gmail.com
+[01:01:27.119] Browser LOG     Profile Data: null
+[01:01:27.119] Browser LOG     isAdmin Resolved to: false
+[01:01:27.119] Browser LOG     --- Account Menu Debug ---
+[01:01:27.119] Browser LOG     User Email: bujaklav@gmail.com
+[01:01:27.119] Browser LOG     Profile Data: null
+[01:01:27.119] Browser LOG     isAdmin Resolved to: false
+[01:03:39.017] Server  LOG     ✓ Compiled in 93ms
+[01:03:39.956] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
+[01:03:40.640] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
+[01:03:40.864] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:03:41.041] Browser WARN    Image with src "/westgateLogo.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[01:03:43.586] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
+[01:03:44.042] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
+[01:03:47.027] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+[01:03:53.382] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
+[01:03:53.948] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
+[01:03:54.554] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
+[01:03:55.681] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
+[01:04:05.575] Server  LOG     ✓ Compiled in 80ms
+[01:04:06.611] Server  LOG     ✓ Compiled in 27ms
+[01:04:14.939] Server  LOG     ✓ Compiled in 59ms
+[01:04:22.667] Server  LOG     ✓ Compiled in 24ms
+[01:04:23.976] Server  LOG     ✓ Compiled in 28ms
+[01:04:25.559] Server  LOG     ✓ Compiled in 47ms
+[01:04:41.544] Server  LOG     ✓ Compiled in 41ms
+[01:04:46.729] Browser LOG     AdminGuard: 🔍 Found user: bujaklav@gmail.com
+[01:04:46.729] Browser LOG     AdminGuard: 🔍 Found user: bujaklav@gmail.com
+[01:04:47.282] Browser LOG     AdminGuard: ✅ Admin confirmed!
+[01:04:47.809] Browser LOG     AdminGuard: ✅ Admin confirmed!
+[01:05:18.297] Server  LOG     ✓ Compiled in 58ms
+[01:05:19.987] Server  LOG     ✓ Compiled in 16ms
+[01:05:22.960] Server  LOG     ✓ Compiled in 26ms
+[01:05:32.691] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
+[01:05:33.302] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
+[01:05:33.823] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
+[01:05:34.385] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
+[01:07:11.851] Server  LOG     ✓ Compiled in 71ms
+[01:07:27.794] Browser ERROR   {"code":"PGRST204","details":null,"hint":null,"message":"Could not find the 'updated_at' column of 'profiles' in the schema cache"}
+[01:09:26.943] Server  LOG     ✓ Compiled in 159ms
+[01:09:27.642] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:09:44.705] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+[01:09:44.705] Browser WARN    Image with src "/westgateLogo.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[01:10:05.853] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
+[01:10:06.364] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
+[01:10:06.876] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
+[01:10:07.393] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
+[01:10:08.002] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
+[01:10:08.517] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
+[01:11:59.626] Server  LOG     ✓ Compiled in 83ms
+[01:12:21.891] Browser LOG     Admin detected, redirecting to dashboard...
+[01:12:22.016] Browser LOG     AdminGuard: 🔍 Found user: bujaklav@gmail.com
+[01:12:22.016] Browser LOG     AdminGuard: 🔍 Found user: bujaklav@gmail.com
+[01:12:22.351] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
+[01:12:22.851] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
+[01:12:23.375] Browser LOG     AdminGuard: ✅ Admin confirmed!
+[01:12:23.858] Browser LOG     AdminGuard: ✅ Admin confirmed!
+[01:12:32.488] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
+[01:12:33.004] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
+[01:12:33.512] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
+[01:12:34.023] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.

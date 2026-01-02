@@ -6,7 +6,6 @@ import { useUser } from '@/context/UserContext';
 import Loader from '@/components/Loader';
 import toast from 'react-hot-toast';
 import { useRouter } from 'next/navigation';
-import '../globals.css';
 
 export default function AccountSettings() {
   const { user, profile, fetchUserProfile } = useUser();
@@ -16,6 +15,7 @@ export default function AccountSettings() {
   const [uploading, setUploading] = useState(false);
   const router = useRouter();
 
+  // Synchronize local state with profile data
   useEffect(() => {
     if (profile) {
       setName(profile.name || '');
@@ -36,6 +36,7 @@ export default function AccountSettings() {
     try {
       let logoUrl = profile?.logo || null;
 
+      // 1. Storage Logic
       if (logoFile) {
         const fileExt = logoFile.name.split('.').pop();
         const filePath = `${user.id}/logo.${fileExt}`;
@@ -53,17 +54,24 @@ export default function AccountSettings() {
         logoUrl = data.publicUrl;
       }
 
+      // 2. Database Logic (Restored to .update().eq())
       const { error } = await supabaseClient
         .from('profiles')
-        .update({ name, surname, logo: logoUrl })
+        .update({ 
+          name, 
+          surname, 
+          logo: logoUrl 
+        })
         .eq('id', user.id);
 
       if (error) throw error;
 
+      // 3. Context Refresh
       await fetchUserProfile();
       toast.success('Profile updated successfully!');
       router.push('/');
     } catch (err: any) {
+      console.error("Full Error Object:", err);
       toast.error(err.message || 'Update failed');
     } finally {
       setUploading(false);
@@ -71,64 +79,95 @@ export default function AccountSettings() {
     }
   };
 
-  if (!profile) return <Loader />;
+  // Restore the original "Loader" guard you preferred
+  if (!profile) return (
+    <div className="min-h-screen bg-[#020617] flex items-center justify-center">
+      <Loader />
+    </div>
+  );
 
   return (
-    <div className="page-wrapper">
-      <div className="form-wrapper">
-        <form className="form" onSubmit={handleSave}>
-          <p className="form-title">Account Settings</p>
+    <div className="min-h-screen bg-[#020617] text-white flex items-center justify-center p-6">
+      <div className="max-w-md w-full animate-in fade-in duration-500">
+        
+        {/* Header */}
+        <div className="mb-10 text-center">
+          <h1 className="text-3xl font-black uppercase tracking-tighter italic">
+            Profile <span className="text-red-600">Settings</span>
+          </h1>
+          <p className="text-slate-500 text-[10px] font-mono uppercase tracking-[0.3em] mt-2">
+            Update Member Credentials
+          </p>
+        </div>
 
-          {/* IMAGE UPLOAD */}
-          <div className="input-container">
-            {!profile.logo && !logoFile ? (
-              <label className="custum-file-upload">
-                <div className="icon">
-                  <svg viewBox="0 0 24 24">
-                    <path d="M10 1L3 8v12a3 3 0 003 3h1M10 1h8a3 3 0 013 3v5M10 1v7H3m13 7.5A2.5 2.5 0 1116.5 13 2.5 2.5 0 0119 15.5V17h1a2 2 0 010 4H13a2 2 0 010-4h1v-1.5A2.5 2.5 0 0116.5 13" />
-                  </svg>
-                </div>
-                <div className="text">
-                  <span>Click to upload image</span>
-                </div>
-                <input type="file" accept="image/*" onChange={handleFileChange} />
-              </label>
-            ) : (
-              <div className="avatar-preview">
-                <img
-                  src={logoFile ? URL.createObjectURL(logoFile) : profile.logo}
-                  alt="Profile logo"
-                />
-                <label className="change-photo">
-                  Change photo
-                  <input type="file" accept="image/*" onChange={handleFileChange} />
-                </label>
+        <form onSubmit={handleSave} className="bg-slate-900/50 border border-slate-800 p-8 rounded-[2.5rem] shadow-2xl space-y-6">
+          
+          {/* IMAGE UPLOAD SECTION */}
+          <div className="flex flex-col items-center gap-4 mb-4">
+            <div className="relative w-24 h-24 group">
+              <div className="w-full h-full rounded-full overflow-hidden border-2 border-slate-800 group-hover:border-red-600 transition-colors bg-slate-950 flex items-center justify-center">
+                {logoFile || profile.logo ? (
+                  <img
+                    src={logoFile ? URL.createObjectURL(logoFile) : profile.logo}
+                    alt="Profile"
+                    className="w-full h-full object-cover"
+                  />
+                ) : (
+                  <span className="text-slate-700 text-xs font-black uppercase tracking-widest">No Img</span>
+                )}
               </div>
+              <label className="absolute inset-0 flex items-center justify-center bg-black/60 opacity-0 group-hover:opacity-100 rounded-full cursor-pointer transition-opacity text-[10px] font-black uppercase tracking-widest text-white">
+                Change
+                <input type="file" className="hidden" accept="image/*" onChange={handleFileChange} />
+              </label>
+            </div>
+            {logoFile && (
+              <p className="text-[9px] text-red-500 font-black uppercase tracking-widest animate-pulse">
+                New Identity Image Pending
+              </p>
             )}
           </div>
 
-          {/* NAME */}
-          <div className="input-container">
-            <input
-              type="text"
-              placeholder="First name"
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-            />
+          {/* INPUT FIELDS */}
+          <div className="space-y-4">
+            <div className="space-y-1">
+              <label className="text-[10px] font-black uppercase tracking-widest text-slate-500 ml-2">First Name</label>
+              <input
+                type="text"
+                placeholder="Enter Name"
+                className="w-full bg-slate-950 border border-slate-800 rounded-xl p-4 text-sm focus:border-red-600 outline-none transition-all font-medium"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+              />
+            </div>
+
+            <div className="space-y-1">
+              <label className="text-[10px] font-black uppercase tracking-widest text-slate-500 ml-2">Last Name</label>
+              <input
+                type="text"
+                placeholder="Enter Surname"
+                className="w-full bg-slate-950 border border-slate-800 rounded-xl p-4 text-sm focus:border-red-600 outline-none transition-all font-medium"
+                value={surname}
+                onChange={(e) => setSurname(e.target.value)}
+              />
+            </div>
           </div>
 
-          {/* SURNAME */}
-          <div className="input-container">
-            <input
-              type="text"
-              placeholder="Last name"
-              value={surname}
-              onChange={(e) => setSurname(e.target.value)}
-            />
-          </div>
+          {/* ACTION BUTTONS */}
+          <button 
+            type="submit" 
+            disabled={uploading}
+            className="w-full bg-red-600 py-4 rounded-xl text-[10px] font-black uppercase tracking-[0.2em] hover:bg-red-700 transition-all shadow-lg active:scale-95 disabled:opacity-50 h-[52px] flex items-center justify-center"
+          >
+            {uploading ? <Loader /> : 'Save Changes'}
+          </button>
 
-          <button type="submit" className="submit" disabled={uploading}>
-            {uploading ? <Loader /> : 'Save changes'}
+          <button 
+            type="button"
+            onClick={() => router.push('/')}
+            className="w-full text-[10px] font-black uppercase tracking-[0.2em] text-slate-500 hover:text-white transition-colors pt-2"
+          >
+            Cancel and Exit
           </button>
         </form>
       </div>

@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 14, "column": 0}, "map": {"version":3,"sources":["file:///Users/lavbujak/Desktop/Sindjelic/westgate-sindjelic/frontend/app/pages/juniors/page.tsx"],"sourcesContent":["import React from \"react\";\n\n\nexport default function JuniorsPage() {\n  return (\n    <>\n      <main className=\"app-content\">\n        <h1>Juniors Page</h1>\n        <p>Welcome to the Juniors section!</p>\n      </main>\n    </>\n  );\n}\n"],"names":[],"mappings":";;;;;;AAGe,SAAS;IACtB,qBACE;kBACE,cAAA,0PAAC;YAAK,WAAU;;8BACd,0PAAC;8BAAG;;;;;;8BACJ,0PAAC;8BAAE;;;;;;;;;;;;;AAIX"}}]
+}

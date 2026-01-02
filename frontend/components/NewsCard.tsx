@@ -1,66 +1,18 @@
 import React from 'react';
-import styled from 'styled-components';
 
 export interface News {
-  id: string;
-  title: string;
-  content: string;
-  published: boolean;
-  created_at: string;
-  updated_at?: string;
+  id: string; title: string; content: string; published: boolean; created_at: string;
 }
 
-interface Props {
-  news: News;
-}
-
-const NewsCard: React.FC<Props> = ({ news }) => {
+const NewsCard: React.FC<{ news: News }> = ({ news }) => {
   return (
-    <Card>
-      <h2 className="news-title">{news.title}</h2>
-      <p className="news-content">{news.content}</p>
-      <span className="news-date" suppressHydrationWarning>
-        {new Date(news.created_at).toLocaleDateString('en-US', {
-          year: 'numeric',
-          month: 'long',
-          day: 'numeric',
-        })}
+    <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100 flex flex-col gap-4 hover:-translate-y-1 transition-transform duration-200">
+      <h2 className="text-2xl font-bold text-gray-900 leading-tight">{news.title}</h2>
+      <p className="text-gray-600 leading-relaxed line-clamp-3">{news.content}</p>
+      <span className="text-sm font-medium text-gray-400 self-end uppercase tracking-wider">
+        {new Date(news.created_at).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
       </span>
-    </Card>
+    </div>
   );
 };
-
 export default NewsCard;
-
-const Card = styled.div`
-  background-color: #fff;
-  padding: 1.5rem;
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-
-  .news-title {
-    font-size: 1.5rem;
-    font-weight: 600;
-    color: #111;
-  }
-
-  .news-content {
-    font-size: 1rem;
-    color: #333;
-    line-height: 1.6;
-  }
-
-  .news-date {
-    font-size: 0.85rem;
-    color: #999;
-    align-self: flex-end;
-  }
-
-  &:hover {
-    transform: translateY(-2px);
-    transition: transform 0.2s ease;
-  }
-`;

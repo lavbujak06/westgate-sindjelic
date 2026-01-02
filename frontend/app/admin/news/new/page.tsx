@@ -1,9 +1,6 @@
 'use client';
-
 import { useState } from 'react';
-import { supabaseClient } from '@/lib/supabaseClient';
 import CreateButton from '@/components/CreateButton';
-import styled from 'styled-components';
 import Link from 'next/link';
 
 export default function NewNewsPage() {
@@ -15,156 +12,53 @@ export default function NewNewsPage() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
-
-    //talk to the backend to create a new news item
     const res = await fetch('http://localhost:5001/api/news', {
       method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
+      headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ title, content, published }),
-      credentials: 'include', // 🔑 Sends the admin cookie!
+      credentials: 'include',
     });
-
-    if (!res.ok) {
-      const error = await res.json();
-      console.error('Backend error:', error);
-      alert('Failed to create news: ' + error.message);
-      setLoading(false);
-      return;
-    }
-
-    const data = await res.json();
-    console.log('Created news:', data);
-    alert('News created successfully!');
+    if (!res.ok) { setLoading(false); alert('Failed to create'); return; }
     window.location.href = '/admin/news';
-    setLoading(false);
   };
 
   return (
-    <FormWrapper>
-      <div className="container">
-        <div className="modal">
-          <div className="modal__header">
-            <span className="modal__title">New News</span>
-          </div>
-          <form className="modal__body" onSubmit={handleSubmit}>
-            <div className="input">
-              <label className="input__label">Title</label>
-              <input
-                className="input__field"
-                type="text"
-                value={title}
-                onChange={(e) => setTitle(e.target.value)}
-                required
-              />
-            </div>
-
-            <div className="input">
-              <label className="input__label">Content</label>
-              <textarea
-                className="input__field input__field--textarea"
-                value={content}
-                onChange={(e) => setContent(e.target.value)}
-                required
-              />
-            </div>
-
-            <div className="input">
-              <label>
-                <input
-                  type="checkbox"
-                  checked={published}
-                  onChange={(e) => setPublished(e.target.checked)}
-                />{' '}
-                Published
-              </label>
-            </div>
-
-            <div className="modal__footer">
-              <CreateButton type="submit" disabled={loading}>
-                {loading ? 'Creating...' : 'Create'}
-              </CreateButton>
-              <Link href="/admin/news">
-                <CreateButton style={{ backgroundColor: '#ccc', color: '#000', marginLeft: '1rem' }}>
-                  Cancel
-                </CreateButton>
-              </Link>
-            </div>
-          </form>
+    <div className="min-h-screen bg-[#020617] flex items-center justify-center p-6">
+      <div className="w-full max-w-xl bg-slate-900 border border-slate-800 rounded-[2rem] overflow-hidden shadow-2xl">
+        <div className="bg-slate-950 p-8 border-b border-slate-800">
+           <h1 className="text-2xl font-black text-white uppercase tracking-tighter flex items-center gap-3">
+             <span className="w-1.5 h-6 bg-red-600"></span> Initialize Article
+           </h1>
         </div>
+        <form onSubmit={handleSubmit} className="p-8 space-y-6 text-white">
+          <div className="space-y-2">
+            <label className="text-[10px] font-black uppercase tracking-widest text-slate-500 px-1">Headlines</label>
+            <input 
+              value={title} 
+              onChange={(e) => setTitle(e.target.value)} 
+              className="w-full bg-slate-950 border border-slate-800 rounded-xl p-4 text-sm focus:ring-1 focus:ring-red-600 outline-none" 
+              required 
+            />
+          </div>
+          <div className="space-y-2">
+            <label className="text-[10px] font-black uppercase tracking-widest text-slate-500 px-1">Full Content</label>
+            <textarea 
+              value={content} 
+              onChange={(e) => setContent(e.target.value)} 
+              className="w-full bg-slate-950 border border-slate-800 rounded-xl p-4 text-sm min-h-[180px] focus:ring-1 focus:ring-red-600 outline-none resize-none" 
+              required 
+            />
+          </div>
+          <div className="flex items-center gap-4 py-2">
+             <input type="checkbox" checked={published} onChange={(e) => setPublished(e.target.checked)} className="w-5 h-5 accent-red-600" />
+             <span className="text-xs font-bold text-slate-400 uppercase tracking-wide">Ready for Broadcast</span>
+          </div>
+          <div className="flex gap-4 pt-4 border-t border-slate-800">
+            <CreateButton type="submit" disabled={loading}>{loading ? 'Deploying...' : 'Publish Entry'}</CreateButton>
+            <Link href="/admin/news" className="px-6 py-3 border border-slate-700 rounded-full text-[10px] font-black uppercase tracking-widest text-slate-400 hover:bg-slate-800 transition-colors flex items-center">Cancel</Link>
+          </div>
+        </form>
       </div>
-    </FormWrapper>
+    </div>
   );
 }
-
-const FormWrapper = styled.div`
-  .container {
-    position: absolute;
-    top: 0; left: 0; right: 0; bottom: 0;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 1.5rem;
-  }
-
-  .modal {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    max-width: 500px;
-    background-color: #fff;
-    box-shadow: 0 15px 30px rgba(0, 125, 171, 0.15);
-    border-radius: 10px;
-  }
-
-  .modal__header {
-    padding: 1rem 1.5rem;
-    border-bottom: 1px solid #ddd;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-
-  .modal__title {
-    font-weight: 700;
-    font-size: 1.25rem;
-  }
-
-  .modal__body {
-    padding: 1rem 1rem;
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-  }
-
-  .modal__footer {
-    padding: 0 1.5rem 1.5rem;
-    display: flex;
-    justify-content: flex-end;
-  }
-
-  .input__label {
-    font-weight: 700;
-    font-size: 0.875rem;
-  }
-
-  .input__field {
-    margin-top: 0.5rem;
-    border: 1px solid #DDD;
-    border-radius: 0.25rem;
-    padding: 0.75rem;
-  }
-
-  .input__field:focus {
-    outline: none;
-    border-color: #007dab;
-    box-shadow: 0 0 0 1px #007dab, 0 0 0 4px rgba(0, 125, 171, 0.25);
-  }
-
-  .input__field--textarea {
-    min-height: 100px;
-    max-width: 100%;
-  }
-`;

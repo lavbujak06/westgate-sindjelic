@@ -1,10 +1,6 @@
 'use client';
-
 import React from 'react';
-import styled from 'styled-components';
 import Link from 'next/link';
-// import Switch from '@/app/admin/news/components/Switch';
-// import { News } from '../types';
 import Switch from './Switch';
 import { News } from '../types';
 
@@ -16,63 +12,26 @@ interface NewsCardProps {
 
 const NewsCard: React.FC<NewsCardProps> = ({ news, onDelete, onTogglePublish }) => {
   return (
-    <CardWrapper>
-      <h3>{news.title}</h3>
-      <p>{news.content}</p>
-      <div className="actions">
-        <Link href={`/admin/news/edit/${news.id}`}>
-          <button className="edit">Edit</button>
-        </Link>
-        <button className="delete" onClick={onDelete}>
-          Delete
-        </button>
-        <div className="publish">
+    <div className="bg-slate-900/40 border border-slate-800 p-6 rounded-2xl flex flex-col gap-4 hover:border-slate-700 transition-all group">
+      <div className="flex justify-between items-start">
+        <div className="space-y-1">
+          <h3 className="text-lg font-bold text-white group-hover:text-red-500 transition-colors">{news.title}</h3>
+          <p className="text-sm text-slate-500 line-clamp-2 italic">{news.content}</p>
+        </div>
+        <div className="flex items-center gap-2 bg-slate-950 px-3 py-1.5 rounded-full border border-slate-800">
+          <span className="text-[10px] font-black uppercase text-slate-500 mr-1">Live</span>
           <Switch checked={news.published} onToggle={onTogglePublish} />
         </div>
       </div>
-    </CardWrapper>
+      
+      <div className="flex items-center gap-3 pt-2 border-t border-slate-800/50">
+        <Link href={`/admin/news/edit/${news.id}`}>
+          <button className="text-[10px] font-black uppercase tracking-widest bg-blue-900/20 text-blue-400 border border-blue-900/30 px-4 py-2 rounded-lg hover:bg-blue-600 hover:text-white transition-all">Edit Page</button>
+        </Link>
+        <button onClick={onDelete} className="text-[10px] font-black uppercase tracking-widest bg-red-900/20 text-red-500 border border-red-900/30 px-4 py-2 rounded-lg hover:bg-red-600 hover:text-white transition-all">Delete</button>
+      </div>
+    </div>
   );
 };
-
-const CardWrapper = styled.div`
-  background: #f9f9f9;
-  padding: 1rem;
-  border-radius: 8px;
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-
-  h3 {
-    font-weight: 600;
-  }
-
-  .actions {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-
-    button {
-      padding: 0.5rem 1rem;
-      border-radius: 6px;
-      border: none;
-      cursor: pointer;
-      font-weight: 500;
-    }
-
-    .edit {
-      background: #007dab;
-      color: #fff;
-    }
-
-    .delete {
-      background: #ff4d4d;
-      color: #fff;
-    }
-
-    .publish {
-      margin-left: auto;
-    }
-  }
-`;
 
 export default NewsCard;

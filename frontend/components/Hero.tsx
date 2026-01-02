@@ -1,27 +1,30 @@
-import Link from 'next/link';
+// components/Hero.tsx
 import React from 'react';
 
-const Hero = ({ heading, message }: { heading: string; message: string }) => {
-  return (
-    <div className='relative h-screen w-full flex items-center justify-center custom-img'>
-      {/* 1. DARK OVERLAY (This gives the "End Result" look) */}
-      <div className='absolute inset-0 bg-black/60 z-10' />
+interface HeroProps {
+  heading: string;
+  message: string;
+  showButton?: boolean; // Optional button
+}
 
-      {/* 2. CONTENT CONTAINER (Must be higher z-index than overlay) */}
+const Hero = ({ heading, message, showButton = false }: HeroProps) => {
+  return (
+    <div className='relative h-[60vh] md:h-[70vh] w-full flex items-center justify-center custom-img'>
+      <div className='absolute inset-0 bg-black/60 z-10' />
       <div className='relative z-20 text-center px-4'>
-        <h1 className='text-5xl md:text-8xl font-black text-white uppercase tracking-tighter'>
+        <h1 className='text-4xl md:text-7xl font-black text-white uppercase tracking-tighter'>
           {heading}
         </h1>
-        <div className='h-1 w-24 bg-red-600 mx-auto my-6' /> {/* Stylish accent line */}
-        <p className='text-xl md:text-2xl text-gray-200 font-light max-w-2xl mx-auto'>
-          {message}
-        </p>
-        <button className='mt-10 px-10 py-4 bg-transparent border-2 border-white text-white font-bold uppercase hover:bg-white hover:text-black transition-all duration-300'>
-          <Link href="/pages/aboutUs">About Us</Link>
-        </button>
+        <div className='h-1 w-20 bg-red-600 mx-auto my-4' />
+        <p className='text-lg md:text-xl text-gray-200 font-light'>{message}</p>
+        
+        {showButton && (
+          <button className='mt-8 px-8 py-3 border-2 border-white text-white font-bold uppercase hover:bg-white hover:text-black transition-all'>
+            Explore Teams
+          </button>
+        )}
       </div>
     </div>
   );
 };
-
 export default Hero;

@@ -1,40 +1,46 @@
 'use client';
-
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { useUser } from '@/context/UserContext';
-import { supabaseClient } from '@/lib/supabaseClient'; // 👈 Added import
-import '../globals.css';
+import { supabaseClient } from '@/lib/supabaseClient';
+import Link from 'next/link';
 import Loader from '@/components/Loader';
+import Navbar from '@/components/Navbar';
 
 export default function LoginPage() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   const [loginLoading, setLoginLoading] = useState(false);
-  const [resendLoading, setResendLoading] = useState(false);
   const router = useRouter();
-  const { fetchUserProfile } = useUser();
+  
+  // 🛡️ Pull state setters from context to update the Account Menu globally
+  const { setUser, setProfile } = useUser();
 
   const handleLogin = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setError('');
     setLoginLoading(true);
+    setError('');
 
     try {
-      // 🔹 Step 1: Log in with Supabase Client 
-      const { data: authData, error: authError } = await supabaseClient.auth.signInWithPassword({
-        email,
-        password,
-      });
-
-      if (authError) {
-        setError(authError.message);
-        setLoginLoading(false);
-        return;
+      // 1. Supabase Auth
+      const { data: authData, error: authError } = await supabaseClient.auth.signInWithPassword({ email, password });
+      if (authError) { 
+        setError(authError.message); 
+        setLoginLoading(false); 
+        return; 
       }
+      
+      const user = authData.user;
 
-      // 🔹 Step 2: Log in with Backend (Port 5001)
+      // 2. Check the 'admins' table specifically (Matches your AdminGuard logic)
+      const { data: adminRecord, error: adminError } = await supabaseClient
+        .from('admins')
+        .select('id')
+        .eq('id', user.id)
+        .maybeSingle();
+
+      // 3. Sync with Backend to get Profile details
       const res = await fetch('http://localhost:5001/api/auth/login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -42,108 +48,94 @@ export default function LoginPage() {
         credentials: 'include', 
       });
 
-      if (!res.ok) {
+      if (res.ok) {
+        const data = await res.json();
+
+        // 4. Update Global Context
+        setUser(data.user);
+        setProfile(data.profile);
+
+        // 5. 🚀 UPDATED REDIRECT LOGIC
+        // Priority check: If they exist in the 'admins' table, send to dashboard
+        if (adminRecord) {
+          console.log("Admin detected, redirecting to dashboard...");
+          router.push('/admin/dashboard');
+        } else {
+          router.push('/');
+        }
+      } else {
         const errData = await res.json();
-        setError(errData.error || 'Login failed');
-        setLoginLoading(false);
-        return;
+        setError(errData.message || 'Login failed');
       }
-
-      const data = await res.json();
-      await fetchUserProfile();
-
-      // Use window.location.href for admins to ensure the fresh session is detected
-      if (data.is_admin) {
-        window.location.href = '/admin/dashboard';
-      } else {
-        router.push('/');
-      }
-
-    } catch (err: any) {
-      console.error(err);
-      setError('Unexpected error occurred');
-    } finally {
-      setLoginLoading(false);
-    }
-  };
-
-  const handleResendConfirmation = async () => {
-    setResendLoading(true);
-    try {
-      // Replace with your actual URL or process.env variable
-      const { error } = await fetch(`${process.env.NEXT_PUBLIC_SUPABASE_URL}/auth/v1/admin/resend`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email }),
-      }).then(r => r.json());
-
-      if (error) {
-        alert('Please enter a valid email to resend confirmation.');
-      } else {
-        alert('Confirmation email sent! Please check your inbox.');
-      }
-    } catch (err: any) {
-      alert('Unexpected error: ' + err.message);
-    } finally {
-      setResendLoading(false);
+    } catch (err) { 
+      console.error('Login error:', err);
+      setError('Connection error to security server'); 
+    } finally { 
+      setLoginLoading(false); 
     }
   };
 
   return (
-    <div className="page-wrapper">
-      <div className="form-wrapper">
-        <form className="form" onSubmit={handleLogin}>
-          <p className="form-title">Sign in to your account</p>
-          <div className="input-container">
-            <input
-              type="email"
-              placeholder="Email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              required
-              name="email"
-            />
+    <main>
+      <Navbar />
+      <div className="relative min-h-screen w-full flex items-center justify-center custom-img p-4 overflow-hidden">
+        {/* Dark overlay for tactical feel */}
+        <div className="absolute inset-0 bg-[#020617]/90 backdrop-blur-md z-10" />
+        
+        <div className="relative z-20 w-full max-w-[400px] bg-white rounded-[2rem] shadow-2xl border border-white/10 overflow-hidden mt-16 animate-in fade-in zoom-in duration-500">
+          <div className="bg-[#0f172a] p-10 text-center relative overflow-hidden">
+            <div className="absolute top-0 left-0 w-full h-1 bg-red-600" />
+            <h2 className="text-2xl font-black uppercase tracking-tighter text-white">System <span className="text-red-600">Access</span></h2>
+            <p className="text-[10px] font-bold text-slate-500 uppercase tracking-[0.3em] mt-2">Sindjelic Secure Portal</p>
           </div>
-          <div className="input-container">
-            <input
-              type="password"
-              placeholder="Password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              required
-              name="password"
-            />
-          </div>
-          <button type="submit" className="submit">
-            {loginLoading ? <Loader /> : 'Sign In'}
-          </button>
-          {error && <p className="error">{error}</p>}
 
-          <p className="login-link">
-            Don't have an account? <a href="/signup">Sign up</a>
-          </p>
-        </form>
-        <div style={{ marginTop: '1rem', textAlign: 'center' }}>
-          <p style={{ marginBottom: '0.5rem', color: '#555' }}>
-            Haven't authorized your email yet?
-          </p>
-          <button
-            type="button"
-            className="resend-btn"
-            style={{
-              padding: '0.5rem 1rem',
-              backgroundColor: '#1e40af',
-              color: '#fff',
-              border: 'none',
-              borderRadius: '6px',
-              cursor: 'pointer',
-            }}
-            onClick={handleResendConfirmation}
-          >
-            {resendLoading ? <Loader /> : 'Resend Confirmation Email'}
-          </button>
+          <form className="p-10 space-y-6" onSubmit={handleLogin}>
+            <div className="space-y-2">
+              <label className="text-[10px] font-black text-gray-400 uppercase tracking-widest ml-1">Member Email</label>
+              <input 
+                type="email" 
+                value={email} 
+                onChange={(e) => setEmail(e.target.value)} 
+                className="w-full px-5 py-4 bg-gray-50 border border-gray-200 rounded-2xl text-gray-900 focus:ring-2 focus:ring-red-600 outline-none transition-all font-medium" 
+                placeholder="name@example.com"
+                required 
+              />
+            </div>
+
+            <div className="space-y-2">
+              <label className="text-[10px] font-black text-gray-400 uppercase tracking-widest ml-1">Password</label>
+              <input 
+                type="password" 
+                value={password} 
+                onChange={(e) => setPassword(e.target.value)} 
+                className="w-full px-5 py-4 bg-gray-50 border border-gray-200 rounded-2xl text-gray-900 focus:ring-2 focus:ring-red-600 outline-none transition-all font-medium" 
+                placeholder="••••••••"
+                required 
+              />
+            </div>
+            
+            <button 
+              type="submit" 
+              disabled={loginLoading}
+              className="w-full py-5 bg-red-600 text-white font-black uppercase tracking-[0.2em] rounded-2xl hover:bg-red-700 transition-all shadow-xl shadow-red-900/20 active:scale-95 flex items-center justify-center"
+            >
+              {loginLoading ? <div className="scale-75"><Loader /></div> : 'Log In'}
+            </button>
+            
+            {error && (
+              <div className="flex items-center gap-2 text-red-600 text-[10px] font-black uppercase bg-red-50 p-4 rounded-xl border border-red-100 animate-shake">
+                <span>⚠️</span> {error}
+              </div>
+            )}
+            
+            <div className="pt-6 text-center border-t border-gray-100 mt-4">
+              <p className="text-[10px] font-bold text-gray-400 uppercase tracking-widest">
+                Need an account? <Link href="/signup" className="text-red-600 hover:text-red-800 transition-colors ml-1">Sign up here</Link>
+              </p>
+            </div>
+          </form>
         </div>
       </div>
-    </div>
+    </main>
   );
 }

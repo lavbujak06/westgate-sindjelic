@@ -4,11 +4,13 @@
   "/admin/accounts/page": "app/admin/accounts/page.js",
   "/admin/audit-logs/page": "app/admin/audit-logs/page.js",
   "/admin/dashboard/page": "app/admin/dashboard/page.js",
+  "/admin/news/edit/[id]/page": "app/admin/news/edit/[id]/page.js",
   "/admin/news/page": "app/admin/news/page.js",
   "/login/page": "app/login/page.js",
   "/page": "app/page.js",
   "/pages/aboutUs/page": "app/pages/aboutUs/page.js",
   "/pages/juniors/page": "app/pages/juniors/page.js",
   "/pages/men/seniors/page": "app/pages/men/seniors/page.js",
-  "/pages/news/page": "app/pages/news/page.js"
+  "/pages/news/page": "app/pages/news/page.js",
+  "/signup/page": "app/signup/page.js"
 }

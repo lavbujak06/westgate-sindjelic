@@ -1,27 +1,16 @@
 import React from 'react';
-import styled from 'styled-components';
 
 const Loader = () => {
   return (
-    <StyledWrapper>
-      <div className="spinner" />
-    </StyledWrapper>
+    <div className="flex justify-center items-center py-2">
+      <div className="w-1.5 h-1.5 rounded-full bg-blue-600 animate-[spinner_1.1s_infinite] shadow-[24px_0_0_6px_#004dff,-24px_0_0_6px_#004dff]" />
+      <style jsx>{`
+        @keyframes spinner {
+          to { transform: rotate(360deg); }
+        }
+      `}</style>
+    </div>
   );
-}
-
-const StyledWrapper = styled.div`
-  .spinner {
-   width: 6px;
-   height: 6px;
-   animation: spinner-xp626r 1.1s infinite;
-   border-radius: 50%;
-   box-shadow: 24px 0 0 6px #004dff, -24px 0 0 6px #004dff;
-  }
-
-  @keyframes spinner-xp626r {
-   to {
-    transform: rotate(360deg);
-   }
-  }`;
+};
 
 export default Loader;

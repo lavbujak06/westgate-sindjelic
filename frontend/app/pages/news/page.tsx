@@ -1,76 +1,38 @@
 'use client';
-
 import React, { useEffect, useState } from 'react';
 import { supabaseClient } from '@/lib/supabaseClient';
 import NewsCard, { News } from '@/components/NewsCard';
-import styled from 'styled-components';
+import Navbar from '@/components/Navbar';
+import Hero from '@/components/Hero';
 
 export default function NewsPage() {
   const [news, setNews] = useState<News[]>([]);
-  const [isMounted, setIsMounted] = useState(false); // 👈 1. Add mounting state
-
-  const fetchNews = async () => {
-    const { data, error } = await supabaseClient
-      .from('news')
-      .select('*')
-      .eq('published', true)
-      .order('created_at', { ascending: false });
-
-    if (error) {
-      console.error('Failed to fetch news:', error);
-      return;
-    }
-    setNews(data as News[] || []);
-  };
+  const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
-    setIsMounted(true); // 👈 2. Trigger after hydration
+    setIsMounted(true);
+    const fetchNews = async () => {
+      const { data } = await supabaseClient.from('news').select('*').eq('published', true).order('created_at', { ascending: false });
+      setNews(data as News[] || []);
+    };
     fetchNews();
   }, []);
 
-  // 👈 3. Render nothing (or a skeleton) on the server pass
-  if (!isMounted) {
-    return null; 
-  }
+  if (!isMounted) return null;
 
   return (
-    <PageWrapper>
-      <h1 className="page-title">Latest News</h1>
-      {news.length === 0 ? (
-        <p className="no-news">No news available at the moment.</p>
-      ) : (
-        <NewsGrid>
-          {news.map((item) => (
-            <NewsCard key={item.id} news={item} />
-          ))}
-        </NewsGrid>
-      )}
-    </PageWrapper>
+    <main className="bg-gray-50 min-h-screen">
+      <Navbar />
+      <Hero heading="Club News" message="The latest updates from Westgate Sindjelic FC" />
+      <div className="max-w-4xl mx-auto px-6 py-12">
+        {news.length === 0 ? (
+          <p className="text-center text-gray-500 py-20 font-medium">No news available at the moment.</p>
+        ) : (
+          <div className="flex flex-col gap-6">
+            {news.map((item) => <NewsCard key={item.id} news={item} />)}
+          </div>
+        )}
+      </div>
+    </main>
   );
 }
-
-// Styled components
-const PageWrapper = styled.div`
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 2rem;
-
-  .page-title {
-    font-size: 2.5rem;
-    font-weight: 700;
-    margin-bottom: 2rem;
-    text-align: center;
-  }
-
-  .no-news {
-    text-align: center;
-    color: #777;
-    font-size: 1rem;
-  }
-`;
-
-const NewsGrid = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-`;

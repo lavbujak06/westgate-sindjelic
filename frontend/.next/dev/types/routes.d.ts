@@ -3,7 +3,7 @@
 
 type AppRoutes = "/" | "/account" | "/admin/accounts" | "/admin/audit-logs" | "/admin/dashboard" | "/admin/news" | "/admin/news/edit/[id]" | "/admin/news/new" | "/login" | "/pages/aboutUs" | "/pages/juniors" | "/pages/men/reserves" | "/pages/men/seniors" | "/pages/news" | "/pages/women/reserves" | "/pages/women/seniors" | "/signup"
 type PageRoutes = never
-type LayoutRoutes = "/" | "/account" | "/admin" | "/login" | "/pages" | "/signup"
+type LayoutRoutes = "/" | "/admin"
 type RedirectRoutes = never
 type RewriteRoutes = never
 type Routes = AppRoutes | PageRoutes | LayoutRoutes | RedirectRoutes | RewriteRoutes
@@ -20,7 +20,6 @@ interface ParamMap {
   "/admin/news/edit/[id]": { "id": string; }
   "/admin/news/new": {}
   "/login": {}
-  "/pages": {}
   "/pages/aboutUs": {}
   "/pages/juniors": {}
   "/pages/men/reserves": {}
@@ -36,11 +35,7 @@ export type ParamsOf<Route extends Routes> = ParamMap[Route]
 
 interface LayoutSlotMap {
   "/": never
-  "/account": never
   "/admin": never
-  "/login": never
-  "/pages": never
-  "/signup": never
 }
 
 

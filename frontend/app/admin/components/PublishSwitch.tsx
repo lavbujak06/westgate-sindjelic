@@ -1,5 +1,4 @@
 'use client';
-
 import { useState } from 'react';
 import Switch from './Switch';
 
@@ -17,13 +16,7 @@ export default function PublishSwitch({ newsId, published }: PublishSwitchProps)
         method: 'PATCH',
         credentials: 'include',
       });
-
-      if (!res.ok) {
-        console.error('Failed to toggle publish status');
-        return;
-      }
-
-      // Toggle local state for immediate UI update
+      if (!res.ok) return;
       setIsPublished(!isPublished);
     } catch (err) {
       console.error('Error toggling publish:', err);
