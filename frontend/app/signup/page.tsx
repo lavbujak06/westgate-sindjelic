@@ -2,57 +2,34 @@
 
 import { useState } from 'react';
 import styled from 'styled-components';
-import { supabaseClient } from '@/lib/supabaseClient';
 import { useRouter } from 'next/navigation';
-import { sign } from 'crypto';
 import Loader from '@/components/Loader';
+import { supabaseClient } from '@/lib/supabaseClient';
 
 export default function SignupPage() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
-  const router = useRouter();
   const [signupLoading, setSignupLoading] = useState(false);
+  const router = useRouter();
 
   const handleSignup = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setError('');
     setSignupLoading(true);
 
-    // 1️⃣ Sign up user
-    const { data, error: signupError } =
-      await supabaseClient.auth.signUp({
-        email,
-        password,
-      });
+    // Use the standard client - No secret keys needed!
+    const { data, error } = await supabaseClient.auth.signUp({
+      email,
+      password,
+    });
 
-    if (signupError) {
-      setError(signupError.message);
-      setSignupLoading(false);
-      return;
-    }
-
-    if (!data.user) {
-      setError('Signup failed');
-      setSignupLoading(false);
-      return;
-    }
-
-    // 2️⃣ Create profile
-    const { error: profileError } = await supabaseClient
-      .from('profiles')
-      .insert({
-        id: data.user.id,
-      });
-
-    if (profileError) {
-      setError('Failed to create profile');
-      setSignupLoading(false);
-      return;
+    if (error) {
+      setError(error.message);
+    } else {
+      alert("Check your email for the confirmation link!");
+      router.push('/login');
     }
     setSignupLoading(false);
-    // 3️⃣ Redirect to login
-    router.push('/login');
   };
 
   return (

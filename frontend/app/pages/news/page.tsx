@@ -2,11 +2,12 @@
 
 import React, { useEffect, useState } from 'react';
 import { supabaseClient } from '@/lib/supabaseClient';
-import NewsCard, { News } from '@/components/NewsCard'; // <-- updated import
+import NewsCard, { News } from '@/components/NewsCard';
 import styled from 'styled-components';
 
 export default function NewsPage() {
   const [news, setNews] = useState<News[]>([]);
+  const [isMounted, setIsMounted] = useState(false); // 👈 1. Add mounting state
 
   const fetchNews = async () => {
     const { data, error } = await supabaseClient
@@ -19,25 +20,31 @@ export default function NewsPage() {
       console.error('Failed to fetch news:', error);
       return;
     }
-
     setNews(data as News[] || []);
   };
 
-
   useEffect(() => {
+    setIsMounted(true); // 👈 2. Trigger after hydration
     fetchNews();
   }, []);
+
+  // 👈 3. Render nothing (or a skeleton) on the server pass
+  if (!isMounted) {
+    return null; 
+  }
 
   return (
     <PageWrapper>
       <h1 className="page-title">Latest News</h1>
-      {news.length === 0 && <p className="no-news">No news available at the moment.</p>}
-
-      <NewsGrid>
-        {news.map((item) => (
-          <NewsCard key={item.id} news={item} />
-        ))}
-      </NewsGrid>
+      {news.length === 0 ? (
+        <p className="no-news">No news available at the moment.</p>
+      ) : (
+        <NewsGrid>
+          {news.map((item) => (
+            <NewsCard key={item.id} news={item} />
+          ))}
+        </NewsGrid>
+      )}
     </PageWrapper>
   );
 }

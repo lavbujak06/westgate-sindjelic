@@ -1,34 +1,29 @@
 import { Router } from 'express';
 import { supabase } from '../supabase';
+import { requireAdmin } from '../middleware/requireAdmin';
 
 const router = Router();
-const SESSION_DURATION = 45 * 60 * 1000; // 45 minutes session duration
+const SESSION_DURATION = 45 * 60 * 1000;
 
-// ----------------------------
-// LOGIN (Full Cookie Setup)
-// ----------------------------
 router.post('/login', async (req, res) => {
   const { email, password } = req.body;
-
-  const { data, error } = await supabase.auth.signInWithPassword({
-    email,
-    password,
-  });
+  const { data, error } = await supabase.auth.signInWithPassword({ email, password });
 
   if (error || !data.session || !data.user) {
     return res.status(401).json({ error: 'Invalid credentials' });
   }
 
-  // 1. Check if user is an admin
-  const { data: admin } = await supabase
-    .from('admins')
-    .select('id')
-    .eq('id', data.user.id)
-    .single();
-
+  const { data: admin } = await supabase.from('admins').select('id').eq('id', data.user.id).single();
   const isAdmin = !!admin;
 
-  // 2. Set the Access Token as an HTTP-only Cookie
+  if (isAdmin) {
+    await supabase.from('audit_logs').insert({
+      admin: data.user.email,
+      action: 'ADMIN_LOGIN',
+      details: 'Admin logged into the system'
+    });
+  }
+
   res.cookie('sb-access-token', data.session.access_token, {
     httpOnly: true,
     secure: process.env.NODE_ENV === 'production',
@@ -36,12 +31,12 @@ router.post('/login', async (req, res) => {
     maxAge: SESSION_DURATION,
   });
 
-  // 3. Set the Session Timestamp Cookie
   res.cookie('session_issued_at', Date.now().toString(), {
     httpOnly: true,
     secure: process.env.NODE_ENV === 'production',
-    sameSite: 'strict',
+    sameSite: 'lax',
     maxAge: SESSION_DURATION,
+    path: '/',
   });
 
   return res.json({
@@ -50,42 +45,22 @@ router.post('/login', async (req, res) => {
   });
 });
 
-// ----------------------------
-// WHO AM I? (Cookie-based)
-// ----------------------------
 router.get('/me', async (req, res) => {
   try {
     const token = req.cookies?.['sb-access-token'];
     const issuedAt = req.cookies?.session_issued_at;
+    if (!token || !issuedAt) return res.status(401).json({ user: null, profile: null });
 
-    if (!token || !issuedAt) {
-      return res.status(401).json({ user: null, profile: null });
-    }
-
-    // Identify the user using the cookie token
     const { data: { user }, error: authError } = await supabase.auth.getUser(token);
-    
-    if (authError || !user) {
-      return res.status(401).json({ user: null, profile: null });
-    }
+    if (authError || !user) return res.status(401).json({ user: null, profile: null });
 
-    const { data: profile } = await supabase
-      .from('profiles')
-      .select('*')
-      .eq('id', user.id)
-      .single();
-
-    const { data: admin } = await supabase
-      .from('admins')
-      .select('id')
-      .eq('id', user.id)
-      .single();
+    const { data: profile } = await supabase.from('profiles').select('*').eq('id', user.id).single();
+    const { data: admin } = await supabase.from('admins').select('id').eq('id', user.id).single();
 
     res.json({
       user: { id: user.id, email: user.email, is_admin: !!admin },
       profile: profile ? { ...profile, is_admin: !!admin } : null,
     });
-
   } catch (err) {
     res.status(500).json({ user: null, profile: null });
   }
@@ -95,6 +70,16 @@ router.post('/logout', (req, res) => {
   res.clearCookie('sb-access-token');
   res.clearCookie('session_issued_at');
   res.sendStatus(200);
+});
+
+router.get('/admins', requireAdmin, async (req, res) => {
+  try {
+    const { data, error } = await supabase.from('admins').select('id, email, created_at');
+    if (error) throw error;
+    res.json(data || []);
+  } catch (err: any) {
+    res.status(500).json({ error: err.message });
+  }
 });
 
 export default router;

@@ -11,6 +11,8 @@
   "dependencies": {
     "framer-motion": "^12.23.26",
     "js-cookie": "^3.0.5",
+    "jspdf": "^3.0.4",
+    "jspdf-autotable": "^5.0.2",
     "next": "16.1.0",
     "pg": "^8.16.3",
     "react": "19.2.3",

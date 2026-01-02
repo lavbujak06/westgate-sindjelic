@@ -8,6 +8,8 @@ import newsRoutes from './routes/news';
 import mensLadder from './routes/mensLadder';
 import mensGames from './routes/mensGames';
 import authRoutes from './routes/auth';
+import userRoutes from './routes/users';
+import auditRoutes from './routes/audit-logs';
 
 const app = express();
 
@@ -15,9 +17,10 @@ app.use(
   cors({
     origin: 'http://localhost:3000',
     credentials: true,
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+    allowedHeaders: ['Content-Type', 'Authorization'],
   })
 );
-
 app.use(express.json());
 app.use(cookieParser());
 
@@ -26,6 +29,8 @@ app.use('/api/auth', authRoutes);
 app.use('/api/news', newsRoutes);
 app.use('/api/mens/ladder', mensLadder);
 app.use('/api/mens/games', mensGames);
+app.use('/api/users', userRoutes);
+app.use('/api/audit-logs', auditRoutes);
 
 const PORT = 5001;
 app.listen(PORT, () => {

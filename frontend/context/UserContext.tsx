@@ -19,15 +19,25 @@ export const UserProvider = ({ children }: { children: ReactNode }) => {
 
   const fetchUserProfile = async () => {
     try {
-      // 1. First, check if Supabase Client has a local user
+      // 1. Check Supabase first
       const { data: { user: supabaseUser } } = await supabaseClient.auth.getUser();
 
-      // 2. Then, fetch full profile data from your Backend
+      // 🛡️ THE GUARD CLAUSE
+      // If there is no Supabase user, STOP HERE. 
+      // Don't call the backend, don't trigger a fetch error.
+      if (!supabaseUser) {
+        setUser(null);
+        setProfile(null);
+        return; 
+      }
+
+      // 2. Only if we have a user, we ask the backend for the extra profile info
       const res = await fetch('http://localhost:5001/api/auth/me', {
         method: 'GET',
         credentials: 'include',
       });
 
+      // If the backend call fails (e.g., cookie expired), clear state
       if (!res.ok) {
         setUser(null);
         setProfile(null);
@@ -35,12 +45,13 @@ export const UserProvider = ({ children }: { children: ReactNode }) => {
       }
 
       const data = await res.json();
-      // Combine Supabase data with your custom backend data
       setUser(data.user || supabaseUser);
       setProfile(data.profile);
 
     } catch (err) {
-      console.error('Session check failed:', err);
+      // This will now only trigger if the server is actually down 
+      // AND you are supposedly logged in.
+      console.warn('Session check handled:', err);
       setUser(null);
       setProfile(null);
     }

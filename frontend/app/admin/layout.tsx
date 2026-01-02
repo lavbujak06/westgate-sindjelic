@@ -29,7 +29,10 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
               News
             </Link>
             <Link href="/admin/accounts" style={{ color: '#1e40af', textDecoration: 'none' }}>
-              Admin Accounts
+              Accounts
+            </Link>
+            <Link href="/admin/audit-logs" style={{ color: '#1e40af', textDecoration: 'none' }}>
+              Audit Logs
             </Link>
           </nav>
 

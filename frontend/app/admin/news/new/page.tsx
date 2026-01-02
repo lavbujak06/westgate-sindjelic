@@ -16,22 +16,29 @@ export default function NewNewsPage() {
     e.preventDefault();
     setLoading(true);
 
-    const { data, error } = await supabaseClient
-      .from('news')
-      .insert([{ title, content, published }])
-      .select();
+    //talk to the backend to create a new news item
+    const res = await fetch('http://localhost:5001/api/news', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ title, content, published }),
+      credentials: 'include', // 🔑 Sends the admin cookie!
+    });
 
-    setLoading(false);
-
-    if (error) {
-      console.error('Supabase insert error:', error);
+    if (!res.ok) {
+      const error = await res.json();
+      console.error('Backend error:', error);
       alert('Failed to create news: ' + error.message);
+      setLoading(false);
       return;
     }
 
-    console.log('Inserted news:', data);
+    const data = await res.json();
+    console.log('Created news:', data);
     alert('News created successfully!');
     window.location.href = '/admin/news';
+    setLoading(false);
   };
 
   return (

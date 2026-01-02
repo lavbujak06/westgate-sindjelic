@@ -15,6 +15,7 @@ export default function PublishSwitch({ newsId, published }: PublishSwitchProps)
     try {
       const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/news/${newsId}/publish`, {
         method: 'PATCH',
+        credentials: 'include',
       });
 
       if (!res.ok) {

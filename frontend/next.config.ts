@@ -1,11 +1,15 @@
-const TsconfigPathsPlugin = require("tsconfig-paths-webpack-plugin");
+import type { NextConfig } from "next";
 
-module.exports = {
-  webpack: (config: any) => {
-    config.resolve.plugins = [
-      ...(config.resolve.plugins || []),
-      new TsconfigPathsPlugin({ configFile: "./tsconfig.json" }),
-    ];
+const nextConfig: NextConfig = {
+  compiler: {
+    // This is the "magic" line that fixes the hydration mismatch
+    styledComponents: true,
+  },
+  // You can keep your webpack config if you have very custom paths, 
+  // but usually Next.js reads tsconfig.json automatically now.
+  webpack: (config) => {
     return config;
   },
 };
+
+export default nextConfig;

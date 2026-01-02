@@ -4,57 +4,94 @@ import { requireAdmin } from '../middleware/requireAdmin';
 
 const router = express.Router();
 
-// 🌍 Public: read-only (No middleware needed here)
+// 🌍 PUBLIC: Fetch all (No changes)
 router.get('/', async (_, res) => {
   const { data, error } = await supabase
     .from('news')
     .select('*')
     .eq('published', true)
     .order('created_at', { ascending: false });
-
   if (error) return res.status(500).json({ error: error.message });
   res.json(data);
 });
 
-// 🔐 Admin: create
-router.post('/', requireAdmin, async (req, res) => {
-  const { title, content } = req.body;
+// 🌍 PUBLIC: Fetch single (No changes)
+router.get('/:id', async (req, res) => {
+  const { data, error } = await supabase
+    .from('news')
+    .select('*')
+    .eq('id', req.params.id)
+    .single();
+  if (error) return res.status(404).json({ error: "News not found" });
+  res.json(data);
+});
 
-  const { data, error } = await supabase.from('news').insert({
-    title,
-    content,
-    published: false,
-  }).select(); // .select() returns the newly created item
+// 🔐 ADMIN: Create
+router.post('/', requireAdmin, async (req: any, res) => {
+  const { title, content, published } = req.body;
+  const adminEmail = req.user.email;
+
+  const { data, error } = await supabase
+    .from('news')
+    .insert([{ title, content, published: published || false }])
+    .select();
 
   if (error) return res.status(400).json({ error: error.message });
-  
+
+  // 📝 LOG ACTION
+  await supabase.from('audit_logs').insert({
+    admin: adminEmail,
+    action: 'CREATE_NEWS',
+    target_id: data[0].id,
+    details: `Created news article: "${title}"`
+  });
+
   res.status(201).json(data[0]);
 });
 
-// 🔐 Admin: update
-router.put('/:id', requireAdmin, async (req, res) => {
+// 🔐 ADMIN: Update
+router.put('/:id', requireAdmin, async (req: any, res) => {
   const { title, content, published } = req.body;
+  const adminEmail = req.user.email;
 
-  const { error } = await supabase
+  const { data, error } = await supabase
     .from('news')
-    .update({ title, content, published })
-    .eq('id', req.params.id);
+    .update({ title, content, published, updated_at: new Date().toISOString() })
+    .eq('id', req.params.id)
+    .select();
 
   if (error) return res.status(400).json({ error: error.message });
 
-  res.sendStatus(204); // 204 means "Success, but no content to send back"
+  // 📝 LOG ACTION
+  await supabase.from('audit_logs').insert({
+    admin: adminEmail,
+    action: 'UPDATE_NEWS',
+    target_id: req.params.id,
+    details: `Updated news article: "${title}" (Published: ${published})`
+  });
+
+  res.json(data[0]);
 });
 
-// 🔐 Admin: delete
-router.delete('/:id', requireAdmin, async (req, res) => {
-  const { error } = await supabase
-    .from('news')
-    .delete()
-    .eq('id', req.params.id);
+// 🔐 ADMIN: Delete
+router.delete('/:id', requireAdmin, async (req: any, res) => {
+  const adminEmail = req.user.email;
 
+  // Fetch title before deleting for a better log message
+  const { data: oldNews } = await supabase.from('news').select('title').eq('id', req.params.id).single();
+
+  const { error } = await supabase.from('news').delete().eq('id', req.params.id);
   if (error) return res.status(400).json({ error: error.message });
 
-  res.sendStatus(204);
+  // 📝 LOG ACTION
+  await supabase.from('audit_logs').insert({
+    admin: adminEmail,
+    action: 'DELETE_NEWS',
+    target_id: req.params.id,
+    details: `Deleted news article: "${oldNews?.title || 'Unknown'}"`
+  });
+
+  res.status(200).json({ message: "Deleted" });
 });
 
 export default router;

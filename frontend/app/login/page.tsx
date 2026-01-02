@@ -23,7 +23,6 @@ export default function LoginPage() {
 
     try {
       // 🔹 Step 1: Log in with Supabase Client 
-      // This fixes the "No session found" error in AdminGuard
       const { data: authData, error: authError } = await supabaseClient.auth.signInWithPassword({
         email,
         password,
@@ -119,6 +118,10 @@ export default function LoginPage() {
             {loginLoading ? <Loader /> : 'Sign In'}
           </button>
           {error && <p className="error">{error}</p>}
+
+          <p className="login-link">
+            Don't have an account? <a href="/signup">Sign up</a>
+          </p>
         </form>
         <div style={{ marginTop: '1rem', textAlign: 'center' }}>
           <p style={{ marginBottom: '0.5rem', color: '#555' }}>

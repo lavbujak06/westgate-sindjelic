@@ -27,18 +27,49 @@ export default function AdminNewsPage() {
 
   const handleDelete = async (id: string) => {
     if (!confirm('Are you sure you want to delete this news?')) return;
-    const { error } = await supabaseClient.from('news').delete().eq('id', id);
-    if (error) return console.error(error);
-    setNews(news.filter((n) => n.id !== id));
+    
+    try {
+      const res = await fetch ('http://localhost:5001/api/news/' + id, {
+        method: 'DELETE',
+        credentials: 'include', // 🔑 Sends the admin cookie!
+      });
+      
+      if (res.ok) {
+        setNews(news.filter((n) => n.id !== id));
+      }
+      else {
+        alert('Failed to delete news item. Are logged in as admin?');
+      }
+    }
+    catch (error) {
+      console.error('Error deleting news item:', error);
+      alert('An error occurred while deleting the news item.');
+    }
   };
 
   const handleTogglePublish = async (id: string, currentState: boolean) => {
-    const { error } = await supabaseClient
-      .from('news')
-      .update({ published: !currentState })
-      .eq('id', id);
-    if (error) return console.error(error);
-    setNews(news.map((n) => (n.id === id ? { ...n, published: !currentState } : n)));
+    try {
+      const res = await fetch('http://localhost:5001/api/news/' + id, {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ published: !currentState }),
+        credentials: 'include', // 🔑 Sends the admin cookie!
+      });
+
+      if (res.ok) {
+        setNews(
+          news.map((n) =>
+            n.id === id ? { ...n, published: !currentState } : n
+          )
+        );
+      }
+    }
+    catch (error) {
+      console.error('Error updating publish state:', error);
+      alert('An error occurred while updating the publish state.');
+    }
   };
 
   return (

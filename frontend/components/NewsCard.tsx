@@ -19,7 +19,7 @@ const NewsCard: React.FC<Props> = ({ news }) => {
     <Card>
       <h2 className="news-title">{news.title}</h2>
       <p className="news-content">{news.content}</p>
-      <span className="news-date">
+      <span className="news-date" suppressHydrationWarning>
         {new Date(news.created_at).toLocaleDateString('en-US', {
           year: 'numeric',
           month: 'long',
