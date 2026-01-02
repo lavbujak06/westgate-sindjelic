@@ -1,0 +1,24 @@
+/* [project]/frontend/app/admin/admin.css [app-client] (css) */
+body {
+  font-family: Inter, sans-serif;
+}
+
+aside {
+  box-shadow: 2px 0 5px #0000000d;
+}
+
+main {
+  background-color: #f0f4ff;
+  border-radius: .5rem;
+}
+
+.admin-link {
+  color: #1e40af;
+  text-decoration: none;
+}
+
+.admin-link:hover {
+  color: #2563eb;
+}
+
+/*# sourceMappingURL=frontend_app_admin_admin_08d77f78.css.map*/
