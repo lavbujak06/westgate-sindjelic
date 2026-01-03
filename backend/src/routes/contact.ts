@@ -24,20 +24,58 @@ router.post('/', upload.single('attachment'), async (req: any, res) => {
 
   try {
     const mailOptions: any = {
-      from: process.env.EMAIL_USER,
-      to: 'bujaklav@gmail.com', // Destination email
-      replyTo: email, // When you hit 'Reply' in your inbox, it goes to the user
-      subject: `[${category}] New Inquiry from ${name}`,
+      from: `"WSFC Portal" <${process.env.EMAIL_USER}>`, // Professional Sender Name
+      to: 'bujaklav@gmail.com',
+      replyTo: email,
+      subject: `TECHNICAL INQUIRY: ${category.toUpperCase()} / ${name.toUpperCase()}`,
       html: `
-        <h3>New Contact Form Submission</h3>
-        <p><strong>Name:</strong> ${name}</p>
-        <p><strong>Email:</strong> ${email}</p>
-        <p><strong>Phone:</strong> ${phone}</p>
-        <p><strong>Category:</strong> ${category}</p>
-        <p><strong>Relevant Date:</strong> ${date || 'N/A'}</p>
-        <p><strong>Message:</strong></p>
-        <p>${message}</p>
-      `,
+        <div style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; max-width: 600px; margin: 0 auto; color: #1e293b; line-height: 1.5;">
+          <div style="padding: 40px 0; text-align: left; border-bottom: 2px solid #f1f5f9;">
+            <h1 style="font-size: 24px; font-weight: 800; text-transform: uppercase; letter-spacing: -0.025em; margin: 0; color: #0f172a;">
+              Inquiry <span style="color: #dc2626;">Report</span>
+            </h1>
+            <p style="font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #64748b; margin: 4px 0 0 0;">
+              Westgate Sindjelic Technical Department
+            </p>
+          </div>
+
+          <div style="padding: 32px 0;">
+            <table style="width: 100%; border-collapse: collapse;">
+              <tr>
+                <td style="padding: 8px 0; font-size: 12px; font-weight: 700; color: #94a3b8; text-transform: uppercase; width: 35%;">From</td>
+                <td style="padding: 8px 0; font-size: 14px; color: #1e293b; font-weight: 500;">${name}</td>
+              </tr>
+              <tr>
+                <td style="padding: 8px 0; font-size: 12px; font-weight: 700; color: #94a3b8; text-transform: uppercase;">Email</td>
+                <td style="padding: 8px 0; font-size: 14px; color: #1e293b; font-weight: 500;">${email}</td>
+              </tr>
+              <tr>
+                <td style="padding: 8px 0; font-size: 12px; font-weight: 700; color: #94a3b8; text-transform: uppercase;">Phone</td>
+                <td style="padding: 8px 0; font-size: 14px; color: #1e293b; font-weight: 500;">${phone || 'Not Specified'}</td>
+              </tr>
+              <tr>
+                <td style="padding: 8px 0; font-size: 12px; font-weight: 700; color: #94a3b8; text-transform: uppercase;">Classification</td>
+                <td style="padding: 8px 0; font-size: 14px; color: #dc2626; font-weight: 700;">${category}</td>
+              </tr>
+              <tr>
+                <td style="padding: 8px 0; font-size: 12px; font-weight: 700; color: #94a3b8; text-transform: uppercase;">Filing Date</td>
+                <td style="padding: 8px 0; font-size: 14px; color: #1e293b; font-weight: 500;">${date || 'No date specified'}</td>
+              </tr>
+            </table>
+          </div>
+
+          <div style="padding: 32px; background-color: #f8fafc; border-radius: 16px; border: 1px solid #f1f5f9;">
+            <h2 style="font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em; color: #64748b; margin: 0 0 16px 0;">Subject Message</h2>
+            <div style="font-size: 15px; color: #334155; white-space: pre-wrap; line-height: 1.6;">${message}</div>
+          </div>
+
+          <div style="padding: 40px 0; border-top: 1px solid #f1f5f9; margin-top: 40px; text-align: center;">
+            <p style="font-size: 10px; color: #cbd5e1; text-transform: uppercase; letter-spacing: 0.1em; margin: 0;">
+              Confidential Communication — System Generated — ID: ${Math.random().toString(36).substr(2, 9).toUpperCase()}
+            </p>
+          </div>
+        </div>
+      `
     };
 
     // 2. Add attachment if it exists
