@@ -65,6 +65,8 @@ const Navbar = () => {
 
           <li className='hover:text-red-600 transition'><Link href="/pages/aboutUs">About Us</Link></li>
 
+          <li className='hover:text-red-600 transition'><Link href="/pages/contact">Contact Us</Link></li>
+
           {/* Account Menu - Perfectly Aligned */}
           <li className='ml-4 flex items-center'>
             <AccountMenu />
@@ -88,6 +90,7 @@ const Navbar = () => {
             <li onClick={handleNav}><Link href="/pages/women/seniors">Women</Link></li>
             <li onClick={handleNav}><Link href="/pages/juniors">Juniors</Link></li>
             <li onClick={handleNav}><Link href="/pages/aboutUs">About Us</Link></li>
+            <li onClick={handleNav}><Link href="/pages/contact">Contact Us</Link></li>
             
             {/* Account Menu wrapper with extra padding below to ensure scrolling space */}
             <li className='pt-6 pb-20 relative w-full flex justify-center'>

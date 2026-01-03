@@ -10,6 +10,7 @@ import mensGames from './routes/mensGames';
 import authRoutes from './routes/auth';
 import userRoutes from './routes/users';
 import auditRoutes from './routes/audit-logs';
+import coachesRouter from './routes/coaches';
 
 const app = express();
 
@@ -31,6 +32,7 @@ app.use('/api/mens/ladder', mensLadder);
 app.use('/api/mens/games', mensGames);
 app.use('/api/users', userRoutes);
 app.use('/api/audit-logs', auditRoutes);
+app.use('/api/coaches', coachesRouter);
 
 const PORT = 5001;
 app.listen(PORT, () => {

@@ -2,6 +2,7 @@
 import { useEffect, useState } from 'react';
 import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
+import CoachStaff from '@/components/CoachStuff';
 
 type Ladder = { pos: string; team: string; p: string; w: string; d: string; l: string; f: string; a: string; gd: string; pts: string; };
 type Game = { round: string; date: string; time: string; venue: string; wscore: string; opponent: string; ascore: string; };
@@ -98,6 +99,8 @@ export default function MensPage() {
           </div>
         </div>
       </div>
+
+      <CoachStaff teamSlug="senior-men" />
     </main>
   );
 }
