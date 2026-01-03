@@ -11,6 +11,7 @@ import authRoutes from './routes/auth';
 import userRoutes from './routes/users';
 import auditRoutes from './routes/audit-logs';
 import coachesRouter from './routes/coaches';
+import contactRouter from './routes/contact';
 
 const app = express();
 
@@ -33,6 +34,7 @@ app.use('/api/mens/games', mensGames);
 app.use('/api/users', userRoutes);
 app.use('/api/audit-logs', auditRoutes);
 app.use('/api/coaches', coachesRouter);
+app.use('/api/contact', contactRouter)
 
 const PORT = 5001;
 app.listen(PORT, () => {
