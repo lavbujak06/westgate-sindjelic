@@ -119,7 +119,7 @@ export default function ContactPage() {
           </div>
 
           <div className="space-y-1">
-            <label className="text-[10px] font-black text-slate-500 uppercase ml-2">Phone Number</label>
+            <label className="text-[10px] font-black text-slate-500 uppercase ml-2">Phone Number (optional)</label>
             <input className="w-full bg-slate-950 border border-slate-800 rounded-xl p-4 text-white text-sm focus:border-red-600 outline-none" 
               value={formData.phone} onChange={e => setFormData({...formData, phone: e.target.value})} />
           </div>

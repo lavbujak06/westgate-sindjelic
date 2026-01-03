@@ -31,7 +31,7 @@ __turbopack_context__.s([
 ]);
 var __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/frontend/node_modules/next/dist/compiled/react/jsx-dev-runtime.js [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/frontend/node_modules/next/dist/compiled/react/index.js [app-client] (ecmascript)");
-var __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$lib$2f$supabaseClient$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/frontend/lib/supabaseClient.ts [app-client] (ecmascript)"); // 👈 Added import
+var __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$lib$2f$supabaseClient$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/frontend/lib/supabaseClient.ts [app-client] (ecmascript)");
 ;
 var _s = __turbopack_context__.k.signature(), _s1 = __turbopack_context__.k.signature();
 'use client';
@@ -46,22 +46,20 @@ const UserProvider = ({ children })=>{
         try {
             // 1. Check Supabase first
             const { data: { user: supabaseUser } } = await __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$lib$2f$supabaseClient$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["supabaseClient"].auth.getUser();
-            // 🛡️ THE GUARD CLAUSE
-            // If there is no Supabase user, STOP HERE. 
-            // Don't call the backend, don't trigger a fetch error.
             if (!supabaseUser) {
                 setUser(null);
                 setProfile(null);
                 return;
             }
-            // 2. Only if we have a user, we ask the backend for the extra profile info
+            // 2. Ask backend for profile info
             const res = await fetch('http://localhost:5001/api/auth/me', {
                 method: 'GET',
                 credentials: 'include'
             });
-            // If the backend call fails (e.g., cookie expired), clear state
             if (!res.ok) {
-                setUser(null);
+                // If the backend doesn't recognize the session, but Supabase does,
+                // we should still keep the supabaseUser info at minimum
+                setUser(supabaseUser);
                 setProfile(null);
                 return;
             }
@@ -69,8 +67,6 @@ const UserProvider = ({ children })=>{
             setUser(data.user || supabaseUser);
             setProfile(data.profile);
         } catch (err) {
-            // This will now only trigger if the server is actually down 
-            // AND you are supposedly logged in.
             console.warn('Session check handled:', err);
             setUser(null);
             setProfile(null);
@@ -78,7 +74,26 @@ const UserProvider = ({ children })=>{
     };
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
         "UserProvider.useEffect": ()=>{
+            // INITIAL FETCH
             fetchUserProfile();
+            // 🔄 ADDED: AUTH STATE LISTENER
+            // This fixes the 401 by ensuring the frontend supabaseClient 
+            // stays in sync with the session cookies/backend.
+            const { data: { subscription } } = __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$lib$2f$supabaseClient$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["supabaseClient"].auth.onAuthStateChange({
+                "UserProvider.useEffect": (event, session)=>{
+                    if (event === 'SIGNED_IN' || event === 'TOKEN_REFRESHED') {
+                        fetchUserProfile();
+                    } else if (event === 'SIGNED_OUT') {
+                        setUser(null);
+                        setProfile(null);
+                    }
+                }
+            }["UserProvider.useEffect"]);
+            return ({
+                "UserProvider.useEffect": ()=>{
+                    subscription.unsubscribe();
+                }
+            })["UserProvider.useEffect"];
         }
     }["UserProvider.useEffect"], []);
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(UserContext.Provider, {
@@ -92,7 +107,7 @@ const UserProvider = ({ children })=>{
         children: children
     }, void 0, false, {
         fileName: "[project]/frontend/context/UserContext.tsx",
-        lineNumber: 65,
+        lineNumber: 78,
         columnNumber: 5
     }, ("TURBOPACK compile-time value", void 0));
 };

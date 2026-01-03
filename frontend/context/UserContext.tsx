@@ -1,7 +1,7 @@
 'use client';
 
 import { createContext, useContext, useEffect, useState, ReactNode } from 'react';
-import { supabaseClient } from '@/lib/supabaseClient'; // 👈 Added import
+import { supabaseClient } from '@/lib/supabaseClient';
 
 interface UserContextType {
   user: any;
@@ -22,24 +22,22 @@ export const UserProvider = ({ children }: { children: ReactNode }) => {
       // 1. Check Supabase first
       const { data: { user: supabaseUser } } = await supabaseClient.auth.getUser();
 
-      // 🛡️ THE GUARD CLAUSE
-      // If there is no Supabase user, STOP HERE. 
-      // Don't call the backend, don't trigger a fetch error.
       if (!supabaseUser) {
         setUser(null);
         setProfile(null);
         return; 
       }
 
-      // 2. Only if we have a user, we ask the backend for the extra profile info
+      // 2. Ask backend for profile info
       const res = await fetch('http://localhost:5001/api/auth/me', {
         method: 'GET',
         credentials: 'include',
       });
 
-      // If the backend call fails (e.g., cookie expired), clear state
       if (!res.ok) {
-        setUser(null);
+        // If the backend doesn't recognize the session, but Supabase does,
+        // we should still keep the supabaseUser info at minimum
+        setUser(supabaseUser); 
         setProfile(null);
         return;
       }
@@ -49,8 +47,6 @@ export const UserProvider = ({ children }: { children: ReactNode }) => {
       setProfile(data.profile);
 
     } catch (err) {
-      // This will now only trigger if the server is actually down 
-      // AND you are supposedly logged in.
       console.warn('Session check handled:', err);
       setUser(null);
       setProfile(null);
@@ -58,7 +54,24 @@ export const UserProvider = ({ children }: { children: ReactNode }) => {
   };
 
   useEffect(() => {
+    // INITIAL FETCH
     fetchUserProfile();
+
+    // 🔄 ADDED: AUTH STATE LISTENER
+    // This fixes the 401 by ensuring the frontend supabaseClient 
+    // stays in sync with the session cookies/backend.
+    const { data: { subscription } } = supabaseClient.auth.onAuthStateChange((event, session) => {
+      if (event === 'SIGNED_IN' || event === 'TOKEN_REFRESHED') {
+        fetchUserProfile();
+      } else if (event === 'SIGNED_OUT') {
+        setUser(null);
+        setProfile(null);
+      }
+    });
+
+    return () => {
+      subscription.unsubscribe();
+    };
   }, []);
 
   return (
