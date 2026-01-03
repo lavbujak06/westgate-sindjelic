@@ -53,6 +53,10 @@ export default function AdminDashboard() {
             <h2 className="text-2xl font-bold group-hover:text-red-500 transition-colors">User Databases →</h2>
             <p className="text-slate-500 mt-2 text-sm">Revoke access, monitor admin activity, and manage members.</p>
           </Link>
+          <Link href="/admin/coaches" className="group bg-slate-900/50 border border-slate-800 p-8 rounded-2xl hover:border-red-600 transition-all">
+            <h2 className="text-2xl font-bold group-hover:text-red-500 transition-colors">Coaches Archive →</h2>
+            <p className="text-slate-500 mt-2 text-sm">Manage coaching staff and their profiles.</p>
+          </Link>
         </div>
       </div>
     </div>
