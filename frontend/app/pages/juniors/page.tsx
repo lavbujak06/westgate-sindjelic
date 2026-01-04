@@ -83,7 +83,7 @@ export default function JuniorsPage() {
               Ready to take your game to the next level? Join Westgate Sindjelic today and train with the best.
             </p>
             <Link 
-              href="/contact" 
+              href="/pages/contact" 
               className="inline-block bg-white text-red-700 px-10 py-4 rounded-full font-black uppercase tracking-widest text-xs hover:bg-black hover:text-white transition-all shadow-xl"
             >
               Enquire Now

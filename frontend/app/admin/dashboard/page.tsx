@@ -49,9 +49,17 @@ export default function AdminDashboard() {
             <h2 className="text-2xl font-bold group-hover:text-red-500 transition-colors">Manage News Content →</h2>
             <p className="text-slate-500 mt-2 text-sm">Create, edit, and publish club updates to the front page.</p>
           </Link>
-          <Link href="/admin/accounts" className="group bg-slate-900/50 border border-slate-800 p-8 rounded-2xl hover:border-red-600 transition-all">
-            <h2 className="text-2xl font-bold group-hover:text-red-500 transition-colors">User Databases →</h2>
-            <p className="text-slate-500 mt-2 text-sm">Revoke access, monitor admin activity, and manage members.</p>
+          <Link href="/admin/coaches" className="group bg-slate-900/50 border border-slate-800 p-8 rounded-2xl hover:border-red-600 transition-all">
+            <h2 className="text-2xl font-bold group-hover:text-red-500 transition-colors">Coaches Archive →</h2>
+            <p className="text-slate-500 mt-2 text-sm">Manage coaching staff and their profiles.</p>
+          </Link>
+          <Link href="/admin/league" className="group bg-slate-900/50 border border-slate-800 p-8 rounded-2xl hover:border-red-600 transition-all">
+            <h2 className="text-2xl font-bold group-hover:text-red-500 transition-colors">League Database →</h2>
+            <p className="text-slate-500 mt-2 text-sm">Manage league data and standings.</p>
+          </Link>
+          <Link href="/admin/gallery" className="group bg-slate-900/50 border border-slate-800 p-8 rounded-2xl hover:border-red-600 transition-all">
+            <h2 className="text-2xl font-bold group-hover:text-red-500 transition-colors">Team Gallery →</h2>
+            <p className="text-slate-500 mt-2 text-sm">Manage team photos and media content.</p>
           </Link>
           <Link href="/admin/coaches" className="group bg-slate-900/50 border border-slate-800 p-8 rounded-2xl hover:border-red-600 transition-all">
             <h2 className="text-2xl font-bold group-hover:text-red-500 transition-colors">Coaches Archive →</h2>

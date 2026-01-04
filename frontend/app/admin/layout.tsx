@@ -11,7 +11,9 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
     { label: 'Dashboard', href: '/admin/dashboard', icon: '' },
     { label: 'News Archive', href: '/admin/news', icon: '' },
     { label: 'Coaches Archive', href: '/admin/coaches', icon: '' },
+    { label: 'League Database', href: '/admin/league', icon: '' },
     { label: 'User Accounts', href: '/admin/accounts', icon: '' },
+    { label: 'Team Gallery', href: '/admin/gallery', icon: '' },
     { label: 'Security Logs', href: '/admin/audit-logs', icon: '' },
   ];
 
