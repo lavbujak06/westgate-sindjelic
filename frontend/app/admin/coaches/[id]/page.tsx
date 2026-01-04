@@ -70,12 +70,17 @@ export default function CoachEditorPage() {
             role, 
             team_slug: teamSlug, 
             image_url: finalImageUrl, 
-            display_order: displayOrder 
+            display_order: Number(displayOrder) // Explicitly cast to Number
         }),
-        credentials: 'include', // <--- THIS WAS THE MISSING PIECE
+        credentials: 'include',
       });
 
-      if (!res.ok) throw new Error('Failed to save to database');
+      if (!res.ok) {
+          // This helps you see the EXACT error message from your Express backend
+          const errorData = await res.json().catch(() => ({ error: 'Unknown server error' }));
+          console.error("Detailed Backend Error:", errorData);
+          throw new Error(errorData.error || 'Failed to save to database');
+      }
 
       toast.success(isNew ? 'Coach Initialized' : 'Profile Updated');
       router.push('/admin/coaches');

@@ -59,31 +59,42 @@ router.put('/:id', requireAdmin, async (req: any, res) => {
     const { name, role, team_slug, image_url, display_order } = req.body;
     const adminEmail = req.user.email;
 
-    const { data, error } = await supabase
-      .from('coaches')
-      .update({ 
-        name, 
-        role, 
-        team_slug, 
-        image_url, 
-        display_order,
-        updated_at: new Date().toISOString() 
-      })
-      .eq('id', req.params.id)
-      .select();
+    try {
+        const { data, error } = await supabase
+          .from('coaches')
+          .update({ 
+            name, 
+            role, 
+            team_slug, 
+            image_url, 
+            display_order: Number(display_order), 
+          })
+          .eq('id', req.params.id)
+          .select();
 
-    if (error) return res.status(400).json({ error: error.message });
+        if (error) {
+            console.error("Supabase Update Error:", error);
+            return res.status(400).json({ error: error.message });
+        }
 
-    // 📝 LOG ACTION
-    await supabase.from('audit_logs').insert({
-      admin: adminEmail,
-      action: 'UPDATE_COACH',
-      target_id: data[0].id,
-      details: `Updated coach: "${name}"`
-    });
+        if (!data || data.length === 0) {
+            return res.status(404).json({ error: "Coach not found or no changes made" });
+        }
 
-    res.json(data[0]);
-    });
+        // 📝 LOG ACTION - Now safe because we verified data[0] exists
+        await supabase.from('audit_logs').insert({
+          admin: adminEmail,
+          action: 'UPDATE_COACH',
+          target_id: data[0].id,
+          details: `Updated coach: "${name}"`
+        });
+
+        res.json(data[0]);
+    } catch (err: any) {
+        console.error("Server Crash Avoided:", err.message);
+        res.status(500).json({ error: "Internal Server Error" });
+    }
+});
 
 // Admin: Delete a coach
 router.delete('/:id', requireAdmin, async (req: any, res) => {

@@ -1,4 +1,5 @@
 // Example: app/pages/men/seniors/page.tsx
+import CoachStaff from '@/components/CoachStuff';
 import Hero from '@/components/Hero';
 import Navbar from '@/components/Navbar';
 
@@ -27,16 +28,7 @@ export default function SeniorsMen() {
           </div>
         </section>
 
-        {/* COACHES SECTION */}
-        <section>
-          <h2 className="text-3xl font-bold mb-6 border-l-4 border-red-600 pl-4">Technical Staff</h2>
-          <div className="flex gap-8">
-            <div className="text-center">
-              <div className="w-32 h-32 bg-gray-200 rounded-full mb-2 mx-auto"></div>
-              <p className="font-bold">Head Coach</p>
-            </div>
-          </div>
-        </section>
+        <CoachStaff teamSlug="reserve-men" />
       </div>
     </main>
   );

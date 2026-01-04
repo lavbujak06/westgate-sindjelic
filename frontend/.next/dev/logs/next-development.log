@@ -1,42 +1,71 @@
-[00:00:00.573] Server  ERROR   (node:31829) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/lavbujak/Desktop/Sindjelic/westgate-sindjelic/frontend/next.config.js is not specified and it doesn't parse as CommonJS.
+[00:00:00.559] Server  ERROR   (node:21031) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/lavbujak/Desktop/Sindjelic/westgate-sindjelic/frontend/next.config.js is not specified and it doesn't parse as CommonJS.
 Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
 To eliminate this warning, add "type": "module" to /Users/lavbujak/Desktop/Sindjelic/westgate-sindjelic/frontend/package.json.
 (Use `node --trace-warnings ...` to show where the warning was created)
-[00:00:00.972] Server  WARN    ⚠ The "middleware" file convention is deprecated. Please use "proxy" instead. Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
-[00:00:01.044] Server  LOG     ✓ Ready in 803ms
-[00:00:04.737] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:00:04.876] Browser WARN    Image with src "/westgateLogo.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
-[00:00:19.761] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
-[00:00:59.363] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:00:59.879] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:01:00.489] Browser LOG     Admin detected, redirecting to dashboard...
-[00:01:00.669] Browser LOG     AdminGuard: 🔍 Found user: bujaklav@gmail.com
-[00:01:00.669] Browser LOG     AdminGuard: 🔍 Found user: bujaklav@gmail.com
-[00:01:00.973] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:01:01.428] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:01:01.931] Browser LOG     AdminGuard: ✅ Admin confirmed!
-[00:01:02.382] Browser LOG     AdminGuard: ✅ Admin confirmed!
-[00:01:39.302] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:01:39.811] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:01:40.273] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:01:40.835] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:02:08.663] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:02:09.196] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:02:09.864] Browser LOG     Admin detected, redirecting to dashboard...
-[00:02:09.864] Browser LOG     AdminGuard: 🔍 Found user: bujaklav@gmail.com
-[00:02:09.864] Browser LOG     AdminGuard: 🔍 Found user: bujaklav@gmail.com
-[00:02:10.290] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:02:10.745] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:02:11.248] Browser LOG     AdminGuard: ✅ Admin confirmed!
-[00:02:11.758] Browser LOG     AdminGuard: ✅ Admin confirmed!
-[00:02:40.024] Server  LOG     ✓ Compiled in 30ms
-[00:02:46.444] Server  LOG     ✓ Compiled in 43ms
-[00:02:55.646] Server  LOG     ✓ Compiled in 44ms
-[00:02:58.775] Server  LOG     ✓ Compiled in 37ms
-[00:03:25.563] Server  LOG     ✓ Compiled in 68ms
-[00:04:09.541] Server  LOG     ✓ Compiled in 45ms
-[00:04:19.108] Server  LOG     ✓ Compiled in 34ms
-[00:04:32.256] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:04:32.741] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:04:33.220] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:04:33.694] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
+[00:00:00.853] Server  WARN    ⚠ The "middleware" file convention is deprecated. Please use "proxy" instead. Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
+[00:00:00.931] Server  LOG     ✓ Ready in 650ms
+[00:00:01.771] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:01.905] Browser WARN    Image with src "/westgateLogo.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:00:02.748] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:02.876] Browser WARN    Image with src "/westgateLogo.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:00:03.538] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:03.666] Browser WARN    Image with src "/westgateLogo.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:00:03.986] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:04.118] Browser WARN    Image with src "/westgateLogo.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:00:04.355] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:04.488] Browser WARN    Image with src "/westgateLogo.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:00:04.661] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:04.797] Browser WARN    Image with src "/westgateLogo.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:00:04.992] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:05.080] Browser WARN    Image with src "/westgateLogo.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:00:05.188] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:05.307] Browser WARN    Image with src "/westgateLogo.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:00:05.419] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:05.469] Browser WARN    Image with src "/westgateLogo.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:00:05.574] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:05.605] Browser WARN    Image with src "/westgateLogo.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:00:05.747] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:05.897] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:05.942] Browser WARN    Image with src "/westgateLogo.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:00:06.051] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:06.085] Browser WARN    Image with src "/westgateLogo.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:00:06.182] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:06.235] Browser WARN    Image with src "/westgateLogo.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:00:06.338] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:06.469] Browser WARN    Image with src "/westgateLogo.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:00:09.481] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
+[00:00:10.480] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
+[00:00:13.478] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
+[00:00:14.479] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
+[00:00:18.496] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
+[00:00:19.014] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
+[00:00:19.207] Browser LOG     AdminGuard: 🔍 Found user: bujaklav@gmail.com
+[00:00:19.207] Browser LOG     AdminGuard: 🔍 Found user: bujaklav@gmail.com
+[00:00:19.739] Browser LOG     AdminGuard: ✅ Admin confirmed!
+[00:00:19.739] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+[00:00:20.234] Browser LOG     AdminGuard: ✅ Admin confirmed!
+[00:00:54.336] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
+[00:00:55.052] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
+[00:00:55.566] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
+[00:00:56.073] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
+[00:01:15.631] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
+[00:01:16.097] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
+[00:01:17.043] Browser LOG     Admin detected, redirecting to dashboard...
+[00:01:17.043] Browser LOG     AdminGuard: 🔍 Found user: bujaklav@gmail.com
+[00:01:17.043] Browser LOG     AdminGuard: 🔍 Found user: bujaklav@gmail.com
+[00:01:17.460] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
+[00:01:18.090] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
+[00:01:18.593] Browser LOG     AdminGuard: ✅ Admin confirmed!
+[00:01:19.115] Browser LOG     AdminGuard: ✅ Admin confirmed!
+[00:15:18.847] Server  LOG     ✓ Compiled in 603ms
+[00:15:42.458] Browser ERROR   Detailed Backend Error: {"error":"Could not find the 'updated_at' column of 'coaches' in the schema cache"}
+[00:16:58.259] Browser WARN    Session check handled: {}
+[00:17:15.226] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:17:15.353] Browser LOG     AdminGuard: 🔍 Found user: bujaklav@gmail.com
+[00:17:17.472] Browser LOG     AdminGuard: ✅ Admin confirmed!
+[00:17:38.415] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+[00:18:27.502] Browser WARN    Image with src "/westgateLogo.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:18:27.942] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
+[00:18:28.432] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
+[00:18:28.945] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
+[00:18:29.459] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
