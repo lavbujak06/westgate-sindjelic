@@ -1,22 +1,52 @@
-[00:00:00.469] Server  ERROR   (node:81367) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/lavbujak/Desktop/Sindjelic/westgate-sindjelic/frontend/next.config.js is not specified and it doesn't parse as CommonJS.
+[00:00:00.532] Server  ERROR   (node:85081) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/lavbujak/Desktop/Sindjelic/westgate-sindjelic/frontend/next.config.js is not specified and it doesn't parse as CommonJS.
 Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
 To eliminate this warning, add "type": "module" to /Users/lavbujak/Desktop/Sindjelic/westgate-sindjelic/frontend/package.json.
 (Use `node --trace-warnings ...` to show where the warning was created)
-[00:00:00.732] Server  WARN    ⚠ The "middleware" file convention is deprecated. Please use "proxy" instead. Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
-[00:00:00.805] Server  LOG     ✓ Ready in 578ms
-[00:00:01.575] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:00:02.568] Browser WARN    Image with src "/westgateLogo.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
-[00:00:02.568] Browser ERROR   Error fetching coaches: {}
-[00:00:02.568] Browser ERROR   unhandledRejection: TypeError: Failed to fetch
-[00:00:02.568] Browser ERROR   unhandledRejection: TypeError: Failed to fetch
-[00:00:02.568] Browser WARN    Session check handled: {}
-[00:00:09.901] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:00:10.357] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:00:10.541] Browser WARN    Image with src "/westgateLogo.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
-[00:00:12.912] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
-[00:00:13.059] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:00:13.533] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:00:14.005] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:00:14.538] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:00:15.044] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:00:15.556] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
+[00:00:00.879] Server  WARN    ⚠ The "middleware" file convention is deprecated. Please use "proxy" instead. Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
+[00:00:00.971] Server  LOG     ✓ Ready in 742ms
+[00:00:04.376] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:04.523] Browser WARN    Image with src "/westgateLogo.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:00:06.003] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
+[00:00:06.498] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
+[00:00:54.724] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
+[00:00:55.236] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
+[00:01:26.212] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
+[00:01:26.788] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
+[00:02:12.090] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
+[00:02:12.757] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
+[00:02:43.594] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
+[00:02:44.089] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
+[00:02:47.086] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:02:47.221] Browser WARN    Image with src "/westgateLogo.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:02:48.487] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
+[00:02:49.002] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
+[00:03:37.025] Server  LOG     ✓ Compiled in 964ms
+[00:03:37.453] Server  ERROR   ⨯ "The requested resource isn't a valid image for" "/.png" "received" null
+[00:03:39.578] Server  LOG     ✓ Compiled in 39ms
+[00:03:39.791] Server  ERROR   ⨯ "The requested resource isn't a valid image for" "/" "received" null
+[00:03:49.069] Server  ERROR   ⨯ "The requested resource isn't a valid image for" "/westgateLogo" "received" null
+[00:03:49.080] Server  LOG     ✓ Compiled in 55ms
+[00:03:51.523] Server  LOG     ✓ Compiled in 32ms
+[00:03:51.555] Server  ERROR   ⨯ "The requested resource isn't a valid image for" "/westgateLogo." "received" null
+[00:03:54.121] Server  ERROR   ⨯ "The requested resource isn't a valid image for" "/westgateLogo.jpeg" "received" null
+[00:03:54.127] Server  LOG     ✓ Compiled in 54ms
+[00:04:07.837] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
+[00:04:08.324] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
+[00:04:08.954] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:04:09.084] Browser WARN    Image with src "/westgateLogo.jpeg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:04:10.106] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
+[00:04:10.577] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
+[00:11:35.866] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
+[00:11:36.394] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
+[00:12:38.615] Server  LOG     ✓ Compiled in 99ms
+[00:12:38.722] Server  ERROR   ⨯ "The requested resource isn't a valid image for" "/WestgateLogo.jpeg" "received" null
+[00:12:41.589] Server  LOG     ✓ Compiled in 41ms
+[00:12:41.627] Server  ERROR   ⨯ "The requested resource isn't a valid image for" "/Westgatelogo.jpeg" "received" null
+[00:12:47.739] Server  LOG     ✓ Compiled in 43ms
+[00:12:47.785] Server  ERROR   ⨯ "The requested resource isn't a valid image for" "/Westgatelogo." "received" null
+[00:12:49.410] Server  LOG     ✓ Compiled in 38ms
+[00:12:50.374] Browser WARN    Image with src "/Westgatelogo.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:12:56.255] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
+[00:12:56.856] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
+[00:13:19.957] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
+[00:13:20.483] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.

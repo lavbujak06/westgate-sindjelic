@@ -27,7 +27,7 @@ const Navbar = () => {
         
         {/* LOGO */}
         <Link href="/" className='flex items-center gap-3 z-50'>
-          <Image src="/westgateLogo.png" alt="Logo" width={45} height={45} />
+          <Image src="/Westgatelogo.png" alt="Logo" width={45} height={45} />
           <span className={`font-black text-xl tracking-tighter transition-colors duration-300 ${
             (isScrolled || nav) ? 'text-black' : 'text-white'
           }`}>
