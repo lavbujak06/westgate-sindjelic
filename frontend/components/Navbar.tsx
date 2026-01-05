@@ -65,7 +65,7 @@ const Navbar = () => {
 
           <li className='hover:text-red-600 transition'><Link href="/pages/aboutUs">About Us</Link></li>
 
-          <li className='hover:text-red-600 transition'><Link href="/pages/contact">Contact Us</Link></li>
+          {/* <li className='hover:text-red-600 transition'><Link href="/pages/contact">Contact Us</Link></li> */}
 
           {/* Account Menu - Perfectly Aligned */}
           <li className='ml-4 flex items-center'>

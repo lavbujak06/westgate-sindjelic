@@ -13,6 +13,7 @@ import contactRouter from './routes/contact';
 import scraperRoutes from './routes/scraper';
 import leagueRoutes from './routes/league';
 import mediaRoutes from './routes/media';
+import sponsorsRoutes from './routes/sponsors';
 
 const app = express();
 
@@ -37,6 +38,7 @@ app.use('/api/contact', contactRouter)
 app.use('/api/scraper', scraperRoutes);
 app.use('/api/league', leagueRoutes);
 app.use('/api/media', mediaRoutes);
+app.use('/api/sponsors', sponsorsRoutes);
 
 const PORT = 5001;
 app.listen(PORT, () => {
