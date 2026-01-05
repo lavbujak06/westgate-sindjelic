@@ -147,7 +147,7 @@ export default function AccountSettings() {
           <button 
             type="submit" 
             disabled={uploading}
-            className="w-full bg-red-600 py-4 rounded-xl text-[10px] font-black uppercase tracking-[0.2em] hover:bg-red-700 transition-all shadow-lg active:scale-95 disabled:opacity-50 h-[52px] flex items-center justify-center"
+            className="w-full bg-red-600 py-4 rounded-xl text-[10px] font-black uppercase tracking-[0.2em] hover:bg-red-700 transition-all shadow-lg active:scale-95 disabled:opacity-50 h-13 flex items-center justify-center"
           >
             {uploading ? <Loader /> : 'Save Changes'}
           </button>

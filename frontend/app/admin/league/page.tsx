@@ -155,7 +155,7 @@ export default function LeagueManagerPage() {
 
         {/* Create Season Form */}
         {showForm && (
-          <form onSubmit={handleCreateConfig} className="mb-12 p-8 bg-slate-900/50 rounded-[2rem] border border-slate-800 grid grid-cols-2 gap-6 animate-in fade-in slide-in-from-top-4 backdrop-blur-md">
+          <form onSubmit={handleCreateConfig} className="mb-12 p-8 bg-slate-900/50 rounded-4xl border border-slate-800 grid grid-cols-2 gap-6 animate-in fade-in slide-in-from-top-4 backdrop-blur-md">
             <div className="col-span-1">
               <label className="text-[10px] font-black uppercase text-slate-500 mb-2 block ml-1">Year</label>
               <input required type="number" className="w-full bg-slate-950 border border-slate-800 p-4 rounded-2xl focus:border-red-600 outline-none transition-all" value={newConfig.season_year} onChange={e => setNewConfig({...newConfig, season_year: parseInt(e.target.value)})} />

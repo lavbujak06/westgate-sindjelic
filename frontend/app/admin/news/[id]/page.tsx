@@ -105,7 +105,7 @@ export default function NewsEditorPage() {
 
           <div className="space-y-2">
             <label className="text-[10px] font-black uppercase tracking-widest text-slate-500">Content Body</label>
-            <textarea value={content} onChange={e => setContent(e.target.value)} className="w-full bg-slate-950 border border-slate-800 rounded-xl p-4 text-sm min-h-[150px] focus:border-red-600 outline-none resize-none" required />
+            <textarea value={content} onChange={e => setContent(e.target.value)} className="w-full bg-slate-950 border border-slate-800 rounded-xl p-4 text-sm min-h-37.5 focus:border-red-600 outline-none resize-none" required />
           </div>
 
           <div className="flex items-center gap-3">

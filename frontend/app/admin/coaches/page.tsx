@@ -103,7 +103,7 @@ export default function CoachesAdminDashboard() {
                   <h2 className="text-[11px] font-black uppercase tracking-[0.4em] text-slate-500">
                     {team.replace('-', ' ')}
                   </h2>
-                  <div className="h-px flex-grow bg-slate-800/50"></div>
+                  <div className="h-px grow bg-slate-800/50"></div>
                   <span className="text-[9px] font-mono text-red-500 bg-red-500/10 px-2 py-1 rounded border border-red-500/20">
                     {members.length} UNITS
                   </span>
