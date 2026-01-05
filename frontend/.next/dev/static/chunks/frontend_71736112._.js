@@ -181,7 +181,7 @@ const AccountMenu = ()=>{
                                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
                                     href: "/login",
                                     className: "flex items-center px-4 py-3 text-[10px] font-black uppercase tracking-widest text-white bg-red-600 rounded-xl hover:bg-red-700 transition-all text-center justify-center",
-                                    children: "Identify (Log In)"
+                                    children: "Log In"
                                 }, void 0, false, {
                                     fileName: "[project]/frontend/components/AccountMenu.tsx",
                                     lineNumber: 122,
@@ -278,7 +278,7 @@ const Navbar = ()=>{
                     className: "flex items-center gap-3 z-50",
                     children: [
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
-                            src: "/westgateLogo.png",
+                            src: "/Westgatelogo.png",
                             alt: "Logo",
                             width: 45,
                             height: 45
@@ -465,45 +465,80 @@ const Navbar = ()=>{
                             columnNumber: 11
                         }, ("TURBOPACK compile-time value", void 0)),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
-                            className: "hover:text-red-600 transition",
-                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
-                                href: "/pages/aboutUs",
-                                children: "About Us"
-                            }, void 0, false, {
-                                fileName: "[project]/frontend/components/Navbar.tsx",
-                                lineNumber: 66,
-                                columnNumber: 57
-                            }, ("TURBOPACK compile-time value", void 0))
-                        }, void 0, false, {
+                            className: "group relative py-4 cursor-pointer",
+                            children: [
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                    className: "flex items-center gap-1 hover:text-red-600 transition",
+                                    children: [
+                                        "About Us ",
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$react$2d$icons$2f$ai$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["AiOutlineCaretDown"], {
+                                            size: 12
+                                        }, void 0, false, {
+                                            fileName: "[project]/frontend/components/Navbar.tsx",
+                                            lineNumber: 68,
+                                            columnNumber: 24
+                                        }, ("TURBOPACK compile-time value", void 0))
+                                    ]
+                                }, void 0, true, {
+                                    fileName: "[project]/frontend/components/Navbar.tsx",
+                                    lineNumber: 67,
+                                    columnNumber: 13
+                                }, ("TURBOPACK compile-time value", void 0)),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("ul", {
+                                    className: "absolute hidden group-hover:block top-full left-0 bg-white text-black shadow-xl min-w-40 border-t-4 border-red-600",
+                                    children: [
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
+                                            className: "px-4 py-3 hover:bg-gray-100 hover:text-red-600 border-b border-gray-50",
+                                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
+                                                href: "/pages/aboutUs",
+                                                children: "About Us"
+                                            }, void 0, false, {
+                                                fileName: "[project]/frontend/components/Navbar.tsx",
+                                                lineNumber: 71,
+                                                columnNumber: 103
+                                            }, ("TURBOPACK compile-time value", void 0))
+                                        }, void 0, false, {
+                                            fileName: "[project]/frontend/components/Navbar.tsx",
+                                            lineNumber: 71,
+                                            columnNumber: 16
+                                        }, ("TURBOPACK compile-time value", void 0)),
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
+                                            className: "px-4 py-3 hover:bg-gray-100 hover:text-red-600",
+                                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
+                                                href: "/pages/contact",
+                                                children: "Contact Us"
+                                            }, void 0, false, {
+                                                fileName: "[project]/frontend/components/Navbar.tsx",
+                                                lineNumber: 72,
+                                                columnNumber: 79
+                                            }, ("TURBOPACK compile-time value", void 0))
+                                        }, void 0, false, {
+                                            fileName: "[project]/frontend/components/Navbar.tsx",
+                                            lineNumber: 72,
+                                            columnNumber: 16
+                                        }, ("TURBOPACK compile-time value", void 0))
+                                    ]
+                                }, void 0, true, {
+                                    fileName: "[project]/frontend/components/Navbar.tsx",
+                                    lineNumber: 70,
+                                    columnNumber: 13
+                                }, ("TURBOPACK compile-time value", void 0))
+                            ]
+                        }, void 0, true, {
                             fileName: "[project]/frontend/components/Navbar.tsx",
                             lineNumber: 66,
-                            columnNumber: 11
-                        }, ("TURBOPACK compile-time value", void 0)),
-                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
-                            className: "hover:text-red-600 transition",
-                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
-                                href: "/pages/contact",
-                                children: "Contact Us"
-                            }, void 0, false, {
-                                fileName: "[project]/frontend/components/Navbar.tsx",
-                                lineNumber: 68,
-                                columnNumber: 57
-                            }, ("TURBOPACK compile-time value", void 0))
-                        }, void 0, false, {
-                            fileName: "[project]/frontend/components/Navbar.tsx",
-                            lineNumber: 68,
                             columnNumber: 11
                         }, ("TURBOPACK compile-time value", void 0)),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
                             className: "ml-4 flex items-center",
                             children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$components$2f$AccountMenu$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
                                 fileName: "[project]/frontend/components/Navbar.tsx",
-                                lineNumber: 72,
+                                lineNumber: 80,
                                 columnNumber: 13
                             }, ("TURBOPACK compile-time value", void 0))
                         }, void 0, false, {
                             fileName: "[project]/frontend/components/Navbar.tsx",
-                            lineNumber: 71,
+                            lineNumber: 79,
                             columnNumber: 11
                         }, ("TURBOPACK compile-time value", void 0))
                     ]
@@ -520,19 +555,19 @@ const Navbar = ()=>{
                         className: "text-black"
                     }, void 0, false, {
                         fileName: "[project]/frontend/components/Navbar.tsx",
-                        lineNumber: 78,
+                        lineNumber: 86,
                         columnNumber: 18
                     }, ("TURBOPACK compile-time value", void 0)) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$react$2d$icons$2f$ai$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["AiOutlineMenu"], {
                         size: 25,
                         className: isScrolled ? 'text-black' : 'text-white'
                     }, void 0, false, {
                         fileName: "[project]/frontend/components/Navbar.tsx",
-                        lineNumber: 78,
+                        lineNumber: 86,
                         columnNumber: 72
                     }, ("TURBOPACK compile-time value", void 0))
                 }, void 0, false, {
                     fileName: "[project]/frontend/components/Navbar.tsx",
-                    lineNumber: 77,
+                    lineNumber: 85,
                     columnNumber: 9
                 }, ("TURBOPACK compile-time value", void 0)),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -547,12 +582,12 @@ const Navbar = ()=>{
                                     children: "News"
                                 }, void 0, false, {
                                     fileName: "[project]/frontend/components/Navbar.tsx",
-                                    lineNumber: 88,
+                                    lineNumber: 96,
                                     columnNumber: 37
                                 }, ("TURBOPACK compile-time value", void 0))
                             }, void 0, false, {
                                 fileName: "[project]/frontend/components/Navbar.tsx",
-                                lineNumber: 88,
+                                lineNumber: 96,
                                 columnNumber: 13
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
@@ -562,12 +597,12 @@ const Navbar = ()=>{
                                     children: "Men"
                                 }, void 0, false, {
                                     fileName: "[project]/frontend/components/Navbar.tsx",
-                                    lineNumber: 89,
+                                    lineNumber: 97,
                                     columnNumber: 37
                                 }, ("TURBOPACK compile-time value", void 0))
                             }, void 0, false, {
                                 fileName: "[project]/frontend/components/Navbar.tsx",
-                                lineNumber: 89,
+                                lineNumber: 97,
                                 columnNumber: 13
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
@@ -577,12 +612,12 @@ const Navbar = ()=>{
                                     children: "Women"
                                 }, void 0, false, {
                                     fileName: "[project]/frontend/components/Navbar.tsx",
-                                    lineNumber: 90,
+                                    lineNumber: 98,
                                     columnNumber: 37
                                 }, ("TURBOPACK compile-time value", void 0))
                             }, void 0, false, {
                                 fileName: "[project]/frontend/components/Navbar.tsx",
-                                lineNumber: 90,
+                                lineNumber: 98,
                                 columnNumber: 13
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
@@ -592,12 +627,12 @@ const Navbar = ()=>{
                                     children: "Juniors"
                                 }, void 0, false, {
                                     fileName: "[project]/frontend/components/Navbar.tsx",
-                                    lineNumber: 91,
+                                    lineNumber: 99,
                                     columnNumber: 37
                                 }, ("TURBOPACK compile-time value", void 0))
                             }, void 0, false, {
                                 fileName: "[project]/frontend/components/Navbar.tsx",
-                                lineNumber: 91,
+                                lineNumber: 99,
                                 columnNumber: 13
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
@@ -607,12 +642,12 @@ const Navbar = ()=>{
                                     children: "About Us"
                                 }, void 0, false, {
                                     fileName: "[project]/frontend/components/Navbar.tsx",
-                                    lineNumber: 92,
+                                    lineNumber: 100,
                                     columnNumber: 37
                                 }, ("TURBOPACK compile-time value", void 0))
                             }, void 0, false, {
                                 fileName: "[project]/frontend/components/Navbar.tsx",
-                                lineNumber: 92,
+                                lineNumber: 100,
                                 columnNumber: 13
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
@@ -622,12 +657,12 @@ const Navbar = ()=>{
                                     children: "Contact Us"
                                 }, void 0, false, {
                                     fileName: "[project]/frontend/components/Navbar.tsx",
-                                    lineNumber: 93,
+                                    lineNumber: 101,
                                     columnNumber: 37
                                 }, ("TURBOPACK compile-time value", void 0))
                             }, void 0, false, {
                                 fileName: "[project]/frontend/components/Navbar.tsx",
-                                lineNumber: 93,
+                                lineNumber: 101,
                                 columnNumber: 13
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
@@ -636,28 +671,28 @@ const Navbar = ()=>{
                                     className: "scale-125",
                                     children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$components$2f$AccountMenu$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
                                         fileName: "[project]/frontend/components/Navbar.tsx",
-                                        lineNumber: 98,
+                                        lineNumber: 106,
                                         columnNumber: 17
                                     }, ("TURBOPACK compile-time value", void 0))
                                 }, void 0, false, {
                                     fileName: "[project]/frontend/components/Navbar.tsx",
-                                    lineNumber: 97,
+                                    lineNumber: 105,
                                     columnNumber: 13
                                 }, ("TURBOPACK compile-time value", void 0))
                             }, void 0, false, {
                                 fileName: "[project]/frontend/components/Navbar.tsx",
-                                lineNumber: 96,
+                                lineNumber: 104,
                                 columnNumber: 13
                             }, ("TURBOPACK compile-time value", void 0))
                         ]
                     }, void 0, true, {
                         fileName: "[project]/frontend/components/Navbar.tsx",
-                        lineNumber: 87,
+                        lineNumber: 95,
                         columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0))
                 }, void 0, false, {
                     fileName: "[project]/frontend/components/Navbar.tsx",
-                    lineNumber: 82,
+                    lineNumber: 90,
                     columnNumber: 9
                 }, ("TURBOPACK compile-time value", void 0))
             ]
@@ -776,12 +811,19 @@ const CoachStaff = ({ teamSlug })=>{
     const [loading, setLoading] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(true);
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
         "CoachStaff.useEffect": ()=>{
-            // Fetch only the coaches for the specific teamSlug provided to this component
             fetch(`http://localhost:5001/api/coaches?team=${teamSlug}`).then({
                 "CoachStaff.useEffect": (res)=>res.json()
             }["CoachStaff.useEffect"]).then({
                 "CoachStaff.useEffect": (data)=>{
-                    if (Array.isArray(data)) setCoaches(data);
+                    if (Array.isArray(data)) {
+                        // Sort so head_coach always comes first
+                        const sorted = [
+                            ...data
+                        ].sort({
+                            "CoachStaff.useEffect.sorted": (a)=>a.role === 'head_coach' ? -1 : 1
+                        }["CoachStaff.useEffect.sorted"]);
+                        setCoaches(sorted);
+                    }
                     setLoading(false);
                 }
             }["CoachStaff.useEffect"]).catch({
@@ -799,21 +841,18 @@ const CoachStaff = ({ teamSlug })=>{
         children: "Loading Staff..."
     }, void 0, false, {
         fileName: "[project]/frontend/components/CoachStuff.tsx",
-        lineNumber: 34,
+        lineNumber: 37,
         columnNumber: 23
     }, ("TURBOPACK compile-time value", void 0));
     if (coaches.length === 0) return null;
-    // Separate Head Coach for a bigger display
-    const headCoach = coaches.find((c)=>c.role === 'head_coach');
-    const assistants = coaches.filter((c)=>c.role === 'assistant_coach');
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
-        className: "max-w-7xl mx-auto px-4 md:px-6 py-16",
+        className: "max-w-7xl mx-auto px-4 md:px-6 py-20",
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "text-center mb-12",
+                className: "flex items-end gap-4 mb-12",
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
-                        className: "text-3xl font-black uppercase italic text-gray-900",
+                        className: "text-4xl font-black uppercase italic text-gray-900 tracking-tighter",
                         children: [
                             "Technical ",
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -821,122 +860,88 @@ const CoachStaff = ({ teamSlug })=>{
                                 children: "Staff"
                             }, void 0, false, {
                                 fileName: "[project]/frontend/components/CoachStuff.tsx",
-                                lineNumber: 45,
+                                lineNumber: 44,
                                 columnNumber: 21
                             }, ("TURBOPACK compile-time value", void 0))
                         ]
                     }, void 0, true, {
                         fileName: "[project]/frontend/components/CoachStuff.tsx",
-                        lineNumber: 44,
+                        lineNumber: 43,
                         columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "h-1 w-12 bg-red-600 mx-auto mt-2"
+                        className: "h-[2px] flex-1 bg-gray-100 mb-3"
                     }, void 0, false, {
                         fileName: "[project]/frontend/components/CoachStuff.tsx",
-                        lineNumber: 47,
+                        lineNumber: 46,
                         columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0))
                 ]
             }, void 0, true, {
                 fileName: "[project]/frontend/components/CoachStuff.tsx",
-                lineNumber: 43,
+                lineNumber: 42,
                 columnNumber: 7
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "flex flex-col items-center gap-12",
-                children: [
-                    headCoach && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "flex flex-col items-center group",
+                className: "grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 md:gap-10",
+                children: coaches.map((coach)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                        className: "group flex flex-col items-center",
                         children: [
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "w-48 h-48 rounded-full overflow-hidden border-4 border-red-600 shadow-2xl transition-transform group-hover:scale-105",
-                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
-                                    src: headCoach.image_url,
-                                    alt: headCoach.name,
-                                    className: "w-full h-full object-cover"
+                                className: `relative w-full aspect-[4/5] overflow-hidden rounded-2xl shadow-xl transition-all duration-500 group-hover:shadow-red-500/20 group-hover:-translate-y-2 ${coach.role === 'head_coach' ? 'border-2 border-red-600' : 'border border-gray-100'}`,
+                                children: [
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
+                                        src: coach.image_url,
+                                        alt: coach.name,
+                                        className: "w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-110"
+                                    }, void 0, false, {
+                                        fileName: "[project]/frontend/components/CoachStuff.tsx",
+                                        lineNumber: 57,
+                                        columnNumber: 15
+                                    }, ("TURBOPACK compile-time value", void 0)),
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                        className: "absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4",
+                                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                            className: `text-[10px] font-black uppercase tracking-widest ${coach.role === 'head_coach' ? 'text-red-500' : 'text-gray-300'}`,
+                                            children: coach.role === 'head_coach' ? 'Head Coach' : 'Assistant Coach'
+                                        }, void 0, false, {
+                                            fileName: "[project]/frontend/components/CoachStuff.tsx",
+                                            lineNumber: 65,
+                                            columnNumber: 18
+                                        }, ("TURBOPACK compile-time value", void 0))
+                                    }, void 0, false, {
+                                        fileName: "[project]/frontend/components/CoachStuff.tsx",
+                                        lineNumber: 64,
+                                        columnNumber: 15
+                                    }, ("TURBOPACK compile-time value", void 0))
+                                ]
+                            }, void 0, true, {
+                                fileName: "[project]/frontend/components/CoachStuff.tsx",
+                                lineNumber: 56,
+                                columnNumber: 13
+                            }, ("TURBOPACK compile-time value", void 0)),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                className: "mt-4 text-center",
+                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
+                                    className: "text-lg font-black uppercase italic text-gray-900 leading-tight",
+                                    children: coach.name
                                 }, void 0, false, {
                                     fileName: "[project]/frontend/components/CoachStuff.tsx",
-                                    lineNumber: 55,
+                                    lineNumber: 72,
                                     columnNumber: 15
                                 }, ("TURBOPACK compile-time value", void 0))
                             }, void 0, false, {
                                 fileName: "[project]/frontend/components/CoachStuff.tsx",
-                                lineNumber: 54,
-                                columnNumber: 13
-                            }, ("TURBOPACK compile-time value", void 0)),
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
-                                className: "mt-4 text-xl font-black uppercase text-gray-900",
-                                children: headCoach.name
-                            }, void 0, false, {
-                                fileName: "[project]/frontend/components/CoachStuff.tsx",
-                                lineNumber: 57,
-                                columnNumber: 13
-                            }, ("TURBOPACK compile-time value", void 0)),
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                className: "text-red-600 font-bold uppercase text-xs tracking-widest",
-                                children: "Head Coach"
-                            }, void 0, false, {
-                                fileName: "[project]/frontend/components/CoachStuff.tsx",
-                                lineNumber: 58,
+                                lineNumber: 71,
                                 columnNumber: 13
                             }, ("TURBOPACK compile-time value", void 0))
                         ]
-                    }, void 0, true, {
+                    }, coach.id, true, {
                         fileName: "[project]/frontend/components/CoachStuff.tsx",
-                        lineNumber: 53,
+                        lineNumber: 52,
                         columnNumber: 11
-                    }, ("TURBOPACK compile-time value", void 0)),
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 w-full",
-                        children: assistants.map((coach)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "flex flex-col items-center bg-white p-6 rounded-2xl shadow-lg border border-gray-100",
-                                children: [
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                        className: "w-24 h-24 rounded-full overflow-hidden border-2 border-gray-300 mb-4",
-                                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
-                                            src: coach.image_url,
-                                            alt: coach.name,
-                                            className: "w-full h-full object-cover"
-                                        }, void 0, false, {
-                                            fileName: "[project]/frontend/components/CoachStuff.tsx",
-                                            lineNumber: 67,
-                                            columnNumber: 17
-                                        }, ("TURBOPACK compile-time value", void 0))
-                                    }, void 0, false, {
-                                        fileName: "[project]/frontend/components/CoachStuff.tsx",
-                                        lineNumber: 66,
-                                        columnNumber: 15
-                                    }, ("TURBOPACK compile-time value", void 0)),
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h4", {
-                                        className: "text-sm font-bold uppercase text-gray-900",
-                                        children: coach.name
-                                    }, void 0, false, {
-                                        fileName: "[project]/frontend/components/CoachStuff.tsx",
-                                        lineNumber: 69,
-                                        columnNumber: 15
-                                    }, ("TURBOPACK compile-time value", void 0)),
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                        className: "text-gray-500 font-medium text-[10px] uppercase tracking-tighter",
-                                        children: "Assistant Coach"
-                                    }, void 0, false, {
-                                        fileName: "[project]/frontend/components/CoachStuff.tsx",
-                                        lineNumber: 70,
-                                        columnNumber: 15
-                                    }, ("TURBOPACK compile-time value", void 0))
-                                ]
-                            }, coach.id, true, {
-                                fileName: "[project]/frontend/components/CoachStuff.tsx",
-                                lineNumber: 65,
-                                columnNumber: 13
-                            }, ("TURBOPACK compile-time value", void 0)))
-                    }, void 0, false, {
-                        fileName: "[project]/frontend/components/CoachStuff.tsx",
-                        lineNumber: 63,
-                        columnNumber: 9
-                    }, ("TURBOPACK compile-time value", void 0))
-                ]
-            }, void 0, true, {
+                    }, ("TURBOPACK compile-time value", void 0)))
+            }, void 0, false, {
                 fileName: "[project]/frontend/components/CoachStuff.tsx",
                 lineNumber: 50,
                 columnNumber: 7
@@ -944,7 +949,7 @@ const CoachStaff = ({ teamSlug })=>{
         ]
     }, void 0, true, {
         fileName: "[project]/frontend/components/CoachStuff.tsx",
-        lineNumber: 42,
+        lineNumber: 41,
         columnNumber: 5
     }, ("TURBOPACK compile-time value", void 0));
 };

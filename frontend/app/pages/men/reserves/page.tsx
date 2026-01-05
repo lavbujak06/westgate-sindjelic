@@ -26,7 +26,7 @@ export default function ReserveMensPage() {
       .then(res => res.json())
       .then(data => {
         if (Array.isArray(data) && data.length > 0) {
-          const reservesOnly = data.filter(c => c.team_name.toLowerCase().includes('reserve'));
+          const reservesOnly = data.filter(c => c.team_name === 'Reserve Men');
           setConfigs(reservesOnly);
           if (reservesOnly.length > 0) setSelectedConfigId(reservesOnly[0].id);
         }

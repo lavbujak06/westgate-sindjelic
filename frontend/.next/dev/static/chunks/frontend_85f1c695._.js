@@ -181,7 +181,7 @@ const AccountMenu = ()=>{
                                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
                                     href: "/login",
                                     className: "flex items-center px-4 py-3 text-[10px] font-black uppercase tracking-widest text-white bg-red-600 rounded-xl hover:bg-red-700 transition-all text-center justify-center",
-                                    children: "Identify (Log In)"
+                                    children: "Log In"
                                 }, void 0, false, {
                                     fileName: "[project]/frontend/components/AccountMenu.tsx",
                                     lineNumber: 122,
@@ -278,7 +278,7 @@ const Navbar = ()=>{
                     className: "flex items-center gap-3 z-50",
                     children: [
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
-                            src: "/westgateLogo.png",
+                            src: "/Westgatelogo.png",
                             alt: "Logo",
                             width: 45,
                             height: 45
@@ -477,21 +477,6 @@ const Navbar = ()=>{
                         }, void 0, false, {
                             fileName: "[project]/frontend/components/Navbar.tsx",
                             lineNumber: 66,
-                            columnNumber: 11
-                        }, ("TURBOPACK compile-time value", void 0)),
-                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
-                            className: "hover:text-red-600 transition",
-                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
-                                href: "/pages/contact",
-                                children: "Contact Us"
-                            }, void 0, false, {
-                                fileName: "[project]/frontend/components/Navbar.tsx",
-                                lineNumber: 68,
-                                columnNumber: 57
-                            }, ("TURBOPACK compile-time value", void 0))
-                        }, void 0, false, {
-                            fileName: "[project]/frontend/components/Navbar.tsx",
-                            lineNumber: 68,
                             columnNumber: 11
                         }, ("TURBOPACK compile-time value", void 0)),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
@@ -1137,7 +1122,7 @@ function ReserveWomenPage() {
                     if (Array.isArray(data) && data.length > 0) {
                         // Filter specifically for "Reserve Women"
                         const reserveWomenOnly = data.filter({
-                            "ReserveWomenPage.useEffect.reserveWomenOnly": (c)=>c.team_name.toLowerCase().includes('women') && c.team_name.toLowerCase().includes('reserve')
+                            "ReserveWomenPage.useEffect.reserveWomenOnly": (c)=>c.team_name === 'Reserve Women'
                         }["ReserveWomenPage.useEffect.reserveWomenOnly"]);
                         setConfigs(reserveWomenOnly);
                         if (reserveWomenOnly.length > 0) setSelectedConfigId(reserveWomenOnly[0].id);
@@ -1196,7 +1181,7 @@ function ReserveWomenPage() {
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$components$2f$Navbar$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
                 fileName: "[project]/frontend/app/pages/women/reserves/page.tsx",
-                lineNumber: 80,
+                lineNumber: 77,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$components$2f$Hero$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
@@ -1205,7 +1190,7 @@ function ReserveWomenPage() {
                 showButton: false
             }, void 0, false, {
                 fileName: "[project]/frontend/app/pages/women/reserves/page.tsx",
-                lineNumber: 81,
+                lineNumber: 78,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1223,7 +1208,7 @@ function ReserveWomenPage() {
                                         color: "text-red-600"
                                     }, void 0, false, {
                                         fileName: "[project]/frontend/app/pages/women/reserves/page.tsx",
-                                        lineNumber: 86,
+                                        lineNumber: 83,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$components$2f$StatBox$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
@@ -1232,7 +1217,7 @@ function ReserveWomenPage() {
                                         color: "text-black"
                                     }, void 0, false, {
                                         fileName: "[project]/frontend/app/pages/women/reserves/page.tsx",
-                                        lineNumber: 87,
+                                        lineNumber: 84,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$components$2f$StatBox$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
@@ -1241,7 +1226,7 @@ function ReserveWomenPage() {
                                         color: "text-gray-600"
                                     }, void 0, false, {
                                         fileName: "[project]/frontend/app/pages/women/reserves/page.tsx",
-                                        lineNumber: 88,
+                                        lineNumber: 85,
                                         columnNumber: 13
                                     }, this),
                                     lastFiveForm.length > 0 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1252,7 +1237,7 @@ function ReserveWomenPage() {
                                                 children: "Recent Form"
                                             }, void 0, false, {
                                                 fileName: "[project]/frontend/app/pages/women/reserves/page.tsx",
-                                                lineNumber: 92,
+                                                lineNumber: 89,
                                                 columnNumber: 21
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1262,24 +1247,24 @@ function ReserveWomenPage() {
                                                         children: game.label
                                                     }, idx, false, {
                                                         fileName: "[project]/frontend/app/pages/women/reserves/page.tsx",
-                                                        lineNumber: 95,
+                                                        lineNumber: 92,
                                                         columnNumber: 29
                                                     }, this))
                                             }, void 0, false, {
                                                 fileName: "[project]/frontend/app/pages/women/reserves/page.tsx",
-                                                lineNumber: 93,
+                                                lineNumber: 90,
                                                 columnNumber: 21
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/frontend/app/pages/women/reserves/page.tsx",
-                                        lineNumber: 91,
+                                        lineNumber: 88,
                                         columnNumber: 17
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/frontend/app/pages/women/reserves/page.tsx",
-                                lineNumber: 85,
+                                lineNumber: 82,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1292,12 +1277,12 @@ function ReserveWomenPage() {
                                             className: "text-red-600"
                                         }, void 0, false, {
                                             fileName: "[project]/frontend/app/pages/women/reserves/page.tsx",
-                                            lineNumber: 105,
+                                            lineNumber: 102,
                                             columnNumber: 55
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/frontend/app/pages/women/reserves/page.tsx",
-                                        lineNumber: 105,
+                                        lineNumber: 102,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1308,7 +1293,7 @@ function ReserveWomenPage() {
                                                 children: "Select Season"
                                             }, void 0, false, {
                                                 fileName: "[project]/frontend/app/pages/women/reserves/page.tsx",
-                                                lineNumber: 107,
+                                                lineNumber: 104,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("select", {
@@ -1324,30 +1309,30 @@ function ReserveWomenPage() {
                                                         ]
                                                     }, c.id, true, {
                                                         fileName: "[project]/frontend/app/pages/women/reserves/page.tsx",
-                                                        lineNumber: 109,
+                                                        lineNumber: 106,
                                                         columnNumber: 39
                                                     }, this))
                                             }, void 0, false, {
                                                 fileName: "[project]/frontend/app/pages/women/reserves/page.tsx",
-                                                lineNumber: 108,
+                                                lineNumber: 105,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/frontend/app/pages/women/reserves/page.tsx",
-                                        lineNumber: 106,
+                                        lineNumber: 103,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/frontend/app/pages/women/reserves/page.tsx",
-                                lineNumber: 104,
+                                lineNumber: 101,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/frontend/app/pages/women/reserves/page.tsx",
-                        lineNumber: 84,
+                        lineNumber: 81,
                         columnNumber: 9
                     }, this),
                     loading ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1358,7 +1343,7 @@ function ReserveWomenPage() {
                                 size: 40
                             }, void 0, false, {
                                 fileName: "[project]/frontend/app/pages/women/reserves/page.tsx",
-                                lineNumber: 117,
+                                lineNumber: 114,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1366,13 +1351,13 @@ function ReserveWomenPage() {
                                 children: "Loading Records..."
                             }, void 0, false, {
                                 fileName: "[project]/frontend/app/pages/women/reserves/page.tsx",
-                                lineNumber: 118,
+                                lineNumber: 115,
                                 columnNumber: 13
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/frontend/app/pages/women/reserves/page.tsx",
-                        lineNumber: 116,
+                        lineNumber: 113,
                         columnNumber: 11
                     }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                         className: "grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16",
@@ -1392,7 +1377,7 @@ function ReserveWomenPage() {
                                                         size: 20
                                                     }, void 0, false, {
                                                         fileName: "[project]/frontend/app/pages/women/reserves/page.tsx",
-                                                        lineNumber: 126,
+                                                        lineNumber: 123,
                                                         columnNumber: 29
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
@@ -1400,18 +1385,18 @@ function ReserveWomenPage() {
                                                         children: "League Table"
                                                     }, void 0, false, {
                                                         fileName: "[project]/frontend/app/pages/women/reserves/page.tsx",
-                                                        lineNumber: 127,
+                                                        lineNumber: 124,
                                                         columnNumber: 29
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/frontend/app/pages/women/reserves/page.tsx",
-                                                lineNumber: 125,
+                                                lineNumber: 122,
                                                 columnNumber: 25
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/frontend/app/pages/women/reserves/page.tsx",
-                                            lineNumber: 124,
+                                            lineNumber: 121,
                                             columnNumber: 21
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1428,7 +1413,7 @@ function ReserveWomenPage() {
                                                                     children: "Pos"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/frontend/app/pages/women/reserves/page.tsx",
-                                                                    lineNumber: 134,
+                                                                    lineNumber: 131,
                                                                     columnNumber: 37
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
@@ -1436,7 +1421,7 @@ function ReserveWomenPage() {
                                                                     children: "Team"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/frontend/app/pages/women/reserves/page.tsx",
-                                                                    lineNumber: 135,
+                                                                    lineNumber: 132,
                                                                     columnNumber: 37
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
@@ -1444,7 +1429,7 @@ function ReserveWomenPage() {
                                                                     children: "P"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/frontend/app/pages/women/reserves/page.tsx",
-                                                                    lineNumber: 136,
+                                                                    lineNumber: 133,
                                                                     columnNumber: 37
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
@@ -1452,7 +1437,7 @@ function ReserveWomenPage() {
                                                                     children: "W"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/frontend/app/pages/women/reserves/page.tsx",
-                                                                    lineNumber: 137,
+                                                                    lineNumber: 134,
                                                                     columnNumber: 37
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
@@ -1460,7 +1445,7 @@ function ReserveWomenPage() {
                                                                     children: "D"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/frontend/app/pages/women/reserves/page.tsx",
-                                                                    lineNumber: 138,
+                                                                    lineNumber: 135,
                                                                     columnNumber: 37
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
@@ -1468,7 +1453,7 @@ function ReserveWomenPage() {
                                                                     children: "L"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/frontend/app/pages/women/reserves/page.tsx",
-                                                                    lineNumber: 139,
+                                                                    lineNumber: 136,
                                                                     columnNumber: 37
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
@@ -1476,7 +1461,7 @@ function ReserveWomenPage() {
                                                                     children: "GD"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/frontend/app/pages/women/reserves/page.tsx",
-                                                                    lineNumber: 140,
+                                                                    lineNumber: 137,
                                                                     columnNumber: 37
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
@@ -1484,18 +1469,18 @@ function ReserveWomenPage() {
                                                                     children: "Pts"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/frontend/app/pages/women/reserves/page.tsx",
-                                                                    lineNumber: 141,
+                                                                    lineNumber: 138,
                                                                     columnNumber: 37
                                                                 }, this)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/frontend/app/pages/women/reserves/page.tsx",
-                                                            lineNumber: 133,
+                                                            lineNumber: 130,
                                                             columnNumber: 33
                                                         }, this)
                                                     }, void 0, false, {
                                                         fileName: "[project]/frontend/app/pages/women/reserves/page.tsx",
-                                                        lineNumber: 132,
+                                                        lineNumber: 129,
                                                         columnNumber: 29
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("tbody", {
@@ -1508,7 +1493,7 @@ function ReserveWomenPage() {
                                                                         children: t.pos
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/frontend/app/pages/women/reserves/page.tsx",
-                                                                        lineNumber: 147,
+                                                                        lineNumber: 144,
                                                                         columnNumber: 41
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
@@ -1516,7 +1501,7 @@ function ReserveWomenPage() {
                                                                         children: t.team
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/frontend/app/pages/women/reserves/page.tsx",
-                                                                        lineNumber: 148,
+                                                                        lineNumber: 145,
                                                                         columnNumber: 41
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
@@ -1524,7 +1509,7 @@ function ReserveWomenPage() {
                                                                         children: t.p
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/frontend/app/pages/women/reserves/page.tsx",
-                                                                        lineNumber: 149,
+                                                                        lineNumber: 146,
                                                                         columnNumber: 41
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
@@ -1532,7 +1517,7 @@ function ReserveWomenPage() {
                                                                         children: t.w
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/frontend/app/pages/women/reserves/page.tsx",
-                                                                        lineNumber: 150,
+                                                                        lineNumber: 147,
                                                                         columnNumber: 41
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
@@ -1540,7 +1525,7 @@ function ReserveWomenPage() {
                                                                         children: t.d
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/frontend/app/pages/women/reserves/page.tsx",
-                                                                        lineNumber: 151,
+                                                                        lineNumber: 148,
                                                                         columnNumber: 41
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
@@ -1548,7 +1533,7 @@ function ReserveWomenPage() {
                                                                         children: t.l
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/frontend/app/pages/women/reserves/page.tsx",
-                                                                        lineNumber: 152,
+                                                                        lineNumber: 149,
                                                                         columnNumber: 41
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
@@ -1556,7 +1541,7 @@ function ReserveWomenPage() {
                                                                         children: t.gd
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/frontend/app/pages/women/reserves/page.tsx",
-                                                                        lineNumber: 153,
+                                                                        lineNumber: 150,
                                                                         columnNumber: 41
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
@@ -1564,40 +1549,40 @@ function ReserveWomenPage() {
                                                                         children: t.pts
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/frontend/app/pages/women/reserves/page.tsx",
-                                                                        lineNumber: 154,
+                                                                        lineNumber: 151,
                                                                         columnNumber: 41
                                                                     }, this)
                                                                 ]
                                                             }, i, true, {
                                                                 fileName: "[project]/frontend/app/pages/women/reserves/page.tsx",
-                                                                lineNumber: 146,
+                                                                lineNumber: 143,
                                                                 columnNumber: 37
                                                             }, this))
                                                     }, void 0, false, {
                                                         fileName: "[project]/frontend/app/pages/women/reserves/page.tsx",
-                                                        lineNumber: 144,
+                                                        lineNumber: 141,
                                                         columnNumber: 29
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/frontend/app/pages/women/reserves/page.tsx",
-                                                lineNumber: 131,
+                                                lineNumber: 128,
                                                 columnNumber: 25
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/frontend/app/pages/women/reserves/page.tsx",
-                                            lineNumber: 130,
+                                            lineNumber: 127,
                                             columnNumber: 21
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/frontend/app/pages/women/reserves/page.tsx",
-                                    lineNumber: 123,
+                                    lineNumber: 120,
                                     columnNumber: 17
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/frontend/app/pages/women/reserves/page.tsx",
-                                lineNumber: 122,
+                                lineNumber: 119,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1612,12 +1597,12 @@ function ReserveWomenPage() {
                                                 children: "Fixtures & Results"
                                             }, void 0, false, {
                                                 fileName: "[project]/frontend/app/pages/women/reserves/page.tsx",
-                                                lineNumber: 166,
+                                                lineNumber: 163,
                                                 columnNumber: 25
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/frontend/app/pages/women/reserves/page.tsx",
-                                            lineNumber: 165,
+                                            lineNumber: 162,
                                             columnNumber: 21
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1636,7 +1621,7 @@ function ReserveWomenPage() {
                                                                     ]
                                                                 }, void 0, true, {
                                                                     fileName: "[project]/frontend/app/pages/women/reserves/page.tsx",
-                                                                    lineNumber: 172,
+                                                                    lineNumber: 169,
                                                                     columnNumber: 37
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1646,7 +1631,7 @@ function ReserveWomenPage() {
                                                                             size: 12
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/frontend/app/pages/women/reserves/page.tsx",
-                                                                            lineNumber: 173,
+                                                                            lineNumber: 170,
                                                                             columnNumber: 114
                                                                         }, this),
                                                                         " ",
@@ -1654,13 +1639,13 @@ function ReserveWomenPage() {
                                                                     ]
                                                                 }, void 0, true, {
                                                                     fileName: "[project]/frontend/app/pages/women/reserves/page.tsx",
-                                                                    lineNumber: 173,
+                                                                    lineNumber: 170,
                                                                     columnNumber: 37
                                                                 }, this)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/frontend/app/pages/women/reserves/page.tsx",
-                                                            lineNumber: 171,
+                                                            lineNumber: 168,
                                                             columnNumber: 33
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1671,7 +1656,7 @@ function ReserveWomenPage() {
                                                                     children: g.date_text
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/frontend/app/pages/women/reserves/page.tsx",
-                                                                    lineNumber: 176,
+                                                                    lineNumber: 173,
                                                                     columnNumber: 37
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1681,7 +1666,7 @@ function ReserveWomenPage() {
                                                                             size: 10
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/frontend/app/pages/women/reserves/page.tsx",
-                                                                            lineNumber: 177,
+                                                                            lineNumber: 174,
                                                                             columnNumber: 104
                                                                         }, this),
                                                                         " ",
@@ -1690,19 +1675,19 @@ function ReserveWomenPage() {
                                                                             children: g.venue
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/frontend/app/pages/women/reserves/page.tsx",
-                                                                            lineNumber: 177,
+                                                                            lineNumber: 174,
                                                                             columnNumber: 125
                                                                         }, this)
                                                                     ]
                                                                 }, void 0, true, {
                                                                     fileName: "[project]/frontend/app/pages/women/reserves/page.tsx",
-                                                                    lineNumber: 177,
+                                                                    lineNumber: 174,
                                                                     columnNumber: 37
                                                                 }, this)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/frontend/app/pages/women/reserves/page.tsx",
-                                                            lineNumber: 175,
+                                                            lineNumber: 172,
                                                             columnNumber: 33
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1716,7 +1701,7 @@ function ReserveWomenPage() {
                                                                             children: "Westgate FC"
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/frontend/app/pages/women/reserves/page.tsx",
-                                                                            lineNumber: 181,
+                                                                            lineNumber: 178,
                                                                             columnNumber: 41
                                                                         }, this),
                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1724,13 +1709,13 @@ function ReserveWomenPage() {
                                                                             children: g.w_score || '-'
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/frontend/app/pages/women/reserves/page.tsx",
-                                                                            lineNumber: 182,
+                                                                            lineNumber: 179,
                                                                             columnNumber: 41
                                                                         }, this)
                                                                     ]
                                                                 }, void 0, true, {
                                                                     fileName: "[project]/frontend/app/pages/women/reserves/page.tsx",
-                                                                    lineNumber: 180,
+                                                                    lineNumber: 177,
                                                                     columnNumber: 37
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1738,7 +1723,7 @@ function ReserveWomenPage() {
                                                                     children: "VS"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/frontend/app/pages/women/reserves/page.tsx",
-                                                                    lineNumber: 184,
+                                                                    lineNumber: 181,
                                                                     columnNumber: 37
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1749,7 +1734,7 @@ function ReserveWomenPage() {
                                                                             children: g.opponent
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/frontend/app/pages/women/reserves/page.tsx",
-                                                                            lineNumber: 186,
+                                                                            lineNumber: 183,
                                                                             columnNumber: 41
                                                                         }, this),
                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1757,53 +1742,53 @@ function ReserveWomenPage() {
                                                                             children: g.a_score || '-'
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/frontend/app/pages/women/reserves/page.tsx",
-                                                                            lineNumber: 187,
+                                                                            lineNumber: 184,
                                                                             columnNumber: 41
                                                                         }, this)
                                                                     ]
                                                                 }, void 0, true, {
                                                                     fileName: "[project]/frontend/app/pages/women/reserves/page.tsx",
-                                                                    lineNumber: 185,
+                                                                    lineNumber: 182,
                                                                     columnNumber: 37
                                                                 }, this)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/frontend/app/pages/women/reserves/page.tsx",
-                                                            lineNumber: 179,
+                                                            lineNumber: 176,
                                                             columnNumber: 33
                                                         }, this)
                                                     ]
                                                 }, i, true, {
                                                     fileName: "[project]/frontend/app/pages/women/reserves/page.tsx",
-                                                    lineNumber: 170,
+                                                    lineNumber: 167,
                                                     columnNumber: 29
                                                 }, this))
                                         }, void 0, false, {
                                             fileName: "[project]/frontend/app/pages/women/reserves/page.tsx",
-                                            lineNumber: 168,
+                                            lineNumber: 165,
                                             columnNumber: 21
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/frontend/app/pages/women/reserves/page.tsx",
-                                    lineNumber: 164,
+                                    lineNumber: 161,
                                     columnNumber: 17
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/frontend/app/pages/women/reserves/page.tsx",
-                                lineNumber: 163,
+                                lineNumber: 160,
                                 columnNumber: 13
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/frontend/app/pages/women/reserves/page.tsx",
-                        lineNumber: 121,
+                        lineNumber: 118,
                         columnNumber: 11
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/frontend/app/pages/women/reserves/page.tsx",
-                lineNumber: 83,
+                lineNumber: 80,
                 columnNumber: 7
             }, this),
             gallery.length > 0 && !loading && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -1820,18 +1805,18 @@ function ReserveWomenPage() {
                                     children: "Gallery"
                                 }, void 0, false, {
                                     fileName: "[project]/frontend/app/pages/women/reserves/page.tsx",
-                                    lineNumber: 203,
+                                    lineNumber: 200,
                                     columnNumber: 20
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/frontend/app/pages/women/reserves/page.tsx",
-                            lineNumber: 202,
+                            lineNumber: 199,
                             columnNumber: 13
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/frontend/app/pages/women/reserves/page.tsx",
-                        lineNumber: 201,
+                        lineNumber: 198,
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1840,18 +1825,18 @@ function ReserveWomenPage() {
                             slides: gallery
                         }, void 0, false, {
                             fileName: "[project]/frontend/app/pages/women/reserves/page.tsx",
-                            lineNumber: 207,
+                            lineNumber: 204,
                             columnNumber: 13
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/frontend/app/pages/women/reserves/page.tsx",
-                        lineNumber: 206,
+                        lineNumber: 203,
                         columnNumber: 11
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/frontend/app/pages/women/reserves/page.tsx",
-                lineNumber: 200,
+                lineNumber: 197,
                 columnNumber: 9
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1860,18 +1845,18 @@ function ReserveWomenPage() {
                     teamSlug: "reserve-women"
                 }, void 0, false, {
                     fileName: "[project]/frontend/app/pages/women/reserves/page.tsx",
-                    lineNumber: 213,
+                    lineNumber: 210,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/frontend/app/pages/women/reserves/page.tsx",
-                lineNumber: 212,
+                lineNumber: 209,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/frontend/app/pages/women/reserves/page.tsx",
-        lineNumber: 79,
+        lineNumber: 76,
         columnNumber: 5
     }, this);
 }

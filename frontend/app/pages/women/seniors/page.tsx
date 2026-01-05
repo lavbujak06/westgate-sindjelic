@@ -28,10 +28,7 @@ export default function SeniorWomenPage() {
       .then(data => {
         if (Array.isArray(data) && data.length > 0) {
           // Filter for Women but exclude Reserve strings to get Seniors
-          const womenOnly = data.filter(c => 
-            c.team_name.toLowerCase().includes('women') && 
-            !c.team_name.toLowerCase().includes('reserve')
-          );
+          const womenOnly = data.filter(c => c.team_name === 'Senior Women');
           setConfigs(womenOnly);
           if (womenOnly.length > 0) setSelectedConfigId(womenOnly[0].id);
         }

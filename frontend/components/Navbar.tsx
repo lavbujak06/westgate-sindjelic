@@ -63,7 +63,15 @@ const Navbar = () => {
 
           <li className='hover:text-red-600 transition'><Link href="/pages/juniors">Juniors</Link></li>
 
-          <li className='hover:text-red-600 transition'><Link href="/pages/aboutUs">About Us</Link></li>
+          <li className='group relative py-4 cursor-pointer'>
+            <div className='flex items-center gap-1 hover:text-red-600 transition'>
+              About Us <AiOutlineCaretDown size={12} />
+            </div>
+            <ul className='absolute hidden group-hover:block top-full left-0 bg-white text-black shadow-xl min-w-40 border-t-4 border-red-600'>
+               <li className='px-4 py-3 hover:bg-gray-100 hover:text-red-600 border-b border-gray-50'><Link href="/pages/aboutUs">About Us</Link></li>
+               <li className='px-4 py-3 hover:bg-gray-100 hover:text-red-600'><Link href="/pages/contact">Contact Us</Link></li>
+            </ul>
+          </li>
 
           {/* <li className='hover:text-red-600 transition'><Link href="/pages/contact">Contact Us</Link></li> */}
 

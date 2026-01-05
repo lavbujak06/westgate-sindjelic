@@ -27,10 +27,7 @@ export default function ReserveWomenPage() {
       .then(data => {
         if (Array.isArray(data) && data.length > 0) {
           // Filter specifically for "Reserve Women"
-          const reserveWomenOnly = data.filter(c => 
-            c.team_name.toLowerCase().includes('women') && 
-            c.team_name.toLowerCase().includes('reserve')
-          );
+          const reserveWomenOnly = data.filter(c => c.team_name === 'Reserve Women');
           setConfigs(reserveWomenOnly);
           if (reserveWomenOnly.length > 0) setSelectedConfigId(reserveWomenOnly[0].id);
         }

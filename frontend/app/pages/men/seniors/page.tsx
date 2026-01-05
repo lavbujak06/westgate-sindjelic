@@ -26,7 +26,7 @@ export default function MensPage() {
       .then(res => res.json())
       .then(data => {
         if (Array.isArray(data) && data.length > 0) {
-          const mensOnly = data.filter(c => c.team_name.toLowerCase().includes('men'));
+          const mensOnly = data.filter(c => c.team_name === 'Senior Men');
           setConfigs(mensOnly);
           if (mensOnly.length > 0) setSelectedConfigId(mensOnly[0].id);
         }

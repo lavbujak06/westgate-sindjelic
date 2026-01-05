@@ -161,8 +161,21 @@ export default function LeagueManagerPage() {
               <input required type="number" className="w-full bg-slate-950 border border-slate-800 p-4 rounded-2xl focus:border-red-600 outline-none transition-all" value={newConfig.season_year} onChange={e => setNewConfig({...newConfig, season_year: parseInt(e.target.value)})} />
             </div>
             <div className="col-span-1">
-              <label className="text-[10px] font-black uppercase text-slate-500 mb-2 block ml-1">Team Category</label>
-              <input required placeholder="e.g. Senior Men" className="w-full bg-slate-950 border border-slate-800 p-4 rounded-2xl focus:border-red-600 outline-none transition-all" value={newConfig.team_name} onChange={e => setNewConfig({...newConfig, team_name: e.target.value})} />
+              <label className="text-[10px] font-black uppercase text-slate-500 mb-2 block ml-1">
+                Team Category
+              </label>
+              <select 
+                required 
+                className="w-full bg-slate-950 border border-slate-800 p-4 rounded-2xl focus:border-red-600 outline-none transition-all text-white appearance-none cursor-pointer"
+                value={newConfig.team_name} 
+                onChange={e => setNewConfig({...newConfig, team_name: e.target.value})}
+              >
+                <option value="" disabled>Select a Team</option>
+                <option value="Senior Men">Senior Men</option>
+                <option value="Senior Women">Senior Women</option>
+                <option value="Under 21 Men">Reserve Men</option>
+                <option value="Junior Boys">Reserve Women</option>
+              </select>
             </div>
             <div className="col-span-2">
               <label className="text-[10px] font-black uppercase text-red-500/60 mb-2 block ml-1">GameDay Ladder URL</label>

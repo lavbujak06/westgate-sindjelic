@@ -42,13 +42,16 @@ const UserContext = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project
 const UserProvider = ({ children })=>{
     const [user, setUser] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(null);
     const [profile, setProfile] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(null);
-    const fetchUserProfile = async ()=>{
+    const [loading, setLoading] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(true);
+    const fetchUserProfile = (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useCallback"])(async ()=>{
         try {
+            setLoading(true);
             // 1. Check Supabase first
             const { data: { user: supabaseUser } } = await __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$lib$2f$supabaseClient$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["supabaseClient"].auth.getUser();
             if (!supabaseUser) {
                 setUser(null);
                 setProfile(null);
+                setLoading(false);
                 return;
             }
             // 2. Ask backend for profile info
@@ -57,11 +60,14 @@ const UserProvider = ({ children })=>{
                 credentials: 'include'
             });
             if (!res.ok) {
-                // If the backend doesn't recognize the session, but Supabase does,
-                // we should still keep the supabaseUser info at minimum
-                setUser(supabaseUser);
+                // Sign out fully if backend rejects session
+                setUser(null);
                 setProfile(null);
+                await __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$lib$2f$supabaseClient$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["supabaseClient"].auth.signOut();
                 return;
+            } else {
+                // Your working fix: Keep the supabaseUser while waiting for JSON
+                setUser(supabaseUser);
             }
             const data = await res.json();
             setUser(data.user || supabaseUser);
@@ -70,15 +76,13 @@ const UserProvider = ({ children })=>{
             console.warn('Session check handled:', err);
             setUser(null);
             setProfile(null);
+        } finally{
+            setLoading(false);
         }
-    };
+    }, []);
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useEffect"])(()=>{
-        // INITIAL FETCH
         fetchUserProfile();
-        // 🔄 ADDED: AUTH STATE LISTENER
-        // This fixes the 401 by ensuring the frontend supabaseClient 
-        // stays in sync with the session cookies/backend.
-        const { data: { subscription } } = __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$lib$2f$supabaseClient$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["supabaseClient"].auth.onAuthStateChange((event, session)=>{
+        const { data: { subscription } } = __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$lib$2f$supabaseClient$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["supabaseClient"].auth.onAuthStateChange((event)=>{
             if (event === 'SIGNED_IN' || event === 'TOKEN_REFRESHED') {
                 fetchUserProfile();
             } else if (event === 'SIGNED_OUT') {
@@ -89,11 +93,14 @@ const UserProvider = ({ children })=>{
         return ()=>{
             subscription.unsubscribe();
         };
-    }, []);
+    }, [
+        fetchUserProfile
+    ]);
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(UserContext.Provider, {
         value: {
             user,
             profile,
+            loading,
             fetchUserProfile,
             setUser,
             setProfile
@@ -101,7 +108,7 @@ const UserProvider = ({ children })=>{
         children: children
     }, void 0, false, {
         fileName: "[project]/frontend/context/UserContext.tsx",
-        lineNumber: 78,
+        lineNumber: 83,
         columnNumber: 5
     }, ("TURBOPACK compile-time value", void 0));
 };

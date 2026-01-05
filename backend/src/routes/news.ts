@@ -28,17 +28,18 @@ router.get('/:id', async (req, res) => {
 
 // 🔐 ADMIN: Create
 router.post('/', requireAdmin, async (req: any, res) => {
-  const { title, content, published } = req.body;
+  // Add image_url to the destructuring
+  const { title, content, published, image_url } = req.body;
   const adminEmail = req.user.email;
 
   const { data, error } = await supabase
     .from('news')
-    .insert([{ title, content, published: published || false }])
+    // Include image_url in the insert object
+    .insert([{ title, content, image_url, published: published || false }])
     .select();
 
   if (error) return res.status(400).json({ error: error.message });
 
-  // 📝 LOG ACTION
   await supabase.from('audit_logs').insert({
     admin: adminEmail,
     action: 'CREATE_NEWS',
@@ -51,12 +52,18 @@ router.post('/', requireAdmin, async (req: any, res) => {
 
 // 🔐 ADMIN: Update
 router.put('/:id', requireAdmin, async (req: any, res) => {
-  const { title, content, published } = req.body;
+  const { title, content, published, image_url } = req.body;
   const adminEmail = req.user.email;
 
   const { data, error } = await supabase
     .from('news')
-    .update({ title, content, published, updated_at: new Date().toISOString() })
+    .update({ 
+      title, 
+      content, 
+      published, 
+      image_url, // Update the image
+      updated_at: new Date().toISOString() 
+    })
     .eq('id', req.params.id)
     .select();
 
