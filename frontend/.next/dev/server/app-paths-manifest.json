@@ -1,14 +1,11 @@
 {
-  "/_not-found/page": "app/_not-found/page.js",
+  "/account/page": "app/account/page.js",
   "/admin/accounts/page": "app/admin/accounts/page.js",
   "/admin/audit-logs/page": "app/admin/audit-logs/page.js",
-  "/admin/coaches/[id]/page": "app/admin/coaches/[id]/page.js",
   "/admin/coaches/page": "app/admin/coaches/page.js",
   "/admin/dashboard/page": "app/admin/dashboard/page.js",
   "/admin/gallery/page": "app/admin/gallery/page.js",
   "/admin/league/page": "app/admin/league/page.js",
-  "/admin/news/[id]/page": "app/admin/news/[id]/page.js",
-  "/admin/news/editor/page": "app/admin/news/editor/page.js",
   "/admin/news/page": "app/admin/news/page.js",
   "/admin/sponsors/page": "app/admin/sponsors/page.js",
   "/login/page": "app/login/page.js",
@@ -19,7 +16,5 @@
   "/pages/men/reserves/page": "app/pages/men/reserves/page.js",
   "/pages/men/seniors/page": "app/pages/men/seniors/page.js",
   "/pages/news/[id]/page": "app/pages/news/[id]/page.js",
-  "/pages/news/page": "app/pages/news/page.js",
-  "/pages/women/reserves/page": "app/pages/women/reserves/page.js",
-  "/pages/women/seniors/page": "app/pages/women/seniors/page.js"
+  "/pages/news/page": "app/pages/news/page.js"
 }

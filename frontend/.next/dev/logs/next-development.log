@@ -1,718 +1,149 @@
-[00:00:00.572] Server  ERROR   (node:49550) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/lavbujak/Desktop/Sindjelic/westgate-sindjelic/frontend/next.config.js is not specified and it doesn't parse as CommonJS.
+[00:00:00.554] Server  ERROR   (node:12214) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/lavbujak/Desktop/Sindjelic/westgate-sindjelic/frontend/next.config.js is not specified and it doesn't parse as CommonJS.
 Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
 To eliminate this warning, add "type": "module" to /Users/lavbujak/Desktop/Sindjelic/westgate-sindjelic/frontend/package.json.
 (Use `node --trace-warnings ...` to show where the warning was created)
-[00:00:00.957] Server  WARN    ⚠ The "middleware" file convention is deprecated. Please use "proxy" instead. Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
-[00:00:01.084] Server  LOG     ✓ Ready in 847ms
-[00:00:05.760] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:00:05.905] Browser WARN    Image with src "/Westgatelogo.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
-[00:00:07.642] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
-[00:00:25.737] Browser LOG     Admin detected, redirecting to dashboard...
-[00:00:25.935] Browser LOG     AdminGuard: ❌ No session found, redirecting...
-[00:00:25.935] Browser LOG     AdminGuard: ❌ No session found, redirecting...
-[00:00:26.208] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:00:26.697] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:00:27.271] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:00:27.883] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:00:28.368] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:00:28.868] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:00:29.458] Browser LOG     AdminGuard: ❌ No session found, redirecting...
-[00:00:29.458] Browser LOG     AdminGuard: ❌ No session found, redirecting...
-[00:00:29.961] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:00:30.447] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:00:30.889] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:00:31.239] Browser LOG     AdminGuard: ❌ No session found, redirecting...
-[00:00:31.239] Browser LOG     AdminGuard: ❌ No session found, redirecting...
-[00:00:31.374] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:00:31.830] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:00:32.314] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:00:32.758] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:00:33.513] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:00:46.109] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:00:46.626] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:00:47.072] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:00:47.650] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:00:51.430] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:00:51.632] Browser LOG     AdminGuard: ❌ No session found, redirecting...
-[00:00:51.632] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
-[00:00:51.632] Browser WARN    Image with src "/Westgatelogo.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
-[00:01:09.982] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:01:10.584] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:01:11.179] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:01:11.179] Browser LOG     Admin detected, redirecting to dashboard...
-[00:01:11.179] Browser LOG     AdminGuard: 🔍 Found user: bujaklav@gmail.com
-[00:01:11.179] Browser LOG     AdminGuard: 🔍 Found user: bujaklav@gmail.com
-[00:01:11.556] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:01:12.051] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:01:12.637] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:01:13.145] Browser LOG     AdminGuard: ✅ Admin confirmed!
-[00:01:13.632] Browser LOG     AdminGuard: ✅ Admin confirmed!
-[00:02:12.435] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:02:12.946] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:02:13.563] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:02:14.025] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:02:24.112] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:02:24.602] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:02:25.238] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:02:25.780] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:03:08.036] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:03:08.553] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:03:09.065] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:03:09.577] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:03:17.361] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:03:17.822] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:03:18.280] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:03:18.895] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:03:27.288] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:03:27.804] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:03:28.419] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:03:28.926] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:03:33.248] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:03:33.704] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:03:34.231] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:03:34.703] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:03:51.356] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:03:51.867] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:03:52.332] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:03:52.770] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:03:53.256] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:03:53.751] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:03:54.192] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:03:54.741] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:04:00.106] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:04:00.244] Browser WARN    Image with src "/Westgatelogo.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
-[00:04:03.029] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:04:03.541] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:04:04.155] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:04:04.601] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:04:05.593] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:04:05.733] Browser WARN    Image with src "/Westgatelogo.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
-[00:04:08.660] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:04:09.277] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:04:09.779] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:04:10.261] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:04:22.587] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:04:23.085] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:04:23.615] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:04:24.638] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:04:37.751] Browser LOG     AdminGuard: 🔍 Found user: bujaklav@gmail.com
-[00:04:37.751] Browser LOG     AdminGuard: 🔍 Found user: bujaklav@gmail.com
-[00:04:38.273] Browser LOG     AdminGuard: ✅ Admin confirmed!
-[00:04:38.273] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
-[00:04:38.771] Browser LOG     AdminGuard: ✅ Admin confirmed!
-[00:05:04.274] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:05:04.779] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:05:05.257] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:05:06.016] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:05:09.042] Browser LOG     AdminGuard: 🔍 Found user: bujaklav@gmail.com
-[00:05:09.042] Browser LOG     AdminGuard: 🔍 Found user: bujaklav@gmail.com
-[00:05:09.591] Browser LOG     AdminGuard: ✅ Admin confirmed!
-[00:05:10.054] Browser LOG     AdminGuard: ✅ Admin confirmed!
-[00:06:10.658] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:06:11.342] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:06:11.957] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:06:12.414] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:06:12.876] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:06:13.382] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:06:13.898] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:06:14.385] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:10:32.905] Server  LOG     ✓ Compiled in 617ms
-[00:10:36.943] Server  LOG     ✓ Compiled in 146ms
-[00:10:40.267] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:10:40.416] Browser WARN    Image with src "/Westgatelogo.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
-[00:10:43.012] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:10:43.521] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:10:44.033] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:10:44.854] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:11:11.676] Server  LOG     ✓ Compiled in 91ms
-[00:11:12.104] Browser ERROR   ./frontend/app/pages/men/seniors/page.tsx:29:57
+[00:00:01.066] Server  WARN    ⚠ The "middleware" file convention is deprecated. Please use "proxy" instead. Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
+[00:00:01.164] Server  LOG     ✓ Ready in 931ms
+[00:00:07.044] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:09.630] Browser WARN    Image with src "/Westgatelogo.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:00:11.121] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:11.121] Browser WARN    Image with src "/Westgatelogo.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:00:43.606] Server  LOG     ✓ Compiled in 171ms
+[00:00:46.338] Server  LOG     ✓ Compiled in 125ms
+[00:00:46.630] Browser ERROR   ./frontend/components/Footer.tsx:28:11
 Parsing ecmascript source code failed
-  27 |       .then(data => {
-  28 |         if (Array.isArray(data) && data.length > 0) {
-> 29 |           const mensOnly = data.filter(c => c.team_name.);
-     |                                                         ^
-  30 |           setConfigs(mensOnly);
-  31 |           if (mensOnly.length > 0) setSelectedConfigId(mensOnly[0].id);
-  32 |         }
-
-Expected ident
-
-Import traces:
-  Client Component Browser:
-    ./frontend/app/pages/men/seniors/page.tsx [Client Component Browser]
-    ./frontend/app/pages/men/seniors/page.tsx [Server Component]
-
-  Client Component SSR:
-    ./frontend/app/pages/men/seniors/page.tsx [Client Component SSR]
-    ./frontend/app/pages/men/seniors/page.tsx [Server Component]
-[00:11:15.984] Server  LOG     ✓ Compiled in 41ms
-[00:11:16.094] Browser ERROR   ./frontend/app/pages/men/seniors/page.tsx:29:64
-Parsing ecmascript source code failed
-  27 |       .then(data => {
-  28 |         if (Array.isArray(data) && data.length > 0) {
-> 29 |           const mensOnly = data.filter(c => c.team_name.equals('Senior);
-     |                                                                ^^^^^^^^^
-  30 |           setConfigs(mensOnly);
-  31 |           if (mensOnly.length > 0) setSelectedConfigId(mensOnly[0].id);
-  32 |         }
-
-Unterminated string constant
-
-Import traces:
-  Client Component Browser:
-    ./frontend/app/pages/men/seniors/page.tsx [Client Component Browser]
-    ./frontend/app/pages/men/seniors/page.tsx [Server Component]
-
-  Client Component SSR:
-    ./frontend/app/pages/men/seniors/page.tsx [Client Component SSR]
-    ./frontend/app/pages/men/seniors/page.tsx [Server Component]
-[00:11:18.893] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:11:19.102] Browser WARN    Image with src "/Westgatelogo.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
-[00:11:19.670] Browser ERROR   unhandledRejection: TypeError: c.team_name.equals is not a function
-[00:11:21.955] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:11:22.410] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:11:23.117] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:11:23.641] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:11:41.834] Server  LOG     ✓ Compiled in 62ms
-[00:11:43.246] Server  LOG     ✓ Compiled in 30ms
-[00:11:44.094] Browser ERROR   ./frontend/app/pages/men/seniors/page.tsx:29:61
-Parsing ecmascript source code failed
-  27 |       .then(data => {
-  28 |         if (Array.isArray(data) && data.length > 0) {
-> 29 |           const mensOnly = data.filter(c => c.team_name === 'Senior);
-     |                                                             ^^^^^^^^^
-  30 |           setConfigs(mensOnly);
-  31 |           if (mensOnly.length > 0) setSelectedConfigId(mensOnly[0].id);
-  32 |         }
-
-Unterminated string constant
-
-Import traces:
-  Client Component Browser:
-    ./frontend/app/pages/men/seniors/page.tsx [Client Component Browser]
-    ./frontend/app/pages/men/seniors/page.tsx [Server Component]
-
-  Client Component SSR:
-    ./frontend/app/pages/men/seniors/page.tsx [Client Component SSR]
-    ./frontend/app/pages/men/seniors/page.tsx [Server Component]
-[00:11:46.401] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:11:46.595] Browser WARN    Image with src "/Westgatelogo.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
-[00:11:49.156] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:11:49.675] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:11:50.199] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:11:50.699] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:12:06.094] Browser ERROR   ./frontend/app/pages/men/reserves/page.tsx:29:65
-Parsing ecmascript source code failed
-  27 |       .then(data => {
-  28 |         if (Array.isArray(data) && data.length > 0) {
-> 29 |           const reservesOnly = data.filter(c => c.team_name === 'Reserve);
-     |                                                                 ^^^^^^^^^^
-  30 |           setConfigs(reservesOnly);
-  31 |           if (reservesOnly.length > 0) setSelectedConfigId(reservesOnly[0].id);
-  32 |         }
-
-Unterminated string constant
-
-Import traces:
-  Client Component Browser:
-    ./frontend/app/pages/men/reserves/page.tsx [Client Component Browser]
-    ./frontend/app/pages/men/reserves/page.tsx [Server Component]
-
-  Client Component SSR:
-    ./frontend/app/pages/men/reserves/page.tsx [Client Component SSR]
-    ./frontend/app/pages/men/reserves/page.tsx [Server Component]
-[00:12:06.973] Server  LOG     ✓ Compiled in 32ms
-[00:12:57.093] Browser ERROR   ./frontend/app/pages/women/seniors/page.tsx:31:29
-Parsing ecmascript source code failed
-  29 |         if (Array.isArray(data) && data.length > 0) {
-  30 |           // Filter for Women but exclude Reserve strings to get Seniors
-> 31 |           const womenOnly = const reservesOnly = data.filter(c => c.team_name === 'Reserve Men');
-     |                             ^^^^^
-  32 |           setConfigs(womenOnly);
-  33 |           if (womenOnly.length > 0) setSelectedConfigId(womenOnly[0].id);
-  34 |         }
+  26 |         <div className="max-w-7xl mx-auto px-6 py-12 border-t border-gray-100">
+  27 |           <
+> 28 |           <div className="flex flex-wrap justify-center items-center gap-x-16 gap-y-10">
+     |           ^
+  29 |             {sponsors.map((s) => (
+  30 |               <a 
+  31 |                 key={s.id} 
 
 Expression expected
-[00:13:02.598] Server  LOG     ✓ Compiled in 90ms
-[00:13:34.225] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:13:34.692] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
-[00:13:34.692] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:13:35.151] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:13:35.760] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:13:36.253] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:13:36.788] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:13:37.393] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:13:38.009] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:13:39.374] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:13:39.961] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:13:40.473] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:13:40.928] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:13:43.854] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:13:44.470] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:13:44.979] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:13:45.450] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:15:38.722] Server  LOG     ✓ Compiled in 213ms
-[00:16:18.482] Browser LOG     AdminGuard: 🔍 Found user: bujaklav@gmail.com
-[00:16:18.482] Browser LOG     AdminGuard: 🔍 Found user: bujaklav@gmail.com
-[00:16:19.095] Browser LOG     AdminGuard: ✅ Admin confirmed!
-[00:16:19.912] Browser LOG     AdminGuard: ✅ Admin confirmed!
-[00:17:53.808] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:17:54.323] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:17:54.958] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:17:55.444] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:17:55.976] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:17:56.505] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:17:56.916] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:17:57.401] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:18:08.498] Browser LOG     AdminGuard: 🔍 Found user: bujaklav@gmail.com
-[00:18:08.498] Browser LOG     AdminGuard: 🔍 Found user: bujaklav@gmail.com
-[00:18:09.329] Browser LOG     AdminGuard: ✅ Admin confirmed!
-[00:18:09.800] Browser LOG     AdminGuard: ✅ Admin confirmed!
-[00:18:18.587] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:18:19.104] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:18:19.620] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:18:20.100] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:18:20.560] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:18:21.047] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:18:21.530] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:18:22.000] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:18:25.588] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:18:25.766] Browser WARN    Image with src "/Westgatelogo.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
-[00:18:28.831] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:18:29.957] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:18:30.470] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:18:30.925] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:18:34.177] Browser LOG     AdminGuard: 🔍 Found user: bujaklav@gmail.com
-[00:18:34.177] Browser LOG     AdminGuard: 🔍 Found user: bujaklav@gmail.com
-[00:18:34.651] Browser LOG     AdminGuard: ✅ Admin confirmed!
-[00:18:34.652] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
-[00:18:35.097] Browser LOG     AdminGuard: ✅ Admin confirmed!
-[00:19:11.438] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:19:12.250] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:19:12.966] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:19:13.682] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:19:15.223] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:19:15.690] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:19:16.243] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:19:17.071] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:19:28.990] Browser LOG     AdminGuard: 🔍 Found user: bujaklav@gmail.com
-[00:19:28.990] Browser LOG     AdminGuard: 🔍 Found user: bujaklav@gmail.com
-[00:19:29.554] Browser LOG     AdminGuard: ✅ Admin confirmed!
-[00:19:30.070] Browser LOG     AdminGuard: ✅ Admin confirmed!
-[00:19:49.933] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:19:50.650] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:19:51.120] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:19:51.988] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:19:52.796] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:19:53.276] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:19:53.824] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:19:54.305] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:19:58.549] Browser LOG     AdminGuard: 🔍 Found user: bujaklav@gmail.com
-[00:19:58.549] Browser LOG     AdminGuard: 🔍 Found user: bujaklav@gmail.com
-[00:19:59.251] Browser LOG     AdminGuard: ✅ Admin confirmed!
-[00:20:00.035] Browser LOG     AdminGuard: ✅ Admin confirmed!
-[00:21:19.332] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:21:19.880] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:21:20.561] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:21:21.048] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:21:23.935] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:21:24.579] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:21:25.171] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:21:25.698] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:21:28.509] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:21:28.693] Browser WARN    Image with src "/Westgatelogo.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
-[00:21:31.486] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:21:31.975] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:21:32.437] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:21:32.923] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:21:34.416] Browser LOG     AdminGuard: 🔍 Found user: bujaklav@gmail.com
-[00:21:34.416] Browser LOG     AdminGuard: 🔍 Found user: bujaklav@gmail.com
-[00:21:34.900] Browser LOG     AdminGuard: ✅ Admin confirmed!
-[00:21:34.900] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
-[00:21:36.295] Browser LOG     AdminGuard: ✅ Admin confirmed!
-[00:22:06.145] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:22:06.265] Browser LOG     AdminGuard: 🔍 Found user: bujaklav@gmail.com
-[00:22:07.943] Browser LOG     AdminGuard: ✅ Admin confirmed!
-[00:22:23.929] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
-[00:22:26.892] Browser WARN    Image with src "/Westgatelogo.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
-[00:22:27.427] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:22:27.941] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:22:28.425] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:22:29.074] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:22:29.596] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:22:30.206] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:22:30.664] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:22:31.170] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:22:33.102] Browser LOG     AdminGuard: 🔍 Found user: bujaklav@gmail.com
-[00:22:33.102] Browser LOG     AdminGuard: 🔍 Found user: bujaklav@gmail.com
-[00:22:33.612] Browser LOG     AdminGuard: ✅ Admin confirmed!
-[00:22:34.076] Browser LOG     AdminGuard: ✅ Admin confirmed!
-[00:24:19.196] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:24:19.318] Browser LOG     AdminGuard: 🔍 Found user: bujaklav@gmail.com
-[00:24:20.985] Browser LOG     AdminGuard: ✅ Admin confirmed!
-[00:24:24.110] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
-[00:24:24.111] Browser WARN    Image with src "/Westgatelogo.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
-[00:24:24.780] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:24:25.289] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:24:25.902] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:24:26.352] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:24:29.184] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:24:29.692] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:24:30.202] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:24:30.830] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:25:10.037] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:25:10.547] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:25:11.178] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:25:11.620] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:25:12.083] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:25:12.601] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:25:13.059] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:25:13.932] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:25:42.772] Server  LOG     ✓ Compiled in 186ms
-[00:25:50.135] Server  LOG     ✓ Compiled in 60ms
-[00:25:53.966] Server  LOG     ✓ Compiled in 52ms
-[00:25:57.423] Server  LOG     ✓ Compiled in 55ms
-[00:26:01.308] Server  LOG     ✓ Compiled in 42ms
-[00:26:04.417] Server  LOG     ✓ Compiled in 51ms
-[00:26:16.398] Server  LOG     ✓ Compiled in 60ms
-[00:26:18.896] Server  LOG     ✓ Compiled in 32ms
-[00:26:21.651] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:26:22.108] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:26:22.625] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:26:23.097] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:26:23.595] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:26:24.081] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:26:24.589] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:26:25.145] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:26:25.710] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:26:26.186] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:26:26.743] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:26:27.247] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:26:27.967] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:26:28.787] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:26:29.403] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:26:30.217] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:26:45.422] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:26:45.983] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:26:46.460] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:26:47.094] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:49:23.091] Browser LOG     Admin detected, redirecting to dashboard...
-[00:49:23.091] Browser LOG     AdminGuard: ❌ No session found, redirecting...
-[00:49:23.091] Browser LOG     AdminGuard: ❌ No session found, redirecting...
-[00:49:23.529] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:49:24.029] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:49:25.054] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:49:25.667] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:49:26.213] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:49:26.451] Browser LOG     AdminGuard: ❌ No session found, redirecting...
-[00:49:26.451] Browser LOG     AdminGuard: ❌ No session found, redirecting...
-[00:49:26.702] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:49:27.241] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:49:27.821] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:49:28.448] Browser LOG     AdminGuard: ❌ No session found, redirecting...
-[00:49:28.448] Browser LOG     AdminGuard: ❌ No session found, redirecting...
-[00:49:28.448] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:49:29.361] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:49:29.969] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:49:30.682] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:49:31.404] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:49:31.864] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:49:45.565] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:49:45.565] Browser LOG     Admin detected, redirecting to dashboard...
-[00:49:45.565] Browser LOG     AdminGuard: 🔍 Found user: bujaklav@gmail.com
-[00:49:45.565] Browser LOG     AdminGuard: 🔍 Found user: bujaklav@gmail.com
-[00:49:45.923] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:49:46.455] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:49:46.969] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:49:47.583] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:49:48.093] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:49:48.911] Browser LOG     AdminGuard: ✅ Admin confirmed!
-[00:49:49.428] Browser LOG     AdminGuard: ✅ Admin confirmed!
-[00:53:12.670] Server  LOG     ✓ Compiled in 715ms
-[00:57:16.355] Server  LOG     ✓ Compiled in 210ms
-[00:57:36.090] Server  LOG     ✓ Compiled in 417ms
-[00:57:43.888] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:57:47.497] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:57:47.642] Browser LOG     AdminGuard: 🔍 Found user: bujaklav@gmail.com
-[00:57:49.374] Browser LOG     AdminGuard: ✅ Admin confirmed!
-[00:58:17.364] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
-[00:58:17.364] Browser WARN    Image with src "/Westgatelogo.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
-[00:58:17.806] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:58:18.324] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:58:18.871] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:58:19.356] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:58:19.843] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:58:20.316] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:58:20.780] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:58:21.264] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:58:21.747] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:58:22.243] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:58:22.744] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:58:23.253] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:58:32.195] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:58:35.704] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:58:35.848] Browser WARN    Image with src "/Westgatelogo.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
-[00:58:38.354] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:58:38.864] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:58:39.446] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:58:39.971] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:58:55.569] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:58:55.742] Browser WARN    Image with src "/Westgatelogo.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
-[00:58:58.492] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:58:58.986] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:58:59.725] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:59:00.235] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:59:13.429] Server  LOG     ✓ Compiled in 254ms
-[00:59:29.159] Server  LOG     ✓ Compiled in 286ms
-[00:59:33.095] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:59:34.094] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:59:34.094] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:59:35.094] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:59:43.956] Browser LOG     AdminGuard: 🔍 Found user: bujaklav@gmail.com
-[00:59:43.957] Browser LOG     AdminGuard: 🔍 Found user: bujaklav@gmail.com
-[00:59:44.479] Browser LOG     AdminGuard: ✅ Admin confirmed!
-[00:59:44.479] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
-[00:59:44.947] Browser LOG     AdminGuard: ✅ Admin confirmed!
-[00:59:49.418] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:59:52.263] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:59:52.394] Browser LOG     AdminGuard: 🔍 Found user: bujaklav@gmail.com
-[00:59:53.857] Browser LOG     AdminGuard: ✅ Admin confirmed!
-[00:59:55.478] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:59:58.692] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:59:58.808] Browser LOG     AdminGuard: 🔍 Found user: bujaklav@gmail.com
-[01:00:00.345] Browser LOG     AdminGuard: ✅ Admin confirmed!
-[01:00:10.604] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[01:00:10.716] Browser LOG     AdminGuard: 🔍 Found user: bujaklav@gmail.com
-[01:00:12.435] Browser LOG     AdminGuard: ✅ Admin confirmed!
-[01:00:43.199] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
-[01:00:49.253] Browser WARN    Image with src "/Westgatelogo.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
-[01:00:49.907] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[01:00:50.423] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[01:00:50.905] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[01:00:51.419] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[01:00:53.328] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[01:00:53.772] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[01:00:54.248] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[01:00:54.821] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[01:01:50.834] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[01:01:51.449] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[01:01:51.933] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[01:01:52.402] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[01:01:53.642] Browser LOG     AdminGuard: 🔍 Found user: bujaklav@gmail.com
-[01:01:53.642] Browser LOG     AdminGuard: 🔍 Found user: bujaklav@gmail.com
-[01:01:54.134] Browser LOG     AdminGuard: ✅ Admin confirmed!
-[01:01:54.629] Browser LOG     AdminGuard: ✅ Admin confirmed!
-[01:02:00.825] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[01:02:02.685] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[01:02:02.798] Browser LOG     AdminGuard: 🔍 Found user: bujaklav@gmail.com
-[01:02:04.528] Browser LOG     AdminGuard: ✅ Admin confirmed!
-[01:02:45.874] Server  LOG     ✓ Compiled in 105ms
-[01:02:48.927] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
-[01:02:48.927] Browser WARN    Image with src "/Westgatelogo.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
-[01:02:49.389] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[01:02:49.872] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[01:02:50.363] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[01:02:50.883] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[01:02:51.379] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[01:02:51.835] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[01:02:52.316] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[01:02:52.910] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[01:02:55.834] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[01:02:56.447] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[01:02:56.819] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[01:02:57.293] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[01:02:57.525] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[01:02:59.471] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[01:02:59.613] Browser WARN    Image with src "/Westgatelogo.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
-[01:03:02.275] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[01:03:03.160] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[01:03:05.001] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[01:03:05.141] Browser WARN    Image with src "/Westgatelogo.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
-[01:03:08.462] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[01:03:08.973] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[01:03:09.480] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[01:03:10.006] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[01:11:20.586] Server  LOG     ✓ Compiled in 403ms
-[01:11:24.357] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[01:11:24.844] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[01:11:25.404] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[01:11:26.017] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[01:12:10.047] Server  LOG     ✓ Compiled in 109ms
-[01:12:11.093] Browser ERROR   uncaughtError: ReferenceError: Hero is not defined
-[01:12:16.227] Server  WARN    ⚠ Fast Refresh had to perform a full reload due to a runtime error.
-[01:12:16.247] Server  LOG     ✓ Compiled in 72ms
-[01:12:16.845] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[01:12:17.095] Browser WARN    Image with src "/Westgatelogo.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
-[01:12:20.095] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[01:12:21.094] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[01:12:22.094] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[01:12:22.095] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[01:12:30.217] Server  LOG     ✓ Compiled in 290ms
-[01:12:31.095] Browser ERROR   ./frontend/app/pages/news/page.tsx:32:9
-Parsing ecmascript source code failed
-  30 |       <Hero 
-  31 |         heading='Westgate Sindjelic' 
-> 32 |         ' 
-     |         ^^
-  33 |       />
-  34 |
-  35 |       {/* BAYERN ACCORDION HERO */}
 
-Unterminated string constant
-
-Import traces:
+Import trace:
   Client Component Browser:
-    ./frontend/app/pages/news/page.tsx [Client Component Browser]
-    ./frontend/app/pages/news/page.tsx [Server Component]
-
-  Client Component SSR:
-    ./frontend/app/pages/news/page.tsx [Client Component SSR]
-    ./frontend/app/pages/news/page.tsx [Server Component]
-[01:12:36.016] Server  LOG     ✓ Compiled in 67ms
-[01:12:37.025] Server  LOG     ✓ Compiled in 34ms
-[01:12:39.656] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[01:12:40.156] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[01:12:40.667] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[01:12:41.167] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[01:12:56.149] Server  LOG     ✓ Compiled in 58ms
-[01:12:57.700] Server  LOG     ✓ Compiled in 88ms
-[01:13:00.066] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[01:13:00.538] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[01:13:01.097] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[01:13:01.589] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[01:13:01.976] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[01:13:03.964] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[01:13:04.114] Browser WARN    Image with src "/Westgatelogo.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
-[01:13:06.796] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[01:13:07.316] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[01:13:07.805] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[01:13:08.285] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[01:14:19.819] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[01:14:19.949] Browser WARN    Image with src "/Westgatelogo.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
-[01:14:22.770] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[01:14:23.379] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[01:14:23.990] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[01:14:24.478] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[01:14:29.260] Browser LOG     AdminGuard: 🔍 Found user: bujaklav@gmail.com
-[01:14:29.260] Browser LOG     AdminGuard: 🔍 Found user: bujaklav@gmail.com
-[01:14:29.783] Browser LOG     AdminGuard: ✅ Admin confirmed!
-[01:14:29.783] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
-[01:14:30.451] Browser LOG     AdminGuard: ✅ Admin confirmed!
-[01:22:40.062] Server  LOG     ✓ Compiled in 341ms
-[01:22:55.164] Server  LOG     ✓ Compiled in 359ms
-[01:22:55.172] Server  WARN    ⚠ Fast Refresh had to perform a full reload when ./frontend/app/admin/news/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
-[01:22:56.153] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[01:22:57.102] Browser LOG     AdminGuard: 🔍 Found user: bujaklav@gmail.com
-[01:22:59.098] Browser LOG     AdminGuard: ✅ Admin confirmed!
-[01:23:53.071] Server  LOG     ✓ Compiled in 151ms
-[01:24:04.634] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
-[01:25:34.363] Browser WARN    Image with src "/Westgatelogo.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
-[01:25:35.034] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[01:25:35.742] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[01:25:36.259] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[01:25:36.783] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[01:25:44.673] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[01:25:45.285] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[01:25:45.795] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[01:25:46.262] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[01:25:49.393] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[01:25:52.120] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[01:25:52.271] Browser WARN    Image with src "/Westgatelogo.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
-[01:25:54.818] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[01:25:56.093] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[01:25:56.093] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[01:25:57.093] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[01:27:54.806] Server  LOG     ✓ Compiled in 234ms
-[01:28:04.211] Server  LOG     ✓ Compiled in 210ms
-[01:28:06.087] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[01:28:06.229] Browser WARN    Image with src "/Westgatelogo.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
-[01:28:08.778] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[01:28:09.257] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[01:28:09.762] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[01:28:10.294] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[01:28:11.478] Browser LOG     AdminGuard: 🔍 Found user: bujaklav@gmail.com
-[01:28:11.478] Browser LOG     AdminGuard: 🔍 Found user: bujaklav@gmail.com
-[01:28:11.985] Browser LOG     AdminGuard: ✅ Admin confirmed!
-[01:28:11.985] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
-[01:28:12.458] Browser LOG     AdminGuard: ✅ Admin confirmed!
-[01:31:16.019] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[01:31:16.586] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[01:31:17.157] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[01:31:17.780] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[01:31:18.307] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[01:31:18.808] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[01:31:19.305] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[01:31:19.786] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[01:31:29.464] Browser LOG     AdminGuard: 🔍 Found user: bujaklav@gmail.com
-[01:31:29.464] Browser LOG     AdminGuard: 🔍 Found user: bujaklav@gmail.com
-[01:31:30.053] Browser LOG     AdminGuard: ✅ Admin confirmed!
-[01:31:30.565] Browser LOG     AdminGuard: ✅ Admin confirmed!
-[01:32:44.897] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[01:32:45.496] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[01:32:46.078] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[01:32:46.589] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[01:32:47.064] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[01:32:47.583] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[01:32:48.192] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[01:32:48.997] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[01:32:53.618] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[01:32:56.118] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[01:32:56.281] Browser WARN    Image with src "/Westgatelogo.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
-[01:32:58.994] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[01:32:59.650] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[01:33:00.079] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[01:33:01.784] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[01:33:01.909] Browser WARN    Image with src "/Westgatelogo.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
-[01:33:04.388] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[01:33:04.878] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[01:33:05.346] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[01:33:05.821] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[01:37:35.038] Server  LOG     ✓ Compiled in 94ms
-[01:37:39.001] Server  LOG     ✓ Compiled in 59ms
-[01:37:40.354] Server  LOG     ✓ Compiled in 33ms
-[01:37:46.499] Server  LOG     ✓ Compiled in 83ms
-[01:37:49.745] Server  LOG     ✓ Compiled in 94ms
-[01:37:50.094] Browser ERROR   ./frontend/app/pages/news/page.tsx:78:35
+    ./frontend/components/Footer.tsx [Client Component Browser]
+    ./frontend/components/ClientFooter.tsx [Client Component Browser]
+    ./frontend/app/pages/layout.tsx [Client Component Browser]
+    ./frontend/app/pages/layout.tsx [Server Component]
+[00:00:48.630] Browser ERROR   ./frontend/components/Footer.tsx:28:11
 Parsing ecmascript source code failed
-  76 |               key={item.id} 
-  77 |               href={`/pages/news/${item.id}`} // Add /pages/ here
-> 78 |               className="..."group">
-     |                                   ^^
-  79 |               <div className="aspect-video overflow-hidden rounded-2xl mb-4 bg-slate-200">
-  80 |                 <img 
-  81 |                   src={item.image_url || '/placeholder.jpg'} 
+  26 |         <div className="max-w-7xl mx-auto px-6 py-12 border-t border-gray-100">
+  27 |           <p1
+> 28 |           <div className="flex flex-wrap justify-center items-center gap-x-16 gap-y-10">
+     |           ^
+  29 |             {sponsors.map((s) => (
+  30 |               <a 
+  31 |                 key={s.id} 
 
-Unterminated string constant
+Expression expected
 
-Import traces:
+Import trace:
   Client Component Browser:
-    ./frontend/app/pages/news/page.tsx [Client Component Browser]
-    ./frontend/app/pages/news/page.tsx [Server Component]
+    ./frontend/components/Footer.tsx [Client Component Browser]
+    ./frontend/components/ClientFooter.tsx [Client Component Browser]
+    ./frontend/app/pages/layout.tsx [Client Component Browser]
+    ./frontend/app/pages/layout.tsx [Server Component]
+[00:00:50.630] Browser ERROR   The tag <%s> is unrecognized in this browser. If you meant to render a React component, start its name with an uppercase letter. p1
+[00:00:58.390] Server  LOG     ✓ Compiled in 51ms
+[00:00:58.631] Browser ERROR   ./frontend/components/Footer.tsx:47:8
+Parsing ecmascript source code failed
+  45 |           </div>
+  46 |         </div>
+> 47 |       )}
+     |        ^
+  48 |
+  49 |       {/* DARK SOCIAL BAR */}
+  50 |       <div className="bg-[#020617] text-white pt-16 pb-8">
 
-  Client Component SSR:
-    ./frontend/app/pages/news/page.tsx [Client Component SSR]
-    ./frontend/app/pages/news/page.tsx [Server Component]
-[01:37:53.622] Server  LOG     ✓ Compiled in 62ms
-[01:38:03.861] Server  LOG     ✓ Compiled in 63ms
-[01:38:11.386] Server  LOG     ✓ Compiled in 60ms
-[01:38:15.204] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[01:38:18.135] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[01:38:18.479] Browser WARN    Image with src "/Westgatelogo.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
-[01:38:19.466] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[01:38:19.616] Browser WARN    Image with src "/Westgatelogo.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
-[01:38:22.532] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[01:39:27.161] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[01:39:28.051] Browser WARN    Image with src "/Westgatelogo.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
-[01:39:55.407] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[01:39:57.650] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[01:39:57.788] Browser WARN    Image with src "/Westgatelogo.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
-[01:40:00.696] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
-[01:43:48.774] Server  LOG     ✓ Compiled in 203ms
-[01:46:01.407] Server  LOG     ✓ Compiled in 218ms
-[01:47:37.549] Server  LOG     ✓ Compiled in 198ms
-[01:47:57.742] Server  LOG     ✓ Compiled in 66ms
-[01:52:26.695] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[01:52:26.844] Browser WARN    Image with src "/Westgatelogo.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
-[01:52:37.454] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
-[01:54:52.715] Server  LOG     ✓ Compiled in 129ms
-[01:55:00.376] Server  LOG     ✓ Compiled in 133ms
+Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+
+Import trace:
+  Client Component Browser:
+    ./frontend/components/Footer.tsx [Client Component Browser]
+    ./frontend/components/ClientFooter.tsx [Client Component Browser]
+    ./frontend/app/pages/layout.tsx [Client Component Browser]
+    ./frontend/app/pages/layout.tsx [Server Component]
+[00:01:08.017] Server  LOG     ✓ Compiled in 53ms
+[00:01:09.603] Server  LOG     ✓ Compiled in 34ms
+[00:01:17.933] Server  LOG     ✓ Compiled in 62ms
+[00:01:18.631] Browser ERROR   ./frontend/components/Footer.tsx:29:15
+Parsing ecmascript source code failed
+  27 |           <p1 className="text-center text-[10px] font-black uppercase tracking-[0.4em] text-slate-500 mb-8 italic">
+  28 |             Partners
+> 29 |           </p>
+     |               ^
+> 30 |           <div className="flex flex-wrap justify-center items-center gap-x-16 gap-y-10">
+     | ^^^^^^^^^^^
+  31 |             {sponsors.map((s) => (
+  32 |               <a 
+  33 |                 key={s.id} 
+
+Expected '</', got 'jsx text (
+          )'
+
+Import trace:
+  Client Component Browser:
+    ./frontend/components/Footer.tsx [Client Component Browser]
+    ./frontend/components/ClientFooter.tsx [Client Component Browser]
+    ./frontend/app/pages/layout.tsx [Client Component Browser]
+    ./frontend/app/pages/layout.tsx [Server Component]
+[00:01:19.853] Server  LOG     ✓ Compiled in 22ms
+[00:01:35.012] Server  LOG     ✓ Compiled in 99ms
+[00:09:29.041] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+[00:10:01.924] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:10:02.064] Browser WARN    Image with src "/Westgatelogo.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:10:08.263] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+[00:12:26.906] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:12:27.131] Browser WARN    Image with src "/Westgatelogo.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:12:30.420] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+[00:14:39.383] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:14:39.647] Browser WARN    Image with src "/Westgatelogo.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:14:45.727] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+[00:15:46.076] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:15:52.084] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+[00:16:40.857] Browser WARN    Image with src "/Westgatelogo.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:17:28.317] Browser WARN    Session check handled: {}
+[00:20:14.114] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
+[00:20:14.646] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
+[00:20:15.474] Browser LOG     Admin detected, redirecting to dashboard...
+[00:20:15.676] Browser LOG     AdminGuard: 🔍 Found user: bujaklav@gmail.com
+[00:20:15.676] Browser LOG     AdminGuard: 🔍 Found user: bujaklav@gmail.com
+[00:20:16.009] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
+[00:20:16.504] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
+[00:20:17.013] Browser LOG     AdminGuard: ✅ Admin confirmed!
+[00:20:17.615] Browser LOG     AdminGuard: ✅ Admin confirmed!
+[00:22:02.382] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
+[00:22:02.943] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
+[00:22:03.502] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
+[00:22:04.037] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
+[00:22:04.626] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
+[00:22:05.140] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
+[00:22:05.750] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
+[00:22:06.371] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
+[00:22:25.516] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
+[00:22:26.165] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
+[00:22:26.741] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
+[00:22:27.454] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
+[00:22:34.245] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
+[00:22:34.731] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
+[00:22:35.264] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
+[00:22:35.717] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
+[00:22:37.509] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
+[00:22:37.969] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
+[00:22:38.451] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
+[00:22:38.923] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
+[00:22:44.313] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
+[00:22:44.875] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
+[00:22:45.347] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
+[00:22:45.896] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
+[00:22:46.903] Browser LOG     AdminGuard: 🔍 Found user: bujaklav@gmail.com
+[00:22:46.903] Browser LOG     AdminGuard: 🔍 Found user: bujaklav@gmail.com
+[00:22:47.534] Browser LOG     AdminGuard: ✅ Admin confirmed!
+[00:22:48.154] Browser LOG     AdminGuard: ✅ Admin confirmed!
+[00:23:16.840] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
+[00:23:17.433] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
+[00:23:17.949] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
+[00:23:18.421] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.

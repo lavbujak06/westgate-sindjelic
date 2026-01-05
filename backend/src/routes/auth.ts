@@ -3,7 +3,7 @@ import { supabase } from '../supabase';
 import { requireAdmin } from '../middleware/requireAdmin';
 
 const router = Router();
-const SESSION_DURATION = 45 * 60 * 1000;
+const SESSION_DURATION = 60 * 60 * 1000;
 
 router.post('/login', async (req, res) => {
   const { email, password } = req.body;
@@ -49,8 +49,24 @@ router.get('/me', async (req, res) => {
   try {
     const token = req.cookies?.['sb-access-token'];
     const issuedAt = req.cookies?.session_issued_at;
-    if (!token || !issuedAt) return res.status(401).json({ user: null, profile: null });
 
+    // 1. If cookies are missing, don't throw an error, just return nulls
+    // This stops the 401 loop on a fresh browser load
+    if (!token || !issuedAt) {
+      return res.status(200).json({ user: null, profile: null });
+    }
+
+    // 2. CHECK 60 MINUTE EXPIRY
+    const currentTime = Date.now();
+    const sessionStart = parseInt(issuedAt);
+    
+    if (currentTime - sessionStart > SESSION_DURATION) {
+      res.clearCookie('sb-access-token');
+      res.clearCookie('session_issued_at');
+      return res.status(401).json({ error: 'Session expired' }); // THIS stays 401
+    }
+
+    // 3. Normal retrieval logic...
     const { data: { user }, error: authError } = await supabase.auth.getUser(token);
     if (authError || !user) return res.status(401).json({ user: null, profile: null });
 
