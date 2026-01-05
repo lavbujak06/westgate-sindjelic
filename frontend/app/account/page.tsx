@@ -8,7 +8,7 @@ import toast from 'react-hot-toast';
 import { useRouter } from 'next/navigation';
 
 export default function AccountSettings() {
-  const { user, profile, fetchUserProfile } = useUser();
+  const { user, profile, loading, fetchUserProfile } = useUser(); // Added loading here
   const [name, setName] = useState('');
   const [surname, setSurname] = useState('');
   const [logoFile, setLogoFile] = useState<File | null>(null);
@@ -36,7 +36,6 @@ export default function AccountSettings() {
     try {
       let logoUrl = profile?.logo || null;
 
-      // 1. Storage Logic
       if (logoFile) {
         const fileExt = logoFile.name.split('.').pop();
         const filePath = `${user.id}/logo.${fileExt}`;
@@ -54,7 +53,6 @@ export default function AccountSettings() {
         logoUrl = data.publicUrl;
       }
 
-      // 2. Database Logic (Restored to .update().eq())
       const { error } = await supabaseClient
         .from('profiles')
         .update({ 
@@ -66,7 +64,6 @@ export default function AccountSettings() {
 
       if (error) throw error;
 
-      // 3. Context Refresh
       await fetchUserProfile();
       toast.success('Profile updated successfully!');
       router.push('/');
@@ -79,8 +76,10 @@ export default function AccountSettings() {
     }
   };
 
-  // Restore the original "Loader" guard you preferred
-  if (!profile) return (
+  // UPDATED GUARD: Checks loading first, then profile.
+  // This prevents the "Admin privileges confirmed" error because it waits 
+  // for the context to finish its backend fetch.
+  if (loading || !profile) return (
     <div className="min-h-screen bg-[#020617] flex items-center justify-center">
       <Loader />
     </div>
@@ -90,7 +89,6 @@ export default function AccountSettings() {
     <div className="min-h-screen bg-[#020617] text-white flex items-center justify-center p-6">
       <div className="max-w-md w-full animate-in fade-in duration-500">
         
-        {/* Header */}
         <div className="mb-10 text-center">
           <h1 className="text-3xl font-black uppercase tracking-tighter italic">
             Profile <span className="text-red-600">Settings</span>
@@ -102,7 +100,6 @@ export default function AccountSettings() {
 
         <form onSubmit={handleSave} className="bg-slate-900/50 border border-slate-800 p-8 rounded-[2.5rem] shadow-2xl space-y-6">
           
-          {/* IMAGE UPLOAD SECTION */}
           <div className="flex flex-col items-center gap-4 mb-4">
             <div className="relative w-24 h-24 group">
               <div className="w-full h-full rounded-full overflow-hidden border-2 border-slate-800 group-hover:border-red-600 transition-colors bg-slate-950 flex items-center justify-center">
@@ -121,14 +118,8 @@ export default function AccountSettings() {
                 <input type="file" className="hidden" accept="image/*" onChange={handleFileChange} />
               </label>
             </div>
-            {logoFile && (
-              <p className="text-[9px] text-red-500 font-black uppercase tracking-widest animate-pulse">
-                New Identity Image Pending
-              </p>
-            )}
           </div>
 
-          {/* INPUT FIELDS */}
           <div className="space-y-4">
             <div className="space-y-1">
               <label className="text-[10px] font-black uppercase tracking-widest text-slate-500 ml-2">First Name</label>
@@ -153,7 +144,6 @@ export default function AccountSettings() {
             </div>
           </div>
 
-          {/* ACTION BUTTONS */}
           <button 
             type="submit" 
             disabled={uploading}

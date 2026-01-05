@@ -42,45 +42,51 @@ const UserProvider = ({ children })=>{
     _s();
     const [user, setUser] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(null);
     const [profile, setProfile] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(null);
-    const fetchUserProfile = async ()=>{
-        try {
-            // 1. Check Supabase first
-            const { data: { user: supabaseUser } } = await __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$lib$2f$supabaseClient$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["supabaseClient"].auth.getUser();
-            if (!supabaseUser) {
+    const [loading, setLoading] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(true);
+    const fetchUserProfile = (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useCallback"])({
+        "UserProvider.useCallback[fetchUserProfile]": async ()=>{
+            try {
+                setLoading(true);
+                // 1. Check Supabase first
+                const { data: { user: supabaseUser } } = await __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$lib$2f$supabaseClient$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["supabaseClient"].auth.getUser();
+                if (!supabaseUser) {
+                    setUser(null);
+                    setProfile(null);
+                    setLoading(false);
+                    return;
+                }
+                // 2. Ask backend for profile info
+                const res = await fetch('http://localhost:5001/api/auth/me', {
+                    method: 'GET',
+                    credentials: 'include'
+                });
+                if (!res.ok) {
+                    // Sign out fully if backend rejects session
+                    setUser(null);
+                    setProfile(null);
+                    await __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$lib$2f$supabaseClient$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["supabaseClient"].auth.signOut();
+                    return;
+                } else {
+                    // Your working fix: Keep the supabaseUser while waiting for JSON
+                    setUser(supabaseUser);
+                }
+                const data = await res.json();
+                setUser(data.user || supabaseUser);
+                setProfile(data.profile);
+            } catch (err) {
+                console.warn('Session check handled:', err);
                 setUser(null);
                 setProfile(null);
-                return;
+            } finally{
+                setLoading(false);
             }
-            // 2. Ask backend for profile info
-            const res = await fetch('http://localhost:5001/api/auth/me', {
-                method: 'GET',
-                credentials: 'include'
-            });
-            if (!res.ok) {
-                // If the backend doesn't recognize the session, but Supabase does,
-                // we should still keep the supabaseUser info at minimum
-                setUser(supabaseUser);
-                setProfile(null);
-                return;
-            }
-            const data = await res.json();
-            setUser(data.user || supabaseUser);
-            setProfile(data.profile);
-        } catch (err) {
-            console.warn('Session check handled:', err);
-            setUser(null);
-            setProfile(null);
         }
-    };
+    }["UserProvider.useCallback[fetchUserProfile]"], []);
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
         "UserProvider.useEffect": ()=>{
-            // INITIAL FETCH
             fetchUserProfile();
-            // 🔄 ADDED: AUTH STATE LISTENER
-            // This fixes the 401 by ensuring the frontend supabaseClient 
-            // stays in sync with the session cookies/backend.
             const { data: { subscription } } = __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$lib$2f$supabaseClient$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["supabaseClient"].auth.onAuthStateChange({
-                "UserProvider.useEffect": (event, session)=>{
+                "UserProvider.useEffect": (event)=>{
                     if (event === 'SIGNED_IN' || event === 'TOKEN_REFRESHED') {
                         fetchUserProfile();
                     } else if (event === 'SIGNED_OUT') {
@@ -95,11 +101,14 @@ const UserProvider = ({ children })=>{
                 }
             })["UserProvider.useEffect"];
         }
-    }["UserProvider.useEffect"], []);
+    }["UserProvider.useEffect"], [
+        fetchUserProfile
+    ]);
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(UserContext.Provider, {
         value: {
             user,
             profile,
+            loading,
             fetchUserProfile,
             setUser,
             setProfile
@@ -107,11 +116,11 @@ const UserProvider = ({ children })=>{
         children: children
     }, void 0, false, {
         fileName: "[project]/frontend/context/UserContext.tsx",
-        lineNumber: 78,
+        lineNumber: 83,
         columnNumber: 5
     }, ("TURBOPACK compile-time value", void 0));
 };
-_s(UserProvider, "bBjGM0Fp/L1J34Bpt26Y2yne5Ko=");
+_s(UserProvider, "T/YB9Ni90ffK8+LZNSNILldE7i0=");
 _c = UserProvider;
 const useUser = ()=>{
     _s1();

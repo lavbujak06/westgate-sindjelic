@@ -1,52 +1,303 @@
-[00:00:00.532] Server  ERROR   (node:85081) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/lavbujak/Desktop/Sindjelic/westgate-sindjelic/frontend/next.config.js is not specified and it doesn't parse as CommonJS.
+[00:00:00.544] Server  ERROR   (node:3258) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/lavbujak/Desktop/Sindjelic/westgate-sindjelic/frontend/next.config.js is not specified and it doesn't parse as CommonJS.
 Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
 To eliminate this warning, add "type": "module" to /Users/lavbujak/Desktop/Sindjelic/westgate-sindjelic/frontend/package.json.
 (Use `node --trace-warnings ...` to show where the warning was created)
-[00:00:00.879] Server  WARN    ⚠ The "middleware" file convention is deprecated. Please use "proxy" instead. Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
-[00:00:00.971] Server  LOG     ✓ Ready in 742ms
-[00:00:04.376] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:00:04.523] Browser WARN    Image with src "/westgateLogo.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
-[00:00:06.003] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:00:06.498] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:00:54.724] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:00:55.236] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:01:26.212] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:01:26.788] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:02:12.090] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:02:12.757] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:02:43.594] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:02:44.089] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:02:47.086] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:02:47.221] Browser WARN    Image with src "/westgateLogo.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
-[00:02:48.487] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:02:49.002] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:03:37.025] Server  LOG     ✓ Compiled in 964ms
-[00:03:37.453] Server  ERROR   ⨯ "The requested resource isn't a valid image for" "/.png" "received" null
-[00:03:39.578] Server  LOG     ✓ Compiled in 39ms
-[00:03:39.791] Server  ERROR   ⨯ "The requested resource isn't a valid image for" "/" "received" null
-[00:03:49.069] Server  ERROR   ⨯ "The requested resource isn't a valid image for" "/westgateLogo" "received" null
-[00:03:49.080] Server  LOG     ✓ Compiled in 55ms
-[00:03:51.523] Server  LOG     ✓ Compiled in 32ms
-[00:03:51.555] Server  ERROR   ⨯ "The requested resource isn't a valid image for" "/westgateLogo." "received" null
-[00:03:54.121] Server  ERROR   ⨯ "The requested resource isn't a valid image for" "/westgateLogo.jpeg" "received" null
-[00:03:54.127] Server  LOG     ✓ Compiled in 54ms
-[00:04:07.837] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:04:08.324] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:04:08.954] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:04:09.084] Browser WARN    Image with src "/westgateLogo.jpeg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
-[00:04:10.106] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:04:10.577] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:11:35.866] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:11:36.394] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:12:38.615] Server  LOG     ✓ Compiled in 99ms
-[00:12:38.722] Server  ERROR   ⨯ "The requested resource isn't a valid image for" "/WestgateLogo.jpeg" "received" null
-[00:12:41.589] Server  LOG     ✓ Compiled in 41ms
-[00:12:41.627] Server  ERROR   ⨯ "The requested resource isn't a valid image for" "/Westgatelogo.jpeg" "received" null
-[00:12:47.739] Server  LOG     ✓ Compiled in 43ms
-[00:12:47.785] Server  ERROR   ⨯ "The requested resource isn't a valid image for" "/Westgatelogo." "received" null
-[00:12:49.410] Server  LOG     ✓ Compiled in 38ms
-[00:12:50.374] Browser WARN    Image with src "/Westgatelogo.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
-[00:12:56.255] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:12:56.856] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:13:19.957] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:13:20.483] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
+[00:00:00.991] Server  WARN    ⚠ The "middleware" file convention is deprecated. Please use "proxy" instead. Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
+[00:00:01.068] Server  LOG     ✓ Ready in 839ms
+[00:00:04.219] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:04.362] Browser WARN    Image with src "/Westgatelogo.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:00:18.476] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+[00:00:42.574] Browser LOG     Admin detected, redirecting to dashboard...
+[00:00:42.787] Browser LOG     AdminGuard: ❌ No session found, redirecting...
+[00:00:42.787] Browser LOG     AdminGuard: ❌ No session found, redirecting...
+[00:00:43.075] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
+[00:00:43.541] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
+[00:00:44.030] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
+[00:00:44.560] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
+[00:00:45.088] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
+[00:00:45.587] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
+[00:00:48.169] Browser LOG     AdminGuard: ❌ No session found, redirecting...
+[00:00:48.169] Browser LOG     AdminGuard: ❌ No session found, redirecting...
+[00:00:48.757] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
+[00:00:49.226] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
+[00:00:49.887] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
+[00:00:50.370] Browser LOG     AdminGuard: ❌ No session found, redirecting...
+[00:00:50.370] Browser LOG     AdminGuard: ❌ No session found, redirecting...
+[00:00:50.370] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
+[00:00:51.110] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
+[00:00:51.624] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
+[00:00:52.136] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
+[00:00:52.600] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
+[00:01:13.333] Server  WARN    ⚠ Fast Refresh had to perform a full reload when ./frontend/context/UserContext.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[00:01:13.351] Server  LOG     ✓ Compiled in 103ms
+[00:01:14.049] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:01:14.936] Server  LOG     ✓ Compiled in 218ms
+[00:01:15.457] Browser WARN    Image with src "/Westgatelogo.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:01:15.458] Browser ERROR   ./frontend/context/UserContext.tsx:48:7
+Parsing ecmascript source code failed
+  46 |       else
+  47 |
+> 48 |       const data = await res.json();
+     |       ^^^^^
+  49 |       setUser(data.user || supabaseUser);
+  50 |       setProfile(data.profile);
+  51 |
+
+Expression expected
+
+Import traces:
+  Server Component:
+    ./frontend/context/UserContext.tsx
+    ./frontend/app/layout.tsx
+
+  Client Component Browser:
+    ./frontend/context/UserContext.tsx [Client Component Browser]
+    ./frontend/components/AccountMenu.tsx [Client Component Browser]
+    ./frontend/components/Navbar.tsx [Client Component Browser]
+    ./frontend/components/Navbar.tsx [Server Component]
+    ./frontend/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./frontend/context/UserContext.tsx [Client Component SSR]
+    ./frontend/components/AccountMenu.tsx [Client Component SSR]
+    ./frontend/components/Navbar.tsx [Client Component SSR]
+    ./frontend/components/Navbar.tsx [Server Component]
+    ./frontend/app/page.tsx [Server Component]
+[00:01:16.795] Server  LOG     ✓ Compiled in 65ms
+[00:01:17.451] Browser ERROR   ./frontend/context/UserContext.tsx:57:4
+Parsing ecmascript source code failed
+  55 |       setProfile(null);
+  56 |     }
+> 57 |   };
+     |    ^
+  58 |
+  59 |   useEffect(() => {
+  60 |     fetchUserProfile();
+
+Expected a semicolon
+
+Import traces:
+  Server Component:
+    ./frontend/context/UserContext.tsx
+    ./frontend/app/layout.tsx
+
+  Client Component Browser:
+    ./frontend/context/UserContext.tsx [Client Component Browser]
+    ./frontend/components/AccountMenu.tsx [Client Component Browser]
+    ./frontend/components/Navbar.tsx [Client Component Browser]
+    ./frontend/components/Navbar.tsx [Server Component]
+    ./frontend/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./frontend/context/UserContext.tsx [Client Component SSR]
+    ./frontend/components/AccountMenu.tsx [Client Component SSR]
+    ./frontend/components/Navbar.tsx [Client Component SSR]
+    ./frontend/components/Navbar.tsx [Server Component]
+    ./frontend/app/page.tsx [Server Component]
+[00:01:18.455] Browser ERROR   ./frontend/context/UserContext.tsx:58:4
+Parsing ecmascript source code failed
+  56 |       setProfile(null);
+  57 |     }
+> 58 |   };
+     |    ^
+  59 |
+  60 |   useEffect(() => {
+  61 |     fetchUserProfile();
+
+Expected a semicolon
+
+Import traces:
+  Server Component:
+    ./frontend/context/UserContext.tsx
+    ./frontend/app/layout.tsx
+
+  Client Component Browser:
+    ./frontend/context/UserContext.tsx [Client Component Browser]
+    ./frontend/components/AccountMenu.tsx [Client Component Browser]
+    ./frontend/components/Navbar.tsx [Client Component Browser]
+    ./frontend/components/Navbar.tsx [Server Component]
+    ./frontend/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./frontend/context/UserContext.tsx [Client Component SSR]
+    ./frontend/components/AccountMenu.tsx [Client Component SSR]
+    ./frontend/components/Navbar.tsx [Client Component SSR]
+    ./frontend/components/Navbar.tsx [Server Component]
+    ./frontend/app/page.tsx [Server Component]
+[00:01:20.451] Browser ERROR   ./frontend/context/UserContext.tsx:58:4
+Parsing ecmascript source code failed
+  56 |       setProfile(null);
+  57 |     }
+> 58 |   };
+     |    ^
+  59 |
+  60 |   useEffect(() => {
+  61 |     fetchUserProfile();
+
+Expected a semicolon
+
+Import traces:
+  Server Component:
+    ./frontend/context/UserContext.tsx
+    ./frontend/app/layout.tsx
+
+  Client Component Browser:
+    ./frontend/context/UserContext.tsx [Client Component Browser]
+    ./frontend/components/AccountMenu.tsx [Client Component Browser]
+    ./frontend/components/Navbar.tsx [Client Component Browser]
+    ./frontend/components/Navbar.tsx [Server Component]
+    ./frontend/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./frontend/context/UserContext.tsx [Client Component SSR]
+    ./frontend/components/AccountMenu.tsx [Client Component SSR]
+    ./frontend/components/Navbar.tsx [Client Component SSR]
+    ./frontend/components/Navbar.tsx [Server Component]
+    ./frontend/app/page.tsx [Server Component]
+[00:01:22.450] Browser ERROR   ./frontend/context/UserContext.tsx:58:4
+Parsing ecmascript source code failed
+  56 |       setProfile(null);
+  57 |     }
+> 58 |   };
+     |    ^
+  59 |
+  60 |   useEffect(() => {
+  61 |     fetchUserProfile();
+
+Expected a semicolon
+
+Import traces:
+  Server Component:
+    ./frontend/context/UserContext.tsx
+    ./frontend/app/layout.tsx
+
+  Client Component Browser:
+    ./frontend/context/UserContext.tsx [Client Component Browser]
+    ./frontend/components/AccountMenu.tsx [Client Component Browser]
+    ./frontend/components/Navbar.tsx [Client Component Browser]
+    ./frontend/components/Navbar.tsx [Server Component]
+    ./frontend/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./frontend/context/UserContext.tsx [Client Component SSR]
+    ./frontend/components/AccountMenu.tsx [Client Component SSR]
+    ./frontend/components/Navbar.tsx [Client Component SSR]
+    ./frontend/components/Navbar.tsx [Server Component]
+    ./frontend/app/page.tsx [Server Component]
+[00:01:23.575] Server  WARN    ⚠ Fast Refresh had to perform a full reload when ./frontend/context/UserContext.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[00:01:23.950] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:01:24.451] Browser WARN    Image with src "/Westgatelogo.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:01:27.082] Server  WARN    ⚠ Fast Refresh had to perform a full reload when ./frontend/context/UserContext.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[00:01:27.094] Server  LOG     ✓ Compiled in 32ms
+[00:01:27.537] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:01:28.453] Browser WARN    Image with src "/Westgatelogo.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:01:30.010] Server  WARN    ⚠ Fast Refresh had to perform a full reload when ./frontend/context/UserContext.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[00:01:30.033] Server  LOG     ✓ Compiled in 37ms
+[00:01:30.409] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:01:31.453] Browser WARN    Image with src "/Westgatelogo.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:01:48.990] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
+[00:01:49.448] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
+[00:01:49.918] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
+[00:01:50.060] Browser LOG     Admin detected, redirecting to dashboard...
+[00:01:50.210] Browser LOG     AdminGuard: 🔍 Found user: bujaklav@gmail.com
+[00:01:50.210] Browser LOG     AdminGuard: 🔍 Found user: bujaklav@gmail.com
+[00:01:50.383] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
+[00:01:50.847] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
+[00:01:51.327] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
+[00:01:51.985] Browser LOG     AdminGuard: ✅ Admin confirmed!
+[00:01:51.986] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+[00:01:52.447] Browser LOG     AdminGuard: ✅ Admin confirmed!
+[00:01:57.126] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
+[00:01:57.582] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
+[00:01:58.046] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
+[00:01:58.546] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
+[00:02:02.353] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:02:02.353] Browser WARN    Image with src "/Westgatelogo.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:03:10.836] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:03:10.836] Browser WARN    Image with src "/Westgatelogo.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:03:12.965] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+[00:03:26.047] Server  WARN    ⚠ Fast Refresh had to perform a full reload when ./frontend/context/UserContext.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[00:03:26.070] Server  LOG     ✓ Compiled in 72ms
+[00:03:26.500] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:03:27.454] Browser WARN    Image with src "/Westgatelogo.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:03:47.982] Browser LOG     Admin detected, redirecting to dashboard...
+[00:03:48.235] Browser LOG     AdminGuard: ❌ No session found, redirecting...
+[00:03:48.235] Browser LOG     AdminGuard: ❌ No session found, redirecting...
+[00:03:48.236] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+[00:03:48.482] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
+[00:03:48.982] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
+[00:03:49.499] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
+[00:03:50.012] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
+[00:03:50.520] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
+[00:03:50.998] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
+[00:04:54.441] Server  WARN    ⚠ Fast Refresh had to perform a full reload when ./frontend/context/UserContext.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[00:04:54.464] Server  LOG     ✓ Compiled in 78ms
+[00:04:55.123] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:04:55.457] Browser WARN    Image with src "/Westgatelogo.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:09:32.950] Server  LOG     ✓ Compiled in 132ms
+[00:09:33.454] Browser ERROR   ./frontend/context/UserContext.tsx:64:1
+Parsing ecmascript source code failed
+  62 |     fetchUserProfile();'use client';
+  63 |
+> 64 | import { createContext, useContext, useEffect, useState, ReactNode, useCallback } from 'react';
+     | ^^^^^^
+  65 | import { supabaseClient } from '@/lib/supabaseClient';
+  66 |
+  67 | interface UserContextType {
+
+'import', and 'export' cannot be used outside of module code
+
+Import traces:
+  Server Component:
+    ./frontend/context/UserContext.tsx
+    ./frontend/app/layout.tsx
+
+  Client Component Browser:
+    ./frontend/context/UserContext.tsx [Client Component Browser]
+    ./frontend/components/AccountMenu.tsx [Client Component Browser]
+    ./frontend/components/Navbar.tsx [Client Component Browser]
+    ./frontend/components/Navbar.tsx [Server Component]
+    ./frontend/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./frontend/context/UserContext.tsx [Client Component SSR]
+    ./frontend/components/AccountMenu.tsx [Client Component SSR]
+    ./frontend/components/Navbar.tsx [Client Component SSR]
+    ./frontend/components/Navbar.tsx [Server Component]
+    ./frontend/app/page.tsx [Server Component]
+[00:09:36.426] Server  LOG     ✓ Compiled in 235ms
+[00:09:36.607] Server  WARN    ⚠ Fast Refresh had to perform a full reload when ./frontend/context/UserContext.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[00:09:37.180] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:09:38.509] Browser WARN    Image with src "/Westgatelogo.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:10:05.607] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:10:05.757] Browser WARN    Image with src "/Westgatelogo.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:10:08.435] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+[00:10:28.115] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
+[00:10:28.115] Browser LOG     Admin detected, redirecting to dashboard...
+[00:10:28.251] Browser LOG     AdminGuard: 🔍 Found user: bujaklav@gmail.com
+[00:10:28.251] Browser LOG     AdminGuard: 🔍 Found user: bujaklav@gmail.com
+[00:10:28.490] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
+[00:10:29.063] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
+[00:10:29.596] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
+[00:10:30.083] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
+[00:10:30.543] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
+[00:10:31.107] Browser LOG     AdminGuard: ✅ Admin confirmed!
+[00:10:31.606] Browser LOG     AdminGuard: ✅ Admin confirmed!
+[00:10:40.055] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
+[00:10:40.632] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
+[00:10:41.128] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
+[00:10:41.657] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
+[00:10:49.061] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:10:49.061] Browser WARN    Image with src "/Westgatelogo.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:10:55.851] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+[00:13:03.448] Server  LOG     ✓ Compiled in 232ms
+[00:13:06.336] Server  LOG     ✓ Compiled in 38ms
+[00:13:20.432] Server  LOG     ✓ Compiled in 43ms
+[00:13:25.006] Server  LOG     ✓ Compiled in 32ms
+[00:13:26.569] Server  LOG     ✓ Compiled in 62ms
+[00:13:28.349] Server  LOG     ✓ Compiled in 34ms
+[00:13:31.401] Server  LOG     ✓ Compiled in 35ms
+[00:13:33.320] Server  LOG     ✓ Compiled in 189ms
+[00:13:47.621] Server  LOG     ✓ Compiled in 136ms
+[00:13:51.046] Server  LOG     ✓ Compiled in 43ms
+[00:13:54.937] Server  LOG     ✓ Compiled in 41ms

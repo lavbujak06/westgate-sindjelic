@@ -120,7 +120,7 @@ const AccountMenu = () => {
             ) : (
               <li>
                 <Link href="/login" className="flex items-center px-4 py-3 text-[10px] font-black uppercase tracking-widest text-white bg-red-600 rounded-xl hover:bg-red-700 transition-all text-center justify-center">
-                  Identify (Log In)
+                  Log In
                 </Link>
               </li>
             )}
