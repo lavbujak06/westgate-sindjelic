@@ -35,10 +35,12 @@ export const UserProvider = ({ children }: { children: ReactNode }) => {
       });
 
       if (!res.ok) {
-        // If the backend doesn't recognize the session, but Supabase does,
-        // we should still keep the supabaseUser info at minimum
-        setUser(supabaseUser); 
+        // If backend rejects the session, wipe everything.
+        setUser(null);
         setProfile(null);
+        
+        // Clean up the browser local storage to match the deleted cookies
+        await supabaseClient.auth.signOut();
         return;
       }
 
@@ -54,12 +56,9 @@ export const UserProvider = ({ children }: { children: ReactNode }) => {
   };
 
   useEffect(() => {
-    // INITIAL FETCH
     fetchUserProfile();
 
     // 🔄 ADDED: AUTH STATE LISTENER
-    // This fixes the 401 by ensuring the frontend supabaseClient 
-    // stays in sync with the session cookies/backend.
     const { data: { subscription } } = supabaseClient.auth.onAuthStateChange((event, session) => {
       if (event === 'SIGNED_IN' || event === 'TOKEN_REFRESHED') {
         fetchUserProfile();
