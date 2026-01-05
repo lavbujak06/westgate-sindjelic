@@ -10,7 +10,7 @@ interface Coach {
 }
 
 interface CoachStaffProps {
-  teamSlug: string; // e.g., 'senior-men', 'juniors', etc.
+  teamSlug: string; 
 }
 
 const CoachStaff = ({ teamSlug }: CoachStaffProps) => {
@@ -18,11 +18,14 @@ const CoachStaff = ({ teamSlug }: CoachStaffProps) => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // Fetch only the coaches for the specific teamSlug provided to this component
     fetch(`http://localhost:5001/api/coaches?team=${teamSlug}`)
       .then((res) => res.json())
       .then((data) => {
-        if (Array.isArray(data)) setCoaches(data);
+        if (Array.isArray(data)) {
+          // Sort so head_coach always comes first
+          const sorted = [...data].sort((a) => (a.role === 'head_coach' ? -1 : 1));
+          setCoaches(sorted);
+        }
         setLoading(false);
       })
       .catch((err) => {
@@ -34,43 +37,44 @@ const CoachStaff = ({ teamSlug }: CoachStaffProps) => {
   if (loading) return <div className="text-center py-10 text-gray-400 font-mono text-xs uppercase">Loading Staff...</div>;
   if (coaches.length === 0) return null;
 
-  // Separate Head Coach for a bigger display
-  const headCoach = coaches.find((c) => c.role === 'head_coach');
-  const assistants = coaches.filter((c) => c.role === 'assistant_coach');
-
   return (
-    <section className="max-w-7xl mx-auto px-4 md:px-6 py-16">
-      <div className="text-center mb-12">
-        <h2 className="text-3xl font-black uppercase italic text-gray-900">
+    <section className="max-w-7xl mx-auto px-4 md:px-6 py-20">
+      <div className="flex items-end gap-4 mb-12">
+        <h2 className="text-4xl font-black uppercase italic text-gray-900 tracking-tighter">
           Technical <span className="text-red-700">Staff</span>
         </h2>
-        <div className="h-1 w-12 bg-red-600 mx-auto mt-2" />
+        <div className="h-[2px] flex-1 bg-gray-100 mb-3" />
       </div>
 
-      <div className="flex flex-col items-center gap-12">
-        {/* Head Coach Display */}
-        {headCoach && (
-          <div className="flex flex-col items-center group">
-            <div className="w-48 h-48 rounded-full overflow-hidden border-4 border-red-600 shadow-2xl transition-transform group-hover:scale-105">
-              <img src={headCoach.image_url} alt={headCoach.name} className="w-full h-full object-cover" />
-            </div>
-            <h3 className="mt-4 text-xl font-black uppercase text-gray-900">{headCoach.name}</h3>
-            <p className="text-red-600 font-bold uppercase text-xs tracking-widest">Head Coach</p>
-          </div>
-        )}
-
-        {/* Assistants Row */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 w-full">
-          {assistants.map((coach) => (
-            <div key={coach.id} className="flex flex-col items-center bg-white p-6 rounded-2xl shadow-lg border border-gray-100">
-              <div className="w-24 h-24 rounded-full overflow-hidden border-2 border-gray-300 mb-4">
-                <img src={coach.image_url} alt={coach.name} className="w-full h-full object-cover" />
+      {/* Grid Layout: All coaches next to each other */}
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 md:gap-10">
+        {coaches.map((coach) => (
+          <div key={coach.id} className="group flex flex-col items-center">
+            {/* 1. Removed rounded-full to prevent head-cropping 
+                2. Added object-top so the crop starts at the head, not the chest
+            */}
+            <div className={`relative w-full aspect-[4/5] overflow-hidden rounded-2xl shadow-xl transition-all duration-500 group-hover:shadow-red-500/20 group-hover:-translate-y-2 ${coach.role === 'head_coach' ? 'border-2 border-red-600' : 'border border-gray-100'}`}>
+              <img 
+                src={coach.image_url} 
+                alt={coach.name} 
+                className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-110" 
+              />
+              
+              {/* Subtle Role Overlay */}
+              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4">
+                 <p className={`text-[10px] font-black uppercase tracking-widest ${coach.role === 'head_coach' ? 'text-red-500' : 'text-gray-300'}`}>
+                  {coach.role === 'head_coach' ? 'Head Coach' : 'Assistant Coach'}
+                </p>
               </div>
-              <h4 className="text-sm font-bold uppercase text-gray-900">{coach.name}</h4>
-              <p className="text-gray-500 font-medium text-[10px] uppercase tracking-tighter">Assistant Coach</p>
             </div>
-          ))}
-        </div>
+
+            <div className="mt-4 text-center">
+              <h3 className="text-lg font-black uppercase italic text-gray-900 leading-tight">
+                {coach.name}
+              </h3>
+            </div>
+          </div>
+        ))}
       </div>
     </section>
   );
