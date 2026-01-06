@@ -101,4 +101,4 @@ router.delete('/:id', requireAdmin, async (req: any, res) => {
   res.status(200).json({ message: "Deleted" });
 });
 
-export default router;
+export default router; 

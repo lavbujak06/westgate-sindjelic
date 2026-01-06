@@ -76,7 +76,7 @@ export default function SeniorWomenPage() {
   return (
     <main className="bg-[#fcfcfc] min-h-screen pb-20 overflow-x-hidden">
       <Navbar />
-      <Hero heading="Senior Women" message="State League Women's Division" showButton={false} />
+      <Hero heading="Senior Women" message="Women's State League 1 North-West" showButton={false} />
 
       <div className="max-w-7xl mx-auto px-4 md:px-6 -mt-10 relative z-30">
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-8 mb-8">

@@ -14,6 +14,7 @@ import scraperRoutes from './routes/scraper';
 import leagueRoutes from './routes/league';
 import mediaRoutes from './routes/media';
 import sponsorsRoutes from './routes/sponsors';
+import highlightRouter from './routes/highlights';
 
 const app = express();
 
@@ -39,7 +40,7 @@ app.use('/api/scraper', scraperRoutes);
 app.use('/api/league', leagueRoutes);
 app.use('/api/media', mediaRoutes);
 app.use('/api/sponsors', sponsorsRoutes);
-
+app.use('/api/highlights', highlightRouter);
 const PORT = 5001;
 app.listen(PORT, () => {
   console.log(`Backend running on http://localhost:${PORT}`);

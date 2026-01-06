@@ -1,149 +1,834 @@
-[00:00:00.554] Server  ERROR   (node:12214) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/lavbujak/Desktop/Sindjelic/westgate-sindjelic/frontend/next.config.js is not specified and it doesn't parse as CommonJS.
+[00:00:00.580] Server  ERROR   (node:62647) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/lavbujak/Desktop/Sindjelic/westgate-sindjelic/frontend/next.config.js is not specified and it doesn't parse as CommonJS.
 Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
 To eliminate this warning, add "type": "module" to /Users/lavbujak/Desktop/Sindjelic/westgate-sindjelic/frontend/package.json.
 (Use `node --trace-warnings ...` to show where the warning was created)
-[00:00:01.066] Server  WARN    ⚠ The "middleware" file convention is deprecated. Please use "proxy" instead. Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
-[00:00:01.164] Server  LOG     ✓ Ready in 931ms
-[00:00:07.044] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:00:09.630] Browser WARN    Image with src "/Westgatelogo.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
-[00:00:11.121] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:00:11.121] Browser WARN    Image with src "/Westgatelogo.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
-[00:00:43.606] Server  LOG     ✓ Compiled in 171ms
-[00:00:46.338] Server  LOG     ✓ Compiled in 125ms
-[00:00:46.630] Browser ERROR   ./frontend/components/Footer.tsx:28:11
-Parsing ecmascript source code failed
-  26 |         <div className="max-w-7xl mx-auto px-6 py-12 border-t border-gray-100">
-  27 |           <
-> 28 |           <div className="flex flex-wrap justify-center items-center gap-x-16 gap-y-10">
-     |           ^
-  29 |             {sponsors.map((s) => (
-  30 |               <a 
-  31 |                 key={s.id} 
+[00:00:01.126] Server  WARN    ⚠ The "middleware" file convention is deprecated. Please use "proxy" instead. Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
+[00:00:01.282] Server  LOG     ✓ Ready in 1025ms
+[00:00:03.950] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:04.087] Browser WARN    Image with src "/Westgatelogo.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:00:24.411] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:26.568] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:26.765] Browser WARN    Image with src "/Westgatelogo.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:00:47.754] Server  LOG     ✓ Compiled in 77ms
+[00:00:59.010] Server  LOG     ✓ Compiled in 56ms
+[00:01:02.695] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:01:02.873] Browser WARN    Image with src "/Westgatelogo.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:01:06.084] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+[00:02:04.123] Server  LOG     ✓ Compiled in 114ms
+[00:02:25.219] Server  LOG     ✓ Compiled in 53ms
+[00:02:29.167] Server  LOG     ✓ Compiled in 36ms
+[00:02:30.710] Server  LOG     ✓ Compiled in 41ms
+[00:02:53.408] Server  LOG     ✓ Compiled in 125ms
+[00:03:12.408] Server  LOG     ✓ Compiled in 57ms
+[00:07:10.348] Server  LOG     ✓ Compiled in 100ms
+[00:07:23.648] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:07:23.810] Browser WARN    Image with src "/Westgatelogo.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:10:27.519] Server  LOG     ✓ Compiled in 143ms
+[00:10:34.209] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+[00:12:45.321] Server  LOG     ✓ Compiled in 121ms
+[00:13:17.823] Server  LOG     ✓ Compiled in 97ms
+[01:00:19.879] Browser ERROR   ./frontend/app/pages/men/seniors/page.tsx:217:2
+Ecmascript file had an error
+  215 |     </main>
+  216 |   );
+> 217 | }'use client';
+      |  ^^^^^^^^^^^^^
+  218 |
+  219 | import { useEffect, useState } from 'react';
+  220 | import Navbar from '@/components/Navbar';
 
-Expression expected
+The "use client" directive must be placed before other expressions. Move it to the top of the file to resolve this issue.
 
-Import trace:
+Import traces:
   Client Component Browser:
-    ./frontend/components/Footer.tsx [Client Component Browser]
-    ./frontend/components/ClientFooter.tsx [Client Component Browser]
-    ./frontend/app/pages/layout.tsx [Client Component Browser]
-    ./frontend/app/pages/layout.tsx [Server Component]
-[00:00:48.630] Browser ERROR   ./frontend/components/Footer.tsx:28:11
-Parsing ecmascript source code failed
-  26 |         <div className="max-w-7xl mx-auto px-6 py-12 border-t border-gray-100">
-  27 |           <p1
-> 28 |           <div className="flex flex-wrap justify-center items-center gap-x-16 gap-y-10">
-     |           ^
-  29 |             {sponsors.map((s) => (
-  30 |               <a 
-  31 |                 key={s.id} 
+    ./frontend/app/pages/men/seniors/page.tsx [Client Component Browser]
+    ./frontend/app/pages/men/seniors/page.tsx [Server Component]
 
-Expression expected
+  Client Component SSR:
+    ./frontend/app/pages/men/seniors/page.tsx [Client Component SSR]
+    ./frontend/app/pages/men/seniors/page.tsx [Server Component]
+[01:00:19.879] Browser ERROR   ./frontend/app/pages/men/seniors/page.tsx:225:10
+Ecmascript file had an error
+  223 | import StatBox from '@/components/StatBox';
+  224 | import MatchSlider from '@/components/MatchSlider';
+> 225 | import { Calendar, Loader2, Trophy, Clock, MapPin } from 'lucide-react';
+      |          ^^^^^^^^
+  226 |
+  227 | type LadderRow = { pos: number; team: string; p: number; w: number; d: number; l: number; gd: number; pts: number; };
+  228 | type GameRow = { round: string; date_text: string; time_text: string; venue: string; w_score: string; a_score: string; opponent: string; };
 
-Import trace:
+the name `Calendar` is defined multiple times
+
+Import traces:
   Client Component Browser:
-    ./frontend/components/Footer.tsx [Client Component Browser]
-    ./frontend/components/ClientFooter.tsx [Client Component Browser]
-    ./frontend/app/pages/layout.tsx [Client Component Browser]
-    ./frontend/app/pages/layout.tsx [Server Component]
-[00:00:50.630] Browser ERROR   The tag <%s> is unrecognized in this browser. If you meant to render a React component, start its name with an uppercase letter. p1
-[00:00:58.390] Server  LOG     ✓ Compiled in 51ms
-[00:00:58.631] Browser ERROR   ./frontend/components/Footer.tsx:47:8
-Parsing ecmascript source code failed
-  45 |           </div>
-  46 |         </div>
-> 47 |       )}
-     |        ^
-  48 |
-  49 |       {/* DARK SOCIAL BAR */}
-  50 |       <div className="bg-[#020617] text-white pt-16 pb-8">
+    ./frontend/app/pages/men/seniors/page.tsx [Client Component Browser]
+    ./frontend/app/pages/men/seniors/page.tsx [Server Component]
 
-Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+  Client Component SSR:
+    ./frontend/app/pages/men/seniors/page.tsx [Client Component SSR]
+    ./frontend/app/pages/men/seniors/page.tsx [Server Component]
+[01:00:19.879] Browser ERROR   ./frontend/app/pages/men/seniors/page.tsx:225:37
+Ecmascript file had an error
+  223 | import StatBox from '@/components/StatBox';
+  224 | import MatchSlider from '@/components/MatchSlider';
+> 225 | import { Calendar, Loader2, Trophy, Clock, MapPin } from 'lucide-react';
+      |                                     ^^^^^
+  226 |
+  227 | type LadderRow = { pos: number; team: string; p: number; w: number; d: number; l: number; gd: number; pts: number; };
+  228 | type GameRow = { round: string; date_text: string; time_text: string; venue: string; w_score: string; a_score: string; opponent: string; };
 
-Import trace:
+the name `Clock` is defined multiple times
+
+Import traces:
   Client Component Browser:
-    ./frontend/components/Footer.tsx [Client Component Browser]
-    ./frontend/components/ClientFooter.tsx [Client Component Browser]
-    ./frontend/app/pages/layout.tsx [Client Component Browser]
-    ./frontend/app/pages/layout.tsx [Server Component]
-[00:01:08.017] Server  LOG     ✓ Compiled in 53ms
-[00:01:09.603] Server  LOG     ✓ Compiled in 34ms
-[00:01:17.933] Server  LOG     ✓ Compiled in 62ms
-[00:01:18.631] Browser ERROR   ./frontend/components/Footer.tsx:29:15
-Parsing ecmascript source code failed
-  27 |           <p1 className="text-center text-[10px] font-black uppercase tracking-[0.4em] text-slate-500 mb-8 italic">
-  28 |             Partners
-> 29 |           </p>
-     |               ^
-> 30 |           <div className="flex flex-wrap justify-center items-center gap-x-16 gap-y-10">
-     | ^^^^^^^^^^^
-  31 |             {sponsors.map((s) => (
-  32 |               <a 
-  33 |                 key={s.id} 
+    ./frontend/app/pages/men/seniors/page.tsx [Client Component Browser]
+    ./frontend/app/pages/men/seniors/page.tsx [Server Component]
 
-Expected '</', got 'jsx text (
-          )'
+  Client Component SSR:
+    ./frontend/app/pages/men/seniors/page.tsx [Client Component SSR]
+    ./frontend/app/pages/men/seniors/page.tsx [Server Component]
+[01:00:19.879] Browser ERROR   ./frontend/app/pages/men/seniors/page.tsx:222:8
+Ecmascript file had an error
+  220 | import Navbar from '@/components/Navbar';
+  221 | import Hero from '@/components/Hero';
+> 222 | import CoachStaff from '@/components/CoachStuff';
+      |        ^^^^^^^^^^
+  223 | import StatBox from '@/components/StatBox';
+  224 | import MatchSlider from '@/components/MatchSlider';
+  225 | import { Calendar, Loader2, Trophy, Clock, MapPin } from 'lucide-react';
 
-Import trace:
+the name `CoachStaff` is defined multiple times
+
+Import traces:
   Client Component Browser:
-    ./frontend/components/Footer.tsx [Client Component Browser]
-    ./frontend/components/ClientFooter.tsx [Client Component Browser]
-    ./frontend/app/pages/layout.tsx [Client Component Browser]
-    ./frontend/app/pages/layout.tsx [Server Component]
-[00:01:19.853] Server  LOG     ✓ Compiled in 22ms
-[00:01:35.012] Server  LOG     ✓ Compiled in 99ms
-[00:09:29.041] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
-[00:10:01.924] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:10:02.064] Browser WARN    Image with src "/Westgatelogo.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
-[00:10:08.263] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
-[00:12:26.906] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:12:27.131] Browser WARN    Image with src "/Westgatelogo.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
-[00:12:30.420] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
-[00:14:39.383] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:14:39.647] Browser WARN    Image with src "/Westgatelogo.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
-[00:14:45.727] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
-[00:15:46.076] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:15:52.084] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
-[00:16:40.857] Browser WARN    Image with src "/Westgatelogo.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
-[00:17:28.317] Browser WARN    Session check handled: {}
-[00:20:14.114] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:20:14.646] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:20:15.474] Browser LOG     Admin detected, redirecting to dashboard...
-[00:20:15.676] Browser LOG     AdminGuard: 🔍 Found user: bujaklav@gmail.com
-[00:20:15.676] Browser LOG     AdminGuard: 🔍 Found user: bujaklav@gmail.com
-[00:20:16.009] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:20:16.504] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:20:17.013] Browser LOG     AdminGuard: ✅ Admin confirmed!
-[00:20:17.615] Browser LOG     AdminGuard: ✅ Admin confirmed!
-[00:22:02.382] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:22:02.943] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:22:03.502] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:22:04.037] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:22:04.626] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:22:05.140] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:22:05.750] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:22:06.371] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:22:25.516] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:22:26.165] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:22:26.741] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:22:27.454] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:22:34.245] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:22:34.731] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:22:35.264] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:22:35.717] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:22:37.509] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:22:37.969] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:22:38.451] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:22:38.923] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:22:44.313] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:22:44.875] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:22:45.347] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:22:45.896] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:22:46.903] Browser LOG     AdminGuard: 🔍 Found user: bujaklav@gmail.com
-[00:22:46.903] Browser LOG     AdminGuard: 🔍 Found user: bujaklav@gmail.com
-[00:22:47.534] Browser LOG     AdminGuard: ✅ Admin confirmed!
-[00:22:48.154] Browser LOG     AdminGuard: ✅ Admin confirmed!
-[00:23:16.840] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:23:17.433] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:23:17.949] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:23:18.421] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
+    ./frontend/app/pages/men/seniors/page.tsx [Client Component Browser]
+    ./frontend/app/pages/men/seniors/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./frontend/app/pages/men/seniors/page.tsx [Client Component SSR]
+    ./frontend/app/pages/men/seniors/page.tsx [Server Component]
+[01:00:19.879] Browser ERROR   ./frontend/app/pages/men/seniors/page.tsx:221:8
+Ecmascript file had an error
+  219 | import { useEffect, useState } from 'react';
+  220 | import Navbar from '@/components/Navbar';
+> 221 | import Hero from '@/components/Hero';
+      |        ^^^^
+  222 | import CoachStaff from '@/components/CoachStuff';
+  223 | import StatBox from '@/components/StatBox';
+  224 | import MatchSlider from '@/components/MatchSlider';
+
+the name `Hero` is defined multiple times
+
+Import traces:
+  Client Component Browser:
+    ./frontend/app/pages/men/seniors/page.tsx [Client Component Browser]
+    ./frontend/app/pages/men/seniors/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./frontend/app/pages/men/seniors/page.tsx [Client Component SSR]
+    ./frontend/app/pages/men/seniors/page.tsx [Server Component]
+[01:00:19.879] Browser ERROR   ./frontend/app/pages/men/seniors/page.tsx:225:20
+Ecmascript file had an error
+  223 | import StatBox from '@/components/StatBox';
+  224 | import MatchSlider from '@/components/MatchSlider';
+> 225 | import { Calendar, Loader2, Trophy, Clock, MapPin } from 'lucide-react';
+      |                    ^^^^^^^
+  226 |
+  227 | type LadderRow = { pos: number; team: string; p: number; w: number; d: number; l: number; gd: number; pts: number; };
+  228 | type GameRow = { round: string; date_text: string; time_text: string; venue: string; w_score: string; a_score: string; opponent: string; };
+
+the name `Loader2` is defined multiple times
+
+Import traces:
+  Client Component Browser:
+    ./frontend/app/pages/men/seniors/page.tsx [Client Component Browser]
+    ./frontend/app/pages/men/seniors/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./frontend/app/pages/men/seniors/page.tsx [Client Component SSR]
+    ./frontend/app/pages/men/seniors/page.tsx [Server Component]
+[01:00:19.879] Browser ERROR   ./frontend/app/pages/men/seniors/page.tsx:225:44
+Ecmascript file had an error
+  223 | import StatBox from '@/components/StatBox';
+  224 | import MatchSlider from '@/components/MatchSlider';
+> 225 | import { Calendar, Loader2, Trophy, Clock, MapPin } from 'lucide-react';
+      |                                            ^^^^^^
+  226 |
+  227 | type LadderRow = { pos: number; team: string; p: number; w: number; d: number; l: number; gd: number; pts: number; };
+  228 | type GameRow = { round: string; date_text: string; time_text: string; venue: string; w_score: string; a_score: string; opponent: string; };
+
+the name `MapPin` is defined multiple times
+
+Import traces:
+  Client Component Browser:
+    ./frontend/app/pages/men/seniors/page.tsx [Client Component Browser]
+    ./frontend/app/pages/men/seniors/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./frontend/app/pages/men/seniors/page.tsx [Client Component SSR]
+    ./frontend/app/pages/men/seniors/page.tsx [Server Component]
+[01:00:19.879] Browser ERROR   ./frontend/app/pages/men/seniors/page.tsx:224:8
+Ecmascript file had an error
+  222 | import CoachStaff from '@/components/CoachStuff';
+  223 | import StatBox from '@/components/StatBox';
+> 224 | import MatchSlider from '@/components/MatchSlider';
+      |        ^^^^^^^^^^^
+  225 | import { Calendar, Loader2, Trophy, Clock, MapPin } from 'lucide-react';
+  226 |
+  227 | type LadderRow = { pos: number; team: string; p: number; w: number; d: number; l: number; gd: number; pts: number; };
+
+the name `MatchSlider` is defined multiple times
+
+Import traces:
+  Client Component Browser:
+    ./frontend/app/pages/men/seniors/page.tsx [Client Component Browser]
+    ./frontend/app/pages/men/seniors/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./frontend/app/pages/men/seniors/page.tsx [Client Component SSR]
+    ./frontend/app/pages/men/seniors/page.tsx [Server Component]
+[01:00:19.879] Browser ERROR   ./frontend/app/pages/men/seniors/page.tsx:232:25
+Ecmascript file had an error
+  230 | type MediaItem = { id: string; url: string };
+  231 |
+> 232 | export default function MensPage() {
+      |                         ^^^^^^^^
+  233 |   const [configs, setConfigs] = useState<Config[]>([]);
+  234 |   const [selectedConfigId, setSelectedConfigId] = useState<string>('');
+  235 |   const [ladder, setLadder] = useState<LadderRow[]>([]);
+
+the name `MensPage` is defined multiple times
+
+Import traces:
+  Client Component Browser:
+    ./frontend/app/pages/men/seniors/page.tsx [Client Component Browser]
+    ./frontend/app/pages/men/seniors/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./frontend/app/pages/men/seniors/page.tsx [Client Component SSR]
+    ./frontend/app/pages/men/seniors/page.tsx [Server Component]
+[01:00:19.879] Browser ERROR   ./frontend/app/pages/men/seniors/page.tsx:220:8
+Ecmascript file had an error
+  218 |
+  219 | import { useEffect, useState } from 'react';
+> 220 | import Navbar from '@/components/Navbar';
+      |        ^^^^^^
+  221 | import Hero from '@/components/Hero';
+  222 | import CoachStaff from '@/components/CoachStuff';
+  223 | import StatBox from '@/components/StatBox';
+
+the name `Navbar` is defined multiple times
+
+Import traces:
+  Client Component Browser:
+    ./frontend/app/pages/men/seniors/page.tsx [Client Component Browser]
+    ./frontend/app/pages/men/seniors/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./frontend/app/pages/men/seniors/page.tsx [Client Component SSR]
+    ./frontend/app/pages/men/seniors/page.tsx [Server Component]
+[01:00:19.879] Browser ERROR   ./frontend/app/pages/men/seniors/page.tsx:223:8
+Ecmascript file had an error
+  221 | import Hero from '@/components/Hero';
+  222 | import CoachStaff from '@/components/CoachStuff';
+> 223 | import StatBox from '@/components/StatBox';
+      |        ^^^^^^^
+  224 | import MatchSlider from '@/components/MatchSlider';
+  225 | import { Calendar, Loader2, Trophy, Clock, MapPin } from 'lucide-react';
+  226 |
+
+the name `StatBox` is defined multiple times
+
+Import traces:
+  Client Component Browser:
+    ./frontend/app/pages/men/seniors/page.tsx [Client Component Browser]
+    ./frontend/app/pages/men/seniors/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./frontend/app/pages/men/seniors/page.tsx [Client Component SSR]
+    ./frontend/app/pages/men/seniors/page.tsx [Server Component]
+[01:00:19.879] Browser ERROR   ./frontend/app/pages/men/seniors/page.tsx:225:29
+Ecmascript file had an error
+  223 | import StatBox from '@/components/StatBox';
+  224 | import MatchSlider from '@/components/MatchSlider';
+> 225 | import { Calendar, Loader2, Trophy, Clock, MapPin } from 'lucide-react';
+      |                             ^^^^^^
+  226 |
+  227 | type LadderRow = { pos: number; team: string; p: number; w: number; d: number; l: number; gd: number; pts: number; };
+  228 | type GameRow = { round: string; date_text: string; time_text: string; venue: string; w_score: string; a_score: string; opponent: string; };
+
+the name `Trophy` is defined multiple times
+
+Import traces:
+  Client Component Browser:
+    ./frontend/app/pages/men/seniors/page.tsx [Client Component Browser]
+    ./frontend/app/pages/men/seniors/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./frontend/app/pages/men/seniors/page.tsx [Client Component SSR]
+    ./frontend/app/pages/men/seniors/page.tsx [Server Component]
+[01:00:19.879] Browser ERROR   ./frontend/app/pages/men/seniors/page.tsx:232:1
+Ecmascript file had an error
+  230 | type MediaItem = { id: string; url: string };
+  231 |
+> 232 | export default function MensPage() {
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 233 |   const [configs, setConfigs] = useState<Config[]>([]);
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 234 |   const [selectedConfigId, setSelectedConfigId] = useState<string>('');
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 235 |   const [ladder, setLadder] = useState<LadderRow[]>([]);
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 236 |   const [games, setGames] = useState<GameRow[]>([]);
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 237 |   const [gallery, setGallery] = useState<MediaItem[]>([]);
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 238 |   const [loading, setLoading] = useState(true);
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 239 |
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 240 |   useEffect(() => {
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 241 |     fetch('http://localhost:5001/api/league/configs')
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 242 |       .then(res => res.json())
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 243 |       .then(data => {
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 244 |         if (Array.isArray(data) && data.length > 0) {
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 245 |           const mensOnly = data.filter(c => c.team_name === 'Senior Men');
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 246 |           setConfigs(mensOnly);
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 247 |           if (mensOnly.length > 0) setSelectedConfigId(mensOnly[0].id);
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 248 |         }
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 249 |       });
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 250 |
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 251 |     fetch('http://localhost:5001/api/media/senior-men')
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 252 |       .then(res => res.json())
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 253 |       .then(data => setGallery(Array.isArray(data) ? data : []));
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 254 |   }, []);
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 255 |
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 256 |   useEffect(() => {
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 257 |     if (!selectedConfigId) return;
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 258 |     async function loadSeasonData() {
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 259 |       setLoading(true);
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 260 |       try {
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 261 |         const [lRes, gRes] = await Promise.all([
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 262 |           fetch(`http://localhost:5001/api/league/ladder/${selectedConfigId}`),
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 263 |           fetch(`http://localhost:5001/api/league/games/${selectedConfigId}`)
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 264 |         ]);
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 265 |         setLadder(await lRes.json());
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 266 |         setGames(await gRes.json());
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 267 |       } finally {
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 268 |         setLoading(false);
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 269 |       }
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 270 |     }
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 271 |     loadSeasonData();
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 272 |   }, [selectedConfigId]);
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 273 |
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 274 |   const wgStats = ladder.find(t => 
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 275 |     t.team.toLowerCase().includes("westgate") || t.team.toLowerCase().includes("sindjelic")
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 276 |   );
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 277 |
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 278 |   const lastFiveForm = [...games]
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 279 |     .filter(g => g.w_score !== null && g.w_score !== "" && g.a_score !== null && g.a_score !== "")
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 280 |     .sort((a, b) => parseInt(b.round) - parseInt(a.round))
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 281 |     .slice(0, 5)
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 282 |     .map(g => {
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 283 |       const home = parseInt(g.w_score);
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 284 |       const away = parseInt(g.a_score);
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 285 |       if (home > away) return { label: 'W', color: 'bg-green-500 shadow-[0_0_15px_rgba(34,197,94,0.6)] border-green-400' };
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 286 |       if (home < away) return { label: 'L', color: 'bg-red-500 shadow-[0_0_15px_rgba(239,68,68,0.6)] border-red-400' };
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 287 |       return { label: 'D', color: 'bg-gray-500 shadow-[0_0_15px_rgba(107,114,128,0.6)] border-gray-400' };
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 288 |     });
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 289 |
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 290 |   return (
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 291 |     <main className="bg-[#fcfcfc] min-h-screen pb-20 overflow-x-hidden">
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 292 |       <Navbar />
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 293 |       <Hero heading="Senior Men" message="State League 1 North-West" showButton={false} />
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 294 |
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 295 |       {/* TOP SECTION (Contained Stats & Selector) */}
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 296 |       <div className="max-w-7xl mx-auto px-4 md:px-6 -mt-10 relative z-30">
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 297 |         <div className="flex flex-col md:flex-row md:items-center justify-between gap-8 mb-8">
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 298 |           <div className="flex flex-wrap items-center gap-4 order-2 md:order-1">
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 299 |             <StatBox label="Position" value={wgStats?.pos} color="text-red-600" />
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 300 |             <StatBox label="Points" value={wgStats?.pts} color="text-black" />
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 301 |             <StatBox label="Wins" value={wgStats?.w} color="text-gray-600" />
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 302 |
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 303 |             {lastFiveForm.length > 0 && (
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 304 |                 <div className="bg-white/80 backdrop-blur-md p-6 rounded-2xl shadow-xl shadow-black/5 border border-white flex flex-col items-center justify-center min-w-[180px]">
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 305 |                     <span className="text-[10px] font-black uppercase text-gray-400 tracking-widest mb-3">Recent Form</span>
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 306 |                     <div className="flex gap-2">
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 307 |                         {lastFiveForm.map((game, idx) => (
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 308 |                             <div key={idx} className={`${game.color} w-8 h-8 rounded-full flex items-center justify-center text-white text-[10px] font-black border-2 backdrop-blur-sm bg-opacity-80 transition-transform hover:scale-110`}>
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 309 |                                 {game.label}
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 310 |                             </div>
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 311 |                         ))}
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 312 |                     </div>
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 313 |                 </div>
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 314 |             )}
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 315 |           </div>
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 316 |
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 317 |           <div className="bg-white px-5 py-3 rounded-2xl shadow-xl shadow-black/5 border border-gray-100 flex items-center gap-4 self-end order-1 md:order-2">
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 318 |             <div className="bg-red-50 p-2 rounded-lg"><Calendar size={18} className="text-red-600" /></div>
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 319 |             <div className="flex flex-col">
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 320 |                 <span className="text-[10px] font-black uppercase text-gray-400 tracking-widest">Select Season</span>
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 321 |                 <select value={selectedConfigId} onChange={(e) => setSelectedConfigId(e.target.value)} className="bg-transparent text-sm font-black uppercase outline-none cursor-pointer text-gray-900">
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 322 |                     {configs.map(c => <option key={c.id} value={c.id}>{c.season_year} {c.team_name}</option>)}
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 323 |                 </select>
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 324 |             </div>
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 325 |           </div>
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 326 |         </div>
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 327 |
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 328 |         {loading ? (
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 329 |           <div className="bg-white rounded-3xl p-32 shadow-xl flex flex-col items-center justify-center border border-gray-50">
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 330 |             <Loader2 className="animate-spin text-red-600 mb-4" size={40} />
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 331 |             <p className="text-gray-400 font-black uppercase text-xs tracking-[0.3em]">Loading Records...</p>
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 332 |           </div>
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 333 |         ) : (
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 334 |           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 335 |             <div className="lg:col-span-2">
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 336 |                 <div className="bg-white rounded-3xl shadow-xl shadow-black/5 overflow-hidden border border-gray-100">
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 337 |                     <div className="bg-red-700 px-8 py-6 flex justify-between items-center">
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 338 |                         <div className="flex items-center gap-3">
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 339 |                             <Trophy className="text-red-200" size={20} />
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 340 |                             <h2 className="text-white font-black uppercase tracking-tighter text-xl italic">League Table</h2>
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 341 |                         </div>
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 342 |                     </div>
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 343 |                     <div className="overflow-x-auto">
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 344 |                         <table className="w-full text-left border-collapse">
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 345 |                             <thead>
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 346 |                                 <tr className="bg-gray-50 text-gray-400 text-[10px] uppercase font-black tracking-widest">
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 347 |                                     <th className="px-8 py-5">Pos</th>
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 348 |                                     <th className="px-8 py-5">Team</th>
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 349 |                                     <th className="px-4 py-5 text-center">P</th>
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 350 |                                     <th className="px-4 py-5 text-center">W</th>
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 351 |                                     <th className="px-4 py-5 text-center">D</th>
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 352 |                                     <th className="px-4 py-5 text-center">L</th>
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 353 |                                     <th className="px-4 py-5 text-center">GD</th>
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 354 |                                     <th className="px-8 py-5 text-right">Pts</th>
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 355 |                                 </tr>
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 356 |                             </thead>
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 357 |                             <tbody className="text-sm">
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 358 |                                 {ladder.map((t, i) => (
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 359 |                                     <tr key={i} className="border-b border-gray-50 last:border-0 hover:bg-red-50/30 transition-colors group">
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 360 |                                         <td className="px-8 py-5 font-black text-red-600 italic text-lg">{t.pos}</td>
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 361 |                                         <td className="px-8 py-5 font-bold text-gray-800 group-hover:text-red-700 transition-colors uppercase tracking-tight">{t.team}</td>
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 362 |                                         <td className="px-4 py-5 text-center font-medium text-gray-500">{t.p}</td>
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 363 |                                         <td className="px-4 py-5 text-center font-medium text-gray-500">{t.w}</td>
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 364 |                                         <td className="px-4 py-5 text-center font-medium text-gray-500">{t.d}</td>
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 365 |                                         <td className="px-4 py-5 text-center font-medium text-gray-500">{t.l}</td>
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 366 |                                         <td className="px-4 py-5 text-center font-bold text-gray-600">{t.gd}</td>
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 367 |                                         <td className="px-8 py-5 text-right font-black text-gray-900 text-base">{t.pts}</td>
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 368 |                                     </tr>
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 369 |                                 ))}
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 370 |                             </tbody>
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 371 |                         </table>
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 372 |                     </div>
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 373 |                 </div>
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 374 |             </div>
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 375 |
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 376 |             <div className="lg:col-span-1">
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 377 |                 <div className="bg-white rounded-3xl shadow-xl shadow-black/5 overflow-hidden border border-gray-100 flex flex-col h-full">
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 378 |                     <div className="bg-black px-8 py-6">
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 379 |                         <h2 className="text-white font-black uppercase tracking-tighter text-xl italic">Fixtures & Results</h2>
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 380 |                     </div>
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 381 |                     <div className="p-4 overflow-y-auto max-h-[850px] space-y-4">
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 382 |                         {games.map((g, i) => (
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 383 |                             <div key={i} className="bg-gray-50 rounded-2xl p-5 border border-gray-100 hover:border-red-200 transition-all">
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 384 |                                 <div className="flex justify-between items-center mb-3">
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 385 |                                     <span className="text-[10px] font-black bg-gray-200 text-gray-600 px-2 py-1 rounded-md uppercase">Round {g.round}</span>
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 386 |                                     <div className="flex items-center gap-1 text-gray-400 text-[10px] font-bold"><Clock size={12} /> {g.time_text}</div>
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 387 |                                 </div>
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 388 |                                 <div className="flex flex-col gap-1 mb-4">
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 389 |                                     <p className="text-xs font-black text-gray-400 uppercase tracking-widest">{g.date_text}</p>
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 390 |                                     <div className="flex items-center gap-1 text-gray-500 text-[10px]"><MapPin size={10} /> <span className="truncate">{g.venue}</span></div>
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 391 |                                 </div>
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 392 |                                 <div className="flex items-center justify-between gap-4">
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 393 |                                     <div className="flex-1 text-right">
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 394 |                                         <p className="text-[10px] font-black uppercase text-gray-400 mb-1">Westgate FC</p>
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 395 |                                         <span className="text-2xl font-black italic">{g.w_score || '-'}</span>
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 396 |                                     </div>
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 397 |                                     <div className="w-8 h-8 rounded-full bg-red-600 flex items-center justify-center text-white font-black text-xs italic">VS</div>
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 398 |                                     <div className="flex-1 text-left">
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 399 |                                         <p className="text-[10px] font-black uppercase text-red-600 mb-1 truncate">{g.opponent}</p>
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 400 |                                         <span className="text-2xl font-black italic">{g.a_score || '-'}</span>
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 401 |                                     </div>
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 402 |                                 </div>
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 403 |                             </div>
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 404 |                         ))}
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 405 |                     </div>
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 406 |                 </div>
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 407 |             </div>
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 408 |           </div>
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 409 |         )}
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 410 |       </div>
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 411 |
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 412 |       {/* 3. FULL WIDTH GALLERY SECTION (Moved outside of max-w-7xl) */}
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 413 |       {gallery.length > 0 && !loading && (
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 414 |         <section className="w-full mb-16 overflow-hidden">
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 415 |           <div className="max-w-7xl mx-auto px-4 md:px-6 mb-8">
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 416 |             <h2 className="text-black font-black uppercase tracking-tighter text-4xl italic">
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 417 |               Team <span className="text-red-600">Gallery</span>
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 418 |             </h2>
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 419 |           </div>
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 420 |           
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 421 |           <div className="w-full">
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 422 |             <MatchSlider slides={gallery} />
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 423 |           </div>
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 424 |         </section>
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 425 |       )}
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 426 |
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 427 |       {/* COACHES SECTION */}
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 428 |       <div className="max-w-7xl mx-auto px-4 md:px-6">
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 429 |         <CoachStaff teamSlug="senior-men" />
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 430 |       </div>
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 431 |     </main>
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 432 |   );
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 433 | }
+      | ^^
+
+the name `default` is exported multiple times
+
+Import traces:
+  Client Component Browser:
+    ./frontend/app/pages/men/seniors/page.tsx [Client Component Browser]
+    ./frontend/app/pages/men/seniors/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./frontend/app/pages/men/seniors/page.tsx [Client Component SSR]
+    ./frontend/app/pages/men/seniors/page.tsx [Server Component]
+[01:00:19.879] Browser ERROR   ./frontend/app/pages/men/seniors/page.tsx:219:10
+Ecmascript file had an error
+  217 | }'use client';
+  218 |
+> 219 | import { useEffect, useState } from 'react';
+      |          ^^^^^^^^^
+  220 | import Navbar from '@/components/Navbar';
+  221 | import Hero from '@/components/Hero';
+  222 | import CoachStaff from '@/components/CoachStuff';
+
+the name `useEffect` is defined multiple times
+
+Import traces:
+  Client Component Browser:
+    ./frontend/app/pages/men/seniors/page.tsx [Client Component Browser]
+    ./frontend/app/pages/men/seniors/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./frontend/app/pages/men/seniors/page.tsx [Client Component SSR]
+    ./frontend/app/pages/men/seniors/page.tsx [Server Component]
+[01:00:19.879] Browser ERROR   ./frontend/app/pages/men/seniors/page.tsx:219:21
+Ecmascript file had an error
+  217 | }'use client';
+  218 |
+> 219 | import { useEffect, useState } from 'react';
+      |                     ^^^^^^^^
+  220 | import Navbar from '@/components/Navbar';
+  221 | import Hero from '@/components/Hero';
+  222 | import CoachStaff from '@/components/CoachStuff';
+
+the name `useState` is defined multiple times
+
+Import traces:
+  Client Component Browser:
+    ./frontend/app/pages/men/seniors/page.tsx [Client Component Browser]
+    ./frontend/app/pages/men/seniors/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./frontend/app/pages/men/seniors/page.tsx [Client Component SSR]
+    ./frontend/app/pages/men/seniors/page.tsx [Server Component]
+[01:01:29.622] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:01:29.780] Browser WARN    Image with src "/Westgatelogo.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[01:01:34.807] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:01:34.976] Browser WARN    Image with src "/Westgatelogo.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[01:05:27.395] Server  LOG     ✓ Compiled in 129ms
+[01:05:27.877] Browser ERROR   ./frontend/app/page.tsx:196:133
+Parsing ecmascript source code failed
+  194 |               <img 
+  195 |                 src="
+> 196 |                 className="w-full h-full object-cover rounded-3xl shadow-2xl grayscale hover:grayscale-0 transition-all duration-700" 
+      |                                                                                                                                     ^^
+  197 |                 alt="Club Heritage"
+  198 |               />
+  199 |             </div>
+
+Unterminated string constant
+
+Import traces:
+  Client Component Browser:
+    ./frontend/app/page.tsx [Client Component Browser]
+    ./frontend/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./frontend/app/page.tsx [Client Component SSR]
+    ./frontend/app/page.tsx [Server Component]
+[01:05:28.787] Server  LOG     ✓ Compiled in 38ms
+[01:05:29.878] Browser ERROR   An empty string ("") was passed to the %s attribute. This may cause the browser to download the whole page again over the network. To fix this, either do not render the element at all or pass null to %s instead of an empty string. src src
+[01:05:31.171] Server  LOG     ✓ Compiled in 63ms
+[01:05:31.878] Browser ERROR   ./frontend/app/page.tsx:194:15
+Ecmascript file had an error
+  192 |           <div className="md:w-1/2 order-1 md:order-2 w-full">
+  193 |             <div className="relative h-[400px] md:h-[550px] w-full">
+> 194 |               <img 
+      |               ^^^^^
+> 195 |                 src=""https://images.unsplash.com/photo-1517649763962-0c623066013b?q=80&w=1000"
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 196 |                 className="w-full h-full object-cover rounded-3xl shadow-2xl grayscale hover:grayscale-0 transition-all duration-700" 
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 197 |                 alt="Club Heritage"
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 198 |               />
+      | ^^^^^^^^^^^^^^^^^
+  199 |             </div>
+  200 |           </div>
+  201 |         </div>
+
+JSX Namespace is disabled by default because react does not support it yet. You can specify jsc.transform.react.throwIfNamespace to false to override default behavior
+
+Import traces:
+  Client Component Browser:
+    ./frontend/app/page.tsx [Client Component Browser]
+    ./frontend/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./frontend/app/page.tsx [Client Component SSR]
+    ./frontend/app/page.tsx [Server Component]
+[01:08:49.373] Server  LOG     ✓ Compiled in 2ms
+[01:08:50.434] Server  LOG     ✓ Compiled in 100ms
+[01:09:06.559] Server  LOG     ✓ Compiled in 215ms
+[01:09:25.179] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+[01:09:55.745] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
+[01:09:56.381] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
+[01:09:56.960] Browser LOG     Admin detected, redirecting to dashboard...
+[01:09:57.179] Browser LOG     AdminGuard: 🔍 Found user: bujaklav@gmail.com
+[01:09:57.179] Browser LOG     AdminGuard: 🔍 Found user: bujaklav@gmail.com
+[01:09:57.500] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
+[01:09:57.985] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
+[01:09:58.525] Browser LOG     AdminGuard: ✅ Admin confirmed!
+[01:09:59.044] Browser LOG     AdminGuard: ✅ Admin confirmed!
+[01:10:08.067] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:10:08.192] Browser LOG     AdminGuard: 🔍 Found user: bujaklav@gmail.com
+[01:10:09.690] Browser LOG     AdminGuard: ✅ Admin confirmed!
+[01:10:12.159] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:10:15.572] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:10:15.683] Browser LOG     AdminGuard: 🔍 Found user: bujaklav@gmail.com
+[01:10:17.246] Browser LOG     AdminGuard: ✅ Admin confirmed!
+[01:11:04.273] Server  LOG     ✓ Compiled in 121ms
+[01:11:06.665] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+[01:12:03.913] Browser WARN    Image with src "/Westgatelogo.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[01:12:04.350] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
+[01:12:04.796] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
+[01:12:05.243] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
+[01:12:05.687] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
+[01:12:21.141] Browser LOG     AdminGuard: 🔍 Found user: bujaklav@gmail.com
+[01:12:21.141] Browser LOG     AdminGuard: 🔍 Found user: bujaklav@gmail.com
+[01:12:21.626] Browser LOG     AdminGuard: ✅ Admin confirmed!
+[01:12:22.096] Browser LOG     AdminGuard: ✅ Admin confirmed!
+[01:12:27.852] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:12:27.974] Browser LOG     AdminGuard: 🔍 Found user: bujaklav@gmail.com
+[01:12:29.538] Browser LOG     AdminGuard: ✅ Admin confirmed!
+[01:13:00.026] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+[01:13:16.066] Browser WARN    Image with src "/Westgatelogo.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[01:13:16.570] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
+[01:13:17.093] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
+[01:13:17.618] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
+[01:13:18.128] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
+[01:16:38.878] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
+[01:16:38.878] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
+[01:16:39.877] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
+[01:16:39.878] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
+[01:16:56.381] Server  LOG     ✓ Compiled in 101ms
+[01:17:46.334] Server  LOG     ✓ Compiled in 236ms
+[01:17:48.818] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
+[01:17:49.312] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
+[01:17:50.078] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
+[01:17:50.595] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.

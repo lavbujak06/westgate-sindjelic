@@ -91,11 +91,6 @@ export default function JuniorsPage() {
           </div>
         </div>
       </section>
-
-      {/* FOOTER PLACEHOLDER */}
-      <footer className="bg-gray-900 py-10 text-center text-gray-600 text-[10px] uppercase tracking-widest font-mono">
-        © 2026 Westgate Sindjelic FC — Junior Academy
-      </footer>
     </main>
   );
 }
