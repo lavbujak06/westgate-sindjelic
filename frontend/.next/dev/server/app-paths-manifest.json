@@ -1,11 +1,6 @@
 {
-  "/_not-found/page": "app/_not-found/page.js",
   "/admin/dashboard/page": "app/admin/dashboard/page.js",
-  "/admin/highlights/new/page": "app/admin/highlights/new/page.js",
-  "/admin/highlights/page": "app/admin/highlights/page.js",
   "/login/page": "app/login/page.js",
   "/page": "app/page.js",
-  "/pages/aboutUs/page": "app/pages/aboutUs/page.js",
-  "/pages/news/[id]/page": "app/pages/news/[id]/page.js",
   "/pages/news/page": "app/pages/news/page.js"
 }

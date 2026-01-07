@@ -212,7 +212,7 @@ export default function HomePage() {
         <section className="py-24 bg-slate-950">
           <div className="max-w-7xl mx-auto px-6 mb-12 text-center md:text-left">
             <h2 className="text-6xl font-black uppercase italic tracking-tighter text-white leading-none">
-              Match <span className="text-red-600">Broadcasts</span>
+              Match <span className="text-red-600">Highlights</span>
             </h2>
             <div className="h-2 w-24 bg-red-600 mt-6 mx-auto md:mx-0"></div>
           </div>

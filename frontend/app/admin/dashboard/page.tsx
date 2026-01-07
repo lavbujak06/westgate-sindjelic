@@ -69,6 +69,14 @@ export default function AdminDashboard() {
             <h2 className="text-2xl font-bold group-hover:text-red-500 transition-colors">Sponsor Management →</h2>
             <p className="text-slate-500 mt-2 text-sm">Manage club sponsors and partners.</p>
           </Link>
+          <Link href="/admin/highlights" className="group bg-slate-900/50 border border-slate-800 p-8 rounded-2xl hover:border-red-600 transition-all">
+            <h2 className="text-2xl font-bold group-hover:text-red-500 transition-colors">Highlights Management →</h2>
+            <p className="text-slate-500 mt-2 text-sm">Manage team highlights and videos.</p>
+          </Link>
+          <Link href="/admin/audit-logs" className="group bg-slate-900/50 border border-slate-800 p-8 rounded-2xl hover:border-red-600 transition-all">
+            <h2 className="text-2xl font-bold group-hover:text-red-500 transition-colors">Audit Trail →</h2>
+            <p className="text-slate-500 mt-2 text-sm">View and manage system logs and changes.</p>
+          </Link>
         </div>
       </div>
     </div>

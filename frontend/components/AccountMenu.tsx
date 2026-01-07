@@ -39,13 +39,20 @@ const AccountMenu = () => {
 
   const handleSignOut = async () => {
     try {
+      // 1️⃣ Sign out from Supabase client (clears localStorage/IndexedDB session)
+      await supabaseClient.auth.signOut();
+
+      // 2️⃣ Call backend to clear cookies
       await fetch('http://localhost:5001/api/auth/logout', {
         method: 'POST',
         credentials: 'include',
       });
+
+      // 3️⃣ Clear your React state
       setUser(null);
       setProfile(null);
       setIsAdmin(false);
+
       router.push('/login');
     } catch (err) {
       console.error('Sign out failed:', err);
