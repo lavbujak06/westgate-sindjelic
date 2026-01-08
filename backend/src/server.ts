@@ -3,6 +3,17 @@ import express from 'express';
 import cors from 'cors';
 import cookieParser from 'cookie-parser';
 
+import { rateLimit } from 'express-rate-limit'; // Modern import style
+
+// 1. Define the Limiter
+const loginLimiter = rateLimit({
+  windowMs: 15 * 60 * 1000, // 15 minutes
+  max: 10, // Limit each IP to 10 attempts
+  standardHeaders: true, // Return rate limit info in the `RateLimit-*` headers
+	legacyHeaders: false, // Disable the `X-RateLimit-*` headers
+  message: { message: "Too many login attempts, please try again after 15 minutes" } 
+});
+
 
 import newsRoutes from './routes/news';
 import authRoutes from './routes/auth';
@@ -30,6 +41,7 @@ app.use(express.json());
 app.use(cookieParser());
 
 // Routes
+app.use('/api/auth/login', loginLimiter);
 app.use('/api/auth', authRoutes);
 app.use('/api/news', newsRoutes);
 app.use('/api/users', userRoutes);
@@ -41,6 +53,7 @@ app.use('/api/league', leagueRoutes);
 app.use('/api/media', mediaRoutes);
 app.use('/api/sponsors', sponsorsRoutes);
 app.use('/api/highlights', highlightRouter);
+
 const PORT = 5001;
 app.listen(PORT, () => {
   console.log(`Backend running on http://localhost:${PORT}`);

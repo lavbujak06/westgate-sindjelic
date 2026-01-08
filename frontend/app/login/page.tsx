@@ -6,13 +6,16 @@ import { supabaseClient } from '@/lib/supabaseClient';
 import Link from 'next/link';
 import Loader from '@/components/Loader';
 import Navbar from '@/components/Navbar';
+import { Turnstile } from '@marsidev/react-turnstile';
 
 export default function LoginPage() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   const [loginLoading, setLoginLoading] = useState(false);
+  const [captchaToken, setCaptchaToken] = useState<string | null>(null);
   const router = useRouter();
+  
   
   // 🛡️ Pull state setters from context to update the Account Menu globally
   const { setUser, setProfile } = useUser();
@@ -24,7 +27,7 @@ export default function LoginPage() {
 
     try {
       // 1. Supabase Auth
-      const { data: authData, error: authError } = await supabaseClient.auth.signInWithPassword({ email, password });
+      const { data: authData, error: authError } = await supabaseClient.auth.signInWithPassword({ email, password, options: { captchaToken: captchaToken ?? undefined } });
       if (authError) { 
         setError(authError.message); 
         setLoginLoading(false); 
@@ -111,6 +114,13 @@ export default function LoginPage() {
                 className="w-full px-5 py-4 bg-gray-50 border border-gray-200 rounded-2xl text-gray-900 focus:ring-2 focus:ring-red-600 outline-none transition-all font-medium" 
                 placeholder="••••••••"
                 required 
+              />
+            </div>
+            <div className="flex justify-center py-2">
+              <Turnstile 
+                siteKey={process.env.NEXT_PUBLIC_CLOUDFLARE_SITE_KEY!} 
+                onSuccess={(token) => setCaptchaToken(token)} 
+                options={{ theme: 'light' }} 
               />
             </div>
             

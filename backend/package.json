@@ -20,12 +20,14 @@
     "typescript": "^5.2.2"
   },
   "dependencies": {
+    "@marsidev/react-turnstile": "^1.4.1",
     "@supabase/supabase-js": "^2.89.0",
     "cheerio": "^1.0.0-rc.12",
     "cookie-parser": "^1.4.7",
     "cors": "^2.8.5",
     "dotenv": "^17.2.3",
     "express": "^4.22.1",
+    "express-rate-limit": "^8.2.1",
     "multer": "^2.0.2",
     "node-fetch": "^3.3.2",
     "nodemailer": "^7.0.12"

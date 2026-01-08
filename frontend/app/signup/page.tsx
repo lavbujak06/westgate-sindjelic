@@ -4,13 +4,15 @@ import { useRouter } from 'next/navigation';
 import { supabaseClient } from '@/lib/supabaseClient';
 import Link from 'next/link';
 import Loader from '@/components/Loader';
-import Navbar from '@/components/Navbar'; // Added Navbar
+import Navbar from '@/components/Navbar'; 
+import { Turnstile } from '@marsidev/react-turnstile';
 
 export default function SignupPage() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   const [signupLoading, setSignupLoading] = useState(false);
+  const [captchaToken, setCaptchaToken] = useState<string | null>(null);
   const router = useRouter();
 
   const handleSignup = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -21,6 +23,7 @@ export default function SignupPage() {
     const { data, error } = await supabaseClient.auth.signUp({
       email,
       password,
+      options: { captchaToken: captchaToken ?? undefined }
     });
 
     if (error) {
@@ -67,6 +70,14 @@ export default function SignupPage() {
                 placeholder="••••••••"
                 className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl text-gray-900 focus:ring-2 focus:ring-red-600 outline-none transition placeholder:text-gray-300" 
                 required 
+              />
+            </div>
+
+            <div className="flex justify-center py-2">
+              <Turnstile 
+                siteKey={process.env.NEXT_PUBLIC_CLOUDFLARE_SITE_KEY!} 
+                onSuccess={(token) => setCaptchaToken(token)} 
+                options={{ theme: 'light' }} 
               />
             </div>
             
