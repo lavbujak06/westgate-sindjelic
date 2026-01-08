@@ -4,7 +4,8 @@
   "static/chunks/9e883_next_7ed05b68._.js",
   "static/chunks/9e883_react-icons_ai_index_mjs_3d6a0e94._.js",
   "static/chunks/9e883_react-icons_lib_0c48b1b3._.js",
-  "static/chunks/frontend_components_03d14a30._.js"
+  "static/chunks/9e883_lucide-react_dist_esm_ed4fd00f._.js",
+  "static/chunks/frontend_23d3f20f._.js"
 ],
     source: "dynamic"
 });

@@ -173,8 +173,8 @@ export default function LeagueManagerPage() {
                 <option value="" disabled>Select a Team</option>
                 <option value="Senior Men">Senior Men</option>
                 <option value="Senior Women">Senior Women</option>
-                <option value="Under 21 Men">Reserve Men</option>
-                <option value="Junior Boys">Reserve Women</option>
+                <option value="Reserve Men">Reserve Men</option>
+                <option value="Reserve Women">Reserve Women</option>
               </select>
             </div>
             <div className="col-span-2">

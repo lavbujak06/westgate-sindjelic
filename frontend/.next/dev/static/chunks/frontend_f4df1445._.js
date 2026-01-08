@@ -148,8 +148,10 @@ function NewsEditorPage() {
     const [title, setTitle] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])('');
     const [content, setContent] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])('');
     const [published, setPublished] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
-    const [imageUrl, setImageUrl] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])('');
-    const [uploadMode, setUploadMode] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])('url');
+    // Image states matching CoachEditor logic
+    const [imageFile, setImageFile] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(null);
+    const [previewUrl, setPreviewUrl] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])('');
+    const [uploadMode, setUploadMode] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])('file');
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
         "NewsEditorPage.useEffect": ()=>{
             if (!isNew) {
@@ -160,7 +162,9 @@ function NewsEditorPage() {
                         setTitle(data.title);
                         setContent(data.content);
                         setPublished(data.published);
-                        setImageUrl(data.image_url || '');
+                        setPreviewUrl(data.image_url || '');
+                        // If the existing data has a URL, default to URL mode for editing
+                        if (data.image_url) setUploadMode('url');
                     }
                 }["NewsEditorPage.useEffect"]);
             }
@@ -169,46 +173,51 @@ function NewsEditorPage() {
         id,
         isNew
     ]);
-    const handleFileChange = async (e)=>{
-        const file = e.target.files?.[0];
-        if (!file) return;
-        setLoading(true);
-        const fileName = `${Date.now()}-${file.name}`;
-        const { data, error } = await __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$lib$2f$supabaseClient$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["supabaseClient"].storage.from('news-images').upload(fileName, file);
-        if (error) {
-            __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$react$2d$hot$2d$toast$2f$dist$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"].error("Upload failed");
-        } else {
-            const { data: urlData } = __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$lib$2f$supabaseClient$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["supabaseClient"].storage.from('news-images').getPublicUrl(fileName);
-            setImageUrl(urlData.publicUrl);
-            __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$react$2d$hot$2d$toast$2f$dist$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"].success("Image Uploaded");
-        }
-        setLoading(false);
-    };
     const handleSubmit = async (e)=>{
         e.preventDefault();
         setLoading(true);
-        const url = isNew ? 'http://localhost:5001/api/news' : `http://localhost:5001/api/news/${id}`;
-        const method = isNew ? 'POST' : 'PUT';
-        const res = await fetch(url, {
-            method,
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-                title,
-                content,
-                published,
-                image_url: imageUrl
-            }),
-            credentials: 'include'
-        });
-        if (res.ok) {
+        try {
+            let finalImageUrl = previewUrl;
+            // 1. Storage Logic (Mirrored from CoachEditorPage)
+            if (uploadMode === 'file' && imageFile) {
+                const fileExt = imageFile.name.split('.').pop();
+                const fileName = `${Date.now()}.${fileExt}`;
+                const filePath = `news/${fileName}`;
+                const { error: uploadError } = await __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$lib$2f$supabaseClient$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["supabaseClient"].storage.from('news-images').upload(filePath, imageFile);
+                if (uploadError) throw uploadError;
+                const { data } = __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$lib$2f$supabaseClient$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["supabaseClient"].storage.from('news-images').getPublicUrl(filePath);
+                finalImageUrl = data.publicUrl;
+            }
+            // 2. Database Logic
+            const url = isNew ? 'http://localhost:5001/api/news' : `http://localhost:5001/api/news/${id}`;
+            const method = isNew ? 'POST' : 'PUT';
+            const res = await fetch(url, {
+                method,
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    title,
+                    content,
+                    published,
+                    image_url: finalImageUrl
+                }),
+                credentials: 'include'
+            });
+            if (!res.ok) {
+                const errorData = await res.json().catch(()=>({
+                        error: 'Unknown server error'
+                    }));
+                throw new Error(errorData.error || 'Failed to save article');
+            }
             __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$react$2d$hot$2d$toast$2f$dist$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"].success(isNew ? 'Article Published' : 'Article Updated');
             router.push('/admin/news');
-        } else {
-            __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$react$2d$hot$2d$toast$2f$dist$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"].error("Save failed");
+        } catch (err) {
+            __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$react$2d$hot$2d$toast$2f$dist$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"].error(err.message);
+            console.error("News Save Error:", err);
+        } finally{
+            setLoading(false);
         }
-        setLoading(false);
     };
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
         className: "min-h-screen bg-[#020617] flex items-center justify-center p-6 text-white italic",
@@ -219,32 +228,32 @@ function NewsEditorPage() {
                     className: "bg-slate-950 p-8 border-b border-slate-800 flex justify-between items-center",
                     children: [
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
-                            className: "text-2xl font-black uppercase tracking-tighter",
+                            className: "text-2xl font-black uppercase tracking-tighter italic",
                             children: isNew ? 'Initialize Article' : 'Update Content'
                         }, void 0, false, {
                             fileName: "[project]/frontend/app/admin/news/[id]/page.tsx",
-                            lineNumber: 78,
+                            lineNumber: 99,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
                             href: "/admin/news",
-                            className: "text-slate-500 hover:text-white",
+                            className: "text-slate-500 hover:text-white transition-colors",
                             children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$arrow$2d$left$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__ArrowLeft$3e$__["ArrowLeft"], {
                                 size: 20
                             }, void 0, false, {
                                 fileName: "[project]/frontend/app/admin/news/[id]/page.tsx",
-                                lineNumber: 81,
-                                columnNumber: 80
+                                lineNumber: 103,
+                                columnNumber: 13
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/frontend/app/admin/news/[id]/page.tsx",
-                            lineNumber: 81,
+                            lineNumber: 102,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/frontend/app/admin/news/[id]/page.tsx",
-                    lineNumber: 77,
+                    lineNumber: 98,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("form", {
@@ -255,187 +264,227 @@ function NewsEditorPage() {
                             className: "space-y-2",
                             children: [
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
-                                    className: "text-[10px] font-black uppercase tracking-widest text-slate-500",
+                                    className: "text-[10px] font-black uppercase tracking-widest text-slate-500 ml-1",
                                     children: "Headline"
                                 }, void 0, false, {
                                     fileName: "[project]/frontend/app/admin/news/[id]/page.tsx",
-                                    lineNumber: 86,
+                                    lineNumber: 110,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
                                     value: title,
                                     onChange: (e)=>setTitle(e.target.value),
-                                    className: "w-full bg-slate-950 border border-slate-800 rounded-xl p-4 text-sm focus:border-red-600 outline-none",
+                                    className: "w-full bg-slate-950 border border-slate-800 rounded-xl p-4 text-sm focus:border-red-600 outline-none transition-all",
+                                    placeholder: "Enter article title...",
                                     required: true
                                 }, void 0, false, {
                                     fileName: "[project]/frontend/app/admin/news/[id]/page.tsx",
-                                    lineNumber: 87,
+                                    lineNumber: 111,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/frontend/app/admin/news/[id]/page.tsx",
-                            lineNumber: 85,
+                            lineNumber: 109,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                             className: "space-y-2",
                             children: [
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
-                                    className: "text-[10px] font-black uppercase tracking-widest text-slate-500",
+                                    className: "text-[10px] font-black uppercase tracking-widest text-slate-500 ml-1",
                                     children: "Visual Asset"
                                 }, void 0, false, {
                                     fileName: "[project]/frontend/app/admin/news/[id]/page.tsx",
-                                    lineNumber: 91,
+                                    lineNumber: 122,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                    className: "flex gap-2 p-1 bg-slate-950 rounded-xl border border-slate-800 mb-2",
+                                    className: "flex gap-2 p-1 bg-slate-950 rounded-xl border border-slate-800 mb-4",
                                     children: [
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                                             type: "button",
-                                            onClick: ()=>setUploadMode('url'),
-                                            className: `flex-1 py-2 text-[9px] font-black uppercase rounded-lg flex items-center justify-center gap-2 ${uploadMode === 'url' ? 'bg-red-600 text-white' : 'text-slate-500'}`,
-                                            children: [
-                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$link$2d$2$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Link2$3e$__["Link2"], {
-                                                    size: 12
-                                                }, void 0, false, {
-                                                    fileName: "[project]/frontend/app/admin/news/[id]/page.tsx",
-                                                    lineNumber: 93,
-                                                    columnNumber: 251
-                                                }, this),
-                                                " URL"
-                                            ]
-                                        }, void 0, true, {
-                                            fileName: "[project]/frontend/app/admin/news/[id]/page.tsx",
-                                            lineNumber: 93,
-                                            columnNumber: 15
-                                        }, this),
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                                            type: "button",
                                             onClick: ()=>setUploadMode('file'),
-                                            className: `flex-1 py-2 text-[9px] font-black uppercase rounded-lg flex items-center justify-center gap-2 ${uploadMode === 'file' ? 'bg-red-600 text-white' : 'text-slate-500'}`,
+                                            className: `flex-1 py-2 text-[9px] font-black uppercase rounded-lg flex items-center justify-center gap-2 transition-all ${uploadMode === 'file' ? 'bg-red-600 text-white' : 'text-slate-500 hover:text-slate-300'}`,
                                             children: [
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$upload$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Upload$3e$__["Upload"], {
                                                     size: 12
                                                 }, void 0, false, {
                                                     fileName: "[project]/frontend/app/admin/news/[id]/page.tsx",
-                                                    lineNumber: 94,
-                                                    columnNumber: 253
+                                                    lineNumber: 130,
+                                                    columnNumber: 17
                                                 }, this),
-                                                " Upload"
+                                                " Local Upload"
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/frontend/app/admin/news/[id]/page.tsx",
-                                            lineNumber: 94,
+                                            lineNumber: 125,
+                                            columnNumber: 15
+                                        }, this),
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                            type: "button",
+                                            onClick: ()=>setUploadMode('url'),
+                                            className: `flex-1 py-2 text-[9px] font-black uppercase rounded-lg flex items-center justify-center gap-2 transition-all ${uploadMode === 'url' ? 'bg-red-600 text-white' : 'text-slate-500 hover:text-slate-300'}`,
+                                            children: [
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$link$2d$2$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Link2$3e$__["Link2"], {
+                                                    size: 12
+                                                }, void 0, false, {
+                                                    fileName: "[project]/frontend/app/admin/news/[id]/page.tsx",
+                                                    lineNumber: 137,
+                                                    columnNumber: 17
+                                                }, this),
+                                                " Web Link"
+                                            ]
+                                        }, void 0, true, {
+                                            fileName: "[project]/frontend/app/admin/news/[id]/page.tsx",
+                                            lineNumber: 132,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/frontend/app/admin/news/[id]/page.tsx",
-                                    lineNumber: 92,
+                                    lineNumber: 124,
                                     columnNumber: 13
                                 }, this),
                                 uploadMode === 'file' ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                    className: "relative w-full aspect-video bg-slate-950 border-2 border-dashed border-slate-800 rounded-xl flex flex-col items-center justify-center overflow-hidden",
+                                    className: "relative w-full aspect-video bg-slate-950 border-2 border-dashed border-slate-800 rounded-2xl flex flex-col items-center justify-center overflow-hidden group hover:border-red-600/50 transition-all",
                                     children: [
-                                        imageUrl ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
-                                            src: imageUrl,
-                                            className: "w-full h-full object-cover"
-                                        }, void 0, false, {
+                                        imageFile || previewUrl ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Fragment"], {
+                                            children: [
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
+                                                    src: imageFile ? URL.createObjectURL(imageFile) : previewUrl,
+                                                    className: "w-full h-full object-cover",
+                                                    alt: "Preview"
+                                                }, void 0, false, {
+                                                    fileName: "[project]/frontend/app/admin/news/[id]/page.tsx",
+                                                    lineNumber: 145,
+                                                    columnNumber: 21
+                                                }, this),
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                    className: "absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center",
+                                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                                        className: "text-[10px] font-black uppercase bg-white text-black px-4 py-2 rounded-full",
+                                                        children: "Change Image"
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/frontend/app/admin/news/[id]/page.tsx",
+                                                        lineNumber: 151,
+                                                        columnNumber: 24
+                                                    }, this)
+                                                }, void 0, false, {
+                                                    fileName: "[project]/frontend/app/admin/news/[id]/page.tsx",
+                                                    lineNumber: 150,
+                                                    columnNumber: 21
+                                                }, this)
+                                            ]
+                                        }, void 0, true) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                            className: "text-center space-y-2",
+                                            children: [
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$image$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Image$3e$__["Image"], {
+                                                    className: "text-slate-700 mx-auto",
+                                                    size: 40
+                                                }, void 0, false, {
+                                                    fileName: "[project]/frontend/app/admin/news/[id]/page.tsx",
+                                                    lineNumber: 156,
+                                                    columnNumber: 21
+                                                }, this),
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                                    className: "text-[9px] font-black uppercase text-slate-500 tracking-widest",
+                                                    children: "Click to browse storage"
+                                                }, void 0, false, {
+                                                    fileName: "[project]/frontend/app/admin/news/[id]/page.tsx",
+                                                    lineNumber: 157,
+                                                    columnNumber: 21
+                                                }, this)
+                                            ]
+                                        }, void 0, true, {
                                             fileName: "[project]/frontend/app/admin/news/[id]/page.tsx",
-                                            lineNumber: 98,
-                                            columnNumber: 29
-                                        }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$image$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Image$3e$__["Image"], {
-                                            className: "text-slate-700",
-                                            size: 32
-                                        }, void 0, false, {
-                                            fileName: "[project]/frontend/app/admin/news/[id]/page.tsx",
-                                            lineNumber: 98,
-                                            columnNumber: 93
+                                            lineNumber: 155,
+                                            columnNumber: 19
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
                                             type: "file",
                                             className: "absolute inset-0 opacity-0 cursor-pointer",
-                                            onChange: handleFileChange
+                                            accept: "image/*",
+                                            onChange: (e)=>setImageFile(e.target.files?.[0] || null)
                                         }, void 0, false, {
                                             fileName: "[project]/frontend/app/admin/news/[id]/page.tsx",
-                                            lineNumber: 99,
+                                            lineNumber: 160,
                                             columnNumber: 17
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/frontend/app/admin/news/[id]/page.tsx",
-                                    lineNumber: 97,
+                                    lineNumber: 142,
                                     columnNumber: 15
                                 }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
-                                    value: imageUrl,
-                                    onChange: (e)=>setImageUrl(e.target.value),
-                                    placeholder: "Image URL...",
-                                    className: "w-full bg-slate-950 border border-slate-800 rounded-xl p-4 text-sm outline-none"
+                                    value: previewUrl,
+                                    onChange: (e)=>setPreviewUrl(e.target.value),
+                                    placeholder: "Paste image URL (https://...)",
+                                    className: "w-full bg-slate-950 border border-slate-800 rounded-xl p-4 text-sm outline-none focus:border-red-600 transition-all"
                                 }, void 0, false, {
                                     fileName: "[project]/frontend/app/admin/news/[id]/page.tsx",
-                                    lineNumber: 102,
+                                    lineNumber: 168,
                                     columnNumber: 15
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/frontend/app/admin/news/[id]/page.tsx",
-                            lineNumber: 90,
+                            lineNumber: 121,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                             className: "space-y-2",
                             children: [
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
-                                    className: "text-[10px] font-black uppercase tracking-widest text-slate-500",
+                                    className: "text-[10px] font-black uppercase tracking-widest text-slate-500 ml-1",
                                     children: "Content Body"
                                 }, void 0, false, {
                                     fileName: "[project]/frontend/app/admin/news/[id]/page.tsx",
-                                    lineNumber: 107,
+                                    lineNumber: 179,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("textarea", {
                                     value: content,
                                     onChange: (e)=>setContent(e.target.value),
-                                    className: "w-full bg-slate-950 border border-slate-800 rounded-xl p-4 text-sm min-h-37.5 focus:border-red-600 outline-none resize-none",
+                                    className: "w-full bg-slate-950 border border-slate-800 rounded-xl p-4 text-sm min-h-[150px] focus:border-red-600 outline-none resize-none transition-all italic not-italic",
+                                    placeholder: "Write your article here...",
                                     required: true
                                 }, void 0, false, {
                                     fileName: "[project]/frontend/app/admin/news/[id]/page.tsx",
-                                    lineNumber: 108,
+                                    lineNumber: 180,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/frontend/app/admin/news/[id]/page.tsx",
-                            lineNumber: 106,
+                            lineNumber: 178,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                            className: "flex items-center gap-3",
+                            className: "flex items-center gap-3 p-4 bg-slate-950/50 rounded-xl border border-slate-800",
                             children: [
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
                                     type: "checkbox",
                                     checked: published,
                                     onChange: (e)=>setPublished(e.target.checked),
-                                    className: "w-5 h-5 accent-red-600"
+                                    className: "w-5 h-5 accent-red-600 cursor-pointer"
                                 }, void 0, false, {
                                     fileName: "[project]/frontend/app/admin/news/[id]/page.tsx",
-                                    lineNumber: 112,
+                                    lineNumber: 191,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                    className: "text-[10px] font-black uppercase text-slate-400",
-                                    children: "Published & Live"
+                                    className: "text-[10px] font-black uppercase text-slate-400 tracking-widest",
+                                    children: "Set as Published & Live"
                                 }, void 0, false, {
                                     fileName: "[project]/frontend/app/admin/news/[id]/page.tsx",
-                                    lineNumber: 113,
+                                    lineNumber: 197,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/frontend/app/admin/news/[id]/page.tsx",
-                            lineNumber: 111,
+                            lineNumber: 190,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -443,36 +492,36 @@ function NewsEditorPage() {
                             children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$components$2f$CreateButton$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
                                 type: "submit",
                                 disabled: loading,
-                                children: loading ? 'Processing...' : 'Save Article'
+                                children: loading ? 'Processing Article...' : isNew ? 'Create Article' : 'Save Changes'
                             }, void 0, false, {
                                 fileName: "[project]/frontend/app/admin/news/[id]/page.tsx",
-                                lineNumber: 117,
+                                lineNumber: 202,
                                 columnNumber: 13
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/frontend/app/admin/news/[id]/page.tsx",
-                            lineNumber: 116,
+                            lineNumber: 201,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/frontend/app/admin/news/[id]/page.tsx",
-                    lineNumber: 84,
+                    lineNumber: 107,
                     columnNumber: 9
                 }, this)
             ]
         }, void 0, true, {
             fileName: "[project]/frontend/app/admin/news/[id]/page.tsx",
-            lineNumber: 76,
+            lineNumber: 97,
             columnNumber: 7
         }, this)
     }, void 0, false, {
         fileName: "[project]/frontend/app/admin/news/[id]/page.tsx",
-        lineNumber: 75,
+        lineNumber: 96,
         columnNumber: 5
     }, this);
 }
-_s(NewsEditorPage, "qY8WFX2xXAnxwRoVRA29nYLZ2c4=", false, function() {
+_s(NewsEditorPage, "NCOo6ocZ7QZ9cI4hZUUqoUBbEXE=", false, function() {
     return [
         __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useParams"],
         __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRouter"]
