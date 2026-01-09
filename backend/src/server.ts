@@ -54,7 +54,7 @@ app.use('/api/media', mediaRoutes);
 app.use('/api/sponsors', sponsorsRoutes);
 app.use('/api/highlights', highlightRouter);
 
-const PORT = 5001;
-app.listen(PORT, () => {
-  console.log(`Backend running on http://localhost:${PORT}`);
+
+app.listen(process.env.PORT, () => {
+  console.log(`Backend running on http://localhost:${process.env.PORT}`);
 });

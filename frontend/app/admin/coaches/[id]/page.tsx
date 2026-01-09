@@ -1,7 +1,6 @@
 'use client';
 import { useEffect, useState } from 'react';
 import { useParams, useRouter } from 'next/navigation';
-import { supabaseClient } from '@/lib/supabaseClient';
 import CreateButton from '@/components/CreateButton';
 import toast from 'react-hot-toast';
 
@@ -40,49 +39,33 @@ export default function CoachEditorPage() {
     setLoading(true);
 
     try {
-      let finalImageUrl = previewUrl;
-
-      // 1. Storage Logic (Same as your Account Settings)
+      // Use FormData to send both file and text to backend
+      const formData = new FormData();
+      formData.append('name', name);
+      formData.append('role', role);
+      formData.append('team_slug', teamSlug);
+      formData.append('display_order', displayOrder.toString());
+      
       if (imageFile) {
-        const fileExt = imageFile.name.split('.').pop();
-        const fileName = `${Date.now()}.${fileExt}`;
-        const filePath = `staff/${fileName}`;
-
-        const { error: uploadError } = await supabaseClient.storage
-          .from('coach-photos')
-          .upload(filePath, imageFile);
-
-        if (uploadError) throw uploadError;
-
-        const { data } = supabaseClient.storage.from('coach-photos').getPublicUrl(filePath);
-        finalImageUrl = data.publicUrl;
+        formData.append('image', imageFile);
+      } else {
+        formData.append('image_url', previewUrl);
       }
 
-      // 2. Database Logic via Express Backend
       const url = isNew ? 'http://localhost:5001/api/coaches' : `http://localhost:5001/api/coaches/${id}`;
       const method = isNew ? 'POST' : 'PUT';
 
       const res = await fetch(url, {
         method,
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ 
-            name, 
-            role, 
-            team_slug: teamSlug, 
-            image_url: finalImageUrl, 
-            display_order: Number(displayOrder) // Explicitly cast to Number
-        }),
+        body: formData, // Browser sets Content-Type automatically for FormData
         credentials: 'include',
       });
 
-      if (!res.ok) {
-          // This helps you see the EXACT error message from your Express backend
-          const errorData = await res.json().catch(() => ({ error: 'Unknown server error' }));
-          console.error("Detailed Backend Error:", errorData);
-          throw new Error(errorData.error || 'Failed to save to database');
-      }
+      const result = await res.json();
 
-      toast.success(isNew ? 'Coach Initialized' : 'Profile Updated');
+      if (!res.ok) throw new Error(result.error || 'Failed to save');
+
+      toast.success(isNew ? 'Staff Created' : 'Staff Updated');
       router.push('/admin/coaches');
     } catch (err: any) {
       toast.error(err.message);
@@ -101,11 +84,14 @@ export default function CoachEditorPage() {
         </div>
 
         <form onSubmit={handleSubmit} className="p-8 space-y-6">
-          {/* IMAGE UPLOAD SECTION */}
           <div className="flex flex-col items-center gap-4">
             <div className="relative w-32 h-32 group border-2 border-dashed border-slate-700 rounded-full flex items-center justify-center overflow-hidden">
-              {previewUrl || imageFile ? (
-                <img src={imageFile ? URL.createObjectURL(imageFile) : previewUrl} className="w-full h-full object-cover" />
+              {(previewUrl || imageFile) ? (
+                <img 
+                  src={imageFile ? URL.createObjectURL(imageFile) : previewUrl} 
+                  className="w-full h-full object-cover" 
+                  alt="Preview"
+                />
               ) : (
                 <span className="text-[10px] text-slate-600 font-black uppercase">No Image</span>
               )}

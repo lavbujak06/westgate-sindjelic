@@ -121,13 +121,11 @@ __turbopack_context__.s([
 var __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/frontend/node_modules/next/dist/compiled/react/jsx-dev-runtime.js [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/frontend/node_modules/next/dist/compiled/react/index.js [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/frontend/node_modules/next/navigation.js [app-client] (ecmascript)");
-var __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$lib$2f$supabaseClient$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/frontend/lib/supabaseClient.ts [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$components$2f$CreateButton$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/frontend/components/CreateButton.tsx [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$react$2d$hot$2d$toast$2f$dist$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/frontend/node_modules/react-hot-toast/dist/index.mjs [app-client] (ecmascript)");
 ;
 var _s = __turbopack_context__.k.signature();
 'use client';
-;
 ;
 ;
 ;
@@ -173,43 +171,27 @@ function CoachEditorPage() {
         e.preventDefault();
         setLoading(true);
         try {
-            let finalImageUrl = previewUrl;
-            // 1. Storage Logic (Same as your Account Settings)
+            // Use FormData to send both file and text to backend
+            const formData = new FormData();
+            formData.append('name', name);
+            formData.append('role', role);
+            formData.append('team_slug', teamSlug);
+            formData.append('display_order', displayOrder.toString());
             if (imageFile) {
-                const fileExt = imageFile.name.split('.').pop();
-                const fileName = `${Date.now()}.${fileExt}`;
-                const filePath = `staff/${fileName}`;
-                const { error: uploadError } = await __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$lib$2f$supabaseClient$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["supabaseClient"].storage.from('coach-photos').upload(filePath, imageFile);
-                if (uploadError) throw uploadError;
-                const { data } = __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$lib$2f$supabaseClient$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["supabaseClient"].storage.from('coach-photos').getPublicUrl(filePath);
-                finalImageUrl = data.publicUrl;
+                formData.append('image', imageFile);
+            } else {
+                formData.append('image_url', previewUrl);
             }
-            // 2. Database Logic via Express Backend
             const url = isNew ? 'http://localhost:5001/api/coaches' : `http://localhost:5001/api/coaches/${id}`;
             const method = isNew ? 'POST' : 'PUT';
             const res = await fetch(url, {
                 method,
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({
-                    name,
-                    role,
-                    team_slug: teamSlug,
-                    image_url: finalImageUrl,
-                    display_order: Number(displayOrder) // Explicitly cast to Number
-                }),
+                body: formData,
                 credentials: 'include'
             });
-            if (!res.ok) {
-                // This helps you see the EXACT error message from your Express backend
-                const errorData = await res.json().catch(()=>({
-                        error: 'Unknown server error'
-                    }));
-                console.error("Detailed Backend Error:", errorData);
-                throw new Error(errorData.error || 'Failed to save to database');
-            }
-            __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$react$2d$hot$2d$toast$2f$dist$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"].success(isNew ? 'Coach Initialized' : 'Profile Updated');
+            const result = await res.json();
+            if (!res.ok) throw new Error(result.error || 'Failed to save');
+            __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$react$2d$hot$2d$toast$2f$dist$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"].success(isNew ? 'Staff Created' : 'Staff Updated');
             router.push('/admin/coaches');
         } catch (err) {
             __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$react$2d$hot$2d$toast$2f$dist$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"].error(err.message);
@@ -229,12 +211,12 @@ function CoachEditorPage() {
                         children: isNew ? 'Add New Staff' : 'Edit Staff Profile'
                     }, void 0, false, {
                         fileName: "[project]/frontend/app/admin/coaches/[id]/page.tsx",
-                        lineNumber: 98,
+                        lineNumber: 81,
                         columnNumber: 11
                     }, this)
                 }, void 0, false, {
                     fileName: "[project]/frontend/app/admin/coaches/[id]/page.tsx",
-                    lineNumber: 97,
+                    lineNumber: 80,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("form", {
@@ -248,17 +230,18 @@ function CoachEditorPage() {
                                 children: [
                                     previewUrl || imageFile ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
                                         src: imageFile ? URL.createObjectURL(imageFile) : previewUrl,
-                                        className: "w-full h-full object-cover"
+                                        className: "w-full h-full object-cover",
+                                        alt: "Preview"
                                     }, void 0, false, {
                                         fileName: "[project]/frontend/app/admin/coaches/[id]/page.tsx",
-                                        lineNumber: 108,
+                                        lineNumber: 90,
                                         columnNumber: 17
                                     }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                         className: "text-[10px] text-slate-600 font-black uppercase",
                                         children: "No Image"
                                     }, void 0, false, {
                                         fileName: "[project]/frontend/app/admin/coaches/[id]/page.tsx",
-                                        lineNumber: 110,
+                                        lineNumber: 96,
                                         columnNumber: 17
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
@@ -271,24 +254,24 @@ function CoachEditorPage() {
                                                 onChange: (e)=>setImageFile(e.target.files?.[0] || null)
                                             }, void 0, false, {
                                                 fileName: "[project]/frontend/app/admin/coaches/[id]/page.tsx",
-                                                lineNumber: 113,
+                                                lineNumber: 99,
                                                 columnNumber: 24
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/frontend/app/admin/coaches/[id]/page.tsx",
-                                        lineNumber: 112,
+                                        lineNumber: 98,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/frontend/app/admin/coaches/[id]/page.tsx",
-                                lineNumber: 106,
+                                lineNumber: 88,
                                 columnNumber: 13
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/frontend/app/admin/coaches/[id]/page.tsx",
-                            lineNumber: 105,
+                            lineNumber: 87,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -301,7 +284,7 @@ function CoachEditorPage() {
                                             children: "Full Name"
                                         }, void 0, false, {
                                             fileName: "[project]/frontend/app/admin/coaches/[id]/page.tsx",
-                                            lineNumber: 120,
+                                            lineNumber: 106,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -311,13 +294,13 @@ function CoachEditorPage() {
                                             required: true
                                         }, void 0, false, {
                                             fileName: "[project]/frontend/app/admin/coaches/[id]/page.tsx",
-                                            lineNumber: 121,
+                                            lineNumber: 107,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/frontend/app/admin/coaches/[id]/page.tsx",
-                                    lineNumber: 119,
+                                    lineNumber: 105,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -330,7 +313,7 @@ function CoachEditorPage() {
                                                     children: "Assigned Team"
                                                 }, void 0, false, {
                                                     fileName: "[project]/frontend/app/admin/coaches/[id]/page.tsx",
-                                                    lineNumber: 126,
+                                                    lineNumber: 112,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("select", {
@@ -343,7 +326,7 @@ function CoachEditorPage() {
                                                             children: "Senior Men"
                                                         }, void 0, false, {
                                                             fileName: "[project]/frontend/app/admin/coaches/[id]/page.tsx",
-                                                            lineNumber: 128,
+                                                            lineNumber: 114,
                                                             columnNumber: 19
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
@@ -351,7 +334,7 @@ function CoachEditorPage() {
                                                             children: "Reserve Men"
                                                         }, void 0, false, {
                                                             fileName: "[project]/frontend/app/admin/coaches/[id]/page.tsx",
-                                                            lineNumber: 129,
+                                                            lineNumber: 115,
                                                             columnNumber: 19
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
@@ -359,7 +342,7 @@ function CoachEditorPage() {
                                                             children: "Senior Women"
                                                         }, void 0, false, {
                                                             fileName: "[project]/frontend/app/admin/coaches/[id]/page.tsx",
-                                                            lineNumber: 130,
+                                                            lineNumber: 116,
                                                             columnNumber: 19
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
@@ -367,7 +350,7 @@ function CoachEditorPage() {
                                                             children: "Reserve Women"
                                                         }, void 0, false, {
                                                             fileName: "[project]/frontend/app/admin/coaches/[id]/page.tsx",
-                                                            lineNumber: 131,
+                                                            lineNumber: 117,
                                                             columnNumber: 19
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
@@ -375,19 +358,19 @@ function CoachEditorPage() {
                                                             children: "Juniors"
                                                         }, void 0, false, {
                                                             fileName: "[project]/frontend/app/admin/coaches/[id]/page.tsx",
-                                                            lineNumber: 132,
+                                                            lineNumber: 118,
                                                             columnNumber: 19
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/frontend/app/admin/coaches/[id]/page.tsx",
-                                                    lineNumber: 127,
+                                                    lineNumber: 113,
                                                     columnNumber: 17
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/frontend/app/admin/coaches/[id]/page.tsx",
-                                            lineNumber: 125,
+                                            lineNumber: 111,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -397,7 +380,7 @@ function CoachEditorPage() {
                                                     children: "Staff Role"
                                                 }, void 0, false, {
                                                     fileName: "[project]/frontend/app/admin/coaches/[id]/page.tsx",
-                                                    lineNumber: 136,
+                                                    lineNumber: 122,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("select", {
@@ -410,7 +393,7 @@ function CoachEditorPage() {
                                                             children: "Head Coach"
                                                         }, void 0, false, {
                                                             fileName: "[project]/frontend/app/admin/coaches/[id]/page.tsx",
-                                                            lineNumber: 138,
+                                                            lineNumber: 124,
                                                             columnNumber: 19
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
@@ -418,31 +401,31 @@ function CoachEditorPage() {
                                                             children: "Assistant Coach"
                                                         }, void 0, false, {
                                                             fileName: "[project]/frontend/app/admin/coaches/[id]/page.tsx",
-                                                            lineNumber: 139,
+                                                            lineNumber: 125,
                                                             columnNumber: 19
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/frontend/app/admin/coaches/[id]/page.tsx",
-                                                    lineNumber: 137,
+                                                    lineNumber: 123,
                                                     columnNumber: 17
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/frontend/app/admin/coaches/[id]/page.tsx",
-                                            lineNumber: 135,
+                                            lineNumber: 121,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/frontend/app/admin/coaches/[id]/page.tsx",
-                                    lineNumber: 124,
+                                    lineNumber: 110,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/frontend/app/admin/coaches/[id]/page.tsx",
-                            lineNumber: 118,
+                            lineNumber: 104,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -454,7 +437,7 @@ function CoachEditorPage() {
                                     children: loading ? 'Processing...' : 'Save Member'
                                 }, void 0, false, {
                                     fileName: "[project]/frontend/app/admin/coaches/[id]/page.tsx",
-                                    lineNumber: 146,
+                                    lineNumber: 132,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -464,30 +447,30 @@ function CoachEditorPage() {
                                     children: "Cancel"
                                 }, void 0, false, {
                                     fileName: "[project]/frontend/app/admin/coaches/[id]/page.tsx",
-                                    lineNumber: 147,
+                                    lineNumber: 133,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/frontend/app/admin/coaches/[id]/page.tsx",
-                            lineNumber: 145,
+                            lineNumber: 131,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/frontend/app/admin/coaches/[id]/page.tsx",
-                    lineNumber: 103,
+                    lineNumber: 86,
                     columnNumber: 9
                 }, this)
             ]
         }, void 0, true, {
             fileName: "[project]/frontend/app/admin/coaches/[id]/page.tsx",
-            lineNumber: 96,
+            lineNumber: 79,
             columnNumber: 7
         }, this)
     }, void 0, false, {
         fileName: "[project]/frontend/app/admin/coaches/[id]/page.tsx",
-        lineNumber: 95,
+        lineNumber: 78,
         columnNumber: 5
     }, this);
 }

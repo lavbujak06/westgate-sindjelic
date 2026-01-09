@@ -28,6 +28,14 @@ export default function ContactPage() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    // 1. Honeypot check (security for bots)
+    if (formData.honeypot) return;
+
+    // 2. File Size check (security for your server)
+    if (file && file.size > 10 * 1024 * 1024) { // 10MB Limit
+      toast.error("File is too large. Max size is 10MB.");
+      return;
+    }
     setLoading(true);
 
     const data = new FormData();
@@ -69,7 +77,7 @@ export default function ContactPage() {
         </h2>
         
         <p className="text-slate-400 text-sm leading-relaxed mb-10 uppercase tracking-wide font-medium">
-            Your inquiry has been encrypted and dispatched to the Technical Department. <br/> 
+            Your inquiry has been sent to the Technical Department. <br/> 
             <span className="text-slate-600 text-[10px] font-mono">Reference: {Math.random().toString(36).substr(2, 9).toUpperCase()}</span>
         </p>
 
@@ -146,7 +154,9 @@ export default function ContactPage() {
 
           <div className="md:col-span-2 space-y-1">
             <label className="text-[10px] font-black text-slate-500 uppercase ml-2">Attachments (Birth Cert/Logo/Photo)</label>
-            <input type="file" className="w-full text-xs text-slate-400 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:bg-red-600 file:text-white file:font-black" 
+            <input type="file" 
+            accept=".jpg,.jpeg,.png,.pdf" // Only allow images and PDFs
+            className="w-full text-xs text-slate-400 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:bg-red-600 file:text-white file:font-black" 
               onChange={e => setFile(e.target.files?.[0] || null)} />
           </div>
 

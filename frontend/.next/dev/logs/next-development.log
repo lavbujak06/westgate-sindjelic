@@ -1,289 +1,64 @@
-[00:00:00.781] Server  ERROR   (node:33331) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/lavbujak/Desktop/Sindjelic/westgate-sindjelic/frontend/next.config.js is not specified and it doesn't parse as CommonJS.
+[00:00:00.791] Server  ERROR   (node:15854) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/lavbujak/Desktop/Sindjelic/westgate-sindjelic/frontend/next.config.js is not specified and it doesn't parse as CommonJS.
 Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
 To eliminate this warning, add "type": "module" to /Users/lavbujak/Desktop/Sindjelic/westgate-sindjelic/frontend/package.json.
 (Use `node --trace-warnings ...` to show where the warning was created)
-[00:00:02.411] Server  WARN    ⚠ The "middleware" file convention is deprecated. Please use "proxy" instead. Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
-[00:00:02.531] Server  LOG     ✓ Ready in 2.2s
-[00:00:09.328] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:00:09.464] Browser WARN    Image with src "/Westgatelogo.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
-[00:00:12.659] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
-[00:00:13.210] Browser WARN    [Cloudflare Turnstile] Error: 400020.
-[00:00:24.783] Browser WARN    [Cloudflare Turnstile] Error: 400020.
-[00:00:35.698] Browser WARN    [Cloudflare Turnstile] Error: 400020.
-[00:00:36.203] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:00:36.419] Browser WARN    Image with src "/Westgatelogo.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
-[00:00:36.419] Browser WARN    [Cloudflare Turnstile] Error: 400020.
-[00:00:42.908] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:00:43.059] Browser WARN    Image with src "/Westgatelogo.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
-[00:00:50.487] Server  LOG     ✓ Compiled in 183ms
-[00:00:53.573] Server  LOG     ✓ Compiled in 134ms
-[00:01:07.830] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
-[00:01:44.882] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:01:45.023] Browser WARN    Image with src "/Westgatelogo.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
-[00:01:49.216] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
-[00:03:23.715] Server  LOG     ✓ Compiled in 164ms
-[00:03:35.073] Server  LOG     ✓ Compiled in 60ms
-[00:03:36.345] Server  LOG     ✓ Compiled in 119ms
-[00:03:38.294] Server  LOG     ✓ Compiled in 65ms
-[00:03:55.959] Server  LOG     ✓ Compiled in 155ms
-[00:03:57.375] Server  LOG     ✓ Compiled in 33ms
-[00:04:05.328] Server  LOG     ✓ Compiled in 252ms
-[00:04:05.795] Browser ERROR   ./frontend/app/login/page.tsx:30:140
-Parsing ecmascript source code failed
-  28 |     try {
-  29 |       // 1. Supabase Auth
-> 30 |       const { data: authData, error: authError } = await supabaseClient.auth.signInWithPassword({ email, password, options: { captchaToken ?? } });
-     |                                                                                                                                            ^^
-  31 |       if (authError) { 
-  32 |         setError(authError.message); 
-  33 |         setLoginLoading(false); 
-
-Expected a semicolon
-
-Import traces:
-  Client Component Browser:
-    ./frontend/app/login/page.tsx [Client Component Browser]
-    ./frontend/app/login/page.tsx [Server Component]
-
-  Client Component SSR:
-    ./frontend/app/login/page.tsx [Client Component SSR]
-    ./frontend/app/login/page.tsx [Server Component]
-[00:04:05.796] Browser ERROR   ./frontend/app/login/page.tsx:30:140
-Parsing ecmascript source code failed
-  28 |     try {
-  29 |       // 1. Supabase Auth
-> 30 |       const { data: authData, error: authError } = await supabaseClient.auth.signInWithPassword({ email, password, options: { captchaToken ?? } });
-     |                                                                                                                                            ^^
-  31 |       if (authError) { 
-  32 |         setError(authError.message); 
-  33 |         setLoginLoading(false); 
-
-Expression expected
-
-Import traces:
-  Client Component Browser:
-    ./frontend/app/login/page.tsx [Client Component Browser]
-    ./frontend/app/login/page.tsx [Server Component]
-
-  Client Component SSR:
-    ./frontend/app/login/page.tsx [Client Component SSR]
-    ./frontend/app/login/page.tsx [Server Component]
-[00:04:09.783] Browser ERROR   ./frontend/app/login/page.tsx:30:140
-Parsing ecmascript source code failed
-  28 |     try {
-  29 |       // 1. Supabase Auth
-> 30 |       const { data: authData, error: authError } = await supabaseClient.auth.signInWithPassword({ email, password, options: { captchaToken ?? undefined} });
-     |                                                                                                                                            ^^
-  31 |       if (authError) { 
-  32 |         setError(authError.message); 
-  33 |         setLoginLoading(false); 
-
-Expected a semicolon
-
-Import traces:
-  Client Component Browser:
-    ./frontend/app/login/page.tsx [Client Component Browser]
-    ./frontend/app/login/page.tsx [Server Component]
-
-  Client Component SSR:
-    ./frontend/app/login/page.tsx [Client Component SSR]
-    ./frontend/app/login/page.tsx [Server Component]
-[00:04:09.783] Browser ERROR   ./frontend/app/login/page.tsx:30:140
-Parsing ecmascript source code failed
-  28 |     try {
-  29 |       // 1. Supabase Auth
-> 30 |       const { data: authData, error: authError } = await supabaseClient.auth.signInWithPassword({ email, password, options: { captchaToken ?? undefined} });
-     |                                                                                                                                            ^^
-  31 |       if (authError) { 
-  32 |         setError(authError.message); 
-  33 |         setLoginLoading(false); 
-
-Expression expected
-
-Import traces:
-  Client Component Browser:
-    ./frontend/app/login/page.tsx [Client Component Browser]
-    ./frontend/app/login/page.tsx [Server Component]
-
-  Client Component SSR:
-    ./frontend/app/login/page.tsx [Client Component SSR]
-    ./frontend/app/login/page.tsx [Server Component]
-[00:04:11.783] Browser ERROR   ./frontend/app/login/page.tsx:30:140
-Parsing ecmascript source code failed
-  28 |     try {
-  29 |       // 1. Supabase Auth
-> 30 |       const { data: authData, error: authError } = await supabaseClient.auth.signInWithPassword({ email, password, options: { captchaToken ?? undefined } });
-     |                                                                                                                                            ^^
-  31 |       if (authError) { 
-  32 |         setError(authError.message); 
-  33 |         setLoginLoading(false); 
-
-Expected a semicolon
-
-Import traces:
-  Client Component Browser:
-    ./frontend/app/login/page.tsx [Client Component Browser]
-    ./frontend/app/login/page.tsx [Server Component]
-
-  Client Component SSR:
-    ./frontend/app/login/page.tsx [Client Component SSR]
-    ./frontend/app/login/page.tsx [Server Component]
-[00:04:11.783] Browser ERROR   ./frontend/app/login/page.tsx:30:140
-Parsing ecmascript source code failed
-  28 |     try {
-  29 |       // 1. Supabase Auth
-> 30 |       const { data: authData, error: authError } = await supabaseClient.auth.signInWithPassword({ email, password, options: { captchaToken ?? undefined } });
-     |                                                                                                                                            ^^
-  31 |       if (authError) { 
-  32 |         setError(authError.message); 
-  33 |         setLoginLoading(false); 
-
-Expression expected
-
-Import traces:
-  Client Component Browser:
-    ./frontend/app/login/page.tsx [Client Component Browser]
-    ./frontend/app/login/page.tsx [Server Component]
-
-  Client Component SSR:
-    ./frontend/app/login/page.tsx [Client Component SSR]
-    ./frontend/app/login/page.tsx [Server Component]
-[00:04:14.784] Browser ERROR   ./frontend/app/login/page.tsx:30:140
-Parsing ecmascript source code failed
-  28 |     try {
-  29 |       // 1. Supabase Auth
-> 30 |       const { data: authData, error: authError } = await supabaseClient.auth.signInWithPassword({ email, password, options: { captchaToken ?? undefined} });
-     |                                                                                                                                            ^^
-  31 |       if (authError) { 
-  32 |         setError(authError.message); 
-  33 |         setLoginLoading(false); 
-
-Expected a semicolon
-
-Import traces:
-  Client Component Browser:
-    ./frontend/app/login/page.tsx [Client Component Browser]
-    ./frontend/app/login/page.tsx [Server Component]
-
-  Client Component SSR:
-    ./frontend/app/login/page.tsx [Client Component SSR]
-    ./frontend/app/login/page.tsx [Server Component]
-[00:04:14.784] Browser ERROR   ./frontend/app/login/page.tsx:30:140
-Parsing ecmascript source code failed
-  28 |     try {
-  29 |       // 1. Supabase Auth
-> 30 |       const { data: authData, error: authError } = await supabaseClient.auth.signInWithPassword({ email, password, options: { captchaToken ?? undefined} });
-     |                                                                                                                                            ^^
-  31 |       if (authError) { 
-  32 |         setError(authError.message); 
-  33 |         setLoginLoading(false); 
-
-Expression expected
-
-Import traces:
-  Client Component Browser:
-    ./frontend/app/login/page.tsx [Client Component Browser]
-    ./frontend/app/login/page.tsx [Server Component]
-
-  Client Component SSR:
-    ./frontend/app/login/page.tsx [Client Component SSR]
-    ./frontend/app/login/page.tsx [Server Component]
-[00:04:16.786] Browser ERROR   ./frontend/app/login/page.tsx:30:140
-Parsing ecmascript source code failed
-  28 |     try {
-  29 |       // 1. Supabase Auth
-> 30 |       const { data: authData, error: authError } = await supabaseClient.auth.signInWithPassword({ email, password, options: { captchaToken ?? undefined } });
-     |                                                                                                                                            ^^
-  31 |       if (authError) { 
-  32 |         setError(authError.message); 
-  33 |         setLoginLoading(false); 
-
-Expected a semicolon
-
-Import traces:
-  Client Component Browser:
-    ./frontend/app/login/page.tsx [Client Component Browser]
-    ./frontend/app/login/page.tsx [Server Component]
-
-  Client Component SSR:
-    ./frontend/app/login/page.tsx [Client Component SSR]
-    ./frontend/app/login/page.tsx [Server Component]
-[00:04:16.786] Browser ERROR   ./frontend/app/login/page.tsx:30:140
-Parsing ecmascript source code failed
-  28 |     try {
-  29 |       // 1. Supabase Auth
-> 30 |       const { data: authData, error: authError } = await supabaseClient.auth.signInWithPassword({ email, password, options: { captchaToken ?? undefined } });
-     |                                                                                                                                            ^^
-  31 |       if (authError) { 
-  32 |         setError(authError.message); 
-  33 |         setLoginLoading(false); 
-
-Expression expected
-
-Import traces:
-  Client Component Browser:
-    ./frontend/app/login/page.tsx [Client Component Browser]
-    ./frontend/app/login/page.tsx [Server Component]
-
-  Client Component SSR:
-    ./frontend/app/login/page.tsx [Client Component SSR]
-    ./frontend/app/login/page.tsx [Server Component]
-[00:04:28.861] Server  LOG     ✓ Compiled in 65ms
-[00:04:29.784] Browser ERROR   ./frontend/app/login/page.tsx:30:141
-Parsing ecmascript source code failed
-  28 |     try {
-  29 |       // 1. Supabase Auth
-> 30 |       const { data: authData, error: authError } = await supabaseClient.auth.signInWithPassword({ email, password, options: { captchaToken: ?? undefined } });
-     |                                                                                                                                             ^^
-  31 |       if (authError) { 
-  32 |         setError(authError.message); 
-  33 |         setLoginLoading(false); 
-
-Expression expected
-
-Import traces:
-  Client Component Browser:
-    ./frontend/app/login/page.tsx [Client Component Browser]
-    ./frontend/app/login/page.tsx [Server Component]
-
-  Client Component SSR:
-    ./frontend/app/login/page.tsx [Client Component SSR]
-    ./frontend/app/login/page.tsx [Server Component]
-[00:04:30.836] Server  LOG     ✓ Compiled in 67ms
-[00:05:18.564] Server  LOG     ✓ Compiled in 145ms
-[00:05:19.785] Browser WARN    [Cloudflare Turnstile] Error: 400020.
-[00:05:22.601] Server  LOG     ✓ Compiled in 50ms
-[00:05:28.358] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:05:28.499] Browser WARN    Image with src "/Westgatelogo.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
-[00:05:29.165] Browser WARN    [Cloudflare Turnstile] Error: 400020.
-[00:05:39.278] Browser WARN    [Cloudflare Turnstile] Error: 400020.
-[00:05:50.783] Browser WARN    [Cloudflare Turnstile] Error: 400020.
-[00:06:01.783] Browser WARN    [Cloudflare Turnstile] Error: 400020.
-[00:06:12.784] Browser WARN    [Cloudflare Turnstile] Error: 400020.
-[00:06:23.786] Browser WARN    [Cloudflare Turnstile] Error: 400020.
-[00:06:25.767] Server  LOG       Reload env: .env.local
-[00:06:26.211] Server  LOG     ✓ Compiled in 315ms
-[00:06:32.051] Server  LOG       Reload env: .env.local
-[00:06:32.324] Server  LOG     ✓ Compiled in 154ms
-[00:06:32.720] Browser WARN    [Cloudflare Turnstile] Nothing to remove found for the provided container.
-[00:06:51.359] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:06:51.511] Browser WARN    Image with src "/Westgatelogo.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
-[00:09:05.926] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
-[00:10:34.759] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:10:34.897] Browser WARN    Image with src "/Westgatelogo.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
-[00:10:48.832] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:10:49.354] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:10:50.131] Browser LOG     Admin detected, redirecting to dashboard...
-[00:10:50.538] Browser LOG     AdminGuard: 🔍 Found user: bujaklav@gmail.com
-[00:10:50.538] Browser LOG     AdminGuard: 🔍 Found user: bujaklav@gmail.com
-[00:10:50.645] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:10:51.195] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:10:51.690] Browser LOG     AdminGuard: ✅ Admin confirmed!
-[00:10:51.690] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
-[00:10:52.220] Browser LOG     AdminGuard: ✅ Admin confirmed!
-[00:10:54.176] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:10:54.637] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:10:55.103] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:10:55.571] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:23:09.539] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:23:09.689] Browser WARN    Image with src "/Westgatelogo.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:00:01.273] Server  WARN    ⚠ The "middleware" file convention is deprecated. Please use "proxy" instead. Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
+[00:00:01.353] Server  LOG     ✓ Ready in 1013ms
+[00:00:02.521] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:02.743] Browser WARN    Image with src "/Westgatelogo.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:00:02.743] Browser WARN    Image with src "/sindjelic.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[00:00:05.085] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+[00:00:25.369] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
+[00:00:25.940] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
+[00:00:26.624] Browser LOG     Admin detected, redirecting to dashboard...
+[00:00:26.896] Browser LOG     AdminGuard: 🔍 Found user: bujaklav@gmail.com
+[00:00:26.896] Browser LOG     AdminGuard: 🔍 Found user: bujaklav@gmail.com
+[00:00:27.116] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
+[00:00:27.671] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
+[00:00:28.136] Browser LOG     AdminGuard: ✅ Admin confirmed!
+[00:00:28.617] Browser LOG     AdminGuard: ✅ Admin confirmed!
+[00:00:48.266] Browser ERROR   Detailed Backend Error: {"error":"Coach not found or no changes made"}
+[00:01:19.423] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:01:19.583] Browser LOG     AdminGuard: 🔍 Found user: bujaklav@gmail.com
+[00:01:21.023] Browser LOG     AdminGuard: ✅ Admin confirmed!
+[00:01:25.392] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+[00:01:53.693] Browser ERROR   Detailed Backend Error: {"error":"new row violates row-level security policy for table \"coaches\""}
+[00:16:01.060] Server  LOG     ✓ Compiled in 865ms
+[00:16:04.928] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:16:05.023] Browser LOG     AdminGuard: 🔍 Found user: bujaklav@gmail.com
+[00:16:06.489] Browser LOG     AdminGuard: ✅ Admin confirmed!
+[00:16:08.537] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+[00:17:12.381] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:17:12.609] Browser WARN    Image with src "/Westgatelogo.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:17:12.610] Browser WARN    Image with src "/sindjelic.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[00:17:14.718] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+[00:17:17.357] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
+[00:17:18.353] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
+[00:17:18.353] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
+[00:17:19.352] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
+[00:17:21.352] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
+[00:17:22.352] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
+[00:17:22.352] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
+[00:17:23.352] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
+[00:18:45.478] Browser WARN    Image with src "/Westgatelogo.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:18:45.478] Browser WARN    Image with src "/sindjelic.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[00:18:45.857] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
+[00:18:46.298] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
+[00:18:46.768] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
+[00:18:47.282] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
+[00:19:27.711] Browser WARN    Image with src "/serbiaFlag.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[00:20:09.458] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
+[00:20:09.938] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
+[00:20:10.636] Browser LOG     Admin detected, redirecting to dashboard...
+[00:20:10.790] Browser LOG     AdminGuard: 🔍 Found user: bujaklav@gmail.com
+[00:20:10.790] Browser LOG     AdminGuard: 🔍 Found user: bujaklav@gmail.com
+[00:20:11.353] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
+[00:20:11.353] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
+[00:20:11.354] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
+[00:20:11.829] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
+[00:20:12.299] Browser LOG     AdminGuard: ✅ Admin confirmed!
+[00:20:12.780] Browser LOG     AdminGuard: ✅ Admin confirmed!
+[00:21:09.929] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
+[00:21:10.389] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
+[00:21:10.854] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
+[00:21:11.333] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
