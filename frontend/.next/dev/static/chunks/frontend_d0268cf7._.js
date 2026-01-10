@@ -6,6 +6,7 @@ __turbopack_context__.s([
     "default",
     ()=>LeagueManagerPage
 ]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = /*#__PURE__*/ __turbopack_context__.i("[project]/frontend/node_modules/next/dist/build/polyfills/process.js [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/frontend/node_modules/next/dist/compiled/react/jsx-dev-runtime.js [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/frontend/node_modules/next/dist/compiled/react/index.js [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$react$2d$hot$2d$toast$2f$dist$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/frontend/node_modules/react-hot-toast/dist/index.mjs [app-client] (ecmascript)");
@@ -35,7 +36,7 @@ function LeagueManagerPage() {
     // 1. FETCH ALL CONFIGS
     const fetchConfigs = async ()=>{
         try {
-            const res = await fetch('http://localhost:5001/api/league/configs', {
+            const res = await fetch(`${("TURBOPACK compile-time value", "http://localhost:5001")}/api/league/configs`, {
                 credentials: 'include' // Ensures session cookie is sent to check if you are admin
             });
             const data = await res.json();
@@ -54,7 +55,7 @@ function LeagueManagerPage() {
         e.preventDefault();
         setLoading(true);
         try {
-            const res = await fetch('http://localhost:5001/api/league/configs', {
+            const res = await fetch(`${("TURBOPACK compile-time value", "http://localhost:5001")}/api/league/configs`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -83,7 +84,7 @@ function LeagueManagerPage() {
     const handleDelete = async (id)=>{
         if (!confirm("Are you sure? This will remove the configuration and linked data mappings.")) return;
         try {
-            const res = await fetch(`http://localhost:5001/api/league/configs/${id}`, {
+            const res = await fetch(`${("TURBOPACK compile-time value", "http://localhost:5001")}/api/league/configs/${id}`, {
                 method: 'DELETE',
                 credentials: 'include'
             });
@@ -100,7 +101,7 @@ function LeagueManagerPage() {
         setLoading(true);
         const loadToast = __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$react$2d$hot$2d$toast$2f$dist$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"].loading("Scraping GameDay data...");
         try {
-            const res = await fetch(`http://localhost:5001/api/scraper/sync/${id}`, {
+            const res = await fetch(`${("TURBOPACK compile-time value", "http://localhost:5001")}/api/scraper/sync/${id}`, {
                 method: 'POST',
                 credentials: 'include',
                 headers: {

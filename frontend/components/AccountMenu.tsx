@@ -43,7 +43,7 @@ const AccountMenu = () => {
       await supabaseClient.auth.signOut();
 
       // 2️⃣ Call backend to clear cookies
-      await fetch('http://localhost:5001/api/auth/logout', {
+      await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/auth/logout`, {
         method: 'POST',
         credentials: 'include',
       });

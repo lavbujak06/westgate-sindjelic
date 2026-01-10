@@ -12,7 +12,7 @@ export default function AuditLogsPage() {
 
   const fetchLogs = () => {
     setLoading(true);
-    fetch('http://localhost:5001/api/audit-logs', { credentials: 'include' })
+    fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/audit-logs`, { credentials: 'include' })
       .then(res => res.json())
       .then(data => { setLogs(Array.isArray(data) ? data : []); setLoading(false); })
       .catch(() => { setLogs([]); setLoading(false); });
@@ -23,7 +23,7 @@ export default function AuditLogsPage() {
   const clearLogs = async () => {
     if (!window.confirm("CRITICAL ACTION: Are you sure you want to delete all audit history?")) return;
     try {
-      const res = await fetch('http://localhost:5001/api/audit-logs/clear', { method: 'DELETE', credentials: 'include' });
+      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/audit-logs/clear`, { method: 'DELETE', credentials: 'include' });
       if (res.ok) { fetchLogs(); alert("History cleared successfully."); }
     } catch (err) { alert("Error clearing logs."); }
   };

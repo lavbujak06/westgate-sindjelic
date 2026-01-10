@@ -47,7 +47,7 @@ function AdminNewsDashboard() {
     ]);
     const handleDelete = async (id)=>{
         if (!confirm('Permanently delete this article?')) return;
-        const res = await fetch(`http://localhost:5001/api/news/${id}`, {
+        const res = await fetch(`${("TURBOPACK compile-time value", "http://localhost:5001")}/api/news/${id}`, {
             method: 'DELETE',
             credentials: 'include'
         });

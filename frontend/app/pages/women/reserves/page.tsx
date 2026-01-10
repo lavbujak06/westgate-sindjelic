@@ -22,7 +22,7 @@ export default function ReserveWomenPage() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch('http://localhost:5001/api/league/configs')
+    fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/league/configs`)
       .then(res => res.json())
       .then(data => {
         if (Array.isArray(data) && data.length > 0) {
@@ -33,7 +33,7 @@ export default function ReserveWomenPage() {
         }
       });
 
-    fetch('http://localhost:5001/api/media/reserve-women')
+    fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/media/reserve-women`)
       .then(res => res.json())
       .then(data => setGallery(Array.isArray(data) ? data : []));
   }, []);
@@ -44,8 +44,8 @@ export default function ReserveWomenPage() {
       setLoading(true);
       try {
         const [lRes, gRes] = await Promise.all([
-          fetch(`http://localhost:5001/api/league/ladder/${selectedConfigId}`),
-          fetch(`http://localhost:5001/api/league/games/${selectedConfigId}`)
+          fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/league/ladder/${selectedConfigId}`),
+          fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/league/games/${selectedConfigId}`)
         ]);
         setLadder(await lRes.json());
         setGames(await gRes.json());

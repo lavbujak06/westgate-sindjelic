@@ -797,7 +797,7 @@ function LoginPage() {
             // 2. Check the 'admins' table specifically (Matches your AdminGuard logic)
             const { data: adminRecord, error: adminError } = await __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$lib$2f$supabaseClient$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["supabaseClient"].from('admins').select('id').eq('id', user.id).maybeSingle();
             // 3. Sync with Backend to get Profile details
-            const res = await fetch('http://localhost:5001/api/auth/login', {
+            const res = await fetch(`${("TURBOPACK compile-time value", "http://localhost:5001")}/api/auth/login`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'

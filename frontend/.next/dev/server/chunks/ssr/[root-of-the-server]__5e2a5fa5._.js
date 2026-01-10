@@ -41,7 +41,7 @@ function AuditLogsPage() {
     const itemsPerPage = 15;
     const fetchLogs = ()=>{
         setLoading(true);
-        fetch('http://localhost:5001/api/audit-logs', {
+        fetch(`${("TURBOPACK compile-time value", "http://localhost:5001")}/api/audit-logs`, {
             credentials: 'include'
         }).then((res)=>res.json()).then((data)=>{
             setLogs(Array.isArray(data) ? data : []);
@@ -57,7 +57,7 @@ function AuditLogsPage() {
     const clearLogs = async ()=>{
         if (!window.confirm("CRITICAL ACTION: Are you sure you want to delete all audit history?")) return;
         try {
-            const res = await fetch('http://localhost:5001/api/audit-logs/clear', {
+            const res = await fetch(`${("TURBOPACK compile-time value", "http://localhost:5001")}/api/audit-logs/clear`, {
                 method: 'DELETE',
                 credentials: 'include'
             });

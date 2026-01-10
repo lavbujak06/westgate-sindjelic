@@ -43,7 +43,7 @@ export default function ContactPage() {
     if (file) data.append('attachment', file);
 
     try {
-      const res = await fetch('http://localhost:5001/api/contact', {
+      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/contact`, {
         method: 'POST',
         body: data, // Note: No headers needed for FormData
       });

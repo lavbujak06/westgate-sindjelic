@@ -28,7 +28,7 @@ export default function AdminNewsDashboard() {
 
   const handleDelete = async (id: string) => {
     if (!confirm('Permanently delete this article?')) return;
-    const res = await fetch(`http://localhost:5001/api/news/${id}`, { method: 'DELETE', credentials: 'include' });
+    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/news/${id}`, { method: 'DELETE', credentials: 'include' });
     if (res.ok) {
       toast.success('Article removed');
       setNews(prev => prev.filter(n => n.id !== id));

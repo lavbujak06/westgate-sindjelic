@@ -18,7 +18,7 @@ const CoachStaff = ({ teamSlug }: CoachStaffProps) => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch(`http://localhost:5001/api/coaches?team=${teamSlug}`)
+    fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/coaches?team=${teamSlug}`)
       .then((res) => res.json())
       .then((data) => {
         if (Array.isArray(data)) {

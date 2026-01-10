@@ -14,7 +14,7 @@ export default function Footer() {
   const [sponsors, setSponsors] = useState<Sponsor[]>([]);
 
   useEffect(() => {
-    fetch('http://localhost:5001/api/sponsors')
+    fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/sponsors`)
       .then(res => res.json())
       .then(data => setSponsors(Array.isArray(data) ? data : []))
       .catch(() => setSponsors([]));

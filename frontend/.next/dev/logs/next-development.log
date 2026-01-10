@@ -1,64 +1,24 @@
-[00:00:00.791] Server  ERROR   (node:15854) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/lavbujak/Desktop/Sindjelic/westgate-sindjelic/frontend/next.config.js is not specified and it doesn't parse as CommonJS.
+[00:00:00.795] Server  ERROR   (node:10470) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/lavbujak/Desktop/Sindjelic/westgate-sindjelic/frontend/next.config.js is not specified and it doesn't parse as CommonJS.
 Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
 To eliminate this warning, add "type": "module" to /Users/lavbujak/Desktop/Sindjelic/westgate-sindjelic/frontend/package.json.
 (Use `node --trace-warnings ...` to show where the warning was created)
-[00:00:01.273] Server  WARN    ⚠ The "middleware" file convention is deprecated. Please use "proxy" instead. Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
-[00:00:01.353] Server  LOG     ✓ Ready in 1013ms
-[00:00:02.521] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:00:02.743] Browser WARN    Image with src "/Westgatelogo.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
-[00:00:02.743] Browser WARN    Image with src "/sindjelic.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:00:05.085] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
-[00:00:25.369] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:00:25.940] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:00:26.624] Browser LOG     Admin detected, redirecting to dashboard...
-[00:00:26.896] Browser LOG     AdminGuard: 🔍 Found user: bujaklav@gmail.com
-[00:00:26.896] Browser LOG     AdminGuard: 🔍 Found user: bujaklav@gmail.com
-[00:00:27.116] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:00:27.671] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:00:28.136] Browser LOG     AdminGuard: ✅ Admin confirmed!
-[00:00:28.617] Browser LOG     AdminGuard: ✅ Admin confirmed!
-[00:00:48.266] Browser ERROR   Detailed Backend Error: {"error":"Coach not found or no changes made"}
-[00:01:19.423] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:01:19.583] Browser LOG     AdminGuard: 🔍 Found user: bujaklav@gmail.com
-[00:01:21.023] Browser LOG     AdminGuard: ✅ Admin confirmed!
-[00:01:25.392] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
-[00:01:53.693] Browser ERROR   Detailed Backend Error: {"error":"new row violates row-level security policy for table \"coaches\""}
-[00:16:01.060] Server  LOG     ✓ Compiled in 865ms
-[00:16:04.928] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:16:05.023] Browser LOG     AdminGuard: 🔍 Found user: bujaklav@gmail.com
-[00:16:06.489] Browser LOG     AdminGuard: ✅ Admin confirmed!
-[00:16:08.537] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
-[00:17:12.381] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:17:12.609] Browser WARN    Image with src "/Westgatelogo.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
-[00:17:12.610] Browser WARN    Image with src "/sindjelic.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:17:14.718] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
-[00:17:17.357] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:17:18.353] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:17:18.353] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:17:19.352] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:17:21.352] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:17:22.352] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:17:22.352] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:17:23.352] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:18:45.478] Browser WARN    Image with src "/Westgatelogo.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
-[00:18:45.478] Browser WARN    Image with src "/sindjelic.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:18:45.857] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:18:46.298] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:18:46.768] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:18:47.282] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:19:27.711] Browser WARN    Image with src "/serbiaFlag.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:20:09.458] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:20:09.938] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:20:10.636] Browser LOG     Admin detected, redirecting to dashboard...
-[00:20:10.790] Browser LOG     AdminGuard: 🔍 Found user: bujaklav@gmail.com
-[00:20:10.790] Browser LOG     AdminGuard: 🔍 Found user: bujaklav@gmail.com
-[00:20:11.353] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:20:11.353] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:20:11.354] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:20:11.829] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:20:12.299] Browser LOG     AdminGuard: ✅ Admin confirmed!
-[00:20:12.780] Browser LOG     AdminGuard: ✅ Admin confirmed!
-[00:21:09.929] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:21:10.389] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:21:10.854] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:21:11.333] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
+[00:00:01.956] Server  WARN    ⚠ The "middleware" file convention is deprecated. Please use "proxy" instead. Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
+[00:00:02.063] Server  LOG     ✓ Ready in 1739ms
+[00:00:06.693] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:06.840] Browser WARN    Image with src "/Westgatelogo.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:00:06.840] Browser WARN    Image with src "/sindjelic.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[00:00:52.701] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+[00:00:52.701] Browser WARN    Image with src "/serbiaFlag.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[00:02:50.294] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
+[00:02:50.777] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
+[00:02:51.584] Browser LOG     Admin detected, redirecting to dashboard...
+[00:02:51.789] Browser LOG     AdminGuard: 🔍 Found user: bujaklav@gmail.com
+[00:02:51.789] Browser LOG     AdminGuard: 🔍 Found user: bujaklav@gmail.com
+[00:02:52.094] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
+[00:02:52.558] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
+[00:02:53.012] Browser LOG     AdminGuard: ✅ Admin confirmed!
+[00:02:53.481] Browser LOG     AdminGuard: ✅ Admin confirmed!
+[00:03:34.629] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
+[00:03:35.160] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
+[00:03:35.642] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
+[00:03:36.177] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.

@@ -1105,14 +1105,14 @@ function MensPage() {
     const [gallery, setGallery] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])([]);
     const [loading, setLoading] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(true);
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useEffect"])(()=>{
-        fetch('http://localhost:5001/api/league/configs').then((res)=>res.json()).then((data)=>{
+        fetch(`${("TURBOPACK compile-time value", "http://localhost:5001")}/api/league/configs`).then((res)=>res.json()).then((data)=>{
             if (Array.isArray(data) && data.length > 0) {
                 const mensOnly = data.filter((c)=>c.team_name === 'Senior Men');
                 setConfigs(mensOnly);
                 if (mensOnly.length > 0) setSelectedConfigId(mensOnly[0].id);
             }
         });
-        fetch('http://localhost:5001/api/media/senior-men').then((res)=>res.json()).then((data)=>setGallery(Array.isArray(data) ? data : []));
+        fetch(`${("TURBOPACK compile-time value", "http://localhost:5001")}/api/media/senior-men`).then((res)=>res.json()).then((data)=>setGallery(Array.isArray(data) ? data : []));
     }, []);
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useEffect"])(()=>{
         if (!selectedConfigId) return;
@@ -1120,8 +1120,8 @@ function MensPage() {
             setLoading(true);
             try {
                 const [lRes, gRes] = await Promise.all([
-                    fetch(`http://localhost:5001/api/league/ladder/${selectedConfigId}`),
-                    fetch(`http://localhost:5001/api/league/games/${selectedConfigId}`)
+                    fetch(`${("TURBOPACK compile-time value", "http://localhost:5001")}/api/league/ladder/${selectedConfigId}`),
+                    fetch(`${("TURBOPACK compile-time value", "http://localhost:5001")}/api/league/games/${selectedConfigId}`)
                 ]);
                 setLadder(await lRes.json());
                 setGames(await gRes.json());

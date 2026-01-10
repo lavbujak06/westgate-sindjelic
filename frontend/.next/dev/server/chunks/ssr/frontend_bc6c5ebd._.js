@@ -34,7 +34,7 @@ function AdminSponsors() {
     const [loading, setLoading] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(true);
     const fetchSponsors = async ()=>{
         try {
-            const res = await fetch('http://localhost:5001/api/sponsors', {
+            const res = await fetch(`${("TURBOPACK compile-time value", "http://localhost:5001")}/api/sponsors`, {
                 credentials: 'include'
             });
             const data = await res.json();
@@ -73,7 +73,7 @@ function AdminSponsors() {
             return;
         }
         try {
-            const res = await fetch('http://localhost:5001/api/sponsors', {
+            const res = await fetch(`${("TURBOPACK compile-time value", "http://localhost:5001")}/api/sponsors`, {
                 method: 'POST',
                 credentials: 'include',
                 headers: {
@@ -97,7 +97,7 @@ function AdminSponsors() {
     };
     const deleteSponsor = async (id)=>{
         if (!confirm('Permanently remove this partner?')) return;
-        const res = await fetch(`http://localhost:5001/api/sponsors/${id}`, {
+        const res = await fetch(`${("TURBOPACK compile-time value", "http://localhost:5001")}/api/sponsors/${id}`, {
             method: 'DELETE',
             credentials: 'include'
         });

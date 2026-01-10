@@ -21,7 +21,7 @@ export default function AdminSponsors() {
 
   const fetchSponsors = async () => {
     try {
-      const res = await fetch('http://localhost:5001/api/sponsors', { credentials: 'include' });
+      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/sponsors`, { credentials: 'include' });
       const data = await res.json();
       setSponsors(Array.isArray(data) ? data : []);
     } catch (err) { console.error(err); } finally { setLoading(false); }
@@ -54,7 +54,7 @@ export default function AdminSponsors() {
     }
 
     try {
-      const res = await fetch('http://localhost:5001/api/sponsors', {
+      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/sponsors`, {
         method: 'POST',
         credentials: 'include',
         headers: { 'Content-Type': 'application/json' },
@@ -72,7 +72,7 @@ export default function AdminSponsors() {
 
   const deleteSponsor = async (id: number) => {
     if (!confirm('Permanently remove this partner?')) return;
-    const res = await fetch(`http://localhost:5001/api/sponsors/${id}`, { 
+    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/sponsors/${id}`, { 
       method: 'DELETE',
       credentials: 'include' 
     });

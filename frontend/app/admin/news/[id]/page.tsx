@@ -25,7 +25,7 @@ export default function NewsEditorPage() {
 
   useEffect(() => {
     if (!isNew) {
-      fetch(`http://localhost:5001/api/news/${id}`)
+      fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/news/${id}`)
         .then(res => res.json())
         .then(data => {
           setTitle(data.title);
@@ -62,7 +62,7 @@ export default function NewsEditorPage() {
       }
 
       // 2. Database Logic
-      const url = isNew ? 'http://localhost:5001/api/news' : `http://localhost:5001/api/news/${id}`;
+      const url = isNew ? `${process.env.NEXT_PUBLIC_API_URL}/api/news` : `${process.env.NEXT_PUBLIC_API_URL}/api/news/${id}`;
       const method = isNew ? 'POST' : 'PUT';
 
       const res = await fetch(url, {

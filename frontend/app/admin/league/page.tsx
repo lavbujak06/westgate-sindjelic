@@ -29,7 +29,7 @@ export default function LeagueManagerPage() {
   // 1. FETCH ALL CONFIGS
   const fetchConfigs = async () => {
     try {
-      const res = await fetch('http://localhost:5001/api/league/configs', {
+      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/league/configs`, {
         credentials: 'include' // Ensures session cookie is sent to check if you are admin
       });
       const data = await res.json();
@@ -46,7 +46,7 @@ export default function LeagueManagerPage() {
     e.preventDefault();
     setLoading(true);
     try {
-      const res = await fetch('http://localhost:5001/api/league/configs', {
+      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/league/configs`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         credentials: 'include',
@@ -72,7 +72,7 @@ export default function LeagueManagerPage() {
     if (!confirm("Are you sure? This will remove the configuration and linked data mappings.")) return;
     
     try {
-      const res = await fetch(`http://localhost:5001/api/league/configs/${id}`, {
+      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/league/configs/${id}`, {
         method: 'DELETE',
         credentials: 'include'
       });
@@ -92,7 +92,7 @@ export default function LeagueManagerPage() {
     setLoading(true);
     const loadToast = toast.loading("Scraping GameDay data...");
     try {
-      const res = await fetch(`http://localhost:5001/api/scraper/sync/${id}`, {
+      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/scraper/sync/${id}`, {
         method: 'POST',
         credentials: 'include',
         headers: { 'Content-Type': 'application/json' }

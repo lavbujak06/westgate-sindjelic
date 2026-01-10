@@ -17,7 +17,7 @@ export default function CoachesAdminDashboard() {
   const [filterSlug, setFilterSlug] = useState('all');
 
   const fetchCoaches = async () => {
-    const res = await fetch('http://localhost:5001/api/coaches');
+    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/coaches`);
     const data = await res.json();
     setCoaches(Array.isArray(data) ? data : []);
   };
@@ -47,7 +47,7 @@ export default function CoachesAdminDashboard() {
 
   const handleDelete = async (id: string) => {
     if (!confirm('Are you sure?')) return;
-    const res = await fetch(`http://localhost:5001/api/coaches/${id}`, {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/coaches/${id}`, {
       method: 'DELETE',
       credentials: 'include',
     });

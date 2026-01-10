@@ -48,7 +48,7 @@ function AdminHighlightsDashboard() {
         searchQuery
     ]);
     const handleTogglePublish = async (video)=>{
-        const res = await fetch(`http://localhost:5001/api/highlights/${video.id}`, {
+        const res = await fetch(`${("TURBOPACK compile-time value", "http://localhost:5001")}/api/highlights/${video.id}`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json'
@@ -66,7 +66,7 @@ function AdminHighlightsDashboard() {
     };
     const handleDelete = async (id)=>{
         if (!confirm('Permanently delete this highlight?')) return;
-        const res = await fetch(`http://localhost:5001/api/highlights/${id}`, {
+        const res = await fetch(`${("TURBOPACK compile-time value", "http://localhost:5001")}/api/highlights/${id}`, {
             method: 'DELETE',
             credentials: 'include'
         });

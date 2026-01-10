@@ -53,7 +53,7 @@ function GallerySection({ team_slug, label }: { team_slug: string; label: string
 
   const fetchImages = useCallback(async () => {
     try {
-      const res = await fetch(`http://localhost:5001/api/media/${team_slug}`, {
+      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/media/${team_slug}`, {
         credentials: 'include'
       });
       const data = await res.json();
@@ -81,7 +81,7 @@ function GallerySection({ team_slug, label }: { team_slug: string; label: string
     const uploadToast = toast.loading(`Uploading to ${label}...`);
 
     try {
-      const res = await fetch('http://localhost:5001/api/media/upload', {
+      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/media/upload`, {
         method: 'POST',
         body: formData,
         credentials: 'include',
@@ -102,7 +102,7 @@ function GallerySection({ team_slug, label }: { team_slug: string; label: string
     if (!confirm("Delete this photo permanently?")) return;
 
     try {
-      const res = await fetch(`http://localhost:5001/api/media/${id}`, {
+      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/media/${id}`, {
         method: 'DELETE',
         credentials: 'include',
       });

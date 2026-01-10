@@ -27,7 +27,7 @@ export default function AdminHighlightsDashboard() {
   }, [videos, searchQuery]);
 
   const handleTogglePublish = async (video: any) => {
-    const res = await fetch(`http://localhost:5001/api/highlights/${video.id}`, {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/highlights/${video.id}`, {
       method: 'PUT',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ ...video, published: !video.published }),
@@ -41,7 +41,7 @@ export default function AdminHighlightsDashboard() {
 
   const handleDelete = async (id: string) => {
     if (!confirm('Permanently delete this highlight?')) return;
-    const res = await fetch(`http://localhost:5001/api/highlights/${id}`, { method: 'DELETE', credentials: 'include' });
+    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/highlights/${id}`, { method: 'DELETE', credentials: 'include' });
     if (res.ok) {
       toast.success('Highlight removed');
       setVideos(prev => prev.filter(v => v.id !== id));

@@ -6,6 +6,7 @@ __turbopack_context__.s([
     "default",
     ()=>AdminGalleryPage
 ]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = /*#__PURE__*/ __turbopack_context__.i("[project]/frontend/node_modules/next/dist/build/polyfills/process.js [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/frontend/node_modules/next/dist/compiled/react/jsx-dev-runtime.js [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/frontend/node_modules/next/dist/compiled/react/index.js [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$react$2d$hot$2d$toast$2f$dist$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/frontend/node_modules/react-hot-toast/dist/index.mjs [app-client] (ecmascript)");
@@ -120,7 +121,7 @@ function GallerySection({ team_slug, label }) {
     const fetchImages = (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useCallback"])({
         "GallerySection.useCallback[fetchImages]": async ()=>{
             try {
-                const res = await fetch(`http://localhost:5001/api/media/${team_slug}`, {
+                const res = await fetch(`${("TURBOPACK compile-time value", "http://localhost:5001")}/api/media/${team_slug}`, {
                     credentials: 'include'
                 });
                 const data = await res.json();
@@ -150,7 +151,7 @@ function GallerySection({ team_slug, label }) {
         setUploading(true);
         const uploadToast = __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$react$2d$hot$2d$toast$2f$dist$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"].loading(`Uploading to ${label}...`);
         try {
-            const res = await fetch('http://localhost:5001/api/media/upload', {
+            const res = await fetch(`${("TURBOPACK compile-time value", "http://localhost:5001")}/api/media/upload`, {
                 method: 'POST',
                 body: formData,
                 credentials: 'include'
@@ -171,7 +172,7 @@ function GallerySection({ team_slug, label }) {
     const handleDelete = async (id)=>{
         if (!confirm("Delete this photo permanently?")) return;
         try {
-            const res = await fetch(`http://localhost:5001/api/media/${id}`, {
+            const res = await fetch(`${("TURBOPACK compile-time value", "http://localhost:5001")}/api/media/${id}`, {
                 method: 'DELETE',
                 credentials: 'include'
             });

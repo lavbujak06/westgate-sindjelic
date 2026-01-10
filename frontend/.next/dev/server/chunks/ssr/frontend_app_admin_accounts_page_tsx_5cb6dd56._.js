@@ -22,10 +22,10 @@ function AdminAccountsPage() {
         setLoading(true);
         try {
             const [adminRes, userRes] = await Promise.all([
-                fetch('http://localhost:5001/api/auth/admins', {
+                fetch(`${("TURBOPACK compile-time value", "http://localhost:5001")}/api/auth/admins`, {
                     credentials: 'include'
                 }),
-                fetch('http://localhost:5001/api/users', {
+                fetch(`${("TURBOPACK compile-time value", "http://localhost:5001")}/api/users`, {
                     credentials: 'include'
                 })
             ]);
@@ -56,7 +56,7 @@ function AdminAccountsPage() {
     const handleUserDelete = async (id)=>{
         if (!confirm('PERMANENT ACTION: This will delete the user and their login. Continue?')) return;
         try {
-            const res = await fetch(`http://localhost:5001/api/users/${id}`, {
+            const res = await fetch(`${("TURBOPACK compile-time value", "http://localhost:5001")}/api/users/${id}`, {
                 method: 'DELETE',
                 credentials: 'include'
             });

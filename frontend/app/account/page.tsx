@@ -76,9 +76,7 @@ export default function AccountSettings() {
     }
   };
 
-  // UPDATED GUARD: Checks loading first, then profile.
-  // This prevents the "Admin privileges confirmed" error because it waits 
-  // for the context to finish its backend fetch.
+  
   if (loading || !profile) return (
     <div className="min-h-screen bg-[#020617] flex items-center justify-center">
       <Loader />

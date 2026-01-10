@@ -13,8 +13,8 @@ export default function AdminAccountsPage() {
     setLoading(true);
     try {
       const [adminRes, userRes] = await Promise.all([
-        fetch('http://localhost:5001/api/auth/admins', { credentials: 'include' }),
-        fetch('http://localhost:5001/api/users', { credentials: 'include' })
+        fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/auth/admins`, { credentials: 'include' }),
+        fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/users`, { credentials: 'include' })
       ]);
       const adminData = await adminRes.json();
       const userData = await userRes.json();
@@ -42,7 +42,7 @@ export default function AdminAccountsPage() {
   const handleUserDelete = async (id: string) => {
     if (!confirm('PERMANENT ACTION: This will delete the user and their login. Continue?')) return;
     try {
-      const res = await fetch(`http://localhost:5001/api/users/${id}`, { method: 'DELETE', credentials: 'include' });
+      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/users/${id}`, { method: 'DELETE', credentials: 'include' });
       if (res.ok) setUsers(users.filter((u) => u.id !== id));
     } catch (err) { alert('An error occurred'); }
   };

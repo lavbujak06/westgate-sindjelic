@@ -19,7 +19,7 @@ export default function CoachEditorPage() {
 
   useEffect(() => {
     if (!isNew) {
-      fetch(`http://localhost:5001/api/coaches`)
+      fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/coaches`)
         .then(res => res.json())
         .then(data => {
           const coach = data.find((c: any) => c.id === id);
@@ -52,7 +52,7 @@ export default function CoachEditorPage() {
         formData.append('image_url', previewUrl);
       }
 
-      const url = isNew ? 'http://localhost:5001/api/coaches' : `http://localhost:5001/api/coaches/${id}`;
+      const url = isNew ? `${process.env.NEXT_PUBLIC_API_URL}/api/coaches` : `${process.env.NEXT_PUBLIC_API_URL}/api/coaches/${id}`;
       const method = isNew ? 'POST' : 'PUT';
 
       const res = await fetch(url, {

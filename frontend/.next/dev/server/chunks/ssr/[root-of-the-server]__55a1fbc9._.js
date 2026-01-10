@@ -800,7 +800,7 @@ function ContactPage() {
         Object.entries(formData).forEach(([key, val])=>data.append(key, val));
         if (file) data.append('attachment', file);
         try {
-            const res = await fetch('http://localhost:5001/api/contact', {
+            const res = await fetch(`${("TURBOPACK compile-time value", "http://localhost:5001")}/api/contact`, {
                 method: 'POST',
                 body: data
             });
