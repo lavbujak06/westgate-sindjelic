@@ -1,24 +1,37 @@
-[00:00:00.795] Server  ERROR   (node:10470) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/lavbujak/Desktop/Sindjelic/westgate-sindjelic/frontend/next.config.js is not specified and it doesn't parse as CommonJS.
+[00:00:00.544] Server  ERROR   (node:68402) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/lavbujak/Desktop/Sindjelic/westgate-sindjelic/frontend/next.config.js is not specified and it doesn't parse as CommonJS.
 Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
 To eliminate this warning, add "type": "module" to /Users/lavbujak/Desktop/Sindjelic/westgate-sindjelic/frontend/package.json.
 (Use `node --trace-warnings ...` to show where the warning was created)
-[00:00:01.956] Server  WARN    ⚠ The "middleware" file convention is deprecated. Please use "proxy" instead. Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
-[00:00:02.063] Server  LOG     ✓ Ready in 1739ms
-[00:00:06.693] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:00:06.840] Browser WARN    Image with src "/Westgatelogo.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
-[00:00:06.840] Browser WARN    Image with src "/sindjelic.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:00:52.701] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
-[00:00:52.701] Browser WARN    Image with src "/serbiaFlag.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:02:50.294] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:02:50.777] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:02:51.584] Browser LOG     Admin detected, redirecting to dashboard...
-[00:02:51.789] Browser LOG     AdminGuard: 🔍 Found user: bujaklav@gmail.com
-[00:02:51.789] Browser LOG     AdminGuard: 🔍 Found user: bujaklav@gmail.com
-[00:02:52.094] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:02:52.558] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:02:53.012] Browser LOG     AdminGuard: ✅ Admin confirmed!
-[00:02:53.481] Browser LOG     AdminGuard: ✅ Admin confirmed!
-[00:03:34.629] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:03:35.160] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:03:35.642] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:03:36.177] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
+[00:00:01.056] Server  WARN    ⚠ The "middleware" file convention is deprecated. Please use "proxy" instead. Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
+[00:00:01.141] Server  LOG     ✓ Ready in 882ms
+[00:00:12.029] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:12.222] Browser WARN    Image with src "/Westgatelogo.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:00:13.857] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
+[00:00:14.384] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
+[00:00:18.978] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:19.201] Browser WARN    Image with src "/Westgatelogo.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:00:20.321] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
+[00:00:20.838] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
+[00:00:42.746] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
+[00:00:43.255] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
+[00:00:45.010] Browser LOG     Admin detected, redirecting to dashboard...
+[00:00:45.218] Browser LOG     AdminGuard: 🔍 Found user: bujaklav@gmail.com
+[00:00:45.218] Browser LOG     AdminGuard: 🔍 Found user: bujaklav@gmail.com
+[00:00:45.530] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
+[00:00:46.119] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
+[00:00:46.870] Browser LOG     AdminGuard: ✅ Admin confirmed!
+[00:00:46.870] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+[00:00:47.350] Browser LOG     AdminGuard: ✅ Admin confirmed!
+[00:00:52.214] Browser WARN    Image with src "/sindjelic.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[00:00:52.700] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
+[00:00:53.148] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
+[00:00:53.697] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
+[00:00:54.234] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
+[00:01:04.041] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
+[00:01:04.523] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
+[00:01:04.994] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
+[00:01:05.471] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
+[00:01:07.672] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:01:07.811] Browser WARN    Image with src "/Westgatelogo.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:01:11.975] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+[00:01:15.428] Browser WARN    Image with src "/sindjelic.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes

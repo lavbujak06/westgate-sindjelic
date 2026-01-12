@@ -101,7 +101,7 @@ const AccountMenu = ()=>{
             // 1️⃣ Sign out from Supabase client (clears localStorage/IndexedDB session)
             await __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$lib$2f$supabaseClient$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["supabaseClient"].auth.signOut();
             // 2️⃣ Call backend to clear cookies
-            await fetch('http://localhost:5001/api/auth/logout', {
+            await fetch(`${("TURBOPACK compile-time value", "http://localhost:5001")}/api/auth/logout`, {
                 method: 'POST',
                 credentials: 'include'
             });
