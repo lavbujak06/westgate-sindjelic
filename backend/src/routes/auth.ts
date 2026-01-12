@@ -1,48 +1,80 @@
 import { Router } from 'express';
 import { supabase } from '../supabase';
 import { requireAdmin } from '../middleware/requireAdmin';
+import fetch from 'node-fetch';
+import rateLimit from 'express-rate-limit';
+
+// Define the limiter: Max 5 login attempts per 15 minutes per IP
+const loginLimiter = rateLimit({
+  windowMs: 15 * 60 * 1000, // 15 minutes
+  max: 7, 
+  message: { error: 'Too many login attempts. Please try again in 15 minutes.' },
+  standardHeaders: true, // Return rate limit info in the `RateLimit-*` headers
+  legacyHeaders: false, // Disable the `X-RateLimit-*` headers
+});
+
 
 const router = Router();
 const SESSION_DURATION = 60 * 60 * 1000;
 
-router.post('/login', async (req, res) => {
-  const { email, password } = req.body;
-  const { data, error } = await supabase.auth.signInWithPassword({ email, password });
 
-  if (error || !data.session || !data.user) {
-    return res.status(401).json({ error: 'Invalid credentials' });
+
+router.post('/login', loginLimiter, async (req, res) => {
+  const { email, password, captchaToken } = req.body; // <-- Get token from frontend
+
+  // 2. Security Check: Verify with Cloudflare
+  if (!captchaToken) {
+    return res.status(403).json({ error: 'CAPTCHA_REQUIRED' });
   }
 
-  const { data: admin } = await supabase.from('admins').select('id').eq('id', data.user.id).single();
-  const isAdmin = !!admin;
-
-  if (isAdmin) {
-    await supabase.from('audit_logs').insert({
-      admin: data.user.email,
-      action: 'ADMIN_LOGIN',
-      details: 'Admin logged into the system'
+  try {
+    const verifyRes = await fetch('https://challenges.cloudflare.com/turnstile/v0/siteverify', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: `secret=${process.env.CLOUDFLARE_SECRET_KEY}&response=${captchaToken}`,
     });
+
+    const verifyData: any = await verifyRes.json();
+
+    if (!verifyData.success) {
+      console.error("Cloudflare Error:", verifyData['error-codes']);
+      return res.status(403).json({ error: 'CAPTCHA verification failed' });
+    }
+
+    // 3. Only if Cloudflare is happy, talk to Supabase
+    const { data, error } = await supabase.auth.signInWithPassword({ email, password });
+
+    if (error || !data.session || !data.user) {
+      return res.status(401).json({ error: 'Invalid credentials' });
+    }
+
+    // ... (Keep the rest of your existing admin check and cookie logic below) ...
+    const { data: admin } = await supabase.from('admins').select('id').eq('id', data.user.id).single();
+    const isAdmin = !!admin;
+
+    res.cookie('sb-access-token', data.session.access_token, {
+      httpOnly: true,
+      secure: process.env.NODE_ENV === 'production',
+      sameSite: 'strict',
+      maxAge: SESSION_DURATION,
+    });
+
+    res.cookie('session_issued_at', Date.now().toString(), {
+      httpOnly: true,
+      secure: process.env.NODE_ENV === 'production',
+      sameSite: 'lax',
+      maxAge: SESSION_DURATION,
+      path: '/',
+    });
+
+    return res.json({
+      user: { id: data.user.id, email: data.user.email, is_admin: isAdmin },
+      is_admin: isAdmin,
+    });
+  } catch (err) {
+    console.error("Login Route Error:", err);
+    return res.status(500).json({ error: 'Internal server error' });
   }
-
-  res.cookie('sb-access-token', data.session.access_token, {
-    httpOnly: true,
-    secure: process.env.NODE_ENV === 'production',
-    sameSite: 'strict',
-    maxAge: SESSION_DURATION,
-  });
-
-  res.cookie('session_issued_at', Date.now().toString(), {
-    httpOnly: true,
-    secure: process.env.NODE_ENV === 'production',
-    sameSite: 'lax',
-    maxAge: SESSION_DURATION,
-    path: '/',
-  });
-
-  return res.json({
-    user: { id: data.user.id, email: data.user.email, is_admin: isAdmin },
-    is_admin: isAdmin,
-  });
 });
 
 router.get('/me', async (req, res) => {

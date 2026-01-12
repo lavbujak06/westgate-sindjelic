@@ -22,57 +22,51 @@ export default function LoginPage() {
 
   const handleLogin = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    if (!captchaToken) {
+      setError('Please complete the CAPTCHA');
+      return;
+    }
+
     setLoginLoading(true);
     setError('');
 
     try {
-      // 1. Supabase Auth
-      const { data: authData, error: authError } = await supabaseClient.auth.signInWithPassword({ email, password, options: { captchaToken: captchaToken ?? undefined } });
-      if (authError) { 
-        setError(authError.message); 
-        setLoginLoading(false); 
-        return; 
-      }
-      
-      const user = authData.user;
-
-      // 2. Check the 'admins' table specifically (Matches your AdminGuard logic)
-      const { data: adminRecord, error: adminError } = await supabaseClient
-        .from('admins')
-        .select('id')
-        .eq('id', user.id)
-        .maybeSingle();
-
-      // 3. Sync with Backend to get Profile details
+      // 1. BACKEND CHECK
       const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/auth/login`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email, password }),
+        body: JSON.stringify({ email, password, captchaToken }),
         credentials: 'include', 
       });
 
-      if (res.ok) {
-        const data = await res.json();
+      // We define 'data' here so it's available for the rest of the 'try' block
+      const data = await res.json();
 
-        // 4. Update Global Context
-        setUser(data.user);
-        setProfile(data.profile);
-
-        // 5. 🚀 UPDATED REDIRECT LOGIC
-        // Priority check: If they exist in the 'admins' table, send to dashboard
-        if (adminRecord) {
-          console.log("Admin detected, redirecting to dashboard...");
-          router.push('/admin/dashboard');
-        } else {
-          router.push('/');
-        }
-      } else {
-        const errData = await res.json();
-        setError(errData.message || 'Login failed');
+      if (!res.ok) {
+        throw new Error(data.error || 'Login failed');
       }
-    } catch (err) { 
+
+      // 2. SUPABASE SYNC (With Dashboard Captcha turned OFF)
+      const { error: authError } = await supabaseClient.auth.signInWithPassword({ 
+        email, 
+        password 
+      });
+
+      if (authError) throw authError;
+
+      // 3. SUCCESS - Now 'data' is defined and ready to use!
+      setUser(data.user);
+      setProfile(data.profile);
+
+      if (data.is_admin) {
+        router.push('/admin/dashboard');
+      } else {
+        router.push('/');
+      }
+
+    } catch (err: any) { 
       console.error('Login error:', err);
-      setError('Connection error to security server'); 
+      setError(err.message || 'Connection error'); 
     } finally { 
       setLoginLoading(false); 
     }

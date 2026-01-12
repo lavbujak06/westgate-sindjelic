@@ -139,5 +139,72 @@ describe('requireAdmin Middleware', () => {
     expect(mockResponse.status).toHaveBeenCalledWith(500);
     expect(mockResponse.json).toHaveBeenCalledWith({ error: 'Server error' });
   });
-  
+
+  it('should return 401 if the token in the cookie is malformed or not a string', async () => {
+    // Simulate a weird non-string cookie value
+    mockRequest.cookies['sb-access-token'] = { unexpected: 'object' };
+
+    await requireAdmin(mockRequest, mockResponse, nextFunction);
+
+    expect(mockResponse.status).toHaveBeenCalledWith(401);
+    expect(mockResponse.json).toHaveBeenCalledWith({ error: 'Session missing' });
+  });
+
+  it('should return 401 if Supabase returns success but no user object exists', async () => {
+    mockRequest.cookies['sb-access-token'] = 'valid-looking-token';
+
+    // Mock a response where data exists but user is null
+    (supabase.auth.getUser as jest.Mock).mockResolvedValue({
+      data: { user: null },
+      error: null,
+    });
+
+    await requireAdmin(mockRequest, mockResponse, nextFunction);
+
+    expect(mockResponse.status).toHaveBeenCalledWith(401);
+    expect(mockResponse.json).toHaveBeenCalledWith({ error: 'Invalid session' });
+  });
+
+
+    it('should return 403 when Supabase .single() returns an error because no admin was found', async () => {
+    mockRequest.cookies['sb-access-token'] = 'valid-token';
+
+    // Auth is successful
+    (supabase.auth.getUser as jest.Mock).mockResolvedValue({
+        data: { user: { id: 'regular-user-id' } },
+        error: null,
+    });
+
+    // 2. Simulate Supabase error when .single() finds 0 rows
+    const mockFrom = supabase.from as jest.Mock;
+    mockFrom.mockReturnValue({
+        select: jest.fn(() => ({
+        eq: jest.fn(() => ({
+            // Supabase returns an error object when .single() fails to find a match
+            single: jest.fn().mockResolvedValue({ 
+            data: null, 
+            error: { message: 'JSON object requested, multiple (or no) rows returned', code: 'PGRST116' } 
+            }),
+        })),
+        })),
+    });
+
+    await requireAdmin(mockRequest, mockResponse, nextFunction);
+
+    // Even if the DB "errored", it should be treated as "Not an admin"
+    expect(mockResponse.status).toHaveBeenCalledWith(403);
+    expect(mockResponse.json).toHaveBeenCalledWith({ error: 'Admins only' });
+    });
+
+    it('should return 401 if multiple session cookies are present (Cookie Confusion)', async () => {
+    // Express often represents multiple cookies as an array if not handled
+    mockRequest.cookies['sb-access-token'] = ['token-1', 'token-2'];
+
+    await requireAdmin(mockRequest, mockResponse, nextFunction);
+
+    // Because of your 'typeof token !== string' fix, this will now pass securely!
+    expect(mockResponse.status).toHaveBeenCalledWith(401);
+    expect(mockResponse.json).toHaveBeenCalledWith({ error: 'Session missing' });
+    });
+
 });

@@ -10,11 +10,18 @@ export async function requireAdmin(req: AuthenticatedRequest, res: Response, nex
   try {
     const token = req.cookies?.['sb-access-token'];
 
-    if (!token) {
+    if (!token || typeof token !== 'string') {
       return res.status(401).json({ error: 'Session missing' });
     }
 
-    const { data: userData, error } = await supabase.auth.getUser(token);
+    const result = await supabase.auth.getUser(token);
+
+    if (result.error || !result.data.user) {
+      return res.status(401).json({ error: 'Invalid session' });
+    }
+
+    const { data: userData, error } = result;
+    
     if (error || !userData?.user) {
       return res.status(401).json({ error: 'Invalid session' });
     }
