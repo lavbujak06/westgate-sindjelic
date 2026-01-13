@@ -41,7 +41,7 @@ function NewHighlightPage() {
         }
         setLoading(true);
         try {
-            const res = await fetch('http://localhost:5001/api/highlights', {
+            const res = await fetch(`${("TURBOPACK compile-time value", "http://localhost:5001")}/api/highlights`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'

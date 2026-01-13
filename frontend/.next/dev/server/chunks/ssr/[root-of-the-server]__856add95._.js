@@ -60,7 +60,7 @@ const AccountMenu = ()=>{
             // 1️⃣ Sign out from Supabase client (clears localStorage/IndexedDB session)
             await __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$lib$2f$supabaseClient$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["supabaseClient"].auth.signOut();
             // 2️⃣ Call backend to clear cookies
-            await fetch('http://localhost:5001/api/auth/logout', {
+            await fetch(`${("TURBOPACK compile-time value", "http://localhost:5001")}/api/auth/logout`, {
                 method: 'POST',
                 credentials: 'include'
             });
@@ -785,7 +785,7 @@ const CoachStaff = ({ teamSlug })=>{
     const [coaches, setCoaches] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])([]);
     const [loading, setLoading] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(true);
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useEffect"])(()=>{
-        fetch(`http://localhost:5001/api/coaches?team=${teamSlug}`).then((res)=>res.json()).then((data)=>{
+        fetch(`${("TURBOPACK compile-time value", "http://localhost:5001")}/api/coaches?team=${teamSlug}`).then((res)=>res.json()).then((data)=>{
             if (Array.isArray(data)) {
                 // Sort so head_coach always comes first
                 const sorted = [
@@ -1105,7 +1105,7 @@ function SeniorWomenPage() {
     const [gallery, setGallery] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])([]);
     const [loading, setLoading] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(true);
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useEffect"])(()=>{
-        fetch('http://localhost:5001/api/league/configs').then((res)=>res.json()).then((data)=>{
+        fetch(`${("TURBOPACK compile-time value", "http://localhost:5001")}/api/league/configs`).then((res)=>res.json()).then((data)=>{
             if (Array.isArray(data) && data.length > 0) {
                 // Filter for Women but exclude Reserve strings to get Seniors
                 const womenOnly = data.filter((c)=>c.team_name === 'Senior Women');
@@ -1113,7 +1113,7 @@ function SeniorWomenPage() {
                 if (womenOnly.length > 0) setSelectedConfigId(womenOnly[0].id);
             }
         });
-        fetch('http://localhost:5001/api/media/senior-women').then((res)=>res.json()).then((data)=>setGallery(Array.isArray(data) ? data : []));
+        fetch(`${("TURBOPACK compile-time value", "http://localhost:5001")}/api/media/senior-women`).then((res)=>res.json()).then((data)=>setGallery(Array.isArray(data) ? data : []));
     }, []);
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useEffect"])(()=>{
         if (!selectedConfigId) return;
@@ -1121,8 +1121,8 @@ function SeniorWomenPage() {
             setLoading(true);
             try {
                 const [lRes, gRes] = await Promise.all([
-                    fetch(`http://localhost:5001/api/league/ladder/${selectedConfigId}`),
-                    fetch(`http://localhost:5001/api/league/games/${selectedConfigId}`)
+                    fetch(`${("TURBOPACK compile-time value", "http://localhost:5001")}/api/league/ladder/${selectedConfigId}`),
+                    fetch(`${("TURBOPACK compile-time value", "http://localhost:5001")}/api/league/games/${selectedConfigId}`)
                 ]);
                 setLadder(await lRes.json());
                 setGames(await gRes.json());

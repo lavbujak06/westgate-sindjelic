@@ -4,6 +4,7 @@ import { useUser } from '@/context/UserContext';
 import Navbar from '@/components/Navbar';
 import toast from 'react-hot-toast';
 import Loader from '@/components/Loader';
+import { MapPin, Phone, Clock, ArrowRight, Send, MessageSquare, Map as MapIcon } from 'lucide-react';
 
 const categories = [
   "General Inquiry", "Senior Men's Football", "Senior Women's Football",
@@ -15,7 +16,7 @@ export default function ContactPage() {
   const [loading, setLoading] = useState(false);
   const [submitted, setSubmitted] = useState(false);
 
-  // Form State
+  // Form State (STRICTLY UNCHANGED)
   const [formData, setFormData] = useState({
     name: '', email: '', phone: '', category: 'General Inquiry',
     date: '', message: '', honeypot: ''
@@ -28,11 +29,8 @@ export default function ContactPage() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // 1. Honeypot check (security for bots)
     if (formData.honeypot) return;
-
-    // 2. File Size check (security for your server)
-    if (file && file.size > 10 * 1024 * 1024) { // 10MB Limit
+    if (file && file.size > 10 * 1024 * 1024) {
       toast.error("File is too large. Max size is 10MB.");
       return;
     }
@@ -45,7 +43,7 @@ export default function ContactPage() {
     try {
       const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/contact`, {
         method: 'POST',
-        body: data, // Note: No headers needed for FormData
+        body: data,
       });
 
       if (res.ok) {
@@ -62,108 +60,191 @@ export default function ContactPage() {
   };
 
   if (submitted) return (
-    <div className="min-h-screen bg-[#020617] flex items-center justify-center p-6">
-        <div className="max-w-md w-full bg-slate-900 border border-slate-800 rounded-[3rem] p-12 text-center shadow-2xl animate-in fade-in zoom-in duration-500">
-        
-        {/* Success Icon */}
-        <div className="w-20 h-20 bg-red-600 rounded-full flex items-center justify-center mx-auto mb-8 shadow-[0_0_30px_rgba(220,38,38,0.4)]">
+    <div className="min-h-screen bg-[#020617] flex items-center justify-center p-6 italic">
+        <div className="max-w-md w-full bg-slate-900 border border-slate-800 rounded-[3rem] p-12 text-center shadow-2xl">
+        <div className="w-20 h-20 bg-red-600 rounded-full flex items-center justify-center mx-auto mb-8">
             <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
             <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
             </svg>
         </div>
-
-        <h2 className="text-3xl font-black text-white uppercase italic tracking-tighter mb-4">
-            Transmission <span className="text-red-600">Complete</span>
-        </h2>
-        
-        <p className="text-slate-400 text-sm leading-relaxed mb-10 uppercase tracking-wide font-medium">
-            Your inquiry has been sent to the Technical Department. <br/> 
-            <span className="text-slate-600 text-[10px] font-mono">Reference: {Math.random().toString(36).substr(2, 9).toUpperCase()}</span>
-        </p>
-
+        <h2 className="text-3xl font-black text-white uppercase tracking-tighter mb-4">Transmission <span className="text-red-600">Complete</span></h2>
         <div className="space-y-4">
-            <button 
-            onClick={() => window.location.href = '/'}
-            className="w-full bg-white text-black py-4 rounded-2xl font-black uppercase text-[10px] tracking-[0.2em] hover:bg-gray-200 transition-all shadow-lg"
-            >
-            Return to Home
-            </button>
-            
-            <button 
-            onClick={() => setSubmitted(false)}
-            className="w-full text-slate-500 py-2 font-black uppercase text-[9px] tracking-[0.2em] hover:text-white transition-colors"
-            >
-            Send another message
-            </button>
+            <button onClick={() => window.location.href = '/'} className="w-full bg-white text-black py-4 rounded-2xl font-black uppercase text-[10px] tracking-[0.2em]">Return to Home</button>
+            <button onClick={() => setSubmitted(false)} className="w-full text-slate-500 py-2 font-black uppercase text-[9px] tracking-[0.2em]">Send another message</button>
         </div>
         </div>
     </div>
-    );
+  );
 
   return (
-    <main className="bg-[#020617] min-h-screen pb-20">
+    <main className="bg-[#020617] min-h-screen pb-20 italic">
       <Navbar />
-      <div className="max-w-4xl mx-auto px-6 pt-32">
-        <header className="mb-12">
-          <h1 className="text-5xl font-black text-white uppercase italic tracking-tighter">Contact <span className="text-red-600">HQ</span></h1>
-          <p className="text-slate-500 font-mono text-xs uppercase mt-2 tracking-[0.2em]">Direct Line to Westgate Sindjelic</p>
-        </header>
+      
+      {/* HERO SECTION */}
+      <div className="max-w-6xl mx-auto px-6 pt-32 mb-20">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-slate-800 pb-10">
+          <div>
+            <h1 className="text-7xl font-black text-white uppercase tracking-tighter italic leading-none">
+              Contact <span className="text-red-600">HQ</span>
+            </h1>
+            <p className="text-slate-500 font-mono text-xs uppercase mt-4 tracking-[0.3em] flex items-center gap-2">
+              <span className="w-2 h-2 bg-red-600 rounded-full animate-pulse" />
+              Direct Line to Westgate Sindjelic
+            </p>
+          </div>
+          <div className="text-right hidden md:block">
+            <p className="text-slate-600 font-black uppercase text-[10px] tracking-[0.2em]">Melbourne, Australia</p>
+            <p className="text-white font-black uppercase text-sm tracking-tighter mt-1">EST. 1985</p>
+          </div>
+        </div>
+      </div>
 
-        <form onSubmit={handleSubmit} className="grid grid-cols-1 md:grid-cols-2 gap-6 bg-slate-900/40 p-8 rounded-[2.5rem] border border-slate-800">
-          
-          {/* Honeypot - Hidden from humans */}
-          <input type="text" className="hidden" value={formData.honeypot} onChange={e => setFormData({...formData, honeypot: e.target.value})} />
-
-          <div className="space-y-1">
-            <label className="text-[10px] font-black text-slate-500 uppercase ml-2">Full Name</label>
-            <input required className="w-full bg-slate-950 border border-slate-800 rounded-xl p-4 text-white text-sm focus:border-red-600 outline-none" 
-              value={formData.name} onChange={e => setFormData({...formData, name: e.target.value})} />
+      <div className="max-w-6xl mx-auto px-6 space-y-32">
+        
+        {/* SECTION 1: LOCATION & ACCESS */}
+        <section>
+          <div className="flex items-center gap-4 mb-10">
+            <div className="bg-red-600/10 p-2 rounded-lg">
+              <MapIcon className="text-red-600" size={20} />
+            </div>
+            <h2 className="text-sm font-black text-white uppercase tracking-[0.3em]">01. Visit the Grounds</h2>
           </div>
 
-          <div className="space-y-1">
-            <label className="text-[10px] font-black text-slate-500 uppercase ml-2">Email Address</label>
-            <input required type="email" className="w-full bg-slate-950 border border-slate-800 rounded-xl p-4 text-white text-sm focus:border-red-600 outline-none" 
-              value={formData.email} onChange={e => setFormData({...formData, email: e.target.value})} />
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-0 bg-white rounded-[3.5rem] shadow-2xl overflow-hidden">
+            {/* MAP BLOCK */}
+            <div className="lg:col-span-8 relative h-[550px] group">
+              <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.9455!2d144.8033!3d-37.7845!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad661686b651985%3A0x8988fff5eef6134f!2sArdeer%20Reserve!5e0!3m2!1sen!2sau!4v1705200000000!5m2!1sen!2sau" 
+                width="100%" 
+                height="100%" 
+                style={{ border: 0 }} 
+                allowFullScreen 
+                loading="lazy" 
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Ardeer Reserve Map"
+                className="brightness-90 contrast-125 group-hover:brightness-100 transition-all duration-500"
+              />
+              
+              <div className="absolute bottom-8 right-8 z-10">
+                  <button 
+                      onClick={() => window.open('https://www.google.com/maps/place/Ardeer+Reserve/@-37.7784113,144.8034041,17z/data=!3m1!4b1!4m6!3m5!1s0x6ad661686b651985:0x8988fff5eef6134f!8m2!3d-37.7784156!4d144.8059844!16s%2Fg%2F11h2nlv4wh?hl=en&entry=ttu&g_ep=EgoyMDI2MDEwNy4wIKXMDSoASAFQAw%3D%3D', '_blank')}
+                      className="bg-red-600 text-white px-10 py-5 rounded-2xl font-black uppercase text-xs tracking-widest shadow-2xl flex items-center gap-3 hover:bg-black hover:scale-105 transition-all duration-300"
+                  >
+                      Get Directions <ArrowRight size={18} strokeWidth={3} />
+                  </button>
+              </div>
+            </div>
+
+            {/* INFO BLOCK */}
+            <div className="lg:col-span-4 bg-slate-50 p-12 flex flex-col justify-center border-l border-slate-100">
+              <div className="space-y-12">
+                <div>
+                  <h3 className="text-[10px] font-black text-slate-400 uppercase tracking-[0.4em] mb-4">Location</h3>
+                  <p className="text-slate-900 text-3xl font-black uppercase italic leading-tight tracking-tighter">
+                    Ardeer Reserve, <br/> Ardeer VIC 3022
+                  </p>
+                </div>
+
+                <div>
+                  <h3 className="text-[10px] font-black text-slate-400 uppercase tracking-[0.4em] mb-4">Training Times</h3>
+                  <div className="space-y-1">
+                    <p className="text-slate-900 font-black uppercase text-lg italic">Tue & Thu</p>
+                    <p className="text-red-600 font-black uppercase text-base italic leading-none">6:00 PM — 9:00 PM</p>
+                  </div>
+                </div>
+
+                <div>
+                  <h3 className="text-[10px] font-black text-slate-400 uppercase tracking-[0.4em] mb-4">Call HQ</h3>
+                  <p className="text-slate-900 text-4xl font-black uppercase italic tracking-tighter">
+                    0400 000 000
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* SECTION 2: THE ENQUIRY FORM */}
+        <section className="pb-20">
+          <div className="flex items-center gap-4 mb-10">
+            <div className="bg-red-600/10 p-2 rounded-lg">
+              <MessageSquare className="text-red-600" size={20} />
+            </div>
+            <h2 className="text-sm font-black text-white uppercase tracking-[0.3em]">02. Email Inquiry</h2>
           </div>
 
-          <div className="space-y-1">
-            <label className="text-[10px] font-black text-slate-500 uppercase ml-2">Phone Number (optional)</label>
-            <input className="w-full bg-slate-950 border border-slate-800 rounded-xl p-4 text-white text-sm focus:border-red-600 outline-none" 
-              value={formData.phone} onChange={e => setFormData({...formData, phone: e.target.value})} />
-          </div>
+          <div className="bg-slate-900/50 border border-slate-800 rounded-[4rem] p-8 lg:p-16 shadow-3xl backdrop-blur-sm">
+            <form onSubmit={handleSubmit} className="grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-8">
+              <input type="text" className="hidden" value={formData.honeypot} onChange={e => setFormData({...formData, honeypot: e.target.value})} />
 
-          <div className="space-y-1">
-            <label className="text-[10px] font-black text-slate-500 uppercase ml-2">Category</label>
-            <select className="w-full bg-slate-950 border border-slate-800 rounded-xl p-4 text-white text-sm focus:border-red-600 outline-none"
-              value={formData.category} onChange={e => setFormData({...formData, category: e.target.value})}>
-              {categories.map(c => <option key={c} value={c}>{c}</option>)}
-            </select>
-          </div>
+              <div className="space-y-2">
+                  <label className="text-[10px] font-black text-slate-500 uppercase tracking-widest ml-1">Full Name</label>
+                  <input required className="w-full bg-slate-950/50 border border-slate-800 rounded-2xl p-5 text-white text-sm focus:border-red-600 focus:ring-1 focus:ring-red-600 outline-none transition-all" 
+                  value={formData.name} onChange={e => setFormData({...formData, name: e.target.value})} />
+              </div>
 
-          <div className="md:col-span-2 space-y-1">
-             <label className="text-[10px] font-black text-slate-500 uppercase ml-2">Date (Optional - e.g. Trial or Incident date)</label>
-             <input type="date" className="w-full bg-slate-950 border border-slate-800 rounded-xl p-4 text-white text-sm focus:border-red-600 outline-none" 
-               value={formData.date} onChange={e => setFormData({...formData, date: e.target.value})} />
-          </div>
+              <div className="space-y-2">
+                  <label className="text-[10px] font-black text-slate-500 uppercase tracking-widest ml-1">Email Address</label>
+                  <input required type="email" className="w-full bg-slate-950/50 border border-slate-800 rounded-2xl p-5 text-white text-sm focus:border-red-600 focus:ring-1 focus:ring-red-600 outline-none transition-all" 
+                  value={formData.email} onChange={e => setFormData({...formData, email: e.target.value})} />
+              </div>
 
-          <div className="md:col-span-2 space-y-1">
-            <label className="text-[10px] font-black text-slate-500 uppercase ml-2">Message</label>
-            <textarea required rows={5} className="w-full bg-slate-950 border border-slate-800 rounded-xl p-4 text-white text-sm focus:border-red-600 outline-none resize-none" 
-              value={formData.message} onChange={e => setFormData({...formData, message: e.target.value})} />
-          </div>
+              <div className="space-y-2">
+                  <label className="text-[10px] font-black text-slate-500 uppercase tracking-widest ml-1">Phone Number</label>
+                  <input className="w-full bg-slate-950/50 border border-slate-800 rounded-2xl p-5 text-white text-sm focus:border-red-600 focus:ring-1 focus:ring-red-600 outline-none transition-all" 
+                  value={formData.phone} onChange={e => setFormData({...formData, phone: e.target.value})} />
+              </div>
 
-          <div className="md:col-span-2 space-y-1">
-            <label className="text-[10px] font-black text-slate-500 uppercase ml-2">Attachments (Birth Cert/Logo/Photo)</label>
-            <input type="file" 
-            accept=".jpg,.jpeg,.png,.pdf" // Only allow images and PDFs
-            className="w-full text-xs text-slate-400 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:bg-red-600 file:text-white file:font-black" 
-              onChange={e => setFile(e.target.files?.[0] || null)} />
-          </div>
+              <div className="space-y-2">
+                  <label className="text-[10px] font-black text-slate-500 uppercase tracking-widest ml-1">Category</label>
+                  <select className="w-full bg-slate-950/50 border border-slate-800 rounded-2xl p-5 text-white text-sm focus:border-red-600 outline-none transition-all"
+                  value={formData.category} onChange={e => setFormData({...formData, category: e.target.value})}>
+                    {categories.map(c => <option key={c} value={c} className="bg-slate-950">{c}</option>)}
+                  </select>
+              </div>
 
-          <button disabled={loading} className="md:col-span-2 bg-red-600 py-5 rounded-2xl font-black uppercase tracking-[0.3em] text-white hover:bg-red-700 transition-all disabled:opacity-50">
-            {loading ? <Loader /> : 'Transmit Message'}
-          </button>
-        </form>
+              <div className="md:col-span-2 space-y-2">
+                  <label className="text-[10px] font-black text-slate-500 uppercase tracking-widest ml-1">Relevant Date (Optional)</label>
+                  <input type="date" className="w-full bg-slate-950/50 border border-slate-800 rounded-2xl p-5 text-white text-sm focus:border-red-600 outline-none transition-all" 
+                  value={formData.date} onChange={e => setFormData({...formData, date: e.target.value})} />
+              </div>
+
+              <div className="md:col-span-2 space-y-2">
+                  <label className="text-[10px] font-black text-slate-500 uppercase tracking-widest ml-1">Message</label>
+                  <textarea required rows={6} className="w-full bg-slate-950/50 border border-slate-800 rounded-3xl p-6 text-white text-sm focus:border-red-600 outline-none resize-none transition-all" 
+                  value={formData.message} onChange={e => setFormData({...formData, message: e.target.value})} />
+              </div>
+
+              <div className="md:col-span-2">
+                  <label className="text-[10px] font-black text-slate-500 uppercase tracking-widest ml-1 mb-2 block">Attachments (JPG, PNG, PDF)</label>
+                  <div className="group relative w-full h-32 bg-slate-950/30 border-2 border-dashed border-slate-800 rounded-3xl flex items-center justify-center hover:border-red-600 transition-all cursor-pointer">
+                    <input type="file" 
+                    accept=".jpg,.jpeg,.png,.pdf" 
+                    className="absolute inset-0 w-full h-full opacity-0 cursor-pointer z-10" 
+                    onChange={e => setFile(e.target.files?.[0] || null)} />
+                    <div className="text-center">
+                      <p className="text-[10px] font-black text-slate-500 uppercase tracking-widest group-hover:text-red-600 transition-colors">
+                        {file ? file.name : 'Click or Drag to Upload'}
+                      </p>
+                      <p className="text-[8px] text-slate-600 mt-1 uppercase">Max File Size: 10MB</p>
+                    </div>
+                  </div>
+              </div>
+
+              <button 
+                disabled={loading} 
+                className="md:col-span-2 group relative bg-red-600 py-6 rounded-3xl font-black uppercase tracking-[0.3em] text-white text-sm overflow-hidden transition-all hover:shadow-[0_0_40px_rgba(220,38,38,0.3)] disabled:opacity-50"
+              >
+                <div className="absolute inset-0 bg-white translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
+                <span className="relative z-10 flex items-center justify-center gap-3 group-hover:text-red-600 transition-colors duration-300">
+                  {loading ? <Loader /> : (
+                    <>Transmit Data <Send size={16} /></>
+                  )}
+                </span>
+              </button>
+            </form>
+          </div>
+        </section>
       </div>
     </main>
   );

@@ -96,7 +96,7 @@ export default function AdminAccountsPage() {
                   </div>
                 </div>
                 <button onClick={() => handleUserDelete(user.id)} className="text-[10px] font-black uppercase tracking-widest text-red-500 hover:text-white hover:bg-red-600 px-3 py-2 rounded-md transition-all border border-red-900/30">
-                  Revoke Access
+                  Delete User
                 </button>
               </div>
             ))}

@@ -1076,7 +1076,7 @@ function VideoSlider({ slides, onPlay }) {
             slides.map((slide, index)=>{
                 const thumbUrl = `https://img.youtube.com/vi/${slide.youtube_id}/maxresdefault.jpg`;
                 return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                    className: `absolute inset-0 transition-all duration-1000 ease-in-out ${index === current ? 'opacity-100 scale-100' : 'opacity-0 scale-105'}`,
+                    className: `absolute inset-0 transition-all duration-1000 ease-in-out ${index === current ? 'opacity-100 scale-100 z-10' : 'opacity-0 scale-105 z-0'}`,
                     children: index === current && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                         className: "relative w-full h-full bg-black cursor-pointer",
                         onClick: ()=>onPlay(slide.youtube_id),
@@ -1100,7 +1100,7 @@ function VideoSlider({ slides, onPlay }) {
                                 columnNumber: 17
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "absolute inset-0 z-20 flex flex-col items-center justify-center bg-black/20 group-hover:bg-black/10 transition-colors",
+                                className: "absolute inset-0 z-20 flex flex-col items-center justify-center bg-black/20 group-hover:bg-black/10 transition-colors pointer-events-none",
                                 children: [
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                         className: "w-24 h-24 bg-red-600 rounded-full flex items-center justify-center shadow-[0_0_50px_rgba(220,38,38,0.5)] group-hover:scale-125 transition-transform duration-500",
@@ -1109,12 +1109,12 @@ function VideoSlider({ slides, onPlay }) {
                                             size: 48
                                         }, void 0, false, {
                                             fileName: "[project]/frontend/components/VideoSlider.tsx",
-                                            lineNumber: 61,
+                                            lineNumber: 63,
                                             columnNumber: 25
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/frontend/components/VideoSlider.tsx",
-                                        lineNumber: 60,
+                                        lineNumber: 62,
                                         columnNumber: 21
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
@@ -1122,7 +1122,7 @@ function VideoSlider({ slides, onPlay }) {
                                         children: slide.title
                                     }, void 0, false, {
                                         fileName: "[project]/frontend/components/VideoSlider.tsx",
-                                        lineNumber: 63,
+                                        lineNumber: 67,
                                         columnNumber: 21
                                     }, this)
                                 ]
@@ -1149,7 +1149,7 @@ function VideoSlider({ slides, onPlay }) {
                 size: 45
             }, void 0, false, {
                 fileName: "[project]/frontend/components/VideoSlider.tsx",
-                lineNumber: 73,
+                lineNumber: 77,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1165,7 +1165,7 @@ function VideoSlider({ slides, onPlay }) {
                             children: "/"
                         }, void 0, false, {
                             fileName: "[project]/frontend/components/VideoSlider.tsx",
-                            lineNumber: 82,
+                            lineNumber: 86,
                             columnNumber: 35
                         }, this),
                         " ",
@@ -1173,12 +1173,12 @@ function VideoSlider({ slides, onPlay }) {
                     ]
                 }, void 0, true, {
                     fileName: "[project]/frontend/components/VideoSlider.tsx",
-                    lineNumber: 81,
+                    lineNumber: 85,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/frontend/components/VideoSlider.tsx",
-                lineNumber: 80,
+                lineNumber: 84,
                 columnNumber: 7
             }, this)
         ]
@@ -2069,31 +2069,68 @@ function HomePage() {
                             size: 40
                         }, void 0, false, {
                             fileName: "[project]/frontend/app/page.tsx",
-                            lineNumber: 312,
-                            columnNumber: 142
-                        }, this)
-                    }, void 0, false, {
-                        fileName: "[project]/frontend/app/page.tsx",
-                        lineNumber: 312,
-                        columnNumber: 11
-                    }, this),
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "w-full max-w-5xl aspect-video rounded-3xl overflow-hidden shadow-2xl border border-white/10 bg-black",
-                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("iframe", {
-                            width: "100%",
-                            height: "100%",
-                            src: `https://www.youtube.com/embed/${activeVideo}?autoplay=1`,
-                            title: "Video",
-                            frameBorder: "0",
-                            allowFullScreen: true
-                        }, void 0, false, {
-                            fileName: "[project]/frontend/app/page.tsx",
                             lineNumber: 314,
                             columnNumber: 13
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/frontend/app/page.tsx",
                         lineNumber: 313,
+                        columnNumber: 11
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                        className: "w-full max-w-5xl flex flex-col gap-4",
+                        children: [
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                className: "w-full aspect-video rounded-3xl overflow-hidden shadow-2xl border border-white/10 bg-black",
+                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("iframe", {
+                                    width: "100%",
+                                    height: "100%",
+                                    src: `https://www.youtube.com/embed/${activeVideo}?autoplay=1`,
+                                    title: "Video",
+                                    frameBorder: "0",
+                                    allow: "autoplay; encrypted-media; picture-in-picture",
+                                    allowFullScreen: true
+                                }, void 0, false, {
+                                    fileName: "[project]/frontend/app/page.tsx",
+                                    lineNumber: 320,
+                                    columnNumber: 15
+                                }, this)
+                            }, void 0, false, {
+                                fileName: "[project]/frontend/app/page.tsx",
+                                lineNumber: 319,
+                                columnNumber: 13
+                            }, this),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                className: "text-center",
+                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                    className: "text-slate-500 text-[10px] uppercase tracking-widest italic",
+                                    children: [
+                                        "Video not loading?",
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
+                                            href: `https://www.youtube.com/watch?v=${activeVideo}`,
+                                            target: "_blank",
+                                            className: "ml-2 text-red-600 hover:text-red-400 font-black transition-colors underline underline-offset-4",
+                                            children: "Watch directly on YouTube"
+                                        }, void 0, false, {
+                                            fileName: "[project]/frontend/app/page.tsx",
+                                            lineNumber: 334,
+                                            columnNumber: 17
+                                        }, this)
+                                    ]
+                                }, void 0, true, {
+                                    fileName: "[project]/frontend/app/page.tsx",
+                                    lineNumber: 332,
+                                    columnNumber: 15
+                                }, this)
+                            }, void 0, false, {
+                                fileName: "[project]/frontend/app/page.tsx",
+                                lineNumber: 331,
+                                columnNumber: 13
+                            }, this)
+                        ]
+                    }, void 0, true, {
+                        fileName: "[project]/frontend/app/page.tsx",
+                        lineNumber: 317,
                         columnNumber: 11
                     }, this)
                 ]
@@ -2104,7 +2141,7 @@ function HomePage() {
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$components$2f$Footer$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
                 fileName: "[project]/frontend/app/page.tsx",
-                lineNumber: 319,
+                lineNumber: 347,
                 columnNumber: 7
             }, this)
         ]

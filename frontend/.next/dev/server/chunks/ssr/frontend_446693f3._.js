@@ -75,13 +75,13 @@ function AdminNewsDashboard() {
                                             children: "Archive"
                                         }, void 0, false, {
                                             fileName: "[project]/frontend/app/admin/news/page.tsx",
-                                            lineNumber: 43,
+                                            lineNumber: 45,
                                             columnNumber: 88
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/frontend/app/admin/news/page.tsx",
-                                    lineNumber: 43,
+                                    lineNumber: 45,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -89,13 +89,13 @@ function AdminNewsDashboard() {
                                     children: "Editorial Content Management"
                                 }, void 0, false, {
                                     fileName: "[project]/frontend/app/admin/news/page.tsx",
-                                    lineNumber: 44,
+                                    lineNumber: 46,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/frontend/app/admin/news/page.tsx",
-                            lineNumber: 42,
+                            lineNumber: 44,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
@@ -106,20 +106,20 @@ function AdminNewsDashboard() {
                                     size: 14
                                 }, void 0, false, {
                                     fileName: "[project]/frontend/app/admin/news/page.tsx",
-                                    lineNumber: 47,
+                                    lineNumber: 49,
                                     columnNumber: 13
                                 }, this),
                                 " Create Entry"
                             ]
                         }, void 0, true, {
                             fileName: "[project]/frontend/app/admin/news/page.tsx",
-                            lineNumber: 46,
+                            lineNumber: 48,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/frontend/app/admin/news/page.tsx",
-                    lineNumber: 41,
+                    lineNumber: 43,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -130,7 +130,7 @@ function AdminNewsDashboard() {
                             size: 16
                         }, void 0, false, {
                             fileName: "[project]/frontend/app/admin/news/page.tsx",
-                            lineNumber: 52,
+                            lineNumber: 54,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -141,13 +141,13 @@ function AdminNewsDashboard() {
                             onChange: (e)=>setSearchQuery(e.target.value)
                         }, void 0, false, {
                             fileName: "[project]/frontend/app/admin/news/page.tsx",
-                            lineNumber: 53,
+                            lineNumber: 55,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/frontend/app/admin/news/page.tsx",
-                    lineNumber: 51,
+                    lineNumber: 53,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -162,20 +162,20 @@ function AdminNewsDashboard() {
                                             children: status
                                         }, void 0, false, {
                                             fileName: "[project]/frontend/app/admin/news/page.tsx",
-                                            lineNumber: 66,
+                                            lineNumber: 68,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                             className: "h-px flex-grow bg-slate-800/50"
                                         }, void 0, false, {
                                             fileName: "[project]/frontend/app/admin/news/page.tsx",
-                                            lineNumber: 67,
+                                            lineNumber: 69,
                                             columnNumber: 17
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/frontend/app/admin/news/page.tsx",
-                                    lineNumber: 65,
+                                    lineNumber: 67,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -193,12 +193,12 @@ function AdminNewsDashboard() {
                                                                 className: "w-full h-full object-cover"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/frontend/app/admin/news/page.tsx",
-                                                                lineNumber: 74,
+                                                                lineNumber: 76,
                                                                 columnNumber: 44
                                                             }, this)
                                                         }, void 0, false, {
                                                             fileName: "[project]/frontend/app/admin/news/page.tsx",
-                                                            lineNumber: 73,
+                                                            lineNumber: 75,
                                                             columnNumber: 23
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -208,7 +208,7 @@ function AdminNewsDashboard() {
                                                                     children: item.title
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/frontend/app/admin/news/page.tsx",
-                                                                    lineNumber: 77,
+                                                                    lineNumber: 79,
                                                                     columnNumber: 25
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -216,19 +216,19 @@ function AdminNewsDashboard() {
                                                                     children: new Date(item.created_at).toLocaleDateString()
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/frontend/app/admin/news/page.tsx",
-                                                                    lineNumber: 78,
+                                                                    lineNumber: 80,
                                                                     columnNumber: 25
                                                                 }, this)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/frontend/app/admin/news/page.tsx",
-                                                            lineNumber: 76,
+                                                            lineNumber: 78,
                                                             columnNumber: 23
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/frontend/app/admin/news/page.tsx",
-                                                    lineNumber: 72,
+                                                    lineNumber: 74,
                                                     columnNumber: 21
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -240,7 +240,7 @@ function AdminNewsDashboard() {
                                                             children: "Edit"
                                                         }, void 0, false, {
                                                             fileName: "[project]/frontend/app/admin/news/page.tsx",
-                                                            lineNumber: 82,
+                                                            lineNumber: 84,
                                                             columnNumber: 23
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -250,51 +250,51 @@ function AdminNewsDashboard() {
                                                                 size: 12
                                                             }, void 0, false, {
                                                                 fileName: "[project]/frontend/app/admin/news/page.tsx",
-                                                                lineNumber: 83,
+                                                                lineNumber: 85,
                                                                 columnNumber: 197
                                                             }, this)
                                                         }, void 0, false, {
                                                             fileName: "[project]/frontend/app/admin/news/page.tsx",
-                                                            lineNumber: 83,
+                                                            lineNumber: 85,
                                                             columnNumber: 23
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/frontend/app/admin/news/page.tsx",
-                                                    lineNumber: 81,
+                                                    lineNumber: 83,
                                                     columnNumber: 21
                                                 }, this)
                                             ]
                                         }, item.id, true, {
                                             fileName: "[project]/frontend/app/admin/news/page.tsx",
-                                            lineNumber: 71,
+                                            lineNumber: 73,
                                             columnNumber: 19
                                         }, this))
                                 }, void 0, false, {
                                     fileName: "[project]/frontend/app/admin/news/page.tsx",
-                                    lineNumber: 69,
+                                    lineNumber: 71,
                                     columnNumber: 15
                                 }, this)
                             ]
                         }, status, true, {
                             fileName: "[project]/frontend/app/admin/news/page.tsx",
-                            lineNumber: 64,
+                            lineNumber: 66,
                             columnNumber: 13
                         }, this))
                 }, void 0, false, {
                     fileName: "[project]/frontend/app/admin/news/page.tsx",
-                    lineNumber: 62,
+                    lineNumber: 64,
                     columnNumber: 9
                 }, this)
             ]
         }, void 0, true, {
             fileName: "[project]/frontend/app/admin/news/page.tsx",
-            lineNumber: 40,
+            lineNumber: 42,
             columnNumber: 7
         }, this)
     }, void 0, false, {
         fileName: "[project]/frontend/app/admin/news/page.tsx",
-        lineNumber: 39,
+        lineNumber: 41,
         columnNumber: 5
     }, this);
 }

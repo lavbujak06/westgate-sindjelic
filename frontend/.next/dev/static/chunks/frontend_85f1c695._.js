@@ -6,6 +6,7 @@ __turbopack_context__.s([
     "default",
     ()=>__TURBOPACK__default__export__
 ]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = /*#__PURE__*/ __turbopack_context__.i("[project]/frontend/node_modules/next/dist/build/polyfills/process.js [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/frontend/node_modules/next/dist/compiled/react/jsx-dev-runtime.js [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/frontend/node_modules/next/dist/compiled/react/index.js [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/frontend/node_modules/next/dist/client/app-dir/link.js [app-client] (ecmascript)");
@@ -51,10 +52,14 @@ const AccountMenu = ()=>{
     ]);
     const handleSignOut = async ()=>{
         try {
-            await fetch('http://localhost:5001/api/auth/logout', {
+            // 1️⃣ Sign out from Supabase client (clears localStorage/IndexedDB session)
+            await __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$lib$2f$supabaseClient$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["supabaseClient"].auth.signOut();
+            // 2️⃣ Call backend to clear cookies
+            await fetch(`${("TURBOPACK compile-time value", "http://localhost:5001")}/api/auth/logout`, {
                 method: 'POST',
                 credentials: 'include'
             });
+            // 3️⃣ Clear your React state
             setUser(null);
             setProfile(null);
             setIsAdmin(false);
@@ -73,7 +78,7 @@ const AccountMenu = ()=>{
                     className: "hidden peer"
                 }, void 0, false, {
                     fileName: "[project]/frontend/components/AccountMenu.tsx",
-                    lineNumber: 58,
+                    lineNumber: 65,
                     columnNumber: 9
                 }, ("TURBOPACK compile-time value", void 0)),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -84,19 +89,19 @@ const AccountMenu = ()=>{
                         className: "w-full h-full rounded-full object-cover"
                     }, void 0, false, {
                         fileName: "[project]/frontend/components/AccountMenu.tsx",
-                        lineNumber: 67,
+                        lineNumber: 74,
                         columnNumber: 13
                     }, ("TURBOPACK compile-time value", void 0)) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                         className: "text-white font-black text-xs uppercase",
                         children: isAdmin ? 'ADM' : profile?.name ? profile.name[0] : 'U'
                     }, void 0, false, {
                         fileName: "[project]/frontend/components/AccountMenu.tsx",
-                        lineNumber: 69,
+                        lineNumber: 76,
                         columnNumber: 13
                     }, ("TURBOPACK compile-time value", void 0))
                 }, void 0, false, {
                     fileName: "[project]/frontend/components/AccountMenu.tsx",
-                    lineNumber: 61,
+                    lineNumber: 68,
                     columnNumber: 9
                 }, ("TURBOPACK compile-time value", void 0)),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -110,7 +115,7 @@ const AccountMenu = ()=>{
                                     children: isAdmin ? 'SYSTEM AUTHORITY' : 'AUTHENTICATED USER'
                                 }, void 0, false, {
                                     fileName: "[project]/frontend/components/AccountMenu.tsx",
-                                    lineNumber: 81,
+                                    lineNumber: 88,
                                     columnNumber: 13
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h4", {
@@ -118,13 +123,13 @@ const AccountMenu = ()=>{
                                     children: isAdmin ? 'ADMINISTRATOR' : profile?.name ? `${profile.name} ${profile.surname || ''}` : 'MEMBER'
                                 }, void 0, false, {
                                     fileName: "[project]/frontend/components/AccountMenu.tsx",
-                                    lineNumber: 84,
+                                    lineNumber: 91,
                                     columnNumber: 13
                                 }, ("TURBOPACK compile-time value", void 0))
                             ]
                         }, void 0, true, {
                             fileName: "[project]/frontend/components/AccountMenu.tsx",
-                            lineNumber: 80,
+                            lineNumber: 87,
                             columnNumber: 11
                         }, ("TURBOPACK compile-time value", void 0)),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("ul", {
@@ -138,12 +143,12 @@ const AccountMenu = ()=>{
                                             children: "Admin Dashboard"
                                         }, void 0, false, {
                                             fileName: "[project]/frontend/components/AccountMenu.tsx",
-                                            lineNumber: 94,
+                                            lineNumber: 101,
                                             columnNumber: 21
                                         }, ("TURBOPACK compile-time value", void 0))
                                     }, void 0, false, {
                                         fileName: "[project]/frontend/components/AccountMenu.tsx",
-                                        lineNumber: 93,
+                                        lineNumber: 100,
                                         columnNumber: 19
                                     }, ("TURBOPACK compile-time value", void 0)) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
                                         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
@@ -152,12 +157,12 @@ const AccountMenu = ()=>{
                                             children: "⚙️ Account Settings"
                                         }, void 0, false, {
                                             fileName: "[project]/frontend/components/AccountMenu.tsx",
-                                            lineNumber: 103,
+                                            lineNumber: 110,
                                             columnNumber: 21
                                         }, ("TURBOPACK compile-time value", void 0))
                                     }, void 0, false, {
                                         fileName: "[project]/frontend/components/AccountMenu.tsx",
-                                        lineNumber: 102,
+                                        lineNumber: 109,
                                         columnNumber: 19
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
@@ -168,12 +173,12 @@ const AccountMenu = ()=>{
                                             children: "Sign Out"
                                         }, void 0, false, {
                                             fileName: "[project]/frontend/components/AccountMenu.tsx",
-                                            lineNumber: 112,
+                                            lineNumber: 119,
                                             columnNumber: 19
                                         }, ("TURBOPACK compile-time value", void 0))
                                     }, void 0, false, {
                                         fileName: "[project]/frontend/components/AccountMenu.tsx",
-                                        lineNumber: 111,
+                                        lineNumber: 118,
                                         columnNumber: 17
                                     }, ("TURBOPACK compile-time value", void 0))
                                 ]
@@ -184,34 +189,34 @@ const AccountMenu = ()=>{
                                     children: "Log In"
                                 }, void 0, false, {
                                     fileName: "[project]/frontend/components/AccountMenu.tsx",
-                                    lineNumber: 122,
+                                    lineNumber: 129,
                                     columnNumber: 17
                                 }, ("TURBOPACK compile-time value", void 0))
                             }, void 0, false, {
                                 fileName: "[project]/frontend/components/AccountMenu.tsx",
-                                lineNumber: 121,
+                                lineNumber: 128,
                                 columnNumber: 15
                             }, ("TURBOPACK compile-time value", void 0))
                         }, void 0, false, {
                             fileName: "[project]/frontend/components/AccountMenu.tsx",
-                            lineNumber: 89,
+                            lineNumber: 96,
                             columnNumber: 11
                         }, ("TURBOPACK compile-time value", void 0))
                     ]
                 }, void 0, true, {
                     fileName: "[project]/frontend/components/AccountMenu.tsx",
-                    lineNumber: 76,
+                    lineNumber: 83,
                     columnNumber: 9
                 }, ("TURBOPACK compile-time value", void 0))
             ]
         }, void 0, true, {
             fileName: "[project]/frontend/components/AccountMenu.tsx",
-            lineNumber: 57,
+            lineNumber: 64,
             columnNumber: 7
         }, ("TURBOPACK compile-time value", void 0))
     }, void 0, false, {
         fileName: "[project]/frontend/components/AccountMenu.tsx",
-        lineNumber: 56,
+        lineNumber: 63,
         columnNumber: 5
     }, ("TURBOPACK compile-time value", void 0));
 };
@@ -799,6 +804,7 @@ __turbopack_context__.s([
     "default",
     ()=>__TURBOPACK__default__export__
 ]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = /*#__PURE__*/ __turbopack_context__.i("[project]/frontend/node_modules/next/dist/build/polyfills/process.js [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/frontend/node_modules/next/dist/compiled/react/jsx-dev-runtime.js [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/frontend/node_modules/next/dist/compiled/react/index.js [app-client] (ecmascript)");
 ;
@@ -811,7 +817,7 @@ const CoachStaff = ({ teamSlug })=>{
     const [loading, setLoading] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(true);
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
         "CoachStaff.useEffect": ()=>{
-            fetch(`http://localhost:5001/api/coaches?team=${teamSlug}`).then({
+            fetch(`${("TURBOPACK compile-time value", "http://localhost:5001")}/api/coaches?team=${teamSlug}`).then({
                 "CoachStaff.useEffect": (res)=>res.json()
             }["CoachStaff.useEffect"]).then({
                 "CoachStaff.useEffect": (data)=>{
@@ -1133,6 +1139,7 @@ __turbopack_context__.s([
     "default",
     ()=>ReserveWomenPage
 ]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = /*#__PURE__*/ __turbopack_context__.i("[project]/frontend/node_modules/next/dist/build/polyfills/process.js [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/frontend/node_modules/next/dist/compiled/react/jsx-dev-runtime.js [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/frontend/node_modules/next/dist/compiled/react/index.js [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$components$2f$Navbar$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/frontend/components/Navbar.tsx [app-client] (ecmascript)");
@@ -1165,7 +1172,7 @@ function ReserveWomenPage() {
     const [loading, setLoading] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(true);
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
         "ReserveWomenPage.useEffect": ()=>{
-            fetch('http://localhost:5001/api/league/configs').then({
+            fetch(`${("TURBOPACK compile-time value", "http://localhost:5001")}/api/league/configs`).then({
                 "ReserveWomenPage.useEffect": (res)=>res.json()
             }["ReserveWomenPage.useEffect"]).then({
                 "ReserveWomenPage.useEffect": (data)=>{
@@ -1179,7 +1186,7 @@ function ReserveWomenPage() {
                     }
                 }
             }["ReserveWomenPage.useEffect"]);
-            fetch('http://localhost:5001/api/media/reserve-women').then({
+            fetch(`${("TURBOPACK compile-time value", "http://localhost:5001")}/api/media/reserve-women`).then({
                 "ReserveWomenPage.useEffect": (res)=>res.json()
             }["ReserveWomenPage.useEffect"]).then({
                 "ReserveWomenPage.useEffect": (data)=>setGallery(Array.isArray(data) ? data : [])
@@ -1193,8 +1200,8 @@ function ReserveWomenPage() {
                 setLoading(true);
                 try {
                     const [lRes, gRes] = await Promise.all([
-                        fetch(`http://localhost:5001/api/league/ladder/${selectedConfigId}`),
-                        fetch(`http://localhost:5001/api/league/games/${selectedConfigId}`)
+                        fetch(`${("TURBOPACK compile-time value", "http://localhost:5001")}/api/league/ladder/${selectedConfigId}`),
+                        fetch(`${("TURBOPACK compile-time value", "http://localhost:5001")}/api/league/games/${selectedConfigId}`)
                     ]);
                     setLadder(await lRes.json());
                     setGames(await gRes.json());

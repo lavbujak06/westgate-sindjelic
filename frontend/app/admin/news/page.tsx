@@ -4,6 +4,8 @@ import Link from 'next/link';
 import toast from 'react-hot-toast';
 import { supabaseClient } from '@/lib/supabaseClient';
 import { LayoutGrid, Search, Plus, Eye, EyeOff, Trash2 } from 'lucide-react';
+import PublishSwitch from '../components/PublishSwitch';
+
 
 export default function AdminNewsDashboard() {
   const [news, setNews] = useState<any[]>([]);
@@ -78,9 +80,32 @@ export default function AdminNewsDashboard() {
                         <p className="text-[9px] text-slate-500 uppercase tracking-widest">{new Date(item.created_at).toLocaleDateString()}</p>
                       </div>
                     </div>
-                    <div className="flex gap-2">
-                      <Link href={`/admin/news/${item.id}`} className="text-[9px] font-black uppercase tracking-widest bg-slate-800 px-4 py-2 rounded-lg hover:bg-slate-700">Edit</Link>
-                      <button onClick={() => handleDelete(item.id)} className="text-[9px] font-black uppercase tracking-widest bg-red-900/10 text-red-500 px-4 py-2 rounded-lg hover:bg-red-900/30"><Trash2 size={12}/></button>
+                    <div className="flex gap-2 items-center">
+                      <PublishSwitch
+                        newsId={item.id}
+                        published={item.published}
+                        onChange={(value) => {
+                          setNews(prev =>
+                            prev.map(n =>
+                              n.id === item.id ? { ...n, published: value } : n
+                            )
+                          );
+                        }}
+                      />
+
+                      <Link
+                        href={`/admin/news/${item.id}`}
+                        className="text-[9px] font-black uppercase tracking-widest bg-slate-800 px-4 py-2 rounded-lg hover:bg-slate-700"
+                      >
+                        Edit
+                      </Link>
+
+                      <button
+                        onClick={() => handleDelete(item.id)}
+                        className="text-[9px] font-black uppercase tracking-widest bg-red-900/10 text-red-500 px-4 py-2 rounded-lg hover:bg-red-900/30"
+                      >
+                        <Trash2 size={12} />
+                      </button>
                     </div>
                   </div>
                 ))}

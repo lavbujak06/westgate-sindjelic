@@ -309,9 +309,37 @@ export default function HomePage() {
 
       {activeVideo && (
         <div className="fixed inset-0 z-[1000] bg-black/95 flex items-center justify-center p-4 md:p-12 backdrop-blur-md">
-          <button onClick={() => setActiveVideo(null)} className="absolute top-8 right-8 text-white/50 hover:text-red-600 transition-colors"><X size={40} /></button>
-          <div className="w-full max-w-5xl aspect-video rounded-3xl overflow-hidden shadow-2xl border border-white/10 bg-black">
-            <iframe width="100%" height="100%" src={`https://www.youtube.com/embed/${activeVideo}?autoplay=1`} title="Video" frameBorder="0" allowFullScreen></iframe>
+          {/* Close Button */}
+          <button onClick={() => setActiveVideo(null)} className="absolute top-8 right-8 text-white/50 hover:text-red-600 transition-colors">
+            <X size={40} />
+          </button>
+
+          <div className="w-full max-w-5xl flex flex-col gap-4">
+            {/* The Video Player */}
+            <div className="w-full aspect-video rounded-3xl overflow-hidden shadow-2xl border border-white/10 bg-black">
+              <iframe 
+                width="100%" 
+                height="100%" 
+                src={`https://www.youtube.com/embed/${activeVideo}?autoplay=1`} 
+                title="Video" 
+                frameBorder="0" 
+                allow="autoplay; encrypted-media; picture-in-picture"
+                allowFullScreen
+              ></iframe>
+            </div>
+
+            <div className="text-center">
+              <p className="text-slate-500 text-[10px] uppercase tracking-widest italic">
+                Video not loading? 
+                <a 
+                  href={`https://www.youtube.com/watch?v=${activeVideo}`} 
+                  target="_blank" 
+                  className="ml-2 text-red-600 hover:text-red-400 font-black transition-colors underline underline-offset-4"
+                >
+                  Watch directly on YouTube
+                </a>
+              </p>
+            </div>
           </div>
         </div>
       )}

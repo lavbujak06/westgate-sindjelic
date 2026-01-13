@@ -136,7 +136,7 @@ function CoachEditorPage() {
     const [previewUrl, setPreviewUrl] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])('');
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useEffect"])(()=>{
         if (!isNew) {
-            fetch(`http://localhost:5001/api/coaches`).then((res)=>res.json()).then((data)=>{
+            fetch(`${("TURBOPACK compile-time value", "http://localhost:5001")}/api/coaches`).then((res)=>res.json()).then((data)=>{
                 const coach = data.find((c)=>c.id === id);
                 if (coach) {
                     setName(coach.name);
@@ -166,7 +166,7 @@ function CoachEditorPage() {
             } else {
                 formData.append('image_url', previewUrl);
             }
-            const url = isNew ? 'http://localhost:5001/api/coaches' : `http://localhost:5001/api/coaches/${id}`;
+            const url = isNew ? `${"TURBOPACK compile-time value", "http://localhost:5001"}/api/coaches` : `${"TURBOPACK compile-time value", "http://localhost:5001"}/api/coaches/${id}`;
             const method = isNew ? 'POST' : 'PUT';
             const res = await fetch(url, {
                 method,

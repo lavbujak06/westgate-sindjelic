@@ -4,6 +4,7 @@ import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
 import CoachStaff from "@/components/CoachStuff";
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function JuniorsPage() {
   return (
@@ -39,9 +40,14 @@ export default function JuniorsPage() {
                 ))}
               </ul>
             </div>
-            <div className="bg-gray-100 rounded-2xl aspect-video flex items-center justify-center border-2 border-dashed border-gray-300">
-                {/* Place a team photo here or a video placeholder */}
-                <span className="text-gray-400 font-mono text-[10px] uppercase">Academy Action Photo</span>
+            <div>
+              <Image
+                src="/westgateLogo.jpeg"
+                alt="Academy Action"
+                width={600}
+                height={600}
+                className="object-contain w-full max-w-[420px] h-auto"
+              />
             </div>
           </div>
         </div>

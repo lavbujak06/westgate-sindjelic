@@ -118,6 +118,7 @@ __turbopack_context__.s([
     "default",
     ()=>CoachEditorPage
 ]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = /*#__PURE__*/ __turbopack_context__.i("[project]/frontend/node_modules/next/dist/build/polyfills/process.js [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/frontend/node_modules/next/dist/compiled/react/jsx-dev-runtime.js [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/frontend/node_modules/next/dist/compiled/react/index.js [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/frontend/node_modules/next/navigation.js [app-client] (ecmascript)");
@@ -145,7 +146,7 @@ function CoachEditorPage() {
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
         "CoachEditorPage.useEffect": ()=>{
             if (!isNew) {
-                fetch(`http://localhost:5001/api/coaches`).then({
+                fetch(`${("TURBOPACK compile-time value", "http://localhost:5001")}/api/coaches`).then({
                     "CoachEditorPage.useEffect": (res)=>res.json()
                 }["CoachEditorPage.useEffect"]).then({
                     "CoachEditorPage.useEffect": (data)=>{
@@ -182,7 +183,7 @@ function CoachEditorPage() {
             } else {
                 formData.append('image_url', previewUrl);
             }
-            const url = isNew ? 'http://localhost:5001/api/coaches' : `http://localhost:5001/api/coaches/${id}`;
+            const url = isNew ? `${"TURBOPACK compile-time value", "http://localhost:5001"}/api/coaches` : `${"TURBOPACK compile-time value", "http://localhost:5001"}/api/coaches/${id}`;
             const method = isNew ? 'POST' : 'PUT';
             const res = await fetch(url, {
                 method,

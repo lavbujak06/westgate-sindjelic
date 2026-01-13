@@ -101,4 +101,34 @@ router.delete('/:id', requireAdmin, async (req: any, res) => {
   res.status(200).json({ message: "Deleted" });
 });
 
+
+// 🔐 ADMIN: Toggle Publish Status
+router.patch('/:id/publish', requireAdmin, async (req: any, res) => {
+  const newsId = req.params.id;
+  const { published } = req.body;
+  const adminEmail = req.user.email;
+
+  if (typeof published !== 'boolean') {
+    return res.status(400).json({ error: 'published must be boolean' });
+  }
+
+  const { data, error } = await supabase
+    .from('news')
+    .update({ published, updated_at: new Date().toISOString() })
+    .eq('id', newsId)
+    .select()
+    .single();
+
+  if (error) return res.status(500).json({ error: error.message });
+
+  await supabase.from('audit_logs').insert({
+    admin: adminEmail,
+    action: published ? 'PUBLISH_NEWS' : 'UNPUBLISH_NEWS',
+    target_id: newsId,
+    details: `${published ? 'Published' : 'Unpublished'} article: "${data.title}"`
+  });
+
+  res.json(data);
+});
+
 export default router; 

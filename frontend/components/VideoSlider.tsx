@@ -36,7 +36,7 @@ export default function VideoSlider({ slides, onPlay }: { slides: VideoSlide[], 
           <div
             key={slide.id}
             className={`absolute inset-0 transition-all duration-1000 ease-in-out ${
-              index === current ? 'opacity-100 scale-100' : 'opacity-0 scale-105'
+              index === current ? 'opacity-100 scale-100 z-10' : 'opacity-0 scale-105 z-0'
             }`}
           >
             {index === current && (
@@ -56,10 +56,14 @@ export default function VideoSlider({ slides, onPlay }: { slides: VideoSlide[], 
                 />
 
                 {/* PLAY OVERLAY */}
-                <div className="absolute inset-0 z-20 flex flex-col items-center justify-center bg-black/20 group-hover:bg-black/10 transition-colors">
+                <div className="absolute inset-0 z-20 flex flex-col items-center justify-center bg-black/20 group-hover:bg-black/10 transition-colors pointer-events-none">
+                    
+                    {/* This is your BIG RED PLAY BUTTON */}
                     <div className="w-24 h-24 bg-red-600 rounded-full flex items-center justify-center shadow-[0_0_50px_rgba(220,38,38,0.5)] group-hover:scale-125 transition-transform duration-500">
                         <PlayCircle className="text-white ml-1" size={48} />
                     </div>
+
+                    {/* This is your BIG TITLE */}
                     <h3 className="mt-8 text-white font-black uppercase italic tracking-tighter text-3xl md:text-5xl drop-shadow-2xl">
                         {slide.title}
                     </h3>
