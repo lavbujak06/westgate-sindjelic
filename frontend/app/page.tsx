@@ -11,6 +11,7 @@ import { Calendar, MapPin, ArrowRight, X, Timer, Radio } from 'lucide-react';
 import Image from 'next/image';
 
 export default function HomePage() {
+  // State variables
   const [nextMatch, setNextMatch] = useState<any>(null);
   const [timeLeft, setTimeLeft] = useState({ 
     days: 0, hours: 0, minutes: 0, seconds: 0, status: 'UPCOMING' 
@@ -20,6 +21,9 @@ export default function HomePage() {
   const [activeVideo, setActiveVideo] = useState<string | null>(null);
   const [loading, setLoading] = useState(true);
 
+
+  // FUNCTNIONS START HERE
+  // Function to parse match date and time into a Date object
   const getMatchDateObject = useCallback((dateStr: string, timeStr: string) => {
     if (!dateStr) return new Date(0);
     const datePart = dateStr.split(' ')[0];
@@ -35,6 +39,8 @@ export default function HomePage() {
     return new Date(year, month - 1, day, hours, minutes, 0);
   }, []);
 
+
+  // Function to fetch matches from Supabase and sets the next match being either a match or 'OFF-SEASON'
   const fetchMatches = useCallback(async () => {
     try {
       setLoading(true);
@@ -64,6 +70,7 @@ export default function HomePage() {
     }
   }, [getMatchDateObject]);
 
+  // useEffect Countdown timer, sets the time left and sets it to either live or finished depending on the time
   useEffect(() => {
     if (!nextMatch || nextMatch === 'OFF_SEASON') return;
     const target = getMatchDateObject(nextMatch.date_text, nextMatch.time_text);
@@ -92,6 +99,7 @@ export default function HomePage() {
     return () => clearInterval(interval);
   }, [nextMatch, getMatchDateObject]);
 
+  // Fetch news and highlights from Supabase and set the states latestNews and highlights
   useEffect(() => {
     fetchMatches();
     async function fetchContent() {
@@ -103,6 +111,7 @@ export default function HomePage() {
     fetchContent();
   }, [fetchMatches]);
 
+  // Updates the latest match after a match has finished
   useEffect(() => {
     if (timeLeft.status === 'FINISHED') fetchMatches();
   }, [timeLeft.status, fetchMatches]);
@@ -117,6 +126,7 @@ export default function HomePage() {
       <Navbar />
       <Hero heading='Westgate Sindjelic' message='Faith. Family. Football.' />
 
+      {/* NEXT MATCH SECTION */}
       <section className="bg-[#020617] text-white py-12">
         <div className="max-w-7xl mx-auto px-6">
 
@@ -215,8 +225,8 @@ export default function HomePage() {
               </div>
             </div>
           ) : (
+            // This is the OFF-SEASON card if there is no future senior mens matches in the DB
             <div className="relative overflow-hidden bg-slate-900 rounded-[2.5rem] border border-slate-800 p-12 md:p-20 text-center max-w-5xl mx-auto shadow-2xl">
-              {/* Large Watermark Background */}
               <div className="absolute inset-0 flex items-center justify-center opacity-5 select-none pointer-events-none">
                 <h1 className="text-[120px] md:text-[200px] font-black italic uppercase">Westgate</h1>
               </div>
@@ -231,7 +241,7 @@ export default function HomePage() {
                 <p className="text-slate-400 max-w-xl mx-auto mb-8 font-medium italic not-italic text-sm md:text-base leading-relaxed">
                   Preparing for the 2026 Season. Keep an eye on our latest news for trial dates, community events, and fixture announcements.
                 </p>
-                <Link href="/pages/news">
+                <Link href="/pages/news"> 
                   <button className="border border-slate-700 hover:bg-white hover:text-black transition-all px-10 py-4 rounded-full font-black uppercase text-[10px] tracking-widest text-white shadow-xl">
                     Follow the preparation
                   </button>
@@ -242,22 +252,25 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Rest of the file remains as before but with slightly scaled down typography */}
-      {/* ... Latest News, About, Highlights ... */}
+      {/* THE NEWS SECTION */}
       <section className="max-w-7xl mx-auto px-6 py-20">
         <div className="flex justify-between items-end mb-12">
           <div>
             <h2 className="text-4xl md:text-5xl font-black uppercase tracking-tighter text-slate-900 italic">Latest News</h2>
             <div className="h-2 w-16 bg-red-600 mt-4"></div>
           </div>
+
+          {/* Navigation to the news page */}
           <Link href="/pages/news" className="group flex items-center gap-2 font-black uppercase text-[10px] tracking-widest text-slate-400 hover:text-red-600 transition-colors">
-            All News <ArrowRight size={14} />
+            All News <ArrowRight size={15} />
           </Link>
         </div>
-
+        
+        {/* The 3 card section */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {latestNews.length > 0 && (
             <>
+              {/* The big latest news box */}
               <Link href={`/pages/news/${latestNews[0].id}`} className="md:col-span-2 relative h-[450px] rounded-3xl overflow-hidden group shadow-xl">
                 <img src={latestNews[0].image_url} className="w-full h-full object-cover group-hover:scale-105 transition duration-700" alt="" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent" />
@@ -266,6 +279,8 @@ export default function HomePage() {
                   <p className="text-slate-300 line-clamp-2 italic not-italic text-sm">{latestNews[0].content}</p>
                 </div>
               </Link>
+
+              {/* The 2nd and 3rd latest news boxes */}
               <div className="flex flex-col gap-6">
                 {latestNews.slice(1, 3).map((news) => (
                   <Link key={news.id} href={`/pages/news/${news.id}`} className="flex-1 bg-white p-4 rounded-3xl shadow-sm border border-gray-100 hover:shadow-md transition-all group">
@@ -280,13 +295,17 @@ export default function HomePage() {
           )}
         </div>
       </section>
+      
 
+      {/* THE LITTLE ABOUT US SECTION AND A BUTOTN LINK TO THE ABOUT US PAGE */}
       <section className="bg-white py-20 border-y border-gray-100">
         <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center gap-12">
           <div className="md:w-1/2">
             <h2 className="text-[10px] font-black uppercase tracking-[0.4em] text-red-600 mb-4">Our Legacy</h2>
             <h3 className="text-5xl md:text-6xl font-black uppercase tracking-tighter text-slate-900 mb-6 italic leading-none">Faith.<br/>Family.<br/>Sindjelic.</h3>
             <p className="text-slate-600 leading-relaxed mb-8 italic not-italic">Founded on principles of community and heritage, Westgate Sindjelic is more than a football club. We are a family.</p>
+            
+            {/* The navigation button to the aboutUs page */}
             <Link href="/pages/aboutUs">
               <button className="bg-slate-900 text-white px-8 py-3.5 rounded-full font-black uppercase text-[10px] tracking-[0.2em] hover:bg-red-600 transition-colors shadow-lg">Learn Our Story</button>
             </Link>
@@ -296,22 +315,26 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+      
 
+      {/* HIGHLIGHT SECTION ON THE HOME PAGE, the video slider */}
       {!loading && highlights.length > 0 && (
         <section className="py-20 bg-slate-950">
           <div className="max-w-7xl mx-auto px-6 mb-12">
             <h2 className="text-4xl md:text-6xl font-black uppercase italic tracking-tighter text-white">Match <span className="text-red-600">Highlights</span></h2>
             <div className="h-2 w-20 bg-red-600 mt-4"></div>
           </div>
+          {/* Uses the video slider component */}
           <VideoSlider slides={highlights} onPlay={setActiveVideo} />
         </section>
       )}
 
+      {/* THE IFRAME FOR THE VIDEO BEING PLAYED */}
       {activeVideo && (
         <div className="fixed inset-0 z-[1000] bg-black/95 flex items-center justify-center p-4 md:p-12 backdrop-blur-md">
           {/* Close Button */}
           <button onClick={() => setActiveVideo(null)} className="absolute top-8 right-8 text-white/50 hover:text-red-600 transition-colors">
-            <X size={40} />
+            <X size={50} />
           </button>
 
           <div className="w-full max-w-5xl flex flex-col gap-4">
