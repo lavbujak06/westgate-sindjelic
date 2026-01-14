@@ -4,7 +4,7 @@ import { useUser } from '@/context/UserContext';
 import Navbar from '@/components/Navbar';
 import toast from 'react-hot-toast';
 import Loader from '@/components/Loader';
-import { MapPin, Phone, Clock, ArrowRight, Send, MessageSquare, Map as MapIcon } from 'lucide-react';
+import { MapPin, Phone, Clock, ArrowRight, Send, MessageSquare, Map as MapIcon, X } from 'lucide-react';
 
 const categories = [
   "General Inquiry", "Senior Men's Football", "Senior Women's Football",

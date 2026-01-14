@@ -13,6 +13,14 @@ const loginLimiter = rateLimit({
   legacyHeaders: false, // Disable the `X-RateLimit-*` headers
 });
 
+const signupLimiter = rateLimit({
+  windowMs: 60 * 60 * 1000, // 1 hour
+  max: 3, // Only 3 signups per hour per IP
+  message: { error: 'Too many accounts created from this IP. Please try again later.' },
+  standardHeaders: true,
+  legacyHeaders: false,
+});
+
 
 const router = Router();
 const SESSION_DURATION = 60 * 60 * 1000;
@@ -128,6 +136,30 @@ router.get('/admins', requireAdmin, async (req, res) => {
   } catch (err: any) {
     res.status(500).json({ error: err.message });
   }
+});
+
+
+// Add this new route below your /login route
+router.post('/signup', signupLimiter, async (req, res) => {
+  const { email, password, captchaToken } = req.body;
+
+  // 1. Verify CAPTCHA (Same logic as login)
+  if (!captchaToken) return res.status(400).json({ error: 'Captcha required' });
+  
+  const verifyRes = await fetch('https://challenges.cloudflare.com/turnstile/v0/siteverify', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+    body: `secret=${process.env.CLOUDFLARE_SECRET_KEY}&response=${captchaToken}`,
+  });
+  const verifyData: any = await verifyRes.json();
+  if (!verifyData.success) return res.status(403).json({ error: 'Invalid Captcha' });
+
+  // 2. Register the user via Supabase
+  const { data, error } = await supabase.auth.signUp({ email, password });
+
+  if (error) return res.status(400).json({ error: error.message });
+
+  return res.status(200).json({ message: 'Registration successful' });
 });
 
 export default router;
