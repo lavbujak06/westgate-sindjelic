@@ -3,7 +3,10 @@ import nodemailer from 'nodemailer';
 import multer from 'multer';
 
 const router = express.Router();
-const upload = multer({ storage: multer.memoryStorage() }); // Store file in RAM temporarily
+const upload = multer({ 
+  storage: multer.memoryStorage(),
+  limits: { fileSize: 24 * 1024 * 1024 } // 24MB per file
+});
 
 // Configure your "Sender" (Use a Gmail App Password or SendGrid)
 const transporter = nodemailer.createTransport({
@@ -14,8 +17,15 @@ const transporter = nodemailer.createTransport({
   }
 });
 
-router.post('/', upload.single('attachment'), async (req: any, res) => {
+router.post('/', upload.array('attachments', 10), async (req: any, res) => {
   const { name, email, phone, category, date, message, honeypot } = req.body;
+  // Add this inside router.post
+  if (req.files) {
+    const totalSize = req.files.reduce((acc: number, f: File) => acc + f.size, 0);
+    if (totalSize > 24 * 1024 * 1024) {
+      return res.status(400).json({ message: "Total attachments too large (Max 24MB)" });
+    }
+  }
 
   // 1. Honeypot check: If this hidden field is filled, it's a bot.
   if (honeypot) {
@@ -78,12 +88,12 @@ router.post('/', upload.single('attachment'), async (req: any, res) => {
       `
     };
 
-    // 2. Add attachment if it exists
-    if (req.file) {
-      mailOptions.attachments = [{
-        filename: req.file.originalname,
-        content: req.file.buffer
-      }];
+    // 2. Add attachments if they exist
+    if (req.files && req.files.length > 0) {
+      mailOptions.attachments = req.files.map((file: any) => ({
+        filename: file.originalname,
+        content: file.buffer
+      }));
     }
 
     await transporter.sendMail(mailOptions);

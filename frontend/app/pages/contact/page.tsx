@@ -21,24 +21,34 @@ export default function ContactPage() {
     name: '', email: '', phone: '', category: 'General Inquiry',
     date: '', message: '', honeypot: ''
   });
-  const [file, setFile] = useState<File | null>(null);
+  const [file, setFile] = useState<File[]>([]);
 
   useEffect(() => {
     if (user?.email) setFormData(prev => ({ ...prev, email: user.email }));
   }, [user]);
 
+  const removeFile = (index: number) => {
+    setFile(prev => prev.filter((_, i) => i !== index));
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (formData.honeypot) return;
-    if (file && file.size > 10 * 1024 * 1024) {
-      toast.error("File is too large. Max size is 10MB.");
-      return;
+    // Calculate total size of all selected files
+    const totalSize = file.reduce((acc, f) => acc + f.size, 0);
+    const MAX_TOTAL_SIZE = 24 * 1024 * 1024; // 24MB
+
+    if (totalSize > MAX_TOTAL_SIZE) {
+      toast.error("Combined file size exceeds 24MB limit.");
+      return; // Stop the execution here
     }
     setLoading(true);
 
     const data = new FormData();
     Object.entries(formData).forEach(([key, val]) => data.append(key, val));
-    if (file) data.append('attachment', file);
+    file.forEach(( f ) => {
+      data.append('attachments', f);
+    });
 
     try {
       const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/contact`, {
@@ -107,7 +117,7 @@ export default function ContactPage() {
             <div className="bg-red-600/10 p-2 rounded-lg">
               <MapIcon className="text-red-600" size={20} />
             </div>
-            <h2 className="text-sm font-black text-white uppercase tracking-[0.3em]">01. Visit the Grounds</h2>
+            <h2 className="text-sm font-black text-white uppercase tracking-[0.3em]">Visit the Grounds</h2>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-0 bg-white rounded-[3.5rem] shadow-2xl overflow-hidden">
@@ -170,7 +180,7 @@ export default function ContactPage() {
             <div className="bg-red-600/10 p-2 rounded-lg">
               <MessageSquare className="text-red-600" size={20} />
             </div>
-            <h2 className="text-sm font-black text-white uppercase tracking-[0.3em]">02. Email Inquiry</h2>
+            <h2 className="text-sm font-black text-white uppercase tracking-[0.3em]">Email Inquiry</h2>
           </div>
 
           <div className="bg-slate-900/50 border border-slate-800 rounded-[4rem] p-8 lg:p-16 shadow-3xl backdrop-blur-sm">
@@ -190,7 +200,7 @@ export default function ContactPage() {
               </div>
 
               <div className="space-y-2">
-                  <label className="text-[10px] font-black text-slate-500 uppercase tracking-widest ml-1">Phone Number</label>
+                  <label className="text-[10px] font-black text-slate-500 uppercase tracking-widest ml-1">Phone Number (Optional)</label>
                   <input className="w-full bg-slate-950/50 border border-slate-800 rounded-2xl p-5 text-white text-sm focus:border-red-600 focus:ring-1 focus:ring-red-600 outline-none transition-all" 
                   value={formData.phone} onChange={e => setFormData({...formData, phone: e.target.value})} />
               </div>
@@ -216,19 +226,78 @@ export default function ContactPage() {
               </div>
 
               <div className="md:col-span-2">
-                  <label className="text-[10px] font-black text-slate-500 uppercase tracking-widest ml-1 mb-2 block">Attachments (JPG, PNG, PDF)</label>
-                  <div className="group relative w-full h-32 bg-slate-950/30 border-2 border-dashed border-slate-800 rounded-3xl flex items-center justify-center hover:border-red-600 transition-all cursor-pointer">
-                    <input type="file" 
+                <div className="flex justify-between items-end mb-2 px-1">
+                  <label className="text-[10px] font-black text-slate-500 uppercase tracking-widest block">
+                    Attachments (Max 24MB total)
+                  </label>
+                  <span className={`text-[10px] font-bold uppercase italic ${
+                    (file.reduce((acc: number, f: File) => acc + f.size, 0) / (24 * 1024 * 1024)) > 0.9 
+                    ? 'text-red-600' : 'text-slate-400'
+                  }`}>
+                    {(file.reduce((acc: number, f: File) => acc + f.size, 0) / (1024 * 1024)).toFixed(2)} / 24 MB
+                  </span>
+                </div>
+
+                {/* SIZE PROGRESS BAR */}
+                <div className="w-full h-1.5 bg-slate-800 rounded-full mb-6 overflow-hidden">
+                  <div 
+                    className={`h-full transition-all duration-500 ease-out ${
+                      (file.reduce((acc: number, f: File) => acc + f.size, 0) / (24 * 1024 * 1024)) > 0.9 
+                      ? 'bg-red-600' : 'bg-white'
+                    }`}
+                    style={{ 
+                      width: `${Math.min((file.reduce((acc: number, f: File) => acc + f.size, 0) / (24 * 1024 * 1024)) * 100, 100)}%` 
+                    }}
+                  />
+                </div>
+                
+                {/* UPLOAD BOX */}
+                <div className="group relative w-full h-32 bg-slate-950/30 border-2 border-dashed border-slate-800 rounded-3xl flex items-center justify-center hover:border-red-600 transition-all cursor-pointer mb-6">
+                  <input 
+                    type="file" 
+                    multiple
                     accept=".jpg,.jpeg,.png,.pdf" 
                     className="absolute inset-0 w-full h-full opacity-0 cursor-pointer z-10" 
-                    onChange={e => setFile(e.target.files?.[0] || null)} />
-                    <div className="text-center">
-                      <p className="text-[10px] font-black text-slate-500 uppercase tracking-widest group-hover:text-red-600 transition-colors">
-                        {file ? file.name : 'Click or Drag to Upload'}
-                      </p>
-                      <p className="text-[8px] text-slate-600 mt-1 uppercase">Max File Size: 10MB</p>
-                    </div>
+                    onChange={e => {
+                      const newFiles = Array.from(e.target.files || []);
+                      setFile(prev => [...prev, ...newFiles]);
+                    }} 
+                  />
+                  <div className="text-center">
+                    <p className="text-[10px] font-black text-slate-500 uppercase tracking-widest group-hover:text-red-600 transition-colors">
+                      Click or Drag to Add Files
+                    </p>
                   </div>
+                </div>
+
+                {/* FILE LIST & DELETE ON HOVER */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                  {file.map((f, index) => (
+                    <div 
+                      key={`${f.name}-${index}`}
+                      className="group relative bg-slate-900 border border-slate-800 p-4 rounded-2xl flex items-center justify-between overflow-hidden"
+                    >
+                      <div className="flex flex-col min-w-0">
+                        <span className="text-[10px] font-black text-white uppercase italic truncate pr-8">
+                          {f.name}
+                        </span>
+                        <span className="text-[8px] text-slate-500 uppercase">
+                          {(f.size / (1024 * 1024)).toFixed(2)} MB
+                        </span>
+                      </div>
+
+                      {/* DELETE BUTTON - VISIBLE ON HOVER */}
+                      <button
+                        type="button"
+                        onClick={() => removeFile(index)}
+                        className="absolute right-3 opacity-0 group-hover:opacity-100 bg-red-600 hover:bg-black text-white p-2 rounded-xl transition-all duration-200 z-20"
+                      >
+                        {/* Using a simple X if Lucide isn't imported, but ensure 'X' is in your lucide-react imports */}
+                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                      </button>
+                    </div>
+                  ))}
+                </div>
               </div>
 
               <button 
