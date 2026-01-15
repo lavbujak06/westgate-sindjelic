@@ -104,4 +104,45 @@ router.post('/', upload.array('attachments', 10), async (req: any, res) => {
   }
 });
 
+
+
+router.post('/system-alert', async (req, res) => {
+  const { db, storage } = req.body;
+
+  try {
+    const mailOptions = {
+      from: `"SYSTEM SENTINEL"`,
+      to: 'bujaklav@gmail.com',
+      subject: `⚠️ CAPACITY ALERT: WESTGATE SINDJELIC PROJECT`,
+      html: `
+        <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; border: 1px solid #e2e8f0; border-radius: 12px; overflow: hidden;">
+          <div style="background-color: #dc2626; color: white; padding: 20px; text-align: center;">
+            <h1 style="margin: 0; font-size: 18px; text-transform: uppercase;">Storage Limit Warning</h1>
+          </div>
+          <div style="padding: 30px;">
+            <p>Admin, your project is approaching the <strong>Supabase Free Tier</strong> limits.</p>
+            <table style="width: 100%; border-collapse: collapse; margin: 20px 0;">
+              <tr>
+                <td style="padding: 10px; border-bottom: 1px solid #f1f5f9; font-weight: bold;">Database (500MB Limit)</td>
+                <td style="padding: 10px; border-bottom: 1px solid #f1f5f9; text-align: right; color: ${db > 400 ? '#dc2626' : '#1e293b'}">${db} MB</td>
+              </tr>
+              <tr>
+                <td style="padding: 10px; border-bottom: 1px solid #f1f5f9; font-weight: bold;">Storage (1024MB Limit)</td>
+                <td style="padding: 10px; border-bottom: 1px solid #f1f5f9; text-align: right; color: ${storage > 800 ? '#dc2626' : '#1e293b'}">${storage} MB</td>
+              </tr>
+            </table>
+            <p style="font-size: 12px; color: #64748b;">This alert was triggered by an Admin login on the dashboard.</p>
+          </div>
+        </div>
+      `
+    };
+
+    await transporter.sendMail(mailOptions);
+    res.status(200).json({ message: "Alert Sent" });
+  } catch (error) {
+    console.error("Alert Route Error:", error);
+    res.status(500).json({ error: "Failed to send alert" });
+  }
+});
+
 export default router;

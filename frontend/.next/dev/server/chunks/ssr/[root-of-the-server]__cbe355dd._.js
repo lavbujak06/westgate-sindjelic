@@ -1221,6 +1221,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$
 ;
 ;
 function HomePage() {
+    // State variables
     const [nextMatch, setNextMatch] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(null);
     const [timeLeft, setTimeLeft] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])({
         days: 0,
@@ -1233,6 +1234,8 @@ function HomePage() {
     const [highlights, setHighlights] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])([]);
     const [activeVideo, setActiveVideo] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(null);
     const [loading, setLoading] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(true);
+    // FUNCTNIONS START HERE
+    // Function to parse match date and time into a Date object
     const getMatchDateObject = (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useCallback"])((dateStr, timeStr)=>{
         if (!dateStr) return new Date(0);
         const datePart = dateStr.split(' ')[0];
@@ -1246,6 +1249,7 @@ function HomePage() {
         }
         return new Date(year, month - 1, day, hours, minutes, 0);
     }, []);
+    // Function to fetch matches from Supabase and sets the next match being either a match or 'OFF-SEASON'
     const fetchMatches = (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useCallback"])(async ()=>{
         try {
             setLoading(true);
@@ -1269,6 +1273,7 @@ function HomePage() {
     }, [
         getMatchDateObject
     ]);
+    // useEffect Countdown timer, sets the time left and sets it to either live or finished depending on the time
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useEffect"])(()=>{
         if (!nextMatch || nextMatch === 'OFF_SEASON') return;
         const target = getMatchDateObject(nextMatch.date_text, nextMatch.time_text);
@@ -1303,6 +1308,7 @@ function HomePage() {
         nextMatch,
         getMatchDateObject
     ]);
+    // Fetch news and highlights from Supabase and set the states latestNews and highlights
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useEffect"])(()=>{
         fetchMatches();
         async function fetchContent() {
@@ -1319,6 +1325,7 @@ function HomePage() {
     }, [
         fetchMatches
     ]);
+    // Updates the latest match after a match has finished
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useEffect"])(()=>{
         if (timeLeft.status === 'FINISHED') fetchMatches();
     }, [
@@ -1334,7 +1341,7 @@ function HomePage() {
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$components$2f$Navbar$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
                 fileName: "[project]/frontend/app/page.tsx",
-                lineNumber: 117,
+                lineNumber: 126,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$components$2f$Hero$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
@@ -1342,7 +1349,7 @@ function HomePage() {
                 message: "Faith. Family. Football."
             }, void 0, false, {
                 fileName: "[project]/frontend/app/page.tsx",
-                lineNumber: 118,
+                lineNumber: 127,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -1357,7 +1364,7 @@ function HomePage() {
                                     className: "h-10 w-2 bg-red-600 rounded-full"
                                 }, void 0, false, {
                                     fileName: "[project]/frontend/app/page.tsx",
-                                    lineNumber: 126,
+                                    lineNumber: 136,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
@@ -1366,20 +1373,20 @@ function HomePage() {
                                         "Next Match ",
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("br", {}, void 0, false, {
                                             fileName: "[project]/frontend/app/page.tsx",
-                                            lineNumber: 128,
+                                            lineNumber: 138,
                                             columnNumber: 28
                                         }, this),
                                         " Senior Men"
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/frontend/app/page.tsx",
-                                    lineNumber: 127,
+                                    lineNumber: 137,
                                     columnNumber: 15
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/frontend/app/page.tsx",
-                            lineNumber: 125,
+                            lineNumber: 135,
                             columnNumber: 13
                         }, this),
                         !loading && nextMatch && nextMatch !== 'OFF_SEASON' ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1389,7 +1396,7 @@ function HomePage() {
                                     className: "absolute -inset-1 bg-gradient-to-r from-red-600 to-slate-800 rounded-3xl blur opacity-20 group-hover:opacity-30 transition duration-1000"
                                 }, void 0, false, {
                                     fileName: "[project]/frontend/app/page.tsx",
-                                    lineNumber: 136,
+                                    lineNumber: 146,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1411,7 +1418,7 @@ function HomePage() {
                                                                         children: "Home"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/frontend/app/page.tsx",
-                                                                        lineNumber: 146,
+                                                                        lineNumber: 156,
                                                                         columnNumber: 25
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
@@ -1419,13 +1426,13 @@ function HomePage() {
                                                                         children: homeTeam
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/frontend/app/page.tsx",
-                                                                        lineNumber: 147,
+                                                                        lineNumber: 157,
                                                                         columnNumber: 25
                                                                     }, this)
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/frontend/app/page.tsx",
-                                                                lineNumber: 145,
+                                                                lineNumber: 155,
                                                                 columnNumber: 23
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1437,17 +1444,17 @@ function HomePage() {
                                                                         children: "VS"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/frontend/app/page.tsx",
-                                                                        lineNumber: 152,
+                                                                        lineNumber: 162,
                                                                         columnNumber: 27
                                                                     }, this)
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/frontend/app/page.tsx",
-                                                                    lineNumber: 151,
+                                                                    lineNumber: 161,
                                                                     columnNumber: 25
                                                                 }, this)
                                                             }, void 0, false, {
                                                                 fileName: "[project]/frontend/app/page.tsx",
-                                                                lineNumber: 150,
+                                                                lineNumber: 160,
                                                                 columnNumber: 23
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1458,7 +1465,7 @@ function HomePage() {
                                                                         children: "Away"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/frontend/app/page.tsx",
-                                                                        lineNumber: 157,
+                                                                        lineNumber: 167,
                                                                         columnNumber: 25
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
@@ -1466,19 +1473,19 @@ function HomePage() {
                                                                         children: awayTeam
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/frontend/app/page.tsx",
-                                                                        lineNumber: 158,
+                                                                        lineNumber: 168,
                                                                         columnNumber: 25
                                                                     }, this)
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/frontend/app/page.tsx",
-                                                                lineNumber: 156,
+                                                                lineNumber: 166,
                                                                 columnNumber: 23
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/frontend/app/page.tsx",
-                                                        lineNumber: 144,
+                                                        lineNumber: 154,
                                                         columnNumber: 21
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1492,7 +1499,7 @@ function HomePage() {
                                                                         size: 16
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/frontend/app/page.tsx",
-                                                                        lineNumber: 164,
+                                                                        lineNumber: 174,
                                                                         columnNumber: 27
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1504,13 +1511,13 @@ function HomePage() {
                                                                         ]
                                                                     }, void 0, true, {
                                                                         fileName: "[project]/frontend/app/page.tsx",
-                                                                        lineNumber: 165,
+                                                                        lineNumber: 175,
                                                                         columnNumber: 27
                                                                     }, this)
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/frontend/app/page.tsx",
-                                                                lineNumber: 163,
+                                                                lineNumber: 173,
                                                                 columnNumber: 24
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1521,7 +1528,7 @@ function HomePage() {
                                                                         size: 16
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/frontend/app/page.tsx",
-                                                                        lineNumber: 168,
+                                                                        lineNumber: 178,
                                                                         columnNumber: 25
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -1534,25 +1541,25 @@ function HomePage() {
                                                                         children: nextMatch.venue
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/frontend/app/page.tsx",
-                                                                        lineNumber: 169,
+                                                                        lineNumber: 179,
                                                                         columnNumber: 25
                                                                     }, this)
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/frontend/app/page.tsx",
-                                                                lineNumber: 167,
+                                                                lineNumber: 177,
                                                                 columnNumber: 23
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/frontend/app/page.tsx",
-                                                        lineNumber: 162,
+                                                        lineNumber: 172,
                                                         columnNumber: 21
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/frontend/app/page.tsx",
-                                                lineNumber: 143,
+                                                lineNumber: 153,
                                                 columnNumber: 19
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1564,12 +1571,12 @@ function HomePage() {
                                                         children: "Kickoff Started"
                                                     }, void 0, false, {
                                                         fileName: "[project]/frontend/app/page.tsx",
-                                                        lineNumber: 191,
+                                                        lineNumber: 201,
                                                         columnNumber: 25
                                                     }, this)
                                                 }, void 0, false, {
                                                     fileName: "[project]/frontend/app/page.tsx",
-                                                    lineNumber: 186,
+                                                    lineNumber: 196,
                                                     columnNumber: 23
                                                 }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                     className: "w-full",
@@ -1579,7 +1586,7 @@ function HomePage() {
                                                             children: "Kickoff Countdown"
                                                         }, void 0, false, {
                                                             fileName: "[project]/frontend/app/page.tsx",
-                                                            lineNumber: 195,
+                                                            lineNumber: 205,
                                                             columnNumber: 25
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1609,7 +1616,7 @@ function HomePage() {
                                                                             children: String(unit.val).padStart(2, '0')
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/frontend/app/page.tsx",
-                                                                            lineNumber: 204,
+                                                                            lineNumber: 214,
                                                                             columnNumber: 31
                                                                         }, this),
                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1617,48 +1624,49 @@ function HomePage() {
                                                                             children: unit.label
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/frontend/app/page.tsx",
-                                                                            lineNumber: 207,
+                                                                            lineNumber: 217,
                                                                             columnNumber: 31
                                                                         }, this)
                                                                     ]
                                                                 }, i, true, {
                                                                     fileName: "[project]/frontend/app/page.tsx",
-                                                                    lineNumber: 203,
+                                                                    lineNumber: 213,
                                                                     columnNumber: 29
                                                                 }, this))
                                                         }, void 0, false, {
                                                             fileName: "[project]/frontend/app/page.tsx",
-                                                            lineNumber: 196,
+                                                            lineNumber: 206,
                                                             columnNumber: 25
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/frontend/app/page.tsx",
-                                                    lineNumber: 194,
+                                                    lineNumber: 204,
                                                     columnNumber: 23
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/frontend/app/page.tsx",
-                                                lineNumber: 184,
+                                                lineNumber: 194,
                                                 columnNumber: 19
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/frontend/app/page.tsx",
-                                        lineNumber: 140,
+                                        lineNumber: 150,
                                         columnNumber: 17
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/frontend/app/page.tsx",
-                                    lineNumber: 139,
+                                    lineNumber: 149,
                                     columnNumber: 15
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/frontend/app/page.tsx",
-                            lineNumber: 135,
+                            lineNumber: 145,
                             columnNumber: 13
-                        }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                        }, this) : // This is the OFF-SEASON card if there is no future senior mens matches in the DB
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                             className: "relative overflow-hidden bg-slate-900 rounded-[2.5rem] border border-slate-800 p-12 md:p-20 text-center max-w-5xl mx-auto shadow-2xl",
                             children: [
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1668,12 +1676,12 @@ function HomePage() {
                                         children: "Westgate"
                                     }, void 0, false, {
                                         fileName: "[project]/frontend/app/page.tsx",
-                                        lineNumber: 221,
+                                        lineNumber: 231,
                                         columnNumber: 17
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/frontend/app/page.tsx",
-                                    lineNumber: 220,
+                                    lineNumber: 230,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1684,7 +1692,7 @@ function HomePage() {
                                             children: "Status: Off-Season"
                                         }, void 0, false, {
                                             fileName: "[project]/frontend/app/page.tsx",
-                                            lineNumber: 225,
+                                            lineNumber: 235,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
@@ -1696,13 +1704,13 @@ function HomePage() {
                                                     children: "never stops."
                                                 }, void 0, false, {
                                                     fileName: "[project]/frontend/app/page.tsx",
-                                                    lineNumber: 229,
+                                                    lineNumber: 239,
                                                     columnNumber: 33
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/frontend/app/page.tsx",
-                                            lineNumber: 228,
+                                            lineNumber: 238,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1710,7 +1718,7 @@ function HomePage() {
                                             children: "Preparing for the 2026 Season. Keep an eye on our latest news for trial dates, community events, and fixture announcements."
                                         }, void 0, false, {
                                             fileName: "[project]/frontend/app/page.tsx",
-                                            lineNumber: 231,
+                                            lineNumber: 241,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
@@ -1720,35 +1728,35 @@ function HomePage() {
                                                 children: "Follow the preparation"
                                             }, void 0, false, {
                                                 fileName: "[project]/frontend/app/page.tsx",
-                                                lineNumber: 235,
+                                                lineNumber: 245,
                                                 columnNumber: 19
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/frontend/app/page.tsx",
-                                            lineNumber: 234,
+                                            lineNumber: 244,
                                             columnNumber: 17
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/frontend/app/page.tsx",
-                                    lineNumber: 224,
+                                    lineNumber: 234,
                                     columnNumber: 15
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/frontend/app/page.tsx",
-                            lineNumber: 218,
+                            lineNumber: 229,
                             columnNumber: 13
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/frontend/app/page.tsx",
-                    lineNumber: 121,
+                    lineNumber: 131,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/frontend/app/page.tsx",
-                lineNumber: 120,
+                lineNumber: 130,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -1764,20 +1772,20 @@ function HomePage() {
                                         children: "Latest News"
                                     }, void 0, false, {
                                         fileName: "[project]/frontend/app/page.tsx",
-                                        lineNumber: 250,
+                                        lineNumber: 259,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                         className: "h-2 w-16 bg-red-600 mt-4"
                                     }, void 0, false, {
                                         fileName: "[project]/frontend/app/page.tsx",
-                                        lineNumber: 251,
+                                        lineNumber: 260,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/frontend/app/page.tsx",
-                                lineNumber: 249,
+                                lineNumber: 258,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
@@ -1786,22 +1794,22 @@ function HomePage() {
                                 children: [
                                     "All News ",
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$arrow$2d$right$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__ArrowRight$3e$__["ArrowRight"], {
-                                        size: 14
+                                        size: 15
                                     }, void 0, false, {
                                         fileName: "[project]/frontend/app/page.tsx",
-                                        lineNumber: 254,
+                                        lineNumber: 265,
                                         columnNumber: 22
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/frontend/app/page.tsx",
-                                lineNumber: 253,
+                                lineNumber: 264,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/frontend/app/page.tsx",
-                        lineNumber: 248,
+                        lineNumber: 257,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1818,14 +1826,14 @@ function HomePage() {
                                             alt: ""
                                         }, void 0, false, {
                                             fileName: "[project]/frontend/app/page.tsx",
-                                            lineNumber: 262,
+                                            lineNumber: 275,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                             className: "absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent"
                                         }, void 0, false, {
                                             fileName: "[project]/frontend/app/page.tsx",
-                                            lineNumber: 263,
+                                            lineNumber: 276,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1836,7 +1844,7 @@ function HomePage() {
                                                     children: latestNews[0].title
                                                 }, void 0, false, {
                                                     fileName: "[project]/frontend/app/page.tsx",
-                                                    lineNumber: 265,
+                                                    lineNumber: 278,
                                                     columnNumber: 19
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1844,19 +1852,19 @@ function HomePage() {
                                                     children: latestNews[0].content
                                                 }, void 0, false, {
                                                     fileName: "[project]/frontend/app/page.tsx",
-                                                    lineNumber: 266,
+                                                    lineNumber: 279,
                                                     columnNumber: 19
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/frontend/app/page.tsx",
-                                            lineNumber: 264,
+                                            lineNumber: 277,
                                             columnNumber: 17
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/frontend/app/page.tsx",
-                                    lineNumber: 261,
+                                    lineNumber: 274,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1873,12 +1881,12 @@ function HomePage() {
                                                         alt: ""
                                                     }, void 0, false, {
                                                         fileName: "[project]/frontend/app/page.tsx",
-                                                        lineNumber: 273,
+                                                        lineNumber: 288,
                                                         columnNumber: 23
                                                     }, this)
                                                 }, void 0, false, {
                                                     fileName: "[project]/frontend/app/page.tsx",
-                                                    lineNumber: 272,
+                                                    lineNumber: 287,
                                                     columnNumber: 21
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h4", {
@@ -1886,31 +1894,31 @@ function HomePage() {
                                                     children: news.title
                                                 }, void 0, false, {
                                                     fileName: "[project]/frontend/app/page.tsx",
-                                                    lineNumber: 275,
+                                                    lineNumber: 290,
                                                     columnNumber: 21
                                                 }, this)
                                             ]
                                         }, news.id, true, {
                                             fileName: "[project]/frontend/app/page.tsx",
-                                            lineNumber: 271,
+                                            lineNumber: 286,
                                             columnNumber: 19
                                         }, this))
                                 }, void 0, false, {
                                     fileName: "[project]/frontend/app/page.tsx",
-                                    lineNumber: 269,
+                                    lineNumber: 284,
                                     columnNumber: 15
                                 }, this)
                             ]
                         }, void 0, true)
                     }, void 0, false, {
                         fileName: "[project]/frontend/app/page.tsx",
-                        lineNumber: 258,
+                        lineNumber: 270,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/frontend/app/page.tsx",
-                lineNumber: 247,
+                lineNumber: 256,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -1926,7 +1934,7 @@ function HomePage() {
                                     children: "Our Legacy"
                                 }, void 0, false, {
                                     fileName: "[project]/frontend/app/page.tsx",
-                                    lineNumber: 287,
+                                    lineNumber: 304,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
@@ -1935,20 +1943,20 @@ function HomePage() {
                                         "Faith.",
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("br", {}, void 0, false, {
                                             fileName: "[project]/frontend/app/page.tsx",
-                                            lineNumber: 288,
+                                            lineNumber: 305,
                                             columnNumber: 134
                                         }, this),
                                         "Family.",
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("br", {}, void 0, false, {
                                             fileName: "[project]/frontend/app/page.tsx",
-                                            lineNumber: 288,
+                                            lineNumber: 305,
                                             columnNumber: 146
                                         }, this),
                                         "Sindjelic."
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/frontend/app/page.tsx",
-                                    lineNumber: 288,
+                                    lineNumber: 305,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1956,7 +1964,7 @@ function HomePage() {
                                     children: "Founded on principles of community and heritage, Westgate Sindjelic is more than a football club. We are a family."
                                 }, void 0, false, {
                                     fileName: "[project]/frontend/app/page.tsx",
-                                    lineNumber: 289,
+                                    lineNumber: 306,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
@@ -1966,18 +1974,18 @@ function HomePage() {
                                         children: "Learn Our Story"
                                     }, void 0, false, {
                                         fileName: "[project]/frontend/app/page.tsx",
-                                        lineNumber: 291,
+                                        lineNumber: 310,
                                         columnNumber: 15
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/frontend/app/page.tsx",
-                                    lineNumber: 290,
+                                    lineNumber: 309,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/frontend/app/page.tsx",
-                            lineNumber: 286,
+                            lineNumber: 303,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1989,23 +1997,23 @@ function HomePage() {
                                 className: "object-contain"
                             }, void 0, false, {
                                 fileName: "[project]/frontend/app/page.tsx",
-                                lineNumber: 295,
+                                lineNumber: 314,
                                 columnNumber: 13
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/frontend/app/page.tsx",
-                            lineNumber: 294,
+                            lineNumber: 313,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/frontend/app/page.tsx",
-                    lineNumber: 285,
+                    lineNumber: 302,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/frontend/app/page.tsx",
-                lineNumber: 284,
+                lineNumber: 301,
                 columnNumber: 7
             }, this),
             !loading && highlights.length > 0 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -2023,26 +2031,26 @@ function HomePage() {
                                         children: "Highlights"
                                     }, void 0, false, {
                                         fileName: "[project]/frontend/app/page.tsx",
-                                        lineNumber: 303,
+                                        lineNumber: 324,
                                         columnNumber: 112
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/frontend/app/page.tsx",
-                                lineNumber: 303,
+                                lineNumber: 324,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                 className: "h-2 w-20 bg-red-600 mt-4"
                             }, void 0, false, {
                                 fileName: "[project]/frontend/app/page.tsx",
-                                lineNumber: 304,
+                                lineNumber: 325,
                                 columnNumber: 13
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/frontend/app/page.tsx",
-                        lineNumber: 302,
+                        lineNumber: 323,
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$components$2f$VideoSlider$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
@@ -2050,13 +2058,13 @@ function HomePage() {
                         onPlay: setActiveVideo
                     }, void 0, false, {
                         fileName: "[project]/frontend/app/page.tsx",
-                        lineNumber: 306,
+                        lineNumber: 328,
                         columnNumber: 11
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/frontend/app/page.tsx",
-                lineNumber: 301,
+                lineNumber: 322,
                 columnNumber: 9
             }, this),
             activeVideo && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2066,15 +2074,15 @@ function HomePage() {
                         onClick: ()=>setActiveVideo(null),
                         className: "absolute top-8 right-8 text-white/50 hover:text-red-600 transition-colors",
                         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$x$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__X$3e$__["X"], {
-                            size: 40
+                            size: 50
                         }, void 0, false, {
                             fileName: "[project]/frontend/app/page.tsx",
-                            lineNumber: 314,
+                            lineNumber: 337,
                             columnNumber: 13
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/frontend/app/page.tsx",
-                        lineNumber: 313,
+                        lineNumber: 336,
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2092,12 +2100,12 @@ function HomePage() {
                                     allowFullScreen: true
                                 }, void 0, false, {
                                     fileName: "[project]/frontend/app/page.tsx",
-                                    lineNumber: 320,
+                                    lineNumber: 343,
                                     columnNumber: 15
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/frontend/app/page.tsx",
-                                lineNumber: 319,
+                                lineNumber: 342,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2113,41 +2121,41 @@ function HomePage() {
                                             children: "Watch directly on YouTube"
                                         }, void 0, false, {
                                             fileName: "[project]/frontend/app/page.tsx",
-                                            lineNumber: 334,
+                                            lineNumber: 357,
                                             columnNumber: 17
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/frontend/app/page.tsx",
-                                    lineNumber: 332,
+                                    lineNumber: 355,
                                     columnNumber: 15
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/frontend/app/page.tsx",
-                                lineNumber: 331,
+                                lineNumber: 354,
                                 columnNumber: 13
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/frontend/app/page.tsx",
-                        lineNumber: 317,
+                        lineNumber: 340,
                         columnNumber: 11
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/frontend/app/page.tsx",
-                lineNumber: 311,
+                lineNumber: 334,
                 columnNumber: 9
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$components$2f$Footer$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
                 fileName: "[project]/frontend/app/page.tsx",
-                lineNumber: 347,
+                lineNumber: 370,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/frontend/app/page.tsx",
-        lineNumber: 116,
+        lineNumber: 125,
         columnNumber: 5
     }, this);
 }

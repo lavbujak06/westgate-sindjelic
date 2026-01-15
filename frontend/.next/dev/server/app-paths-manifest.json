@@ -1,8 +1,7 @@
 {
-  "/page": "app/page.js",
-  "/pages/aboutUs/page": "app/pages/aboutUs/page.js",
-  "/pages/contact/page": "app/pages/contact/page.js",
-  "/pages/juniors/page": "app/pages/juniors/page.js",
-  "/pages/men/seniors/page": "app/pages/men/seniors/page.js",
-  "/pages/news/page": "app/pages/news/page.js"
+  "/_not-found/page": "app/_not-found/page.js",
+  "/admin/coaches/page": "app/admin/coaches/page.js",
+  "/admin/dashboard/page": "app/admin/dashboard/page.js",
+  "/login/page": "app/login/page.js",
+  "/page": "app/page.js"
 }
