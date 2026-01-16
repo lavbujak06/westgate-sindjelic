@@ -5,7 +5,6 @@ import { supabaseClient } from '@/lib/supabaseClient';
 import Footer from '@/components/Footer';
 import Hero from '@/components/Hero';
 import Navbar from '@/components/Navbar';
-import VideoSlider from '@/components/VideoSlider';
 import Link from 'next/link';
 import { Calendar, MapPin, ArrowRight, X, Timer, Radio } from 'lucide-react';
 import Image from 'next/image';
@@ -17,8 +16,6 @@ export default function HomePage() {
     days: 0, hours: 0, minutes: 0, seconds: 0, status: 'UPCOMING' 
   });
   const [latestNews, setLatestNews] = useState<any[]>([]);
-  const [highlights, setHighlights] = useState<any[]>([]);
-  const [activeVideo, setActiveVideo] = useState<string | null>(null);
   const [loading, setLoading] = useState(true);
 
 
@@ -98,18 +95,6 @@ export default function HomePage() {
     }, 1000);
     return () => clearInterval(interval);
   }, [nextMatch, getMatchDateObject]);
-
-  // Fetch news and highlights from Supabase and set the states latestNews and highlights
-  useEffect(() => {
-    fetchMatches();
-    async function fetchContent() {
-      const { data: newsData } = await supabaseClient.from('news').select('*').eq('published', true).order('created_at', { ascending: false }).limit(3);
-      setLatestNews(newsData || []);
-      const { data: videoData } = await supabaseClient.from('highlights').select('*').eq('published', true).order('created_at', { ascending: false });
-      setHighlights(videoData || []);
-    }
-    fetchContent();
-  }, [fetchMatches]);
 
   // Updates the latest match after a match has finished
   useEffect(() => {
@@ -315,58 +300,6 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-      
-
-      {/* HIGHLIGHT SECTION ON THE HOME PAGE, the video slider */}
-      {!loading && highlights.length > 0 && (
-        <section className="py-20 bg-slate-950">
-          <div className="max-w-7xl mx-auto px-6 mb-12">
-            <h2 className="text-4xl md:text-6xl font-black uppercase italic tracking-tighter text-white">Match <span className="text-red-600">Highlights</span></h2>
-            <div className="h-2 w-20 bg-red-600 mt-4"></div>
-          </div>
-          {/* Uses the video slider component */}
-          <VideoSlider slides={highlights} onPlay={setActiveVideo} />
-        </section>
-      )}
-
-      {/* THE IFRAME FOR THE VIDEO BEING PLAYED */}
-      {activeVideo && (
-        <div className="fixed inset-0 z-[1000] bg-black/95 flex items-center justify-center p-4 md:p-12 backdrop-blur-md">
-          {/* Close Button */}
-          <button onClick={() => setActiveVideo(null)} className="absolute top-8 right-8 text-white/50 hover:text-red-600 transition-colors">
-            <X size={50} />
-          </button>
-
-          <div className="w-full max-w-5xl flex flex-col gap-4">
-            {/* The Video Player */}
-            <div className="w-full aspect-video rounded-3xl overflow-hidden shadow-2xl border border-white/10 bg-black">
-              <iframe 
-                width="100%" 
-                height="100%" 
-                src={`https://www.youtube.com/embed/${activeVideo}?autoplay=1`} 
-                title="Video" 
-                frameBorder="0" 
-                allow="autoplay; encrypted-media; picture-in-picture"
-                allowFullScreen
-              ></iframe>
-            </div>
-
-            <div className="text-center">
-              <p className="text-slate-500 text-[10px] uppercase tracking-widest italic">
-                Video not loading? 
-                <a 
-                  href={`https://www.youtube.com/watch?v=${activeVideo}`} 
-                  target="_blank" 
-                  className="ml-2 text-red-600 hover:text-red-400 font-black transition-colors underline underline-offset-4"
-                >
-                  Watch directly on YouTube
-                </a>
-              </p>
-            </div>
-          </div>
-        </div>
-      )}
-
       <Footer />
     </main>
   );
