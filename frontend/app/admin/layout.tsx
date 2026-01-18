@@ -15,7 +15,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
     { label: 'User Accounts', href: '/admin/accounts', icon: '' },
     { label: 'Team Gallery', href: '/admin/gallery', icon: '' },
     { label: 'Sponsor Management', href: '/admin/sponsors', icon: '' },
-    { label: 'Highlights Management', href: '/admin/highlights', icon: '' },
+    // { label: 'Highlights Management', href: '/admin/highlights', icon: '' },   To be used in the future
     { label: 'Security Logs', href: '/admin/audit-logs', icon: '' },
   ];
 

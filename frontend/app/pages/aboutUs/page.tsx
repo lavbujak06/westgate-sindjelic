@@ -83,14 +83,14 @@ export default function AboutPage() {
                 </h2>
             </div>
             
-            {/* Split long text into styled blocks */}
+            {/* Split long text into styled blocks for a better look*/}
             <div className="space-y-10">
                 <div className="relative pl-8 border-l-2 border-blue-900">
                     <p className="text-2xl text-gray-900 font-bold leading-tight uppercase tracking-tight italic">
                         Westgate Sindjelic Football Club or Srpski sportski klub Sindjelić is a Serbian Australian association football club located in Ardeer, Melbourne.
                     </p>
                     <p className="mt-4 text-gray-500 font-medium">
-                        The club competes in the four tier Victorian State League 1 North-West.
+                        The club competes in the four tier, Victorian State League 1 North-West.
                     </p>
                 </div>
 
@@ -111,13 +111,13 @@ export default function AboutPage() {
             </div>
           </div>
           <div className="relative aspect-square rounded-3xl overflow-hidden shadow-2xl lg:sticky lg:top-32 bg-slate-50 border border-slate-200">
-  <Image 
-    src="/serbiaFlag.png" 
-    alt="Westgate History" 
-    fill 
-    className="object-contain p-16" 
-  />
-</div>
+            <Image 
+              src="/serbiaFlag.png" 
+              alt="Westgate History" 
+              fill 
+              className="object-contain p-16" 
+            />
+          </div>
         </div>
       </section>
 
@@ -204,9 +204,23 @@ export default function AboutPage() {
           <div className="absolute bottom-10 left-1/2 -translate-x-1/2 w-full max-w-4xl px-6 z-50">
             <div className="bg-white/5 backdrop-blur-2xl border border-white/10 rounded-2xl p-4">
                 <div className="flex justify-between items-center gap-4 mb-3 px-2">
-                    <span className="text-[10px] font-black text-white/30 uppercase tracking-[0.3em]">Timeline Progress</span>
+                    {/* Wikipedia Link pinned to the left */}
+                    <div className="flex items-center gap-4">
+                      <a 
+                        href="https://en.wikipedia.org/wiki/Westgate_FC" 
+                        target="_blank" 
+                        rel="noopener noreferrer" 
+                        className="flex items-center gap-2 bg-white/10 hover:bg-white/20 transition-colors px-3 py-1 rounded-md border border-white/10 group"
+                      >
+                        <span className="text-white font-serif font-bold text-xs">W</span>
+                        <span className="text-[10px] font-black text-white uppercase tracking-widest">Full Wikipedia Website</span>
+                      </a>
+                      <span className="text-[10px] font-black text-white/30 uppercase tracking-[0.3em]">Timeline Progress</span>
+                    </div>
+
                     <span className="text-[10px] font-black text-red-600 uppercase tracking-[0.3em]">1985 — 2025</span>
                 </div>
+                
                 <div className="flex justify-between gap-1 overflow-x-auto pb-2 no-scrollbar">
                     {["1985", "1990", "2001", "2006", "2010", "2022", "2024"].map((year, i) => (
                         <button 

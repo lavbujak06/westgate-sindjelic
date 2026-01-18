@@ -66,6 +66,25 @@ export default function HomePage() {
       setLoading(false);
     }
   }, [getMatchDateObject]);
+  
+// fetch news function
+const fetchNews = useCallback(async () => {
+  const { data, error } = await supabaseClient
+    .from('news')
+    .select('*')
+    .order('created_at', { ascending: false })
+    .limit(3);
+
+  if (!error && data) {
+    setLatestNews(data);
+  }
+}, []);
+
+// add the useEffect to make sure both news and latest match function are called
+useEffect(() => {
+  fetchMatches();
+  fetchNews();
+}, [fetchMatches, fetchNews]);
 
   // useEffect Countdown timer, sets the time left and sets it to either live or finished depending on the time
   useEffect(() => {

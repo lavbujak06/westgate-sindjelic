@@ -142,11 +142,7 @@ function AdminLayout({ children }) {
             href: '/admin/sponsors',
             icon: ''
         },
-        {
-            label: 'Highlights Management',
-            href: '/admin/highlights',
-            icon: ''
-        },
+        // { label: 'Highlights Management', href: '/admin/highlights', icon: '' },   To be used in the future
         {
             label: 'Security Logs',
             href: '/admin/audit-logs',

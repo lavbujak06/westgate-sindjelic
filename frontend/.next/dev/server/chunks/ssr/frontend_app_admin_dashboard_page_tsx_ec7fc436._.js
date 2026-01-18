@@ -176,7 +176,7 @@ function AdminDashboard() {
                         className: "grid grid-cols-1 md:grid-cols-3 gap-6 mb-12",
                         children: [
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: `bg-slate-900 border-l-4 ${dbWarning ? 'border-red-600' : 'border-blue-500'} p-6 rounded-r-xl transition-colors`,
+                                className: `bg-slate-900 border-l-4 ${dbWarning ? 'border-red-600' : 'border-green-500'} p-6 rounded-r-xl transition-colors`,
                                 children: [
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
                                         className: "text-slate-500 text-xs font-black uppercase tracking-widest",
@@ -232,7 +232,7 @@ function AdminDashboard() {
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: `bg-slate-900 border-l-4 ${storageWarning ? 'border-red-600' : 'border-purple-500'} p-6 rounded-r-xl transition-colors`,
+                                className: `bg-slate-900 border-l-4 ${storageWarning ? 'border-red-600' : 'border-green-500'} p-6 rounded-r-xl transition-colors`,
                                 children: [
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
                                         className: "text-slate-500 text-xs font-black uppercase tracking-widest",
@@ -267,7 +267,7 @@ function AdminDashboard() {
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                         className: "w-full bg-slate-800 h-1 mt-4 rounded-full overflow-hidden",
                                         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                            className: `${storageWarning ? 'bg-red-600' : 'bg-purple-500'} h-full transition-all duration-1000`,
+                                            className: `${storageWarning ? 'bg-red-600' : 'bg-blue-500'} h-full transition-all duration-1000`,
                                             style: {
                                                 width: `${Math.min(usage.storage / STORAGE_LIMIT_MB * 100, 100)}%`
                                             }
@@ -457,32 +457,6 @@ function AdminDashboard() {
                             }, void 0, true, {
                                 fileName: "[project]/frontend/app/admin/dashboard/page.tsx",
                                 lineNumber: 153,
-                                columnNumber: 11
-                            }, this),
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
-                                href: "/admin/highlights",
-                                className: "group bg-slate-900/50 border border-slate-800 p-8 rounded-2xl hover:border-red-600 transition-all",
-                                children: [
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
-                                        className: "text-2xl font-bold group-hover:text-red-500 transition-colors",
-                                        children: "Highlights Management →"
-                                    }, void 0, false, {
-                                        fileName: "[project]/frontend/app/admin/dashboard/page.tsx",
-                                        lineNumber: 158,
-                                        columnNumber: 13
-                                    }, this),
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                        className: "text-slate-500 mt-2 text-sm",
-                                        children: "Manage team videos and game highlights."
-                                    }, void 0, false, {
-                                        fileName: "[project]/frontend/app/admin/dashboard/page.tsx",
-                                        lineNumber: 159,
-                                        columnNumber: 13
-                                    }, this)
-                                ]
-                            }, void 0, true, {
-                                fileName: "[project]/frontend/app/admin/dashboard/page.tsx",
-                                lineNumber: 157,
                                 columnNumber: 11
                             }, this)
                         ]

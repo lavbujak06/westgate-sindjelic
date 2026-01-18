@@ -1,9 +1,7 @@
 import { requireAdmin } from './requireAdmin';
 import { supabase } from '../supabase';
 
-// 1. We "Mock" the Supabase client. 
-// This tells Jest: "Don't actually connect to the internet. 
-// When the code calls supabase.auth.getUser, use my fake version instead."
+// Mock the database so that i can actually test the logc of the require admin file
 jest.mock('../supabase', () => ({
   supabase: {
     auth: {

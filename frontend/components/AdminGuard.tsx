@@ -15,7 +15,7 @@ export default function AdminGuard({ children }: { children: React.ReactNode }) 
         const { data: { session } } = await supabaseClient.auth.getSession();
 
         if (!session) {
-          console.log("AdminGuard: ❌ No session found, redirecting...");
+          console.log("AdminGuard: No session found, redirecting...");
           router.replace('/login');
           return;
         }
@@ -30,21 +30,21 @@ export default function AdminGuard({ children }: { children: React.ReactNode }) 
           .maybeSingle(); // Use maybeSingle to prevent error if not found
 
         if (error) {
-          console.error("AdminGuard: ❌ DB Error:", error.message);
+          console.error("AdminGuard: DB Error:", error.message);
           router.replace('/login');
           return;
         }
 
         if (!data) {
-          console.log("AdminGuard: ❌ User is logged in but NOT in admins table.");
+          console.log("AdminGuard: User is logged in but NOT in admins table.");
           router.replace('/login');
           return;
         }
 
-        console.log("AdminGuard: ✅ Admin confirmed!");
+        console.log("AdminGuard: Admin confirmed!");
         setAuthorized(true);
       } catch (err) {
-        console.error("AdminGuard: 💥 Crash:", err);
+        console.error("AdminGuard: Crash:", err);
         router.replace('/login');
       } finally {
         setLoading(false);

@@ -1,10 +1,10 @@
 import { Router } from 'express';
 import { supabase } from '../supabase';
 import { requireAdmin } from '../middleware/requireAdmin';
-import fetch from 'node-fetch';
+import fetch from 'cross-fetch';
 import rateLimit from 'express-rate-limit';
 
-// Define the limiter: Max 5 login attempts per 15 minutes per IP
+// Max 7 login attempts per 15 minutes per IP
 const loginLimiter = rateLimit({
   windowMs: 15 * 60 * 1000, // 15 minutes
   max: 7, 
@@ -56,7 +56,6 @@ router.post('/login', loginLimiter, async (req, res) => {
       return res.status(401).json({ error: 'Invalid credentials' });
     }
 
-    // ... (Keep the rest of your existing admin check and cookie logic below) ...
     const { data: admin } = await supabase.from('admins').select('id').eq('id', data.user.id).single();
     const isAdmin = !!admin;
 
@@ -88,25 +87,24 @@ router.post('/login', loginLimiter, async (req, res) => {
 router.get('/me', async (req, res) => {
   try {
     const token = req.cookies?.['sb-access-token'];
-    const issuedAt = req.cookies?.session_issued_at;
+    const issuedAt = req.cookies?.['session_issued_at'];
 
-    // 1. If cookies are missing, don't throw an error, just return nulls
-    // This stops the 401 loop on a fresh browser load
-    if (!token || !issuedAt) {
+    // 1. GUEST CHECK: If totally empty, this is a normal guest.
+    if (!token && !issuedAt) {
       return res.status(200).json({ user: null, profile: null });
     }
 
-    // 2. CHECK 60 MINUTE EXPIRY
+    // 2. PARTIAL/EXPIRED CHECK: If one is missing OR the time is up, it's a 401.
     const currentTime = Date.now();
-    const sessionStart = parseInt(issuedAt);
+    const sessionStart = parseInt(issuedAt || '0');
     
-    if (currentTime - sessionStart > SESSION_DURATION) {
+    if (!token || !issuedAt || isNaN(sessionStart) || (currentTime - sessionStart > SESSION_DURATION)) {
       res.clearCookie('sb-access-token');
       res.clearCookie('session_issued_at');
-      return res.status(401).json({ error: 'Session expired' }); // THIS stays 401
+      return res.status(401).json({ error: 'Session expired' }); 
     }
 
-    // 3. Normal retrieval logic...
+    // Normal retrieval logic
     const { data: { user }, error: authError } = await supabase.auth.getUser(token);
     if (authError || !user) return res.status(401).json({ user: null, profile: null });
 
@@ -139,7 +137,6 @@ router.get('/admins', requireAdmin, async (req, res) => {
 });
 
 
-// Add this new route below your /login route
 router.post('/signup', signupLimiter, async (req, res) => {
   const { email, password, captchaToken } = req.body;
 

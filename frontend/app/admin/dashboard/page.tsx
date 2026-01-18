@@ -97,7 +97,7 @@ export default function AdminDashboard() {
         {/* STATS SECTION */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
           {/* Database Box */}
-          <div className={`bg-slate-900 border-l-4 ${dbWarning ? 'border-red-600' : 'border-blue-500'} p-6 rounded-r-xl transition-colors`}>
+          <div className={`bg-slate-900 border-l-4 ${dbWarning ? 'border-red-600' : 'border-green-500'} p-6 rounded-r-xl transition-colors`}>
             <h3 className="text-slate-500 text-xs font-black uppercase tracking-widest">Database (Rows/Tables)</h3>
             <p className={`text-4xl font-black mt-2 ${dbWarning ? 'text-red-500' : 'text-white'}`}>
               {usage.db}<span className="text-lg text-slate-500"> / {DB_LIMIT_MB}MB</span>
@@ -111,14 +111,14 @@ export default function AdminDashboard() {
           </div>
 
           {/* File Storage Box */}
-          <div className={`bg-slate-900 border-l-4 ${storageWarning ? 'border-red-600' : 'border-purple-500'} p-6 rounded-r-xl transition-colors`}>
+          <div className={`bg-slate-900 border-l-4 ${storageWarning ? 'border-red-600' : 'border-green-500'} p-6 rounded-r-xl transition-colors`}>
             <h3 className="text-slate-500 text-xs font-black uppercase tracking-widest">Storage (Media/Files)</h3>
             <p className={`text-4xl font-black mt-2 ${storageWarning ? 'text-red-500' : 'text-white'}`}>
                {usage.storage}<span className="text-lg text-slate-500"> / {STORAGE_LIMIT_MB}MB</span>
             </p>
             <div className="w-full bg-slate-800 h-1 mt-4 rounded-full overflow-hidden">
                <div 
-                 className={`${storageWarning ? 'bg-red-600' : 'bg-purple-500'} h-full transition-all duration-1000`} 
+                 className={`${storageWarning ? 'bg-red-600' : 'bg-blue-500'} h-full transition-all duration-1000`} 
                  style={{ width: `${Math.min((usage.storage / STORAGE_LIMIT_MB) * 100, 100)}%` }}
                ></div>
             </div>
@@ -154,10 +154,11 @@ export default function AdminDashboard() {
             <h2 className="text-2xl font-bold group-hover:text-red-500 transition-colors">Sponsor Management →</h2>
             <p className="text-slate-500 mt-2 text-sm">Manage club partners and logos.</p>
           </Link>
-          <Link href="/admin/highlights" className="group bg-slate-900/50 border border-slate-800 p-8 rounded-2xl hover:border-red-600 transition-all">
+          {/* To be used in the future */}
+          {/* <Link href="/admin/highlights" className="group bg-slate-900/50 border border-slate-800 p-8 rounded-2xl hover:border-red-600 transition-all">
             <h2 className="text-2xl font-bold group-hover:text-red-500 transition-colors">Highlights Management →</h2>
             <p className="text-slate-500 mt-2 text-sm">Manage team videos and game highlights.</p>
-          </Link>
+          </Link> */}
         </div>
       </div>
     </div>

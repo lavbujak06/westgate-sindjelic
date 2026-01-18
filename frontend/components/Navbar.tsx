@@ -94,8 +94,10 @@ const Navbar = () => {
         }>
         <ul className='uppercase font-bold text-2xl space-y-8 flex flex-col items-center w-full px-10'>
             <li onClick={handleNav}><Link href="/pages/news">News</Link></li>
-            <li onClick={handleNav}><Link href="/pages/men/seniors">Men</Link></li>
-            <li onClick={handleNav}><Link href="/pages/women/seniors">Women</Link></li>
+            <li onClick={handleNav}><Link href="/pages/men/seniors">Senior Men</Link></li>
+            <li onClick={handleNav}><Link href="/pages/men/reserves">Reserve Men</Link></li>
+            <li onClick={handleNav}><Link href="/pages/women/seniors">Senior Women</Link></li>
+            <li onClick={handleNav}><Link href="/pages/women/reserves">Reserve Women</Link></li>
             <li onClick={handleNav}><Link href="/pages/juniors">Juniors</Link></li>
             <li onClick={handleNav}><Link href="/pages/aboutUs">About Us</Link></li>
             <li onClick={handleNav}><Link href="/pages/contact">Contact Us</Link></li>
