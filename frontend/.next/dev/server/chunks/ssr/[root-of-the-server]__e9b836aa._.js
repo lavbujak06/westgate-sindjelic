@@ -1165,6 +1165,7 @@ function MensPage() {
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useEffect"])(()=>{
         fetch(`${("TURBOPACK compile-time value", "http://localhost:5001")}/api/league/configs`).then((res)=>res.json()).then((data)=>{
             if (Array.isArray(data) && data.length > 0) {
+                // Filter specifically for Senior Men
                 const mensOnly = data.filter((c)=>c.team_name === 'Senior Men');
                 setConfigs(mensOnly);
                 if (mensOnly.length > 0) setSelectedConfigId(mensOnly[0].id);
@@ -1210,12 +1211,13 @@ function MensPage() {
             color: 'bg-gray-500 shadow-[0_0_15px_rgba(107,114,128,0.6)] border-gray-400'
         };
     });
-    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("main", {
-        className: "bg-[#fcfcfc] min-h-screen pb-20 overflow-x-hidden",
+    return(// REMOVED overflow-x-hidden to fix Navbar disappearance
+    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("main", {
+        className: "bg-[#fcfcfc] min-h-screen pb-20",
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$components$2f$Navbar$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
                 fileName: "[project]/frontend/app/pages/men/seniors/page.tsx",
-                lineNumber: 76,
+                lineNumber: 74,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$components$2f$Hero$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
@@ -1224,7 +1226,7 @@ function MensPage() {
                 showButton: false
             }, void 0, false, {
                 fileName: "[project]/frontend/app/pages/men/seniors/page.tsx",
-                lineNumber: 77,
+                lineNumber: 75,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1242,7 +1244,7 @@ function MensPage() {
                                         color: "text-red-600"
                                     }, void 0, false, {
                                         fileName: "[project]/frontend/app/pages/men/seniors/page.tsx",
-                                        lineNumber: 83,
+                                        lineNumber: 80,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$components$2f$StatBox$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
@@ -1251,7 +1253,7 @@ function MensPage() {
                                         color: "text-black"
                                     }, void 0, false, {
                                         fileName: "[project]/frontend/app/pages/men/seniors/page.tsx",
-                                        lineNumber: 84,
+                                        lineNumber: 81,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$components$2f$StatBox$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
@@ -1260,7 +1262,7 @@ function MensPage() {
                                         color: "text-gray-600"
                                     }, void 0, false, {
                                         fileName: "[project]/frontend/app/pages/men/seniors/page.tsx",
-                                        lineNumber: 85,
+                                        lineNumber: 82,
                                         columnNumber: 13
                                     }, this),
                                     lastFiveForm.length > 0 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1271,7 +1273,7 @@ function MensPage() {
                                                 children: "Recent Form"
                                             }, void 0, false, {
                                                 fileName: "[project]/frontend/app/pages/men/seniors/page.tsx",
-                                                lineNumber: 89,
+                                                lineNumber: 86,
                                                 columnNumber: 21
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1281,24 +1283,24 @@ function MensPage() {
                                                         children: game.label
                                                     }, idx, false, {
                                                         fileName: "[project]/frontend/app/pages/men/seniors/page.tsx",
-                                                        lineNumber: 92,
+                                                        lineNumber: 89,
                                                         columnNumber: 29
                                                     }, this))
                                             }, void 0, false, {
                                                 fileName: "[project]/frontend/app/pages/men/seniors/page.tsx",
-                                                lineNumber: 90,
+                                                lineNumber: 87,
                                                 columnNumber: 21
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/frontend/app/pages/men/seniors/page.tsx",
-                                        lineNumber: 88,
+                                        lineNumber: 85,
                                         columnNumber: 17
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/frontend/app/pages/men/seniors/page.tsx",
-                                lineNumber: 82,
+                                lineNumber: 79,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1311,12 +1313,12 @@ function MensPage() {
                                             className: "text-red-600"
                                         }, void 0, false, {
                                             fileName: "[project]/frontend/app/pages/men/seniors/page.tsx",
-                                            lineNumber: 102,
+                                            lineNumber: 99,
                                             columnNumber: 55
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/frontend/app/pages/men/seniors/page.tsx",
-                                        lineNumber: 102,
+                                        lineNumber: 99,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1327,7 +1329,7 @@ function MensPage() {
                                                 children: "Select Season"
                                             }, void 0, false, {
                                                 fileName: "[project]/frontend/app/pages/men/seniors/page.tsx",
-                                                lineNumber: 104,
+                                                lineNumber: 101,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("select", {
@@ -1343,30 +1345,30 @@ function MensPage() {
                                                         ]
                                                     }, c.id, true, {
                                                         fileName: "[project]/frontend/app/pages/men/seniors/page.tsx",
-                                                        lineNumber: 106,
+                                                        lineNumber: 103,
                                                         columnNumber: 39
                                                     }, this))
                                             }, void 0, false, {
                                                 fileName: "[project]/frontend/app/pages/men/seniors/page.tsx",
-                                                lineNumber: 105,
+                                                lineNumber: 102,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/frontend/app/pages/men/seniors/page.tsx",
-                                        lineNumber: 103,
+                                        lineNumber: 100,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/frontend/app/pages/men/seniors/page.tsx",
-                                lineNumber: 101,
+                                lineNumber: 98,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/frontend/app/pages/men/seniors/page.tsx",
-                        lineNumber: 81,
+                        lineNumber: 78,
                         columnNumber: 9
                     }, this),
                     loading ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1377,7 +1379,7 @@ function MensPage() {
                                 size: 40
                             }, void 0, false, {
                                 fileName: "[project]/frontend/app/pages/men/seniors/page.tsx",
-                                lineNumber: 114,
+                                lineNumber: 111,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1385,13 +1387,13 @@ function MensPage() {
                                 children: "Loading Records..."
                             }, void 0, false, {
                                 fileName: "[project]/frontend/app/pages/men/seniors/page.tsx",
-                                lineNumber: 115,
+                                lineNumber: 112,
                                 columnNumber: 13
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/frontend/app/pages/men/seniors/page.tsx",
-                        lineNumber: 113,
+                        lineNumber: 110,
                         columnNumber: 11
                     }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                         className: "grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16",
@@ -1411,7 +1413,7 @@ function MensPage() {
                                                         size: 20
                                                     }, void 0, false, {
                                                         fileName: "[project]/frontend/app/pages/men/seniors/page.tsx",
-                                                        lineNumber: 123,
+                                                        lineNumber: 121,
                                                         columnNumber: 29
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
@@ -1419,18 +1421,18 @@ function MensPage() {
                                                         children: "League Table"
                                                     }, void 0, false, {
                                                         fileName: "[project]/frontend/app/pages/men/seniors/page.tsx",
-                                                        lineNumber: 124,
+                                                        lineNumber: 122,
                                                         columnNumber: 29
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/frontend/app/pages/men/seniors/page.tsx",
-                                                lineNumber: 122,
+                                                lineNumber: 120,
                                                 columnNumber: 25
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/frontend/app/pages/men/seniors/page.tsx",
-                                            lineNumber: 121,
+                                            lineNumber: 119,
                                             columnNumber: 21
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1447,7 +1449,7 @@ function MensPage() {
                                                                     children: "Pos"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/frontend/app/pages/men/seniors/page.tsx",
-                                                                    lineNumber: 131,
+                                                                    lineNumber: 129,
                                                                     columnNumber: 37
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
@@ -1455,7 +1457,7 @@ function MensPage() {
                                                                     children: "Team"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/frontend/app/pages/men/seniors/page.tsx",
-                                                                    lineNumber: 132,
+                                                                    lineNumber: 130,
                                                                     columnNumber: 37
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
@@ -1463,7 +1465,7 @@ function MensPage() {
                                                                     children: "P"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/frontend/app/pages/men/seniors/page.tsx",
-                                                                    lineNumber: 133,
+                                                                    lineNumber: 131,
                                                                     columnNumber: 37
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
@@ -1471,7 +1473,7 @@ function MensPage() {
                                                                     children: "W"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/frontend/app/pages/men/seniors/page.tsx",
-                                                                    lineNumber: 134,
+                                                                    lineNumber: 132,
                                                                     columnNumber: 37
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
@@ -1479,7 +1481,7 @@ function MensPage() {
                                                                     children: "D"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/frontend/app/pages/men/seniors/page.tsx",
-                                                                    lineNumber: 135,
+                                                                    lineNumber: 133,
                                                                     columnNumber: 37
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
@@ -1487,7 +1489,7 @@ function MensPage() {
                                                                     children: "L"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/frontend/app/pages/men/seniors/page.tsx",
-                                                                    lineNumber: 136,
+                                                                    lineNumber: 134,
                                                                     columnNumber: 37
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
@@ -1495,7 +1497,7 @@ function MensPage() {
                                                                     children: "GD"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/frontend/app/pages/men/seniors/page.tsx",
-                                                                    lineNumber: 137,
+                                                                    lineNumber: 135,
                                                                     columnNumber: 37
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
@@ -1503,18 +1505,18 @@ function MensPage() {
                                                                     children: "Pts"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/frontend/app/pages/men/seniors/page.tsx",
-                                                                    lineNumber: 138,
+                                                                    lineNumber: 136,
                                                                     columnNumber: 37
                                                                 }, this)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/frontend/app/pages/men/seniors/page.tsx",
-                                                            lineNumber: 130,
+                                                            lineNumber: 128,
                                                             columnNumber: 33
                                                         }, this)
                                                     }, void 0, false, {
                                                         fileName: "[project]/frontend/app/pages/men/seniors/page.tsx",
-                                                        lineNumber: 129,
+                                                        lineNumber: 127,
                                                         columnNumber: 29
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("tbody", {
@@ -1527,7 +1529,7 @@ function MensPage() {
                                                                         children: t.pos
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/frontend/app/pages/men/seniors/page.tsx",
-                                                                        lineNumber: 144,
+                                                                        lineNumber: 142,
                                                                         columnNumber: 41
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
@@ -1535,7 +1537,7 @@ function MensPage() {
                                                                         children: t.team
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/frontend/app/pages/men/seniors/page.tsx",
-                                                                        lineNumber: 145,
+                                                                        lineNumber: 143,
                                                                         columnNumber: 41
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
@@ -1543,7 +1545,7 @@ function MensPage() {
                                                                         children: t.p
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/frontend/app/pages/men/seniors/page.tsx",
-                                                                        lineNumber: 146,
+                                                                        lineNumber: 144,
                                                                         columnNumber: 41
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
@@ -1551,7 +1553,7 @@ function MensPage() {
                                                                         children: t.w
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/frontend/app/pages/men/seniors/page.tsx",
-                                                                        lineNumber: 147,
+                                                                        lineNumber: 145,
                                                                         columnNumber: 41
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
@@ -1559,7 +1561,7 @@ function MensPage() {
                                                                         children: t.d
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/frontend/app/pages/men/seniors/page.tsx",
-                                                                        lineNumber: 148,
+                                                                        lineNumber: 146,
                                                                         columnNumber: 41
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
@@ -1567,7 +1569,7 @@ function MensPage() {
                                                                         children: t.l
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/frontend/app/pages/men/seniors/page.tsx",
-                                                                        lineNumber: 149,
+                                                                        lineNumber: 147,
                                                                         columnNumber: 41
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
@@ -1575,7 +1577,7 @@ function MensPage() {
                                                                         children: t.gd
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/frontend/app/pages/men/seniors/page.tsx",
-                                                                        lineNumber: 150,
+                                                                        lineNumber: 148,
                                                                         columnNumber: 41
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
@@ -1583,40 +1585,40 @@ function MensPage() {
                                                                         children: t.pts
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/frontend/app/pages/men/seniors/page.tsx",
-                                                                        lineNumber: 151,
+                                                                        lineNumber: 149,
                                                                         columnNumber: 41
                                                                     }, this)
                                                                 ]
                                                             }, i, true, {
                                                                 fileName: "[project]/frontend/app/pages/men/seniors/page.tsx",
-                                                                lineNumber: 143,
+                                                                lineNumber: 141,
                                                                 columnNumber: 37
                                                             }, this))
                                                     }, void 0, false, {
                                                         fileName: "[project]/frontend/app/pages/men/seniors/page.tsx",
-                                                        lineNumber: 141,
+                                                        lineNumber: 139,
                                                         columnNumber: 29
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/frontend/app/pages/men/seniors/page.tsx",
-                                                lineNumber: 128,
+                                                lineNumber: 126,
                                                 columnNumber: 25
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/frontend/app/pages/men/seniors/page.tsx",
-                                            lineNumber: 127,
+                                            lineNumber: 125,
                                             columnNumber: 21
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/frontend/app/pages/men/seniors/page.tsx",
-                                    lineNumber: 120,
+                                    lineNumber: 118,
                                     columnNumber: 17
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/frontend/app/pages/men/seniors/page.tsx",
-                                lineNumber: 119,
+                                lineNumber: 117,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1631,12 +1633,12 @@ function MensPage() {
                                                 children: "Fixtures & Results"
                                             }, void 0, false, {
                                                 fileName: "[project]/frontend/app/pages/men/seniors/page.tsx",
-                                                lineNumber: 163,
+                                                lineNumber: 161,
                                                 columnNumber: 25
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/frontend/app/pages/men/seniors/page.tsx",
-                                            lineNumber: 162,
+                                            lineNumber: 160,
                                             columnNumber: 21
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1655,7 +1657,7 @@ function MensPage() {
                                                                     ]
                                                                 }, void 0, true, {
                                                                     fileName: "[project]/frontend/app/pages/men/seniors/page.tsx",
-                                                                    lineNumber: 169,
+                                                                    lineNumber: 167,
                                                                     columnNumber: 37
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1665,7 +1667,7 @@ function MensPage() {
                                                                             size: 12
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/frontend/app/pages/men/seniors/page.tsx",
-                                                                            lineNumber: 170,
+                                                                            lineNumber: 168,
                                                                             columnNumber: 114
                                                                         }, this),
                                                                         " ",
@@ -1673,13 +1675,13 @@ function MensPage() {
                                                                     ]
                                                                 }, void 0, true, {
                                                                     fileName: "[project]/frontend/app/pages/men/seniors/page.tsx",
-                                                                    lineNumber: 170,
+                                                                    lineNumber: 168,
                                                                     columnNumber: 37
                                                                 }, this)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/frontend/app/pages/men/seniors/page.tsx",
-                                                            lineNumber: 168,
+                                                            lineNumber: 166,
                                                             columnNumber: 33
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1690,7 +1692,7 @@ function MensPage() {
                                                                     children: g.date_text
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/frontend/app/pages/men/seniors/page.tsx",
-                                                                    lineNumber: 173,
+                                                                    lineNumber: 171,
                                                                     columnNumber: 37
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1700,7 +1702,7 @@ function MensPage() {
                                                                             size: 10
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/frontend/app/pages/men/seniors/page.tsx",
-                                                                            lineNumber: 174,
+                                                                            lineNumber: 172,
                                                                             columnNumber: 104
                                                                         }, this),
                                                                         " ",
@@ -1709,19 +1711,19 @@ function MensPage() {
                                                                             children: g.venue
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/frontend/app/pages/men/seniors/page.tsx",
-                                                                            lineNumber: 174,
+                                                                            lineNumber: 172,
                                                                             columnNumber: 125
                                                                         }, this)
                                                                     ]
                                                                 }, void 0, true, {
                                                                     fileName: "[project]/frontend/app/pages/men/seniors/page.tsx",
-                                                                    lineNumber: 174,
+                                                                    lineNumber: 172,
                                                                     columnNumber: 37
                                                                 }, this)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/frontend/app/pages/men/seniors/page.tsx",
-                                                            lineNumber: 172,
+                                                            lineNumber: 170,
                                                             columnNumber: 33
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1735,7 +1737,7 @@ function MensPage() {
                                                                             children: "Westgate FC"
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/frontend/app/pages/men/seniors/page.tsx",
-                                                                            lineNumber: 178,
+                                                                            lineNumber: 176,
                                                                             columnNumber: 41
                                                                         }, this),
                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1743,13 +1745,13 @@ function MensPage() {
                                                                             children: g.w_score || '-'
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/frontend/app/pages/men/seniors/page.tsx",
-                                                                            lineNumber: 179,
+                                                                            lineNumber: 177,
                                                                             columnNumber: 41
                                                                         }, this)
                                                                     ]
                                                                 }, void 0, true, {
                                                                     fileName: "[project]/frontend/app/pages/men/seniors/page.tsx",
-                                                                    lineNumber: 177,
+                                                                    lineNumber: 175,
                                                                     columnNumber: 37
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1757,7 +1759,7 @@ function MensPage() {
                                                                     children: "VS"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/frontend/app/pages/men/seniors/page.tsx",
-                                                                    lineNumber: 181,
+                                                                    lineNumber: 179,
                                                                     columnNumber: 37
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1768,7 +1770,7 @@ function MensPage() {
                                                                             children: g.opponent
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/frontend/app/pages/men/seniors/page.tsx",
-                                                                            lineNumber: 183,
+                                                                            lineNumber: 181,
                                                                             columnNumber: 41
                                                                         }, this),
                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1776,62 +1778,62 @@ function MensPage() {
                                                                             children: g.a_score || '-'
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/frontend/app/pages/men/seniors/page.tsx",
-                                                                            lineNumber: 184,
+                                                                            lineNumber: 182,
                                                                             columnNumber: 41
                                                                         }, this)
                                                                     ]
                                                                 }, void 0, true, {
                                                                     fileName: "[project]/frontend/app/pages/men/seniors/page.tsx",
-                                                                    lineNumber: 182,
+                                                                    lineNumber: 180,
                                                                     columnNumber: 37
                                                                 }, this)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/frontend/app/pages/men/seniors/page.tsx",
-                                                            lineNumber: 176,
+                                                            lineNumber: 174,
                                                             columnNumber: 33
                                                         }, this)
                                                     ]
                                                 }, i, true, {
                                                     fileName: "[project]/frontend/app/pages/men/seniors/page.tsx",
-                                                    lineNumber: 167,
+                                                    lineNumber: 165,
                                                     columnNumber: 29
                                                 }, this))
                                         }, void 0, false, {
                                             fileName: "[project]/frontend/app/pages/men/seniors/page.tsx",
-                                            lineNumber: 165,
+                                            lineNumber: 163,
                                             columnNumber: 21
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/frontend/app/pages/men/seniors/page.tsx",
-                                    lineNumber: 161,
+                                    lineNumber: 159,
                                     columnNumber: 17
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/frontend/app/pages/men/seniors/page.tsx",
-                                lineNumber: 160,
+                                lineNumber: 158,
                                 columnNumber: 13
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/frontend/app/pages/men/seniors/page.tsx",
-                        lineNumber: 118,
+                        lineNumber: 115,
                         columnNumber: 11
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/frontend/app/pages/men/seniors/page.tsx",
-                lineNumber: 80,
+                lineNumber: 77,
                 columnNumber: 7
             }, this),
-            gallery.length > 0 && !loading && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
+            gallery.length > 0 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
                 className: "w-full mb-16 overflow-hidden",
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "max-w-7xl mx-auto px-4 md:px-6 mb-8",
+                        className: "max-w-7xl mx-auto px-4 md:px-6 mb-6",
                         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
-                            className: "text-black font-black uppercase tracking-tighter text-4xl italic",
+                            className: "text-black font-black uppercase tracking-tighter text-3xl italic",
                             children: [
                                 "Team ",
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1839,38 +1841,38 @@ function MensPage() {
                                     children: "Gallery"
                                 }, void 0, false, {
                                     fileName: "[project]/frontend/app/pages/men/seniors/page.tsx",
-                                    lineNumber: 201,
+                                    lineNumber: 199,
                                     columnNumber: 20
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/frontend/app/pages/men/seniors/page.tsx",
-                            lineNumber: 200,
+                            lineNumber: 198,
                             columnNumber: 13
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/frontend/app/pages/men/seniors/page.tsx",
-                        lineNumber: 199,
+                        lineNumber: 197,
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "w-full",
+                        className: "w-screen relative left-[50%] right-[50%] -ml-[50vw] -mr-[50vw]",
                         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$components$2f$MatchSlider$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
                             slides: gallery
-                        }, void 0, false, {
+                        }, gallery.length, false, {
                             fileName: "[project]/frontend/app/pages/men/seniors/page.tsx",
-                            lineNumber: 206,
-                            columnNumber: 13
+                            lineNumber: 204,
+                            columnNumber: 14
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/frontend/app/pages/men/seniors/page.tsx",
-                        lineNumber: 205,
+                        lineNumber: 203,
                         columnNumber: 11
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/frontend/app/pages/men/seniors/page.tsx",
-                lineNumber: 198,
+                lineNumber: 196,
                 columnNumber: 9
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1879,20 +1881,20 @@ function MensPage() {
                     teamSlug: "senior-men"
                 }, void 0, false, {
                     fileName: "[project]/frontend/app/pages/men/seniors/page.tsx",
-                    lineNumber: 213,
+                    lineNumber: 210,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/frontend/app/pages/men/seniors/page.tsx",
-                lineNumber: 212,
+                lineNumber: 209,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/frontend/app/pages/men/seniors/page.tsx",
-        lineNumber: 75,
+        lineNumber: 73,
         columnNumber: 5
-    }, this);
+    }, this));
 }
 }),
 ];

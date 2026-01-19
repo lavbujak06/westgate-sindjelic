@@ -7,18 +7,14 @@ import CoachStaff from '@/components/CoachStuff';
 import StatBox from '@/components/StatBox';
 import MatchSlider from '@/components/MatchSlider';
 import { Calendar, Loader2, Trophy, Clock, MapPin } from 'lucide-react';
-import { div } from 'framer-motion/m';
+import { MediaItem, Match, Ladder, Config } from '@/app/types';
 
-type LadderRow = { pos: number; team: string; p: number; w: number; d: number; l: number; gd: number; pts: number; };
-type GameRow = { round: string; date_text: string; time_text: string; venue: string; w_score: string; a_score: string; opponent: string; };
-type Config = { id: string; season_year: number; team_name: string; };
-type MediaItem = { id: string; url: string };
 
 export default function SeniorWomenPage() {
   const [configs, setConfigs] = useState<Config[]>([]);
   const [selectedConfigId, setSelectedConfigId] = useState<string>('');
-  const [ladder, setLadder] = useState<LadderRow[]>([]);
-  const [games, setGames] = useState<GameRow[]>([]);
+  const [ladder, setLadder] = useState<Ladder[]>([]);
+  const [games, setGames] = useState<Match[]>([]);
   const [gallery, setGallery] = useState<MediaItem[]>([]);
   const [loading, setLoading] = useState(true);
 
@@ -66,8 +62,8 @@ export default function SeniorWomenPage() {
     .sort((a, b) => parseInt(b.round) - parseInt(a.round))
     .slice(0, 5)
     .map(g => {
-      const home = parseInt(g.w_score);
-      const away = parseInt(g.a_score);
+      const home = parseInt(g.w_score!);
+      const away = parseInt(g.a_score!);
       if (home > away) return { label: 'W', color: 'bg-green-500 shadow-[0_0_15px_rgba(34,197,94,0.6)] border-green-400' };
       if (home < away) return { label: 'L', color: 'bg-red-500 shadow-[0_0_15px_rgba(239,68,68,0.6)] border-red-400' };
       return { label: 'D', color: 'bg-gray-500 shadow-[0_0_15px_rgba(107,114,128,0.6)] border-gray-400' };

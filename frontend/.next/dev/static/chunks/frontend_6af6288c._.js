@@ -1179,36 +1179,20 @@ function JuniorsPage() {
     _s();
     const [gallery, setGallery] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])([]);
     const [loading, setLoading] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(true);
-    const [configs, setConfigs] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])([]);
-    const [selectedConfigId, setSelectedConfigId] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])('');
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
         "JuniorsPage.useEffect": ()=>{
-            // 1. Fetch Configs
-            fetch(`${("TURBOPACK compile-time value", "http://localhost:5001")}/api/league/configs`).then({
-                "JuniorsPage.useEffect": (res)=>res.json()
-            }["JuniorsPage.useEffect"]).then({
-                "JuniorsPage.useEffect": (data)=>{
-                    if (Array.isArray(data) && data.length > 0) {
-                        const mensOnly = data.filter({
-                            "JuniorsPage.useEffect.mensOnly": (c)=>c.team_name === 'Juniors'
-                        }["JuniorsPage.useEffect.mensOnly"]);
-                        setConfigs(mensOnly);
-                        if (mensOnly.length > 0) setSelectedConfigId(mensOnly[0].id);
-                    }
-                }
-            }["JuniorsPage.useEffect"]);
-            // 2. Fetch Gallery
+            // Fetch Gallery
             fetch(`${("TURBOPACK compile-time value", "http://localhost:5001")}/api/media/juniors`).then({
                 "JuniorsPage.useEffect": (res)=>res.json()
             }["JuniorsPage.useEffect"]).then({
                 "JuniorsPage.useEffect": (data)=>{
                     setGallery(Array.isArray(data) ? data : []);
-                    setLoading(false); // <--- THIS WAS MISSING
+                    setLoading(false);
                 }
             }["JuniorsPage.useEffect"]).catch({
                 "JuniorsPage.useEffect": (err)=>{
                     console.error("Gallery Fetch Error:", err);
-                    setLoading(false); // Stop loading even on error
+                    setLoading(false);
                 }
             }["JuniorsPage.useEffect"]);
         }
@@ -1218,7 +1202,7 @@ function JuniorsPage() {
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$components$2f$Navbar$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
                 fileName: "[project]/frontend/app/pages/juniors/page.tsx",
-                lineNumber: 48,
+                lineNumber: 33,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$components$2f$Hero$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
@@ -1227,7 +1211,7 @@ function JuniorsPage() {
                 showButton: false
             }, void 0, false, {
                 fileName: "[project]/frontend/app/pages/juniors/page.tsx",
-                lineNumber: 51,
+                lineNumber: 36,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1248,13 +1232,13 @@ function JuniorsPage() {
                                                 children: "Philosophy"
                                             }, void 0, false, {
                                                 fileName: "[project]/frontend/app/pages/juniors/page.tsx",
-                                                lineNumber: 63,
+                                                lineNumber: 48,
                                                 columnNumber: 21
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/frontend/app/pages/juniors/page.tsx",
-                                        lineNumber: 62,
+                                        lineNumber: 47,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1265,14 +1249,14 @@ function JuniorsPage() {
                                                 children: " discipline, respect, and technical excellence."
                                             }, void 0, false, {
                                                 fileName: "[project]/frontend/app/pages/juniors/page.tsx",
-                                                lineNumber: 67,
+                                                lineNumber: 52,
                                                 columnNumber: 17
                                             }, this),
                                             " We don't just train players; we build character."
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/frontend/app/pages/juniors/page.tsx",
-                                        lineNumber: 65,
+                                        lineNumber: 50,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("ul", {
@@ -1289,25 +1273,25 @@ function JuniorsPage() {
                                                         className: "w-2 h-2 bg-red-600 rounded-full"
                                                     }, void 0, false, {
                                                         fileName: "[project]/frontend/app/pages/juniors/page.tsx",
-                                                        lineNumber: 73,
+                                                        lineNumber: 58,
                                                         columnNumber: 21
                                                     }, this),
                                                     item
                                                 ]
                                             }, item, true, {
                                                 fileName: "[project]/frontend/app/pages/juniors/page.tsx",
-                                                lineNumber: 72,
+                                                lineNumber: 57,
                                                 columnNumber: 19
                                             }, this))
                                     }, void 0, false, {
                                         fileName: "[project]/frontend/app/pages/juniors/page.tsx",
-                                        lineNumber: 70,
+                                        lineNumber: 55,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/frontend/app/pages/juniors/page.tsx",
-                                lineNumber: 61,
+                                lineNumber: 46,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1319,28 +1303,28 @@ function JuniorsPage() {
                                     className: "object-contain w-full max-w-[420px] h-auto"
                                 }, void 0, false, {
                                     fileName: "[project]/frontend/app/pages/juniors/page.tsx",
-                                    lineNumber: 80,
+                                    lineNumber: 65,
                                     columnNumber: 15
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/frontend/app/pages/juniors/page.tsx",
-                                lineNumber: 79,
+                                lineNumber: 64,
                                 columnNumber: 13
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/frontend/app/pages/juniors/page.tsx",
-                        lineNumber: 60,
+                        lineNumber: 45,
                         columnNumber: 11
                     }, this)
                 }, void 0, false, {
                     fileName: "[project]/frontend/app/pages/juniors/page.tsx",
-                    lineNumber: 59,
+                    lineNumber: 44,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/frontend/app/pages/juniors/page.tsx",
-                lineNumber: 58,
+                lineNumber: 43,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -1358,13 +1342,13 @@ function JuniorsPage() {
                                         children: "Age Groups"
                                     }, void 0, false, {
                                         fileName: "[project]/frontend/app/pages/juniors/page.tsx",
-                                        lineNumber: 95,
+                                        lineNumber: 80,
                                         columnNumber: 88
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/frontend/app/pages/juniors/page.tsx",
-                                lineNumber: 95,
+                                lineNumber: 80,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1372,13 +1356,13 @@ function JuniorsPage() {
                                 children: "Registration open for the 2026 season"
                             }, void 0, false, {
                                 fileName: "[project]/frontend/app/pages/juniors/page.tsx",
-                                lineNumber: 96,
+                                lineNumber: 81,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/frontend/app/pages/juniors/page.tsx",
-                        lineNumber: 94,
+                        lineNumber: 79,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1396,7 +1380,7 @@ function JuniorsPage() {
                                         children: age
                                     }, void 0, false, {
                                         fileName: "[project]/frontend/app/pages/juniors/page.tsx",
-                                        lineNumber: 102,
+                                        lineNumber: 87,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1404,24 +1388,24 @@ function JuniorsPage() {
                                         children: "Competitive"
                                     }, void 0, false, {
                                         fileName: "[project]/frontend/app/pages/juniors/page.tsx",
-                                        lineNumber: 103,
+                                        lineNumber: 88,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, age, true, {
                                 fileName: "[project]/frontend/app/pages/juniors/page.tsx",
-                                lineNumber: 101,
+                                lineNumber: 86,
                                 columnNumber: 13
                             }, this))
                     }, void 0, false, {
                         fileName: "[project]/frontend/app/pages/juniors/page.tsx",
-                        lineNumber: 99,
+                        lineNumber: 84,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/frontend/app/pages/juniors/page.tsx",
-                lineNumber: 93,
+                lineNumber: 78,
                 columnNumber: 7
             }, this),
             gallery.length > 0 && !loading && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -1438,18 +1422,18 @@ function JuniorsPage() {
                                     children: "Gallery"
                                 }, void 0, false, {
                                     fileName: "[project]/frontend/app/pages/juniors/page.tsx",
-                                    lineNumber: 114,
+                                    lineNumber: 99,
                                     columnNumber: 20
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/frontend/app/pages/juniors/page.tsx",
-                            lineNumber: 113,
+                            lineNumber: 98,
                             columnNumber: 13
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/frontend/app/pages/juniors/page.tsx",
-                        lineNumber: 112,
+                        lineNumber: 97,
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1458,18 +1442,18 @@ function JuniorsPage() {
                             slides: gallery
                         }, void 0, false, {
                             fileName: "[project]/frontend/app/pages/juniors/page.tsx",
-                            lineNumber: 119,
+                            lineNumber: 104,
                             columnNumber: 13
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/frontend/app/pages/juniors/page.tsx",
-                        lineNumber: 118,
+                        lineNumber: 103,
                         columnNumber: 11
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/frontend/app/pages/juniors/page.tsx",
-                lineNumber: 111,
+                lineNumber: 96,
                 columnNumber: 9
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1478,12 +1462,12 @@ function JuniorsPage() {
                     teamSlug: "juniors"
                 }, void 0, false, {
                     fileName: "[project]/frontend/app/pages/juniors/page.tsx",
-                    lineNumber: 126,
+                    lineNumber: 111,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/frontend/app/pages/juniors/page.tsx",
-                lineNumber: 125,
+                lineNumber: 110,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -1497,7 +1481,7 @@ function JuniorsPage() {
                                 className: "absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -mr-16 -mt-16"
                             }, void 0, false, {
                                 fileName: "[project]/frontend/app/pages/juniors/page.tsx",
-                                lineNumber: 134,
+                                lineNumber: 119,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
@@ -1506,7 +1490,7 @@ function JuniorsPage() {
                                     "Become part of ",
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("br", {}, void 0, false, {
                                         fileName: "[project]/frontend/app/pages/juniors/page.tsx",
-                                        lineNumber: 137,
+                                        lineNumber: 122,
                                         columnNumber: 30
                                     }, this),
                                     " the ",
@@ -1515,13 +1499,13 @@ function JuniorsPage() {
                                         children: "Legacy"
                                     }, void 0, false, {
                                         fileName: "[project]/frontend/app/pages/juniors/page.tsx",
-                                        lineNumber: 137,
+                                        lineNumber: 122,
                                         columnNumber: 41
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/frontend/app/pages/juniors/page.tsx",
-                                lineNumber: 136,
+                                lineNumber: 121,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1529,7 +1513,7 @@ function JuniorsPage() {
                                 children: "Ready to take your game to the next level? Join Westgate Sindjelic today and train with the best."
                             }, void 0, false, {
                                 fileName: "[project]/frontend/app/pages/juniors/page.tsx",
-                                lineNumber: 139,
+                                lineNumber: 124,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
@@ -1538,33 +1522,33 @@ function JuniorsPage() {
                                 children: "Enquire Now"
                             }, void 0, false, {
                                 fileName: "[project]/frontend/app/pages/juniors/page.tsx",
-                                lineNumber: 142,
+                                lineNumber: 127,
                                 columnNumber: 13
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/frontend/app/pages/juniors/page.tsx",
-                        lineNumber: 132,
+                        lineNumber: 117,
                         columnNumber: 11
                     }, this)
                 }, void 0, false, {
                     fileName: "[project]/frontend/app/pages/juniors/page.tsx",
-                    lineNumber: 131,
+                    lineNumber: 116,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/frontend/app/pages/juniors/page.tsx",
-                lineNumber: 130,
+                lineNumber: 115,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/frontend/app/pages/juniors/page.tsx",
-        lineNumber: 47,
+        lineNumber: 32,
         columnNumber: 5
     }, this);
 }
-_s(JuniorsPage, "veup7MN3LbWlK4HC0uvQIijPJ/E=");
+_s(JuniorsPage, "XFWCcN8+GeRjzh4N6aVRI1SAs6U=");
 _c = JuniorsPage;
 var _c;
 __turbopack_context__.k.register(_c, "JuniorsPage");

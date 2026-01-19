@@ -13,7 +13,7 @@ const categories = [
 
 export default function ContactPage() {
 
-  // State Managment 
+  // State Managment ///////////
   const { user } = useUser();
   const [loading, setLoading] = useState(false);
   const [submitted, setSubmitted] = useState(false);
@@ -24,18 +24,18 @@ export default function ContactPage() {
     date: '', message: '', honeypot: ''
   });
   const [file, setFile] = useState<File[]>([]);
+  
   const removeFile = (index: number) => {  // for removing attachments to the form
     setFile(prev => prev.filter((_, i) => i !== index));
   };
 
 
-  // If a user is logged in make sure to preset the email to the users email
-  useEffect(() => {
+  
+  useEffect(() => { // pre fill email if a user is logged in
     if (user?.email) setFormData(prev => ({ ...prev, email: user.email }));
   }, [user]);
 
-  // 2. Clear errors when the user starts typing again
-  const handleInputChange = (field: string, value: string) => {
+  const handleInputChange = (field: string, value: string) => {   // clear errors when user starts typing
     setFormData(prev => ({ ...prev, [field]: value }));
     if (errors[field]) {
       setErrors(prev => {
@@ -47,13 +47,11 @@ export default function ContactPage() {
   };
 
 
-  // Handling submit, making sure the file limit is not over 24mb
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => { // Handling submit, making sure the file limit is not over 24mb, and applying the schema validation errors as well as global errors
     e.preventDefault();
     setErrors({});
 
     if (formData.honeypot) return;
-    // Calculate total size of all selected files
     const totalSize = file.reduce((acc, f) => acc + f.size, 0);
     const MAX_TOTAL_SIZE = 24 * 1024 * 1024; // 24MB
 
@@ -205,7 +203,7 @@ export default function ContactPage() {
                 </div>
 
                 <div>
-                  <h3 className="text-[10px] font-black text-slate-400 uppercase tracking-[0.4em] mb-4">Call HQ</h3>
+                  <h3 className="text-[10px] font-black text-slate-400 uppercase tracking-[0.4em] mb-4">Call Westgate</h3>
                   <p className="text-slate-900 text-4xl font-black uppercase italic tracking-tighter">
                     0400 000 000
                   </p>

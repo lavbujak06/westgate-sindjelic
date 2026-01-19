@@ -10,7 +10,7 @@ const router = Router();
 // Rate limit of max 5 tries
 const contactLimit = rateLimit({
   windowMs: 24 * 60 * 60 * 1000,
-  max: 100,
+  max: 5,
   message: { error: "Daily limit reached. Try again tomorrow." },
   standardHeaders: true,
   legacyHeaders: false,

@@ -1,3 +1,14 @@
+export interface Ladder{
+    pos: number; 
+    team: string; 
+    p: number; 
+    w: number; 
+    d: number; 
+    l: number; 
+    gd: number; 
+    pts: number;
+}
+
 export interface Match{
     id: string | number;
     season_year: number;
@@ -23,3 +34,13 @@ export interface News{
     updated_at: string;
     image_url: string;
 }
+
+export interface MediaItem{
+    id: string;
+    url: string; 
+};
+export interface Config{ 
+    id: string; 
+    season_year: number;
+    team_name: string; 
+};

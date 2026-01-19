@@ -7,17 +7,13 @@ import CoachStaff from '@/components/CoachStuff';
 import StatBox from '@/components/StatBox';
 import MatchSlider from '@/components/MatchSlider';
 import { Calendar, Loader2, Trophy, Clock, MapPin } from 'lucide-react';
-
-type LadderRow = { pos: number; team: string; p: number; w: number; d: number; l: number; gd: number; pts: number; };
-type GameRow = { round: string; date_text: string; time_text: string; venue: string; w_score: string; a_score: string; opponent: string; };
-type Config = { id: string; season_year: number; team_name: string; };
-type MediaItem = { id: string; url: string };
+import { MediaItem, Config, Match, Ladder } from '@/app/types';
 
 export default function MensPage() {
   const [configs, setConfigs] = useState<Config[]>([]);
   const [selectedConfigId, setSelectedConfigId] = useState<string>('');
-  const [ladder, setLadder] = useState<LadderRow[]>([]);
-  const [games, setGames] = useState<GameRow[]>([]);
+  const [ladder, setLadder] = useState<Ladder[]>([]);
+  const [games, setGames] = useState<Match[]>([]);
   const [gallery, setGallery] = useState<MediaItem[]>([]);
   const [loading, setLoading] = useState(true);
 
@@ -26,6 +22,7 @@ export default function MensPage() {
       .then(res => res.json())
       .then(data => {
         if (Array.isArray(data) && data.length > 0) {
+          // Filter specifically for Senior Men
           const mensOnly = data.filter(c => c.team_name === 'Senior Men');
           setConfigs(mensOnly);
           if (mensOnly.length > 0) setSelectedConfigId(mensOnly[0].id);
@@ -64,19 +61,19 @@ export default function MensPage() {
     .sort((a, b) => parseInt(b.round) - parseInt(a.round))
     .slice(0, 5)
     .map(g => {
-      const home = parseInt(g.w_score);
-      const away = parseInt(g.a_score);
+      const home = parseInt(g.w_score!);
+      const away = parseInt(g.a_score!);
       if (home > away) return { label: 'W', color: 'bg-green-500 shadow-[0_0_15px_rgba(34,197,94,0.6)] border-green-400' };
       if (home < away) return { label: 'L', color: 'bg-red-500 shadow-[0_0_15px_rgba(239,68,68,0.6)] border-red-400' };
       return { label: 'D', color: 'bg-gray-500 shadow-[0_0_15px_rgba(107,114,128,0.6)] border-gray-400' };
     });
 
   return (
-    <main className="bg-[#fcfcfc] min-h-screen pb-20 overflow-x-hidden">
+    // REMOVED overflow-x-hidden to fix Navbar disappearance
+    <main className="bg-[#fcfcfc] min-h-screen pb-20">
       <Navbar />
       <Hero heading="Senior Men" message="State League 1 North-West" showButton={false} />
 
-      {/* TOP SECTION (Contained Stats & Selector) */}
       <div className="max-w-7xl mx-auto px-4 md:px-6 -mt-10 relative z-30">
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-8 mb-8">
           <div className="flex flex-wrap items-center gap-4 order-2 md:order-1">
@@ -116,6 +113,7 @@ export default function MensPage() {
           </div>
         ) : (
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
+            {/* ... Tables and Fixtures same as Reserve page ... */}
             <div className="lg:col-span-2">
                 <div className="bg-white rounded-3xl shadow-xl shadow-black/5 overflow-hidden border border-gray-100">
                     <div className="bg-red-700 px-8 py-6 flex justify-between items-center">
@@ -193,22 +191,21 @@ export default function MensPage() {
         )}
       </div>
 
-      {/* 3. FULL WIDTH GALLERY SECTION (Moved outside of max-w-7xl) */}
-      {gallery.length > 0 && !loading && (
+      {/* 3. FULL WIDTH GALLERY SECTION (RESERVES WAY) */}
+      {gallery.length > 0 && (
         <section className="w-full mb-16 overflow-hidden">
-          <div className="max-w-7xl mx-auto px-4 md:px-6 mb-8">
-            <h2 className="text-black font-black uppercase tracking-tighter text-4xl italic">
+          <div className="max-w-7xl mx-auto px-4 md:px-6 mb-6">
+            <h2 className="text-black font-black uppercase tracking-tighter text-3xl italic">
               Team <span className="text-red-600">Gallery</span>
             </h2>
           </div>
           
-          <div className="w-full">
-            <MatchSlider slides={gallery} />
+          <div className="w-screen relative left-[50%] right-[50%] -ml-[50vw] -mr-[50vw]">
+             <MatchSlider key={gallery.length} slides={gallery} />
           </div>
         </section>
       )}
 
-      {/* COACHES SECTION */}
       <div className="max-w-7xl mx-auto px-4 md:px-6">
         <CoachStaff teamSlug="senior-men" />
       </div>

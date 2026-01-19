@@ -7,39 +7,24 @@ import CoachStaff from "@/components/CoachStuff";
 import Link from 'next/link';
 import Image from 'next/image';
 import MatchSlider from '@/components/MatchSlider';
-
-type MediaItem = { id: string; url: string };
-type Config = { id: string; season_year: number; team_name: string; };
+import { MediaItem } from "@/app/types";
 
 
 export default function JuniorsPage() {
   const [gallery, setGallery] = useState<MediaItem[]>([]);
   const [loading, setLoading] = useState(true);
-  const [configs, setConfigs] = useState<Config[]>([]);
-  const [selectedConfigId, setSelectedConfigId] = useState<string>('');
 
 useEffect(() => {
-    // 1. Fetch Configs
-    fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/league/configs`)
-      .then(res => res.json())
-      .then(data => {
-        if (Array.isArray(data) && data.length > 0) {
-          const mensOnly = data.filter(c => c.team_name === 'Juniors');
-          setConfigs(mensOnly);
-          if (mensOnly.length > 0) setSelectedConfigId(mensOnly[0].id);
-        }
-      });
-
-    // 2. Fetch Gallery
+    // Fetch Gallery
     fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/media/juniors`)
       .then(res => res.json())
       .then(data => {
         setGallery(Array.isArray(data) ? data : []);
-        setLoading(false); // <--- THIS WAS MISSING
+        setLoading(false); 
       })
       .catch((err) => {
         console.error("Gallery Fetch Error:", err);
-        setLoading(false); // Stop loading even on error
+        setLoading(false); 
       });
   }, []);
 
