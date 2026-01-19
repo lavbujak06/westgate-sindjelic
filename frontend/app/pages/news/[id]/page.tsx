@@ -5,10 +5,11 @@ import { supabaseClient } from '@/lib/supabaseClient';
 import Navbar from '@/components/Navbar';
 import { Calendar, Clock, ArrowLeft } from 'lucide-react';
 import Link from 'next/link';
+import { News } from '@/app/types';
 
 export default function ArticlePage() {
   const { id } = useParams();
-  const [article, setArticle] = useState<any>(null);
+  const [article, setArticle] = useState<News | null>(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -20,7 +21,7 @@ export default function ArticlePage() {
         .eq('id', id)
         .single();
       
-      if (data) setArticle(data);
+      if (data) setArticle(data as News);
       setLoading(false);
     };
     fetchArticle();
@@ -36,7 +37,7 @@ export default function ArticlePage() {
       {/* HEADER SECTION */}
       <div className="relative h-[45vh] md:h-[55vh] w-full bg-black overflow-hidden">
         <img 
-          src={article.image_url || '/placeholder.jpg'} 
+          src={article.image_url || '/westgateLogo.jpeg'} 
           className="w-full h-full object-cover object-[center_25%] opacity-70"
           alt=""
         />
@@ -76,7 +77,7 @@ export default function ArticlePage() {
           <div className="float-right ml-8 mb-6 w-full md:w-1/2 lg:w-2/5">
             <div className="aspect-[4/5] rounded-3xl overflow-hidden border-8 border-white shadow-2xl bg-slate-100">
               <img 
-                src={article.image_url || '/placeholder.jpg'} 
+                src={article.image_url || '/westgateLogo.jpeg'} 
                 className="w-full h-full object-cover" 
                 alt="article visual" 
               />

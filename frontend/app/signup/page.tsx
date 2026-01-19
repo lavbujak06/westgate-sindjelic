@@ -1,28 +1,44 @@
 'use client';
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
-import { supabaseClient } from '@/lib/supabaseClient';
 import Link from 'next/link';
 import Loader from '@/components/Loader';
 import Navbar from '@/components/Navbar'; 
 import { Turnstile } from '@marsidev/react-turnstile';
+import toast from 'react-hot-toast';
 
 export default function SignupPage() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
+  const [errors, setErrors] = useState<Record<string, string>>({});
   const [signupLoading, setSignupLoading] = useState(false);
   const [captchaToken, setCaptchaToken] = useState<string | null>(null);
   const router = useRouter();
 
+  // Handle clearing errors when typing
+  const handleInputChange = (field: string, value: string) => {
+    if (field === 'email') setEmail(value);
+    if (field === 'password') setPassword(value);
+    
+    if (errors[field]) {
+      setErrors(prev => {
+        const newErrors = { ...prev };
+        delete newErrors[field];
+        return newErrors;
+      });
+    }
+  };
 
   const handleSignup = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    setErrors({});
+    setError('');
+
     if (!captchaToken) {
       setError("Please complete the CAPTCHA");
       return;
     }
-    setError('');
     setSignupLoading(true);
 
     try {
@@ -35,13 +51,20 @@ export default function SignupPage() {
       const data = await res.json();
 
       if (!res.ok) {
-        throw new Error(data.error || 'Signup failed');
+        const msg = data.error || data.message || 'Signup failed';
+        
+        // Map backend Zod strings to the specific state fields
+        if (msg.toLowerCase().includes("email")) setErrors({ email: msg });
+        else if (msg.toLowerCase().includes("password")) setErrors({ password: msg });
+        else if (msg.toLowerCase().includes("captcha")) setErrors({ captcha: msg });
+        else setError(msg); // Use global alert for anything else
+        return;
       }
 
-      alert("Success! Check your email for the confirmation link.");
+      toast.success("Success! Check your email for confirmation.");
       router.push('/login');
     } catch (err: any) {
-      setError(err.message);
+      setError(err.message || "An unexpected error occurred");
     } finally {
       setSignupLoading(false);
     }
@@ -61,26 +84,43 @@ export default function SignupPage() {
           </div>
 
           <form className="p-8 space-y-5" onSubmit={handleSignup}>
+
+            {/* EMAIL FIELD */}
             <div className="space-y-1">
-              <label className="text-[10px] font-bold text-gray-400 uppercase ml-1">Email Address</label>
+              <div className="flex justify-between items-center ml-1">
+                <label className="text-[10px] font-bold text-gray-400 uppercase">Email Address</label>
+                {errors.email && (
+                  <span className="text-[9px] font-bold text-red-600 uppercase italic animate-pulse">
+                    {errors.email}
+                  </span>
+                )}
+              </div>
               <input 
                 type="email" 
                 value={email} 
-                onChange={(e) => setEmail(e.target.value)} 
+                onChange={(e) => handleInputChange('email', e.target.value)} 
                 placeholder="name@example.com"
-                className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl text-gray-900 focus:ring-2 focus:ring-red-600 outline-none transition placeholder:text-gray-300" 
+                className={`w-full px-4 py-3 bg-gray-50 border ${errors.email ? 'border-red-600' : 'border-gray-200'} rounded-xl text-gray-900 focus:ring-2 focus:ring-red-600 outline-none transition placeholder:text-gray-300`} 
                 required 
               />
             </div>
             
+            {/* PASSWORD FIELD */}
             <div className="space-y-1">
-              <label className="text-[10px] font-bold text-gray-400 uppercase ml-1">Password</label>
+              <div className="flex justify-between items-center ml-1">
+                <label className="text-[10px] font-bold text-gray-400 uppercase">Password</label>
+                {errors.password && (
+                  <span className="text-[9px] font-bold text-red-600 uppercase italic animate-pulse">
+                    {errors.password}
+                  </span>
+                )}
+              </div>
               <input 
                 type="password" 
                 value={password} 
-                onChange={(e) => setPassword(e.target.value)} 
+                onChange={(e) => handleInputChange('password', e.target.value)} 
                 placeholder="••••••••"
-                className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl text-gray-900 focus:ring-2 focus:ring-red-600 outline-none transition placeholder:text-gray-300" 
+                className={`w-full px-4 py-3 bg-gray-50 border ${errors.password ? 'border-red-600' : 'border-gray-200'} rounded-xl text-gray-900 focus:ring-2 focus:ring-red-600 outline-none transition placeholder:text-gray-300`} 
                 required 
               />
             </div>

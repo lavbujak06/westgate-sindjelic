@@ -4,9 +4,10 @@ import { supabaseClient } from '@/lib/supabaseClient';
 import Navbar from '@/components/Navbar';
 import Link from 'next/link';
 import Hero from '@/components/Hero';
+import { News } from '@/app/types';
 
 export default function NewsPage() {
-  const [news, setNews] = useState<any[]>([]);
+  const [news, setNews] = useState<News[]>([]);
 
   useEffect(() => {
     const fetchNews = async () => {
@@ -15,7 +16,7 @@ export default function NewsPage() {
         .select('*')
         .eq('published', true)
         .order('created_at', { ascending: false });
-      setNews(data || []);
+      setNews(data as News[]|| []);
     };
     fetchNews();
   }, []);
@@ -51,7 +52,7 @@ export default function NewsPage() {
             
             <div className="absolute bottom-0 left-0 p-8 w-full">
               <span className="text-red-600 font-black text-[10px] uppercase tracking-widest bg-white px-2 py-1 mb-4 inline-block">
-                Flash {index + 1}
+                News Article {index + 1}
               </span>
               <h2 className="text-2xl md:text-4xl font-black text-white uppercase tracking-tighter leading-tight group-hover:text-red-500 mb-2 transition-colors">
                 {item.title}
@@ -79,7 +80,7 @@ export default function NewsPage() {
                   alt=""
                 />
               </div>
-              <p className="text-[10px] font-black text-red-600 uppercase mb-1 tracking-widest">Broadcast</p>
+              <p className="text-[10px] font-black text-red-600 uppercase mb-1 tracking-widest">News Article</p>
               <h4 className="text-xl font-black uppercase italic tracking-tighter leading-tight mb-2 group-hover:underline">
                 {item.title}
               </h4>

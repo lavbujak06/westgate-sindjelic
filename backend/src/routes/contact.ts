@@ -1,14 +1,26 @@
-import express from 'express';
+import { Request, Response, Router } from 'express';
 import nodemailer from 'nodemailer';
 import multer from 'multer';
+import rateLimit from 'express-rate-limit';
+import { validate } from '../middleware/validate';
+import { contactSchema } from '../schemas/authSchema';
 
-const router = express.Router();
-const upload = multer({ 
-  storage: multer.memoryStorage(),
-  limits: { fileSize: 24 * 1024 * 1024 } // 24MB per file
+const router = Router();
+
+// Rate limit of max 5 tries
+const contactLimit = rateLimit({
+  windowMs: 24 * 60 * 60 * 1000,
+  max: 100,
+  message: { error: "Daily limit reached. Try again tomorrow." },
+  standardHeaders: true,
+  legacyHeaders: false,
 });
 
-// Configure your "Sender" (Use a Gmail App Password or SendGrid)
+const upload = multer({ 
+  storage: multer.memoryStorage(),
+  limits: { fileSize: 24 * 1024 * 1024 }
+});
+
 const transporter = nodemailer.createTransport({
   service: 'gmail',
   auth: {
@@ -17,24 +29,22 @@ const transporter = nodemailer.createTransport({
   }
 });
 
-router.post('/', upload.array('attachments', 10), async (req: any, res) => {
+router.post('/', contactLimit, upload.array('attachments', 10), validate(contactSchema), async (req: Request, res: Response) => {
   const { name, email, phone, category, date, message, honeypot } = req.body;
-  // Add this inside router.post
-  if (req.files) {
-    const totalSize = req.files.reduce((acc: number, f: File) => acc + f.size, 0);
+  const files = req.files as Express.Multer.File[]; 
+
+  if (files && files.length > 0) {
+    const totalSize = files.reduce((acc, f) => acc + f.size, 0);
     if (totalSize > 24 * 1024 * 1024) {
       return res.status(400).json({ message: "Total attachments too large (Max 24MB)" });
     }
   }
 
-  // 1. Honeypot check: If this hidden field is filled, it's a bot.
-  if (honeypot) {
-    return res.status(400).json({ message: "Bot detected" });
-  }
+  if (honeypot) return res.status(400).json({ message: "Bot detected" });
 
   try {
-    const mailOptions: any = {
-      from: `"WSFC Portal" <${process.env.EMAIL_USER}>`, // Professional Sender Name
+    const mailOptions = {
+      from: `"WSFC Portal" <${process.env.EMAIL_USER}>`,
       to: 'bujaklav@gmail.com',
       replyTo: email,
       subject: `TECHNICAL INQUIRY: ${category.toUpperCase()} / ${name.toUpperCase()}`,
@@ -85,16 +95,12 @@ router.post('/', upload.array('attachments', 10), async (req: any, res) => {
             </p>
           </div>
         </div>
-      `
-    };
-
-    // 2. Add attachments if they exist
-    if (req.files && req.files.length > 0) {
-      mailOptions.attachments = req.files.map((file: any) => ({
+      `,
+      attachments: files?.map((file) => ({
         filename: file.originalname,
         content: file.buffer
-      }));
-    }
+      }))
+    };
 
     await transporter.sendMail(mailOptions);
     res.status(200).json({ message: "Success" });
@@ -105,8 +111,7 @@ router.post('/', upload.array('attachments', 10), async (req: any, res) => {
 });
 
 
-
-router.post('/system-alert', async (req, res) => {
+router.post('/system-alert', async (req: Request, res: Response) => {
   const { db, storage } = req.body;
 
   try {

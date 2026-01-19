@@ -43,7 +43,7 @@ function AdminGuard({ children }) {
                 // 1. Get Session instead of User (faster for frontend)
                 const { data: { session } } = await __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$lib$2f$supabaseClient$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["supabaseClient"].auth.getSession();
                 if (!session) {
-                    console.log("AdminGuard: ❌ No session found, redirecting...");
+                    console.log("AdminGuard: No session found, redirecting...");
                     router.replace('/login');
                     return;
                 }
@@ -51,19 +51,19 @@ function AdminGuard({ children }) {
                 // 2. Query the admins table
                 const { data, error } = await __TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$lib$2f$supabaseClient$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["supabaseClient"].from('admins').select('id').eq('id', session.user.id).maybeSingle(); // Use maybeSingle to prevent error if not found
                 if (error) {
-                    console.error("AdminGuard: ❌ DB Error:", error.message);
+                    console.error("AdminGuard: DB Error:", error.message);
                     router.replace('/login');
                     return;
                 }
                 if (!data) {
-                    console.log("AdminGuard: ❌ User is logged in but NOT in admins table.");
+                    console.log("AdminGuard: User is logged in but NOT in admins table.");
                     router.replace('/login');
                     return;
                 }
-                console.log("AdminGuard: ✅ Admin confirmed!");
+                console.log("AdminGuard: Admin confirmed!");
                 setAuthorized(true);
             } catch (err) {
-                console.error("AdminGuard: 💥 Crash:", err);
+                console.error("AdminGuard: Crash:", err);
                 router.replace('/login');
             } finally{
                 setLoading(false);

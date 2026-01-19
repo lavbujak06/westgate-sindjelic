@@ -3,11 +3,13 @@ import { supabase } from '../supabase';
 import { requireAdmin } from '../middleware/requireAdmin';
 import fetch from 'cross-fetch';
 import rateLimit from 'express-rate-limit';
+import { validate } from '../middleware/validate';
+import { loginSchema, signupSchema } from '../schemas/authSchema';
 
-// Max 7 login attempts per 15 minutes per IP
+// Max 10 login attempts per 60 minutes per IP
 const loginLimiter = rateLimit({
-  windowMs: 15 * 60 * 1000, // 15 minutes
-  max: 7, 
+  windowMs: 60 * 60 * 1000, // 15 minutes
+  max: 10, 
   message: { error: 'Too many login attempts. Please try again in 15 minutes.' },
   standardHeaders: true, // Return rate limit info in the `RateLimit-*` headers
   legacyHeaders: false, // Disable the `X-RateLimit-*` headers
@@ -27,10 +29,9 @@ const SESSION_DURATION = 60 * 60 * 1000;
 
 
 
-router.post('/login', loginLimiter, async (req, res) => {
-  const { email, password, captchaToken } = req.body; // <-- Get token from frontend
+router.post('/login', validate(loginSchema), loginLimiter, async (req, res) => {
+  const { email, password, captchaToken } = req.body;
 
-  // 2. Security Check: Verify with Cloudflare
   if (!captchaToken) {
     return res.status(403).json({ error: 'CAPTCHA_REQUIRED' });
   }
@@ -49,7 +50,6 @@ router.post('/login', loginLimiter, async (req, res) => {
       return res.status(403).json({ error: 'CAPTCHA verification failed' });
     }
 
-    // 3. Only if Cloudflare is happy, talk to Supabase
     const { data, error } = await supabase.auth.signInWithPassword({ email, password });
 
     if (error || !data.session || !data.user) {
@@ -137,7 +137,7 @@ router.get('/admins', requireAdmin, async (req, res) => {
 });
 
 
-router.post('/signup', signupLimiter, async (req, res) => {
+router.post('/signup', validate(signupSchema), signupLimiter, async (req, res) => {
   const { email, password, captchaToken } = req.body;
 
   // 1. Verify CAPTCHA (Same logic as login)

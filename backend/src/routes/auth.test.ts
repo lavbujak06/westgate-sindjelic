@@ -26,14 +26,14 @@ describe('Auth Routes - Security Attacks', () => {
     jest.clearAllMocks();
   });
 
-  it('ATTACK: Login without CAPTCHA should be forbidden (403)', async () => {
-    const res = await request(app)
-      .post('/api/auth/login')
-      .send({ email: 'admin@test.com', password: 'password123' });
+  it('ATTACK: Login without CAPTCHA should be forbidden', async () => {
+        const res = await request(app)
+            .post('/api/auth/login')
+            .send({ email: 'admin@test.com', password: 'password123' });
 
-    expect(res.status).toBe(403);
-    expect(res.body.error).toBe('CAPTCHA_REQUIRED');
-  });
+        expect(res.status).toBe(400); 
+        expect(res.body.error).toBe('Invalid input: expected string, received undefined'); 
+    });
 
   it('ATTACK: Invalid CAPTCHA token should be rejected', async () => {
     // Mock Cludfare fail
@@ -104,13 +104,13 @@ describe('Auth Routes - Security Attacks', () => {
 
   it('SIGNUP: Should require CAPTCHA just like login', async () => {
     const res = await request(app)
-      .post('/api/auth/signup')
-      .send({ email: 'newuser@test.com', password: 'password123' });
+        .post('/api/auth/signup')
+        .send({ email: 'newuser@test.com', password: 'password123' });
 
     expect(res.status).toBe(400);
-    expect(res.body.error).toBe('Captcha required');
+    // Match the message you wrote in your Zod schema
+    expect(res.body.error).toBe('Invalid input: expected string, received undefined');
   });
-
 
   it('Fail: Shoukd return 401 for wrong password', async () => {
     (fetch as jest.Mock).mockResolvedValue({ json: jest.fn().mockResolvedValue({ success: true}) });
@@ -128,8 +128,6 @@ describe('Auth Routes - Security Attacks', () => {
     expect(res.body.error).toBe('Invalid credentials');
   });
 
-
-
   it('SUCCESS: Logout should clear all security cookies', async () => {
     const res = await request(app).post('/api/auth/logout');
     
@@ -137,8 +135,6 @@ describe('Auth Routes - Security Attacks', () => {
     expect(cookies.some(c => c.includes('sb-access-token=;'))).toBe(true);
     expect(res.status).toBe(200);
   });
-
-
 
   it('SUCCESS: Regular user (non-admin) login should have is_admin: false', async () => {
     (fetch as jest.Mock).mockResolvedValue({ json: jest.fn().mockResolvedValue({ success: true }) });
@@ -162,19 +158,66 @@ describe('Auth Routes - Security Attacks', () => {
     expect(res.body.is_admin).toBe(false);
   });
 
+  it('ATTACK: Should reject extra fields (Mass Assignment Protection)', async () => {
+    const res = await request(app)
+      .post('/api/auth/login')
+      .send({ 
+        email: 'admin@test.com', 
+        password: 'password123', 
+        captchaToken: 'valid',
+        role: 'admin' // <--- This field is NOT in our schema
+      });
+
+    // It should be 400 because .strict() rejects the extra 'role' field
+    expect(res.status).toBe(400);
+  });
+
+  it('VALIDATION: Should reject malformed emails', async () => {
+    const res = await request(app)
+      .post('/api/auth/login')
+      .send({ 
+        email: 'not-an-email', 
+        password: 'password123', 
+        captchaToken: 'valid' 
+      });
+
+    expect(res.status).toBe(400);
+    expect(res.body.error).toBe('Invalid email format');
+  });
+
+  it('VALIDATION: Should reject short passwords', async () => {
+    const res = await request(app)
+      .post('/api/auth/login')
+      .send({ 
+        email: 'test@test.com', 
+        password: '123', // Too short (min 8)
+        captchaToken: 'valid' 
+      });
+
+    expect(res.status).toBe(400);
+    expect(res.body.error).toBe('Password must be at least 8 characters');
+  });
+
 
   // The rate limiter logic has to be last so that it doesnt interfer with the other tests  
-  it('Rate Liniter block after 7 attempts', async () => {
-    for(let i = 0; i < 7; i++){
+    it('Rate Liniter block after 10 attempts', async () => {
+    // We need to send a body that PASSES Zod so it hits the Limiter
+    const validBody = { 
+        email: 'test@test.com', 
+        password: 'password123', 
+        captchaToken: 'any-string' 
+    };
+
+    for(let i = 0; i < 10; i++){ // You changed max to 10 in your code
         await request(app)
             .post('/api/auth/login')
-            .send({ email: 'test@test.com'})
+            .send(validBody);
     }
 
-    const res = await request(app).post('/api/auth/login').send({ email: 'test@test.com'});
+    const res = await request(app).post('/api/auth/login').send(validBody);
     expect(res.status).toBe(429);
     expect(res.body.error).toBe('Too many login attempts. Please try again in 15 minutes.');
-  });
+    });
   
   
 });

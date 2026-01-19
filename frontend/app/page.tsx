@@ -6,16 +6,17 @@ import Footer from '@/components/Footer';
 import Hero from '@/components/Hero';
 import Navbar from '@/components/Navbar';
 import Link from 'next/link';
-import { Calendar, MapPin, ArrowRight, X, Timer, Radio } from 'lucide-react';
+import { Calendar, MapPin, ArrowRight } from 'lucide-react';
 import Image from 'next/image';
+import { Match, News, MatchState } from './types';
 
 export default function HomePage() {
   // State variables
-  const [nextMatch, setNextMatch] = useState<any>(null);
+  const [nextMatch, setNextMatch] = useState<MatchState>(null);
   const [timeLeft, setTimeLeft] = useState({ 
     days: 0, hours: 0, minutes: 0, seconds: 0, status: 'UPCOMING' 
   });
-  const [latestNews, setLatestNews] = useState<any[]>([]);
+  const [latestNews, setLatestNews] = useState<News[]>([]);
   const [loading, setLoading] = useState(true);
 
 
@@ -41,10 +42,12 @@ export default function HomePage() {
   const fetchMatches = useCallback(async () => {
     try {
       setLoading(true);
-      const { data: allMatches } = await supabaseClient
+      const { data } = await supabaseClient
         .from('games_cache')
         .select('*')
         .eq('team_name', 'Senior Men');
+
+        const allMatches = data as Match[];
 
       if (allMatches && allMatches.length > 0) {
         const now = new Date();
@@ -67,24 +70,24 @@ export default function HomePage() {
     }
   }, [getMatchDateObject]);
   
-// fetch news function
-const fetchNews = useCallback(async () => {
-  const { data, error } = await supabaseClient
-    .from('news')
-    .select('*')
-    .order('created_at', { ascending: false })
-    .limit(3);
+  // fetch news function
+  const fetchNews = useCallback(async () => {
+    const { data, error } = await supabaseClient
+      .from('news')
+      .select('*')
+      .order('created_at', { ascending: false })
+      .limit(3);
 
-  if (!error && data) {
-    setLatestNews(data);
-  }
-}, []);
+    if (!error && data) {
+      setLatestNews(data);
+    }
+  }, []);
 
-// add the useEffect to make sure both news and latest match function are called
-useEffect(() => {
-  fetchMatches();
-  fetchNews();
-}, [fetchMatches, fetchNews]);
+  // add the useEffect to make sure both news and latest match function are called
+  useEffect(() => {
+    fetchMatches();
+    fetchNews();
+  }, [fetchMatches, fetchNews]);
 
   // useEffect Countdown timer, sets the time left and sets it to either live or finished depending on the time
   useEffect(() => {
@@ -121,9 +124,11 @@ useEffect(() => {
   }, [timeLeft.status, fetchMatches]);
 
   // Dynamic Home/Away logic
-  const isHome = nextMatch?.venue === "Ardeer Reserve";
-  const homeTeam = isHome ? "Westgate" : nextMatch?.opponent;
-  const awayTeam = isHome ? nextMatch?.opponent : "Westgate";
+  const isMatchObject = nextMatch && typeof nextMatch !== 'string';
+
+  const isHome = isMatchObject? nextMatch.venue === "Ardeer Reserve" : false;
+  const homeTeam = isMatchObject ? (isHome ? 'Westgate' : nextMatch.opponent) : "";
+  const awayTeam = isMatchObject ? (isHome ? nextMatch.opponent : 'Westgate') : "";
 
   return (
     <main className="bg-[#fcfcfc] italic overflow-x-hidden">
@@ -198,10 +203,6 @@ useEffect(() => {
                   <div className={`lg:col-span-4 flex flex-col justify-center items-center p-8 text-center transition-colors duration-1000 ${timeLeft.status === 'LIVE' ? 'bg-red-700' : 'bg-red-600'}`}>
                     {timeLeft.status === 'LIVE' ? (
                       <div className="flex flex-col items-center animate-in fade-in zoom-in duration-700">
-                        {/* <div className="flex items-center gap-2 bg-white text-red-700 px-4 py-1.5 rounded-full shadow-lg mb-3">
-                            <Radio size={14} className="animate-pulse" />
-                            <span className="font-black uppercase tracking-[0.2em] text-[10px]">Match Live</span>
-                        </div> */}
                         <p className="text-white text-xl font-black uppercase italic tracking-tighter leading-tight">Kickoff Started</p>
                       </div>
                     ) : (

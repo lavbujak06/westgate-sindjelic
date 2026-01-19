@@ -1,5 +1,6 @@
 import 'dotenv/config'; 
 import express from 'express';
+import helmet from 'helmet';
 import cors from 'cors';
 import cookieParser from 'cookie-parser';
 
@@ -28,6 +29,8 @@ import sponsorsRoutes from './routes/sponsors';
 import highlightRouter from './routes/highlights';
 
 const app = express();
+
+app.use(helmet());
 
 app.use(
   cors({

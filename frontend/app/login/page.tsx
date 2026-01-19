@@ -7,6 +7,7 @@ import Link from 'next/link';
 import Loader from '@/components/Loader';
 import Navbar from '@/components/Navbar';
 import { Turnstile } from '@marsidev/react-turnstile';
+import toast from 'react-hot-toast';
 
 export default function LoginPage() {
   const [email, setEmail] = useState('');
@@ -14,14 +15,31 @@ export default function LoginPage() {
   const [error, setError] = useState('');
   const [loginLoading, setLoginLoading] = useState(false);
   const [captchaToken, setCaptchaToken] = useState<string | null>(null);
+  const [errors, setErrors] = useState<Record<string, string>>({});
   const router = useRouter();
   
   
-  // 🛡️ Pull state setters from context to update the Account Menu globally
+  // Pull state setters from context to update the Account Menu globally
   const { setUser, setProfile } = useUser();
+
+  const handleInputChange = (field: string, value: string) => {
+    if (field === 'email') setEmail(value);
+    if (field === 'password') setPassword(value);
+    
+    if (errors[field]) {
+      setErrors(prev => {
+        const newErrors = { ...prev };
+        delete newErrors[field];
+        return newErrors;
+      });
+    }
+  };
 
   const handleLogin = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    setErrors({});
+    setError('');
+
     if (!captchaToken) {
       setError('Please complete the CAPTCHA');
       return;
@@ -38,13 +56,17 @@ export default function LoginPage() {
         body: JSON.stringify({ email, password, captchaToken }),
         credentials: 'include', 
       });
-
-      // We define 'data' here so it's available for the rest of the 'try' block
       const data = await res.json();
 
       if (!res.ok) {
-        throw new Error(data.error || 'Login failed');
-      }
+        const msg = data.error || data.message;
+        // Map Zod errors to fields based on keywords
+        if (msg.toLowerCase().includes("email")) setErrors({ email: msg });
+        else if (msg.toLowerCase().includes("password")) setErrors({ password: msg });
+        else if (msg.toLowerCase().includes("captcha")) setErrors({ captcha: msg });
+        else toast.error(msg);
+        return;
+    }
 
       // 2. SUPABASE SYNC (With Dashboard Captcha turned OFF)
       const { error: authError } = await supabaseClient.auth.signInWithPassword({ 
@@ -65,7 +87,6 @@ export default function LoginPage() {
       }
 
     } catch (err: any) { 
-      console.error('Login error:', err);
       setError(err.message || 'Connection error'); 
     } finally { 
       setLoginLoading(false); 
@@ -87,29 +108,38 @@ export default function LoginPage() {
           </div>
 
           <form className="p-10 space-y-6" onSubmit={handleLogin}>
+            {/* EMAIL FIELD */}
             <div className="space-y-2">
-              <label className="text-[10px] font-black text-gray-400 uppercase tracking-widest ml-1">Member Email</label>
+              <div className="flex justify-between items-center ml-1">
+                <label className="text-[10px] font-black text-gray-400 uppercase tracking-widest">Email</label>
+                {errors.email && <span className="text-[9px] font-bold text-red-600 uppercase italic animate-pulse">{errors.email}</span>}
+              </div>
               <input 
                 type="email" 
                 value={email} 
-                onChange={(e) => setEmail(e.target.value)} 
-                className="w-full px-5 py-4 bg-gray-50 border border-gray-200 rounded-2xl text-gray-900 focus:ring-2 focus:ring-red-600 outline-none transition-all font-medium" 
+                onChange={(e) => handleInputChange('email', e.target.value)} 
+                className={`w-full px-5 py-4 bg-gray-50 border ${errors.email ? 'border-red-600' : 'border-gray-200'} rounded-2xl text-gray-900 focus:ring-2 focus:ring-red-600 outline-none transition-all font-medium`} 
                 placeholder="name@example.com"
                 required 
               />
             </div>
 
+            {/* PASSWORD FIELD */}
             <div className="space-y-2">
-              <label className="text-[10px] font-black text-gray-400 uppercase tracking-widest ml-1">Password</label>
+              <div className="flex justify-between items-center ml-1">
+                <label className="text-[10px] font-black text-gray-400 uppercase tracking-widest">Password</label>
+                {errors.password && <span className="text-[9px] font-bold text-red-600 uppercase italic animate-pulse">{errors.password}</span>}
+              </div>
               <input 
                 type="password" 
                 value={password} 
-                onChange={(e) => setPassword(e.target.value)} 
-                className="w-full px-5 py-4 bg-gray-50 border border-gray-200 rounded-2xl text-gray-900 focus:ring-2 focus:ring-red-600 outline-none transition-all font-medium" 
+                onChange={(e) => handleInputChange('password', e.target.value)} 
+                className={`w-full px-5 py-4 bg-gray-50 border ${errors.password ? 'border-red-600' : 'border-gray-200'} rounded-2xl text-gray-900 focus:ring-2 focus:ring-red-600 outline-none transition-all font-medium`} 
                 placeholder="••••••••"
                 required 
               />
             </div>
+
             <div className="flex justify-center py-2">
               <Turnstile 
                 siteKey={process.env.NEXT_PUBLIC_CLOUDFLARE_SITE_KEY!} 

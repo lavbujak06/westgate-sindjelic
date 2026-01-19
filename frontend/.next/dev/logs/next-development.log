@@ -1,50 +1,405 @@
-[00:00:00.567] Server  ERROR   (node:23137) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/lavbujak/Desktop/Sindjelic/westgate-sindjelic/frontend/next.config.js is not specified and it doesn't parse as CommonJS.
+[00:00:00.625] Server  ERROR   (node:71172) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/lavbujak/Desktop/Sindjelic/westgate-sindjelic/frontend/next.config.js is not specified and it doesn't parse as CommonJS.
 Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
 To eliminate this warning, add "type": "module" to /Users/lavbujak/Desktop/Sindjelic/westgate-sindjelic/frontend/package.json.
 (Use `node --trace-warnings ...` to show where the warning was created)
-[00:00:01.104] Server  WARN    ⚠ The "middleware" file convention is deprecated. Please use "proxy" instead. Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
-[00:00:01.221] Server  LOG     ✓ Ready in 979ms
-[00:00:01.243] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:00:01.243] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:00:01.243] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:00:01.243] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:00:01.936] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:00:02.124] Browser WARN    Image with src "/Westgatelogo.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
-[00:00:02.945] Browser WARN    Session check handled: {}
-[00:00:07.760] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
-[00:00:07.760] Browser WARN    Please ensure that the container has a non-static position, like 'relative', 'fixed', or 'absolute' to ensure scroll offset is calculated correctly.
-[00:00:07.760] Browser WARN    Image with src "/serbiaFlag.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:00:07.760] Browser WARN    Image with src "/serbiaFlag.png" has "fill" and parent element with invalid "position". Provided "sticky" should be one of absolute,fixed,relative.
-[00:00:22.900] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:00:23.442] Browser LOG     AccountMenu: ✅ Admin privileges confirmed via 'admins' table.
-[00:00:44.978] Browser WARN    Image with src "/sindjelic.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:00:51.983] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:00:52.131] Browser WARN    Image with src "/Westgatelogo.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
-[00:00:52.131] Browser WARN    Image with src "/sindjelic.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:00:57.350] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
-[00:01:39.333] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:01:39.487] Browser WARN    Image with src "/Westgatelogo.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
-[00:01:39.488] Browser WARN    Image with src "/sindjelic.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:02:16.362] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
-[00:03:15.175] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:03:15.323] Browser WARN    Image with src "/Westgatelogo.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
-[00:03:15.323] Browser WARN    Image with src "/sindjelic.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:05:36.921] Server  LOG     ✓ Compiled in 637ms
-[00:06:09.749] Server  LOG     ✓ Compiled in 96ms
-[00:06:12.962] Server  LOG     ✓ Compiled in 35ms
-[00:06:17.524] Server  LOG     ✓ Compiled in 39ms
-[00:06:34.561] Server  LOG     ✓ Compiled in 60ms
-[00:06:44.050] Server  LOG     ✓ Compiled in 59ms
-[00:06:46.761] Server  LOG     ✓ Compiled in 25ms
-[00:06:52.230] Server  LOG     ✓ Compiled in 31ms
-[00:06:56.743] Server  LOG     ✓ Compiled in 85ms
-[00:07:13.961] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
-[00:07:13.961] Browser WARN    Please ensure that the container has a non-static position, like 'relative', 'fixed', or 'absolute' to ensure scroll offset is calculated correctly.
-[00:07:13.961] Browser WARN    Image with src "/serbiaFlag.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:07:13.961] Browser WARN    Image with src "/serbiaFlag.png" has "fill" and parent element with invalid "position". Provided "sticky" should be one of absolute,fixed,relative.
-[00:09:24.935] Server  LOG     ✓ Compiled in 190ms
-[00:09:43.832] Server  LOG     ✓ Compiled in 44ms
-[00:09:47.114] Server  LOG     ✓ Compiled in 42ms
-[00:09:50.850] Server  LOG     ✓ Compiled in 42ms
-[00:09:54.102] Server  LOG     ✓ Compiled in 58ms
-[00:10:42.073] Server  LOG     ✓ Compiled in 50ms
+[00:00:01.305] Server  WARN    ⚠ The "middleware" file convention is deprecated. Please use "proxy" instead. Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
+[00:00:01.396] Server  LOG     ✓ Ready in 1095ms
+[00:00:02.319] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:02.527] Browser WARN    Image with src "/Westgatelogo.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:00:32.606] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:32.829] Browser WARN    Image with src "/Westgatelogo.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:07:48.095] Server  LOG     ✓ Compiled in 1007ms
+[00:07:51.186] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+[00:08:08.505] Server  LOG     ✓ Compiled in 264ms
+[00:08:20.010] Server  LOG     ✓ Compiled in 98ms
+[00:08:26.800] Server  LOG     ✓ Compiled in 60ms
+[00:08:49.879] Server  LOG     ✓ Compiled in 76ms
+[00:08:51.294] Server  LOG     ✓ Compiled in 32ms
+[00:08:53.583] Server  LOG     ✓ Compiled in 23ms
+[00:08:55.222] Server  LOG     ✓ Compiled in 38ms
+[00:08:59.701] Server  LOG     ✓ Compiled in 145ms
+[00:08:59.809] Browser ERROR   ./frontend/app/login/page.tsx:26:22
+Parsing ecmascript source code failed
+  24 |   const handleInputChange = (field: string, value: string) => {
+  25 |     setFormData(prev => ({ ...prev, [field]: value }));
+> 26 |     setEmail(prev => )
+     |                      ^
+  27 |     if (errors[field]) setErrors(prev => ({ ...prev, [field]: '' }));
+  28 |   };
+  29 |
+
+Expression expected
+
+Import traces:
+  Client Component Browser:
+    ./frontend/app/login/page.tsx [Client Component Browser]
+    ./frontend/app/login/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./frontend/app/login/page.tsx [Client Component SSR]
+    ./frontend/app/login/page.tsx [Server Component]
+[00:09:01.995] Browser ERROR   ./frontend/app/login/page.tsx:26:23
+Parsing ecmascript source code failed
+  24 |   const handleInputChange = (field: string, value: string) => {
+  25 |     setFormData(prev => ({ ...prev, [field]: value }));
+> 26 |     setEmail(prev => (..))
+     |                       ^
+  27 |     if (errors[field]) setErrors(prev => ({ ...prev, [field]: '' }));
+  28 |   };
+  29 |
+
+Expression expected
+
+Import traces:
+  Client Component Browser:
+    ./frontend/app/login/page.tsx [Client Component Browser]
+    ./frontend/app/login/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./frontend/app/login/page.tsx [Client Component SSR]
+    ./frontend/app/login/page.tsx [Server Component]
+[00:09:04.676] Browser ERROR   ./frontend/app/login/page.tsx:26:23
+Parsing ecmascript source code failed
+  24 |   const handleInputChange = (field: string, value: string) => {
+  25 |     setFormData(prev => ({ ...prev, [field]: value }));
+> 26 |     setEmail(prev => (..))
+     |                       ^
+  27 |     if (errors[field]) setErrors(prev => ({ ...prev, [field]: '' }));
+  28 |   };
+  29 |
+
+Expression expected
+
+Import traces:
+  Client Component Browser:
+    ./frontend/app/login/page.tsx [Client Component Browser]
+    ./frontend/app/login/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./frontend/app/login/page.tsx [Client Component SSR]
+    ./frontend/app/login/page.tsx [Server Component]
+[00:09:07.584] Browser ERROR   ./frontend/app/login/page.tsx:26:23
+Parsing ecmascript source code failed
+  24 |   const handleInputChange = (field: string, value: string) => {
+  25 |     setFormData(prev => ({ ...prev, [field]: value }));
+> 26 |     setEmail(prev => (..prev))
+     |                       ^
+  27 |     if (errors[field]) setErrors(prev => ({ ...prev, [field]: '' }));
+  28 |   };
+  29 |
+
+Expression expected
+
+Import traces:
+  Client Component Browser:
+    ./frontend/app/login/page.tsx [Client Component Browser]
+    ./frontend/app/login/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./frontend/app/login/page.tsx [Client Component SSR]
+    ./frontend/app/login/page.tsx [Server Component]
+[00:09:15.900] Browser ERROR   ./frontend/app/login/page.tsx:26:23
+Parsing ecmascript source code failed
+  24 |   const handleInputChange = (field: string, value: string) => {
+  25 |     setFormData(prev => ({ ...prev, [field]: value }));
+> 26 |     setEmail(prev => (..prev, ))
+     |                       ^
+  27 |     if (errors[field]) setErrors(prev => ({ ...prev, [field]: '' }));
+  28 |   };
+  29 |
+
+Expression expected
+
+Import traces:
+  Client Component Browser:
+    ./frontend/app/login/page.tsx [Client Component Browser]
+    ./frontend/app/login/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./frontend/app/login/page.tsx [Client Component SSR]
+    ./frontend/app/login/page.tsx [Server Component]
+[00:09:17.166] Browser ERROR   ./frontend/app/login/page.tsx:26:23
+Parsing ecmascript source code failed
+  24 |   const handleInputChange = (field: string, value: string) => {
+  25 |     setFormData(prev => ({ ...prev, [field]: value }));
+> 26 |     setEmail(prev => (..prev, []))
+     |                       ^
+  27 |     if (errors[field]) setErrors(prev => ({ ...prev, [field]: '' }));
+  28 |   };
+  29 |
+
+Expression expected
+
+Import traces:
+  Client Component Browser:
+    ./frontend/app/login/page.tsx [Client Component Browser]
+    ./frontend/app/login/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./frontend/app/login/page.tsx [Client Component SSR]
+    ./frontend/app/login/page.tsx [Server Component]
+[00:09:21.107] Browser ERROR   ./frontend/app/login/page.tsx:26:23
+Parsing ecmascript source code failed
+  24 |   const handleInputChange = (field: string, value: string) => {
+  25 |     setFormData(prev => ({ ...prev, [field]: value }));
+> 26 |     setEmail(prev => (..prev, [field]))
+     |                       ^
+  27 |     if (errors[field]) setErrors(prev => ({ ...prev, [field]: '' }));
+  28 |   };
+  29 |
+
+Expression expected
+
+Import traces:
+  Client Component Browser:
+    ./frontend/app/login/page.tsx [Client Component Browser]
+    ./frontend/app/login/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./frontend/app/login/page.tsx [Client Component SSR]
+    ./frontend/app/login/page.tsx [Server Component]
+[00:09:23.285] Browser ERROR   ./frontend/app/login/page.tsx:26:23
+Parsing ecmascript source code failed
+  24 |   const handleInputChange = (field: string, value: string) => {
+  25 |     setFormData(prev => ({ ...prev, [field]: value }));
+> 26 |     setEmail(prev => (..prev, [field]:va))
+     |                       ^
+  27 |     if (errors[field]) setErrors(prev => ({ ...prev, [field]: '' }));
+  28 |   };
+  29 |
+
+Expression expected
+
+Import traces:
+  Client Component Browser:
+    ./frontend/app/login/page.tsx [Client Component Browser]
+    ./frontend/app/login/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./frontend/app/login/page.tsx [Client Component SSR]
+    ./frontend/app/login/page.tsx [Server Component]
+[00:09:25.615] Browser ERROR   ./frontend/app/login/page.tsx:26:23
+Parsing ecmascript source code failed
+  24 |   const handleInputChange = (field: string, value: string) => {
+  25 |     setFormData(prev => ({ ...prev, [field]: value }));
+> 26 |     setEmail(prev => (..prev, [field]:value))
+     |                       ^
+  27 |     if (errors[field]) setErrors(prev => ({ ...prev, [field]: '' }));
+  28 |   };
+  29 |
+
+Expression expected
+
+Import traces:
+  Client Component Browser:
+    ./frontend/app/login/page.tsx [Client Component Browser]
+    ./frontend/app/login/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./frontend/app/login/page.tsx [Client Component SSR]
+    ./frontend/app/login/page.tsx [Server Component]
+[00:09:26.968] Browser ERROR   ./frontend/app/login/page.tsx:26:23
+Parsing ecmascript source code failed
+  24 |   const handleInputChange = (field: string, value: string) => {
+  25 |     setFormData(prev => ({ ...prev, [field]: value }));
+> 26 |     setEmail(prev => (..prev, [field]:value));
+     |                       ^
+  27 |     if (errors[field]) setErrors(prev => ({ ...prev, [field]: '' }));
+  28 |   };
+  29 |
+
+Expression expected
+
+Import traces:
+  Client Component Browser:
+    ./frontend/app/login/page.tsx [Client Component Browser]
+    ./frontend/app/login/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./frontend/app/login/page.tsx [Client Component SSR]
+    ./frontend/app/login/page.tsx [Server Component]
+[00:09:31.084] Server  LOG     ✓ Compiled in 53ms
+[00:09:31.187] Browser ERROR   ./frontend/app/login/page.tsx:26:46
+Parsing ecmascript source code failed
+  24 |   const handleInputChange = (field: string, value: string) => {
+  25 |     setFormData(prev => ({ ...prev, [field]: value }));
+> 26 |     setEmail(prev => (...prev, [field]:value));
+     |                                              ^
+  27 |     if (errors[field]) setErrors(prev => ({ ...prev, [field]: '' }));
+  28 |   };
+  29 |
+
+Expected '=>', got ')'
+
+Import traces:
+  Client Component Browser:
+    ./frontend/app/login/page.tsx [Client Component Browser]
+    ./frontend/app/login/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./frontend/app/login/page.tsx [Client Component SSR]
+    ./frontend/app/login/page.tsx [Server Component]
+[00:09:35.976] Server  LOG     ✓ Compiled in 57ms
+[00:09:36.079] Browser ERROR   ./frontend/app/login/page.tsx:26:25
+Parsing ecmascript source code failed
+  24 |   const handleInputChange = (field: string, value: string) => {
+  25 |     setFormData(prev => ({ ...prev, [field]: value }));
+> 26 |     setEmail(prev => ({}...prev, [field]:value));
+     |                         ^^^
+  27 |     if (errors[field]) setErrors(prev => ({ ...prev, [field]: '' }));
+  28 |   };
+  29 |
+
+Expected ',', got '...'
+
+Import traces:
+  Client Component Browser:
+    ./frontend/app/login/page.tsx [Client Component Browser]
+    ./frontend/app/login/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./frontend/app/login/page.tsx [Client Component SSR]
+    ./frontend/app/login/page.tsx [Server Component]
+[00:09:37.343] Server  LOG     ✓ Compiled in 25ms
+[00:09:37.445] Browser ERROR   ./frontend/app/login/page.tsx:26:46
+Parsing ecmascript source code failed
+  24 |   const handleInputChange = (field: string, value: string) => {
+  25 |     setFormData(prev => ({ ...prev, [field]: value }));
+> 26 |     setEmail(prev => ({...prev, [field]:value));
+     |                                              ^
+  27 |     if (errors[field]) setErrors(prev => ({ ...prev, [field]: '' }));
+  28 |   };
+  29 |
+
+Expected ',', got ')'
+
+Import traces:
+  Client Component Browser:
+    ./frontend/app/login/page.tsx [Client Component Browser]
+    ./frontend/app/login/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./frontend/app/login/page.tsx [Client Component SSR]
+    ./frontend/app/login/page.tsx [Server Component]
+[00:09:42.396] Server  LOG     ✓ Compiled in 57ms
+[00:09:48.517] Server  LOG     ✓ Compiled in 50ms
+[00:09:54.868] Server  LOG     ✓ Compiled in 48ms
+[00:10:05.711] Server  LOG     ✓ Compiled in 55ms
+[00:10:07.593] Server  LOG     ✓ Compiled in 106ms
+[00:10:08.565] Server  LOG     ✓ Compiled in 35ms
+[00:10:11.492] Server  LOG     ✓ Compiled in 33ms
+[00:10:14.855] Server  LOG     ✓ Compiled in 52ms
+[00:10:17.740] Server  LOG     ✓ Compiled in 41ms
+[00:10:19.105] Server  LOG     ✓ Compiled in 44ms
+[00:10:20.195] Server  LOG     ✓ Compiled in 31ms
+[00:10:32.410] Server  LOG     ✓ Compiled in 107ms
+[00:10:52.345] Server  LOG     ✓ Compiled in 105ms
+[00:10:55.427] Server  LOG     ✓ Compiled in 52ms
+[00:11:13.903] Server  LOG     ✓ Compiled in 55ms
+[00:11:18.172] Server  LOG     ✓ Compiled in 101ms
+[00:11:18.331] Browser ERROR   ./frontend/app/login/page.tsx:12:1
+Parsing ecmascript source code failed
+  10 | import toas
+  11 |
+> 12 | export default function LoginPage() {
+     | ^^^^^^
+  13 |   const [email, setEmail] = useState('');
+  14 |   const [password, setPassword] = useState('');
+  15 |   const [error, setError] = useState('');
+
+Expected ',', got 'export'
+
+Import traces:
+  Client Component Browser:
+    ./frontend/app/login/page.tsx [Client Component Browser]
+    ./frontend/app/login/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./frontend/app/login/page.tsx [Client Component SSR]
+    ./frontend/app/login/page.tsx [Server Component]
+[00:11:19.433] Server  LOG     ✓ Compiled in 228ms
+[00:11:46.128] Server  LOG     ✓ Compiled in 111ms
+[00:12:49.685] Server  LOG     ✓ Compiled in 88ms
+[00:14:30.360] Server  LOG     ✓ Compiled in 101ms
+[00:14:33.612] Server  LOG     ✓ Compiled in 53ms
+[00:14:35.140] Server  LOG     ✓ Compiled in 39ms
+[00:14:37.363] Server  LOG     ✓ Compiled in 121ms
+[00:14:59.390] Server  LOG     ✓ Compiled in 94ms
+[00:15:10.184] Server  LOG     ✓ Compiled in 93ms
+[00:15:15.213] Server  LOG     ✓ Compiled in 49ms
+[00:15:17.166] Server  LOG     ✓ Compiled in 149ms
+[00:15:59.996] Server  LOG     ✓ Compiled in 80ms
+[00:16:10.903] Server  LOG     ✓ Compiled in 181ms
+[00:16:11.827] Server  LOG     ✓ Compiled in 62ms
+[00:16:11.943] Browser ERROR   ./frontend/app/login/page.tsx:89:7
+Parsing ecmascript source code failed
+  87 |       }
+  88 |
+> 89 |     } catch (err: any) { 
+     |       ^^^^^
+  90 |       setError(err.message || 'Connection error'); 
+  91 |     } finally { 
+  92 |       setLoginLoading(false); 
+
+Expected a semicolon
+
+Import traces:
+  Client Component Browser:
+    ./frontend/app/login/page.tsx [Client Component Browser]
+    ./frontend/app/login/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./frontend/app/login/page.tsx [Client Component SSR]
+    ./frontend/app/login/page.tsx [Server Component]
+[00:16:11.943] Browser ERROR   ./frontend/app/login/page.tsx:59:13
+Parsing ecmascript source code failed
+  57 |         credentials: 'include', 
+  58 |       });
+> 59 |       const <data value=""></data> = await res.json();
+     |             ^
+  60 |
+  61 |       if (!res.ok) {
+  62 |         const msg = result.error || result.message;
+
+Expression expected
+
+Import traces:
+  Client Component Browser:
+    ./frontend/app/login/page.tsx [Client Component Browser]
+    ./frontend/app/login/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./frontend/app/login/page.tsx [Client Component SSR]
+    ./frontend/app/login/page.tsx [Server Component]
+[00:16:11.943] Browser ERROR   ./frontend/app/login/page.tsx:72:36
+Parsing ecmascript source code failed
+  70 |
+  71 |       // 2. SUPABASE SYNC (With Dashboard Captcha turned OFF)
+> 72 |       const { error: authError } = await supabaseClient.auth.signInWithPassword({ 
+     |                                    ^^^^^
+  73 |         email, 
+  74 |         password 
+  75 |       });
+
+await isn't allowed in non-async function
+
+Import traces:
+  Client Component Browser:
+    ./frontend/app/login/page.tsx [Client Component Browser]
+    ./frontend/app/login/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./frontend/app/login/page.tsx [Client Component SSR]
+    ./frontend/app/login/page.tsx [Server Component]
+[00:16:12.827] Server  LOG     ✓ Compiled in 37ms
+[00:16:14.182] Server  LOG     ✓ Compiled in 65ms
+[00:16:18.650] Server  LOG     ✓ Compiled in 67ms
+[00:16:20.317] Server  LOG     ✓ Compiled in 34ms
+[00:16:21.678] Server  LOG     ✓ Compiled in 36ms
+[00:16:23.008] Server  LOG     ✓ Compiled in 32ms
+[00:17:46.060] Server  LOG     ✓ Compiled in 76ms
+[00:18:05.296] Server  LOG     ✓ Compiled in 118ms
+[00:18:09.823] Server  LOG     ✓ Compiled in 64ms
+[00:18:34.914] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:18:35.065] Browser WARN    Image with src "/Westgatelogo.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:23:50.782] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior

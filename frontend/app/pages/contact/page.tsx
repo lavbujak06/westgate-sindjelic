@@ -12,27 +12,46 @@ const categories = [
 ];
 
 export default function ContactPage() {
+
+  // State Managment 
   const { user } = useUser();
   const [loading, setLoading] = useState(false);
   const [submitted, setSubmitted] = useState(false);
-
-  // Form State (STRICTLY UNCHANGED)
+  const [confirmReset, setConfirmReset] = useState(false);
+  const [errors, setErrors] = useState<Record<string, string>>({});
   const [formData, setFormData] = useState({
     name: '', email: '', phone: '', category: 'General Inquiry',
     date: '', message: '', honeypot: ''
   });
   const [file, setFile] = useState<File[]>([]);
+  const removeFile = (index: number) => {  // for removing attachments to the form
+    setFile(prev => prev.filter((_, i) => i !== index));
+  };
 
+
+  // If a user is logged in make sure to preset the email to the users email
   useEffect(() => {
     if (user?.email) setFormData(prev => ({ ...prev, email: user.email }));
   }, [user]);
 
-  const removeFile = (index: number) => {
-    setFile(prev => prev.filter((_, i) => i !== index));
+  // 2. Clear errors when the user starts typing again
+  const handleInputChange = (field: string, value: string) => {
+    setFormData(prev => ({ ...prev, [field]: value }));
+    if (errors[field]) {
+      setErrors(prev => {
+        const newErrors = { ...prev };
+        delete newErrors[field];
+        return newErrors;
+      });
+    }
   };
 
+
+  // Handling submit, making sure the file limit is not over 24mb
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setErrors({});
+
     if (formData.honeypot) return;
     // Calculate total size of all selected files
     const totalSize = file.reduce((acc, f) => acc + f.size, 0);
@@ -40,7 +59,7 @@ export default function ContactPage() {
 
     if (totalSize > MAX_TOTAL_SIZE) {
       toast.error("Combined file size exceeds 24MB limit.");
-      return; // Stop the execution here
+      return; 
     }
     setLoading(true);
 
@@ -55,13 +74,20 @@ export default function ContactPage() {
         method: 'POST',
         body: data,
       });
+      const result = await res.json();
 
       if (res.ok) {
         setSubmitted(true);
         toast.success("Message Dispatched!");
       } else {
-        throw new Error();
-      }
+        // Logic to determine which field the error belongs to
+        const msg = result.error || result.message;
+        
+        if (msg.toLowerCase().includes("name")) setErrors({ name: msg });
+        else if (msg.toLowerCase().includes("email")) setErrors({ email: msg });
+        else if (msg.toLowerCase().includes("message")) setErrors({ message: msg });
+        else toast.error(msg);
+        }
     } catch (err) {
       toast.error("Transmission Failed. Try again.");
     } finally {
@@ -69,7 +95,22 @@ export default function ContactPage() {
     }
   };
 
-  if (submitted) return (
+  const resetForm = async () => {
+    setFormData({
+      name: '',
+      email: '',
+      phone: '',
+      category: 'General Inquiry',
+      date: '', 
+      message: '', 
+      honeypot: ''
+    });
+    setFile([]);
+    setConfirmReset(false); 
+    toast.success("Form Cleared");
+  };
+
+  if (submitted) return (   // Present the user a success message after sending an email
     <div className="min-h-screen bg-[#020617] flex items-center justify-center p-6 italic">
         <div className="max-w-md w-full bg-slate-900 border border-slate-800 rounded-[3rem] p-12 text-center shadow-2xl">
         <div className="w-20 h-20 bg-red-600 rounded-full flex items-center justify-center mx-auto mb-8">
@@ -184,19 +225,66 @@ export default function ContactPage() {
           </div>
 
           <div className="bg-slate-900/50 border border-slate-800 rounded-[4rem] p-8 lg:p-16 shadow-3xl backdrop-blur-sm">
+            {/* RESET BUTTON SECTION */}
+            <div className="flex justify-end mb-8">
+              {!confirmReset ? (
+                <button 
+                  type="button"
+                  onClick={() => setConfirmReset(true)}
+                  className="flex items-center gap-2 px-4 py-2 bg-slate-950 border border-slate-800 rounded-xl hover:border-red-600 hover:bg-red-600/5 transition-all group"
+                >
+                  <span className="text-[10px] font-black uppercase tracking-widest text-slate-400 group-hover:text-white transition-colors">
+                    Clear Form
+                  </span>
+                </button>
+              ) : (
+                <div className="flex items-center gap-2 animate-in zoom-in duration-200">
+                  <button 
+                    type="button"
+                    onClick={resetForm}
+                    className="px-4 py-2 bg-red-600 rounded-xl text-[10px] font-black uppercase tracking-widest text-white hover:bg-red-700 shadow-lg shadow-red-900/20"
+                  >
+                    Confirm Reset
+                  </button>
+                  <button 
+                    type="button"
+                    onClick={() => setConfirmReset(false)}
+                    className="px-4 py-2 bg-slate-800 rounded-xl text-[10px] font-black uppercase tracking-widest text-slate-300 hover:bg-slate-700"
+                  >
+                    Cancel
+                  </button>
+                </div>
+              )}
+            </div>
+
             <form onSubmit={handleSubmit} className="grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-8">
               <input type="text" className="hidden" value={formData.honeypot} onChange={e => setFormData({...formData, honeypot: e.target.value})} />
 
               <div className="space-y-2">
-                  <label className="text-[10px] font-black text-slate-500 uppercase tracking-widest ml-1">Full Name</label>
-                  <input required className="w-full bg-slate-950/50 border border-slate-800 rounded-2xl p-5 text-white text-sm focus:border-red-600 focus:ring-1 focus:ring-red-600 outline-none transition-all" 
-                  value={formData.name} onChange={e => setFormData({...formData, name: e.target.value})} />
+                  <div className="flex justify-between items-center ml-1">
+                      <label className="text-[10px] font-black text-slate-500 uppercase tracking-widest">Full Name</label>
+                      {errors.name && <span className="text-[9px] font-bold text-red-500 uppercase italic animate-pulse">{errors.name}</span>}
+                  </div>
+                  <input 
+                      required 
+                      className={`w-full bg-slate-950/50 border ${errors.name ? 'border-red-600' : 'border-slate-800'} rounded-2xl p-5 text-white text-sm focus:border-red-600 focus:ring-1 focus:ring-red-600 outline-none transition-all`} 
+                      value={formData.name} 
+                      onChange={e => handleInputChange('name', e.target.value)} 
+                  />
               </div>
 
               <div className="space-y-2">
-                  <label className="text-[10px] font-black text-slate-500 uppercase tracking-widest ml-1">Email Address</label>
-                  <input required type="email" className="w-full bg-slate-950/50 border border-slate-800 rounded-2xl p-5 text-white text-sm focus:border-red-600 focus:ring-1 focus:ring-red-600 outline-none transition-all" 
-                  value={formData.email} onChange={e => setFormData({...formData, email: e.target.value})} />
+                  <div className="flex justify-between items-center ml-1">
+                      <label className="text-[10px] font-black text-slate-500 uppercase tracking-widest">Email Address</label>
+                      {errors.email && <span className="text-[9px] font-bold text-red-500 uppercase italic animate-pulse">{errors.email}</span>}
+                  </div>
+                  <input 
+                      required 
+                      type="email" 
+                      className={`w-full bg-slate-950/50 border ${errors.email ? 'border-red-600' : 'border-slate-800'} rounded-2xl p-5 text-white text-sm focus:border-red-600 focus:ring-1 focus:ring-red-600 outline-none transition-all`} 
+                      value={formData.email} 
+                      onChange={e => handleInputChange('email', e.target.value)} 
+                  />
               </div>
 
               <div className="space-y-2">
@@ -220,9 +308,17 @@ export default function ContactPage() {
               </div>
 
               <div className="md:col-span-2 space-y-2">
-                  <label className="text-[10px] font-black text-slate-500 uppercase tracking-widest ml-1">Message</label>
-                  <textarea required rows={6} className="w-full bg-slate-950/50 border border-slate-800 rounded-3xl p-6 text-white text-sm focus:border-red-600 outline-none resize-none transition-all" 
-                  value={formData.message} onChange={e => setFormData({...formData, message: e.target.value})} />
+                  <div className="flex justify-between items-center ml-1">
+                      <label className="text-[10px] font-black text-slate-500 uppercase tracking-widest">Message</label>
+                      {errors.message && <span className="text-[9px] font-bold text-red-500 uppercase italic animate-pulse">{errors.message}</span>}
+                  </div>
+                  <textarea 
+                      required 
+                      rows={6} 
+                      className={`w-full bg-slate-950/50 border ${errors.message ? 'border-red-600' : 'border-slate-800'} rounded-3xl p-6 text-white text-sm focus:border-red-600 outline-none resize-none transition-all`} 
+                      value={formData.message} 
+                      onChange={e => handleInputChange('message', e.target.value)} 
+                  />
               </div>
 
               <div className="md:col-span-2">
@@ -292,7 +388,6 @@ export default function ContactPage() {
                         onClick={() => removeFile(index)}
                         className="absolute right-3 opacity-0 group-hover:opacity-100 bg-red-600 hover:bg-black text-white p-2 rounded-xl transition-all duration-200 z-20"
                       >
-                        {/* Using a simple X if Lucide isn't imported, but ensure 'X' is in your lucide-react imports */}
                         <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
                       </button>
                     </div>

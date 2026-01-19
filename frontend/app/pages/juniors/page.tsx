@@ -1,12 +1,48 @@
 'use client';
 import React from "react";
+import { useEffect, useState } from 'react';
 import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
 import CoachStaff from "@/components/CoachStuff";
 import Link from 'next/link';
 import Image from 'next/image';
+import MatchSlider from '@/components/MatchSlider';
+
+type MediaItem = { id: string; url: string };
+type Config = { id: string; season_year: number; team_name: string; };
+
 
 export default function JuniorsPage() {
+  const [gallery, setGallery] = useState<MediaItem[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [configs, setConfigs] = useState<Config[]>([]);
+  const [selectedConfigId, setSelectedConfigId] = useState<string>('');
+
+useEffect(() => {
+    // 1. Fetch Configs
+    fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/league/configs`)
+      .then(res => res.json())
+      .then(data => {
+        if (Array.isArray(data) && data.length > 0) {
+          const mensOnly = data.filter(c => c.team_name === 'Juniors');
+          setConfigs(mensOnly);
+          if (mensOnly.length > 0) setSelectedConfigId(mensOnly[0].id);
+        }
+      });
+
+    // 2. Fetch Gallery
+    fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/media/juniors`)
+      .then(res => res.json())
+      .then(data => {
+        setGallery(Array.isArray(data) ? data : []);
+        setLoading(false); // <--- THIS WAS MISSING
+      })
+      .catch((err) => {
+        console.error("Gallery Fetch Error:", err);
+        setLoading(false); // Stop loading even on error
+      });
+  }, []);
+
   return (
     <main className="bg-gray-50 min-h-screen">
       <Navbar />
@@ -69,6 +105,21 @@ export default function JuniorsPage() {
           ))}
         </div>
       </section>
+
+      {/* 3. FULL WIDTH GALLERY SECTION (Moved outside of max-w-7xl) */}
+      {gallery.length > 0 && !loading && (
+        <section className="w-full mb-16 overflow-hidden">
+          <div className="max-w-7xl mx-auto px-4 md:px-6 mb-8">
+            <h2 className="text-black font-black uppercase tracking-tighter text-4xl italic">
+              Team <span className="text-red-600">Gallery</span>
+            </h2>
+          </div>
+          
+          <div className="w-full">
+            <MatchSlider slides={gallery} />
+          </div>
+        </section>
+      )}
 
       {/* 4. THE COACHES (The Dynamic Section we built) */}
       <div className="bg-white border-y border-gray-200">
