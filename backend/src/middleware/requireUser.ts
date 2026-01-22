@@ -1,10 +1,11 @@
 import { Request, Response, NextFunction } from 'express';
 import { supabase } from '../supabase';
+import { UserProfile } from '../types/User';
 
 declare global {
   namespace Express {
     interface Request {
-      user?: any;
+      user?: UserProfile;
     }
   }
 }
@@ -15,25 +16,30 @@ export async function requireUser(
   next: NextFunction
 ) {
   try {
-    // 1️⃣ Extract token from headers
     const token = req.headers.authorization?.replace('Bearer ', '');
-    if (!token) return res.status(401).json({ error: 'No token provided' });
+    if (!token) {
+      return res.status(401).json({ error: 'No token provided' });
+    }
 
-    // 2️⃣ Get user from Supabase Auth
-    const { data: userData } = await supabase.auth.getUser(token);
-    if (!userData?.user) return res.status(401).json({ error: 'Invalid user' });
+    const { data: userData, error: authError } =
+      await supabase.auth.getUser(token);
 
-    // 3️⃣ Check profiles table
-    const { data: profile } = await supabase
+    if (authError || !userData?.user) {
+      return res.status(401).json({ error: 'Invalid user' });
+    }
+
+    const { data: profile, error: profileError } = await supabase
       .from('profiles')
-      .select('*')
+      .select('id, name, surname, email, logo, created_at')
       .eq('id', userData.user.id)
       .single();
 
-    if (!profile) return res.status(403).json({ error: 'Not a registered user' });
+    if (profileError || !profile) {
+      return res.status(403).json({ error: 'Not a registered user' });
+    }
 
-    // 4️⃣ Attach user info
-    req.user = userData.user;
+    req.user = profile;
+
     next();
   } catch (err) {
     console.error(err);

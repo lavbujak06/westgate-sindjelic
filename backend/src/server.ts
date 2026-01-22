@@ -27,6 +27,7 @@ import leagueRoutes from './routes/league';
 import mediaRoutes from './routes/media';
 import sponsorsRoutes from './routes/sponsors';
 import highlightRouter from './routes/highlights';
+import accountRouter from './routes/account';
 
 const app = express();
 
@@ -56,6 +57,7 @@ app.use('/api/league', leagueRoutes);
 app.use('/api/media', mediaRoutes);
 app.use('/api/sponsors', sponsorsRoutes);
 app.use('/api/highlights', highlightRouter);
+app.use('/api/account', accountRouter)
 
 
 app.listen(process.env.PORT, () => {

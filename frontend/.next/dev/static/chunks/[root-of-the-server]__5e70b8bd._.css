@@ -2963,6 +2963,16 @@
     color: var(--color-red-500);
   }
 
+  .text-red-500\/50 {
+    color: #fb2c3680;
+  }
+
+  @supports (color: color-mix(in lab, red, red)) {
+    .text-red-500\/50 {
+      color: color-mix(in oklab, var(--color-red-500) 50%, transparent);
+    }
+  }
+
   .text-red-500\/60 {
     color: #fb2c3699;
   }

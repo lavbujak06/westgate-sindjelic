@@ -21,3 +21,9 @@ export const contactSchema = z.object({
   message: z.string().min(10, "Message must be at least 10 characters").max(5000),
   honeypot: z.string().max(0, "Bot detected").optional().or(z.literal('')),
 }).strict();
+
+export const accountSchema = z.object({
+  name: z.string().min(2, "Name is too short").max(50),
+  surname: z.string().min(2, "Surname is too short").max(50),
+  logo: z.string().url("Invalid logo URL").optional().or(z.literal('')),
+}).strict();

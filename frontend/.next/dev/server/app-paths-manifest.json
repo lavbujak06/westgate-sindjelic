@@ -1,11 +1,6 @@
 {
+  "/account/page": "app/account/page.js",
+  "/login/page": "app/login/page.js",
   "/page": "app/page.js",
-  "/pages/aboutUs/page": "app/pages/aboutUs/page.js",
-  "/pages/contact/page": "app/pages/contact/page.js",
-  "/pages/juniors/page": "app/pages/juniors/page.js",
-  "/pages/men/reserves/page": "app/pages/men/reserves/page.js",
-  "/pages/men/seniors/page": "app/pages/men/seniors/page.js",
-  "/pages/news/page": "app/pages/news/page.js",
-  "/pages/women/reserves/page": "app/pages/women/reserves/page.js",
-  "/pages/women/seniors/page": "app/pages/women/seniors/page.js"
+  "/signup/page": "app/signup/page.js"
 }
