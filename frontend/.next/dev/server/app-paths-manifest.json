@@ -1,0 +1,6 @@
+{
+  "/admin/league/page": "app/admin/league/page.js",
+  "/pages/men/reserves/page": "app/pages/men/reserves/page.js",
+  "/pages/men/seniors/page": "app/pages/men/seniors/page.js",
+  "/pages/news/page": "app/pages/news/page.js"
+}
