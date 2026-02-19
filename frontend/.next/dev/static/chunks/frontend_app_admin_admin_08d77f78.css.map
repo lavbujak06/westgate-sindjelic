@@ -1,6 +1,0 @@
-{
-  "version": 3,
-  "sources": [],
-  "sections": [
-    {"offset": {"line": 1, "column": 0}, "map": {"version":3,"sources":["file:///Users/lavbujak/Desktop/Sindjelic/westgate-sindjelic/frontend/app/admin/admin.css"],"sourcesContent":["/* admin.css */\nbody {\n  font-family: 'Inter', sans-serif;\n}\n\naside {\n  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.05);\n}\n\nmain {\n  background-color: #f0f4ff; /* light blue-ish content area */\n  border-radius: 0.5rem;\n}\n\n\n.admin-link {\n  color: #1e40af;\n  text-decoration: none; /* removes underline */\n}\n\n.admin-link:hover {\n  color: #2563eb; /* optional hover color */\n}\n"],"names":[],"mappings":"AACA;;;;AAIA;;;;AAIA;;;;;AAMA;;;;;AAKA"}}]
-}
